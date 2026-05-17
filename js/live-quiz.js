@@ -18,8 +18,9 @@ const db = getDatabase(app);
 let lqRoomCode = "";
 let lqPlayerName = "";
 let allQuizData = null; // Contains all grades
-let lqQuizData = null;  // Contains the specific grade being played
+let lqQuizData = null;  // Contains the specific grade & unit being played
 let lqCurrentQuestionIndex = -1;
+let lqQuestionOrder = []; // Shuffled order of questions
 let lqMyScore = 0;
 let lqAnsweredCurrent = false;
 let studentsData = null;
@@ -52,6 +53,7 @@ window.lqHostLogin = async () => {
     const hostName = document.getElementById('lq-host-name').value.trim();
     const hostPass = document.getElementById('lq-host-pass').value.trim();
     const gradeSelect = document.getElementById('lq-host-grade').value;
+    const unitSelect = document.getElementById('lq-host-unit') ? document.getElementById('lq-host-unit').value : 'unit1';
 
     if (teachersData && teachersData.teachers) {
         const validTeacher = teachersData.teachers.find(t => t.name === hostName && t.password === hostPass);
@@ -64,12 +66,12 @@ window.lqHostLogin = async () => {
         return;
     }
 
-    if (!allQuizData || !allQuizData[gradeSelect]) {
-        alert("Quiz data for selected class/grade not found!");
+    if (!allQuizData || !allQuizData[gradeSelect] || !allQuizData[gradeSelect][unitSelect]) {
+        alert("Exam data for selected class/grade and unit not found!");
         return;
     }
 
-    lqQuizData = allQuizData[gradeSelect];
+    lqQuizData = allQuizData[gradeSelect][unitSelect];
     lqPlayerName = hostName; // Host plays under their own name!
 
     await lqCreateRoom();
@@ -255,6 +257,10 @@ function lqListenToGame() {
                 lqCurrentQuestionIndex = 0;
                 lqAnsweredCurrent = false;
                 
+                // Shuffle questions for this student
+                lqQuestionOrder = Array.from({length: lqQuizData.questions.length}, (_, i) => i);
+                lqQuestionOrder.sort(() => Math.random() - 0.5);
+                
                 // If this is the first question, start the 10-minute timer using the DB start time
                 if(data.startTime) {
                     startTimer(data.startTime);
@@ -271,10 +277,15 @@ function lqListenToGame() {
 
 function lqRenderQuestion() {
     window.lqShowView('lq-quiz-page');
-    let qData = lqQuizData?.questions[lqCurrentQuestionIndex];
+    let realIndex = lqQuestionOrder[lqCurrentQuestionIndex];
+    let qData = lqQuizData?.questions[realIndex];
     if (!qData) return;
     
-    document.getElementById('lq-question-text').innerText = qData.text || qData.question;
+    let qText = qData.text || qData.question;
+    if (qData.image) {
+        qText += `<br><img src="${qData.image}" style="max-width:100%; border-radius:12px; margin-top:15px; box-shadow: 0 6px 15px rgba(0,0,0,0.3); border: 2px solid var(--border);">`;
+    }
+    document.getElementById('lq-question-text').innerHTML = qText;
 
     const optionsContainer = document.getElementById('lq-options-container');
     optionsContainer.innerHTML = '';
@@ -293,20 +304,101 @@ function lqRenderQuestion() {
         const input = document.createElement('input');
         input.type = 'text';
         input.id = 'lq-text-answer';
+        input.placeholder = 'Type your answer here...';
+        input.style.width = '100%';
+        input.style.padding = '15px';
+        input.style.borderRadius = '8px';
+        input.style.border = '2px solid var(--border)';
+        input.style.background = 'var(--surface2)';
+        input.style.color = 'var(--text)';
+        input.style.fontSize = '1.1rem';
+        
         const btn = document.createElement('button');
         btn.className = 'btn-primary lq-btn';
         btn.innerText = 'Submit';
+        btn.style.marginTop = '15px';
         btn.onclick = () => window.lqSubmitAnswer(document.getElementById('lq-text-answer').value, qData.answer, qData.marks, btn);
         optionsContainer.appendChild(input);
+        optionsContainer.appendChild(btn);
+    } else if (qData.type === 'match_following') {
+        const wrap = document.createElement('div');
+        wrap.className = 'match-grid';
+        wrap.style.display = 'flex';
+        wrap.style.flexDirection = 'column';
+        wrap.style.gap = '15px';
+
+        qData.left.forEach((leftItem, i) => {
+            const row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.gap = '15px';
+            row.style.alignItems = 'center';
+
+            const leftLbl = document.createElement('div');
+            leftLbl.innerText = leftItem;
+            leftLbl.style.flex = '1';
+            leftLbl.style.padding = '12px 15px';
+            leftLbl.style.background = 'var(--surface)';
+            leftLbl.style.borderRadius = '8px';
+            leftLbl.style.border = '1px solid var(--cyan)';
+            leftLbl.style.fontWeight = 'bold';
+
+            const rightSel = document.createElement('select');
+            rightSel.className = 'lq-match-select';
+            rightSel.style.flex = '1';
+            rightSel.style.padding = '12px 15px';
+            rightSel.style.borderRadius = '8px';
+            rightSel.style.border = '1px solid var(--border)';
+            rightSel.style.background = 'var(--bg2)';
+            rightSel.style.color = 'var(--text)';
+            
+            const defOpt = document.createElement('option');
+            defOpt.innerText = '-- Select Match --';
+            defOpt.value = '';
+            rightSel.appendChild(defOpt);
+
+            // Scramble right items for the dropdown
+            const rightScrambled = [...qData.right].sort(() => Math.random() - 0.5);
+            rightScrambled.forEach(rightItem => {
+                const opt = document.createElement('option');
+                opt.value = rightItem;
+                opt.innerText = rightItem;
+                rightSel.appendChild(opt);
+            });
+
+            row.appendChild(leftLbl);
+            row.appendChild(rightSel);
+            wrap.appendChild(row);
+        });
+
+        const btn = document.createElement('button');
+        btn.className = 'btn-primary lq-btn';
+        btn.innerText = 'Submit Match';
+        btn.style.marginTop = '20px';
+        btn.onclick = () => {
+            const selects = wrap.querySelectorAll('.lq-match-select');
+            let userAns = {};
+            let correctCount = 0;
+            let allSelected = true;
+            selects.forEach((sel, i) => {
+                if(!sel.value) allSelected = false;
+                userAns[qData.left[i]] = sel.value;
+                if (sel.value === qData.answer[qData.left[i]]) correctCount++;
+            });
+            if(!allSelected) { alert("Please match all items!"); return; }
+            const isCorrect = correctCount === qData.left.length;
+            window.lqSubmitAnswer(JSON.stringify(userAns), JSON.stringify(qData.answer), isCorrect ? qData.marks : 0, btn, isCorrect);
+        };
+
+        optionsContainer.appendChild(wrap);
         optionsContainer.appendChild(btn);
     }
 }
 
-window.lqSubmitAnswer = (selected, correct, marks, btnElement) => {
+window.lqSubmitAnswer = (selected, correct, marks, btnElement, customIsCorrect = null) => {
     if (lqAnsweredCurrent) return;
     lqAnsweredCurrent = true;
 
-    const isCorrect = selected.toString().toLowerCase().trim() === correct.toString().toLowerCase().trim();
+    const isCorrect = customIsCorrect !== null ? customIsCorrect : (selected.toString().toLowerCase().trim() === correct.toString().toLowerCase().trim());
 
     if (isCorrect) {
         lqMyScore += marks;
@@ -318,8 +410,9 @@ window.lqSubmitAnswer = (selected, correct, marks, btnElement) => {
         correct: isCorrect
     };
     
-    set(ref(db, `rooms/${lqRoomCode}/players/${lqPlayerName}/answers/${lqCurrentQuestionIndex}`), answerData);
-    set(ref(db, `rooms/${lqRoomCode}/responses/${lqCurrentQuestionIndex}/${lqPlayerName}`), answerData);
+    let realIndex = lqQuestionOrder[lqCurrentQuestionIndex];
+    set(ref(db, `rooms/${lqRoomCode}/players/${lqPlayerName}/answers/${realIndex}`), answerData);
+    set(ref(db, `rooms/${lqRoomCode}/responses/${realIndex}/${lqPlayerName}`), answerData);
 
     if (btnElement) {
         btnElement.style.backgroundColor = 'var(--green)';
