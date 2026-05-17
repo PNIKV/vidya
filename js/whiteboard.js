@@ -1,13 +1,13 @@
 // =============================================
-//  PCB BOARD SVG GRAPHICS Definitions
+//  PCB BOARD SVG GRAPHICS Definitions (Blue PCBs & Silver Terminals)
 // =============================================
 const svgs = {
-    battery: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="0" width="10" height="10" fill="#ddd"/><rect x="70" y="0" width="10" height="10" fill="#ddd"/><circle cx="25" cy="0" r="4" fill="#eee"/><polygon points="70,0 75,-5 80,0" fill="#eee"/><rect x="5" y="10" width="90" height="90" rx="8" fill="#222"/><rect x="5" y="10" width="90" height="25" rx="8" fill="#FF2A3A"/><text x="50" y="70" font-family="sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">9V</text><text x="25" y="30" font-family="sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">+</text><text x="75" y="30" font-family="sans-serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">-</text></svg>`,
-    led: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="22" y="50" width="6" height="25" fill="#ccc"/><rect x="72" y="50" width="6" height="25" fill="#ccc"/><path d="M 15 50 L 85 50 L 85 40 L 15 40 Z" fill="#800000"/><path d="M 15 40 C 15 -10 85 -10 85 40 Z" fill="#b30000" opacity="0.9"/><text x="25" y="90" font-family="sans-serif" font-size="24" fill="#ff4757" font-weight="bold" text-anchor="middle">+</text><text x="75" y="90" font-family="sans-serif" font-size="24" fill="#ccc" font-weight="bold" text-anchor="middle">-</text></svg>`,
-    led_active: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="glow" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#ffcccc"/><stop offset="50%" stop-color="#ff0000"/><stop offset="100%" stop-color="#990000"/></radialGradient><filter id="blur"><feGaussianBlur stdDeviation="3"/></filter></defs><rect x="22" y="50" width="6" height="25" fill="#ccc"/><rect x="72" y="50" width="6" height="25" fill="#ccc"/><path d="M 15 40 C 15 -10 85 -10 85 40 Z" fill="#ff0000" filter="url(#blur)" opacity="0.6"/><path d="M 15 50 L 85 50 L 85 40 L 15 40 Z" fill="#cc0000"/><path d="M 15 40 C 15 -10 85 -10 85 40 Z" fill="url(#glow)"/><path d="M 25 35 C 25 10 40 10 40 35 Z" fill="#ffffff" opacity="0.8"/><text x="25" y="90" font-family="sans-serif" font-size="24" fill="#ff4757" font-weight="bold" text-anchor="middle">+</text><text x="75" y="90" font-family="sans-serif" font-size="24" fill="#ccc" font-weight="bold" text-anchor="middle">-</text></svg>`,
-    resistor: `<svg width="100" height="50" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="23" width="100" height="4" fill="#ccc"/><path d="M 20 15 L 80 15 C 85 15 85 35 80 35 L 20 35 C 15 35 15 15 20 15 Z" fill="#d3a77a" stroke="#a67c52" stroke-width="2"/><rect x="30" y="15" width="6" height="20" fill="#cc0000"/><rect x="45" y="15" width="6" height="20" fill="#000000"/><rect x="60" y="15" width="6" height="20" fill="#cc0000"/><rect x="75" y="15" width="4" height="20" fill="#b8860b"/></svg>`,
-    motor: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="#ddd" stroke="#999" stroke-width="2"/><circle cx="50" cy="50" r="25" fill="#eee" stroke="#aaa" stroke-width="2"/><text x="50" y="58" font-family="sans-serif" font-size="24" font-weight="bold" fill="#666" text-anchor="middle">M</text><rect x="20" y="80" width="10" height="20" fill="#ffd700"/><rect x="70" y="80" width="10" height="20" fill="#ffd700"/></svg>`,
-    ir_sensor: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="5" y="10" width="90" height="80" rx="6" fill="#0b381a" stroke="#061c0e" stroke-width="2"/><rect x="35" y="42" width="30" height="20" fill="#0056b3" rx="2"/><circle cx="50" cy="52" r="7" fill="#ffd700"/><line x1="50" y1="45" x2="50" y2="59" stroke="#222" stroke-width="2"/><rect x="15" y="-8" width="20" height="18" fill="#555" rx="1"/><circle cx="25" cy="-6" r="8" fill="#a0c4ff" opacity="0.95"/><rect x="65" y="-8" width="20" height="18" fill="#555" rx="1"/><circle cx="75" cy="-6" r="8" fill="#151515"/><circle cx="25" cy="30" r="5" fill="#444"/><rect x="22" y="90" width="6" height="10" fill="#ffd700"/><rect x="47" y="90" width="6" height="10" fill="#ffd700"/><rect x="72" y="90" width="6" height="10" fill="#ffd700"/><text x="25" y="84" font-family="sans-serif" font-size="10" fill="#bbb" font-weight="bold" text-anchor="middle">V</text><text x="50" y="84" font-family="sans-serif" font-size="10" fill="#bbb" font-weight="bold" text-anchor="middle">G</text><text x="75" y="84" font-family="sans-serif" font-size="10" fill="#bbb" font-weight="bold" text-anchor="middle">S</text></svg>`
+    battery: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect x="25" y="0" width="12" height="12" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1"/><rect x="83" y="0" width="12" height="12" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1"/><circle cx="31" cy="0" r="5" fill="#ffffff"/><polygon points="83,0 89,-6 95,0" fill="#ffffff"/><rect x="5" y="12" width="110" height="103" rx="10" fill="#0f2b5c" stroke="#081836" stroke-width="2.5"/><rect x="5" y="12" width="110" height="28" rx="10" fill="#0056b3"/><text x="60" y="80" font-family="sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">9V</text><text x="31" y="32" font-family="sans-serif" font-size="22" fill="white" text-anchor="middle" font-weight="bold">+</text><text x="89" y="32" font-family="sans-serif" font-size="22" fill="white" text-anchor="middle" font-weight="bold">-</text></svg>`,
+    led: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect x="27" y="60" width="8" height="30" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1"/><rect x="85" y="60" width="8" height="30" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1"/><path d="M 18 60 L 102 60 L 102 48 L 18 48 Z" fill="#800000"/><path d="M 18 48 C 18 -12 102 -12 102 48 Z" fill="#b30000" opacity="0.95"/><text x="31" y="108" font-family="sans-serif" font-size="26" fill="#ff4757" font-weight="bold" text-anchor="middle">+</text><text x="89" y="108" font-family="sans-serif" font-size="26" fill="#999" font-weight="bold" text-anchor="middle">-</text></svg>`,
+    led_active: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="glow" cx="50%" cy="40%" r="60%"><stop offset="0%" stop-color="#ffcccc"/><stop offset="50%" stop-color="#ff0000"/><stop offset="100%" stop-color="#990000"/></radialGradient><filter id="blur"><feGaussianBlur stdDeviation="3"/></filter></defs><rect x="27" y="60" width="8" height="30" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1"/><rect x="85" y="60" width="8" height="30" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1"/><path d="M 18 48 C 18 -12 102 -12 102 48 Z" fill="#ff0000" filter="url(#blur)" opacity="0.65"/><path d="M 18 60 L 102 60 L 102 48 L 18 48 Z" fill="#cc0000"/><path d="M 18 48 C 18 -12 102 -12 102 48 Z" fill="url(#glow)"/><path d="M 30 40 C 30 12 48 12 48 40 Z" fill="#ffffff" opacity="0.85"/><text x="31" y="108" font-family="sans-serif" font-size="26" fill="#ff4757" font-weight="bold" text-anchor="middle">+</text><text x="89" y="108" font-family="sans-serif" font-size="26" fill="#999" font-weight="bold" text-anchor="middle">-</text></svg>`,
+    resistor: `<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="27" width="120" height="5" fill="#e0e0e0"/><path d="M 22 17 L 98 17 C 104 17 104 41 98 41 L 22 41 C 16 41 16 17 22 17 Z" fill="#d3a77a" stroke="#a67c52" stroke-width="2.5"/><rect x="35" y="17" width="7" height="24" fill="#cc0000"/><rect x="52" y="17" width="7" height="24" fill="#000000"/><rect x="69" y="17" width="7" height="24" fill="#cc0000"/><rect x="86" y="17" width="5" height="24" fill="#b8860b"/></svg>`,
+    motor: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="60" r="48" fill="#e0e0e0" stroke="#a0a0a0" stroke-width="2.5"/><circle cx="60" cy="60" r="30" fill="#f0f0f0" stroke="#c0c0c0" stroke-width="2"/><text x="60" y="70" font-family="sans-serif" font-size="28" font-weight="bold" fill="#555" text-anchor="middle">M</text><rect x="25" y="98" width="12" height="22" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1"/><rect x="83" y="98" width="12" height="22" fill="#e0e0e0" stroke="#b0b0b0" stroke-width="1"/></svg>`,
+    ir_sensor: `<svg width="100" height="130" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="15" width="70" height="100" rx="8" fill="#0F3D7A" stroke="#082347" stroke-width="2.5"/><rect x="40" y="60" width="20" height="30" fill="#0056b3" rx="2"/><circle cx="50" cy="75" r="7" fill="#e0e0e0" stroke="#888" stroke-width="1"/><line x1="50" y1="68" x2="50" y2="82" stroke="#222" stroke-width="2"/><rect x="22" y="5" width="16" height="10" fill="#444"/><rect x="18" y="-12" width="24" height="22" fill="rgba(160, 196, 255, 0.4)" stroke="#a0c4ff" stroke-width="1" rx="3"/><path d="M 18 -12 C 18 -26 42 -26 42 -12 Z" fill="rgba(160, 196, 255, 0.4)" stroke="#a0c4ff" stroke-width="1"/><rect x="62" y="5" width="16" height="10" fill="#444"/><rect x="58" y="-12" width="24" height="22" fill="#0c0d10" rx="3" stroke="#222" stroke-width="1"/><path d="M 58 -12 C 58 -26 82 -26 82 -12 Z" fill="#0c0d10" stroke="#222" stroke-width="1"/><circle cx="25" cy="40" r="5" fill="#444"/><rect x="22" y="115" width="6" height="15" fill="#e0e0e0"/><rect x="47" y="115" width="6" height="15" fill="#e0e0e0"/><rect x="72" y="115" width="6" height="15" fill="#e0e0e0"/><text x="25" y="108" font-family="sans-serif" font-size="10" fill="#ddd" font-weight="bold" text-anchor="middle">V</text><text x="50" y="108" font-family="sans-serif" font-size="10" fill="#ddd" font-weight="bold" text-anchor="middle">G</text><text x="75" y="108" font-family="sans-serif" font-size="10" fill="#ddd" font-weight="bold" text-anchor="middle">S</text></svg>`
 };
 
 const componentImages = {};
@@ -27,7 +27,7 @@ let wbLastPos = null;
 let wbIsRunning = false;
 let wbAnimationFrame = null;
 
-// Undo/Redo history stacks
+// Undo/Redo stacks
 let wbHistory = [];
 let wbHistoryIndex = -1;
 
@@ -277,7 +277,7 @@ function alertToast() {
     }
 }
 
-// Keyboard listeners
+// Keyboard listener
 window.addEventListener('keydown', (e) => {
     if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') {
         e.preventDefault();
@@ -289,7 +289,7 @@ window.addEventListener('keydown', (e) => {
 });
 
 // =============================================
-//  CANVAS Interactions & Event Handlers
+//  CANVAS Initialization and Interactions
 // =============================================
 window.initWhiteboard = () => {
     wbCanvas = document.getElementById('whiteboardCanvas');
@@ -538,23 +538,6 @@ window.wbClear = () => {
 // =============================================
 //  PHYSICS ENGINE (Loop Solver & Secondary Power Nodes)
 // =============================================
-function pathExists(start, end, nodes) {
-    const visited = new Set();
-    function dfs(curr) {
-        if (curr === end) return true;
-        visited.add(curr);
-        if (nodes[curr]) {
-            for (const edge of nodes[curr]) {
-                if (!visited.has(edge.n2)) {
-                    if (dfs(edge.n2)) return true;
-                }
-            }
-        }
-        return false;
-    }
-    return dfs(start);
-}
-
 function simulateCircuit() {
     // Reset component states
     for (const el of wbElements) {
@@ -650,7 +633,6 @@ function simulateCircuit() {
         if (el.type === 'component' && el.compType === 'ir_sensor' && el.powered && el.detected) {
             const outT = getRotatedTerminal(el, 25, 50);
             for (const bat of mainBatteries) {
-                // Secondary closed loop path back to ground negative
                 batteries.push({ pos: `${outT.x},${outT.y}`, neg: bat.neg, ref: el });
             }
         }
@@ -787,9 +769,11 @@ function wbAnimationLoop() {
                 const dotY = el.y1 + (el.y2 - el.y1) * t;
                 wbCtx.beginPath();
                 wbCtx.arc(dotX, dotY, 4, 0, Math.PI * 2);
-                wbCtx.fillStyle = '#00FF88';
-                wbCtx.shadowColor = '#00FF88';
-                wbCtx.shadowBlur = 10;
+                
+                // Active flow dots should contrast well with white background
+                wbCtx.fillStyle = '#00CC66';
+                wbCtx.shadowColor = '#00CC66';
+                wbCtx.shadowBlur = 4;
                 wbCtx.fill();
                 wbCtx.shadowBlur = 0; 
             }
@@ -798,11 +782,11 @@ function wbAnimationLoop() {
     wbAnimationFrame = requestAnimationFrame(wbAnimationLoop);
 }
 
-// Gold solder grid circles
+// Clean, high contrast Silver Solder Pads grid on white background
 function drawPCBGrid() {
     if (!wbCtx || !wbCanvas) return;
     const gridSize = 25;
-    wbCtx.fillStyle = 'rgba(212, 175, 55, 0.25)'; 
+    wbCtx.fillStyle = 'rgba(160, 175, 195, 0.4)'; 
     for (let x = gridSize; x < wbCanvas.width; x += gridSize) {
         for (let y = gridSize; y < wbCanvas.height; y += gridSize) {
             wbCtx.beginPath();
@@ -830,7 +814,7 @@ function drawElement(el) {
     if (el.type === 'freehand') {
         if (el.points.length < 2) return;
         wbCtx.beginPath();
-        wbCtx.lineWidth = 3;
+        wbCtx.lineWidth = 3.5;
         wbCtx.strokeStyle = el.color;
         wbCtx.moveTo(el.points[0].x, el.points[0].y);
         for (let i = 1; i < el.points.length; i++) {
@@ -864,109 +848,114 @@ function drawComponent(el, x, y) {
     
     const type = el.compType;
     
+    // Scale up components slightly (120x120 instead of 100x100)
     if (type === 'battery' && componentImages.battery?.complete) {
-        wbCtx.drawImage(componentImages.battery, -50, -50, 100, 100);
+        wbCtx.drawImage(componentImages.battery, -60, -60, 120, 120);
     } else if (type === 'led') {
         if (el.burned) {
-            wbCtx.drawImage(componentImages.led, -50, -50, 100, 100);
+            wbCtx.drawImage(componentImages.led, -60, -60, 120, 120);
             
             wbCtx.beginPath();
-            wbCtx.arc(0, -10, 36, 0, Math.PI * 2);
+            wbCtx.arc(0, -12, 44, 0, Math.PI * 2);
             wbCtx.fillStyle = 'rgba(50, 48, 48, 0.88)';
             wbCtx.fill();
             
             wbCtx.strokeStyle = 'rgba(255, 255, 255, 0.7)';
             wbCtx.lineWidth = 2.5;
             wbCtx.beginPath();
-            wbCtx.moveTo(-15, -28); wbCtx.lineTo(2, -12); wbCtx.lineTo(-8, 5);
-            wbCtx.moveTo(2, -12); wbCtx.lineTo(18, -2);
+            wbCtx.moveTo(-18, -32); wbCtx.lineTo(2, -15); wbCtx.lineTo(-10, 8);
+            wbCtx.moveTo(2, -15); wbCtx.lineTo(22, -2);
             wbCtx.stroke();
             
             wbCtx.fillStyle = '#ff3b30';
-            wbCtx.font = 'bold 11px Courier New';
-            wbCtx.fillText("BURNT!", -22, -15);
+            wbCtx.font = 'bold 13px Courier New';
+            wbCtx.fillText("BURNT!", -24, -18);
         } else if (el.active && wbIsRunning) {
             const currentMa = (el.current || 0) * 1000;
-            const pulseGlow = 12 + Math.sin(Date.now() / 80) * 3;
+            const pulseGlow = 15 + Math.sin(Date.now() / 80) * 3;
             
             wbCtx.save();
             wbCtx.shadowColor = '#FF4757';
             wbCtx.shadowBlur = pulseGlow + (currentMa * 0.45); 
-            wbCtx.drawImage(componentImages.led_active, -50, -50, 100, 100);
+            wbCtx.drawImage(componentImages.led_active, -60, -60, 120, 120);
             wbCtx.restore();
         } else if (componentImages.led?.complete) {
-            wbCtx.drawImage(componentImages.led, -50, -50, 100, 100);
+            wbCtx.drawImage(componentImages.led, -60, -60, 120, 120);
         }
     } else if (type === 'resistor') {
         const img = el.customImage || componentImages.resistor;
         if (img && img.complete) {
-            wbCtx.drawImage(img, -50, -25, 100, 50);
+            wbCtx.drawImage(img, -60, -30, 120, 60);
         }
     } else if (type === 'motor' && componentImages.motor?.complete) {
-        wbCtx.drawImage(componentImages.motor, -50, -50, 100, 100);
+        wbCtx.drawImage(componentImages.motor, -60, -60, 120, 120);
         
+        // Spin axle with vanes
         wbCtx.save();
         const rotAngle = el.active && wbIsRunning ? (Date.now() / 120) % (Math.PI * 2) : 0;
         wbCtx.rotate(rotAngle);
         
-        wbCtx.fillStyle = '#D4AF37'; 
-        wbCtx.beginPath(); wbCtx.arc(0, 0, 14, 0, Math.PI*2); wbCtx.fill();
+        wbCtx.fillStyle = '#C0C0C0'; // Metallic silver
+        wbCtx.beginPath(); wbCtx.arc(0, 0, 16, 0, Math.PI*2); wbCtx.fill();
         
         wbCtx.strokeStyle = '#222';
-        wbCtx.lineWidth = 3.5;
+        wbCtx.lineWidth = 4;
         wbCtx.beginPath();
-        wbCtx.moveTo(-22, 0); wbCtx.lineTo(22, 0);
-        wbCtx.moveTo(0, -22); wbCtx.lineTo(0, 22);
+        wbCtx.moveTo(-26, 0); wbCtx.lineTo(26, 0);
+        wbCtx.moveTo(0, -26); wbCtx.lineTo(0, 26);
         wbCtx.stroke();
         wbCtx.restore();
     } else if (type === 'ir_sensor' && componentImages.ir_sensor?.complete) {
-        wbCtx.drawImage(componentImages.ir_sensor, -50, -50, 100, 100);
+        // Draw the narrow and long IR Sensor PCB
+        wbCtx.drawImage(componentImages.ir_sensor, -50, -65, 100, 130);
         
-        // Draw active sensor features during simulation
         if (wbIsRunning) {
             const beamDist = el.triggerDistance || 100;
-            
-            // Draw visual light emission beam
-            const grad = wbCtx.createLinearGradient(0, -10, 0, -10 - beamDist);
-            grad.addColorStop(0, el.detected ? 'rgba(0, 255, 136, 0.28)' : 'rgba(255, 71, 87, 0.22)');
+            const grad = wbCtx.createLinearGradient(0, -25, 0, -25 - beamDist);
+            grad.addColorStop(0, el.detected ? 'rgba(0, 255, 136, 0.3)' : 'rgba(255, 71, 87, 0.22)');
             grad.addColorStop(1, 'rgba(0, 0, 0, 0)');
             
             wbCtx.fillStyle = grad;
             wbCtx.beginPath();
-            wbCtx.moveTo(-15, -10);
-            wbCtx.lineTo(-30, -10 - beamDist);
-            wbCtx.lineTo(30, -10 - beamDist);
-            wbCtx.lineTo(15, -10);
+            wbCtx.moveTo(-15, -25);
+            wbCtx.lineTo(-30, -25 - beamDist);
+            wbCtx.lineTo(30, -25 - beamDist);
+            wbCtx.lineTo(15, -25);
             wbCtx.fill();
             
-            // On-board status detection indicator LED (VCC side)
             if (el.powered) {
                 wbCtx.fillStyle = el.detected ? '#00FF88' : '#FF4757';
                 wbCtx.shadowColor = el.detected ? '#00FF88' : '#FF4757';
                 wbCtx.shadowBlur = 8;
-                wbCtx.beginPath(); wbCtx.arc(-25, 30, 5, 0, Math.PI*2); wbCtx.fill();
+                wbCtx.beginPath(); wbCtx.arc(-25, 40, 5, 0, Math.PI*2); wbCtx.fill();
                 wbCtx.shadowBlur = 0;
             }
         }
     }
     
+    // Highlight selection bounding box
     if (wbSelectedElement === el && wbMode === 'move') {
         wbCtx.strokeStyle = 'var(--cyan)';
-        wbCtx.lineWidth = 2;
+        wbCtx.lineWidth = 2.5;
         wbCtx.setLineDash([5, 5]);
-        wbCtx.strokeRect(-52, -52, 104, 104);
+        
+        let bW = 126;
+        let bH = 126;
+        if (type === 'resistor') { bW = 126; bH = 74; }
+        else if (type === 'ir_sensor') { bW = 106; bH = 136; }
+        
+        wbCtx.strokeRect(-bW/2, -bH/2, bW, bH);
         wbCtx.setLineDash([]);
     }
     
     wbCtx.restore();
 
-    // Draw external absolute draggable object dot for active IR Sensors during simulation
+    // Draggable absolute object dot for active IR Sensors during simulation
     if (wbIsRunning && type === 'ir_sensor') {
         const objPos = getAbsoluteObjPos(el);
         
-        // Draw connection beam line to the absolute object position
-        wbCtx.strokeStyle = el.detected ? 'rgba(0, 255, 136, 0.4)' : 'rgba(255, 255, 255, 0.15)';
-        wbCtx.lineWidth = 2;
+        wbCtx.strokeStyle = el.detected ? 'rgba(0, 180, 100, 0.45)' : 'rgba(0, 0, 0, 0.15)';
+        wbCtx.lineWidth = 2.5;
         wbCtx.setLineDash([3, 3]);
         wbCtx.beginPath();
         wbCtx.moveTo(x, y);
@@ -979,7 +968,7 @@ function drawComponent(el, x, y) {
         wbCtx.fillStyle = el.detected ? '#00FF88' : '#ff6b6b';
         wbCtx.strokeStyle = '#fff';
         wbCtx.lineWidth = 2.5;
-        wbCtx.shadowColor = 'rgba(0,0,0,0.5)';
+        wbCtx.shadowColor = 'rgba(0,0,0,0.3)';
         wbCtx.shadowBlur = 6;
         wbCtx.fill();
         wbCtx.shadowBlur = 0;
@@ -994,7 +983,7 @@ function drawComponent(el, x, y) {
 }
 
 function getElementAt(pos) {
-    const threshold = 20; 
+    const threshold = 22; 
     for (let i = wbElements.length - 1; i >= 0; i--) {
         const el = wbElements[i];
         if (el.type === 'freehand') {
@@ -1005,7 +994,8 @@ function getElementAt(pos) {
             const dist = distToSegment(pos, {x: el.x1, y: el.y1}, {x: el.x2, y: el.y2});
             if (dist < threshold) return el;
         } else if (el.type === 'component') {
-            if (Math.hypot(el.x - pos.x, el.y - pos.y) < 40) return el;
+            const radius = el.compType === 'ir_sensor' ? 55 : 45;
+            if (Math.hypot(el.x - pos.x, el.y - pos.y) < radius) return el;
         }
     }
     return null;
@@ -1174,7 +1164,7 @@ function getResistorBands(ohms) {
 
 window.wbRegenerateResistorImage = (el) => {
     const bands = getResistorBands(el.resistance);
-    const svgStr = `<svg width="100" height="50" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="23" width="100" height="4" fill="#ccc"/><path d="M 20 15 L 80 15 C 85 15 85 35 80 35 L 20 35 C 15 35 15 15 20 15 Z" fill="#d3a77a" stroke="#a67c52" stroke-width="2"/><rect x="30" y="15" width="6" height="20" fill="${bands.c1}"/><rect x="45" y="15" width="6" height="20" fill="${bands.c2}"/><rect x="60" y="15" width="6" height="20" fill="${bands.c3}"/><rect x="75" y="15" width="4" height="20" fill="${bands.c4}"/></svg>`;
+    const svgStr = `<svg width="120" height="60" viewBox="0 0 120 60" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="27" width="120" height="5" fill="#e0e0e0"/><path d="M 22 17 L 98 17 C 104 17 104 41 98 41 L 22 41 C 16 41 16 17 22 17 Z" fill="#d3a77a" stroke="#a67c52" stroke-width="2.5"/><rect x="35" y="17" width="7" height="24" fill="${bands.c1}"/><rect x="52" y="17" width="7" height="24" fill="${bands.c2}"/><rect x="69" y="17" width="7" height="24" fill="${bands.c3}"/><rect x="86" y="17" width="5" height="24" fill="${bands.c4}"/></svg>`;
     const img = new Image();
     img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgStr);
     img.onload = () => { if (!wbIsRunning) wbRedraw(); };

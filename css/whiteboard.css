@@ -56,10 +56,10 @@
   flex: 1;
   border-radius: 12px;
   border: 1px solid var(--border);
-  background-color: #072213;
+  background-color: #ffffff;
   overflow: hidden;
   position: relative;
-  box-shadow: inset 0 0 30px rgba(0,0,0,0.7);
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.08);
   transition: border-color 0.3s;
 }
 
