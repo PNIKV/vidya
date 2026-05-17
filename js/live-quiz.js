@@ -57,7 +57,8 @@ window.lqHostLogin = async () => {
     const unitSelect = document.getElementById('lq-host-unit') ? document.getElementById('lq-host-unit').value : 'unit1';
 
     if (teachersData && teachersData.teachers) {
-        const validTeacher = teachersData.teachers.find(t => t.name === hostName && t.password === hostPass);
+        const teachersArray = Array.isArray(teachersData.teachers) ? teachersData.teachers : Object.values(teachersData.teachers);
+        const validTeacher = teachersArray.find(t => t && t.name === hostName && t.password === hostPass);
         if (!validTeacher) {
             alert("Invalid Teacher Name or Password!");
             return;
@@ -142,7 +143,8 @@ window.lqJoinGame = async () => {
     }
 
     if (studentsData && studentsData.students) {
-        const validStudent = studentsData.students.find(s => s.name === lqPlayerName && s.password === lqPlayerPass);
+        const studentsArray = Array.isArray(studentsData.students) ? studentsData.students : Object.values(studentsData.students);
+        const validStudent = studentsArray.find(s => s && s.name === lqPlayerName && s.password === lqPlayerPass);
         if (!validStudent) {
             alert("Invalid Name or Password!");
             return;
@@ -214,6 +216,32 @@ function lqListenToPlayers() {
 
                 li.innerHTML = `<span>${rankStr} ${p}</span>`;
                 sidebarList.appendChild(li);
+            });
+        }
+
+        // 4. Update Host Big Leaderboard
+        const hostLiveList = document.getElementById('lq-host-live-leaderboard');
+        if (hostLiveList) {
+            const liveCountEl = document.getElementById('lq-host-live-count');
+            if (liveCountEl) liveCountEl.innerText = count;
+
+            hostLiveList.innerHTML = '';
+            const sorted = Object.entries(players).sort((a, b) => b[1].score - a[1].score);
+            sorted.forEach(([p, data], i) => {
+                const li = document.createElement('li');
+                li.style.padding = '15px 0';
+                li.style.borderBottom = '1px solid var(--border)';
+                li.style.display = 'flex';
+                li.style.justifyContent = 'space-between';
+                li.style.alignItems = 'center';
+                
+                let rankStr = `<strong>#${i + 1}</strong>`;
+                if (i === 0) rankStr = '<span style="font-size:2rem;">🥇</span>';
+                if (i === 1) rankStr = '<span style="font-size:1.8rem;">🥈</span>';
+                if (i === 2) rankStr = '<span style="font-size:1.6rem;">🥉</span>';
+
+                li.innerHTML = `<span>${rankStr} ${p}</span> <span style="color:var(--cyan); font-weight:bold; font-size: 1.3rem;">${data.score} pts</span>`;
+                hostLiveList.appendChild(li);
             });
         }
     });
