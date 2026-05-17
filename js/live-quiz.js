@@ -31,21 +31,22 @@ let timerInterval = null;
 window.lqShowView = (viewId) => {
     document.querySelectorAll('.lq-view').forEach(v => v.classList.remove('active'));
     const el = document.getElementById(viewId);
-    if (el) el.classList.add('active');
+    if(el) el.classList.add('active');
 };
 
 window.initLiveQuiz = async () => {
     try {
-        const [qRes, sRes, tRes] = await Promise.all([
-            fetch('live-quiz-data/questions.json'),
-            fetch('live-quiz-data/students.json'),
-            fetch('live-quiz-data/teachers.json')
-        ]);
-        allQuizData = await qRes.json();
-        studentsData = await sRes.json();
-        teachersData = await tRes.json();
+        const snapshot = await get(ref(db, 'liveQuizData'));
+        if (snapshot.exists()) {
+            const data = snapshot.val();
+            allQuizData = data.questions;
+            studentsData = data.students;
+            teachersData = data.teachers;
+        } else {
+            console.error("No live quiz data available in database");
+        }
     } catch (e) {
-        console.error("Failed to load live quiz data files", e);
+        console.error("Failed to load live quiz data from database", e);
     }
 };
 
@@ -93,14 +94,11 @@ async function lqCreateRoom() {
         responses: {}
     });
 
-    // Add teacher to players list so they can play along
-    await set(ref(db, `rooms/${lqRoomCode}/players/${lqPlayerName}`), {
-        name: lqPlayerName,
-        score: 0,
-        school: "Teacher"
-    });
-
     window.lqShowView('lq-host-setup-page');
+    document.getElementById('lq-host-pre-start').style.display = 'block';
+    const activeDash = document.getElementById('lq-host-active-dashboard');
+    if(activeDash) activeDash.style.display = 'none';
+
     lqListenToPlayers();
     lqListenToGame();
 }
@@ -111,8 +109,10 @@ window.lqStartGame = () => {
         currentQuestion: 0,
         startTime: Date.now() // Start the 10 min timer
     });
-    const hostControls = document.getElementById('lq-host-controls');
-    if (hostControls) hostControls.style.display = 'block';
+    const preStart = document.getElementById('lq-host-pre-start');
+    if (preStart) preStart.style.display = 'none';
+    const activeDash = document.getElementById('lq-host-active-dashboard');
+    if (activeDash) activeDash.style.display = 'block';
 };
 
 window.lqNextQuestion = async () => {
@@ -156,12 +156,12 @@ window.lqJoinGame = async () => {
     }
 
     isHost = false;
-
+    
     // Read the room's quiz data so the client knows the questions
     const roomData = roomSnapshot.val();
     lqQuizData = roomData.quiz;
 
-    await set(ref(db, `rooms/${lqRoomCode}/players/${lqPlayerName}`), {
+    await set(ref(db, `rooms/${lqRoomCode}/players/${lqPlayerName}`), { 
         name: lqPlayerName,
         score: 0,
         school: studentsData?.school_name || "Unknown"
@@ -177,18 +177,18 @@ window.lqJoinGame = async () => {
 function lqListenToPlayers() {
     onValue(ref(db, `rooms/${lqRoomCode}/players`), (snapshot) => {
         const players = snapshot.val() || {};
-
+        
         // 1. Update waiting room count
         const count = Object.keys(players).length;
         const countEl = document.getElementById('lq-players-count');
-        if (countEl) countEl.innerText = count;
+        if(countEl) countEl.innerText = count;
 
         // 2. Update Host Dashboard list (if visible)
         const hostList = document.getElementById('lq-host-player-list');
-        if (hostList) {
+        if(hostList) {
             hostList.innerHTML = '';
             const hostCountEl = document.getElementById('lq-host-player-count');
-            if (hostCountEl) hostCountEl.innerText = count;
+            if(hostCountEl) hostCountEl.innerText = count;
             for (let p in players) {
                 const li = document.createElement('li');
                 li.innerText = p; // Score hidden
@@ -198,19 +198,19 @@ function lqListenToPlayers() {
 
         // 3. Update Live Sidebar Leaderboard (during quiz)
         const sidebarList = document.getElementById('lq-live-sidebar-list');
-        if (sidebarList) {
+        if(sidebarList) {
             sidebarList.innerHTML = '';
-            const sorted = Object.entries(players).sort((a, b) => b[1].score - a[1].score);
+            const sorted = Object.entries(players).sort((a,b) => b[1].score - a[1].score);
             sorted.forEach(([p, data], i) => {
                 const li = document.createElement('li');
                 li.style.padding = '10px 0';
                 li.style.borderBottom = '1px solid var(--border)';
                 li.style.fontSize = '0.95rem';
-
-                let rankStr = `<strong>#${i + 1}</strong>`;
-                if (i === 0) rankStr = '🥇';
-                if (i === 1) rankStr = '🥈';
-                if (i === 2) rankStr = '🥉';
+                
+                let rankStr = `<strong>#${i+1}</strong>`;
+                if(i===0) rankStr = '🥇';
+                if(i===1) rankStr = '🥈';
+                if(i===2) rankStr = '🥉';
 
                 li.innerHTML = `<span>${rankStr} ${p}</span>`;
                 sidebarList.appendChild(li);
@@ -220,7 +220,7 @@ function lqListenToPlayers() {
 }
 
 function startTimer(startTimeMs) {
-    if (timerInterval) clearInterval(timerInterval);
+    if(timerInterval) clearInterval(timerInterval);
     const totalTimeSeconds = 10 * 60; // 10 minutes
 
     timerInterval = setInterval(() => {
@@ -229,10 +229,14 @@ function startTimer(startTimeMs) {
 
         if (remaining <= 0) {
             clearInterval(timerInterval);
-            document.getElementById('lq-timer-display').innerText = "⏱️ Time's Up!";
-
+            const timerEl = document.getElementById('lq-timer-display');
+            if(timerEl) timerEl.innerText = "⏱️ Time's Up!";
+            const hostTimerEl = document.getElementById('lq-host-timer-display');
+            if(hostTimerEl) hostTimerEl.innerText = "⏱️ Time's Up!";
+            
             // Disable buttons locally
-            document.getElementById('lq-options-container').innerHTML = '<h3 style="color:var(--red);">Time is up! Waiting for host...</h3>';
+            const optsContainer = document.getElementById('lq-options-container');
+            if(optsContainer) optsContainer.innerHTML = '<h3 style="color:var(--red);">Time is up! Waiting for teacher...</h3>';
 
             // Only host actually calls endQuiz to update DB
             if (isHost) {
@@ -243,7 +247,12 @@ function startTimer(startTimeMs) {
 
         const m = Math.floor(remaining / 60).toString().padStart(2, '0');
         const s = (remaining % 60).toString().padStart(2, '0');
-        document.getElementById('lq-timer-display').innerText = `⏱️ ${m}:${s}`;
+        const timeStr = `⏱️ ${m}:${s}`;
+        
+        const timerEl = document.getElementById('lq-timer-display');
+        if(timerEl) timerEl.innerText = timeStr;
+        const hostTimerEl = document.getElementById('lq-host-timer-display');
+        if(hostTimerEl) hostTimerEl.innerText = timeStr;
     }, 1000);
 }
 
@@ -253,23 +262,30 @@ function lqListenToGame() {
         if (!data) return;
 
         if (data.status === 'active') {
-            if (lqCurrentQuestionIndex === -1 && data.currentQuestion >= 0) {
-                lqCurrentQuestionIndex = 0;
-                lqAnsweredCurrent = false;
-
-                // Shuffle questions for this student
-                lqQuestionOrder = Array.from({ length: lqQuizData.questions.length }, (_, i) => i);
-                lqQuestionOrder.sort(() => Math.random() - 0.5);
-
-                // If this is the first question, start the 10-minute timer using the DB start time
-                if (data.startTime) {
+            if (isHost) {
+                // Host stays on the setup page but starts the timer
+                if(data.startTime && !timerInterval) {
                     startTimer(data.startTime);
                 }
+            } else {
+                if (lqCurrentQuestionIndex === -1 && data.currentQuestion >= 0) {
+                    lqCurrentQuestionIndex = 0;
+                    lqAnsweredCurrent = false;
+                    
+                    // Shuffle questions for this student
+                    lqQuestionOrder = Array.from({length: lqQuizData.questions.length}, (_, i) => i);
+                    lqQuestionOrder.sort(() => Math.random() - 0.5);
+                    
+                    // If this is the first question, start the 10-minute timer using the DB start time
+                    if(data.startTime) {
+                        startTimer(data.startTime);
+                    }
 
-                lqRenderQuestion();
+                    lqRenderQuestion();
+                }
             }
         } else if (data.status === 'ended') {
-            if (timerInterval) clearInterval(timerInterval);
+            if(timerInterval) clearInterval(timerInterval);
             lqShowLeaderboard(data.players);
         }
     });
@@ -280,7 +296,7 @@ function lqRenderQuestion() {
     let realIndex = lqQuestionOrder[lqCurrentQuestionIndex];
     let qData = lqQuizData?.questions[realIndex];
     if (!qData) return;
-
+    
     let qText = qData.text || qData.question;
     if (qData.image) {
         qText += `<br><img src="${qData.image}" style="max-width:100%; border-radius:12px; margin-top:15px; box-shadow: 0 6px 15px rgba(0,0,0,0.3); border: 2px solid var(--border);">`;
@@ -312,7 +328,7 @@ function lqRenderQuestion() {
         input.style.background = 'var(--surface2)';
         input.style.color = 'var(--text)';
         input.style.fontSize = '1.1rem';
-
+        
         const btn = document.createElement('button');
         btn.className = 'btn-primary lq-btn';
         btn.innerText = 'Submit';
@@ -350,7 +366,7 @@ function lqRenderQuestion() {
             rightSel.style.border = '1px solid var(--border)';
             rightSel.style.background = 'var(--bg2)';
             rightSel.style.color = 'var(--text)';
-
+            
             const defOpt = document.createElement('option');
             defOpt.innerText = '-- Select Match --';
             defOpt.value = '';
@@ -380,11 +396,11 @@ function lqRenderQuestion() {
             let correctCount = 0;
             let allSelected = true;
             selects.forEach((sel, i) => {
-                if (!sel.value) allSelected = false;
+                if(!sel.value) allSelected = false;
                 userAns[qData.left[i]] = sel.value;
                 if (sel.value === qData.answer[qData.left[i]]) correctCount++;
             });
-            if (!allSelected) { alert("Please match all items!"); return; }
+            if(!allSelected) { alert("Please match all items!"); return; }
             const isCorrect = correctCount === qData.left.length;
             window.lqSubmitAnswer(JSON.stringify(userAns), JSON.stringify(qData.answer), isCorrect ? qData.marks : 0, btn, isCorrect);
         };
@@ -409,7 +425,7 @@ window.lqSubmitAnswer = (selected, correct, marks, btnElement, customIsCorrect =
         answer: selected.toString(),
         correct: isCorrect
     };
-
+    
     let realIndex = lqQuestionOrder[lqCurrentQuestionIndex];
     set(ref(db, `rooms/${lqRoomCode}/players/${lqPlayerName}/answers/${realIndex}`), answerData);
     set(ref(db, `rooms/${lqRoomCode}/responses/${realIndex}/${lqPlayerName}`), answerData);
@@ -432,7 +448,7 @@ window.lqSubmitAnswer = (selected, correct, marks, btnElement, customIsCorrect =
     const optionsContainer = document.getElementById('lq-options-container');
     const nextBtnContainer = document.createElement('div');
     nextBtnContainer.style.marginTop = '20px';
-
+    
     if (lqCurrentQuestionIndex >= lqQuizData.questions.length - 1) {
         nextBtnContainer.innerHTML = '<h4 style="color:var(--cyan);">Answer submitted! Waiting for host to end the session...</h4>';
     } else {
@@ -465,7 +481,7 @@ function lqShowLeaderboard(players) {
 
     if (isHost) {
         const finalControls = document.getElementById('lq-final-host-controls');
-        if (finalControls) finalControls.style.display = 'block';
+        if(finalControls) finalControls.style.display = 'block';
     }
 }
 
@@ -473,21 +489,21 @@ window.lqDownloadCSV = async () => {
     try {
         const snapshot = await get(ref(db, `rooms/${lqRoomCode}/players`));
         const players = snapshot.val() || {};
-
+        
         // Header
         let csvContent = "Name,Total Score";
-        for (let i = 0; i < lqQuizData.questions.length; i++) {
-            csvContent += `,Q${i + 1} Answer`;
+        for(let i=0; i<lqQuizData.questions.length; i++) {
+            csvContent += `,Q${i+1} Answer`;
         }
         csvContent += "\n";
 
         // Sort players by score
-        const sortedPlayers = Object.entries(players).sort((a, b) => b[1].score - a[1].score);
+        const sortedPlayers = Object.entries(players).sort((a,b) => b[1].score - a[1].score);
 
         // Player rows
         for (const [pName, player] of sortedPlayers) {
             let row = `"${player.name || pName}",${player.score || 0}`;
-            for (let i = 0; i < lqQuizData.questions.length; i++) {
+            for(let i=0; i<lqQuizData.questions.length; i++) {
                 const ans = (player.answers && player.answers[i]) ? player.answers[i].answer : "Not Answered";
                 const escapedAns = ans.replace(/"/g, '""');
                 row += `,"${escapedAns}"`;
