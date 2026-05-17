@@ -8,9 +8,9 @@ async function showPage(name) {
 
   // Update URL history
   if (name === 'home') {
-    window.history.pushState(null, null, '.');
+    window.history.pushState(null, null, window.location.pathname);
   } else {
-    window.history.pushState(null, null, name);
+    window.history.pushState(null, null, '#' + name);
   }
 
   // Fetch HTML view and inject
