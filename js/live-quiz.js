@@ -251,12 +251,12 @@ function lqListenToGame() {
         if (!data) return;
 
         if (data.status === 'active') {
-            if (lqCurrentQuestionIndex !== data.currentQuestion) {
-                lqCurrentQuestionIndex = data.currentQuestion;
+            if (lqCurrentQuestionIndex === -1 && data.currentQuestion >= 0) {
+                lqCurrentQuestionIndex = 0;
                 lqAnsweredCurrent = false;
                 
                 // If this is the first question, start the 10-minute timer using the DB start time
-                if(data.currentQuestion === 0 && data.startTime) {
+                if(data.startTime) {
                     startTimer(data.startTime);
                 }
 
@@ -337,11 +337,23 @@ window.lqSubmitAnswer = (selected, correct, marks, btnElement) => {
     });
 
     const optionsContainer = document.getElementById('lq-options-container');
-    const msg = document.createElement('h4');
-    msg.style.color = 'var(--cyan)';
-    msg.style.marginTop = '20px';
-    msg.innerText = 'Answer submitted. Waiting for next question...';
-    optionsContainer.appendChild(msg);
+    const nextBtnContainer = document.createElement('div');
+    nextBtnContainer.style.marginTop = '20px';
+    
+    if (lqCurrentQuestionIndex >= lqQuizData.questions.length - 1) {
+        nextBtnContainer.innerHTML = '<h4 style="color:var(--cyan);">Answer submitted! Waiting for host to end the session...</h4>';
+    } else {
+        const nextBtn = document.createElement('button');
+        nextBtn.className = 'btn-primary lq-btn';
+        nextBtn.innerText = 'Next Question ➡️';
+        nextBtn.onclick = () => {
+            lqCurrentQuestionIndex++;
+            lqAnsweredCurrent = false;
+            lqRenderQuestion();
+        };
+        nextBtnContainer.appendChild(nextBtn);
+    }
+    optionsContainer.appendChild(nextBtnContainer);
 };
 
 function lqShowLeaderboard(players) {
