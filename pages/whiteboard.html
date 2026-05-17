@@ -22,23 +22,25 @@
     <div class="wb-toolbar" style="margin-bottom: 12px;">
         <div class="wb-toolbar-row">
             <span class="wb-toolbar-title" style="color: var(--cyan); font-size: 0.82rem; letter-spacing: 0.5px;">COMPONENTS:</span>
-            <button class="btn-sm" onclick="wbSetMode('component', 'battery')" style="background: #222; color: white; border: 1px solid #444; font-size: 0.82rem; padding: 5px 10px;">🔋 Battery</button>
+            <!-- Battery removed, Power Supply is permanently on board! -->
             <button class="btn-sm" onclick="wbSetMode('component', 'led')" style="background: #FF4757; color: white; font-size: 0.82rem; padding: 5px 10px;">💡 LED</button>
             <button class="btn-sm" onclick="wbSetMode('component', 'resistor')" style="background: #e8c396; color: black; font-size: 0.82rem; padding: 5px 10px;">〰️ Resistor</button>
             <button class="btn-sm" onclick="wbSetMode('component', 'motor')" style="background: #ccc; color: black; font-size: 0.82rem; padding: 5px 10px;">⚙️ Motor</button>
             <button class="btn-sm" onclick="wbSetMode('component', 'ir_sensor')" style="background: #0A361B; color: white; border: 1px solid #1f502d; font-size: 0.82rem; padding: 5px 10px;">📡 IR Sensor</button>
+            <button class="btn-sm" onclick="wbSetMode('component', 'ldr')" style="background: #D4AF37; color: black; border: 1px solid #b8860b; font-size: 0.82rem; padding: 5px 10px;">☀️ LDR</button>
+            <button class="btn-sm" onclick="wbSetMode('component', 'potentiometer')" style="background: #555; color: white; border: 1px solid #333; font-size: 0.82rem; padding: 5px 10px;">🎛️ Potentiometer</button>
         </div>
         <div class="wb-toolbar-row" style="border-top: 1px dashed var(--border); padding-top: 8px; margin-top: 2px;">
             <span class="wb-toolbar-title" style="color: var(--orange); font-size: 0.82rem; letter-spacing: 0.5px;">TRACKS / WIRES:</span>
             <button class="btn-sm" onclick="wbSetMode('wire', '#FF4757')" style="background: transparent; color: #FF4757; border: 1px solid #FF4757; font-size: 0.82rem; padding: 5px 10px;">+ VCC Red</button>
-            <button class="btn-sm" onclick="wbSetMode('wire', '#000000')" style="background: transparent; color: #ffffff; border: 1px solid #ffffff; font-size: 0.82rem; padding: 5px 10px;">- GND Black</button>
+            <button class="btn-sm" onclick="wbSetMode('wire', '#000000')" style="background: transparent; color: #000; border: 1px solid #000; font-size: 0.82rem; padding: 5px 10px;">- GND Black</button>
             <button class="btn-sm" onclick="wbSetMode('wire', '#00FF88')" style="background: transparent; color: #00FF88; border: 1px solid #00FF88; font-size: 0.82rem; padding: 5px 10px;">⚡ Signal Green</button>
             
             <div class="wb-toolbar-divider"></div>
             
             <span class="wb-toolbar-title" style="color: var(--text-muted); width: auto; margin-right: 8px; font-size: 0.82rem;">TOOLS:</span>
             <button class="btn-sm" onclick="wbSetMode('move', null)" style="background: #007BFF; color: white; border: 1px solid #0056b3; font-size: 0.82rem; padding: 5px 10px;">🖱️ Pointer</button>
-            <button class="btn-sm" onclick="wbSetMode('pen', '#F0F2FF')" style="background: #333; color: white; font-size: 0.82rem; padding: 5px 10px;">✏️ Pen</button>
+            <button class="btn-sm" onclick="wbSetMode('pen', '#000000')" style="background: #333; color: white; font-size: 0.82rem; padding: 5px 10px;">✏️ Pen</button>
             <button class="btn-sm" onclick="wbSetMode('erase', null)" style="background: #131629; color: white; border: 1px solid white; font-size: 0.82rem; padding: 5px 10px;">🧹 Eraser</button>
             <button class="btn-sm" onclick="wbClear()" style="background: transparent; border: 1px solid var(--red); color: var(--red); font-size: 0.82rem; padding: 5px 10px;">🗑️ Clear</button>
         </div>
@@ -57,15 +59,28 @@
               <input type="number" id="wbResistorValue" value="220" onchange="wbUpdateComponent()" onkeyup="wbUpdateComponent()" class="wb-prop-input">
           </div>
           
-          <div id="wbPropBattery" class="wb-prop-group">
-              <label class="wb-prop-label">Voltage:</label>
-              <input type="text" value="9V" disabled class="wb-prop-input">
+          <div id="wbPropPowerSupply" class="wb-prop-group" style="display: none;">
+              <label class="wb-prop-label">Voltage (V):</label>
+              <input type="range" id="wbPSVoltage" min="1" max="24" step="0.5" value="9" oninput="wbUpdateComponent()" class="wb-prop-input" style="padding: 0;">
+              <span id="wbPSVoltageValue" style="color: var(--cyan); font-family: monospace; font-size: 0.9rem; font-weight: bold;">9.0 V</span>
           </div>
 
           <div id="wbPropIRSensor" class="wb-prop-group" style="display: none;">
               <label class="wb-prop-label">Trigger Range (Potentiometer):</label>
               <input type="range" id="wbIRTriggerDist" min="30" max="200" value="100" oninput="wbUpdateComponent()" class="wb-prop-input" style="padding: 0;">
               <span id="wbIRTriggerValue" style="color: var(--cyan); font-family: monospace; font-size: 0.9rem; font-weight: bold;">100 px</span>
+          </div>
+
+          <div id="wbPropLDR" class="wb-prop-group" style="display: none;">
+              <label class="wb-prop-label">Environment Light Level:</label>
+              <input type="range" id="wbLDRLight" min="0" max="100" value="50" oninput="wbUpdateComponent()" class="wb-prop-input" style="padding: 0;">
+              <span id="wbLDRLightValue" style="color: var(--cyan); font-family: monospace; font-size: 0.9rem; font-weight: bold;">50%</span>
+          </div>
+
+          <div id="wbPropPotentiometer" class="wb-prop-group" style="display: none;">
+              <label class="wb-prop-label">Knob Position (%):</label>
+              <input type="range" id="wbPotKnob" min="0" max="100" value="50" oninput="wbUpdateComponent()" class="wb-prop-input" style="padding: 0;">
+              <span id="wbPotKnobValue" style="color: var(--cyan); font-family: monospace; font-size: 0.9rem; font-weight: bold;">50%</span>
           </div>
 
           <!-- Rotation & Edit Tools for Components -->
