@@ -40,32 +40,34 @@ async function init() {
   renderLeaderboard();
   renderAbout();
 
-  // Handle initial load based on hash
-  let pageName = 'home';
-  if (window.location.hash) {
-      pageName = window.location.hash.substring(1);
-  }
+  // Handle initial load based on path or redirect
+  const urlParams = new URLSearchParams(window.location.search);
+  const redirectPage = urlParams.get('p');
+  let targetPage = 'home';
   const validPages = ['home', 'sessions', 'projects', 'whiteboard', 'live-quiz', 'about', 'session-detail'];
   
-  if (validPages.includes(pageName)) {
-    showPage(pageName);
+  if (redirectPage && validPages.includes(redirectPage)) {
+    targetPage = redirectPage;
+    // Clean up the URL in history (removes ?p=live-quiz)
+    window.history.replaceState(null, null, redirectPage);
   } else {
-    showPage('home');
+    const pathSegment = window.location.pathname.split('/').filter(Boolean).pop();
+    if (pathSegment && validPages.includes(pathSegment) && pathSegment !== 'vidya') {
+      targetPage = pathSegment;
+    }
   }
+  showPage(targetPage);
 }
 
 // =============================================
 //  HISTORY NAV (Back/Forward)
 // =============================================
 window.addEventListener('popstate', () => {
-  let pageName = 'home';
-  if (window.location.hash) {
-      pageName = window.location.hash.substring(1);
-  }
+  const pathSegment = window.location.pathname.split('/').filter(Boolean).pop();
   const validPages = ['home', 'sessions', 'projects', 'whiteboard', 'live-quiz', 'about', 'session-detail'];
   
-  if (validPages.includes(pageName)) {
-    showPage(pageName);
+  if (pathSegment && validPages.includes(pathSegment) && pathSegment !== 'vidya') {
+    showPage(pathSegment);
   } else {
     showPage('home');
   }
