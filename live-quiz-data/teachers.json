@@ -1,12 +1,132 @@
 {
   "teachers": [
     {
-      "name": "Admin",
-      "password": "admin"
+      "name": "PNikhil",
+      "password": "Ji72Va"
     },
     {
-      "name": "Teacher1",
-      "password": "pass1"
+      "name": "DipavaleeS",
+      "password": "613098"
+    },
+    {
+      "name": "NayanaP",
+      "password": "533425"
+    },
+    {
+      "name": "AnushkaH",
+      "password": "962395"
+    },
+    {
+      "name": "PrajaktaK",
+      "password": "277579"
+    },
+    {
+      "name": "ZainabK",
+      "password": "571272"
+    },
+    {
+      "name": "ArshinH",
+      "password": "738094"
+    },
+    {
+      "name": "MeghaK",
+      "password": "120381"
+    },
+    {
+      "name": "ShradhaM",
+      "password": "713361"
+    },
+    {
+      "name": "SwatiH",
+      "password": "609924"
+    },
+    {
+      "name": "UmeshwariB",
+      "password": "244798"
+    },
+    {
+      "name": "SrutiD",
+      "password": "549894"
+    },
+    {
+      "name": "PoojaV",
+      "password": "527956"
+    },
+    {
+      "name": "HeeralalG",
+      "password": "200079"
+    },
+    {
+      "name": "RoshaniS",
+      "password": "700011"
+    },
+    {
+      "name": "SandhyaP",
+      "password": "758536"
+    },
+    {
+      "name": "PayalM",
+      "password": "893864"
+    },
+    {
+      "name": "AtulS",
+      "password": "904173"
+    },
+    {
+      "name": "AnushkaV",
+      "password": "582352"
+    },
+    {
+      "name": "PritiZ",
+      "password": "467327"
+    },
+    {
+      "name": "Karan",
+      "password": "645007"
+    },
+    {
+      "name": "SayaliJ",
+      "password": "253620"
+    },
+    {
+      "name": "ShraddhaK",
+      "password": "189836"
+    },
+    {
+      "name": "ShrustiM",
+      "password": "427640"
+    },
+    {
+      "name": "PrasiddhiP",
+      "password": "126104"
+    },
+    {
+      "name": "HemuS",
+      "password": "976792"
+    },
+    {
+      "name": "AbhishekS",
+      "password": "733264"
+    },
+    {
+      "name": "DeekshikaR",
+      "password": "821704"
+    },
+    {
+      "name": "SakshiG",
+      "password": "300943"
+    },
+    {
+      "name": "Anjum",
+      "password": "618790"
+    },
+    {
+      "name": "Saurabh",
+      "password": "713869"
+    },
+    {
+      "name": "Nikhil",
+      "password": "962971"
     }
   ]
 }

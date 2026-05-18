@@ -254,7 +254,8 @@ function lqListenToPlayers() {
 
 function startTimer(startTimeMs) {
     if(timerInterval) clearInterval(timerInterval);
-    const totalTimeSeconds = 10 * 60; // 10 minutes
+    const durationMinutes = (lqQuizData && lqQuizData.duration) ? lqQuizData.duration : 10;
+    const totalTimeSeconds = durationMinutes * 60;
 
     timerInterval = setInterval(() => {
         const elapsed = Math.floor((Date.now() - startTimeMs) / 1000);

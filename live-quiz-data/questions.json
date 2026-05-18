@@ -1103,5 +1103,434 @@
         }
       ]
     }
+  },
+  "teachers_baseline": {
+    "unit1": {
+      "quiz_title": "Teachers Baseline STEM & Tinkering Exam",
+      "duration": 20,
+      "questions": [
+        {
+          "id": 1,
+          "type": "multiple_choice",
+          "text": "What are the two essential, mandatory functions in every Arduino sketch?",
+          "options": [
+            "setup() and loop()",
+            "start() and stop()",
+            "init() and main()"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "type": "multiple_choice",
+          "text": "What is the primary purpose of the online simulator Wokwi in a STEM lab?",
+          "options": [
+            "Designing 3D print models",
+            "Simulating electronics and Arduino code online",
+            "Video editing and animation"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "type": "multiple_choice",
+          "text": "Which block-based programming language/interface is PictoBlox built upon?",
+          "options": [
+            "Scratch",
+            "Python IDLE",
+            "HTML5 Canvas"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "type": "multiple_choice",
+          "text": "Which motor is best suited for precise angle control (0 to 180 degrees) in robotics?",
+          "options": [
+            "DC Toy Motor",
+            "Servo Motor",
+            "Stepper Motor"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "type": "multiple_choice",
+          "text": "Which sensor is used to measure distance by transmitting and receiving ultrasonic sound waves?",
+          "options": [
+            "PIR Motion Sensor",
+            "LDR (Light Dependent Resistor)",
+            "HC-SR04 Ultrasonic Sensor"
+          ],
+          "answer": 2,
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "type": "multiple_choice",
+          "text": "Which popular, eco-friendly thermoplastic material is most widely used for standard FDM 3D printing?",
+          "options": [
+            "ABS",
+            "PLA (Polylactic Acid)",
+            "PETG"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "type": "multiple_choice",
+          "text": "What software tool is used to slice a 3D CAD model (STL) and convert it to G-code layers for a 3D printer?",
+          "options": [
+            "Slicer (e.g., Bambu Studio, Cura)",
+            "Arduino IDE",
+            "Tinkercad"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "type": "multiple_choice",
+          "text": "The high-speed Bambu Lab P1S 3D printer belongs to which motion architecture?",
+          "options": [
+            "CoreXY FDM Printer",
+            "SLA Resin Printer",
+            "Delta FDM Printer"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "type": "multiple_choice",
+          "text": "Why is it absolutely crucial to keep the ventilation exhaust fan ON while operating a 10W laser cutter?",
+          "options": [
+            "To cool down the laser diode module",
+            "To clear toxic fumes and smoke produced during cutting",
+            "To speed up the laser engraving process"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "type": "multiple_choice",
+          "text": "How does adjusting the focus height of the laser module impact a laser cutter's performance?",
+          "options": [
+            "It changes the beam color of the laser",
+            "It ensures the beam is concentrated at its smallest spot for clean cutting",
+            "It increases the wattage from 10W to 20W"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "type": "multiple_choice",
+          "text": "Ohm's Law: If an electronics circuit has a voltage of 12V and a measured current of 3A, what is its resistance (R = V / I)?",
+          "options": [
+            "4 Ohms",
+            "36 Ohms",
+            "15 Ohms"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "type": "multiple_choice",
+          "text": "Power Calculation: A circuit draws a current of 2A at a voltage of 5V. What is the power consumed in Watts (P = V * I)?",
+          "options": [
+            "2.5 Watts",
+            "10 Watts",
+            "7 Watts"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "type": "multiple_choice",
+          "text": "Voltage Calculation: If a resistor has 10 Ohms of resistance and a current of 0.5A flows through it, what is the voltage drop across it (V = I * R)?",
+          "options": [
+            "5 Volts",
+            "20 Volts",
+            "2.5 Volts"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "type": "multiple_choice",
+          "text": "Why is a current-limiting resistor connected in series with an LED in a circuit?",
+          "options": [
+            "To boost the brightness of the light",
+            "To limit current flow and protect the LED from burning out",
+            "To convert Direct Current to Alternating Current"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "type": "multiple_choice",
+          "text": "What happens to the electrical resistance of an LDR (Light Dependent Resistor) when the light falling on it increases?",
+          "options": [
+            "It increases",
+            "It decreases",
+            "It remains completely unchanged"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 16,
+          "type": "multiple_choice",
+          "text": "What electronic component is used to safely switch high-voltage/high-current appliances using a low-power 5V microcontroller?",
+          "options": [
+            "Capacitor",
+            "Relay",
+            "Buzzer"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "type": "true_false",
+          "text": "The Arduino Uno analog pins (A0-A5) can only be used as inputs, never as digital outputs.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 18,
+          "type": "true_false",
+          "text": "PictoBlox includes artificial intelligence and machine learning extensions like Face Detection and Speech Recognition.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 19,
+          "type": "true_false",
+          "text": "A resistor with gold as the fourth band has a tolerance level of 5%.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 20,
+          "type": "true_false",
+          "text": "A 10 Watt diode laser cutter can easily cut through 10mm thick solid copper plates.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 21,
+          "type": "true_false",
+          "text": "Increasing the infill density of a 3D print to 100% makes the printed object completely solid inside.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 22,
+          "type": "true_false",
+          "text": "Connecting a 24V power supply directly to the 5V pin of an Arduino Uno is safe and will not damage the microcontroller.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 23,
+          "type": "true_false",
+          "text": "PVC plastic is a safe material to cut on a laser cutter because it does not release toxic chlorine gas.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 24,
+          "type": "true_false",
+          "text": "The power rails along the outer sides of a standard breadboard are connected horizontally, while the inner terminal strips are connected vertically.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 25,
+          "type": "multiple_choice",
+          "text": "Identify this electronics prototyping component:",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/7/73/400_points_breadboard.svg",
+          "options": [
+            "Breadboard",
+            "Arduino Board",
+            "Microcontroller"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 26,
+          "type": "multiple_choice",
+          "text": "Identify this popular open-source microcontroller board:",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg",
+          "options": [
+            "Raspberry Pi",
+            "Arduino Uno",
+            "NodeMCU"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 27,
+          "type": "multiple_choice",
+          "text": "Identify this sensor commonly used for obstacle detection and distance measurement:",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/HC-SR04_Ultrasonic_Sensor.jpg",
+          "options": [
+            "PIR Motion Sensor",
+            "LDR Sensor",
+            "HC-SR04 Ultrasonic Sensor"
+          ],
+          "answer": 2,
+          "marks": 2
+        },
+        {
+          "id": 28,
+          "type": "multiple_choice",
+          "text": "Look at this resistor color bands chart. If a resistor has color bands of Brown, Black, Red, Gold, what is its resistance (Brown=1, Black=0, Red=10^2, Gold=5% tolerance)?",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Resistor_color_codes.svg/440px-Resistor_color_codes.svg.png",
+          "options": [
+            "100 Ohms",
+            "1k Ohms (1000 Ohms)",
+            "10k Ohms"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 29,
+          "type": "multiple_choice",
+          "text": "Identify this motor commonly used in robotics for precise angle control (0 to 180 degrees):",
+          "image": "https://upload.wikimedia.org/wikipedia/commons/e/e0/SG90_Micro_Servo_Motor.jpg",
+          "options": [
+            "DC Motor",
+            "Servo Motor (SG90)",
+            "Stepper Motor"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 30,
+          "type": "fill_blank",
+          "text": "The mathematical formula representing Ohm's law, expressing voltage (V) in terms of current (I) and resistance (R), is V = ______ (Enter initials only, e.g., IR or I*R)",
+          "answer": "IR",
+          "marks": 4
+        },
+        {
+          "id": 31,
+          "type": "fill_blank",
+          "text": "The most common biodegradable filament material used in FDM 3D printing is called ______ (Enter abbreviation only, e.g., PLA)",
+          "answer": "PLA",
+          "marks": 4
+        },
+        {
+          "id": 32,
+          "type": "fill_blank",
+          "text": "The optical power capacity of a diode laser module is measured in ______ (Enter unit name only, e.g., Watts or Ohms)",
+          "answer": "Watts",
+          "marks": 4
+        },
+        {
+          "id": 33,
+          "type": "fill_blank",
+          "text": "On an Arduino Uno board, the abbreviation GND stands for ______ (Enter word only, e.g., Ground)",
+          "answer": "Ground",
+          "marks": 4
+        },
+        {
+          "id": 34,
+          "type": "match_following",
+          "text": "Match the STEAM tools to their correct primary functions:",
+          "left": [
+            "Arduino IDE",
+            "PictoBlox",
+            "Wokwi",
+            "Bambu Studio"
+          ],
+          "right": [
+            "C++ Code Compilation",
+            "Block-Based Coding",
+            "Online Circuit Simulation",
+            "3D Print Slicing"
+          ],
+          "answer": {
+            "Arduino IDE": "C++ Code Compilation",
+            "PictoBlox": "Block-Based Coding",
+            "Wokwi": "Online Circuit Simulation",
+            "Bambu Studio": "3D Print Slicing"
+          },
+          "marks": 3
+        },
+        {
+          "id": 35,
+          "type": "match_following",
+          "text": "Match the electrical properties to their correct standard SI units:",
+          "left": [
+            "Current",
+            "Voltage",
+            "Resistance",
+            "Power"
+          ],
+          "right": [
+            "Amperes",
+            "Volts",
+            "Ohms",
+            "Watts"
+          ],
+          "answer": {
+            "Current": "Amperes",
+            "Voltage": "Volts",
+            "Resistance": "Ohms",
+            "Power": "Watts"
+          },
+          "marks": 3
+        }
+      ]
+    }
   }
 }
