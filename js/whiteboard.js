@@ -9,7 +9,10 @@ const svgs = {
     motor: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect x="52" y="5" width="16" height="25" fill="#d0d0d0" stroke="#888" stroke-width="2"/><rect x="30" y="90" width="10" height="20" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="80" y="90" width="10" height="20" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="25" y="25" width="70" height="70" rx="6" fill="#e0e0e0" stroke="#a0a0a0" stroke-width="3"/><rect x="25" y="25" width="70" height="20" fill="#ffffff" opacity="0.5"/><line x1="35" y1="45" x2="85" y2="45" stroke="#999" stroke-width="2"/><line x1="35" y1="60" x2="85" y2="60" stroke="#999" stroke-width="2"/><line x1="35" y1="75" x2="85" y2="75" stroke="#999" stroke-width="2"/></svg>`,
     ir_sensor: `<svg width="100" height="130" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg"><rect x="15" y="15" width="70" height="100" rx="8" fill="#0F3D7A" stroke="#082347" stroke-width="2.5"/><rect x="21" y="105" width="8" height="25" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="46" y="105" width="8" height="25" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="71" y="105" width="8" height="25" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="40" y="60" width="20" height="30" fill="#0056b3" rx="2"/><circle cx="50" cy="75" r="7" fill="#e0e0e0" stroke="#888" stroke-width="1"/><line x1="50" y1="68" x2="50" y2="82" stroke="#222" stroke-width="2"/><rect x="22" y="5" width="16" height="10" fill="#444"/><rect x="18" y="-12" width="24" height="22" fill="rgba(160, 196, 255, 0.4)" stroke="#a0c4ff" stroke-width="1" rx="3"/><path d="M 18 -12 C 18 -26 42 -26 42 -12 Z" fill="rgba(160, 196, 255, 0.4)" stroke="#a0c4ff" stroke-width="1"/><rect x="62" y="5" width="16" height="10" fill="#444"/><rect x="58" y="-12" width="24" height="22" fill="#0c0d10" rx="3" stroke="#222" stroke-width="1"/><path d="M 58 -12 C 58 -26 82 -26 82 -12 Z" fill="#0c0d10" stroke="#222" stroke-width="1"/><circle cx="25" cy="40" r="5" fill="#444"/><text x="25" y="102" font-family="sans-serif" font-size="10" fill="#ddd" font-weight="bold" text-anchor="middle">V</text><text x="50" y="102" font-family="sans-serif" font-size="10" fill="#ddd" font-weight="bold" text-anchor="middle">G</text><text x="75" y="102" font-family="sans-serif" font-size="10" fill="#ddd" font-weight="bold" text-anchor="middle">S</text></svg>`,
     ldr: `<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="21" y="55" width="8" height="35" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="71" y="55" width="8" height="35" fill="#e0e0e0" stroke="#000" stroke-width="2"/><circle cx="50" cy="35" r="30" fill="#d0d0d0" stroke="#a0a0a0" stroke-width="3"/><path d="M 30 35 Q 35 20 40 35 T 50 35 T 60 35 T 70 35" fill="none" stroke="#cc0000" stroke-width="3"/></svg>`,
-    potentiometer: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="55" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="80" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="15" y="15" width="90" height="80" rx="6" fill="#0F3D7A" stroke="#082347" stroke-width="2"/><circle cx="60" cy="55" r="35" fill="#e0e0e0" stroke="#a0a0a0" stroke-width="3"/></svg>`
+    potentiometer: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="55" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="80" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="15" y="15" width="90" height="80" rx="6" fill="#0F3D7A" stroke="#082347" stroke-width="2"/><circle cx="60" cy="55" r="35" fill="#e0e0e0" stroke="#a0a0a0" stroke-width="3"/></svg>`,
+    buzzer: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect x="30" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="80" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><circle cx="60" cy="50" r="45" fill="#222" stroke="#444" stroke-width="2"/><circle cx="60" cy="50" r="30" fill="#111" stroke="#333" stroke-width="1.5"/><circle cx="60" cy="50" r="10" fill="#444"/><circle cx="60" cy="50" r="4" fill="#000"/></svg>`,
+    bulb: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><rect x="40" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="70" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="35" y="60" width="50" height="20" fill="#d0d0d0" stroke="#888" stroke-width="2" rx="3"/><path d="M 25 35 C 25 -10 95 -10 95 35 C 95 55 80 60 80 65 L 40 65 C 40 60 25 55 25 35 Z" fill="#444" stroke="#666" stroke-width="2" opacity="0.6"/><path d="M 45 45 L 50 30 L 70 30 L 75 45" fill="none" stroke="#888" stroke-width="2"/></svg>`,
+    bulb_active: `<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="bulbglow" cx="50%" cy="35%" r="60%"><stop offset="0%" stop-color="#fff5cc"/><stop offset="50%" stop-color="#ffcc00"/><stop offset="100%" stop-color="#cc8800"/></radialGradient><filter id="blur"><feGaussianBlur stdDeviation="3"/></filter></defs><rect x="40" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="70" y="80" width="10" height="30" fill="#e0e0e0" stroke="#000" stroke-width="2"/><rect x="35" y="60" width="50" height="20" fill="#d0d0d0" stroke="#888" stroke-width="2" rx="3"/><path d="M 25 35 C 25 -10 95 -10 95 35 C 95 55 80 60 80 65 L 40 65 C 40 60 25 55 25 35 Z" fill="url(#bulbglow)" opacity="0.75" filter="url(#blur)"/><path d="M 25 35 C 25 -10 95 -10 95 35 C 95 55 80 60 80 65 L 40 65 C 40 60 25 55 25 35 Z" fill="url(#bulbglow)" stroke="#ffcc00" stroke-width="2.5"/><path d="M 45 45 L 50 30 L 70 30 L 75 45" fill="none" stroke="#fff" stroke-width="2.5"/></svg>`
 };
 
 const componentImages = {};
@@ -243,6 +246,16 @@ function getComponentTerminals(el) {
             { name: '1', label: 'Pin 1', ...getRotatedTerminal(el, -25, 50), el },
             { name: 'W', label: 'Wiper', ...getRotatedTerminal(el, 0, 50), el },
             { name: '2', label: 'Pin 2', ...getRotatedTerminal(el, 25, 50), el }
+        ];
+    } else if (el.compType === 'buzzer') {
+        return [
+            { name: '1', label: 'Terminal 1', ...getRotatedTerminal(el, -25, 40), el },
+            { name: '2', label: 'Terminal 2', ...getRotatedTerminal(el, 25, 40), el }
+        ];
+    } else if (el.compType === 'bulb') {
+        return [
+            { name: '1', label: 'Terminal 1', ...getRotatedTerminal(el, -15, 40), el },
+            { name: '2', label: 'Terminal 2', ...getRotatedTerminal(el, 15, 40), el }
         ];
     }
     return [];
@@ -485,6 +498,9 @@ window.initWhiteboard = () => {
                     el.lightLevel = 50;
                 } else if (wbCurrentComp === 'potentiometer') {
                     el.knobValue = 50;
+                } else if (wbCurrentComp === 'bulb') {
+                    el.ratedVoltage = 6.0;
+                    el.measuredVoltage = 0.0;
                 }
                 wbElements.push(el);
                 wbSelectedElement = el; 
@@ -597,6 +613,7 @@ window.wbClear = () => {
     wbElements = wbElements.filter(el => el.compType === 'power_supply'); // preserve power supply
     wbSelectedElement = null;
     stopMotorHum();
+    stopBuzzerHum();
     wbSaveState(); 
     if(window.wbUpdatePropertiesPanel) window.wbUpdatePropertiesPanel();
     if (!wbIsRunning) wbRedraw();
@@ -697,6 +714,14 @@ function simulateCircuit() {
                 const vccT = getRotatedTerminal(el, -25, 50);
                 const gndT = getRotatedTerminal(el, 0, 50);
                 addEdge(`${vccT.x},${vccT.y}`, `${gndT.x},${gndT.y}`, 'ir_pow', el, false);
+            } else if (el.compType === 'buzzer') {
+                const t1 = getRotatedTerminal(el, -25, 40);
+                const t2 = getRotatedTerminal(el, 25, 40);
+                addEdge(`${t1.x},${t1.y}`, `${t2.x},${t2.y}`, 'buzzer', el, false);
+            } else if (el.compType === 'bulb' && !el.burned) {
+                const t1 = getRotatedTerminal(el, -15, 40);
+                const t2 = getRotatedTerminal(el, 15, 40);
+                addEdge(`${t1.x},${t1.y}`, `${t2.x},${t2.y}`, 'bulb', el, false);
             }
         }
     }
@@ -731,6 +756,7 @@ function simulateCircuit() {
     }
 
     let loopHasActiveMotor = false;
+    let loopHasActiveBuzzer = false;
 
     // Phase 3: Solve series paths
     for (const bat of batteries) {
@@ -741,12 +767,15 @@ function simulateCircuit() {
             if (currNode === bat.neg) {
                 let totalR = 5; 
                 let loopLED = null;
+                let loopBulb = null;
                 const pathComponents = [];
                 
                 for (const edge of path) {
                     pathComponents.push(edge);
                     if (edge.type === 'resistor') totalR += edge.ref.resistance || 220;
                     else if (edge.type === 'motor') totalR += 15; 
+                    else if (edge.type === 'buzzer') totalR += 50; 
+                    else if (edge.type === 'bulb') { totalR += 15; loopBulb = edge.ref; }
                     else if (edge.type === 'led') { totalR += 2; loopLED = edge.ref; }
                 }
                 
@@ -782,6 +811,25 @@ function simulateCircuit() {
                         loopLED._justBurned = false;
                     }
                 }
+
+                if (loopBulb) {
+                    const bulbV = current * 15;
+                    loopBulb.measuredVoltage = bulbV;
+                    const rating = loopBulb.ratedVoltage || 6.0;
+                    if (bulbV > (rating * 1.5)) {
+                        loopBulb.burned = true;
+                        loopBulb.active = false;
+                        if (loopBulb._justBurned !== true) {
+                            soundBurn();
+                            loopBulb._justBurned = true;
+                        }
+                        current = 0;
+                    } else {
+                        loopBulb.burned = false;
+                        loopBulb.active = (current > 0);
+                        loopBulb._justBurned = false;
+                    }
+                }
                 
                 bat.ref.active = (current > 0);
                 bat.ref.current = current;
@@ -796,6 +844,8 @@ function simulateCircuit() {
                     } else if (edge.type === 'motor' && current > 0) {
                         edge.ref.voltageDrop = current * 15;
                         loopHasActiveMotor = true;
+                    } else if (edge.type === 'buzzer' && current > 0) {
+                        loopHasActiveBuzzer = true;
                     }
                 }
                 return true; 
@@ -820,6 +870,9 @@ function simulateCircuit() {
 
     if (loopHasActiveMotor && wbIsRunning) startMotorHum();
     else stopMotorHum();
+
+    if (loopHasActiveBuzzer && wbIsRunning) startBuzzerHum();
+    else stopBuzzerHum();
 }
 
 window.wbToggleRun = () => {
@@ -842,6 +895,7 @@ window.wbToggleRun = () => {
         }
         soundStop();
         stopMotorHum();
+        stopBuzzerHum();
         if (wbAnimationFrame) cancelAnimationFrame(wbAnimationFrame);
         for (const el of wbElements) {
             if (el.type === 'wire') el.flowing = false;
@@ -1080,6 +1134,41 @@ function drawComponent(el, x, y) {
                 wbCtx.shadowBlur = 0;
             }
         }
+    } else if (type === 'buzzer' && componentImages.buzzer?.complete) {
+        wbCtx.drawImage(componentImages.buzzer, -60, -60, 120, 120);
+        if (el.active && wbIsRunning) {
+            // Acoustic sound wave ripples around the active buzzer
+            wbCtx.strokeStyle = 'rgba(155, 107, 255, 0.6)';
+            wbCtx.lineWidth = 2;
+            const pulse = (Date.now() / 150) % 3;
+            wbCtx.beginPath();
+            wbCtx.arc(0, -10, 42 + pulse * 10, 0, Math.PI * 2);
+            wbCtx.stroke();
+        }
+    } else if (type === 'bulb') {
+        if (el.burned) {
+            if (componentImages.bulb?.complete) {
+                wbCtx.drawImage(componentImages.bulb, -60, -60, 120, 120);
+            }
+            // Draw dark burnt coating and broken filament indicator
+            wbCtx.strokeStyle = 'rgba(255, 255, 255, 0.6)'; wbCtx.lineWidth = 2.5;
+            wbCtx.beginPath(); wbCtx.moveTo(-12, -22); wbCtx.lineTo(12, -8);
+            wbCtx.moveTo(-6, -2); wbCtx.lineTo(6, -28); wbCtx.stroke();
+            wbCtx.fillStyle = '#ff3b30'; wbCtx.font = 'bold 12px Courier New';
+            wbCtx.fillText("BURNT!", -22, -10);
+        } else if (el.active && wbIsRunning) {
+            const v = el.measuredVoltage || 0.0;
+            const rating = el.ratedVoltage || 6.0;
+            const ratio = Math.min(1.5, v / rating);
+            wbCtx.save();
+            wbCtx.shadowColor = '#FFD600';
+            wbCtx.shadowBlur = 10 + ratio * 25;
+            wbCtx.globalAlpha = 0.3 + ratio * 0.7;
+            wbCtx.drawImage(componentImages.bulb_active, -60, -60, 120, 120);
+            wbCtx.restore();
+        } else if (componentImages.bulb?.complete) {
+            wbCtx.drawImage(componentImages.bulb, -60, -60, 120, 120);
+        }
     }
     
     if (wbSelectedElement === el && wbMode === 'move') {
@@ -1089,6 +1178,8 @@ function drawComponent(el, x, y) {
         else if (type === 'ir_sensor') { bW = 106; bH = 136; }
         else if (type === 'power_supply') { bW = 146; bH = 106; }
         else if (type === 'ldr') { bW = 106; bH = 106; }
+        else if (type === 'buzzer') { bW = 106; bH = 106; }
+        else if (type === 'bulb') { bW = 106; bH = 106; }
         wbCtx.strokeRect(-bW/2, -bH/2, bW, bH);
         wbCtx.setLineDash([]);
     }
@@ -1167,6 +1258,7 @@ window.wbUpdatePropertiesPanel = () => {
     const panel = document.getElementById('wbPropertiesPanel');
     if (!panel) return;
     document.getElementById('wbPropResistor').style.display = 'none';
+    document.getElementById('wbPropBulb').style.display = 'none';
     document.getElementById('wbPropPowerSupply').style.display = 'none';
     document.getElementById('wbPropIRSensor').style.display = 'none';
     document.getElementById('wbPropLDR').style.display = 'none';
@@ -1185,6 +1277,12 @@ window.wbUpdatePropertiesPanel = () => {
         title.innerText = 'Resistor';
         document.getElementById('wbPropResistor').style.display = 'flex';
         document.getElementById('wbResistorValue').value = wbSelectedElement.resistance || 220;
+    } else if (wbSelectedElement.compType === 'bulb') {
+        title.innerText = 'Incandescent Bulb';
+        document.getElementById('wbPropBulb').style.display = 'flex';
+        const v = wbSelectedElement.ratedVoltage || 6.0;
+        document.getElementById('wbBulbVoltage').value = v;
+        document.getElementById('wbBulbVoltageValue').innerText = `${v.toFixed(1)} V`;
     } else if (wbSelectedElement.compType === 'power_supply') {
         title.innerText = 'Bench Power Supply';
         document.getElementById('wbPropPowerSupply').style.display = 'flex';
@@ -1231,6 +1329,14 @@ window.wbUpdatePropertiesPanel = () => {
             if (wbSelectedElement.burned) statusText += `<br><span style="color:var(--red); font-weight:bold; font-size:0.95rem; text-shadow:0 0 5px rgba(255,0,0,0.2);">💥 STATUS: BURNED OUT</span>`;
             else if (wbSelectedElement.active) statusText += `<br><span style="color:#FF4757; font-weight:bold; font-size:0.95rem;">💡 STATUS: GLOWING SAFE</span>`;
             else statusText += `<br><span style="color:var(--text-muted); font-size:0.95rem;">💤 STATUS: NO LOOP POWER</span>`;
+        } else if (wbSelectedElement.compType === 'bulb') {
+            const vDrop = (wbSelectedElement.measuredVoltage || 0.0).toFixed(2);
+            if (wbSelectedElement.burned) statusText += `<br><span style="color:var(--red); font-weight:bold; font-size:0.95rem;">💥 STATUS: FILAMENT BLOWN</span>`;
+            else if (wbSelectedElement.active) statusText += `<br><span style="color:var(--yellow); font-weight:bold; font-size:0.95rem;">💡 STATUS: GLOWING (${vDrop} V)</span>`;
+            else statusText += `<br><span style="color:var(--text-muted); font-size:0.95rem;">💤 STATUS: NO POWER</span>`;
+        } else if (wbSelectedElement.compType === 'buzzer') {
+            if (wbSelectedElement.active) statusText += `<br><span style="color:#9B6BFF; font-weight:bold; font-size:0.95rem;">🔊 STATUS: BUZZING ACTIVE</span>`;
+            else statusText += `<br><span style="color:var(--text-muted); font-size:0.95rem;">💤 STATUS: INACTIVE</span>`;
         } else if (wbSelectedElement.compType === 'motor') {
             if (wbSelectedElement.active) statusText += `<br><span style="color:var(--cyan); font-weight:bold; font-size:0.95rem;">⚙️ STATUS: SPINNING ACTIVE</span>`;
             else statusText += `<br><span style="color:var(--text-muted); font-size:0.95rem;">💤 STATUS: INACTIVE</span>`;
@@ -1256,6 +1362,10 @@ window.wbUpdateComponent = () => {
         if (isNaN(val) || val < 1) val = 1;
         wbSelectedElement.resistance = val;
         window.wbRegenerateResistorImage(wbSelectedElement);
+    } else if (wbSelectedElement.compType === 'bulb') {
+        let v = parseFloat(document.getElementById('wbBulbVoltage').value);
+        wbSelectedElement.ratedVoltage = v;
+        document.getElementById('wbBulbVoltageValue').innerText = `${v.toFixed(1)} V`;
     } else if (wbSelectedElement.compType === 'power_supply') {
         let v = parseFloat(document.getElementById('wbPSVoltage').value);
         let a = parseFloat(document.getElementById('wbPSAmp').value);
@@ -1299,3 +1409,82 @@ window.wbRegenerateResistorImage = (el) => {
     img.onload = () => { if (!wbIsRunning) wbRedraw(); };
     el.customImage = img;
 };
+
+// =============================================
+//  Component Dropdown Selector & Buzzer Hum Helpers
+// =============================================
+window.wbToggleComponentList = () => {
+    const list = document.getElementById('wbComponentList');
+    const arrow = document.getElementById('wbCompArrow');
+    if (!list) return;
+    if (list.style.display === 'none') {
+        list.style.display = 'flex';
+        if (arrow) arrow.innerText = '▲';
+    } else {
+        list.style.display = 'none';
+        if (arrow) arrow.innerText = '▼';
+    }
+};
+
+window.wbSelectComponent = (compName) => {
+    wbSetMode('component', compName);
+    // update button text to show selected component
+    const toggleBtn = document.getElementById('wbCompToggleBtn');
+    if (toggleBtn) {
+        let compLabel = compName.toUpperCase();
+        if (compName === 'led') compLabel = '💡 LED';
+        else if (compName === 'bulb') compLabel = '💡 Bulb';
+        else if (compName === 'resistor') compLabel = '〰️ Resistor';
+        else if (compName === 'motor') compLabel = '⚙️ Motor';
+        else if (compName === 'buzzer') compLabel = '🔊 Buzzer';
+        else if (compName === 'ir_sensor') compLabel = '📡 IR Sensor';
+        else if (compName === 'ldr') compLabel = '☀️ LDR';
+        else if (compName === 'potentiometer') compLabel = '🎛️ Potentiometer';
+        toggleBtn.innerHTML = `🔌 Component: ${compLabel} <span id="wbCompArrow">▼</span>`;
+    }
+    // close the list
+    window.wbToggleComponentList();
+};
+
+let buzzerOsc = null;
+let buzzerGain = null;
+
+function startBuzzerHum() {
+    if (buzzerOsc) return;
+    try {
+        const ctx = getAudioContext();
+        buzzerOsc = ctx.createOscillator();
+        buzzerGain = ctx.createGain();
+        buzzerOsc.type = 'sine';
+        buzzerOsc.frequency.setValueAtTime(1400, ctx.currentTime);
+        
+        // Tremolo effect for realistic buzzer sound
+        const tremolo = ctx.createOscillator();
+        const tremoloGain = ctx.createGain();
+        tremolo.frequency.value = 25; 
+        tremoloGain.gain.value = 8; 
+        tremolo.connect(tremoloGain);
+        tremoloGain.connect(buzzerOsc.frequency);
+        
+        buzzerGain.gain.setValueAtTime(0.02, ctx.currentTime); // keep it soft and comfortable
+        buzzerOsc.connect(buzzerGain);
+        buzzerGain.connect(ctx.destination);
+        
+        tremolo.start();
+        buzzerOsc.start();
+    } catch(e) {}
+}
+
+function stopBuzzerHum() {
+    if (buzzerOsc) {
+        try {
+            const ctx = getAudioContext();
+            buzzerGain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.05);
+            const localOsc = buzzerOsc;
+            setTimeout(() => { localOsc.stop(); }, 80);
+        } catch(e) {}
+        buzzerOsc = null;
+        buzzerGain = null;
+    }
+}
+

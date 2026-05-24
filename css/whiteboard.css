@@ -31,6 +31,8 @@
   border: 1px solid var(--border);
   box-shadow: 0 5px 15px rgba(0,0,0,0.3);
   backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 15;
 }
 .wb-toolbar-row {
   display: flex;
@@ -155,6 +157,7 @@
     min-height: 500px;
   }
 }
+}
 @media (max-width: 640px) {
   .wb-page-hero h1 { font-size: 1.6rem !important; }
   .wb-toolbar { padding: 10px; }
@@ -167,3 +170,50 @@
     width: auto;
   }
 }
+
+/* Premium component selector list */
+.wb-component-list {
+  display: flex;
+  gap: 8px;
+  background: rgba(30, 35, 64, 0.95);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+  position: absolute;
+  top: 52px;
+  left: 140px;
+  z-index: 100;
+  flex-wrap: wrap;
+  max-width: 500px;
+  animation: wbSlideInDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes wbSlideInDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.wb-comp-item {
+  background: var(--surface2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+.wb-comp-item:hover {
+  background: var(--surface);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  border-color: var(--cyan);
+}
+
