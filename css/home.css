@@ -174,3 +174,260 @@
   .roadmap-label-bot { display: none; }
   .sessions-grid { grid-template-columns: 1fr; }
 }
+
+/* =============================================
+   QUICK ACCESS 3D BUTTONS
+   ============================================= */
+.quick-access-section {
+  padding: 80px 24px;
+  max-width: 1200px;
+  margin: -40px auto 40px auto;
+  position: relative;
+  z-index: 10;
+}
+
+.quick-access-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+/* 3D Button Core Styles */
+.btn-3d {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  text-align: left;
+  display: block;
+  font-family: inherit;
+  animation: float-btn 4.5s ease-in-out infinite;
+}
+
+/* Stagger float animation for dynamic feel */
+.quick-access-grid button:nth-child(1) { animation-delay: 0s; }
+.quick-access-grid button:nth-child(2) { animation-delay: 0.8s; }
+.quick-access-grid button:nth-child(3) { animation-delay: 1.6s; }
+.quick-access-grid button:nth-child(4) { animation-delay: 2.4s; }
+
+.btn-3d-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.45);
+  transform: translateY(8px);
+  filter: blur(4px);
+  transition: transform 0.2s cubic-bezier(0.3, 0.7, 0.4, 1), filter 0.2s;
+}
+
+.btn-3d-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  transition: transform 0.2s cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.btn-3d-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 36px 20px;
+  border-radius: 20px;
+  color: #FFFFFF;
+  transform: translateY(-8px);
+  transition: transform 0.2s cubic-bezier(0.3, 0.7, 0.4, 1);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.15);
+}
+
+/* Interactive States */
+.btn-3d:hover .btn-3d-front {
+  transform: translateY(-12px);
+}
+.btn-3d:hover .btn-3d-shadow {
+  transform: translateY(12px);
+  filter: blur(6px);
+}
+
+.btn-3d:active .btn-3d-front {
+  transform: translateY(-2px);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.btn-3d:active .btn-3d-shadow {
+  transform: translateY(2px);
+  filter: blur(2px);
+}
+
+/* Button Content Styles */
+.btn-3d-icon {
+  font-size: 3.2rem;
+  margin-bottom: 16px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+}
+.btn-3d:hover .btn-3d-icon {
+  transform: scale(1.2) rotate(6deg);
+}
+
+.btn-3d-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-3d-title {
+  font-family: var(--font-head);
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-3d-subtitle {
+  font-size: 0.82rem;
+  opacity: 0.85;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 400;
+  max-width: 190px;
+}
+
+/* Colors Theme Mapping */
+/* Sessions (Orange) */
+.btn-3d-orange .btn-3d-front {
+  background: linear-gradient(135deg, #FF7B47, #E04D16);
+}
+.btn-3d-orange .btn-3d-edge {
+  background: linear-gradient(to right, #993009, #C63E0B);
+}
+.btn-3d-orange:hover .btn-3d-front {
+  box-shadow: 0 0 35px rgba(255, 107, 53, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+}
+
+/* Projects (Cyan) */
+.btn-3d-cyan .btn-3d-front {
+  background: linear-gradient(135deg, #00E5FF, #00A6C9);
+}
+.btn-3d-cyan .btn-3d-edge {
+  background: linear-gradient(to right, #006075, #008AA6);
+}
+.btn-3d-cyan:hover .btn-3d-front {
+  box-shadow: 0 0 35px rgba(0, 229, 255, 0.3), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+}
+
+/* Whiteboard (Purple) */
+.btn-3d-purple .btn-3d-front {
+  background: linear-gradient(135deg, #B085FF, #7D4AE6);
+}
+.btn-3d-purple .btn-3d-edge {
+  background: linear-gradient(to right, #441A96, #6332C2);
+}
+.btn-3d-purple:hover .btn-3d-front {
+  box-shadow: 0 0 35px rgba(176, 133, 255, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.25);
+}
+
+/* Live Quiz (Green) */
+.btn-3d-green .btn-3d-front {
+  background: linear-gradient(135deg, #00FF9D, #00B36B);
+  color: #0D0F1A; /* Dark text for contrast on bright green */
+}
+.btn-3d-green .btn-3d-edge {
+  background: linear-gradient(to right, #005C36, #00874E);
+}
+.btn-3d-green .btn-3d-title {
+  text-shadow: none;
+  color: #0D0F1A;
+}
+.btn-3d-green .btn-3d-subtitle {
+  color: #0F2D1F;
+  opacity: 0.9;
+}
+.btn-3d-green:hover .btn-3d-front {
+  box-shadow: 0 0 35px rgba(0, 255, 157, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.35);
+}
+
+/* Floating animation */
+@keyframes float-btn {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .quick-access-section {
+    padding: 40px 24px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+  .quick-access-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .btn-3d-front {
+    padding: 28px 16px;
+  }
+  .btn-3d-icon {
+    font-size: 2.8rem;
+    margin-bottom: 12px;
+  }
+  .btn-3d-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 580px) {
+  .quick-access-section {
+    padding: 30px 16px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  .quick-access-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .btn-3d-front {
+    padding: 24px 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+  .btn-3d-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0;
+  }
+  .btn-3d-content {
+    align-items: flex-start;
+  }
+  .btn-3d-title {
+    margin-bottom: 2px;
+    text-align: left;
+    font-size: 1.25rem;
+  }
+  .btn-3d-subtitle {
+    text-align: left;
+    max-width: none;
+  }
+  
+  /* Disable float animations on mobile to save CPU and reduce visual clutter, keep simple hover/active transitions */
+  .btn-3d {
+    animation: none;
+  }
+}

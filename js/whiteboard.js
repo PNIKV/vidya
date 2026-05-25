@@ -338,24 +338,18 @@ window.initWhiteboard = () => {
     if (wbAnimationFrame) cancelAnimationFrame(wbAnimationFrame);
     wbIsRunning = false;
     stopMotorHum();
+    stopBuzzerHum();
     
-    wbElements = [];
-    wbHistory = [];
-    wbHistoryIndex = -1;
+    // Set default mode tabs and active player
+    activeKidIndex = 0;
+    activeTabMode = 'circuit';
     
-    // Spawn permanent Power Supply
-    if (!wbElements.find(e => e.id === 'power_supply_1')) {
-        wbElements.push({
-            id: 'power_supply_1',
-            type: 'component',
-            compType: 'power_supply',
-            x: 100, y: 150,
-            voltage: 9.0,
-            currentLimit: 2.0,
-            rotation: 0
-        });
-    }
-    wbSaveState();
+    // Load and render players
+    loadKidsProfiles();
+    renderKidsProfiles();
+    
+    // Load active player's canvas states (both circuit and paint)
+    loadActivePlayerCanvasState();
     
     const resizeCanvas = () => {
         if (!wbCanvas || !wbCanvas.parentElement) return;
@@ -1486,5 +1480,537 @@ function stopBuzzerHum() {
         buzzerOsc = null;
         buzzerGain = null;
     }
+}
+
+// =============================================
+//  KIDS STATION & MULTI-PLAYER STATE (1-5 Kids)
+// =============================================
+let activeKidIndex = 0;
+let activeTabMode = 'circuit';
+let kidsProfiles = [
+    { name: "Kid 1", avatar: "🤖", drawingData: null, elements: null, paintHistory: [], paintHistoryIndex: -1 },
+    { name: "Kid 2", avatar: "🐧", drawingData: null, elements: null, paintHistory: [], paintHistoryIndex: -1 },
+    { name: "Kid 3", avatar: "🦖", drawingData: null, elements: null, paintHistory: [], paintHistoryIndex: -1 },
+    { name: "Kid 4", avatar: "🚀", drawingData: null, elements: null, paintHistory: [], paintHistoryIndex: -1 },
+    { name: "Kid 5", avatar: "🐱", drawingData: null, elements: null, paintHistory: [], paintHistoryIndex: -1 }
+];
+
+function loadKidsProfiles() {
+    const saved = localStorage.getItem("vidya_kids_profiles");
+    if (saved) {
+        try {
+            kidsProfiles = JSON.parse(saved);
+        } catch(e) {}
+    }
+}
+
+function saveKidsProfiles() {
+    localStorage.setItem("vidya_kids_profiles", JSON.stringify(kidsProfiles));
+}
+
+function renderKidsProfiles() {
+    const container = document.getElementById("kidsProfilesList");
+    if (!container) return;
+    container.innerHTML = "";
+    
+    kidsProfiles.forEach((kid, index) => {
+        const btn = document.createElement("button");
+        btn.className = "kid-profile-btn" + (index === activeKidIndex ? " active" : "");
+        btn.onclick = () => selectKidPlayer(index);
+        btn.innerHTML = `<span>${kid.avatar}</span> <span>${kid.name}</span>`;
+        container.appendChild(btn);
+    });
+    
+    const currentKid = kidsProfiles[activeKidIndex];
+    const nameInput = document.getElementById("kidNameInput");
+    if (nameInput) nameInput.value = currentKid.name;
+    const avatarSelect = document.getElementById("kidAvatarSelect");
+    if (avatarSelect) avatarSelect.value = currentKid.avatar;
+}
+
+window.wbUpdateCurrentPlayerName = () => {
+    const nameInput = document.getElementById("kidNameInput");
+    if (nameInput) {
+        kidsProfiles[activeKidIndex].name = nameInput.value || `Kid ${activeKidIndex + 1}`;
+        saveKidsProfiles();
+        renderKidsProfiles();
+    }
+};
+
+window.wbUpdateCurrentPlayerAvatar = () => {
+    const avatarSelect = document.getElementById("kidAvatarSelect");
+    if (avatarSelect) {
+        kidsProfiles[activeKidIndex].avatar = avatarSelect.value;
+        saveKidsProfiles();
+        renderKidsProfiles();
+    }
+};
+
+function selectKidPlayer(index) {
+    if (index === activeKidIndex) return;
+    
+    // Save current kid state
+    saveActivePlayerCanvasState();
+    
+    activeKidIndex = index;
+    playChimeSound(); // fun audio chime!
+    
+    // Load new kid state
+    loadActivePlayerCanvasState();
+    renderKidsProfiles();
+    
+    if (activeTabMode === 'paint') {
+        tuxRedraw();
+    } else {
+        wbRedraw();
+        if (wbIsRunning) simulateCircuit();
+    }
+}
+
+function saveActivePlayerCanvasState() {
+    // 1. Save PCB elements
+    kidsProfiles[activeKidIndex].elements = wbElements.map(el => {
+        const copy = { ...el };
+        if (el.points) copy.points = el.points.map(pt => ({ ...pt }));
+        return copy;
+    });
+    
+    // 2. Save Tux Paint image
+    const paintCanvas = document.getElementById("tuxPaintCanvas");
+    if (paintCanvas) {
+        kidsProfiles[activeKidIndex].drawingData = paintCanvas.toDataURL();
+    }
+    kidsProfiles[activeKidIndex].paintHistory = tuxHistory;
+    kidsProfiles[activeKidIndex].paintHistoryIndex = tuxHistoryIndex;
+    
+    saveKidsProfiles();
+}
+
+function loadActivePlayerCanvasState() {
+    const kid = kidsProfiles[activeKidIndex];
+    
+    // 1. Restore PCB Elements
+    if (kid.elements && kid.elements.length > 0) {
+        restoreFromHistoryState(kid.elements);
+    } else {
+        // Reset to default power supply
+        wbElements = [{
+            id: 'power_supply_1',
+            type: 'component',
+            compType: 'power_supply',
+            x: 100, y: 150,
+            voltage: 9.0,
+            currentLimit: 2.0,
+            rotation: 0
+        }];
+    }
+    wbHistory = [wbElements.map(el => {
+        const copy = { ...el };
+        if (el.points) copy.points = el.points.map(pt => ({ ...pt }));
+        return copy;
+    })];
+    wbHistoryIndex = 0;
+    
+    // 2. Restore Tux Paint drawing
+    const paintCanvas = document.getElementById("tuxPaintCanvas");
+    if (paintCanvas) {
+        const ctx = paintCanvas.getContext('2d');
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, paintCanvas.width, paintCanvas.height);
+        if (kid.drawingData) {
+            const img = new Image();
+            img.src = kid.drawingData;
+            img.onload = () => {
+                ctx.drawImage(img, 0, 0);
+            };
+        }
+    }
+    tuxHistory = kid.paintHistory || [];
+    tuxHistoryIndex = kid.paintHistoryIndex !== undefined ? kid.paintHistoryIndex : -1;
+}
+
+// =============================================
+//  TAB MODE SWITCHER ROUTING
+// =============================================
+window.wbSwitchModeTab = (mode) => {
+    activeTabMode = mode;
+    
+    const btnCircuit = document.getElementById('wbTabCircuit');
+    const btnPaint = document.getElementById('wbTabPaint');
+    const viewCircuit = document.getElementById('wbCircuitView');
+    const viewPaint = document.getElementById('wbPaintView');
+    const circuitControls = document.querySelectorAll('.wb-circuit-only');
+    
+    if (mode === 'circuit') {
+        btnCircuit.classList.add('active');
+        btnCircuit.style.background = 'rgba(0, 212, 255, 0.08)';
+        btnCircuit.style.borderColor = 'var(--cyan)';
+        btnCircuit.style.color = 'var(--cyan)';
+        
+        btnPaint.classList.remove('active');
+        btnPaint.style.background = 'var(--surface2)';
+        btnPaint.style.borderColor = 'var(--border)';
+        btnPaint.style.color = 'var(--text-muted)';
+        
+        viewCircuit.style.display = 'block';
+        viewPaint.style.display = 'none';
+        circuitControls.forEach(el => el.style.display = 'flex');
+        
+        playTone(300, 'triangle', 0.12, 0.1);
+        setTimeout(() => playTone(500, 'sine', 0.15, 0.08), 80);
+        
+        setTimeout(() => {
+            if (wbCanvas) {
+                const rect = wbCanvas.parentElement.getBoundingClientRect();
+                wbCanvas.width = rect.width;
+                wbCanvas.height = rect.height;
+                wbRedraw();
+            }
+        }, 50);
+    } else {
+        btnPaint.classList.add('active');
+        btnPaint.style.background = 'rgba(155, 107, 255, 0.08)';
+        btnPaint.style.borderColor = 'var(--purple)';
+        btnPaint.style.color = 'var(--purple)';
+        
+        btnCircuit.classList.remove('active');
+        btnCircuit.style.background = 'var(--surface2)';
+        btnCircuit.style.borderColor = 'var(--border)';
+        btnCircuit.style.color = 'var(--text-muted)';
+        
+        viewCircuit.style.display = 'none';
+        viewPaint.style.display = 'block';
+        circuitControls.forEach(el => el.style.display = 'none');
+        
+        playTone(500, 'sine', 0.12, 0.08);
+        setTimeout(() => playTone(300, 'triangle', 0.15, 0.1), 80);
+        
+        initTuxPaintCanvas();
+    }
+};
+
+// =============================================
+//  TUX KID PAINT LOGIC
+// =============================================
+let tuxCanvas = null;
+let tuxCtx = null;
+let tuxTool = 'brush';
+let tuxColor = '#FF4757';
+let tuxSize = 10;
+let tuxStamp = 'penguin';
+let tuxMagicType = 'rainbow_brush';
+let tuxIsDrawing = false;
+let tuxLastPos = null;
+let rainbowHue = 0;
+let tuxHistory = [];
+let tuxHistoryIndex = -1;
+
+const tuxStampImages = {};
+const stampSvgs = {
+    penguin: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80"><ellipse cx="50" cy="55" rx="35" ry="40" fill="#222"/><ellipse cx="50" cy="58" rx="25" ry="32" fill="#fff"/><ellipse cx="50" cy="30" rx="20" ry="18" fill="#222"/><ellipse cx="48" cy="28" rx="14" ry="14" fill="#fff"/><ellipse cx="52" cy="28" rx="14" ry="14" fill="#fff"/><circle cx="43" cy="25" r="4" fill="#000"/><circle cx="57" cy="25" r="4" fill="#000"/><polygon points="45,34 55,34 50,42" fill="#FFA500"/><ellipse cx="30" cy="55" rx="8" ry="20" fill="#222" transform="rotate(-15 30 55)"/><ellipse cx="70" cy="55" rx="8" ry="20" fill="#222" transform="rotate(15 70 55)"/><ellipse cx="35" cy="90" rx="14" ry="6" fill="#FFA500"/><ellipse cx="65" cy="90" rx="14" ry="6" fill="#FFA500"/></svg>`,
+    robot: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80"><rect x="25" y="30" width="50" height="45" rx="10" fill="#7f8c8d" stroke="#2c3e50" stroke-width="3"/><rect x="35" y="15" width="30" height="15" fill="#95a5a6" stroke="#2c3e50" stroke-width="3"/><circle cx="42" cy="22" r="4" fill="#e74c3c"/><circle cx="58" cy="22" r="4" fill="#3498db"/><line x1="50" y1="15" x2="50" y2="5" stroke="#2c3e50" stroke-width="4"/><circle cx="50" cy="4" r="5" fill="#f1c40f"/><rect x="32" y="42" width="12" height="8" rx="2" fill="#34495e"/><rect x="56" y="42" width="12" height="8" rx="2" fill="#34495e"/><circle cx="38" cy="46" r="3" fill="#2ecc71"/><circle cx="62" cy="46" r="3" fill="#2ecc71"/><rect x="40" y="58" width="20" height="6" rx="2" fill="#bdc3c7" stroke="#2c3e50" stroke-width="2"/><rect x="15" y="42" width="10" height="20" rx="3" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"/><rect x="75" y="42" width="10" height="20" rx="3" fill="#95a5a6" stroke="#2c3e50" stroke-width="2"/></svg>`,
+    dino: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80"><path d="M 20 80 Q 25 35 45 35 Q 65 35 70 20 Q 80 15 85 25 Q 90 35 75 45 L 70 55 Q 75 80 50 85 Q 35 85 20 80 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="3"/><circle cx="78" cy="26" r="3" fill="#000"/><path d="M 76 34 Q 82 34 80 38" fill="none" stroke="#000" stroke-width="2"/><path d="M 30 82 L 32 92" stroke="#27ae60" stroke-width="6" stroke-linecap="round"/><path d="M 45 84 L 47 94" stroke="#27ae60" stroke-width="6" stroke-linecap="round"/><path d="M 70 55 L 80 57" stroke="#27ae60" stroke-width="4" stroke-linecap="round"/><polygon points="35,42 30,35 40,38" fill="#e67e22"/><polygon points="45,45 42,37 50,41" fill="#e67e22"/><polygon points="55,50 54,42 61,46" fill="#e67e22"/></svg>`,
+    rocket: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80"><path d="M 50 10 Q 70 45 70 70 L 30 70 Q 30 45 50 10 Z" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/><path d="M 50 10 Q 60 25 50 35 Q 40 25 50 10 Z" fill="#e74c3c"/><circle cx="50" cy="50" r="10" fill="#3498db" stroke="#2980b9" stroke-width="3"/><path d="M 30 70 L 15 85 L 30 80 Z" fill="#e67e22"/><path d="M 70 70 L 85 85 L 70 80 Z" fill="#e67e22"/><path d="M 40 70 L 50 90 L 60 70 Z" fill="#f1c40f"/><path d="M 45 75 L 50 95 L 55 75 Z" fill="#e74c3c"/></svg>`,
+    star: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80"><polygon points="50,5 64,36 98,36 70,57 81,91 50,70 19,91 30,57 2,36 36,36" fill="#f1c40f" stroke="#d35400" stroke-width="3"/><circle cx="40" cy="45" r="4" fill="#000"/><circle cx="60" cy="45" r="4" fill="#000"/><path d="M 42 55 Q 50 62 58 55" fill="none" stroke="#d35400" stroke-width="3" stroke-linecap="round"/></svg>`,
+    spark: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80"><path d="M 50 0 Q 50 50 100 50 Q 50 50 50 100 Q 50 50 0 50 Q 50 50 50 0 Z" fill="#00FF88"/><circle cx="50" cy="50" r="10" fill="#fff"/></svg>`,
+    heart: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="80" height="80"><path d="M 50 85 C 0 50 15 15 50 40 C 85 15 100 50 50 85 Z" fill="#ff4757" stroke="#d63031" stroke-width="3"/><ellipse cx="38" cy="38" rx="8" ry="4" fill="#fff" opacity="0.6" transform="rotate(-30 38 38)"/></svg>`
+};
+
+function loadStampImages() {
+    for (const [key, svgStr] of Object.entries(stampSvgs)) {
+        if (!tuxStampImages[key]) {
+            const img = new Image();
+            img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svgStr);
+            tuxStampImages[key] = img;
+        }
+    }
+}
+
+function initTuxPaintCanvas() {
+    tuxCanvas = document.getElementById('tuxPaintCanvas');
+    if (!tuxCanvas) return;
+    tuxCtx = tuxCanvas.getContext('2d');
+    loadStampImages();
+    
+    const resizeTuxCanvas = () => {
+        if (!tuxCanvas || !tuxCanvas.parentElement) return;
+        const rect = tuxCanvas.parentElement.getBoundingClientRect();
+        
+        // Save current canvas content
+        const tempCanvas = document.createElement('canvas');
+        tempCanvas.width = tuxCanvas.width;
+        tempCanvas.height = tuxCanvas.height;
+        const tempCtx = tempCanvas.getContext('2d');
+        tempCtx.drawImage(tuxCanvas, 0, 0);
+        
+        tuxCanvas.width = rect.width;
+        tuxCanvas.height = rect.height;
+        
+        // Fill canvas white
+        tuxCtx.fillStyle = '#FFFFFF';
+        tuxCtx.fillRect(0, 0, tuxCanvas.width, tuxCanvas.height);
+        
+        // Draw back saved content
+        tuxCtx.drawImage(tempCanvas, 0, 0);
+        tuxSavePaintState();
+    };
+    
+    if (!window.tuxResizeAttached) {
+        window.addEventListener('resize', resizeTuxCanvas);
+        window.tuxResizeAttached = true;
+    }
+    setTimeout(resizeTuxCanvas, 50);
+    
+    const getTuxPos = (e) => {
+        let clientX = e.clientX;
+        let clientY = e.clientY;
+        if (e.touches && e.touches.length > 0) {
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
+        }
+        const rect = tuxCanvas.getBoundingClientRect();
+        return {
+            x: clientX - rect.left,
+            y: clientY - rect.top
+        };
+    };
+    
+    const handleTuxDown = (e) => {
+        tuxIsDrawing = true;
+        const pos = getTuxPos(e);
+        tuxLastPos = pos;
+        
+        if (tuxTool === 'stamp') {
+            drawTuxStamp(pos.x, pos.y);
+            playStampPlopSound();
+            tuxSavePaintState();
+            tuxIsDrawing = false;
+        } else if (tuxTool === 'eraser') {
+            eraseTuxStroke(pos.x, pos.y);
+            playEraserScrapeSound();
+        } else if (tuxTool === 'magic') {
+            drawTuxMagicStroke(pos.x, pos.y);
+            playMagicSparkleSound();
+        } else {
+            tuxCtx.beginPath();
+            tuxCtx.arc(pos.x, pos.y, tuxSize / 2, 0, Math.PI * 2);
+            tuxCtx.fillStyle = tuxColor === 'rainbow' ? getRainbowColor() : tuxColor;
+            tuxCtx.fill();
+            playBrushDrawSound();
+        }
+    };
+    
+    const handleTuxMove = (e) => {
+        if (!tuxIsDrawing) return;
+        if (e.cancelable) e.preventDefault();
+        const pos = getTuxPos(e);
+        
+        if (tuxTool === 'brush') {
+            tuxCtx.beginPath();
+            tuxCtx.strokeStyle = tuxColor === 'rainbow' ? getRainbowColor() : tuxColor;
+            tuxCtx.lineWidth = tuxSize;
+            tuxCtx.lineCap = 'round';
+            tuxCtx.lineJoin = 'round';
+            tuxCtx.moveTo(tuxLastPos.x, tuxLastPos.y);
+            tuxCtx.lineTo(pos.x, pos.y);
+            tuxCtx.stroke();
+            playBrushDrawSound();
+        } else if (tuxTool === 'eraser') {
+            eraseTuxStroke(pos.x, pos.y);
+            playEraserScrapeSound();
+        } else if (tuxTool === 'magic') {
+            drawTuxMagicStroke(pos.x, pos.y);
+            playMagicSparkleSound();
+        }
+        tuxLastPos = pos;
+    };
+    
+    const handleTuxUp = () => {
+        if (tuxIsDrawing) {
+            tuxIsDrawing = false;
+            tuxSavePaintState();
+        }
+    };
+    
+    tuxCanvas.onmousedown = handleTuxDown;
+    tuxCanvas.onmousemove = handleTuxMove;
+    tuxCanvas.onmouseup = handleTuxUp;
+    tuxCanvas.onmouseout = handleTuxUp;
+    
+    tuxCanvas.ontouchstart = (e) => { handleTuxDown(e); };
+    tuxCanvas.ontouchmove = (e) => { handleTuxMove(e); };
+    tuxCanvas.ontouchend = handleTuxUp;
+}
+
+function getRainbowColor() {
+    rainbowHue = (rainbowHue + 4) % 360;
+    return `hsl(${rainbowHue}, 100%, 50%)`;
+}
+
+function drawTuxStamp(x, y) {
+    const img = tuxStampImages[tuxStamp];
+    if (img && img.complete) {
+        const stampW = 50 + tuxSize * 1.5;
+        const stampH = 50 + tuxSize * 1.5;
+        tuxCtx.drawImage(img, x - stampW / 2, y - stampH / 2, stampW, stampH);
+    }
+}
+
+function eraseTuxStroke(x, y) {
+    tuxCtx.beginPath();
+    tuxCtx.arc(x, y, tuxSize * 1.6, 0, Math.PI * 2);
+    tuxCtx.fillStyle = '#FFFFFF';
+    tuxCtx.fill();
+}
+
+function drawTuxMagicStroke(x, y) {
+    if (tuxMagicType === 'rainbow_brush') {
+        tuxCtx.beginPath();
+        tuxCtx.strokeStyle = getRainbowColor();
+        tuxCtx.lineWidth = tuxSize * 1.8;
+        tuxCtx.lineCap = 'round';
+        tuxCtx.lineJoin = 'round';
+        tuxCtx.moveTo(tuxLastPos.x, tuxLastPos.y);
+        tuxCtx.lineTo(x, y);
+        tuxCtx.stroke();
+    } else if (tuxMagicType === 'starry_trail') {
+        const r = 4 + Math.random() * 8;
+        tuxCtx.save();
+        tuxCtx.translate(x, y);
+        tuxCtx.beginPath();
+        tuxCtx.fillStyle = getRainbowColor();
+        for(let i=0; i<5; i++) {
+            tuxCtx.lineTo(0, -r);
+            tuxCtx.rotate(Math.PI / 5);
+            tuxCtx.lineTo(0, -r/2);
+            tuxCtx.rotate(Math.PI / 5);
+        }
+        tuxCtx.closePath();
+        tuxCtx.fill();
+        tuxCtx.restore();
+    } else if (tuxMagicType === 'bubble_spray') {
+        const count = 2 + Math.floor(Math.random()*4);
+        tuxCtx.fillStyle = `rgba(${Math.floor(Math.random()*200)}, ${Math.floor(Math.random()*200)}, 255, 0.45)`;
+        tuxCtx.strokeStyle = 'rgba(255,255,255,0.7)';
+        tuxCtx.lineWidth = 1;
+        for (let i = 0; i < count; i++) {
+            const rx = x + (Math.random() - 0.5) * 30;
+            const ry = y + (Math.random() - 0.5) * 30;
+            const radius = 2 + Math.random() * 6;
+            tuxCtx.beginPath();
+            tuxCtx.arc(rx, ry, radius, 0, Math.PI * 2);
+            tuxCtx.fill();
+            tuxCtx.stroke();
+        }
+    }
+}
+
+function tuxSavePaintState() {
+    if (!tuxCanvas) return;
+    tuxHistory = tuxHistory.slice(0, tuxHistoryIndex + 1);
+    tuxHistory.push(tuxCanvas.toDataURL());
+    if (tuxHistory.length > 25) {
+        tuxHistory.shift();
+    }
+    tuxHistoryIndex = tuxHistory.length - 1;
+}
+
+window.tuxUndo = () => {
+    if (tuxHistoryIndex > 0) {
+        tuxHistoryIndex--;
+        tuxRestoreState(tuxHistory[tuxHistoryIndex]);
+        playTone(320, 'sine', 0.08, 0.1);
+    }
+};
+
+window.tuxRedo = () => {
+    if (tuxHistoryIndex < tuxHistory.length - 1) {
+        tuxHistoryIndex++;
+        tuxRestoreState(tuxHistory[tuxHistoryIndex]);
+        playTone(420, 'sine', 0.08, 0.1);
+    }
+};
+
+function tuxRestoreState(dataUrl) {
+    if (!tuxCanvas) return;
+    const img = new Image();
+    img.src = dataUrl;
+    img.onload = () => {
+        tuxCtx.fillStyle = '#FFFFFF';
+        tuxCtx.fillRect(0, 0, tuxCanvas.width, tuxCanvas.height);
+        tuxCtx.drawImage(img, 0, 0);
+    };
+}
+
+window.tuxClear = () => {
+    if (!tuxCanvas) return;
+    tuxCtx.fillStyle = '#FFFFFF';
+    tuxCtx.fillRect(0, 0, tuxCanvas.width, tuxCanvas.height);
+    tuxSavePaintState();
+    playTone(180, 'sawtooth', 0.22, 0.12);
+};
+
+function tuxRedraw() {
+    if (tuxCanvas && kidsProfiles[activeKidIndex].drawingData) {
+        tuxRestoreState(kidsProfiles[activeKidIndex].drawingData);
+    } else {
+        tuxClear();
+    }
+}
+
+// =============================================
+//  SOUND SYNTH CUES FOR KIDS
+// =============================================
+function playChimeSound() {
+    try {
+        const ctx = getAudioContext();
+        const baseFreq = 261.63 + activeKidIndex * 65.4; // kids pitch escalations (C4, D4, E4, F4, G4 chords)
+        playTone(baseFreq, 'sine', 0.08, 0.1);
+        setTimeout(() => playTone(baseFreq * 1.25, 'sine', 0.08, 0.1), 60);
+        setTimeout(() => playTone(baseFreq * 1.5, 'sine', 0.12, 0.1), 120);
+    } catch(e) {}
+}
+
+let drawSoundTimer = 0;
+function playBrushDrawSound() {
+    if (Date.now() - drawSoundTimer < 110) return;
+    drawSoundTimer = Date.now();
+    const freq = 450 + Math.sin(Date.now() / 25) * 100;
+    playTone(freq, 'sine', 0.06, 0.02);
+}
+
+let magicSoundTimer = 0;
+function playMagicSparkleSound() {
+    if (Date.now() - magicSoundTimer < 90) return;
+    magicSoundTimer = Date.now();
+    const freq = 750 + Math.random() * 500;
+    playTone(freq, 'triangle', 0.05, 0.03);
+}
+
+function playStampPlopSound() {
+    try {
+        const ctx = getAudioContext();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(200, ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(500, ctx.currentTime + 0.12);
+        osc.frequency.exponentialRampToValueAtTime(250, ctx.currentTime + 0.25);
+        
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
+        
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.25);
+    } catch(e) {}
+}
+
+let eraserSoundTimer = 0;
+function playEraserScrapeSound() {
+    if (Date.now() - eraserSoundTimer < 95) return;
+    eraserSoundTimer = Date.now();
+    playTone(220, 'triangle', 0.06, 0.06);
 }
 
