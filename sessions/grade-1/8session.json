@@ -1,0 +1,259 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Turning On/Off",
+  "subtitle": "Safe Switching Practice",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FFD93D",
+  "icon": "🔌",
+  "tags": [
+    "Electricity",
+    "Safety",
+    "Circuits",
+    "Hands-on Learning"
+  ],
+  "overview": "Students learn how to safely turn electrical devices ON and OFF using switches. They understand safe handling of batteries, plugs, wires, and practice proper switching habits through real-life activities.",
+  "grades": [
+    3,
+    4,
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual classroom activity and safety demonstrations.",
+    "gallery": [
+      {
+        "file": "data/light-switch.jpg",
+        "_placeholder": "ADD: Student switching ON classroom light",
+        "caption": "Switch ON — Circuit Complete!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/switch-off.jpg",
+        "_placeholder": "ADD: Student switching OFF a lamp",
+        "caption": "Switch OFF — Circuit Break!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/safe-plug.jpg",
+        "_placeholder": "ADD: Teacher showing correct plug handling",
+        "caption": "Always hold the plug safely",
+        "category": "Safety"
+      },
+      {
+        "file": "data/dry-hands.jpg",
+        "_placeholder": "ADD: Demonstration of dry hands before touching switches",
+        "caption": "Dry hands keep us safe",
+        "category": "Safety"
+      },
+      {
+        "file": "data/battery-circuit.jpg",
+        "_placeholder": "ADD: Student battery + LED practice",
+        "caption": "Simple ON/OFF battery circuit",
+        "category": "Lab"
+      },
+      {
+        "file": "data/power-button.jpg",
+        "_placeholder": "ADD: Computer power button photo",
+        "caption": "Power button starts devices safely",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/fan-switch.jpg",
+        "_placeholder": "ADD: Student operating fan switch",
+        "caption": "Switches control electricity flow",
+        "category": "Real Life"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What happens when we turn ON a switch",
+    "What happens when we turn OFF a switch",
+    "Open circuit vs Closed circuit",
+    "Electricity flows only in a complete path",
+    "Safe handling of plugs and switches",
+    "Never touch switches with wet hands",
+    "Battery safety rules",
+    "Real-life switches — fan, TV, computer, torch"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How a Switch Works",
+      "videoId": "mZ6nREONy_4",
+      "desc": "Simple explanation of how electrical switches turn devices ON and OFF."
+    },
+    {
+      "title": "Electrical Safety for Kids",
+      "videoId": "B8P2K7Y5t3Y",
+      "desc": "Basic electricity safety rules for children."
+    },
+    {
+      "title": "Open and Closed Circuits",
+      "videoId": "Y8m95sCDEf0",
+      "desc": "Understanding how electricity flows in a circuit."
+    },
+    {
+      "title": "Battery and Bulb Experiment",
+      "videoId": "kKKM8Y-u7ds",
+      "desc": "Kids build a simple ON/OFF circuit using battery and bulb."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Simple Circuit Simulator",
+      "url": "https://www.falstad.com/circuit/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Kids Electrical Safety",
+      "url": "https://kidshealth.org",
+      "icon": "🔗"
+    },
+    {
+      "title": "Interactive Electricity Games",
+      "url": "https://www.bbc.co.uk/bitesize",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "ON/OFF Switch Practice",
+    "parts": [
+      "Battery",
+      "LED or small bulb",
+      "Connecting wires",
+      "Small switch",
+      "Tape"
+    ],
+    "steps": [
+      "Connect one wire from battery to LED",
+      "Connect LED to switch",
+      "Connect switch back to battery",
+      "Turn switch ON → LED glows",
+      "Turn switch OFF → LED stops glowing",
+      "Observe how electricity flows only when the path is complete"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What happens when a switch is turned ON?",
+      "options": [
+        "The circuit breaks",
+        "Electricity stops flowing",
+        "The circuit becomes complete",
+        "The battery disappears"
+      ],
+      "answer": 2,
+      "explanation": "Switch ON means the circuit is complete, so electricity can flow."
+    },
+    {
+      "q": "What happens when a switch is turned OFF?",
+      "options": [
+        "Electricity flows faster",
+        "The circuit breaks",
+        "The battery becomes stronger",
+        "The bulb becomes brighter"
+      ],
+      "answer": 1,
+      "explanation": "Switch OFF breaks the path, stopping electricity flow."
+    },
+    {
+      "q": "Should we touch switches with wet hands?",
+      "options": [
+        "Yes, always",
+        "Only sometimes",
+        "No, never",
+        "Only at school"
+      ],
+      "answer": 2,
+      "explanation": "Wet hands can cause electric shock. Always keep hands dry."
+    },
+    {
+      "q": "Which of these is safest?",
+      "options": [
+        "Pulling wire directly",
+        "Touching plug pins",
+        "Holding the plug properly",
+        "Using broken wires"
+      ],
+      "answer": 2,
+      "explanation": "Always hold the plug safely while removing it."
+    },
+    {
+      "q": "A complete electrical path is called:",
+      "options": [
+        "Broken wire",
+        "Closed circuit",
+        "Dry cell",
+        "Open switch"
+      ],
+      "answer": 1,
+      "explanation": "A closed circuit allows electricity to flow."
+    },
+    {
+      "q": "An open circuit means:",
+      "options": [
+        "Electricity can flow",
+        "The path is broken",
+        "The bulb glows brighter",
+        "Battery is charging"
+      ],
+      "answer": 1,
+      "explanation": "Open circuit means the electrical path is incomplete."
+    },
+    {
+      "q": "Which device commonly uses an ON/OFF switch?",
+      "options": [
+        "Notebook",
+        "Fan",
+        "Pencil",
+        "Book"
+      ],
+      "answer": 1,
+      "explanation": "Fans use switches to control electricity flow."
+    },
+    {
+      "q": "What should you do if a wire is damaged?",
+      "options": [
+        "Touch it carefully",
+        "Ignore it",
+        "Inform an adult or teacher",
+        "Use it anyway"
+      ],
+      "answer": 2,
+      "explanation": "Damaged wires are dangerous and should be reported immediately."
+    },
+    {
+      "q": "What glows when electricity flows in a simple circuit?",
+      "options": [
+        "Battery",
+        "Switch",
+        "LED or bulb",
+        "Tape"
+      ],
+      "answer": 2,
+      "explanation": "The LED or bulb converts electricity into light."
+    },
+    {
+      "q": "Why do we use switches?",
+      "options": [
+        "To stop all machines forever",
+        "To control electricity flow",
+        "To make batteries bigger",
+        "To cool wires"
+      ],
+      "answer": 1,
+      "explanation": "Switches help us safely control when electricity flows."
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "session-10",
+  "number": 10,
+  "title": "How Motors Spin?",
+  "subtitle": "Understanding Motor Motion Through Demonstration",
+  "date": "Session 10",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#2196F3",
+  "icon": "⚙️",
+  "tags": [
+    "Motors",
+    "DC Motor",
+    "Motion",
+    "STEM",
+    "Demonstration"
+  ],
+  "overview": "Students learn how motors spin through teacher demonstrations and simple activities. Students compare a spinning DC motor with a paper windmill moved by air to understand motion and rotation.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-10/slides.pdf"
+  },
+  "images": {
+    "_note": "Add demonstration and activity photos.",
+    "gallery": [
+      {
+        "file": "data/dc-motor-demo.jpg",
+        "caption": "Teacher demonstrating DC motor spinning",
+        "category": "Demonstration"
+      },
+      {
+        "file": "data/paper-windmill.jpg",
+        "caption": "Paper windmill activity",
+        "category": "Activity"
+      },
+      {
+        "file": "data/motor-parts.jpg",
+        "caption": "Basic DC motor components",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a motor?",
+    "How DC motors spin",
+    "Electricity creates motion",
+    "Rotation and movement",
+    "Comparing motor spinning with wind force"
+  ],
+  "concept": {
+    "title": "How Motors Spin",
+    "content": "A DC motor changes electrical energy into movement. Electricity flows into the motor and creates force that spins the motor shaft. Students compare this spinning motion by blowing air on a paper windmill to understand how force can create rotation."
+  },
+  "activity": {
+    "title": "Paper Windmill and Motor Comparison",
+    "parts": [
+      "Paper windmill",
+      "DC motor",
+      "Battery",
+      "Connecting wires"
+    ],
+    "steps": [
+      "Teacher shows DC motor spinning using battery power",
+      "Observe how the motor rotates",
+      "Students blow air on paper windmill",
+      "Observe windmill rotation",
+      "Compare motor spinning and wind force spinning"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What energy does a DC motor use?",
+      "options": [
+        "Electrical energy",
+        "Sound energy",
+        "Heat energy",
+        "Water energy"
+      ],
+      "answer": 0,
+      "explanation": "DC motors use electrical energy to create movement."
+    },
+    {
+      "q": "What happens when students blow on a paper windmill?",
+      "options": [
+        "It melts",
+        "It spins",
+        "It breaks",
+        "It lights up"
+      ],
+      "answer": 1,
+      "explanation": "Air force makes the windmill spin."
+    },
+    {
+      "q": "What does a motor create?",
+      "options": [
+        "Rotation and movement",
+        "Water",
+        "Light only",
+        "Paper"
+      ],
+      "answer": 0,
+      "explanation": "Motors convert electrical energy into movement."
+    }
+  ]
+}

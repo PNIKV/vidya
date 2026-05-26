@@ -1,0 +1,314 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put activity photos, circuit pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Quiz Buzzer System",
+  "subtitle": "Fastest Finger First!",
+  "date": "Session 02",
+  "duration": "1.5 Hours",
+  "phase": "Electronics & Coding",
+  "color": "#FF9800",
+  "icon": "🔔",
+  "tags": [
+    "Arduino",
+    "Electronics",
+    "Quiz Buzzer",
+    "Coding",
+    "STEAM"
+  ],
+  "overview": "In this exciting STEAM session, students learn how to build a Quiz Buzzer System using Arduino UNO, push buttons, LEDs, and a buzzer. Students understand input and output devices, reaction timing, and how microcontrollers detect the first button press in quiz competitions.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add actual classroom photos, student activity images, Arduino setup pictures, and buzzer competition photos.",
+    "gallery": [
+      {
+        "file": "data/arduino-uno.jpg",
+        "_placeholder": "ADD: Arduino UNO board photo",
+        "caption": "Arduino UNO — the smart brain of the quiz buzzer system",
+        "category": "Components"
+      },
+      {
+        "file": "data/push-button.jpg",
+        "_placeholder": "ADD: Push button switch photo",
+        "caption": "Push buttons are used by players to answer questions",
+        "category": "Components"
+      },
+      {
+        "file": "data/buzzer.jpg",
+        "_placeholder": "ADD: Buzzer component photo",
+        "caption": "Piezo buzzer creates sound when a player presses first",
+        "category": "Components"
+      },
+      {
+        "file": "data/red-led.jpg",
+        "_placeholder": "ADD: LED glowing photo",
+        "caption": "LED indicates which team pressed first",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard.jpg",
+        "_placeholder": "ADD: Breadboard wiring activity photo",
+        "caption": "Students connecting buttons and LEDs on breadboard",
+        "category": "Lab"
+      },
+      {
+        "file": "data/quiz-activity.jpg",
+        "_placeholder": "ADD: Students playing quiz buzzer game",
+        "caption": "Students enjoying the Quiz Buzzer challenge",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Quiz Buzzer System?",
+    "Arduino UNO as the smart controller",
+    "Push buttons as INPUT devices",
+    "LED and Buzzer as OUTPUT devices",
+    "How Arduino detects the FIRST button press",
+    "Circuit connections using Breadboard",
+    "Basic Arduino coding for button detection",
+    "Team-based quiz competitions using electronics"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Quiz Buzzer Project",
+      "videoId": "K4D8qN5iT0E",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Learn how to make a simple quiz buzzer system using Arduino UNO and push buttons."
+    },
+    {
+      "title": "Push Button Tutorial for Beginners",
+      "videoId": "58X5M7L5cWg",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Understanding how push buttons work in Arduino projects."
+    },
+    {
+      "title": "Arduino Buzzer Sound Project",
+      "videoId": "dB7FQ0t2A0k",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "How to use a piezo buzzer with Arduino UNO."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad Circuits",
+      "url": "https://www.tinkercad.com/circuits",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a 2-Player Quiz Buzzer System",
+    "parts": [
+      "Arduino UNO",
+      "Breadboard",
+      "2 Push Buttons",
+      "2 LEDs (Red & Green)",
+      "220Ω Resistors",
+      "Piezo Buzzer",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect both push buttons to Arduino digital pins",
+      "Connect LEDs with resistors to output pins",
+      "Connect buzzer to Arduino output pin",
+      "Upload quiz buzzer Arduino code",
+      "Press buttons to test which player pressed first",
+      "Observe LED glow and buzzer sound",
+      "Challenge: Add a RESET button for the next round"
+    ]
+  },
+  "exampleCode": {
+    "title": "Arduino Quiz Buzzer Example Code",
+    "language": "cpp",
+    "code": "int button1 = 2;\\nint button2 = 3;\\nint led1 = 8;\\nint led2 = 9;\\nint buzzer = 10;\\n\\nvoid setup() {\\n  pinMode(button1, INPUT_PULLUP);\\n  pinMode(button2, INPUT_PULLUP);\\n  pinMode(led1, OUTPUT);\\n  pinMode(led2, OUTPUT);\\n  pinMode(buzzer, OUTPUT);\\n}\\n\\nvoid loop() {\\n  if (digitalRead(button1) == LOW) {\\n    digitalWrite(led1, HIGH);\\n    tone(buzzer, 1000);\\n    delay(2000);\\n    digitalWrite(led1, LOW);\\n    noTone(buzzer);\\n  }\\n\\n  if (digitalRead(button2) == LOW) {\\n    digitalWrite(led2, HIGH);\\n    tone(buzzer, 1200);\\n    delay(2000);\\n    digitalWrite(led2, LOW);\\n    noTone(buzzer);\\n  }\\n}"
+  },
+  "quiz": [
+    {
+      "q": "What is the main purpose of a Quiz Buzzer System?",
+      "options": [
+        "To control a fan",
+        "To detect who pressed first in a quiz",
+        "To play music",
+        "To charge a battery"
+      ],
+      "answer": 1,
+      "explanation": "A Quiz Buzzer System helps identify which participant pressed the button first during a competition."
+    },
+    {
+      "q": "Which device acts as the brain of the Quiz Buzzer project?",
+      "options": [
+        "LED",
+        "Buzzer",
+        "Arduino UNO",
+        "Resistor"
+      ],
+      "answer": 2,
+      "explanation": "Arduino UNO controls all inputs and outputs in the buzzer system."
+    },
+    {
+      "q": "Which component is used by players to answer quickly?",
+      "options": [
+        "Motor",
+        "Push Button",
+        "Capacitor",
+        "Battery"
+      ],
+      "answer": 1,
+      "explanation": "Players press push buttons to give answers during the quiz."
+    },
+    {
+      "q": "What does the buzzer do in the project?",
+      "options": [
+        "Stores electricity",
+        "Produces sound",
+        "Measures temperature",
+        "Controls voltage"
+      ],
+      "answer": 1,
+      "explanation": "The buzzer produces sound when a player presses the button."
+    },
+    {
+      "q": "Which component glows to show the winning player?",
+      "options": [
+        "Resistor",
+        "LED",
+        "Switch",
+        "Wire"
+      ],
+      "answer": 1,
+      "explanation": "LED lights up to indicate which player pressed first."
+    },
+    {
+      "q": "What type of device is a push button?",
+      "options": [
+        "Input device",
+        "Output device",
+        "Storage device",
+        "Power device"
+      ],
+      "answer": 0,
+      "explanation": "A push button sends input signals to Arduino when pressed."
+    },
+    {
+      "q": "What type of device is an LED?",
+      "options": [
+        "Input device",
+        "Output device",
+        "Sensor",
+        "Battery"
+      ],
+      "answer": 1,
+      "explanation": "LED is an output device because it shows results visually."
+    },
+    {
+      "q": "Why do we use a resistor with an LED?",
+      "options": [
+        "To increase sound",
+        "To slow down and limit current",
+        "To store energy",
+        "To make WiFi connection"
+      ],
+      "answer": 1,
+      "explanation": "A resistor protects the LED from too much current."
+    },
+    {
+      "q": "What happens when Player 1 presses first?",
+      "options": [
+        "Nothing happens",
+        "Player 2 LED glows",
+        "Player 1 LED glows and buzzer sounds",
+        "Arduino turns OFF"
+      ],
+      "answer": 2,
+      "explanation": "The Arduino detects Player 1 first and activates LED + buzzer."
+    },
+    {
+      "q": "Which platform can simulate Arduino projects online?",
+      "options": [
+        "Paint",
+        "MS Word",
+        "Wokwi",
+        "Calculator"
+      ],
+      "answer": 2,
+      "explanation": "Wokwi is a free online Arduino simulation platform."
+    },
+    {
+      "q": "What is the function of jumper wires?",
+      "options": [
+        "Produce light",
+        "Store energy",
+        "Connect components together",
+        "Make sound"
+      ],
+      "answer": 2,
+      "explanation": "Jumper wires connect Arduino and electronic components."
+    },
+    {
+      "q": "What does INPUT_PULLUP mean in Arduino?",
+      "options": [
+        "Button stays HIGH normally",
+        "LED becomes brighter",
+        "Motor spins faster",
+        "Battery charges automatically"
+      ],
+      "answer": 0,
+      "explanation": "INPUT_PULLUP keeps the pin HIGH until the button is pressed."
+    },
+    {
+      "q": "What is the role of breadboard in this project?",
+      "options": [
+        "Cooking food",
+        "Temporary circuit building without soldering",
+        "Producing sound",
+        "Measuring voltage"
+      ],
+      "answer": 1,
+      "explanation": "Breadboards help students build circuits easily without soldering."
+    },
+    {
+      "q": "Which energy conversion happens in a buzzer?",
+      "options": [
+        "Light to heat",
+        "Electrical energy to sound energy",
+        "Motion to electricity",
+        "Heat to light"
+      ],
+      "answer": 1,
+      "explanation": "Buzzers convert electrical energy into sound."
+    },
+    {
+      "q": "What skill does the Quiz Buzzer activity improve?",
+      "options": [
+        "Reaction speed and teamwork",
+        "Cooking skills",
+        "Swimming skills",
+        "Painting only"
+      ],
+      "answer": 0,
+      "explanation": "Quiz buzzer activities improve quick thinking, reaction speed, and teamwork."
+    }
+  ]
+}

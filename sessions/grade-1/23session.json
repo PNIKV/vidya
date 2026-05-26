@@ -1,0 +1,110 @@
+{
+  "id": "session-11",
+  "number": 11,
+  "title": "Passwords & Personal Info",
+  "subtitle": "Keeping Personal Information Safe Online",
+  "date": "Session 11",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#9C27B0",
+  "icon": "🔒",
+  "tags": [
+    "Internet Safety",
+    "Passwords",
+    "Privacy",
+    "Digital Safety"
+  ],
+  "overview": "Students learn why passwords and personal information must stay private through storytelling and discussion activities.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-11/slides.pdf"
+  },
+  "images": {
+    "_note": "Add online safety awareness images.",
+    "gallery": [
+      {
+        "file": "data/password-security.jpg",
+        "caption": "Keep passwords private",
+        "category": "Safety"
+      },
+      {
+        "file": "data/online-privacy.jpg",
+        "caption": "Protect personal information online",
+        "category": "Privacy"
+      },
+      {
+        "file": "data/digital-safety.jpg",
+        "caption": "Learning safe internet habits",
+        "category": "Awareness"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is personal information?",
+    "Why passwords are important",
+    "Never share birthday online",
+    "Never share personal details with strangers",
+    "Ask adults before sharing information"
+  ],
+  "story": {
+    "title": "Riya Learns Online Safety",
+    "content": "Riya was playing an online game when a stranger asked her name and birthday. Riya remembered her teacher's advice. She did not share her information and told her parents. Riya learned that passwords, birthdays, and personal information should stay private to stay safe online."
+  },
+  "safetyRules": [
+    "Never share your password.",
+    "Do not share your birthday online.",
+    "Keep personal information private.",
+    "Do not tell strangers your name, address, or school details.",
+    "Ask an adult if someone asks for personal information."
+  ],
+  "activity": {
+    "title": "Safe or Unsafe Discussion",
+    "parts": [
+      "Notebook",
+      "Pencil"
+    ],
+    "steps": [
+      "Teacher reads online situations",
+      "Students decide Safe or Unsafe",
+      "Discuss why privacy matters",
+      "Write two online safety rules"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Should you share your password with strangers?",
+      "options": [
+        "Yes",
+        "No"
+      ],
+      "answer": 1,
+      "explanation": "Passwords should stay private."
+    },
+    {
+      "q": "Which information should stay private?",
+      "options": [
+        "Birthday",
+        "Password",
+        "Address",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Personal information should not be shared online."
+    },
+    {
+      "q": "What should you do if someone online asks personal questions?",
+      "options": [
+        "Answer quickly",
+        "Tell an adult",
+        "Share details",
+        "Ignore safety rules"
+      ],
+      "answer": 1,
+      "explanation": "Always ask a trusted adult for help."
+    }
+  ]
+}

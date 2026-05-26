@@ -1,0 +1,306 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/",
+    "images_folder": "sessions/session-1/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "GUI Applications",
+  "subtitle": "Switch, Resize, Minimize & Maximize Windows",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#3498DB",
+  "icon": "🪟",
+  "tags": [
+    "GUI",
+    "Windows",
+    "Computer Basics",
+    "Applications",
+    "Desktop Skills"
+  ],
+  "overview": "This session teaches students how to use GUI applications by switching between open windows, resizing windows, and using minimize/maximize buttons through real-life computer activities.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of open windows, minimize/maximize buttons, and students practicing GUI tasks.",
+    "gallery": [
+      {
+        "file": "data/open-windows.jpg",
+        "_placeholder": "ADD: Screenshot of multiple open windows",
+        "caption": "Multiple applications opened on desktop",
+        "category": "Concept"
+      },
+      {
+        "file": "data/minimize-button.jpg",
+        "_placeholder": "ADD: Screenshot showing minimize button",
+        "caption": "Minimize button hides the window temporarily",
+        "category": "Buttons"
+      },
+      {
+        "file": "data/maximize-window.jpg",
+        "_placeholder": "ADD: Screenshot showing maximize button",
+        "caption": "Maximize button makes window full screen",
+        "category": "Buttons"
+      },
+      {
+        "file": "data/resize-window.jpg",
+        "_placeholder": "ADD: Screenshot of resizing a window",
+        "caption": "Resize window using mouse cursor",
+        "category": "Activity"
+      },
+      {
+        "file": "data/taskbar-switch.jpg",
+        "_placeholder": "ADD: Taskbar application switching screenshot",
+        "caption": "Switching between open windows using taskbar",
+        "category": "Concept"
+      },
+      {
+        "file": "data/student-gui-practice.jpg",
+        "_placeholder": "ADD: Students practicing computer windows",
+        "caption": "Students learning GUI window controls",
+        "category": "Lab"
+      },
+      {
+        "file": "data/paint-and-browser.jpg",
+        "_placeholder": "ADD: Paint and browser opened together",
+        "caption": "Working with multiple applications",
+        "category": "Real Life"
+      }
+    ]
+  },
+  "keyTopics": [
+    "GUI — Graphical User Interface using windows, icons, and buttons",
+    "Application Window — Area where software opens",
+    "Minimize Button — Hides window to taskbar",
+    "Maximize Button — Makes window full screen",
+    "Restore Button — Returns window to smaller size",
+    "Resize Window — Change window size using mouse",
+    "Taskbar Switching — Move between open apps",
+    "Close Button (X) — Closes the application"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "GUI Basics for Beginners",
+      "videoId": "Qw6b4w8qKX4",
+      "_note": "Replace with preferred educational video",
+      "desc": "Learn basic GUI operations in Windows."
+    },
+    {
+      "title": "How to Minimize and Maximize Windows",
+      "videoId": "dJMx5Nhb6OE",
+      "desc": "Simple explanation of window control buttons."
+    },
+    {
+      "title": "Computer Basics - Using Multiple Windows",
+      "videoId": "OAx_6-wdslM",
+      "desc": "Learn how to switch between open applications."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Windows Basics Tutorial",
+      "url": "https://edu.gcfglobal.org/en/windowsbasics/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft Windows Help",
+      "url": "https://support.microsoft.com/windows",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Practice Window Controls",
+    "parts": [
+      "Computer or Laptop",
+      "Mouse",
+      "Windows Operating System"
+    ],
+    "steps": [
+      "Open Paint application",
+      "Open Calculator application",
+      "Switch between applications using taskbar",
+      "Click minimize button on Paint",
+      "Restore Paint from taskbar",
+      "Click maximize button",
+      "Resize the window using mouse edges",
+      "Close the application using X button"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does GUI stand for?",
+      "options": [
+        "Graphical User Interface",
+        "General User Input",
+        "Graphic Utility Icon",
+        "Game User Internet"
+      ],
+      "answer": 0,
+      "explanation": "GUI means Graphical User Interface, which uses windows, icons, and menus."
+    },
+    {
+      "q": "What does the Minimize button do?",
+      "options": [
+        "Deletes the app",
+        "Hides the window to taskbar",
+        "Turns off computer",
+        "Opens internet"
+      ],
+      "answer": 1,
+      "explanation": "Minimize hides the window while keeping the application running."
+    },
+    {
+      "q": "What does the Maximize button do?",
+      "options": [
+        "Makes window full screen",
+        "Deletes files",
+        "Closes keyboard",
+        "Restarts computer"
+      ],
+      "answer": 0,
+      "explanation": "Maximize enlarges the application window to full screen."
+    },
+    {
+      "q": "Which button closes the application?",
+      "options": [
+        "-",
+        "□",
+        "X",
+        "O"
+      ],
+      "answer": 2,
+      "explanation": "The X button closes the application window."
+    },
+    {
+      "q": "Where can minimized applications be seen?",
+      "options": [
+        "CPU",
+        "Keyboard",
+        "Taskbar",
+        "Monitor cable"
+      ],
+      "answer": 2,
+      "explanation": "Minimized applications appear on the taskbar."
+    },
+    {
+      "q": "What is resizing a window?",
+      "options": [
+        "Deleting a window",
+        "Changing the size of the window",
+        "Printing a document",
+        "Opening internet"
+      ],
+      "answer": 1,
+      "explanation": "Resizing changes the width or height of a window."
+    },
+    {
+      "q": "Which device is mainly used to resize windows?",
+      "options": [
+        "Printer",
+        "Mouse",
+        "Speaker",
+        "Scanner"
+      ],
+      "answer": 1,
+      "explanation": "The mouse is used to drag and resize windows."
+    },
+    {
+      "q": "How can you switch between open applications?",
+      "options": [
+        "Using taskbar",
+        "Using printer",
+        "Using CPU fan",
+        "Using monitor wire"
+      ],
+      "answer": 0,
+      "explanation": "The taskbar helps users switch between open applications."
+    },
+    {
+      "q": "Which real-life activity uses multiple windows?",
+      "options": [
+        "Drawing in Paint while using browser",
+        "Turning off monitor",
+        "Cleaning keyboard",
+        "Charging mouse"
+      ],
+      "answer": 0,
+      "explanation": "People often use multiple applications together."
+    },
+    {
+      "q": "What happens when you click Restore button?",
+      "options": [
+        "Window returns to smaller size",
+        "Computer shuts down",
+        "Application gets deleted",
+        "Volume increases"
+      ],
+      "answer": 0,
+      "explanation": "Restore changes a maximized window back to normal size."
+    },
+    {
+      "q": "Which bar shows running applications?",
+      "options": [
+        "Title bar",
+        "Menu bar",
+        "Taskbar",
+        "Status bar"
+      ],
+      "answer": 2,
+      "explanation": "Taskbar displays currently running applications."
+    },
+    {
+      "q": "What does a window title bar show?",
+      "options": [
+        "Battery level",
+        "Application name",
+        "Internet speed",
+        "Mouse settings"
+      ],
+      "answer": 1,
+      "explanation": "The title bar shows the name of the open application."
+    },
+    {
+      "q": "Which action hides a window without closing it?",
+      "options": [
+        "Close",
+        "Delete",
+        "Minimize",
+        "Restart"
+      ],
+      "answer": 2,
+      "explanation": "Minimize hides the window but keeps the app running."
+    },
+    {
+      "q": "What is an application window?",
+      "options": [
+        "A glass window",
+        "Area where software opens",
+        "Keyboard shortcut",
+        "Computer wire"
+      ],
+      "answer": 1,
+      "explanation": "Application windows are the visible areas where software runs."
+    },
+    {
+      "q": "Why is switching windows useful?",
+      "options": [
+        "To use multiple apps easily",
+        "To damage files",
+        "To slow the computer",
+        "To remove programs"
+      ],
+      "answer": 0,
+      "explanation": "Switching windows helps users work with multiple applications efficiently."
+    }
+  ]
+}

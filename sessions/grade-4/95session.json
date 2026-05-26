@@ -1,0 +1,262 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put Control Panel & Settings activity photos here",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Control Panel & Settings",
+  "subtitle": "Customize and control your computer!",
+  "date": "Session 02",
+  "duration": "1 Hours",
+  "phase": "Computer Basics",
+  "color": "#4CAF50",
+  "icon": "⚙️",
+  "tags": [
+    "Computer",
+    "Windows",
+    "Settings",
+    "Control Panel"
+  ],
+  "overview": "This session helps students understand how to use Control Panel and Settings in Windows to manage devices, sound, display, users, and personalization options safely and efficiently.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots and classroom activity photos related to Control Panel and Windows Settings.",
+    "gallery": [
+      {
+        "file": "data/control-panel.jpg",
+        "_placeholder": "ADD: Screenshot of Windows Control Panel",
+        "caption": "Control Panel — Main place to manage computer settings",
+        "category": "Concept"
+      },
+      {
+        "file": "data/windows-settings.jpg",
+        "_placeholder": "ADD: Screenshot of Windows Settings app",
+        "caption": "Windows Settings — Easy modern settings menu",
+        "category": "Concept"
+      },
+      {
+        "file": "data/display-settings.jpg",
+        "_placeholder": "ADD: Screenshot of display settings",
+        "caption": "Display Settings — Change brightness and screen resolution",
+        "category": "Settings"
+      },
+      {
+        "file": "data/sound-settings.jpg",
+        "_placeholder": "ADD: Screenshot of sound settings",
+        "caption": "Sound Settings — Control speaker and microphone volume",
+        "category": "Settings"
+      },
+      {
+        "file": "data/wifi-settings.jpg",
+        "_placeholder": "ADD: Screenshot of Wi-Fi settings",
+        "caption": "Wi-Fi Settings — Connect computer to internet",
+        "category": "Network"
+      },
+      {
+        "file": "data/user-account.jpg",
+        "_placeholder": "ADD: Screenshot of user account settings",
+        "caption": "User Accounts — Add or manage users safely",
+        "category": "Security"
+      },
+      {
+        "file": "data/student-lab.jpg",
+        "_placeholder": "ADD: Students changing wallpaper in computer lab",
+        "caption": "Students learning personalization settings",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Control Panel?",
+    "Difference between Control Panel and Settings",
+    "Display Settings — brightness, wallpaper, resolution",
+    "Sound Settings — speaker and microphone control",
+    "Wi-Fi & Network Settings",
+    "Date and Time Settings",
+    "User Accounts and Passwords",
+    "Personalization — themes and wallpapers",
+    "Device Settings — keyboard, mouse, printer",
+    "Safe Computer Settings Practices"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Introduction to Windows Control Panel",
+      "videoId": "8XNlDCAZ8eo",
+      "_note": "Replace videoId with actual YouTube video ID",
+      "desc": "Learn the basics of the Windows Control Panel and its important features."
+    },
+    {
+      "title": "Windows Settings Explained for Beginners",
+      "videoId": "5tXQhwf8dno",
+      "_note": "Replace videoId with actual YouTube video ID",
+      "desc": "Easy explanation of Windows Settings and customization."
+    },
+    {
+      "title": "How to Change Wallpaper and Themes",
+      "videoId": "s8K0s0F9j4U",
+      "desc": "Learn how to personalize your computer desktop."
+    },
+    {
+      "title": "Wi-Fi and Network Settings Tutorial",
+      "videoId": "Vn0J9iVdY3A",
+      "desc": "Basic internet and Wi-Fi connection settings for students."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft Windows Support",
+      "url": "https://support.microsoft.com/windows",
+      "icon": "🔗"
+    },
+    {
+      "title": "Windows Keyboard Shortcuts",
+      "url": "https://support.microsoft.com/windows/keyboard-shortcuts",
+      "icon": "⌨️"
+    },
+    {
+      "title": "Computer Basics Guide",
+      "url": "https://edu.gcfglobal.org/en/computerbasics/",
+      "icon": "💻"
+    }
+  ],
+  "activity": {
+    "title": "Customize Your Computer Activity",
+    "parts": [
+      "Computer/Laptop",
+      "Windows Operating System",
+      "Internet Connection",
+      "Mouse and Keyboard"
+    ],
+    "steps": [
+      "Open Windows Settings using Start Menu",
+      "Change desktop wallpaper",
+      "Adjust screen brightness",
+      "Check sound volume settings",
+      "Connect to a Wi-Fi network",
+      "Change date and time settings",
+      "Explore Control Panel categories",
+      "Challenge: Create your own personalized desktop"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the main purpose of Control Panel?",
+      "options": [
+        "To play games",
+        "To manage and change computer settings",
+        "To type documents",
+        "To draw pictures"
+      ],
+      "answer": 1,
+      "explanation": "Control Panel is used to manage and control computer settings."
+    },
+    {
+      "q": "Which option is used to change desktop wallpaper?",
+      "options": [
+        "Sound Settings",
+        "Network Settings",
+        "Personalization",
+        "Mouse Settings"
+      ],
+      "answer": 2,
+      "explanation": "Personalization settings allow users to change wallpaper, themes, and colors."
+    },
+    {
+      "q": "Which setting helps connect a computer to the internet?",
+      "options": [
+        "Display Settings",
+        "Wi-Fi Settings",
+        "Printer Settings",
+        "Battery Settings"
+      ],
+      "answer": 1,
+      "explanation": "Wi-Fi settings help connect computers to wireless internet."
+    },
+    {
+      "q": "What can you change in Display Settings?",
+      "options": [
+        "Volume",
+        "Wallpaper and brightness",
+        "Password",
+        "Printer ink"
+      ],
+      "answer": 1,
+      "explanation": "Display settings control brightness, resolution, and wallpapers."
+    },
+    {
+      "q": "Which settings are used to increase speaker volume?",
+      "options": [
+        "Display Settings",
+        "Sound Settings",
+        "Keyboard Settings",
+        "Theme Settings"
+      ],
+      "answer": 1,
+      "explanation": "Sound settings help control speaker and microphone volume."
+    },
+    {
+      "q": "What is the use of User Accounts settings?",
+      "options": [
+        "To manage users and passwords",
+        "To play music",
+        "To change wallpaper",
+        "To connect Wi-Fi"
+      ],
+      "answer": 0,
+      "explanation": "User Accounts settings help manage users and security passwords."
+    },
+    {
+      "q": "Which shortcut opens Windows Settings quickly?",
+      "options": [
+        "Windows + I",
+        "Ctrl + C",
+        "Alt + F4",
+        "Ctrl + P"
+      ],
+      "answer": 0,
+      "explanation": "Windows + I opens the Settings app quickly."
+    },
+    {
+      "q": "What should students avoid changing without permission?",
+      "options": [
+        "Wallpaper only",
+        "Important system settings",
+        "Mouse pointer color",
+        "Desktop icons"
+      ],
+      "answer": 1,
+      "explanation": "Important system settings should not be changed without teacher or parent permission."
+    },
+    {
+      "q": "Which setting controls date and time?",
+      "options": [
+        "Clock Settings",
+        "Date & Time Settings",
+        "Display Settings",
+        "Network Settings"
+      ],
+      "answer": 1,
+      "explanation": "Date & Time settings are used to manage system clock and calendar."
+    },
+    {
+      "q": "What is personalization in Windows?",
+      "options": [
+        "Repairing hardware",
+        "Connecting wires",
+        "Customizing the appearance of the computer",
+        "Installing games"
+      ],
+      "answer": 2,
+      "explanation": "Personalization means customizing wallpapers, themes, colors, and desktop appearance."
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/",
+    "images_folder": "sessions/session-1/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Icons & Shortcuts",
+  "subtitle": "Identify Common Icons & Create Desktop Shortcuts",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#8E44AD",
+  "icon": "🖱️",
+  "tags": [
+    "Computer Basics",
+    "Desktop Icons",
+    "Shortcuts",
+    "Windows",
+    "Digital Skills"
+  ],
+  "overview": "This session helps students identify common desktop icons and learn how to create shortcuts on the desktop using real-life examples and hands-on computer activities.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of desktop icons, shortcut creation steps, and classroom computer activities.",
+    "gallery": [
+      {
+        "file": "data/desktop-icons.jpg",
+        "_placeholder": "ADD: Desktop icons screenshot",
+        "caption": "Desktop icons help open apps quickly",
+        "category": "Concept"
+      },
+      {
+        "file": "data/recycle-bin.jpg",
+        "_placeholder": "ADD: Recycle Bin icon image",
+        "caption": "Recycle Bin stores deleted files temporarily",
+        "category": "Icons"
+      },
+      {
+        "file": "data/chrome-icon.jpg",
+        "_placeholder": "ADD: Google Chrome icon screenshot",
+        "caption": "Browser icon used for internet access",
+        "category": "Icons"
+      },
+      {
+        "file": "data/folder-icon.jpg",
+        "_placeholder": "ADD: Folder icon image",
+        "caption": "Folders help organize files",
+        "category": "Icons"
+      },
+      {
+        "file": "data/shortcut-create.jpg",
+        "_placeholder": "ADD: Screenshot of creating desktop shortcut",
+        "caption": "Creating a desktop shortcut step-by-step",
+        "category": "Activity"
+      },
+      {
+        "file": "data/student-computer-lab.jpg",
+        "_placeholder": "ADD: Students practicing shortcuts in lab",
+        "caption": "Students learning desktop shortcuts",
+        "category": "Lab"
+      },
+      {
+        "file": "data/paint-icon.jpg",
+        "_placeholder": "ADD: MS Paint icon screenshot",
+        "caption": "Paint icon used for drawing",
+        "category": "Icons"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Icons — Small pictures representing apps or files",
+    "Shortcut — Quick way to open programs",
+    "Desktop — Main screen of the computer",
+    "Recycle Bin — Stores deleted items",
+    "Folder Icon — Used to organize files",
+    "Browser Icon — Opens internet browser",
+    "Right Click Menu — Used to create shortcuts",
+    "Double Click — Opens applications and folders"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Desktop Icons and Shortcuts Explained",
+      "videoId": "lAkuJXGldrM",
+      "_note": "Replace with preferred educational video",
+      "desc": "Simple explanation of desktop icons and shortcuts."
+    },
+    {
+      "title": "How to Create Desktop Shortcut",
+      "videoId": "J8m7Y4x4x20",
+      "desc": "Learn how to create shortcuts on Windows desktop."
+    },
+    {
+      "title": "Computer Basics for Beginners",
+      "videoId": "OAx_6-wdslM",
+      "desc": "Basic computer lessons for students."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Windows Computer Basics",
+      "url": "https://edu.gcfglobal.org/en/windowsbasics/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft Windows Support",
+      "url": "https://support.microsoft.com/windows",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create a Desktop Shortcut",
+    "parts": [
+      "Computer or Laptop",
+      "Mouse",
+      "Windows Operating System"
+    ],
+    "steps": [
+      "Turn ON the computer",
+      "Find an application like Paint or Calculator",
+      "Right-click the application",
+      "Select 'Send To'",
+      "Click 'Desktop (Create Shortcut)'",
+      "Check shortcut icon on desktop",
+      "Double-click shortcut to open application"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is an Icon?",
+      "options": [
+        "A keyboard button",
+        "A small picture representing a file or app",
+        "A computer wire",
+        "A printer"
+      ],
+      "answer": 1,
+      "explanation": "Icons are small pictures used to represent programs, files, or folders."
+    },
+    {
+      "q": "What is a Shortcut?",
+      "options": [
+        "A quick way to open a program",
+        "A type of mouse",
+        "A computer virus",
+        "A monitor"
+      ],
+      "answer": 0,
+      "explanation": "A shortcut helps users open applications quickly."
+    },
+    {
+      "q": "Which action is used to open an icon?",
+      "options": [
+        "Single click",
+        "Double click",
+        "Scrolling",
+        "Typing"
+      ],
+      "answer": 1,
+      "explanation": "Double-clicking an icon opens the application or file."
+    },
+    {
+      "q": "Which icon stores deleted files?",
+      "options": [
+        "Chrome",
+        "Paint",
+        "Recycle Bin",
+        "Folder"
+      ],
+      "answer": 2,
+      "explanation": "Recycle Bin temporarily stores deleted files."
+    },
+    {
+      "q": "Which icon is commonly used for internet browsing?",
+      "options": [
+        "Folder",
+        "Recycle Bin",
+        "Chrome",
+        "Calculator"
+      ],
+      "answer": 2,
+      "explanation": "Chrome is a web browser used to access the internet."
+    },
+    {
+      "q": "What does a Folder icon do?",
+      "options": [
+        "Deletes files",
+        "Stores and organizes files",
+        "Turns off computer",
+        "Plays music"
+      ],
+      "answer": 1,
+      "explanation": "Folders help organize and store files neatly."
+    },
+    {
+      "q": "Which mouse action helps create a shortcut?",
+      "options": [
+        "Double click",
+        "Right click",
+        "Scroll click",
+        "Left drag"
+      ],
+      "answer": 1,
+      "explanation": "Right-click opens options including shortcut creation."
+    },
+    {
+      "q": "Where are shortcuts commonly placed?",
+      "options": [
+        "Inside keyboard",
+        "Desktop",
+        "CPU fan",
+        "Printer tray"
+      ],
+      "answer": 1,
+      "explanation": "Desktop is the most common place for shortcuts."
+    },
+    {
+      "q": "Which application is used for drawing?",
+      "options": [
+        "Paint",
+        "Recycle Bin",
+        "Chrome",
+        "Folder"
+      ],
+      "answer": 0,
+      "explanation": "Paint is used for simple drawing and coloring."
+    },
+    {
+      "q": "What happens when you delete a shortcut?",
+      "options": [
+        "Original app is deleted",
+        "Computer shuts down",
+        "Only shortcut is removed",
+        "Keyboard stops working"
+      ],
+      "answer": 2,
+      "explanation": "Deleting a shortcut removes only the shortcut, not the original app."
+    },
+    {
+      "q": "What is the Desktop?",
+      "options": [
+        "Computer screen workspace",
+        "CPU box",
+        "Keyboard stand",
+        "Internet cable"
+      ],
+      "answer": 0,
+      "explanation": "Desktop is the main screen workspace of a computer."
+    },
+    {
+      "q": "Which symbol usually appears on shortcut icons?",
+      "options": [
+        "Arrow",
+        "Circle",
+        "Star",
+        "Triangle"
+      ],
+      "answer": 0,
+      "explanation": "Shortcut icons usually show a small arrow mark."
+    },
+    {
+      "q": "Which device is mainly used to click icons?",
+      "options": [
+        "Mouse",
+        "Speaker",
+        "Printer",
+        "Projector"
+      ],
+      "answer": 0,
+      "explanation": "Mouse is mainly used to click and open icons."
+    },
+    {
+      "q": "What does the Chrome icon represent?",
+      "options": [
+        "Drawing app",
+        "Internet browser",
+        "Music player",
+        "Game"
+      ],
+      "answer": 1,
+      "explanation": "Chrome is a web browser used for internet access."
+    },
+    {
+      "q": "Why are shortcuts useful?",
+      "options": [
+        "They make the computer heavier",
+        "They open programs quickly",
+        "They increase electricity",
+        "They damage files"
+      ],
+      "answer": 1,
+      "explanation": "Shortcuts save time by quickly opening applications."
+    }
+  ]
+}

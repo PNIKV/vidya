@@ -1,0 +1,315 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/",
+    "images_folder": "sessions/session-2/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "File Explorer Deep Dive Features",
+  "subtitle": "organize, search, manage!",
+  "date": "Session 02",
+  "duration": "1.5 Hours",
+  "phase": "Digital Skills",
+  "color": "#4CAF50",
+  "icon": "📁",
+  "tags": [
+    "Computer Basics",
+    "File Management",
+    "Windows",
+    "Digital Literacy"
+  ],
+  "overview": "This session helps students understand File Explorer in Windows, including file organization, folder management, search tools, copy-paste operations, shortcuts, and storage management using real-life examples.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of File Explorer windows, folders, USB drives, and student activities.",
+    "gallery": [
+      {
+        "file": "data/file-explorer-home.png",
+        "_placeholder": "ADD: Screenshot of Windows File Explorer Home screen",
+        "caption": "Introduction to File Explorer interface",
+        "category": "Concept"
+      },
+      {
+        "file": "data/folder-creation.jpg",
+        "_placeholder": "ADD: Students creating folders on computer",
+        "caption": "Creating folders to organize files",
+        "category": "Lab"
+      },
+      {
+        "file": "data/copy-paste.png",
+        "_placeholder": "ADD: Screenshot showing copy and paste process",
+        "caption": "Copying and moving files between folders",
+        "category": "Concept"
+      },
+      {
+        "file": "data/search-files.jpg",
+        "_placeholder": "ADD: Screenshot of search bar in File Explorer",
+        "caption": "Searching files quickly using File Explorer",
+        "category": "Features"
+      },
+      {
+        "file": "data/usb-drive.jpg",
+        "_placeholder": "ADD: Photo of USB drive connected to PC",
+        "caption": "External storage devices in File Explorer",
+        "category": "Hardware"
+      },
+      {
+        "file": "data/recycle-bin.png",
+        "_placeholder": "ADD: Screenshot of Recycle Bin",
+        "caption": "Recover deleted files from Recycle Bin",
+        "category": "Features"
+      },
+      {
+        "file": "data/file-properties.jpg",
+        "_placeholder": "ADD: Screenshot of file properties window",
+        "caption": "Checking file size, type, and details",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is File Explorer and why it is important",
+    "Files vs Folders",
+    "Creating, Renaming and Deleting folders",
+    "Copy, Cut and Paste operations",
+    "Search feature in File Explorer",
+    "Sorting files by name, size and date",
+    "Using Recycle Bin to restore deleted files",
+    "Understanding drives — C Drive, D Drive, USB Drive",
+    "Keyboard shortcuts for faster work",
+    "File properties and storage information"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Introduction to File Explorer",
+      "videoId": "8j8dN6H4jKw",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Basic introduction to File Explorer and folder navigation in Windows."
+    },
+    {
+      "title": "How to Create and Manage Files & Folders",
+      "videoId": "5AtfWnq3eKU",
+      "desc": "Learn how to organize computer files and folders efficiently."
+    },
+    {
+      "title": "File Explorer Search Features",
+      "videoId": "x8x4sknM9fE",
+      "desc": "Understand how to quickly search and locate files in Windows."
+    },
+    {
+      "title": "Windows Keyboard Shortcuts",
+      "videoId": "wnhflbF9mfo",
+      "desc": "Useful keyboard shortcuts for file management and productivity."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft File Explorer Guide",
+      "url": "https://support.microsoft.com/windows",
+      "icon": "🔗"
+    },
+    {
+      "title": "Typing Practice for Students",
+      "url": "https://www.typingclub.com/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Basic Computer Skills",
+      "url": "https://edu.gcfglobal.org/en/topics/computers/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create and Organize School Folder Activity",
+    "parts": [
+      "Computer or Laptop",
+      "Windows Operating System",
+      "USB Drive (optional)"
+    ],
+    "steps": [
+      "Open File Explorer using Windows + E shortcut",
+      "Create a new folder named 'School Work'",
+      "Inside it, create folders for Math, Science and English",
+      "Create a text file inside each folder",
+      "Rename the files properly",
+      "Copy one file to another folder",
+      "Delete a file and restore it from Recycle Bin",
+      "Search for a file using the search bar"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is File Explorer mainly used for?",
+      "options": [
+        "Playing games",
+        "Managing files and folders",
+        "Watching movies",
+        "Drawing pictures"
+      ],
+      "answer": 1,
+      "explanation": "File Explorer helps users organize, view, copy, move and manage files and folders on a computer."
+    },
+    {
+      "q": "Which shortcut key opens File Explorer?",
+      "options": [
+        "Ctrl + C",
+        "Windows + E",
+        "Ctrl + V",
+        "Alt + F4"
+      ],
+      "answer": 1,
+      "explanation": "Windows + E is the shortcut key used to quickly open File Explorer."
+    },
+    {
+      "q": "A folder is mainly used to:",
+      "options": [
+        "Delete the computer",
+        "Store and organize files",
+        "Increase internet speed",
+        "Print documents"
+      ],
+      "answer": 1,
+      "explanation": "Folders help keep files organized properly."
+    },
+    {
+      "q": "Which option is used to duplicate a file?",
+      "options": [
+        "Delete",
+        "Rename",
+        "Copy",
+        "Search"
+      ],
+      "answer": 2,
+      "explanation": "Copy creates another version of the same file."
+    },
+    {
+      "q": "What happens when a file is deleted normally?",
+      "options": [
+        "It disappears forever immediately",
+        "It goes to Recycle Bin",
+        "It becomes hidden",
+        "It gets printed"
+      ],
+      "answer": 1,
+      "explanation": "Deleted files usually move to Recycle Bin first."
+    },
+    {
+      "q": "Which feature helps find files quickly?",
+      "options": [
+        "Paint",
+        "Calculator",
+        "Search Bar",
+        "Taskbar"
+      ],
+      "answer": 2,
+      "explanation": "The Search Bar in File Explorer helps locate files and folders quickly."
+    },
+    {
+      "q": "Which storage device can be connected externally?",
+      "options": [
+        "Monitor",
+        "USB Drive",
+        "Keyboard",
+        "Mouse"
+      ],
+      "answer": 1,
+      "explanation": "USB drives are external storage devices."
+    },
+    {
+      "q": "What does Ctrl + C do?",
+      "options": [
+        "Cut",
+        "Copy",
+        "Close",
+        "Create folder"
+      ],
+      "answer": 1,
+      "explanation": "Ctrl + C copies selected files or text."
+    },
+    {
+      "q": "What does Ctrl + V do?",
+      "options": [
+        "Paste copied item",
+        "Delete file",
+        "Rename folder",
+        "Open search"
+      ],
+      "answer": 0,
+      "explanation": "Ctrl + V pastes the copied or cut item."
+    },
+    {
+      "q": "Which option changes the name of a file?",
+      "options": [
+        "Rename",
+        "Delete",
+        "Paste",
+        "Search"
+      ],
+      "answer": 0,
+      "explanation": "Rename allows users to change the file or folder name."
+    },
+    {
+      "q": "Which drive usually contains Windows operating system files?",
+      "options": [
+        "C Drive",
+        "USB Drive",
+        "DVD Drive",
+        "Network Drive"
+      ],
+      "answer": 0,
+      "explanation": "The C Drive generally stores Windows system files."
+    },
+    {
+      "q": "What information can be seen in file properties?",
+      "options": [
+        "File size",
+        "File type",
+        "Date created",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "File properties show details like size, type and creation date."
+    },
+    {
+      "q": "What does Cut operation do?",
+      "options": [
+        "Deletes permanently",
+        "Moves a file from one place to another",
+        "Creates a duplicate",
+        "Searches the file"
+      ],
+      "answer": 1,
+      "explanation": "Cut removes the file from its current location and moves it after paste."
+    },
+    {
+      "q": "Which view helps display files in small picture previews?",
+      "options": [
+        "Details View",
+        "Icons View",
+        "List View",
+        "Text View"
+      ],
+      "answer": 1,
+      "explanation": "Icons View displays file previews as icons or thumbnails."
+    },
+    {
+      "q": "Why is organizing files into folders important?",
+      "options": [
+        "To make the computer heavier",
+        "To find files easily and keep data organized",
+        "To increase screen brightness",
+        "To reduce keyboard size"
+      ],
+      "answer": 1,
+      "explanation": "Proper folder organization helps users quickly locate and manage files."
+    }
+  ]
+}

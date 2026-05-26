@@ -1,0 +1,254 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-sound-buzzer",
+    "number": 1,
+    "title": "Sound: Buzzer",
+    "subtitle": "hear, feel, explore!",
+    "date": "Session 01",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#FF9800",
+    "icon": "🔊",
+    "tags": [
+        "Sound",
+        "Electronics",
+        "Buzzer",
+        "STEAM"
+    ],
+    "overview": "Students explore how an active buzzer creates sound using electricity. They hear the buzzing sound, observe vibrations and understand how buzzers are used in real-life devices like alarms, toys and school bells.",
+    "grades": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from the actual classroom activity with buzzers and batteries.",
+        "gallery": [
+            {
+                "file": "data/active-buzzer.jpg",
+                "_placeholder": "ADD: Photo of active buzzer component",
+                "caption": "Active buzzer makes sound when power is connected",
+                "category": "Components"
+            },
+            {
+                "file": "data/battery-pack.jpg",
+                "_placeholder": "ADD: Photo of battery used in activity",
+                "caption": "Battery gives electrical power to the buzzer",
+                "category": "Components"
+            },
+            {
+                "file": "data/buzzer-vibration.jpg",
+                "_placeholder": "ADD: Students touching buzzer to feel vibration",
+                "caption": "Students feel tiny vibrations while buzzer works",
+                "category": "Activity"
+            },
+            {
+                "file": "data/buzzer-circuit.jpg",
+                "_placeholder": "ADD: Simple buzzer circuit photo",
+                "caption": "Simple circuit using battery, wires and buzzer",
+                "category": "Circuit"
+            },
+            {
+                "file": "data/alarm-clock.jpg",
+                "_placeholder": "ADD: Alarm clock using buzzer sound",
+                "caption": "Buzzers are used in alarms and timers",
+                "category": "Real Life"
+            },
+            {
+                "file": "data/school-bell.jpg",
+                "_placeholder": "ADD: Electronic school bell image",
+                "caption": "Electronic bells use buzzer sounds",
+                "category": "Real Life"
+            },
+            {
+                "file": "data/students-listening.jpg",
+                "_placeholder": "ADD: Students listening carefully to buzzer sound",
+                "caption": "Students hearing different buzzer sounds",
+                "category": "Lab"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is sound?",
+        "What is an active buzzer?",
+        "Battery gives power to the buzzer",
+        "Electricity creates sound and vibration",
+        "Buzzers are used in alarms and bells",
+        "Feeling vibration with hands carefully",
+        "ON/OFF sound using wires",
+        "Safe handling of electronic components"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is a Buzzer?",
+            "videoId": "kZ3bF6h7P7Q",
+            "desc": "Simple explanation of how buzzers make sound."
+        },
+        {
+            "title": "Sound and Vibrations for Kids",
+            "videoId": "lFWXjzhH8a0",
+            "desc": "Learn how vibrations create sound."
+        },
+        {
+            "title": "Simple Buzzer Circuit",
+            "videoId": "6nVg6x2D4Fo",
+            "desc": "Basic buzzer activity using battery and wires."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Interactive Sound Explorer",
+            "url": "https://www.sciencekids.co.nz/sounds.html",
+            "icon": "🔊"
+        },
+        {
+            "title": "Simple Electronics for Kids",
+            "url": "https://www.ducksters.com/science/electricity.php",
+            "icon": "⚡"
+        },
+        {
+            "title": "Kids Learning Videos",
+            "url": "https://www.youtube.com",
+            "icon": "🎥"
+        }
+    ],
+    "activity": {
+        "title": "Hear the Buzzer!",
+        "parts": [
+            "Active buzzer",
+            "Battery",
+            "Connecting wires",
+            "Breadboard (optional)"
+        ],
+        "steps": [
+            "Teacher shows the buzzer component",
+            "Connect buzzer to battery using wires",
+            "Students listen carefully to the buzzing sound",
+            "Students gently touch the buzzer to feel vibration",
+            "Disconnect one wire to stop the sound",
+            "Discuss where buzzers are used in daily life"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does a buzzer produce?",
+            "options": [
+                "Light",
+                "Sound",
+                "Water",
+                "Smoke"
+            ],
+            "answer": 1,
+            "explanation": "A buzzer produces sound when electricity flows through it."
+        },
+        {
+            "q": "What gives power to the buzzer?",
+            "options": [
+                "Paper",
+                "Battery",
+                "Book",
+                "Fan"
+            ],
+            "answer": 1,
+            "explanation": "Battery provides electrical energy to the buzzer."
+        },
+        {
+            "q": "What can students feel when touching a working buzzer carefully?",
+            "options": [
+                "Ice",
+                "Wind",
+                "Vibration",
+                "Water"
+            ],
+            "answer": 2,
+            "explanation": "Buzzers vibrate while producing sound."
+        },
+        {
+            "q": "Buzzers are commonly used in:",
+            "options": [
+                "Alarm clocks",
+                "Pillows",
+                "Shoes",
+                "Books"
+            ],
+            "answer": 0,
+            "explanation": "Buzzers are used in alarms, bells and electronic devices."
+        },
+        {
+            "q": "What happens when the wire is removed from the circuit?",
+            "options": [
+                "Sound increases",
+                "Buzzer stops",
+                "Battery disappears",
+                "Light appears"
+            ],
+            "answer": 1,
+            "explanation": "Removing the wire breaks the circuit and stops the buzzer."
+        },
+        {
+            "q": "What creates sound in a buzzer?",
+            "options": [
+                "Vibrations",
+                "Water flow",
+                "Sunlight",
+                "Air only"
+            ],
+            "answer": 0,
+            "explanation": "Sound is created by fast vibrations inside the buzzer."
+        },
+        {
+            "q": "Which sense organ helps us hear buzzer sound?",
+            "options": [
+                "Eyes",
+                "Nose",
+                "Ears",
+                "Hands"
+            ],
+            "answer": 2,
+            "explanation": "We hear sound using our ears."
+        },
+        {
+            "q": "What should students do while handling electronics?",
+            "options": [
+                "Throw components",
+                "Handle safely",
+                "Break wires",
+                "Pull hard"
+            ],
+            "answer": 1,
+            "explanation": "Electronic components should always be handled carefully and safely."
+        },
+        {
+            "q": "An active buzzer starts making sound when:",
+            "options": [
+                "Painted",
+                "Connected to power",
+                "Dropped",
+                "Covered"
+            ],
+            "answer": 1,
+            "explanation": "Active buzzers automatically make sound when connected to electricity."
+        },
+        {
+            "q": "Which real-life device may use a buzzer?",
+            "options": [
+                "School bell",
+                "Notebook",
+                "Water bottle",
+                "Chair"
+            ],
+            "answer": 0,
+            "explanation": "Electronic school bells often use buzzers to create sound."
+        }
+    ]
+}

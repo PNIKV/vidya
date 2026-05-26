@@ -1,0 +1,264 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/",
+    "images_folder": "sessions/session-2/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Blink: Modify Code with Example",
+  "subtitle": "Learn Coding with Arduino LED Blink!",
+  "date": "Session 02",
+  "duration": "1 Hour",
+  "phase": "Coding Basics",
+  "color": "#FF9800",
+  "icon": "💡",
+  "tags": [
+    "Arduino",
+    "Coding",
+    "LED",
+    "Programming",
+    "STEM"
+  ],
+  "overview": "In this session, students learn the basic Arduino Blink program and understand how to modify the code to change LED blinking speed and patterns. Students explore delay timing, digital output, and basic programming logic using Arduino UNO.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add actual classroom photos and coding activity images.",
+    "gallery": [
+      {
+        "file": "data/blink.gif",
+        "_placeholder": "ADD: LED blinking image",
+        "caption": "Arduino LED blinking example",
+        "category": "Coding"
+      },
+      {
+        "file": "data/Arduino-uno.jpg",
+        "_placeholder": "ADD: Arduino UNO board photo",
+        "caption": "Arduino UNO used for blink project",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard.jpg",
+        "_placeholder": "ADD: Breadboard circuit setup",
+        "caption": "Students building LED blink circuit",
+        "category": "Lab"
+      },
+      {
+        "file": "data/led-circuit.jpg",
+        "_placeholder": "ADD: LED connection photo",
+        "caption": "LED connected with resistor",
+        "category": "Components"
+      },
+      {
+        "file": "data/coding-session.jpg",
+        "_placeholder": "ADD: Students coding in Arduino IDE",
+        "caption": "Students modifying blink code",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Introduction to Arduino Blink Program",
+    "Understanding setup() and loop() functions",
+    "What is pinMode()?",
+    "What is digitalWrite()?",
+    "Understanding delay() timing",
+    "Modify blinking speed",
+    "Fast blink vs slow blink",
+    "Changing LED patterns using code"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Blink LED Tutorial",
+      "videoId": "sNIMCdVOHOM",
+      "desc": "Learn how to blink an LED using Arduino UNO step by step."
+    },
+    {
+      "title": "Arduino Programming Basics",
+      "videoId": "fJWR7dBuc18",
+      "desc": "Introduction to Arduino coding for beginners."
+    },
+    {
+      "title": "Understanding delay() in Arduino",
+      "videoId": "QdHJ0sO8jkQ",
+      "desc": "Learn how delay controls LED blinking speed."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino Blink Example",
+      "url": "https://docs.arduino.cc/built-in-examples/basics/Blink/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "LED Blink using Arduino UNO",
+    "parts": [
+      "Arduino UNO",
+      "LED",
+      "220Ω Resistor",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect LED positive leg to pin 13 using resistor",
+      "Connect LED negative leg to GND",
+      "Open Arduino IDE",
+      "Write the Blink code",
+      "Upload code to Arduino UNO",
+      "Observe LED blinking",
+      "Modify delay timing to change blinking speed"
+    ]
+  },
+  "exampleCode": {
+    "title": "Basic Blink Code",
+    "code": "void setup() {\\n  pinMode(13, OUTPUT);\\n}\\n\\nvoid loop() {\\n  digitalWrite(13, HIGH);\\n  delay(1000);\\n  digitalWrite(13, LOW);\\n  delay(1000);\\n}"
+  },
+  "modifiedCodeExamples": [
+    {
+      "title": "Fast Blinking LED",
+      "code": "void setup() {\\n  pinMode(13, OUTPUT);\\n}\\n\\nvoid loop() {\\n  digitalWrite(13, HIGH);\\n  delay(200);\\n  digitalWrite(13, LOW);\\n  delay(200);\\n}",
+      "explanation": "LED blinks very fast because delay time is reduced to 200 milliseconds."
+    },
+    {
+      "title": "Slow Blinking LED",
+      "code": "void setup() {\\n  pinMode(13, OUTPUT);\\n}\\n\\nvoid loop() {\\n  digitalWrite(13, HIGH);\\n  delay(2000);\\n  digitalWrite(13, LOW);\\n  delay(2000);\\n}",
+      "explanation": "LED blinks slowly because delay time is increased to 2000 milliseconds."
+    },
+    {
+      "title": "Double Blink Pattern",
+      "code": "void setup() {\\n  pinMode(13, OUTPUT);\\n}\\n\\nvoid loop() {\\n  digitalWrite(13, HIGH);\\n  delay(200);\\n  digitalWrite(13, LOW);\\n  delay(200);\\n\\n  digitalWrite(13, HIGH);\\n  delay(200);\\n  digitalWrite(13, LOW);\\n  delay(1000);\\n}",
+      "explanation": "LED blinks two times quickly and then waits for 1 second."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which component glows in the Blink project?",
+      "options": [
+        "Motor",
+        "LED",
+        "Battery",
+        "Switch"
+      ],
+      "answer": 1,
+      "explanation": "LED glows ON and OFF in the Blink project."
+    },
+    {
+      "q": "Which Arduino pin is commonly used in the Blink example?",
+      "options": [
+        "Pin 1",
+        "Pin 7",
+        "Pin 13",
+        "Pin 20"
+      ],
+      "answer": 2,
+      "explanation": "Pin 13 is commonly used because it has a built-in LED."
+    },
+    {
+      "q": "What does pinMode(13, OUTPUT) mean?",
+      "options": [
+        "Pin 13 will take input",
+        "Pin 13 will send output",
+        "Pin 13 will store data",
+        "Pin 13 will blink automatically"
+      ],
+      "answer": 1,
+      "explanation": "OUTPUT means the pin sends signals to components like LEDs."
+    },
+    {
+      "q": "What does digitalWrite(13, HIGH) do?",
+      "options": [
+        "Turns OFF LED",
+        "Deletes code",
+        "Turns ON LED",
+        "Restarts Arduino"
+      ],
+      "answer": 2,
+      "explanation": "HIGH means electricity flows and LED turns ON."
+    },
+    {
+      "q": "What does delay(1000) mean?",
+      "options": [
+        "Wait for 1 second",
+        "Wait for 10 seconds",
+        "Wait for 100 seconds",
+        "Stop Arduino forever"
+      ],
+      "answer": 0,
+      "explanation": "1000 milliseconds = 1 second."
+    },
+    {
+      "q": "If delay time becomes smaller, the LED blinks:",
+      "options": [
+        "Slower",
+        "Faster",
+        "Stops glowing",
+        "Changes color"
+      ],
+      "answer": 1,
+      "explanation": "Smaller delay means less waiting time, so blinking becomes faster."
+    },
+    {
+      "q": "Which function runs again and again in Arduino?",
+      "options": [
+        "setup()",
+        "loop()",
+        "start()",
+        "blink()"
+      ],
+      "answer": 1,
+      "explanation": "loop() continuously repeats the instructions."
+    },
+    {
+      "q": "What is the purpose of a resistor in LED circuit?",
+      "options": [
+        "Increase voltage",
+        "Store energy",
+        "Protect LED by limiting current",
+        "Make LED brighter"
+      ],
+      "answer": 2,
+      "explanation": "Resistor controls excess current and protects the LED."
+    },
+    {
+      "q": "Which software is used to upload Arduino code?",
+      "options": [
+        "MS Word",
+        "Paint",
+        "Arduino IDE",
+        "Chrome"
+      ],
+      "answer": 2,
+      "explanation": "Arduino IDE is used to write and upload code."
+    },
+    {
+      "q": "What happens when digitalWrite(13, LOW) is used?",
+      "options": [
+        "LED turns ON",
+        "LED turns OFF",
+        "Motor rotates",
+        "Arduino shuts down"
+      ],
+      "answer": 1,
+      "explanation": "LOW stops current flow and turns OFF the LED."
+    }
+  ]
+}

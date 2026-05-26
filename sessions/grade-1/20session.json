@@ -1,0 +1,124 @@
+{
+    "id": "session-8",
+    "number": 8,
+    "title": "Internet – What Is It?",
+    "subtitle": "Learning Internet Basics Through Story and Activities",
+    "date": "Session 08",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#4285F4",
+    "icon": "🌐",
+    "tags": [
+        "Internet",
+        "Digital Learning",
+        "Technology",
+        "Online Safety"
+    ],
+    "overview": "Students learn what the Internet is through a simple story, understand how people use it to learn, watch videos, communicate, and explore information safely.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-8/slides.pdf"
+    },
+    "images": {
+        "_note": "Add classroom images showing internet usage and learning activities.",
+        "gallery": [
+            {
+                "file": "data/internet-learning.jpg",
+                "caption": "Students learning using the internet",
+                "category": "Learning"
+            },
+            {
+                "file": "data/online-video.jpg",
+                "caption": "Watching educational videos online",
+                "category": "Technology"
+            },
+            {
+                "file": "data/internet-devices.jpg",
+                "caption": "Devices connected to the internet",
+                "category": "Concept"
+            },
+            {
+                "file": "data/safe-internet.jpg",
+                "caption": "Internet safety awareness",
+                "category": "Safety"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is the Internet?",
+        "Internet helps us learn",
+        "Internet helps us watch educational videos",
+        "Internet helps us communicate",
+        "Internet safety basics",
+        "Using technology responsibly"
+    ],
+    "story": {
+        "title": "Aarav Learns About the Internet",
+        "content": "One day Aarav wanted to learn how volcanoes work. His teacher suggested using the Internet. Aarav opened his computer and searched for volcano videos. He watched educational videos, learned new facts, and even talked with friends about what he discovered. Aarav understood that the Internet is a big network that helps people learn, watch, communicate, and explore information from around the world."
+    },
+    "youtubeVideos": [
+        {
+            "title": "What Is the Internet for Kids",
+            "videoId": "Dxcc6ycZ73M",
+            "desc": "Simple explanation of the Internet."
+        },
+        {
+            "title": "Internet Safety for Students",
+            "videoId": "HxySrSbSY7o",
+            "desc": "Basic online safety rules."
+        }
+    ],
+    "activity": {
+        "title": "Internet Uses Discussion",
+        "parts": [
+            "Notebook",
+            "Pencil",
+            "Computer or Mobile Device"
+        ],
+        "steps": [
+            "Think about how you use the Internet",
+            "Write three ways the Internet helps you",
+            "Share your ideas with classmates",
+            "Discuss safe Internet habits"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does the Internet help us do?",
+            "options": [
+                "Learn information",
+                "Watch videos",
+                "Communicate",
+                "All of these"
+            ],
+            "answer": 3,
+            "explanation": "The Internet helps us learn, watch, and communicate."
+        },
+        {
+            "q": "Which device can connect to the Internet?",
+            "options": [
+                "Computer",
+                "Mobile Phone",
+                "Tablet",
+                "All of these"
+            ],
+            "answer": 3,
+            "explanation": "Many digital devices can connect to the Internet."
+        },
+        {
+            "q": "What should we do online?",
+            "options": [
+                "Use technology safely",
+                "Share passwords",
+                "Open unknown links",
+                "Ignore safety rules"
+            ],
+            "answer": 0,
+            "explanation": "Safe Internet use is important."
+        }
+    ]
+}

@@ -1,0 +1,258 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Servo + Potentiometer",
+  "subtitle": "control the angle with a knob!",
+  "date": "Session 02",
+  "duration": "1.5 Hours",
+  "phase": "Electronics & Robotics",
+  "color": "#FF8C00",
+  "icon": "⚙️",
+  "tags": [
+    "Arduino",
+    "Servo Motor",
+    "Potentiometer",
+    "Robotics"
+  ],
+  "overview": "In this exciting robotics session, students learn how to control a servo motor using a potentiometer with Arduino UNO. By rotating the potentiometer knob, students can change the angle of the servo motor and understand the concept of analog input and motor control.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add real classroom photos, wiring setup pictures, student activity photos, and Arduino demonstrations.",
+    "gallery": [
+      {
+        "file": "data/servo-motor.gif",
+        "_placeholder": "ADD: Photo of servo motor used in the session",
+        "caption": "Servo Motor — rotates to a specific angle",
+        "category": "Concept"
+      },
+      {
+        "file": "data/potentiometer.jpg",
+        "_placeholder": "ADD: Photo of potentiometer component",
+        "caption": "Potentiometer — adjustable knob for controlling values",
+        "category": "Components"
+      },
+      {
+        "file": "data/Arduino-uno.jpg",
+        "_placeholder": "ADD: Photo of Arduino UNO board",
+        "caption": "Arduino UNO — the smart brain controlling the circuit",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard.jpg",
+        "_placeholder": "ADD: Photo of breadboard wiring setup",
+        "caption": "Breadboard setup for servo and potentiometer",
+        "category": "Lab"
+      },
+      {
+        "file": "data/jumper-wire.jpg",
+        "_placeholder": "ADD: Photo of jumper wire connections",
+        "caption": "Jumper wires connecting all components",
+        "category": "Components"
+      },
+      {
+        "file": "data/servo-project.jpg",
+        "_placeholder": "ADD: Students testing servo movement",
+        "caption": "Students controlling servo angle using potentiometer",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Servo Motor?",
+    "Servo Motor rotates to specific angles (0° to 180°)",
+    "Potentiometer as an analog input device",
+    "Arduino reads analog values using A0 pin",
+    "Mapping potentiometer values to servo angle",
+    "PWM signal controls the servo motor",
+    "Applications of servo motors in robotics",
+    "Real-life examples: robotic arm, door lock, RC cars"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Servo Motor with Potentiometer using Arduino",
+      "videoId": "g2i1d6f7i8k",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Learn how to control a servo motor using a potentiometer and Arduino UNO."
+    },
+    {
+      "title": "What is a Servo Motor?",
+      "videoId": "1WnGv-DPexc",
+      "desc": "Basic introduction to servo motors and how they work."
+    },
+    {
+      "title": "Arduino Potentiometer Tutorial",
+      "videoId": "S4J3gM4fFeY",
+      "desc": "Understanding potentiometers and analog input in Arduino."
+    },
+    {
+      "title": "Arduino Servo Project for Beginners",
+      "videoId": "hM4A0fS7q6k",
+      "desc": "Fun beginner-friendly servo motor projects."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Servo Library Documentation",
+      "url": "https://www.arduino.cc/reference/en/libraries/servo/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad Circuit Simulator",
+      "url": "https://www.tinkercad.com/circuits",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Control Servo Angle Using Potentiometer",
+    "parts": [
+      "Arduino UNO",
+      "Servo Motor (SG90)",
+      "Potentiometer (10kΩ)",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect servo motor VCC to 5V and GND to GND",
+      "Connect servo signal pin to Arduino pin 9",
+      "Connect potentiometer middle pin to A0",
+      "Connect potentiometer side pins to 5V and GND",
+      "Upload Arduino code",
+      "Rotate potentiometer knob",
+      "Observe servo motor rotating according to knob position"
+    ]
+  },
+  "code": {
+    "language": "Arduino C++",
+    "example": "#include <Servo.h>\n\nServo myservo;\nint potpin = A0;\nint val;\n\nvoid setup() {\n  myservo.attach(9);\n}\n\nvoid loop() {\n  val = analogRead(potpin);\n  val = map(val, 0, 1023, 0, 180);\n  myservo.write(val);\n  delay(15);\n}"
+  },
+  "quiz": [
+    {
+      "q": "What is the main function of a servo motor?",
+      "options": [
+        "Store electricity",
+        "Rotate to a specific angle",
+        "Glow like an LED",
+        "Measure temperature"
+      ],
+      "answer": 1,
+      "explanation": "Servo motors rotate to specific angles like 0°, 90°, or 180°."
+    },
+    {
+      "q": "Which component is used to control the servo angle manually?",
+      "options": [
+        "LED",
+        "Battery",
+        "Potentiometer",
+        "Buzzer"
+      ],
+      "answer": 2,
+      "explanation": "The potentiometer acts like a control knob to change values."
+    },
+    {
+      "q": "Which Arduino pin is commonly used for reading potentiometer values?",
+      "options": [
+        "Digital pin 13",
+        "A0 analog pin",
+        "GND",
+        "5V"
+      ],
+      "answer": 1,
+      "explanation": "Potentiometers are connected to analog input pins like A0."
+    },
+    {
+      "q": "What is the rotation range of a typical servo motor?",
+      "options": [
+        "0° to 90°",
+        "0° to 180°",
+        "0° to 360°",
+        "Only 45°"
+      ],
+      "answer": 1,
+      "explanation": "Most beginner servo motors rotate from 0° to 180°."
+    },
+    {
+      "q": "What does Arduino use to control the servo motor?",
+      "options": [
+        "Bluetooth",
+        "PWM Signal",
+        "Laser",
+        "Sound waves"
+      ],
+      "answer": 1,
+      "explanation": "Servo motors are controlled using PWM (Pulse Width Modulation)."
+    },
+    {
+      "q": "What happens when you rotate the potentiometer knob?",
+      "options": [
+        "LED changes color",
+        "Servo motor angle changes",
+        "Battery charges",
+        "Arduino turns off"
+      ],
+      "answer": 1,
+      "explanation": "The servo motor rotates according to the potentiometer value."
+    },
+    {
+      "q": "Which library is used to control servo motors in Arduino?",
+      "options": [
+        "Wire.h",
+        "LiquidCrystal.h",
+        "Servo.h",
+        "SPI.h"
+      ],
+      "answer": 2,
+      "explanation": "Servo.h library helps control servo motors easily."
+    },
+    {
+      "q": "A potentiometer is also called:",
+      "options": [
+        "Variable resistor",
+        "Battery",
+        "Capacitor",
+        "Sensor cable"
+      ],
+      "answer": 0,
+      "explanation": "A potentiometer is a variable resistor that changes resistance by rotating."
+    },
+    {
+      "q": "Which real-life device commonly uses servo motors?",
+      "options": [
+        "Robotic Arm",
+        "Water Bottle",
+        "Notebook",
+        "Fan Regulator only"
+      ],
+      "answer": 0,
+      "explanation": "Servo motors are widely used in robotic arms and automation."
+    },
+    {
+      "q": "What does the map() function do in Arduino code?",
+      "options": [
+        "Creates a GPS map",
+        "Converts one range of values into another range",
+        "Deletes variables",
+        "Turns off the motor"
+      ],
+      "answer": 1,
+      "explanation": "map() converts potentiometer values (0-1023) into servo angles (0-180)."
+    }
+  ]
+}

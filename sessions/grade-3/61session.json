@@ -1,0 +1,245 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/",
+    "images_folder": "sessions/session-1/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Operating Systems & Desktop",
+  "subtitle": "Identify Desktop, Taskbar & Start Menu",
+  "date": "Session 01",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#4A90E2",
+  "icon": "🖥️",
+  "tags": [
+    "Computer Basics",
+    "Operating System",
+    "Desktop",
+    "Taskbar",
+    "Start Menu"
+  ],
+  "overview": "This session introduces students to the basic parts of a computer operating system including the desktop, taskbar, icons, and start menu using real-life examples and activities.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add classroom photos, desktop screenshots, and student activity images.",
+    "gallery": [
+      {
+        "file": "data/computer-desktop.jpg",
+        "_placeholder": "ADD: Windows desktop screenshot",
+        "caption": "Desktop screen after computer starts",
+        "category": "Concept"
+      },
+      {
+        "file": "data/taskbar.jpg",
+        "_placeholder": "ADD: Taskbar image from classroom computer",
+        "caption": "Taskbar helps open and switch programs",
+        "category": "Concept"
+      },
+      {
+        "file": "data/start-menu.jpg",
+        "_placeholder": "ADD: Start Menu screenshot",
+        "caption": "Start Menu shows apps and settings",
+        "category": "Concept"
+      },
+      {
+        "file": "data/computer-icons.jpg",
+        "_placeholder": "ADD: Desktop icons screenshot",
+        "caption": "Icons are shortcuts to programs and files",
+        "category": "Components"
+      },
+      {
+        "file": "data/student-lab.jpg",
+        "_placeholder": "ADD: Students using computers in lab",
+        "caption": "Students identifying desktop parts",
+        "category": "Lab"
+      },
+      {
+        "file": "data/windows-login.jpg",
+        "_placeholder": "ADD: Windows login screen image",
+        "caption": "Computer login before desktop appears",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Operating System — The brain that controls the computer",
+    "Desktop — Main screen of the computer",
+    "Icons — Small pictures representing files/apps",
+    "Taskbar — Bar used to open and switch programs",
+    "Start Menu — Place to access apps and settings",
+    "Wallpaper — Background image of desktop",
+    "Recycle Bin — Stores deleted files temporarily",
+    "Mouse Click — Used to open files and programs"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Introduction to Operating System",
+      "videoId": "26QPDBe-NB8",
+      "_note": "Replace with preferred educational video",
+      "desc": "Simple explanation of operating systems for beginners."
+    },
+    {
+      "title": "Desktop, Taskbar and Start Menu Explained",
+      "videoId": "dJMx5Nhb6OE",
+      "desc": "Learn the parts of the Windows desktop."
+    },
+    {
+      "title": "Computer Basics for Kids",
+      "videoId": "OAx_6-wdslM",
+      "desc": "Introduction to computer basics in an easy way."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft Windows Basics",
+      "url": "https://support.microsoft.com/windows",
+      "icon": "🔗"
+    },
+    {
+      "title": "Computer Fundamentals",
+      "url": "https://edu.gcfglobal.org/en/computerbasics/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Identify Desktop Parts Activity",
+    "parts": [
+      "Computer or Laptop",
+      "Mouse",
+      "Keyboard",
+      "Projector (optional)"
+    ],
+    "steps": [
+      "Turn ON the computer",
+      "Wait for desktop screen to appear",
+      "Identify desktop icons",
+      "Find the taskbar at the bottom",
+      "Click the Start Menu button",
+      "Open Paint or Calculator from Start Menu",
+      "Close the application using X button"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is an Operating System?",
+      "options": [
+        "A computer game",
+        "A software that controls the computer",
+        "A keyboard",
+        "A speaker"
+      ],
+      "answer": 1,
+      "explanation": "An Operating System controls all computer activities and helps users interact with the computer."
+    },
+    {
+      "q": "What is the Desktop?",
+      "options": [
+        "A table",
+        "The main screen of the computer",
+        "A printer",
+        "A CPU part"
+      ],
+      "answer": 1,
+      "explanation": "Desktop is the main screen that appears after the computer starts."
+    },
+    {
+      "q": "Where is the Taskbar usually located?",
+      "options": [
+        "Top of the monitor",
+        "Bottom of the screen",
+        "Inside CPU",
+        "On keyboard"
+      ],
+      "answer": 1,
+      "explanation": "The taskbar is usually located at the bottom of the screen."
+    },
+    {
+      "q": "What does the Start Menu help us do?",
+      "options": [
+        "Shut the monitor",
+        "Open apps and settings",
+        "Print papers",
+        "Type documents"
+      ],
+      "answer": 1,
+      "explanation": "The Start Menu helps users access apps, files, and settings."
+    },
+    {
+      "q": "What are Icons?",
+      "options": [
+        "Songs",
+        "Videos",
+        "Small pictures representing programs/files",
+        "Computer wires"
+      ],
+      "answer": 2,
+      "explanation": "Icons are small images used to open programs or files quickly."
+    },
+    {
+      "q": "Which device is mainly used to click icons?",
+      "options": [
+        "Monitor",
+        "Mouse",
+        "Speaker",
+        "Printer"
+      ],
+      "answer": 1,
+      "explanation": "The mouse is used to click and open icons."
+    },
+    {
+      "q": "Which icon stores deleted files temporarily?",
+      "options": [
+        "Calculator",
+        "Paint",
+        "Recycle Bin",
+        "Chrome"
+      ],
+      "answer": 2,
+      "explanation": "Recycle Bin temporarily stores deleted files."
+    },
+    {
+      "q": "What is Wallpaper?",
+      "options": [
+        "Wall paint",
+        "Desktop background image",
+        "Keyboard cover",
+        "Computer box"
+      ],
+      "answer": 1,
+      "explanation": "Wallpaper is the background image shown on the desktop."
+    },
+    {
+      "q": "Which button is used to close a window?",
+      "options": [
+        "Start",
+        "Minimize",
+        "X button",
+        "Enter"
+      ],
+      "answer": 2,
+      "explanation": "The X button closes the current window or application."
+    },
+    {
+      "q": "Which of these is an Operating System?",
+      "options": [
+        "Windows",
+        "Mouse",
+        "Monitor",
+        "Keyboard"
+      ],
+      "answer": 0,
+      "explanation": "Windows is a popular operating system."
+    }
+  ]
+}

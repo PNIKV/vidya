@@ -1,0 +1,315 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put activity photos, spreadsheet screenshots here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Spreadsheet Basics",
+  "subtitle": "learn tables, formulas & calculations!",
+  "date": "Session 02",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#34C759",
+  "icon": "📊",
+  "tags": [
+    "Spreadsheet",
+    "Excel",
+    "Google Sheets",
+    "Mathematics"
+  ],
+  "overview": "This session introduces students to spreadsheets using Microsoft Excel or Google Sheets. Students learn rows, columns, cells, formulas, calculations, and how spreadsheets help organize and analyze data easily.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add classroom screenshots, spreadsheet examples, student activities, charts, and formula demonstrations.",
+    "gallery": [
+      {
+        "file": "data/spreadsheet-interface.jpg",
+        "_placeholder": "ADD: Screenshot of spreadsheet interface",
+        "caption": "Spreadsheet interface with rows and columns",
+        "category": "Concept"
+      },
+      {
+        "file": "data/rows-columns.png",
+        "_placeholder": "ADD: Example showing rows and columns",
+        "caption": "Understanding rows and columns in spreadsheets",
+        "category": "Concept"
+      },
+      {
+        "file": "data/cell-reference.jpg",
+        "_placeholder": "ADD: Cell reference example image",
+        "caption": "Cell references like A1, B2, C3",
+        "category": "Concept"
+      },
+      {
+        "file": "data/formula-example.png",
+        "_placeholder": "ADD: Formula example screenshot",
+        "caption": "Using formulas for automatic calculations",
+        "category": "Lab"
+      },
+      {
+        "file": "data/student-sheet.jpg",
+        "_placeholder": "ADD: Student marksheet spreadsheet",
+        "caption": "Students creating marksheets in spreadsheet",
+        "category": "Activity"
+      },
+      {
+        "file": "data/chart-example.png",
+        "_placeholder": "ADD: Simple chart example",
+        "caption": "Creating colorful charts from data",
+        "category": "Charts"
+      },
+      {
+        "file": "data/google-sheets.jpg",
+        "_placeholder": "ADD: Google Sheets classroom activity",
+        "caption": "Students learning spreadsheets on computers",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Spreadsheet?",
+    "Rows and Columns",
+    "Cells and Cell References",
+    "Entering Data into Cells",
+    "Basic Formulas (=A1+B1)",
+    "Using SUM Function",
+    "Formatting Cells and Tables",
+    "Creating Charts and Graphs",
+    "Spreadsheet for Student Marksheet",
+    "Difference between Excel and Google Sheets"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Introduction to Spreadsheets for Beginners",
+      "videoId": "8L1OVkw2ZQ8",
+      "_note": "Replace with actual educational video ID if needed",
+      "desc": "Learn the basics of spreadsheets including rows, columns, and cells in a simple way."
+    },
+    {
+      "title": "Microsoft Excel Basics",
+      "videoId": "Vl0H-qTclOg",
+      "desc": "A beginner-friendly introduction to Microsoft Excel."
+    },
+    {
+      "title": "Google Sheets Tutorial for Students",
+      "videoId": "yUV9TyfYaEQ",
+      "desc": "Learn how to use Google Sheets for calculations and tables."
+    },
+    {
+      "title": "Excel Formulas Explained",
+      "videoId": "N2opj8XzYBY",
+      "desc": "Understanding formulas and functions in spreadsheets."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Sheets",
+      "url": "https://sheets.google.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft Excel Online",
+      "url": "https://www.office.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Spreadsheet Practice Website",
+      "url": "https://edu.gcfglobal.org/en/excel/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create a Student Marksheet",
+    "parts": [
+      "Computer or Laptop",
+      "Google Sheets / Microsoft Excel",
+      "Student marks data",
+      "Keyboard and Mouse"
+    ],
+    "steps": [
+      "Open Google Sheets or Microsoft Excel",
+      "Create columns: Name, English, Maths, Science",
+      "Enter marks of 5 students",
+      "Use SUM formula to calculate total marks",
+      "Use AVERAGE formula to calculate average",
+      "Format the table with colors and borders",
+      "Create a bar chart using the marks data"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a Spreadsheet mainly used for?",
+      "options": [
+        "Drawing pictures",
+        "Watching videos",
+        "Organizing and calculating data",
+        "Playing games"
+      ],
+      "answer": 2,
+      "explanation": "Spreadsheets help organize, calculate, and analyze data easily."
+    },
+    {
+      "q": "A Spreadsheet is made up of:",
+      "options": [
+        "Slides",
+        "Rows and Columns",
+        "Videos",
+        "Paint tools"
+      ],
+      "answer": 1,
+      "explanation": "Spreadsheets contain rows and columns that form cells."
+    },
+    {
+      "q": "What is the intersection of a row and column called?",
+      "options": [
+        "Sheet",
+        "Chart",
+        "Cell",
+        "Table"
+      ],
+      "answer": 2,
+      "explanation": "A cell is formed where a row and column meet."
+    },
+    {
+      "q": "Which of the following is a cell reference?",
+      "options": [
+        "123",
+        "A1",
+        "Row1",
+        "ColumnA"
+      ],
+      "answer": 1,
+      "explanation": "A1 is a cell reference where A is the column and 1 is the row."
+    },
+    {
+      "q": "Which symbol is used to start a formula in spreadsheets?",
+      "options": [
+        "+",
+        "#",
+        "=",
+        "%"
+      ],
+      "answer": 2,
+      "explanation": "All spreadsheet formulas begin with the '=' symbol."
+    },
+    {
+      "q": "Which formula adds numbers together?",
+      "options": [
+        "=TEXT",
+        "=SUM",
+        "=IMAGE",
+        "=COLOR"
+      ],
+      "answer": 1,
+      "explanation": "The SUM function is used to add numbers automatically."
+    },
+    {
+      "q": "What does the formula =A1+B1 do?",
+      "options": [
+        "Deletes cells",
+        "Adds values from A1 and B1",
+        "Changes color",
+        "Creates a chart"
+      ],
+      "answer": 1,
+      "explanation": "The formula adds the values stored in cells A1 and B1."
+    },
+    {
+      "q": "Which software can be used to create spreadsheets?",
+      "options": [
+        "MS Paint",
+        "Google Sheets",
+        "YouTube",
+        "Photos"
+      ],
+      "answer": 1,
+      "explanation": "Google Sheets is a spreadsheet application."
+    },
+    {
+      "q": "What is used to show data visually in a spreadsheet?",
+      "options": [
+        "Chart",
+        "Folder",
+        "Video",
+        "Animation"
+      ],
+      "answer": 0,
+      "explanation": "Charts help represent data visually using bars, lines, or pie graphs."
+    },
+    {
+      "q": "Which function calculates the average of numbers?",
+      "options": [
+        "=AVERAGE",
+        "=COLOR",
+        "=VIDEO",
+        "=ROW"
+      ],
+      "answer": 0,
+      "explanation": "AVERAGE calculates the mean value of selected numbers."
+    },
+    {
+      "q": "Rows in spreadsheets are identified by:",
+      "options": [
+        "Letters",
+        "Numbers",
+        "Colors",
+        "Symbols"
+      ],
+      "answer": 1,
+      "explanation": "Rows are numbered like 1, 2, 3, etc."
+    },
+    {
+      "q": "Columns in spreadsheets are identified by:",
+      "options": [
+        "Numbers",
+        "Pictures",
+        "Letters",
+        "Shapes"
+      ],
+      "answer": 2,
+      "explanation": "Columns are labeled using letters like A, B, C, etc."
+    },
+    {
+      "q": "What happens when you change a value used in a formula?",
+      "options": [
+        "Spreadsheet closes",
+        "Formula updates automatically",
+        "Chart disappears",
+        "Nothing changes"
+      ],
+      "answer": 1,
+      "explanation": "Spreadsheet formulas recalculate automatically when data changes."
+    },
+    {
+      "q": "Which feature helps make tables colorful and neat?",
+      "options": [
+        "Formatting",
+        "Deleting",
+        "Printing",
+        "Gaming"
+      ],
+      "answer": 0,
+      "explanation": "Formatting helps improve the appearance of spreadsheet data."
+    },
+    {
+      "q": "Why are spreadsheets useful for schools?",
+      "options": [
+        "To play songs",
+        "To create marksheets and attendance records",
+        "To edit videos",
+        "To draw cartoons"
+      ],
+      "answer": 1,
+      "explanation": "Schools use spreadsheets for marksheets, attendance, calculations, and reports."
+    }
+  ]
+}

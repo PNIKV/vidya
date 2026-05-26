@@ -1,0 +1,314 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put browser screenshots, activity photos here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Internet Browser Basics",
+  "subtitle": "search, explore, learn!",
+  "date": "Session 02",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#4285F4",
+  "icon": "🌐",
+  "tags": [
+    "Internet",
+    "Browser",
+    "Technology",
+    "Digital Skills"
+  ],
+  "overview": "This session introduces students to Internet Browser Basics, helping them understand how browsers work, how to search information safely, and how to use browser features like tabs, address bar, bookmarks, and search engines.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of browsers, search activities, bookmarks, tabs, and students using the internet safely.",
+    "gallery": [
+      {
+        "file": "data/google-chrome.jpg",
+        "_placeholder": "ADD: Screenshot/photo of Google Chrome browser",
+        "caption": "Google Chrome — Popular web browser",
+        "category": "Browser"
+      },
+      {
+        "file": "data/browser-tabs.jpg",
+        "_placeholder": "ADD: Screenshot showing multiple tabs open",
+        "caption": "Browser Tabs — Open multiple websites together",
+        "category": "Concept"
+      },
+      {
+        "file": "data/search-bar.jpg",
+        "_placeholder": "ADD: Screenshot of browser address/search bar",
+        "caption": "Address Bar — Type website name or search query",
+        "category": "Concept"
+      },
+      {
+        "file": "data/youtube-search.jpg",
+        "_placeholder": "ADD: Screenshot of searching on YouTube or Google",
+        "caption": "Search Engine helps us find information online",
+        "category": "Activity"
+      },
+      {
+        "file": "data/bookmark-browser.jpg",
+        "_placeholder": "ADD: Screenshot of bookmarks feature",
+        "caption": "Bookmarks save favorite websites",
+        "category": "Browser Tools"
+      },
+      {
+        "file": "data/internet-safety.jpg",
+        "_placeholder": "ADD: Poster/photo about internet safety",
+        "caption": "Learn Safe Internet Browsing",
+        "category": "Safety"
+      },
+      {
+        "file": "data/student-browser-activity.jpg",
+        "_placeholder": "ADD: Students practicing internet browsing",
+        "caption": "Students learning browser basics",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is the Internet? — Global network connecting computers",
+    "What is a Browser? — Software used to open websites",
+    "Popular Browsers — Chrome, Firefox, Edge, Safari",
+    "Address Bar — Type website URL or search keywords",
+    "Search Engine — Google, Bing, Yahoo help find information",
+    "Tabs — Open many websites at the same time",
+    "Refresh Button — Reload webpage",
+    "Bookmarks — Save favorite websites for quick access",
+    "Safe Browsing — Avoid unknown links and protect passwords"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is an Internet Browser?",
+      "videoId": "j7ub5zX3G7Q",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Simple explanation of internet browsers for beginners."
+    },
+    {
+      "title": "How to Search on Google",
+      "videoId": "5oH9Nr3bKfw",
+      "desc": "Learn how to search information using Google."
+    },
+    {
+      "title": "Internet Safety for Kids",
+      "videoId": "yiKeLOKc1tw",
+      "desc": "Basic internet safety rules for students."
+    },
+    {
+      "title": "Browser Tabs and Bookmarks Explained",
+      "videoId": "kP0P6M6bxpM",
+      "desc": "Learn how to use tabs and bookmarks in browsers."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Search",
+      "url": "https://www.google.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Chrome Browser",
+      "url": "https://www.google.com/chrome/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Mozilla Firefox",
+      "url": "https://www.mozilla.org/firefox/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Search and Explore Activity",
+    "parts": [
+      "Computer or Laptop",
+      "Internet Connection",
+      "Web Browser",
+      "Projector (Optional)"
+    ],
+    "steps": [
+      "Open the web browser",
+      "Type www.google.com in the address bar",
+      "Search for 'Animals in India'",
+      "Open one website in a new tab",
+      "Bookmark the favorite website",
+      "Refresh the page",
+      "Close the tab safely"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a web browser?",
+      "options": [
+        "A computer game",
+        "Software used to open websites",
+        "A printer",
+        "A speaker"
+      ],
+      "answer": 1,
+      "explanation": "A web browser is software that helps us access and view websites on the internet."
+    },
+    {
+      "q": "Which of these is a popular web browser?",
+      "options": [
+        "MS Paint",
+        "Google Chrome",
+        "Calculator",
+        "Notepad"
+      ],
+      "answer": 1,
+      "explanation": "Google Chrome is one of the most popular web browsers."
+    },
+    {
+      "q": "Where do we type a website name?",
+      "options": [
+        "Taskbar",
+        "Address Bar",
+        "Desktop",
+        "Keyboard"
+      ],
+      "answer": 1,
+      "explanation": "We type website names or search queries in the address bar."
+    },
+    {
+      "q": "Which search engine is most commonly used?",
+      "options": [
+        "Google",
+        "Paint",
+        "WordPad",
+        "Excel"
+      ],
+      "answer": 0,
+      "explanation": "Google is the most commonly used search engine."
+    },
+    {
+      "q": "What is the purpose of browser tabs?",
+      "options": [
+        "To shut down the computer",
+        "To open multiple websites together",
+        "To print documents",
+        "To save files"
+      ],
+      "answer": 1,
+      "explanation": "Tabs help users open many websites at the same time."
+    },
+    {
+      "q": "What does the Refresh button do?",
+      "options": [
+        "Deletes the webpage",
+        "Reloads the webpage",
+        "Turns off internet",
+        "Closes the browser"
+      ],
+      "answer": 1,
+      "explanation": "Refresh reloads the webpage to update content."
+    },
+    {
+      "q": "What are bookmarks used for?",
+      "options": [
+        "Drawing pictures",
+        "Saving favorite websites",
+        "Playing music",
+        "Printing webpages"
+      ],
+      "answer": 1,
+      "explanation": "Bookmarks help save favorite websites for quick access."
+    },
+    {
+      "q": "Which of these is NOT a browser?",
+      "options": [
+        "Chrome",
+        "Firefox",
+        "Safari",
+        "PowerPoint"
+      ],
+      "answer": 3,
+      "explanation": "PowerPoint is presentation software, not a browser."
+    },
+    {
+      "q": "What should you do before clicking unknown links?",
+      "options": [
+        "Click immediately",
+        "Check if the website is safe",
+        "Turn off computer",
+        "Share password"
+      ],
+      "answer": 1,
+      "explanation": "Always check if a website is safe before clicking unknown links."
+    },
+    {
+      "q": "Internet helps us to:",
+      "options": [
+        "Search information",
+        "Watch videos",
+        "Learn online",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "The internet helps us search, watch, learn, and communicate online."
+    },
+    {
+      "q": "Which button closes a browser tab?",
+      "options": [
+        "X button",
+        "Refresh button",
+        "Home button",
+        "Search button"
+      ],
+      "answer": 0,
+      "explanation": "The X button is used to close a browser tab."
+    },
+    {
+      "q": "What is the Internet?",
+      "options": [
+        "A type of food",
+        "A network connecting computers worldwide",
+        "A video game",
+        "A television channel"
+      ],
+      "answer": 1,
+      "explanation": "The internet is a global network connecting computers and devices."
+    },
+    {
+      "q": "Which browser is made by Microsoft?",
+      "options": [
+        "Safari",
+        "Firefox",
+        "Edge",
+        "Opera"
+      ],
+      "answer": 2,
+      "explanation": "Microsoft Edge is developed by Microsoft."
+    },
+    {
+      "q": "What should you NEVER share online?",
+      "options": [
+        "Favorite color",
+        "Passwords",
+        "School subject",
+        "Hobby"
+      ],
+      "answer": 1,
+      "explanation": "Passwords should always be kept private for online safety."
+    },
+    {
+      "q": "What happens when there is no internet connection?",
+      "options": [
+        "Websites may not open",
+        "Computer explodes",
+        "Keyboard stops working",
+        "Monitor disappears"
+      ],
+      "answer": 0,
+      "explanation": "Without internet connection, websites usually cannot load."
+    }
+  ]
+}

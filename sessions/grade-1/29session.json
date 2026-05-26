@@ -1,0 +1,111 @@
+{
+    "id": "session-17",
+    "number": 17,
+    "title": "My Computer Story",
+    "subtitle": "Create, Type and Share with Friends",
+    "date": "Session 17",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#42A5F5",
+    "icon": "🖥️",
+    "tags": [
+        "Computers",
+        "Creativity",
+        "Typing",
+        "Drawing",
+        "Communication"
+    ],
+    "overview": "Students create a simple computer story using drawings and typing, then share their work with classmates to build creativity and communication skills.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-17/slides.pdf"
+    },
+    "images": {
+        "_note": "Add classroom drawing and typing activity photos.",
+        "gallery": [
+            {
+                "file": "data/computer-drawing.jpg",
+                "caption": "Students creating drawings on computers",
+                "category": "Creativity"
+            },
+            {
+                "file": "data/typing-practice.jpg",
+                "caption": "Typing simple stories",
+                "category": "Learning"
+            },
+            {
+                "file": "data/story-sharing.jpg",
+                "caption": "Students sharing computer work with friends",
+                "category": "Communication"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Typing simple sentences",
+        "Creating digital drawings",
+        "Combining text and pictures",
+        "Sharing work with classmates",
+        "Building creativity using computers"
+    ],
+    "activity": {
+        "title": "My Computer Story Activity",
+        "parts": [
+            "Computer",
+            "Drawing Software",
+            "Keyboard",
+            "Mouse"
+        ],
+        "steps": [
+            "Create a simple drawing on the computer",
+            "Type 3 to 5 sentences about the drawing",
+            "Save the work",
+            "Share the computer story with classmates",
+            "Discuss different ideas together"
+        ]
+    },
+    "learningGoals": [
+        "Use computers creatively",
+        "Practice typing skills",
+        "Express ideas through pictures and words",
+        "Develop communication skills"
+    ],
+    "quiz": [
+        {
+            "q": "What can students add to a computer story?",
+            "options": [
+                "Pictures and typing",
+                "Only numbers",
+                "Only colors",
+                "Nothing"
+            ],
+            "answer": 0,
+            "explanation": "Computer stories can include drawings and typed text."
+        },
+        {
+            "q": "Why do students share stories with classmates?",
+            "options": [
+                "To learn from each other",
+                "To hide ideas",
+                "To avoid discussion",
+                "To stop creativity"
+            ],
+            "answer": 0,
+            "explanation": "Sharing builds communication and learning."
+        },
+        {
+            "q": "Which computer skill improves during this activity?",
+            "options": [
+                "Typing",
+                "Swimming",
+                "Cooking",
+                "Running"
+            ],
+            "answer": 0,
+            "explanation": "Students practice typing while creating stories."
+        }
+    ]
+}

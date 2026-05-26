@@ -1,0 +1,345 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-1",
+    "number": 1,
+    "title": "Types of Machines",
+    "subtitle": "Man-made Machines vs Computers",
+    "date": "Session 01",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#6C63FF",
+    "icon": "⚙️",
+    "tags": [
+        "Machines",
+        "Computers",
+        "Technology",
+        "Engineering"
+    ],
+    "overview": "This session introduces students to different types of machines, how machines help humans in daily life, and the difference between man-made machines and computers using simple real-life examples.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from actual session — machine demos, computers, household appliances, transportation machines, robotics activities.",
+        "gallery": [
+            {
+                "file": "data/bicycle.jpg",
+                "_placeholder": "ADD: Photo of bicycle machine",
+                "caption": "Bicycle helps humans move faster with less effort",
+                "category": "Machines"
+            },
+            {
+                "file": "data/fan.jpg",
+                "_placeholder": "ADD: Photo of electric fan",
+                "caption": "Electric fan converts electricity into motion",
+                "category": "Machines"
+            },
+            {
+                "file": "data/computer.jpg",
+                "_placeholder": "ADD: Photo of desktop computer",
+                "caption": "Computer processes data and follows instructions",
+                "category": "Computers"
+            },
+            {
+                "file": "data/washing-machine.jpg",
+                "_placeholder": "ADD: Photo of washing machine",
+                "caption": "Washing machine helps clean clothes automatically",
+                "category": "Machines"
+            },
+            {
+                "file": "data/robot.jpg",
+                "_placeholder": "ADD: Photo of simple robot",
+                "caption": "Robots combine machines and computers together",
+                "category": "Technology"
+            },
+            {
+                "file": "data/calculator.jpg",
+                "_placeholder": "ADD: Photo of calculator",
+                "caption": "Calculator is a small computing machine",
+                "category": "Computers"
+            },
+            {
+                "file": "data/students-activity.jpg",
+                "_placeholder": "ADD: Photo of classroom activity",
+                "caption": "Students identifying machines used in daily life",
+                "category": "Lab"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is a Machine? — A device that makes work easier",
+        "Simple Machines — Lever, pulley, wheel, inclined plane",
+        "Complex Machines — Fan, washing machine, bicycle, car",
+        "Man-made Machines — Created by humans to reduce effort",
+        "What is a Computer? — An electronic machine that processes data",
+        "Difference between Machines and Computers",
+        "Input → Process → Output concept",
+        "Machines need human control while computers follow instructions",
+        "Real-life examples of machines around us",
+        "How computers are used in schools, hospitals, banks and homes"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What are Machines?",
+            "videoId": "Dm6h6M8Jm4E",
+            "_note": "Replace with actual educational video ID if needed",
+            "desc": "Simple explanation of machines and their uses in daily life."
+        },
+        {
+            "title": "Simple and Complex Machines",
+            "videoId": "LSUQ1X_jL1Y",
+            "desc": "Understanding different types of machines with examples."
+        },
+        {
+            "title": "Introduction to Computers for Kids",
+            "videoId": "mCq8-xTH7jA",
+            "desc": "Basic introduction to computers and how they work."
+        },
+        {
+            "title": "Machines Around Us",
+            "videoId": "2NQ6p6k9Y5Y",
+            "desc": "Real-life examples of useful machines."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Simple Machines for Kids",
+            "url": "https://www.ducksters.com/science/simple_machines.php",
+            "icon": "🔗"
+        },
+        {
+            "title": "Computer Basics",
+            "url": "https://edu.gcfglobal.org/en/computerbasics/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Interactive STEM Activities",
+            "url": "https://www.tinkercad.com",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Identify Machines Around You",
+        "parts": [
+            "Notebook",
+            "Chart paper",
+            "Sketch pens",
+            "Pictures of machines",
+            "Computer images"
+        ],
+        "steps": [
+            "Observe machines used at home or school",
+            "Write their names and uses",
+            "Separate them into machine and computer categories",
+            "Discuss how each machine helps humans",
+            "Identify which machines use computers inside them",
+            "Present findings to the class"
+        ]
+    },
+    "realLifeExamples": [
+        "Bicycle",
+        "Fan",
+        "Mixer grinder",
+        "ATM machine",
+        "Computer",
+        "Laptop",
+        "Washing machine",
+        "Robot vacuum cleaner",
+        "Car",
+        "Printer"
+    ],
+    "comparison": {
+        "manMadeMachines": [
+            "Help reduce physical effort",
+            "Usually perform one main task",
+            "Examples: bicycle, fan, crane",
+            "Can work manually or electrically",
+            "Need human control"
+        ],
+        "computers": [
+            "Process information and data",
+            "Can perform many tasks quickly",
+            "Examples: desktop, laptop, tablet",
+            "Work electronically using programs",
+            "Follow instructions automatically"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is a machine?",
+            "options": [
+                "A toy only",
+                "A device that makes work easier",
+                "A type of food",
+                "A school bag"
+            ],
+            "answer": 1,
+            "explanation": "Machines help humans do work faster and easier."
+        },
+        {
+            "q": "Which of these is a machine?",
+            "options": [
+                "Bicycle",
+                "Book",
+                "Bottle",
+                "Pencil"
+            ],
+            "answer": 0,
+            "explanation": "A bicycle helps humans move easily, so it is a machine."
+        },
+        {
+            "q": "What is a computer?",
+            "options": [
+                "A cooking tool",
+                "An electronic machine that processes data",
+                "A water bottle",
+                "A chair"
+            ],
+            "answer": 1,
+            "explanation": "Computers process information and follow instructions."
+        },
+        {
+            "q": "Which machine helps wash clothes?",
+            "options": [
+                "Fan",
+                "Laptop",
+                "Washing machine",
+                "Calculator"
+            ],
+            "answer": 2,
+            "explanation": "Washing machines help clean clothes automatically."
+        },
+        {
+            "q": "Which device is mainly used for calculations and data processing?",
+            "options": [
+                "Computer",
+                "Hammer",
+                "Pulley",
+                "Wheel"
+            ],
+            "answer": 0,
+            "explanation": "Computers process data and perform calculations."
+        },
+        {
+            "q": "Who creates man-made machines?",
+            "options": [
+                "Animals",
+                "Humans",
+                "Trees",
+                "Clouds"
+            ],
+            "answer": 1,
+            "explanation": "Humans invent and build machines."
+        },
+        {
+            "q": "Which is an example of a computer device?",
+            "options": [
+                "Laptop",
+                "Bicycle",
+                "Fan",
+                "Spoon"
+            ],
+            "answer": 0,
+            "explanation": "Laptop is a type of computer."
+        },
+        {
+            "q": "What do machines help reduce?",
+            "options": [
+                "Learning",
+                "Physical effort",
+                "Electricity",
+                "Books"
+            ],
+            "answer": 1,
+            "explanation": "Machines make work easier and reduce human effort."
+        },
+        {
+            "q": "Which machine moves air in a room?",
+            "options": [
+                "Fan",
+                "Computer",
+                "Printer",
+                "Calculator"
+            ],
+            "answer": 0,
+            "explanation": "Fans rotate to circulate air."
+        },
+        {
+            "q": "What does a computer need to work?",
+            "options": [
+                "Fuel only",
+                "Programs and instructions",
+                "Water",
+                "Mud"
+            ],
+            "answer": 1,
+            "explanation": "Computers follow programs and instructions."
+        },
+        {
+            "q": "Which is a simple machine?",
+            "options": [
+                "Lever",
+                "Laptop",
+                "Television",
+                "Printer"
+            ],
+            "answer": 0,
+            "explanation": "Lever is one of the basic simple machines."
+        },
+        {
+            "q": "Which machine is used in banks to withdraw money?",
+            "options": [
+                "ATM",
+                "Fan",
+                "Bicycle",
+                "Mixer"
+            ],
+            "answer": 0,
+            "explanation": "ATM machines help people withdraw money."
+        },
+        {
+            "q": "What is the main difference between machines and computers?",
+            "options": [
+                "Machines process data only",
+                "Computers reduce physical effort only",
+                "Computers process information while machines mainly perform physical work",
+                "There is no difference"
+            ],
+            "answer": 2,
+            "explanation": "Machines mainly help with physical work, while computers process information."
+        },
+        {
+            "q": "Which of these combines machines and computers together?",
+            "options": [
+                "Robot",
+                "Book",
+                "Chair",
+                "Bottle"
+            ],
+            "answer": 0,
+            "explanation": "Robots use both machines and computer systems."
+        },
+        {
+            "q": "Which machine helps print documents?",
+            "options": [
+                "Printer",
+                "Fan",
+                "Bicycle",
+                "Pulley"
+            ],
+            "answer": 0,
+            "explanation": "Printers are output machines connected to computers."
+        }
+    ]
+}

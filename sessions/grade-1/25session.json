@@ -1,0 +1,109 @@
+{
+    "id": "session-13",
+    "number": 13,
+    "title": "Good Digital Citizen",
+    "subtitle": "Sharing Technology and Using It Responsibly",
+    "date": "Session 13",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#00ACC1",
+    "icon": "💻",
+    "tags": [
+        "Digital Citizenship",
+        "Responsibility",
+        "Technology",
+        "Computer Ethics"
+    ],
+    "overview": "Students learn how to become good digital citizens by sharing computer time, respecting others, and using technology responsibly.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-13/slides.pdf"
+    },
+    "images": {
+        "_note": "Add classroom photos showing responsible technology use.",
+        "gallery": [
+            {
+                "file": "data/computer-sharing.jpg",
+                "caption": "Students sharing computer time fairly",
+                "category": "Teamwork"
+            },
+            {
+                "file": "data/digital-responsibility.jpg",
+                "caption": "Using technology responsibly",
+                "category": "Responsibility"
+            },
+            {
+                "file": "data/classroom-computers.jpg",
+                "caption": "Students practicing good digital habits",
+                "category": "Learning"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is a digital citizen?",
+        "Sharing computer time fairly",
+        "Taking care of digital devices",
+        "Using technology responsibly",
+        "Respecting others online and offline"
+    ],
+    "digitalRules": [
+        "Share computer time with others.",
+        "Use devices carefully and responsibly.",
+        "Respect classmates using technology.",
+        "Follow classroom computer rules.",
+        "Use technology for learning and creativity."
+    ],
+    "activity": {
+        "title": "Responsible Technology Discussion",
+        "parts": [
+            "Notebook",
+            "Pencil",
+            "Computer"
+        ],
+        "steps": [
+            "Discuss good computer habits",
+            "Share examples of responsible technology use",
+            "Practice taking turns using a computer",
+            "Write three digital citizenship rules"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does a good digital citizen do?",
+            "options": [
+                "Shares technology fairly",
+                "Misuses computers",
+                "Ignores rules",
+                "Stops others from learning"
+            ],
+            "answer": 0,
+            "explanation": "Good digital citizens share and use technology responsibly."
+        },
+        {
+            "q": "How should computers be used?",
+            "options": [
+                "Carefully",
+                "Roughly",
+                "Without rules",
+                "Only for games"
+            ],
+            "answer": 0,
+            "explanation": "Technology should always be used responsibly."
+        },
+        {
+            "q": "Why is sharing computer time important?",
+            "options": [
+                "To help everyone learn",
+                "To waste time",
+                "To avoid rules",
+                "To break devices"
+            ],
+            "answer": 0,
+            "explanation": "Sharing gives everyone a chance to learn."
+        }
+    ]
+}

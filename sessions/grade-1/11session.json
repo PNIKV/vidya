@@ -1,0 +1,255 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-keyboard-basics",
+    "number": 1,
+    "title": "Keyboard Basics",
+    "subtitle": "touch, type, learn!",
+    "date": "Session 01",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#4A90E2",
+    "icon": "⌨️",
+    "tags": [
+        "Computer Basics",
+        "Keyboard",
+        "Technology",
+        "Typing"
+    ],
+    "overview": "Students explore computer keyboards by observing, touching and identifying different keys. They learn key names, keyboard sections and basic typing habits through fun hands-on activities.",
+    "grades": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add real classroom photos of students using keyboards and identifying keys.",
+        "gallery": [
+            {
+                "file": "data/computer-keyboard.jpg",
+                "_placeholder": "ADD: Full keyboard photo",
+                "caption": "A computer keyboard has many useful keys",
+                "category": "Concept"
+            },
+            {
+                "file": "data/alphabet-keys.jpg",
+                "_placeholder": "ADD: Close-up photo of alphabet keys",
+                "caption": "Alphabet keys help us type letters and words",
+                "category": "Keys"
+            },
+            {
+                "file": "data/number-keys.jpg",
+                "_placeholder": "ADD: Close-up photo of number keys",
+                "caption": "Number keys are used for typing numbers",
+                "category": "Keys"
+            },
+            {
+                "file": "data/spacebar-key.jpg",
+                "_placeholder": "ADD: Spacebar key image",
+                "caption": "Spacebar gives space between words",
+                "category": "Special Keys"
+            },
+            {
+                "file": "data/enter-key.jpg",
+                "_placeholder": "ADD: Enter key image",
+                "caption": "Enter key moves to the next line",
+                "category": "Special Keys"
+            },
+            {
+                "file": "data/backspace-key.jpg",
+                "_placeholder": "ADD: Backspace key image",
+                "caption": "Backspace removes mistakes",
+                "category": "Special Keys"
+            },
+            {
+                "file": "data/students-typing.jpg",
+                "_placeholder": "ADD: Students touching and typing on keyboard",
+                "caption": "Students exploring keyboard keys together",
+                "category": "Activity"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is a keyboard?",
+        "Alphabet keys — A to Z",
+        "Number keys — 0 to 9",
+        "Spacebar — gives spaces between words",
+        "Enter key — moves to next line",
+        "Backspace — deletes letters",
+        "Arrow keys — move up, down, left and right",
+        "Typing with gentle fingers and proper care"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Keyboard Basics for Kids",
+            "videoId": "Q2T7oLbmvx4",
+            "desc": "Fun introduction to keyboard keys and typing for beginners."
+        },
+        {
+            "title": "Learn Keyboard Keys",
+            "videoId": "K8bJ9g8M2VM",
+            "desc": "Easy explanation of alphabet, number and special keys."
+        },
+        {
+            "title": "Typing Practice for Children",
+            "videoId": "dDHJW4r3elE",
+            "desc": "Interactive typing activity for kids."
+        }
+    ],
+    "resources": [
+        {
+            "title": "TypingClub",
+            "url": "https://www.typingclub.com",
+            "icon": "⌨️"
+        },
+        {
+            "title": "ABCya Keyboard Practice",
+            "url": "https://www.abcya.com",
+            "icon": "🎮"
+        },
+        {
+            "title": "Keyboard Guide for Kids",
+            "url": "https://www.kidzsearch.com",
+            "icon": "📘"
+        }
+    ],
+    "activity": {
+        "title": "Find and Touch the Keys",
+        "parts": [
+            "Computer or Laptop",
+            "Keyboard",
+            "Alphabet chart",
+            "Worksheets"
+        ],
+        "steps": [
+            "Observe the keyboard carefully",
+            "Find alphabet keys from A to Z",
+            "Touch number keys and say the numbers loudly",
+            "Press Spacebar to make spaces",
+            "Use Enter key to move to the next line",
+            "Practice typing your name",
+            "Play 'Find the Key' classroom game"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "Which device is used for typing letters and numbers?",
+            "options": [
+                "Mouse",
+                "Keyboard",
+                "Monitor",
+                "Speaker"
+            ],
+            "answer": 1,
+            "explanation": "Keyboard is used for typing letters, numbers and symbols."
+        },
+        {
+            "q": "Which keys are used to type A, B, C?",
+            "options": [
+                "Number keys",
+                "Arrow keys",
+                "Alphabet keys",
+                "Function keys"
+            ],
+            "answer": 2,
+            "explanation": "Alphabet keys help us type letters from A to Z."
+        },
+        {
+            "q": "Which key gives space between words?",
+            "options": [
+                "Shift",
+                "Spacebar",
+                "Enter",
+                "Caps Lock"
+            ],
+            "answer": 1,
+            "explanation": "Spacebar creates spaces between words while typing."
+        },
+        {
+            "q": "Which key removes mistakes?",
+            "options": [
+                "Backspace",
+                "Enter",
+                "Arrow",
+                "Tab"
+            ],
+            "answer": 0,
+            "explanation": "Backspace deletes letters or words."
+        },
+        {
+            "q": "Which key moves the cursor to the next line?",
+            "options": [
+                "Spacebar",
+                "Caps Lock",
+                "Enter",
+                "Shift"
+            ],
+            "answer": 2,
+            "explanation": "Enter key moves typing to the next line."
+        },
+        {
+            "q": "How should we press keyboard keys?",
+            "options": [
+                "Very hard",
+                "With gentle fingers",
+                "Using pencil",
+                "By hitting"
+            ],
+            "answer": 1,
+            "explanation": "Keyboard keys should be pressed gently and carefully."
+        },
+        {
+            "q": "Which keys help move up, down, left and right?",
+            "options": [
+                "Arrow keys",
+                "Alphabet keys",
+                "Number keys",
+                "Spacebar"
+            ],
+            "answer": 0,
+            "explanation": "Arrow keys move the cursor in different directions."
+        },
+        {
+            "q": "Which keys are used for typing numbers?",
+            "options": [
+                "Arrow keys",
+                "Alphabet keys",
+                "Number keys",
+                "Enter keys"
+            ],
+            "answer": 2,
+            "explanation": "Number keys are used for typing numbers from 0 to 9."
+        },
+        {
+            "q": "What should we keep clean while using computers?",
+            "options": [
+                "Hands",
+                "Books",
+                "Bag",
+                "Desk only"
+            ],
+            "answer": 0,
+            "explanation": "Clean hands help protect the keyboard and computer."
+        },
+        {
+            "q": "What can students practice using a keyboard?",
+            "options": [
+                "Swimming",
+                "Typing",
+                "Cooking",
+                "Drawing only"
+            ],
+            "answer": 1,
+            "explanation": "Students use keyboards to practice typing letters and words."
+        }
+    ]
+}

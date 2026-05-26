@@ -1,0 +1,257 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-servo-sweep",
+  "number": 1,
+  "title": "Servo Motor Sweep",
+  "subtitle": "Rotate, Control, Learn!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FF6B35",
+  "icon": "⚙️",
+  "tags": [
+    "Arduino",
+    "Servo Motor",
+    "Robotics",
+    "Programming"
+  ],
+  "overview": "In this session, students will learn how a Servo Motor works and how to control its angle using Arduino UNO. Students will create a Servo Sweep project where the motor rotates from 0° to 180° and back continuously.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — servo setup, Arduino connection, students testing motor movement.",
+    "gallery": [
+      {
+        "file": "data/servo-motor.gif",
+        "_placeholder": "ADD: Servo motor moving from 0 to 180 degrees",
+        "caption": "Servo Motor rotating smoothly during sweep motion",
+        "category": "Concept"
+      },
+      {
+        "file": "data/Arduino-uno.jpg",
+        "_placeholder": "ADD: Arduino UNO board photo",
+        "caption": "Arduino UNO — the smart brain controlling the servo motor",
+        "category": "Components"
+      },
+      {
+        "file": "data/jumper-wires.jpg",
+        "_placeholder": "ADD: Jumper wires used for connection",
+        "caption": "Jumper wires connecting Arduino and Servo",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard.jpg",
+        "_placeholder": "ADD: Breadboard setup with servo motor",
+        "caption": "Servo motor connected on breadboard",
+        "category": "Lab"
+      },
+      {
+        "file": "data/servo-connection.png",
+        "_placeholder": "ADD: Circuit connection diagram",
+        "caption": "Servo motor wiring with Arduino UNO",
+        "category": "Circuit"
+      },
+      {
+        "file": "data/students-servo-project.jpg",
+        "_placeholder": "ADD: Students testing servo sweep project",
+        "caption": "Students experimenting with Servo Sweep project",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Servo Motor?",
+    "Servo Motor works using angle control",
+    "Difference between DC Motor and Servo Motor",
+    "Servo rotates to specific positions",
+    "PWM signal controls Servo angle",
+    "Arduino controls Servo using code",
+    "Sweep motion from 0° to 180°",
+    "Applications of Servo Motors in robotics and automation"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Servo Motor Basics with Arduino",
+      "videoId": "PkgBlPeoczw",
+      "_note": "Replace videoId if needed",
+      "desc": "Learn how Servo Motors work and how to control them using Arduino."
+    },
+    {
+      "title": "Arduino Servo Sweep Example",
+      "videoId": "1WnGv-DPexc",
+      "desc": "Step-by-step Servo Sweep project tutorial for beginners."
+    },
+    {
+      "title": "What is PWM?",
+      "videoId": "Lf7JJAAZxEU",
+      "desc": "Understanding PWM signals used for servo motor control."
+    },
+    {
+      "title": "Servo Motor Applications",
+      "videoId": "hhbASkYgZ8U",
+      "desc": "Real-world uses of servo motors in robotics and automation."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Servo Library Documentation",
+      "url": "https://www.arduino.cc/reference/en/libraries/servo/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Servo Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad Circuit Simulator",
+      "url": "https://www.tinkercad.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Servo Motor Sweep Project",
+    "parts": [
+      "Arduino UNO",
+      "Servo Motor (SG90)",
+      "Jumper Wires",
+      "Breadboard",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect Servo VCC wire to Arduino 5V",
+      "Connect Servo GND wire to Arduino GND",
+      "Connect Signal wire to Arduino Pin 9",
+      "Upload Servo Sweep code to Arduino",
+      "Observe the Servo rotating from 0° to 180°",
+      "Watch the Servo rotate back from 180° to 0°",
+      "Challenge: Change the speed of rotation using delay values"
+    ],
+    "code": {
+      "language": "Arduino C++",
+      "example": "#include <Servo.h>\n\nServo myservo;\nint pos = 0;\n\nvoid setup() {\n  myservo.attach(9);\n}\n\nvoid loop() {\n  for (pos = 0; pos <= 180; pos += 1) {\n    myservo.write(pos);\n    delay(15);\n  }\n\n  for (pos = 180; pos >= 0; pos -= 1) {\n    myservo.write(pos);\n    delay(15);\n  }\n}"
+    }
+  },
+  "quiz": [
+    {
+      "q": "What is a Servo Motor mainly used for?",
+      "options": [
+        "Producing sound",
+        "Controlling exact angle or position",
+        "Heating circuits",
+        "Storing electricity"
+      ],
+      "answer": 1,
+      "explanation": "Servo Motors are used for precise angle and position control."
+    },
+    {
+      "q": "How many degrees does a standard Servo Motor usually rotate?",
+      "options": [
+        "90°",
+        "180°",
+        "360°",
+        "720°"
+      ],
+      "answer": 1,
+      "explanation": "Most standard servo motors rotate from 0° to 180°."
+    },
+    {
+      "q": "Which Arduino pin is commonly used in the Servo Sweep example?",
+      "options": [
+        "Pin 2",
+        "Pin 5",
+        "Pin 9",
+        "Pin 13"
+      ],
+      "answer": 2,
+      "explanation": "Servo motors are commonly connected to Pin 9 in beginner projects."
+    },
+    {
+      "q": "Which signal controls the Servo Motor angle?",
+      "options": [
+        "Bluetooth",
+        "PWM Signal",
+        "WiFi",
+        "Audio Signal"
+      ],
+      "answer": 1,
+      "explanation": "Servo motors use PWM (Pulse Width Modulation) signals for angle control."
+    },
+    {
+      "q": "What happens in a Servo Sweep project?",
+      "options": [
+        "LED blinks continuously",
+        "Motor spins endlessly",
+        "Servo moves from 0° to 180° and back",
+        "Buzzer produces sound"
+      ],
+      "answer": 2,
+      "explanation": "In Servo Sweep, the servo rotates forward and backward repeatedly."
+    },
+    {
+      "q": "Which library is used for controlling Servo Motors in Arduino?",
+      "options": [
+        "Wire.h",
+        "LiquidCrystal.h",
+        "Servo.h",
+        "Motor.h"
+      ],
+      "answer": 2,
+      "explanation": "Servo.h library is used to control servo motors."
+    },
+    {
+      "q": "What does the Servo.write() function do?",
+      "options": [
+        "Turns OFF Arduino",
+        "Controls Servo angle",
+        "Reads sensor values",
+        "Changes LED brightness"
+      ],
+      "answer": 1,
+      "explanation": "Servo.write() sets the servo motor angle."
+    },
+    {
+      "q": "What is connected to the Servo signal pin?",
+      "options": [
+        "5V",
+        "GND",
+        "Arduino digital pin",
+        "Battery negative"
+      ],
+      "answer": 2,
+      "explanation": "The signal wire connects to an Arduino digital PWM pin."
+    },
+    {
+      "q": "Servo Motors are commonly used in:",
+      "options": [
+        "Robotic arms",
+        "Fans only",
+        "Bulbs",
+        "Speakers"
+      ],
+      "answer": 0,
+      "explanation": "Servo motors are widely used in robotics for controlled movement."
+    },
+    {
+      "q": "What will happen if delay time is increased in Servo Sweep code?",
+      "options": [
+        "Servo moves slower",
+        "Servo moves faster",
+        "Arduino shuts down",
+        "LED glows brighter"
+      ],
+      "answer": 0,
+      "explanation": "Increasing delay makes the servo rotate more slowly."
+    }
+  ]
+}

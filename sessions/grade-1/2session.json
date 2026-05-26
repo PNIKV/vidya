@@ -1,0 +1,312 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/",
+    "images_folder": "sessions/session-2/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Parts of a Computer",
+  "subtitle": "Meet the Computer Family!",
+  "date": "Session 02",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#22C55E",
+  "icon": "🖥️",
+  "tags": [
+    "Computer Basics",
+    "Technology",
+    "Digital Skills",
+    "STEM"
+  ],
+  "overview": "In this session, students learn the basic parts of a computer including Monitor, CPU, Keyboard, and Mouse. Students understand the use of each part with real-life examples and identify where they see these computer parts in schools, offices, banks, homes, and shops.",
+  "grades": [
+    3,
+    4,
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add real photos of computer parts, students using computers, keyboard typing practice, and classroom computer lab images.",
+    "gallery": [
+      {
+        "file": "data/monitor.jpg",
+        "_placeholder": "ADD: Photo of monitor in classroom or office",
+        "caption": "Monitor — Shows pictures, videos and text",
+        "category": "Computer Parts"
+      },
+      {
+        "file": "data/cpu.jpg",
+        "_placeholder": "ADD: Photo of CPU cabinet",
+        "caption": "CPU — The brain of the computer",
+        "category": "Computer Parts"
+      },
+      {
+        "file": "data/keyboard.jpg",
+        "_placeholder": "ADD: Photo of keyboard typing activity",
+        "caption": "Keyboard — Used to type letters and numbers",
+        "category": "Computer Parts"
+      },
+      {
+        "file": "data/mouse.jpg",
+        "_placeholder": "ADD: Photo of computer mouse",
+        "caption": "Mouse — Used to point, click and draw",
+        "category": "Computer Parts"
+      },
+      {
+        "file": "data/computer-lab.jpg",
+        "_placeholder": "ADD: Students working in computer lab",
+        "caption": "Students learning computer basics",
+        "category": "Lab"
+      },
+      {
+        "file": "data/shop-billing-computer.jpg",
+        "_placeholder": "ADD: Billing counter computer photo",
+        "caption": "Shops use computers for billing",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/bank-computer.jpg",
+        "_placeholder": "ADD: Computer used in bank",
+        "caption": "Banks use computers for customer work",
+        "category": "Real Life"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Monitor — Screen that shows output",
+    "CPU — Brain of the computer",
+    "Keyboard — Used for typing",
+    "Mouse — Used for clicking and selecting",
+    "Input and Output devices",
+    "How computer parts work together",
+    "Real-life uses of computer parts",
+    "Computer parts in school, office and shops",
+    "Basic computer handling"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Parts of a Computer for Kids",
+      "videoId": "bKnVhJZQx4M",
+      "_note": "Replace with preferred educational video",
+      "desc": "Learn the names and functions of the main computer parts in an easy and fun way."
+    },
+    {
+      "title": "Monitor, CPU, Keyboard and Mouse Explained",
+      "videoId": "QbnvmZ7eKhk",
+      "_note": "Replace with actual educational video ID",
+      "desc": "Simple explanation of basic computer hardware parts."
+    },
+    {
+      "title": "How to Use a Computer Mouse and Keyboard",
+      "videoId": "2Y0Q8klVjN0",
+      "desc": "Beginner-friendly practice for students learning computer controls."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Computer Basics for Kids",
+      "url": "https://edu.gcfglobal.org/en/computerbasics/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Typing Practice",
+      "url": "https://www.typingclub.com/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Mouse Practice Games",
+      "url": "https://www.abcya.com/games/mouse_practice",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Identify and Use Computer Parts",
+    "parts": [
+      "Desktop computer",
+      "Monitor",
+      "CPU cabinet",
+      "Keyboard",
+      "Mouse"
+    ],
+    "steps": [
+      "Show students the computer setup",
+      "Ask students to identify each part",
+      "Explain the use of monitor, CPU, keyboard and mouse",
+      "Students practice typing their names on keyboard",
+      "Students move and click mouse on screen",
+      "Challenge: Match computer parts with their functions"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which part of the computer shows pictures and videos?",
+      "options": [
+        "CPU",
+        "Mouse",
+        "Monitor",
+        "Keyboard"
+      ],
+      "answer": 2,
+      "explanation": "The monitor displays text, pictures and videos."
+    },
+    {
+      "q": "Which part is called the brain of the computer?",
+      "options": [
+        "Monitor",
+        "Keyboard",
+        "CPU",
+        "Mouse"
+      ],
+      "answer": 2,
+      "explanation": "CPU processes information and controls the computer."
+    },
+    {
+      "q": "Which part is used for typing?",
+      "options": [
+        "Keyboard",
+        "Monitor",
+        "Speaker",
+        "Mouse pad"
+      ],
+      "answer": 0,
+      "explanation": "Keyboard helps us type letters, numbers and symbols."
+    },
+    {
+      "q": "Which device is used to click and select items?",
+      "options": [
+        "Mouse",
+        "CPU",
+        "Monitor",
+        "Printer"
+      ],
+      "answer": 0,
+      "explanation": "Mouse is used to move the pointer and click."
+    },
+    {
+      "q": "What does CPU stand for?",
+      "options": [
+        "Central Processing Unit",
+        "Computer Power Unit",
+        "Central Print Unit",
+        "Control Processing User"
+      ],
+      "answer": 0,
+      "explanation": "CPU means Central Processing Unit."
+    },
+    {
+      "q": "Which computer part is an output device?",
+      "options": [
+        "Keyboard",
+        "Mouse",
+        "Monitor",
+        "Joystick"
+      ],
+      "answer": 2,
+      "explanation": "Monitor shows output from the computer."
+    },
+    {
+      "q": "Which of these is an input device?",
+      "options": [
+        "Monitor",
+        "Keyboard",
+        "Speaker",
+        "Projector"
+      ],
+      "answer": 1,
+      "explanation": "Keyboard sends input to the computer."
+    },
+    {
+      "q": "Where have you seen a computer keyboard?",
+      "options": [
+        "School",
+        "Office",
+        "Bank",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Keyboards are used in many places."
+    },
+    {
+      "q": "What do we move on the table to control the pointer?",
+      "options": [
+        "CPU",
+        "Monitor",
+        "Mouse",
+        "Printer"
+      ],
+      "answer": 2,
+      "explanation": "Moving the mouse moves the pointer on the screen."
+    },
+    {
+      "q": "Which part stores and processes data?",
+      "options": [
+        "CPU",
+        "Keyboard",
+        "Mouse",
+        "Monitor"
+      ],
+      "answer": 0,
+      "explanation": "CPU processes and manages computer tasks."
+    },
+    {
+      "q": "Which part looks like a TV screen?",
+      "options": [
+        "CPU",
+        "Monitor",
+        "Mouse",
+        "Keyboard"
+      ],
+      "answer": 1,
+      "explanation": "Monitor is the screen of the computer."
+    },
+    {
+      "q": "What can we do using a keyboard?",
+      "options": [
+        "Type letters",
+        "Type numbers",
+        "Write messages",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Keyboard is used for many typing tasks."
+    },
+    {
+      "q": "Computers in shops are mainly used for:",
+      "options": [
+        "Cooking",
+        "Billing",
+        "Swimming",
+        "Painting walls"
+      ],
+      "answer": 1,
+      "explanation": "Shops use computers for billing and records."
+    },
+    {
+      "q": "Which part helps us see our work?",
+      "options": [
+        "Mouse",
+        "Monitor",
+        "CPU",
+        "Keyboard"
+      ],
+      "answer": 1,
+      "explanation": "Monitor displays everything we do on the computer."
+    },
+    {
+      "q": "All computer parts work together like:",
+      "options": [
+        "A team",
+        "A toy",
+        "A bicycle",
+        "A tree"
+      ],
+      "answer": 0,
+      "explanation": "Each computer part has a special job and works together."
+    }
+  ]
+}

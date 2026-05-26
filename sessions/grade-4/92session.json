@@ -1,0 +1,356 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put Arduino IDE screenshots, setup photos, coding activity images here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Arduino IDE Setup & Features",
+  "subtitle": "code, upload, create!",
+  "date": "Session 02",
+  "duration": "1.5 Hours",
+  "phase": "Foundation",
+  "color": "#0099FF",
+  "icon": "💻",
+  "tags": [
+    "Arduino",
+    "Coding",
+    "Programming",
+    "Electronics"
+  ],
+  "overview": "This session introduces students to the Arduino IDE software, its installation process, interface, important features, and how to upload simple programs to Arduino UNO using beginner-friendly examples.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add actual Arduino IDE screenshots, USB connection images, coding practice photos, Arduino UNO setup pictures.",
+    "gallery": [
+      {
+        "file": "data/arduino-ide-home.png",
+        "_placeholder": "ADD: Screenshot of Arduino IDE home screen",
+        "caption": "Arduino IDE main interface",
+        "category": "Software"
+      },
+      {
+        "file": "data/arduino-download.jpg",
+        "_placeholder": "ADD: Screenshot of Arduino IDE download page",
+        "caption": "Downloading Arduino IDE from official website",
+        "category": "Setup"
+      },
+      {
+        "file": "data/arduino-board-connect.jpg",
+        "_placeholder": "ADD: Photo of Arduino connected with USB cable",
+        "caption": "Connecting Arduino UNO to computer",
+        "category": "Hardware"
+      },
+      {
+        "file": "data/arduino-code-editor.png",
+        "_placeholder": "ADD: Screenshot of code editor window",
+        "caption": "Writing code inside Arduino IDE",
+        "category": "Coding"
+      },
+      {
+        "file": "data/blink-example.gif",
+        "_placeholder": "ADD: LED blinking demo photo",
+        "caption": "Blink example running successfully",
+        "category": "Project"
+      },
+      {
+        "file": "data/verify-upload-buttons.png",
+        "_placeholder": "ADD: Screenshot of Verify and Upload buttons",
+        "caption": "Verify and Upload buttons in Arduino IDE",
+        "category": "Features"
+      },
+      {
+        "file": "data/serial-monitor.png",
+        "_placeholder": "ADD: Screenshot of Serial Monitor",
+        "caption": "Using Serial Monitor to view data",
+        "category": "Features"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Arduino IDE?",
+    "Downloading and Installing Arduino IDE",
+    "Connecting Arduino UNO using USB cable",
+    "Selecting Board and COM Port",
+    "Understanding Verify and Upload buttons",
+    "Writing basic Arduino code",
+    "Serial Monitor for viewing outputs",
+    "Opening built-in Examples",
+    "Blink LED program",
+    "Saving Arduino projects"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino IDE Installation Tutorial",
+      "videoId": "CD9M3n6kh4A",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Step-by-step guide to install Arduino IDE for beginners."
+    },
+    {
+      "title": "Arduino IDE Explained",
+      "videoId": "nL34zDTPkcs",
+      "desc": "Learn about the Arduino IDE interface and tools."
+    },
+    {
+      "title": "Arduino Blink LED Tutorial",
+      "videoId": "fJWR7dBuc18",
+      "desc": "Create your first LED blinking project using Arduino."
+    },
+    {
+      "title": "How to Use Serial Monitor",
+      "videoId": "s7P9R0JYljE",
+      "desc": "Learn how to send and receive data using Serial Monitor."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino IDE Download",
+      "url": "https://www.arduino.cc/en/software",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Blink LED using Arduino IDE",
+    "parts": [
+      "Arduino UNO",
+      "USB Cable",
+      "Breadboard",
+      "LED",
+      "220Ω Resistor",
+      "Jumper wires"
+    ],
+    "steps": [
+      "Install Arduino IDE on the computer",
+      "Connect Arduino UNO using USB cable",
+      "Open Arduino IDE",
+      "Select Board → Arduino UNO",
+      "Select correct COM Port",
+      "Open File → Examples → Basics → Blink",
+      "Click Verify button to check code",
+      "Click Upload button",
+      "Observe LED blinking on Arduino board",
+      "Challenge: Change blinking speed from 1 second to 2 seconds"
+    ]
+  },
+  "exampleCode": {
+    "title": "Blink LED Program",
+    "code": "void setup() {\n  pinMode(13, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(13, HIGH);\n  delay(1000);\n  digitalWrite(13, LOW);\n  delay(1000);\n}"
+  },
+  "features": [
+    {
+      "name": "Code Editor",
+      "description": "Used to write Arduino programs.",
+      "emoji": "⌨️"
+    },
+    {
+      "name": "Verify Button",
+      "description": "Checks code for errors before uploading.",
+      "emoji": "✔️"
+    },
+    {
+      "name": "Upload Button",
+      "description": "Uploads code from computer to Arduino board.",
+      "emoji": "⬆️"
+    },
+    {
+      "name": "Serial Monitor",
+      "description": "Displays messages and sensor data from Arduino.",
+      "emoji": "📟"
+    },
+    {
+      "name": "Examples Menu",
+      "description": "Contains ready-made Arduino example programs.",
+      "emoji": "📂"
+    },
+    {
+      "name": "Library Manager",
+      "description": "Used to install extra libraries for sensors and modules.",
+      "emoji": "📚"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is Arduino IDE mainly used for?",
+      "options": [
+        "Watching videos",
+        "Editing photos",
+        "Writing and uploading Arduino code",
+        "Playing games"
+      ],
+      "answer": 2,
+      "explanation": "Arduino IDE is software used to write, verify, and upload programs to Arduino boards."
+    },
+    {
+      "q": "Which cable is commonly used to connect Arduino UNO to a computer?",
+      "options": [
+        "HDMI Cable",
+        "USB Cable",
+        "LAN Cable",
+        "Audio Cable"
+      ],
+      "answer": 1,
+      "explanation": "A USB cable is used for programming and powering the Arduino UNO."
+    },
+    {
+      "q": "What does the Verify button do?",
+      "options": [
+        "Deletes code",
+        "Turns ON LED",
+        "Checks code for errors",
+        "Disconnects Arduino"
+      ],
+      "answer": 2,
+      "explanation": "Verify button checks the code for mistakes before uploading."
+    },
+    {
+      "q": "What does the Upload button do?",
+      "options": [
+        "Uploads code to Arduino board",
+        "Downloads games",
+        "Deletes program",
+        "Restarts computer"
+      ],
+      "answer": 0,
+      "explanation": "Upload sends the program from computer to Arduino board."
+    },
+    {
+      "q": "Which menu contains ready-made Arduino programs?",
+      "options": [
+        "Tools",
+        "Edit",
+        "Examples",
+        "Window"
+      ],
+      "answer": 2,
+      "explanation": "The Examples menu contains many beginner-friendly sample projects."
+    },
+    {
+      "q": "What is the use of Serial Monitor?",
+      "options": [
+        "Playing music",
+        "Viewing messages and sensor data",
+        "Drawing pictures",
+        "Charging battery"
+      ],
+      "answer": 1,
+      "explanation": "Serial Monitor helps display text and sensor readings from Arduino."
+    },
+    {
+      "q": "Which board is commonly used by beginners?",
+      "options": [
+        "Arduino UNO",
+        "Arduino Nano Every",
+        "ESP32",
+        "Raspberry Pi"
+      ],
+      "answer": 0,
+      "explanation": "Arduino UNO is the most beginner-friendly and commonly used board."
+    },
+    {
+      "q": "What happens in the Blink example?",
+      "options": [
+        "Motor spins",
+        "LED blinks ON and OFF",
+        "Speaker plays music",
+        "Sensor measures distance"
+      ],
+      "answer": 1,
+      "explanation": "The Blink program makes the onboard LED blink repeatedly."
+    },
+    {
+      "q": "What is delay(1000) in Arduino code?",
+      "options": [
+        "Wait for 1000 milliseconds",
+        "Delete 1000 files",
+        "Turn OFF Arduino",
+        "Increase voltage"
+      ],
+      "answer": 0,
+      "explanation": "delay(1000) means wait for 1 second."
+    },
+    {
+      "q": "Which pin is used in the Blink example for onboard LED?",
+      "options": [
+        "Pin 5",
+        "Pin 8",
+        "Pin 13",
+        "Pin 1"
+      ],
+      "answer": 2,
+      "explanation": "Most Arduino UNO boards use pin 13 for the built-in LED."
+    },
+    {
+      "q": "Why do we select COM Port in Arduino IDE?",
+      "options": [
+        "To choose internet speed",
+        "To identify connected Arduino board",
+        "To play audio",
+        "To save images"
+      ],
+      "answer": 1,
+      "explanation": "The COM Port tells the computer where the Arduino board is connected."
+    },
+    {
+      "q": "What is the role of setup() function?",
+      "options": [
+        "Runs only once at the beginning",
+        "Runs forever repeatedly",
+        "Deletes code",
+        "Uploads files"
+      ],
+      "answer": 0,
+      "explanation": "setup() runs once when Arduino starts."
+    },
+    {
+      "q": "What is the role of loop() function?",
+      "options": [
+        "Runs only once",
+        "Runs repeatedly forever",
+        "Turns OFF computer",
+        "Checks internet"
+      ],
+      "answer": 1,
+      "explanation": "loop() keeps repeating continuously."
+    },
+    {
+      "q": "Which feature helps install sensor libraries?",
+      "options": [
+        "Paint Tool",
+        "Library Manager",
+        "Calculator",
+        "Serial Plotter"
+      ],
+      "answer": 1,
+      "explanation": "Library Manager is used to install libraries for sensors and modules."
+    },
+    {
+      "q": "What should students do after changing code?",
+      "options": [
+        "Throw away Arduino",
+        "Verify and Upload again",
+        "Restart computer only",
+        "Disconnect USB immediately"
+      ],
+      "answer": 1,
+      "explanation": "After changing code, students should verify and upload the updated program again."
+    }
+  ]
+}

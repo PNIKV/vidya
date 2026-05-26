@@ -1,0 +1,335 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-1",
+    "number": 1,
+    "title": "Make Light!",
+    "subtitle": "Build a Simple LED Circuit Without Arduino",
+    "date": "Session 01",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#FFD32A",
+    "icon": "💡",
+    "tags": [
+        "Electricity",
+        "Circuit",
+        "LED",
+        "Hands-on Activity"
+    ],
+    "overview": "In this session students build their first real electric circuit using only a battery, LED and wires. Students learn how electricity flows in a closed circuit and how LEDs glow when connected correctly.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from the actual classroom activity — battery, LED, wires, students testing circuits and glowing LEDs.",
+        "gallery": [
+            {
+                "file": "data/simple-led-circuit.jpg",
+                "_placeholder": "ADD: Photo of completed LED circuit",
+                "caption": "Simple battery and LED circuit glowing successfully",
+                "category": "Concept"
+            },
+            {
+                "file": "data/led-closeup.jpg",
+                "_placeholder": "ADD: Close-up photo of LED",
+                "caption": "LED converts electricity into light energy",
+                "category": "Components"
+            },
+            {
+                "file": "data/battery-cell.jpg",
+                "_placeholder": "ADD: Photo of battery cell",
+                "caption": "Battery provides electrical energy to the circuit",
+                "category": "Components"
+            },
+            {
+                "file": "data/connecting-wires.jpg",
+                "_placeholder": "ADD: Photo of jumper wires",
+                "caption": "Wires carry current from battery to LED",
+                "category": "Components"
+            },
+            {
+                "file": "data/open-circuit.jpg",
+                "_placeholder": "ADD: Photo showing broken connection",
+                "caption": "Open circuit — LED does not glow",
+                "category": "Concept"
+            },
+            {
+                "file": "data/closed-circuit.jpg",
+                "_placeholder": "ADD: Photo showing complete connection",
+                "caption": "Closed circuit — current flows and LED glows",
+                "category": "Concept"
+            },
+            {
+                "file": "data/students-making-light.jpg",
+                "_placeholder": "ADD: Photo of students performing activity",
+                "caption": "Students creating their first electric circuit",
+                "category": "Lab"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is a Circuit? — A complete path for electricity",
+        "Battery — Source of electrical energy",
+        "LED — Converts electricity into light",
+        "Wire — Carries electrical current",
+        "Closed Circuit — Complete path allows current flow",
+        "Open Circuit — Broken path stops current flow",
+        "LED polarity — Long leg is positive (+)",
+        "Electricity flows in a loop",
+        "Real-life examples of simple circuits",
+        "Safety while working with batteries and wires"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "How to Make a Simple LED Circuit",
+            "videoId": "4go_DzY8wHc",
+            "_note": "Replace with actual educational video ID if needed",
+            "desc": "Step-by-step guide to making a basic LED circuit using battery and wires."
+        },
+        {
+            "title": "What is an Electric Circuit?",
+            "videoId": "mc979OhitAg",
+            "desc": "Simple explanation of how electricity flows in a circuit."
+        },
+        {
+            "title": "Open and Closed Circuits",
+            "videoId": "Xm4BObh4MhI",
+            "desc": "Understanding why LEDs glow only in complete circuits."
+        },
+        {
+            "title": "LED Basics for Beginners",
+            "videoId": "n2dJQ7PybM0",
+            "desc": "Learn how LEDs work and why polarity matters."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Interactive Circuit Simulator",
+            "url": "https://www.falstad.com/circuit/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Basic Electronics for Kids",
+            "url": "https://www.ducksters.com/science/electricity/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Simple Circuit Learning",
+            "url": "https://www.tinkercad.com/circuits",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Battery + LED + Wire Circuit",
+        "parts": [
+            "1 LED",
+            "1 Battery cell",
+            "2 Connecting wires",
+            "Tape (optional)"
+        ],
+        "steps": [
+            "Identify the long and short legs of the LED",
+            "Connect the long leg of LED to battery positive terminal",
+            "Connect the short leg of LED to battery negative terminal using wire",
+            "Complete the circuit loop",
+            "Observe the LED glowing",
+            "Reverse LED connection and observe what happens",
+            "Discuss open and closed circuits"
+        ]
+    },
+    "realLifeExamples": [
+        "Torch light",
+        "Decorative fairy lights",
+        "Bicycle lights",
+        "LED indicators in TVs",
+        "Remote control indicator lights",
+        "Emergency lights",
+        "Traffic signals"
+    ],
+    "safetyRules": [
+        "Use low-voltage batteries only",
+        "Do not connect wires directly for long time",
+        "Never use wall socket electricity for this activity",
+        "Handle LEDs carefully",
+        "Keep batteries away from water",
+        "Do not touch exposed metal with wet hands",
+        "Disconnect circuit after activity"
+    ],
+    "quiz": [
+        {
+            "q": "What is needed to make the LED glow?",
+            "options": [
+                "Battery only",
+                "Wire only",
+                "A complete circuit",
+                "Paper"
+            ],
+            "answer": 2,
+            "explanation": "LED glows only when electricity flows through a complete circuit."
+        },
+        {
+            "q": "What provides energy in the circuit?",
+            "options": [
+                "LED",
+                "Battery",
+                "Wire",
+                "Tape"
+            ],
+            "answer": 1,
+            "explanation": "Battery supplies electrical energy to the circuit."
+        },
+        {
+            "q": "What does an LED convert electricity into?",
+            "options": [
+                "Water",
+                "Sound",
+                "Light",
+                "Air"
+            ],
+            "answer": 2,
+            "explanation": "LED changes electrical energy into light energy."
+        },
+        {
+            "q": "What carries electricity in the circuit?",
+            "options": [
+                "Wire",
+                "Paper",
+                "Plastic",
+                "Wood"
+            ],
+            "answer": 0,
+            "explanation": "Wires allow current to flow between components."
+        },
+        {
+            "q": "Which circuit allows current to flow?",
+            "options": [
+                "Open circuit",
+                "Broken circuit",
+                "Closed circuit",
+                "Empty circuit"
+            ],
+            "answer": 2,
+            "explanation": "A closed circuit creates a complete loop for electricity."
+        },
+        {
+            "q": "What happens in an open circuit?",
+            "options": [
+                "LED glows",
+                "Current stops flowing",
+                "Battery becomes bigger",
+                "Wire disappears"
+            ],
+            "answer": 1,
+            "explanation": "Broken connections stop the current flow."
+        },
+        {
+            "q": "Which LED leg is connected to positive terminal?",
+            "options": [
+                "Short leg",
+                "Long leg",
+                "Both legs",
+                "None"
+            ],
+            "answer": 1,
+            "explanation": "The longer leg of an LED is positive (+)."
+        },
+        {
+            "q": "Why does the LED not glow when reversed?",
+            "options": [
+                "Battery is empty",
+                "LED polarity matters",
+                "Wire is invisible",
+                "Electricity disappeared"
+            ],
+            "answer": 1,
+            "explanation": "LEDs allow current mainly in one direction."
+        },
+        {
+            "q": "Which is a real-life example of an LED circuit?",
+            "options": [
+                "Torch",
+                "Book",
+                "Bottle",
+                "Chair"
+            ],
+            "answer": 0,
+            "explanation": "Torches use simple battery and light circuits."
+        },
+        {
+            "q": "What should students use for this activity?",
+            "options": [
+                "Wall socket electricity",
+                "High voltage supply",
+                "Low-voltage battery",
+                "Generator"
+            ],
+            "answer": 2,
+            "explanation": "Low-voltage batteries are safe for beginner activities."
+        },
+        {
+            "q": "What happens when the circuit loop is complete?",
+            "options": [
+                "LED glows",
+                "Battery melts",
+                "Wire breaks",
+                "Nothing happens"
+            ],
+            "answer": 0,
+            "explanation": "Current flows through the LED in a complete circuit."
+        },
+        {
+            "q": "What is the main purpose of wires?",
+            "options": [
+                "Store electricity",
+                "Carry current",
+                "Glow brightly",
+                "Make sound"
+            ],
+            "answer": 1,
+            "explanation": "Wires connect components and carry electricity."
+        },
+        {
+            "q": "Which safety rule is correct?",
+            "options": [
+                "Use wet hands",
+                "Use wall socket directly",
+                "Use batteries safely",
+                "Touch exposed wires"
+            ],
+            "answer": 2,
+            "explanation": "Low-voltage batteries should be used carefully and safely."
+        },
+        {
+            "q": "What type of energy does the battery store?",
+            "options": [
+                "Light energy",
+                "Sound energy",
+                "Electrical energy",
+                "Wind energy"
+            ],
+            "answer": 2,
+            "explanation": "Batteries store electrical energy."
+        },
+        {
+            "q": "Why is this activity important?",
+            "options": [
+                "To learn how circuits work",
+                "To grow plants",
+                "To cook food",
+                "To create clouds"
+            ],
+            "answer": 0,
+            "explanation": "Students understand the basics of electricity and circuits through hands-on learning."
+        }
+    ]
+}

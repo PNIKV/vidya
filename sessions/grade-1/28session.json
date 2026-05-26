@@ -1,0 +1,109 @@
+{
+    "id": "session-16",
+    "number": 16,
+    "title": "Educational Games",
+    "subtitle": "Learning Through Safe Online and Offline Games",
+    "date": "Session 16",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#8BC34A",
+    "icon": "🎮",
+    "tags": [
+        "Educational Games",
+        "Digital Learning",
+        "Safe Technology",
+        "Interactive Learning"
+    ],
+    "overview": "Students learn through basic educational games while understanding safe and responsible use of online and offline digital activities.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-16/slides.pdf"
+    },
+    "images": {
+        "_note": "Add educational game activity photos.",
+        "gallery": [
+            {
+                "file": "data/educational-games.jpg",
+                "caption": "Students learning with educational games",
+                "category": "Learning"
+            },
+            {
+                "file": "data/computer-games.jpg",
+                "caption": "Safe computer learning activities",
+                "category": "Technology"
+            },
+            {
+                "file": "data/offline-games.jpg",
+                "caption": "Offline educational group games",
+                "category": "Activity"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What are educational games?",
+        "Safe online learning games",
+        "Offline learning activities",
+        "Learning through play",
+        "Responsible use of digital tools"
+    ],
+    "learningPoints": [
+        "Educational games help students learn concepts in fun ways.",
+        "Always use safe and approved learning games.",
+        "Follow teacher instructions while using computers.",
+        "Balance screen time with offline activities."
+    ],
+    "activity": {
+        "title": "Educational Game Time",
+        "parts": [
+            "Computer or Tablet",
+            "Notebook",
+            "Offline learning materials"
+        ],
+        "steps": [
+            "Teacher introduces safe educational games",
+            "Students play learning activities",
+            "Observe how games help learning",
+            "Discuss what students learned",
+            "Try one offline learning game"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "Why do we use educational games?",
+            "options": [
+                "To support learning",
+                "To avoid learning",
+                "To waste time",
+                "To damage devices"
+            ],
+            "answer": 0,
+            "explanation": "Educational games make learning interactive and enjoyable."
+        },
+        {
+            "q": "Who should approve online learning games?",
+            "options": [
+                "Teacher or parent",
+                "Strangers",
+                "Nobody",
+                "Random websites"
+            ],
+            "answer": 0,
+            "explanation": "Adults help choose safe educational tools."
+        },
+        {
+            "q": "What is important while using digital games?",
+            "options": [
+                "Safe and responsible use",
+                "Ignoring rules",
+                "Playing only games",
+                "Sharing passwords"
+            ],
+            "answer": 0,
+            "explanation": "Technology should always be used responsibly."
+        }
+    ]
+}

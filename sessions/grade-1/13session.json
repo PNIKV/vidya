@@ -1,0 +1,249 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/",
+        "images_folder": "sessions/session-1/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-1",
+    "number": 1,
+    "title": "Mouse Basics",
+    "subtitle": "Click, Double Click, Drag and Explore!",
+    "date": "Session 01",
+    "duration": "1 Hour",
+    "phase": "Foundation",
+    "color": "#00BFFF",
+    "icon": "🖱️",
+    "tags": [
+        "Computer Basics",
+        "Technology",
+        "Mouse Skills",
+        "Digital Learning"
+    ],
+    "overview": "Students learn how to use a computer mouse by practicing clicking, double clicking, right clicking and dragging. They connect mouse actions with real-life examples like ATM machines, games and school computers.",
+    "grades": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from actual computer lab sessions and students using the mouse.",
+        "gallery": [
+            {
+                "file": "data/mouse-overview.jpg",
+                "_placeholder": "ADD: Photo of computer mouse",
+                "caption": "Computer mouse helps control the cursor on screen",
+                "category": "Concept"
+            },
+            {
+                "file": "data/left-click.jpg",
+                "_placeholder": "ADD: Photo showing left click",
+                "caption": "Left click is used to select items",
+                "category": "Skills"
+            },
+            {
+                "file": "data/double-click.gif",
+                "_placeholder": "ADD: Student opening folder using double click",
+                "caption": "Double click quickly opens files and folders",
+                "category": "Skills"
+            },
+            {
+                "file": "data/right-click-menu.jpg",
+                "_placeholder": "ADD: Photo of right click menu",
+                "caption": "Right click opens extra options menu",
+                "category": "Skills"
+            },
+            {
+                "file": "data/drag-drop.gif",
+                "_placeholder": "ADD: Student dragging object on screen",
+                "caption": "Drag and drop helps move objects on screen",
+                "category": "Activity"
+            },
+            {
+                "file": "data/computer-lab.jpg",
+                "_placeholder": "ADD: Students practicing mouse basics",
+                "caption": "Students practicing mouse control in computer lab",
+                "category": "Lab"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Mouse controls the cursor on the computer screen",
+        "Left Click — Select objects and buttons",
+        "Double Click — Open apps, games and folders",
+        "Right Click — Show extra menu options",
+        "Drag and Drop — Move items from one place to another",
+        "Scroll Wheel — Move page up and down",
+        "Cursor movement — Smooth hand movement and control",
+        "Real-life use — ATM machines, games, drawing apps"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Mouse Basics for Beginners",
+            "videoId": "8DH00J6b7rU",
+            "desc": "Simple explanation of mouse buttons and cursor movement for kids."
+        },
+        {
+            "title": "How to Use a Computer Mouse",
+            "videoId": "GfM0mQ5Y2xQ",
+            "desc": "Learn clicking, dragging and scrolling in a fun way."
+        },
+        {
+            "title": "Mouse Practice Activities",
+            "videoId": "KcAN6v2Fs7g",
+            "desc": "Interactive mouse practice for students."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Mouse Practice Games",
+            "url": "https://www.abcya.com/games/mouse_practice",
+            "icon": "🔗"
+        },
+        {
+            "title": "Interactive Mouse Skills",
+            "url": "https://toytheater.com/category/mouse-games/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Kids Computer Activities",
+            "url": "https://www.roomrecess.com",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Mouse Click Practice Activity",
+        "parts": [
+            "Computer or Laptop",
+            "USB/Wireless Mouse",
+            "Mouse Pad",
+            "Paint or Educational Game"
+        ],
+        "steps": [
+            "Hold the mouse correctly",
+            "Move the cursor around the screen",
+            "Single click on icons",
+            "Double click to open folders",
+            "Right click to see menu options",
+            "Drag and drop shapes or pictures",
+            "Scroll page up and down using wheel"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "Which device helps move the cursor on the screen?",
+            "options": [
+                "Keyboard",
+                "Monitor",
+                "Mouse",
+                "Speaker"
+            ],
+            "answer": 2,
+            "explanation": "Mouse helps control the cursor on the screen."
+        },
+        {
+            "q": "Which mouse button is mostly used for selecting items?",
+            "options": [
+                "Left button",
+                "Right button",
+                "Scroll wheel",
+                "Wire"
+            ],
+            "answer": 0,
+            "explanation": "Left click is mainly used for selecting objects."
+        },
+        {
+            "q": "What does a double click do?",
+            "options": [
+                "Turns off the computer",
+                "Moves the cursor",
+                "Opens files or folders",
+                "Deletes files"
+            ],
+            "answer": 2,
+            "explanation": "Double clicking quickly opens apps, folders and files."
+        },
+        {
+            "q": "What happens when we right click?",
+            "options": [
+                "Computer shuts down",
+                "Extra options menu appears",
+                "Mouse stops moving",
+                "Keyboard opens"
+            ],
+            "answer": 1,
+            "explanation": "Right click shows additional menu options."
+        },
+        {
+            "q": "What is dragging?",
+            "options": [
+                "Typing letters",
+                "Holding and moving an object",
+                "Closing the computer",
+                "Printing a page"
+            ],
+            "answer": 1,
+            "explanation": "Dragging means holding and moving objects on screen."
+        },
+        {
+            "q": "Which part of the mouse helps scroll pages?",
+            "options": [
+                "Left button",
+                "Wire",
+                "Scroll wheel",
+                "USB plug"
+            ],
+            "answer": 2,
+            "explanation": "Scroll wheel helps move pages up and down."
+        },
+        {
+            "q": "Mouse is a type of:",
+            "options": [
+                "Output device",
+                "Input device",
+                "Storage device",
+                "Battery"
+            ],
+            "answer": 1,
+            "explanation": "Mouse gives commands to the computer, so it is an input device."
+        },
+        {
+            "q": "Which action is used to move files on screen?",
+            "options": [
+                "Double click",
+                "Right click",
+                "Drag and drop",
+                "Scroll"
+            ],
+            "answer": 2,
+            "explanation": "Drag and drop helps move files and objects."
+        },
+        {
+            "q": "Which real-life machine uses cursor selection like a computer?",
+            "options": [
+                "ATM machine",
+                "Fan",
+                "Bottle",
+                "Pencil"
+            ],
+            "answer": 0,
+            "explanation": "ATM machines use screen selection similar to computers."
+        },
+        {
+            "q": "What should students practice for better mouse control?",
+            "options": [
+                "Moving carefully",
+                "Throwing the mouse",
+                "Pressing all buttons together",
+                "Closing eyes while using"
+            ],
+            "answer": 0,
+            "explanation": "Careful movement improves mouse skills and accuracy."
+        }
+    ]
+}

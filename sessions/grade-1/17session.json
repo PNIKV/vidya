@@ -1,0 +1,317 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-17/",
+    "slides_folder": "sessions/session-17/slides/",
+    "images_folder": "sessions/session-17/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-computer-usefulness",
+  "number": 17,
+  "title": "Why Computers Are Useful",
+  "subtitle": "Computers help people in daily life!",
+  "date": "Session 17",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#4CAF50",
+  "icon": "💻",
+  "tags": [
+    "Computer Basics",
+    "Technology",
+    "Daily Life",
+    "Digital Skills"
+  ],
+  "overview": "Students learn how computers are useful in real life. They observe how computers help in shops, hospitals, schools, banks, homes, and entertainment. Students understand that computers make work faster, easier, and smarter.",
+  "grades": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "slides": {
+    "pdf": "sessions/session-computer-usefulness/slides.pdf"
+  },
+  "images": {
+    "_note": "Add real classroom photos, hospital computer systems, billing counters, online learning, and students observing software.",
+    "gallery": [
+      {
+        "file": "data/shop-computer.jpg",
+        "_placeholder": "ADD: Computer billing counter photo",
+        "caption": "Computers help shopkeepers make bills quickly",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/hospital-computer.jpg",
+        "_placeholder": "ADD: Hospital receptionist using computer",
+        "caption": "Hospitals use computers for patient records",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/student-learning.jpg",
+        "_placeholder": "ADD: Students learning on computers",
+        "caption": "Students use computers for learning and research",
+        "category": "Education"
+      },
+      {
+        "file": "data/video-watching.jpg",
+        "_placeholder": "ADD: Kids watching educational videos",
+        "caption": "Computers help us watch videos and learn new things",
+        "category": "Entertainment"
+      },
+      {
+        "file": "data/bank-computer.jpg",
+        "_placeholder": "ADD: Bank employee using computer",
+        "caption": "Banks use computers to manage money safely",
+        "category": "Services"
+      },
+      {
+        "file": "data/online-class.jpg",
+        "_placeholder": "ADD: Online class screenshot",
+        "caption": "Computers help students attend online classes",
+        "category": "Education"
+      },
+      {
+        "file": "data/railway-system.jpg",
+        "_placeholder": "ADD: Railway reservation computer system",
+        "caption": "Railway stations use computers for ticket booking",
+        "category": "Transport"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Computers help people work faster",
+    "Computers are used in shops for billing",
+    "Hospitals use computers to store patient information",
+    "Students use computers for study and online classes",
+    "Banks use computers to keep records safely",
+    "People watch movies, cartoons, and videos on computers",
+    "Computers help communicate using email and video calls",
+    "Computers are useful in offices, railways, airports, and homes"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Uses of Computers in Daily Life",
+      "videoId": "dQw4w9WgXcQ",
+      "_note": "Replace with actual educational video ID",
+      "desc": "Simple explanation showing where computers are used in real life."
+    },
+    {
+      "title": "Computer Uses in Hospitals and Shops",
+      "videoId": "3JZ_D3ELwOQ",
+      "_note": "Replace with actual educational video ID",
+      "desc": "Learn how computers help doctors, shopkeepers, and customers."
+    },
+    {
+      "title": "Computers for Kids",
+      "videoId": "aqz-KE-bpKQ",
+      "_note": "Replace with actual educational video ID",
+      "desc": "Fun beginner-friendly introduction to computers and their uses."
+    },
+    {
+      "title": "Technology in Everyday Life",
+      "videoId": "ysz5S6PUM-U",
+      "_note": "Replace with actual educational video ID",
+      "desc": "Examples of technology and computers around us."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Typing Practice for Kids",
+      "url": "https://www.typingclub.com",
+      "icon": "⌨️"
+    },
+    {
+      "title": "Scratch Programming for Kids",
+      "url": "https://scratch.mit.edu",
+      "icon": "🧩"
+    },
+    {
+      "title": "Google Earth",
+      "url": "https://earth.google.com",
+      "icon": "🌍"
+    }
+  ],
+  "activity": {
+    "title": "Find Computers Around Us",
+    "parts": [
+      "Computer or Laptop",
+      "Projector",
+      "Pictures of shops and hospitals",
+      "Educational videos",
+      "Worksheet"
+    ],
+    "steps": [
+      "Teacher shows pictures of places using computers",
+      "Students identify where computers are used",
+      "Discuss how computers help people",
+      "Watch a short educational video",
+      "Students share examples from their home or neighborhood",
+      "Challenge: Draw one real-life use of computers"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Why are computers useful?",
+      "options": [
+        "They make work slower",
+        "They help people work faster and easier",
+        "They only play games",
+        "They only make sounds"
+      ],
+      "answer": 1,
+      "explanation": "Computers help people finish work quickly and accurately."
+    },
+    {
+      "q": "Where do shopkeepers use computers?",
+      "options": [
+        "For billing and records",
+        "To cook food",
+        "To wash clothes",
+        "To paint walls"
+      ],
+      "answer": 0,
+      "explanation": "Shops use computers to create bills and keep records."
+    },
+    {
+      "q": "How do hospitals use computers?",
+      "options": [
+        "For storing patient information",
+        "For planting trees",
+        "For driving buses",
+        "For making toys"
+      ],
+      "answer": 0,
+      "explanation": "Hospitals use computers to save medical records and reports."
+    },
+    {
+      "q": "Students can use computers for:",
+      "options": [
+        "Studying and online classes",
+        "Only sleeping",
+        "Only cleaning",
+        "Only cooking"
+      ],
+      "answer": 0,
+      "explanation": "Computers help students learn through videos, classes, and research."
+    },
+    {
+      "q": "Which place commonly uses computers?",
+      "options": [
+        "Banks",
+        "Hospitals",
+        "Schools",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Computers are used in many places including banks, hospitals, and schools."
+    },
+    {
+      "q": "What can we watch on computers?",
+      "options": [
+        "Movies and educational videos",
+        "Only newspapers",
+        "Only maps",
+        "Only clocks"
+      ],
+      "answer": 0,
+      "explanation": "Computers are useful for entertainment and learning videos."
+    },
+    {
+      "q": "Computers help banks to:",
+      "options": [
+        "Store money records safely",
+        "Grow plants",
+        "Wash cars",
+        "Bake cakes"
+      ],
+      "answer": 0,
+      "explanation": "Banks use computers to safely manage account information."
+    },
+    {
+      "q": "Which device helps us attend online classes?",
+      "options": [
+        "Computer",
+        "Spoon",
+        "Bottle",
+        "Pencil box"
+      ],
+      "answer": 0,
+      "explanation": "Students use computers or laptops for online learning."
+    },
+    {
+      "q": "Computers help us communicate using:",
+      "options": [
+        "Video calls and emails",
+        "Only chalk",
+        "Only whistles",
+        "Only books"
+      ],
+      "answer": 0,
+      "explanation": "Computers allow people to connect through video calls and messages."
+    },
+    {
+      "q": "Computers are useful in railway stations for:",
+      "options": [
+        "Ticket booking",
+        "Flying airplanes",
+        "Cooking food",
+        "Swimming"
+      ],
+      "answer": 0,
+      "explanation": "Railway stations use computers for booking and checking tickets."
+    },
+    {
+      "q": "True or False: Computers can only be used for games.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Computers are used for learning, hospitals, banking, shopping, communication, and much more."
+    },
+    {
+      "q": "Which of these is NOT a use of computers?",
+      "options": [
+        "Watching videos",
+        "Billing in shops",
+        "Patient records",
+        "Growing trees directly"
+      ],
+      "answer": 3,
+      "explanation": "Computers help manage information but do not directly grow trees."
+    },
+    {
+      "q": "What do computers help us save?",
+      "options": [
+        "Time and effort",
+        "Only water",
+        "Only food",
+        "Only toys"
+      ],
+      "answer": 0,
+      "explanation": "Computers help people complete tasks faster and save time."
+    },
+    {
+      "q": "What can children learn using computers?",
+      "options": [
+        "Math and Science",
+        "Drawing and Coding",
+        "Videos and Research",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Computers support many types of learning activities."
+    },
+    {
+      "q": "What should we remember while using computers?",
+      "options": [
+        "Use carefully and responsibly",
+        "Throw the keyboard",
+        "Hit the monitor",
+        "Use with wet hands"
+      ],
+      "answer": 0,
+      "explanation": "Computers are valuable devices and should be used safely."
+    }
+  ]
+}

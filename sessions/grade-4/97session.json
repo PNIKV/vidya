@@ -1,0 +1,314 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put activity photos, accessibility demo pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Accessibility Features",
+  "subtitle": "Technology for Everyone!",
+  "date": "Session 02",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#8A2BE2",
+  "icon": "♿",
+  "tags": [
+    "Accessibility",
+    "Technology",
+    "Digital Inclusion",
+    "Assistive Tools"
+  ],
+  "overview": "This session introduces students to accessibility features in digital devices that help people with visual, hearing, physical, or learning challenges use technology easily and independently.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add real classroom activity photos, accessibility tool demos, screen reader usage, magnifier examples, captions demo etc.",
+    "gallery": [
+      {
+        "file": "data/screen-reader.jpg",
+        "_placeholder": "ADD: Student using screen reader",
+        "caption": "Screen Reader helps visually impaired users hear text aloud",
+        "category": "Accessibility"
+      },
+      {
+        "file": "data/magnifier.jpg",
+        "_placeholder": "ADD: Magnifier feature demo",
+        "caption": "Magnifier zooms text and images for better visibility",
+        "category": "Accessibility"
+      },
+      {
+        "file": "data/voice-typing.jpg",
+        "_placeholder": "ADD: Voice typing activity photo",
+        "caption": "Voice Typing converts speech into text",
+        "category": "Technology"
+      },
+      {
+        "file": "data/captions.jpg",
+        "_placeholder": "ADD: Subtitles/captions example",
+        "caption": "Closed Captions help users understand audio content",
+        "category": "Accessibility"
+      },
+      {
+        "file": "data/high-contrast.jpg",
+        "_placeholder": "ADD: High contrast mode screenshot",
+        "caption": "High Contrast Mode improves readability",
+        "category": "Display"
+      },
+      {
+        "file": "data/braille-keyboard.jpg",
+        "_placeholder": "ADD: Braille keyboard or accessibility keyboard photo",
+        "caption": "Special keyboards help differently-abled users interact with devices",
+        "category": "Assistive Devices"
+      },
+      {
+        "file": "data/students-learning.jpg",
+        "_placeholder": "ADD: Students performing accessibility activities",
+        "caption": "Students exploring accessibility features together",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Accessibility?",
+    "Technology for differently-abled people",
+    "Screen Reader — reads text aloud",
+    "Magnifier — zooms text and images",
+    "Voice Typing — speak instead of typing",
+    "Closed Captions — text for audio/video",
+    "High Contrast Mode — easy reading display",
+    "Accessibility Keyboard Shortcuts",
+    "Text-to-Speech and Speech-to-Text",
+    "Digital Inclusion and Equal Access"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What are Accessibility Features?",
+      "videoId": "20SHvU2PKsM",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "A beginner-friendly introduction to accessibility tools and inclusive technology."
+    },
+    {
+      "title": "How Screen Readers Work",
+      "videoId": "q_ATY9gimOM",
+      "desc": "Learn how visually impaired users navigate computers using screen readers."
+    },
+    {
+      "title": "Voice Typing Tutorial",
+      "videoId": "8c2b0T2N6v4",
+      "desc": "Learn how speech can be converted into text using voice typing tools."
+    },
+    {
+      "title": "Accessibility Features in Smartphones",
+      "videoId": "5tahKijW0Q0",
+      "desc": "Explore useful accessibility settings available in modern smartphones."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Accessibility",
+      "url": "https://www.google.com/accessibility/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft Accessibility Tools",
+      "url": "https://www.microsoft.com/en-us/accessibility",
+      "icon": "🔗"
+    },
+    {
+      "title": "Voice Typing Tool",
+      "url": "https://docs.google.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Try Accessibility Features on Computer or Mobile",
+    "parts": [
+      "Computer or Smartphone",
+      "Internet Connection",
+      "Headphones/Speakers",
+      "Google Docs or Mobile Keyboard"
+    ],
+    "steps": [
+      "Open Accessibility Settings on device",
+      "Turn ON Screen Reader or Narrator",
+      "Try Magnifier to zoom the screen",
+      "Use Voice Typing and speak a sentence",
+      "Enable Closed Captions on a video",
+      "Observe how accessibility helps different users"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the purpose of Accessibility Features?",
+      "options": [
+        "To make devices expensive",
+        "To help everyone use technology easily",
+        "To increase internet speed",
+        "To decorate the screen"
+      ],
+      "answer": 1,
+      "explanation": "Accessibility features help all people, including differently-abled users, use technology comfortably."
+    },
+    {
+      "q": "Which feature reads text aloud on a computer or phone?",
+      "options": [
+        "Calculator",
+        "Screen Reader",
+        "Camera",
+        "Bluetooth"
+      ],
+      "answer": 1,
+      "explanation": "A Screen Reader converts on-screen text into spoken audio."
+    },
+    {
+      "q": "What does a Magnifier tool do?",
+      "options": [
+        "Makes the sound louder",
+        "Changes battery settings",
+        "Zooms text and images",
+        "Turns off the screen"
+      ],
+      "answer": 2,
+      "explanation": "Magnifier enlarges screen content for users with low vision."
+    },
+    {
+      "q": "Voice Typing helps users by:",
+      "options": [
+        "Typing using speech",
+        "Making videos",
+        "Playing music",
+        "Charging the device"
+      ],
+      "answer": 0,
+      "explanation": "Voice Typing converts spoken words into written text."
+    },
+    {
+      "q": "Closed Captions are useful for:",
+      "options": [
+        "Gaming only",
+        "Watching videos silently or helping hearing-impaired users",
+        "Charging devices",
+        "Editing photos"
+      ],
+      "answer": 1,
+      "explanation": "Closed captions display spoken words as text on the screen."
+    },
+    {
+      "q": "High Contrast Mode helps users by:",
+      "options": [
+        "Making text easier to read",
+        "Increasing internet speed",
+        "Downloading games",
+        "Changing wallpaper"
+      ],
+      "answer": 0,
+      "explanation": "High contrast improves visibility between text and background."
+    },
+    {
+      "q": "Which accessibility feature helps people who cannot type easily?",
+      "options": [
+        "Voice Typing",
+        "Flashlight",
+        "Wi-Fi",
+        "Camera"
+      ],
+      "answer": 0,
+      "explanation": "Voice Typing allows users to speak instead of typing."
+    },
+    {
+      "q": "Accessibility features mainly support:",
+      "options": [
+        "Only teachers",
+        "Only programmers",
+        "People with different needs and abilities",
+        "Only gamers"
+      ],
+      "answer": 2,
+      "explanation": "Accessibility tools are designed for inclusive technology use."
+    },
+    {
+      "q": "Which feature converts written text into spoken words?",
+      "options": [
+        "Speech-to-Text",
+        "Text-to-Speech",
+        "Calculator",
+        "QR Scanner"
+      ],
+      "answer": 1,
+      "explanation": "Text-to-Speech technology reads written text aloud."
+    },
+    {
+      "q": "What is Digital Inclusion?",
+      "options": [
+        "Using expensive devices only",
+        "Ensuring everyone can access and use technology",
+        "Playing online games",
+        "Buying new computers"
+      ],
+      "answer": 1,
+      "explanation": "Digital Inclusion means technology should be accessible for everyone."
+    },
+    {
+      "q": "Which accessibility feature is commonly used by visually impaired users?",
+      "options": [
+        "Screen Reader",
+        "Camera Flash",
+        "Calculator",
+        "Bluetooth"
+      ],
+      "answer": 0,
+      "explanation": "Screen Readers help visually impaired users navigate devices through audio."
+    },
+    {
+      "q": "Captions in videos show:",
+      "options": [
+        "Battery percentage",
+        "Sound as text",
+        "Wi-Fi signals",
+        "Screen brightness"
+      ],
+      "answer": 1,
+      "explanation": "Captions display spoken dialogue and sounds as text."
+    },
+    {
+      "q": "Which device commonly includes accessibility settings?",
+      "options": [
+        "Smartphones",
+        "Computers",
+        "Tablets",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Most modern digital devices provide accessibility features."
+    },
+    {
+      "q": "What does Speech-to-Text do?",
+      "options": [
+        "Converts speech into written text",
+        "Turns off sound",
+        "Reads books automatically",
+        "Changes screen color"
+      ],
+      "answer": 0,
+      "explanation": "Speech-to-Text technology converts spoken language into text."
+    },
+    {
+      "q": "Why is accessibility important?",
+      "options": [
+        "Because technology should be usable by everyone",
+        "To increase electricity usage",
+        "To make screens colorful",
+        "To reduce internet speed"
+      ],
+      "answer": 0,
+      "explanation": "Accessibility ensures equal opportunities for learning and technology use."
+    }
+  ]
+}

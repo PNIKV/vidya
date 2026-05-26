@@ -1,0 +1,341 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-1",
+    "number": 1,
+    "title": "What Computers Can Do",
+    "subtitle": "Computers Performing Real-Life Tasks",
+    "date": "Session 01",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#00B894",
+    "icon": "💻",
+    "tags": [
+        "Computers",
+        "Technology",
+        "Digital Skills",
+        "STEM"
+    ],
+    "overview": "This session helps students understand how computers are used in real life for learning, communication, entertainment, calculations, design, automation and many other daily activities through pictures, videos and demonstrations.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos/videos screenshots from classroom activities, computer labs, online learning, gaming, robots and real-life computer applications.",
+        "gallery": [
+            {
+                "file": "data/online-class.jpg",
+                "_placeholder": "ADD: Photo of online learning on computer",
+                "caption": "Computers help students attend online classes",
+                "category": "Education"
+            },
+            {
+                "file": "data/gaming.jpg",
+                "_placeholder": "ADD: Photo of computer gaming",
+                "caption": "Computers are used for games and entertainment",
+                "category": "Entertainment"
+            },
+            {
+                "file": "data/hospital-computer.jpg",
+                "_placeholder": "ADD: Photo of hospital using computers",
+                "caption": "Hospitals use computers to manage patient records",
+                "category": "Healthcare"
+            },
+            {
+                "file": "data/bank-computer.jpg",
+                "_placeholder": "ADD: Photo of banking computer system",
+                "caption": "Banks use computers for transactions and ATM services",
+                "category": "Banking"
+            },
+            {
+                "file": "data/robotics.jpg",
+                "_placeholder": "ADD: Photo of robots controlled by computers",
+                "caption": "Computers control robots and smart machines",
+                "category": "Technology"
+            },
+            {
+                "file": "data/video-editing.jpg",
+                "_placeholder": "ADD: Photo of video editing software",
+                "caption": "Computers help create videos, music and animations",
+                "category": "Creativity"
+            },
+            {
+                "file": "data/students-computer-lab.jpg",
+                "_placeholder": "ADD: Photo of students using computers",
+                "caption": "Students exploring different uses of computers",
+                "category": "Lab"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is a Computer?",
+        "Computers can calculate very fast",
+        "Computers help us learn and study",
+        "Computers can play music and videos",
+        "Computers help doctors and hospitals",
+        "Computers are used in banks and ATMs",
+        "Computers control robots and machines",
+        "Computers help in communication and video calls",
+        "Computers help create drawings, animations and games",
+        "Real-life examples of computers around us"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What Can Computers Do?",
+            "videoId": "Q2K5hasnRIk",
+            "_note": "Replace with actual educational video ID if needed",
+            "desc": "Simple explanation of how computers help humans in daily life."
+        },
+        {
+            "title": "Computers in Everyday Life",
+            "videoId": "e01a4L_GMdw",
+            "desc": "Real-life uses of computers in homes, schools and offices."
+        },
+        {
+            "title": "How Computers Help Hospitals and Banks",
+            "videoId": "rA5qnZUXcqo",
+            "desc": "Understanding important uses of computers in services."
+        },
+        {
+            "title": "Robots and Computers for Kids",
+            "videoId": "SZ5xkBWxj0Y",
+            "desc": "Learn how computers control robots and smart machines."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Computer Basics for Beginners",
+            "url": "https://edu.gcfglobal.org/en/computerbasics/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Typing Practice for Kids",
+            "url": "https://www.typingclub.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "Scratch Coding for Students",
+            "url": "https://scratch.mit.edu",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Find Real-Life Uses of Computers",
+        "parts": [
+            "Notebook",
+            "Chart paper",
+            "Computer/laptop",
+            "Projector",
+            "Printed pictures of computer uses"
+        ],
+        "steps": [
+            "Watch pictures/videos showing computers doing tasks",
+            "Identify where computers are being used",
+            "Discuss how computers help people",
+            "Separate uses into categories like education, banking, healthcare and entertainment",
+            "Draw one real-life use of a computer",
+            "Present findings to the class"
+        ]
+    },
+    "realLifeExamples": [
+        "Online classes",
+        "ATM machines",
+        "Video games",
+        "Hospital record systems",
+        "Traffic signal control",
+        "Movie animation",
+        "Video calling",
+        "Online shopping",
+        "Weather forecasting",
+        "Robot control systems"
+    ],
+    "computerTasks": [
+        "Calculating numbers quickly",
+        "Playing music and videos",
+        "Connecting people through internet",
+        "Storing important information",
+        "Creating presentations and drawings",
+        "Running robots and smart devices",
+        "Helping doctors diagnose diseases",
+        "Controlling traffic systems",
+        "Managing online banking",
+        "Helping students learn new things"
+    ],
+    "quiz": [
+        {
+            "q": "What is a computer?",
+            "options": [
+                "A type of fruit",
+                "An electronic machine that processes data",
+                "A school bag",
+                "A bicycle"
+            ],
+            "answer": 1,
+            "explanation": "A computer is an electronic machine that works with information and instructions."
+        },
+        {
+            "q": "Which task can a computer do very fast?",
+            "options": [
+                "Swimming",
+                "Calculations",
+                "Cooking food",
+                "Growing plants"
+            ],
+            "answer": 1,
+            "explanation": "Computers can solve calculations much faster than humans."
+        },
+        {
+            "q": "Where are computers used for online learning?",
+            "options": [
+                "School and home",
+                "Forest only",
+                "River",
+                "Playground only"
+            ],
+            "answer": 0,
+            "explanation": "Students use computers at school and home for online classes."
+        },
+        {
+            "q": "Which place uses computers to store patient records?",
+            "options": [
+                "Hospital",
+                "Garden",
+                "Farm",
+                "Bus stop"
+            ],
+            "answer": 0,
+            "explanation": "Hospitals use computers to manage patient information."
+        },
+        {
+            "q": "Which machine uses computers for money transactions?",
+            "options": [
+                "ATM",
+                "Bicycle",
+                "Fan",
+                "Swing"
+            ],
+            "answer": 0,
+            "explanation": "ATMs use computers to manage banking services."
+        },
+        {
+            "q": "What can computers play?",
+            "options": [
+                "Music and videos",
+                "Only water",
+                "Only books",
+                "Only food"
+            ],
+            "answer": 0,
+            "explanation": "Computers are used for entertainment like music and videos."
+        },
+        {
+            "q": "Which technology is controlled by computers?",
+            "options": [
+                "Robots",
+                "Trees",
+                "Clouds",
+                "Mountains"
+            ],
+            "answer": 0,
+            "explanation": "Robots work using computer programs and instructions."
+        },
+        {
+            "q": "Computers help people communicate using:",
+            "options": [
+                "Video calls",
+                "Hammer",
+                "Shoes",
+                "Buckets"
+            ],
+            "answer": 0,
+            "explanation": "Computers help people connect through internet and video calls."
+        },
+        {
+            "q": "Which activity can computers help create?",
+            "options": [
+                "Animations",
+                "Rain",
+                "Trees",
+                "Mountains"
+            ],
+            "answer": 0,
+            "explanation": "Computers are used to create animations and graphics."
+        },
+        {
+            "q": "Where are computers used for online shopping?",
+            "options": [
+                "Internet websites",
+                "Playground",
+                "Forest",
+                "River"
+            ],
+            "answer": 0,
+            "explanation": "Online shopping works using computers and internet systems."
+        },
+        {
+            "q": "What do computers store?",
+            "options": [
+                "Information and data",
+                "Only water",
+                "Only sand",
+                "Only toys"
+            ],
+            "answer": 0,
+            "explanation": "Computers can safely store lots of information."
+        },
+        {
+            "q": "Which of these is a real-life use of computers?",
+            "options": [
+                "Weather forecasting",
+                "Growing rocks",
+                "Flying naturally",
+                "Creating rainbows"
+            ],
+            "answer": 0,
+            "explanation": "Computers help scientists predict weather conditions."
+        },
+        {
+            "q": "Which device can students use to attend online classes?",
+            "options": [
+                "Laptop",
+                "Stone",
+                "Bottle",
+                "Umbrella"
+            ],
+            "answer": 0,
+            "explanation": "Laptops and computers are used for online education."
+        },
+        {
+            "q": "What helps computers know what to do?",
+            "options": [
+                "Programs and instructions",
+                "Magic",
+                "Rain",
+                "Wind"
+            ],
+            "answer": 0,
+            "explanation": "Computers follow programs and instructions given by humans."
+        },
+        {
+            "q": "Which field uses computers for controlling machines and robots?",
+            "options": [
+                "Technology",
+                "Jungle",
+                "Fishing",
+                "Mountain climbing"
+            ],
+            "answer": 0,
+            "explanation": "Technology and robotics depend heavily on computers."
+        }
+    ]
+}

@@ -1,0 +1,314 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put presentation interface screenshots, toolbar photos here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Presentation Interface",
+  "subtitle": "Create Amazing Slides!",
+  "date": "Session 02",
+  "duration": "1 Hours",
+  "phase": "Digital Skills",
+  "color": "#FF9800",
+  "icon": "📊",
+  "tags": [
+    "Presentation",
+    "PowerPoint",
+    "Google Slides",
+    "Digital Skills"
+  ],
+  "overview": "This session introduces students to the Presentation Interface, helping them understand menus, toolbars, slides, animations, themes, and presentation tools used to create engaging presentations.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of presentation software, toolbar sections, themes, student activities, and presentation practice photos.",
+    "gallery": [
+      {
+        "file": "data/presentation-home-screen.jpg",
+        "_placeholder": "ADD: Screenshot of presentation software home screen",
+        "caption": "Presentation software interface overview",
+        "category": "Concept"
+      },
+      {
+        "file": "data/toolbar.jpg",
+        "_placeholder": "ADD: Screenshot of toolbar and ribbon menu",
+        "caption": "Toolbar contains editing and formatting tools",
+        "category": "Interface"
+      },
+      {
+        "file": "data/slides-panel.jpg",
+        "_placeholder": "ADD: Screenshot of slides navigation panel",
+        "caption": "Slides panel helps navigate between slides",
+        "category": "Interface"
+      },
+      {
+        "file": "data/themes.jpg",
+        "_placeholder": "ADD: Screenshot of presentation themes",
+        "caption": "Themes make presentations attractive",
+        "category": "Design"
+      },
+      {
+        "file": "data/animation-demo.gif",
+        "_placeholder": "ADD: Animation demonstration screenshot",
+        "caption": "Animations make slides interactive",
+        "category": "Effects"
+      },
+      {
+        "file": "data/student-presentation.jpg",
+        "_placeholder": "ADD: Students presenting in classroom",
+        "caption": "Students presenting their slides confidently",
+        "category": "Activity"
+      },
+      {
+        "file": "data/presentation-practice.png",
+        "_placeholder": "ADD: Students practicing presentation",
+        "caption": "Practice improves presentation skills",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Presentation?",
+    "Presentation Interface Overview",
+    "Title Bar and Ribbon Menu",
+    "Slides Panel and Workspace",
+    "Insert Text, Images and Shapes",
+    "Themes and Background Design",
+    "Animations and Transitions",
+    "Slide Show and Presentation Mode"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Introduction to Presentation Interface",
+      "videoId": "KBTvPpGmNc4",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn the basics of presentation software and understand the interface step by step."
+    },
+    {
+      "title": "How to Create PowerPoint Slides",
+      "videoId": "XF34-Wu6qWU",
+      "desc": "A beginner-friendly guide to creating beautiful presentations."
+    },
+    {
+      "title": "Animations and Transitions in PowerPoint",
+      "videoId": "8VvB6gYDnJc",
+      "desc": "Learn how animations and transitions make presentations interactive."
+    },
+    {
+      "title": "Google Slides Tutorial for Beginners",
+      "videoId": "1jIlAc6Cj6A",
+      "desc": "Learn how to use Google Slides effectively."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft PowerPoint",
+      "url": "https://www.microsoft.com/en/microsoft-365/powerpoint",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Slides",
+      "url": "https://slides.google.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Canva Presentation Maker",
+      "url": "https://www.canva.com/presentations/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create Your First Presentation",
+    "parts": [
+      "Computer/Laptop",
+      "Presentation Software",
+      "Images",
+      "Keyboard and Mouse"
+    ],
+    "steps": [
+      "Open PowerPoint or Google Slides",
+      "Create a new blank presentation",
+      "Add a title slide",
+      "Insert text and pictures",
+      "Apply a theme or background",
+      "Add animations and transitions",
+      "Run the slide show",
+      "Present in front of the class"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the main purpose of a presentation?",
+      "options": [
+        "To play games",
+        "To organize and share information visually",
+        "To browse the internet",
+        "To type long essays"
+      ],
+      "answer": 1,
+      "explanation": "Presentations help us organize and present information visually using slides."
+    },
+    {
+      "q": "Which software is commonly used to create presentations?",
+      "options": [
+        "MS Paint",
+        "Microsoft PowerPoint",
+        "Calculator",
+        "Notepad"
+      ],
+      "answer": 1,
+      "explanation": "Microsoft PowerPoint is one of the most popular presentation software tools."
+    },
+    {
+      "q": "What is the area called where slide thumbnails are displayed?",
+      "options": [
+        "Ribbon",
+        "Slides Panel",
+        "Status Bar",
+        "Toolbar"
+      ],
+      "answer": 1,
+      "explanation": "The Slides Panel displays all slide thumbnails for navigation."
+    },
+    {
+      "q": "What does the Ribbon contain?",
+      "options": [
+        "Games",
+        "Drawing only",
+        "Tools and commands",
+        "Videos only"
+      ],
+      "answer": 2,
+      "explanation": "The Ribbon contains tabs, tools, and commands used to create presentations."
+    },
+    {
+      "q": "Which option is used to add pictures to a slide?",
+      "options": [
+        "Insert",
+        "Review",
+        "View",
+        "Design"
+      ],
+      "answer": 0,
+      "explanation": "The Insert tab is used to add images, shapes, charts, and more."
+    },
+    {
+      "q": "What is a Slide Transition?",
+      "options": [
+        "A type of font",
+        "The movement effect between slides",
+        "A drawing tool",
+        "A spelling checker"
+      ],
+      "answer": 1,
+      "explanation": "Transitions are effects shown when moving from one slide to another."
+    },
+    {
+      "q": "What do Animations do in presentations?",
+      "options": [
+        "Delete slides",
+        "Add movement effects to objects",
+        "Close the presentation",
+        "Print slides"
+      ],
+      "answer": 1,
+      "explanation": "Animations add movement effects to text, images, and objects."
+    },
+    {
+      "q": "Which key starts the Slide Show in PowerPoint?",
+      "options": [
+        "F1",
+        "F2",
+        "F5",
+        "F10"
+      ],
+      "answer": 2,
+      "explanation": "Pressing F5 starts the presentation slideshow from the beginning."
+    },
+    {
+      "q": "What is a Theme in presentation software?",
+      "options": [
+        "A virus",
+        "A pre-designed slide style",
+        "A calculator",
+        "A type of animation"
+      ],
+      "answer": 1,
+      "explanation": "Themes provide ready-made designs, colors, and fonts for presentations."
+    },
+    {
+      "q": "Which tab is used to change slide design?",
+      "options": [
+        "Insert",
+        "Design",
+        "View",
+        "Help"
+      ],
+      "answer": 1,
+      "explanation": "The Design tab is used to apply themes and customize slide appearance."
+    },
+    {
+      "q": "What is the purpose of the Title Bar?",
+      "options": [
+        "Shows slide animations",
+        "Displays the presentation name",
+        "Changes slide color",
+        "Adds sound"
+      ],
+      "answer": 1,
+      "explanation": "The Title Bar displays the name of the current presentation file."
+    },
+    {
+      "q": "What should be added to make slides more attractive?",
+      "options": [
+        "Only long paragraphs",
+        "Images and visuals",
+        "Nothing",
+        "Only numbers"
+      ],
+      "answer": 1,
+      "explanation": "Images and visuals make presentations more engaging and easy to understand."
+    },
+    {
+      "q": "Which mode is used to present slides to an audience?",
+      "options": [
+        "Edit Mode",
+        "Slide Show Mode",
+        "Drawing Mode",
+        "Print Mode"
+      ],
+      "answer": 1,
+      "explanation": "Slide Show Mode displays slides full-screen for presenting."
+    },
+    {
+      "q": "What is the best practice for presentation slides?",
+      "options": [
+        "Use too much text",
+        "Use clear points and visuals",
+        "Use very tiny fonts",
+        "Avoid colors"
+      ],
+      "answer": 1,
+      "explanation": "Good presentations use short points, visuals, and readable fonts."
+    },
+    {
+      "q": "Why do students practice presentations?",
+      "options": [
+        "To improve confidence and communication skills",
+        "To avoid homework",
+        "To play games",
+        "To close the computer"
+      ],
+      "answer": 0,
+      "explanation": "Practicing presentations helps students improve confidence and public speaking skills."
+    }
+  ]
+}

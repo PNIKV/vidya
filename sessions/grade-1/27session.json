@@ -1,0 +1,110 @@
+{
+    "id": "session-15",
+    "number": 15,
+    "title": "STEM Show and Tell",
+    "subtitle": "Present Your Favorite Circuit Project",
+    "date": "Session 15",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#FF7043",
+    "icon": "🔬",
+    "tags": [
+        "STEM",
+        "Circuits",
+        "Presentation",
+        "Communication",
+        "Learning"
+    ],
+    "overview": "Students present their favorite circuit project, explain how it works, and answer simple questions to build communication and STEM understanding.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-15/slides.pdf"
+    },
+    "images": {
+        "_note": "Add classroom STEM presentation photos.",
+        "gallery": [
+            {
+                "file": "data/student-circuit-demo.jpg",
+                "caption": "Student presenting a circuit project",
+                "category": "Presentation"
+            },
+            {
+                "file": "data/stem-showcase.jpg",
+                "caption": "Students sharing STEM creations",
+                "category": "Activity"
+            },
+            {
+                "file": "data/circuit-learning.jpg",
+                "caption": "Learning through circuit demonstrations",
+                "category": "Learning"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Presenting STEM projects",
+        "Explaining circuit functions",
+        "Observing electronic components",
+        "Communication skills",
+        "Learning from classmates"
+    ],
+    "activity": {
+        "title": "STEM Show and Tell Activity",
+        "parts": [
+            "Student circuit project",
+            "Notebook",
+            "Presentation area"
+        ],
+        "steps": [
+            "Bring your favorite circuit project",
+            "Show the circuit to classmates",
+            "Explain what the circuit does",
+            "Answer: 'What does this do?'",
+            "Observe and learn from others"
+        ]
+    },
+    "discussionQuestions": [
+        "What does your circuit do?",
+        "Which component is most important?",
+        "What did you learn while making it?",
+        "How can this project help people?"
+    ],
+    "quiz": [
+        {
+            "q": "Why do we present STEM projects?",
+            "options": [
+                "To share learning",
+                "To hide ideas",
+                "To avoid questions",
+                "To stop teamwork"
+            ],
+            "answer": 0,
+            "explanation": "Presenting helps students share and learn from others."
+        },
+        {
+            "q": "What should students explain during show and tell?",
+            "options": [
+                "How the circuit works",
+                "Only project color",
+                "Nothing",
+                "Class timetable"
+            ],
+            "answer": 0,
+            "explanation": "Students explain how their circuit functions."
+        },
+        {
+            "q": "What skill improves during presentations?",
+            "options": [
+                "Communication",
+                "Sleeping",
+                "Ignoring others",
+                "None"
+            ],
+            "answer": 0,
+            "explanation": "Presentations improve communication skills."
+        }
+    ]
+}

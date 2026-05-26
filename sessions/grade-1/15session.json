@@ -1,0 +1,244 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/",
+        "images_folder": "sessions/session-1/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-rgb-led",
+    "number": 1,
+    "title": "Colors! RGB LED",
+    "subtitle": "Red, Green, Blue — Mix and Glow!",
+    "date": "Session 01",
+    "duration": "1 Hour",
+    "phase": "Foundation",
+    "color": "#FF4D6D",
+    "icon": "🌈",
+    "tags": [
+        "Electronics",
+        "RGB LED",
+        "Colors",
+        "Arduino",
+        "Creativity"
+    ],
+    "overview": "Students learn how RGB LEDs create different colors using Red, Green and Blue light. Teacher changes colors while students identify and shout the color names. Students understand color mixing through fun real-life examples.",
+    "grades": [
+        1
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add real classroom photos and RGB LED activity pictures.",
+        "gallery": [
+            {
+                "file": "data/rgb-led.jpg",
+                "_placeholder": "ADD: RGB LED close-up photo",
+                "caption": "RGB LED can make many colors using Red, Green and Blue light",
+                "category": "Components"
+            },
+            {
+                "file": "data/color-mixing.jpg",
+                "_placeholder": "ADD: Teacher showing color mixing",
+                "caption": "Mixing colors using RGB light",
+                "category": "Concept"
+            },
+            {
+                "file": "data/arduino-rgb.jpg",
+                "_placeholder": "ADD: RGB LED connected to Arduino",
+                "caption": "RGB LED connected with Arduino",
+                "category": "Lab"
+            },
+            {
+                "file": "data/students-color-game.jpg",
+                "_placeholder": "ADD: Students shouting color names",
+                "caption": "Students identifying colors during activity",
+                "category": "Activity"
+            },
+            {
+                "file": "data/rainbow-lights.jpg",
+                "_placeholder": "ADD: Decorative RGB lights",
+                "caption": "RGB lights used in decoration and gaming",
+                "category": "Real Life"
+            }
+        ]
+    },
+    "keyTopics": [
+        "RGB stands for Red, Green and Blue",
+        "RGB LED can create many colors",
+        "Mixing Red + Green = Yellow",
+        "Mixing Red + Blue = Purple",
+        "Mixing Green + Blue = Cyan",
+        "All colors together make White",
+        "RGB LEDs are used in TVs, gaming keyboards and decorations",
+        "Arduino can control RGB LED colors"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "RGB LED for Beginners",
+            "videoId": "YUYVdutd0GM",
+            "desc": "Simple introduction to RGB LEDs and color mixing."
+        },
+        {
+            "title": "How RGB LEDs Work",
+            "videoId": "dTMF0wALe5Y",
+            "desc": "Learn how RGB LEDs create multiple colors."
+        },
+        {
+            "title": "Arduino RGB LED Tutorial",
+            "videoId": "QnwircMqcRA",
+            "desc": "Connect RGB LED with Arduino and change colors."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Wokwi RGB LED Simulator",
+            "url": "https://wokwi.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "RGB Color Picker",
+            "url": "https://www.w3schools.com/colors/colors_picker.asp",
+            "icon": "🎨"
+        }
+    ],
+    "activity": {
+        "title": "Guess the Color Game",
+        "parts": [
+            "Arduino UNO",
+            "RGB LED",
+            "220Ω Resistors",
+            "Breadboard",
+            "Jumper Wires",
+            "USB Cable"
+        ],
+        "steps": [
+            "Connect RGB LED to Arduino",
+            "Teacher changes LED colors using code",
+            "Students observe the changing colors",
+            "Students shout the color name loudly",
+            "Mix two colors and ask students to guess",
+            "Challenge: Students create their favorite color"
+        ]
+    },
+    "realLifeExamples": [
+        "Gaming keyboards use RGB lights",
+        "LED decorative strips use RGB LEDs",
+        "Television and mobile screens use RGB colors",
+        "Traffic signals use colored LEDs",
+        "Bluetooth speakers glow with RGB lights"
+    ],
+    "quiz": [
+        {
+            "q": "What does RGB stand for?",
+            "options": [
+                "Red Green Blue",
+                "Round Green Black",
+                "Red Gray Brown",
+                "Random Glow Bulb"
+            ],
+            "answer": 0,
+            "explanation": "RGB means Red, Green and Blue — the three main light colors."
+        },
+        {
+            "q": "What can an RGB LED do?",
+            "options": [
+                "Only glow red",
+                "Only make sound",
+                "Create many different colors",
+                "Store electricity"
+            ],
+            "answer": 2,
+            "explanation": "RGB LEDs mix colors to create many beautiful colors."
+        },
+        {
+            "q": "Which three colors are used in an RGB LED?",
+            "options": [
+                "Pink, Orange, White",
+                "Red, Green, Blue",
+                "Yellow, Black, White",
+                "Purple, Brown, Gray"
+            ],
+            "answer": 1,
+            "explanation": "RGB LEDs use Red, Green and Blue light."
+        },
+        {
+            "q": "What color do Red and Green make together?",
+            "options": [
+                "Yellow",
+                "Blue",
+                "Black",
+                "Pink"
+            ],
+            "answer": 0,
+            "explanation": "Red + Green light creates Yellow."
+        },
+        {
+            "q": "What color do Red and Blue make together?",
+            "options": [
+                "Green",
+                "Purple",
+                "Brown",
+                "Orange"
+            ],
+            "answer": 1,
+            "explanation": "Red + Blue light creates Purple."
+        },
+        {
+            "q": "What color is made when all RGB colors glow together?",
+            "options": [
+                "Black",
+                "Gray",
+                "White",
+                "Brown"
+            ],
+            "answer": 2,
+            "explanation": "All RGB colors together create White light."
+        },
+        {
+            "q": "Which device commonly uses RGB lights?",
+            "options": [
+                "Gaming keyboard",
+                "Notebook",
+                "School bag",
+                "Pencil"
+            ],
+            "answer": 0,
+            "explanation": "Gaming keyboards often use RGB lighting effects."
+        },
+        {
+            "q": "What did students do during the activity?",
+            "options": [
+                "Sleep quietly",
+                "Shout the color names",
+                "Draw only",
+                "Switch off the lights"
+            ],
+            "answer": 1,
+            "explanation": "Students excitedly guessed and shouted the color names."
+        },
+        {
+            "q": "What controls the RGB LED in the activity?",
+            "options": [
+                "Water bottle",
+                "Arduino",
+                "Fan",
+                "Paper"
+            ],
+            "answer": 1,
+            "explanation": "Arduino changes the RGB LED colors using programming."
+        },
+        {
+            "q": "RGB LEDs are mostly used for:",
+            "options": [
+                "Lighting and decoration",
+                "Cooking food",
+                "Cutting paper",
+                "Cleaning tables"
+            ],
+            "answer": 0,
+            "explanation": "RGB LEDs are used in decoration, displays and lighting systems."
+        }
+    ]
+}

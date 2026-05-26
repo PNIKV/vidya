@@ -1,0 +1,259 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Computers Around Us",
+  "subtitle": "See Computers Everywhere!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#4A90E2",
+  "icon": "💻",
+  "tags": [
+    "Computers",
+    "Technology",
+    "Daily Life",
+    "Digital World"
+  ],
+  "overview": "Students explore how computers are used in daily life at home, school, banks, hospitals, shops, railway stations and more through pictures, videos and real-life examples.",
+  "grades": [
+    3,
+    4,
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add real classroom photos and computer usage examples from daily life.",
+    "gallery": [
+      {
+        "file": "data/home-computer.jpg",
+        "_placeholder": "ADD: Family using laptop at home",
+        "caption": "Computers help us study, watch videos and play games at home",
+        "category": "Home"
+      },
+      {
+        "file": "data/school-computer-lab.jpg",
+        "_placeholder": "ADD: Students in school computer lab",
+        "caption": "Students learning on computers in school",
+        "category": "School"
+      },
+      {
+        "file": "data/bank-computer.jpg",
+        "_placeholder": "ADD: Bank employee using desktop computer",
+        "caption": "Banks use computers to manage money safely",
+        "category": "Bank"
+      },
+      {
+        "file": "data/hospital-computer.jpg",
+        "_placeholder": "ADD: Doctor using computer in hospital",
+        "caption": "Hospitals use computers for patient records",
+        "category": "Hospital"
+      },
+      {
+        "file": "data/shop-billing.jpg",
+        "_placeholder": "ADD: Billing counter computer in shop",
+        "caption": "Shops use computers for billing and payments",
+        "category": "Shop"
+      },
+      {
+        "file": "data/railway-computer.jpg",
+        "_placeholder": "ADD: Railway reservation computer",
+        "caption": "Railway stations use computers for ticket booking",
+        "category": "Transport"
+      },
+      {
+        "file": "data/mobile-phone.jpg",
+        "_placeholder": "ADD: Smartphone being used by students",
+        "caption": "Smartphones are also small computers",
+        "category": "Devices"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Computers at home",
+    "Computers in schools",
+    "Computers in banks and ATMs",
+    "Computers in hospitals",
+    "Computers in shops and malls",
+    "Computers in railway stations and airports",
+    "Smartphones and tablets are also computers",
+    "How computers make work easier and faster"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Computers Around Us",
+      "videoId": "dDHnXEx-QCU",
+      "desc": "Simple introduction showing where computers are used in daily life."
+    },
+    {
+      "title": "Uses of Computers for Kids",
+      "videoId": "Qh7L1DG9kYY",
+      "desc": "Learn how computers help people at home, school and offices."
+    },
+    {
+      "title": "Computer Basics for Children",
+      "videoId": "mCq8-xTH7jA",
+      "desc": "Basic understanding of computers and their uses."
+    },
+    {
+      "title": "Technology in Daily Life",
+      "videoId": "f0m6VQfB8S0",
+      "desc": "Fun examples of technology and computers around us."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Computer Basics for Kids",
+      "url": "https://www.ducksters.com/technology/computers.php",
+      "icon": "🔗"
+    },
+    {
+      "title": "BBC Bitesize Computing",
+      "url": "https://www.bbc.co.uk/bitesize/subjects/zf2f9j6",
+      "icon": "🔗"
+    },
+    {
+      "title": "Typing Practice for Kids",
+      "url": "https://www.typingclub.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Find Computers Around You",
+    "parts": [
+      "Notebook",
+      "Pencil",
+      "Picture cards",
+      "Computer images",
+      "Class discussion"
+    ],
+    "steps": [
+      "Show pictures of different places",
+      "Students identify where computers are used",
+      "Discuss what the computer is doing there",
+      "Match computer pictures with correct places",
+      "Students draw one place where they saw a computer",
+      "Share observations with the class"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Where do we commonly use computers at home?",
+      "options": [
+        "Cooking only",
+        "Watching videos and studying",
+        "Swimming",
+        "Sleeping"
+      ],
+      "answer": 1,
+      "explanation": "Computers at home help us study, watch videos, play games and communicate."
+    },
+    {
+      "q": "Why do schools use computers?",
+      "options": [
+        "To wash clothes",
+        "To grow plants",
+        "To help students learn",
+        "To repair roads"
+      ],
+      "answer": 2,
+      "explanation": "Schools use computers for learning, projects and online education."
+    },
+    {
+      "q": "Banks use computers mainly for:",
+      "options": [
+        "Playing music",
+        "Managing money and accounts",
+        "Flying airplanes",
+        "Cooking food"
+      ],
+      "answer": 1,
+      "explanation": "Banks use computers to store account information and manage transactions."
+    },
+    {
+      "q": "Which device is also a type of computer?",
+      "options": [
+        "Notebook",
+        "Smartphone",
+        "Chair",
+        "Bottle"
+      ],
+      "answer": 1,
+      "explanation": "Smartphones are small computers we use every day."
+    },
+    {
+      "q": "Hospitals use computers for:",
+      "options": [
+        "Patient records",
+        "Playing football",
+        "Painting walls",
+        "Driving buses"
+      ],
+      "answer": 0,
+      "explanation": "Hospitals use computers to store patient information and reports."
+    },
+    {
+      "q": "Where can we book train tickets using computers?",
+      "options": [
+        "Playground",
+        "Railway station",
+        "Garden",
+        "Farm"
+      ],
+      "answer": 1,
+      "explanation": "Railway stations use computers for ticket booking and schedules."
+    },
+    {
+      "q": "Computers help people work:",
+      "options": [
+        "Slower",
+        "Harder",
+        "Faster and easier",
+        "Without electricity"
+      ],
+      "answer": 2,
+      "explanation": "Computers save time and make many tasks easier."
+    },
+    {
+      "q": "Which place usually has a computer billing machine?",
+      "options": [
+        "Shop",
+        "Beach",
+        "Forest",
+        "Mountain"
+      ],
+      "answer": 0,
+      "explanation": "Shops use computers for billing and payments."
+    },
+    {
+      "q": "What can students do using computers?",
+      "options": [
+        "Learn new things",
+        "Write projects",
+        "Watch educational videos",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Computers help students in many different ways."
+    },
+    {
+      "q": "Computers are found:",
+      "options": [
+        "Only in schools",
+        "Only in offices",
+        "Only in banks",
+        "Almost everywhere"
+      ],
+      "answer": 3,
+      "explanation": "Today computers are used almost everywhere in daily life."
+    }
+  ]
+}

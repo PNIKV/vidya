@@ -1,0 +1,111 @@
+{
+    "id": "session-14",
+    "number": 14,
+    "title": "Safe Use Poster",
+    "subtitle": "Create 'How to Use Computer Safely' Posters",
+    "date": "Session 14",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#4CAF50",
+    "icon": "🖥️",
+    "tags": [
+        "Computer Safety",
+        "Digital Citizenship",
+        "Poster Activity",
+        "Technology"
+    ],
+    "overview": "Students learn computer safety rules and create posters showing safe computer practices using drawings, colors, and safety messages.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-14/slides.pdf"
+    },
+    "images": {
+        "_note": "Add classroom poster-making activity photos.",
+        "gallery": [
+            {
+                "file": "data/computer-safety.jpg",
+                "caption": "Computer safety awareness",
+                "category": "Safety"
+            },
+            {
+                "file": "data/poster-making.jpg",
+                "caption": "Students creating safety posters",
+                "category": "Activity"
+            },
+            {
+                "file": "data/computer-lab.jpg",
+                "caption": "Safe computer use in classroom",
+                "category": "Learning"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Use computers carefully",
+        "Keep hands clean before using computers",
+        "Sit properly while using a computer",
+        "Do not open unknown websites",
+        "Follow computer lab rules"
+    ],
+    "computerSafetyRules": [
+        "Use clean and dry hands.",
+        "Sit correctly while using a computer.",
+        "Do not eat or drink near computers.",
+        "Ask teachers before opening unknown websites.",
+        "Handle devices carefully."
+    ],
+    "activity": {
+        "title": "How to Use Computer Safely Poster",
+        "parts": [
+            "Chart Paper",
+            "Color Pens",
+            "Pencil",
+            "Scale"
+        ],
+        "steps": [
+            "Discuss computer safety rules",
+            "Write safety points on chart paper",
+            "Draw pictures related to safe computer use",
+            "Decorate the poster",
+            "Present posters in class"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What should you do before touching a computer?",
+            "options": [
+                "Wash and dry hands",
+                "Eat food",
+                "Touch wires",
+                "Run near computer"
+            ],
+            "answer": 0,
+            "explanation": "Always use clean and dry hands."
+        },
+        {
+            "q": "Where should food be kept?",
+            "options": [
+                "Near keyboard",
+                "Away from computer",
+                "On monitor",
+                "Beside mouse"
+            ],
+            "answer": 1,
+            "explanation": "Food and drinks should stay away from computers."
+        },
+        {
+            "q": "Why do we make safety posters?",
+            "options": [
+                "To learn safe habits",
+                "To damage computers",
+                "To waste paper",
+                "To avoid rules"
+            ],
+            "answer": 0,
+            "explanation": "Safety posters help students remember good practices."
+        }
+    ]
+}

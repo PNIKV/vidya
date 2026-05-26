@@ -8,12 +8,20 @@ function renderSessionsList() {
   const gradeFilterEl = document.getElementById('gradeFilter');
   const gradeFilter = gradeFilterEl ? gradeFilterEl.value : 'all';
 
-  let ordered = SITE.sessions.map(e => SESSIONS[e.id]).filter(Boolean);
+  // ✅ Get all sessions, filter by _grade tag
+  let ordered = Object.values(SESSIONS);
 
   if (gradeFilter !== 'all') {
-    const filterVal = parseInt(gradeFilter);
-    ordered = ordered.filter(s => s.grades && s.grades.includes(filterVal));
+    ordered = ordered.filter(s => s._grade === gradeFilter);
   }
+
+  // Sort by grade number then session number
+  ordered.sort((a, b) => {
+    const gA = parseInt(a._grade.replace('grade-', '')) || 0;
+    const gB = parseInt(b._grade.replace('grade-', '')) || 0;
+    if (gA !== gB) return gA - gB;
+    return a.number - b.number;
+  });
 
   grid.innerHTML = ordered.map(s => sessionCardHTML(s)).join('');
 }
@@ -174,7 +182,7 @@ function renderSessionDetail() {
 // =============================================
 function renderSlidesTab(s) {
   const pptx = s.slides?.pptx || null;
-  const pdf  = s.slides?.pdf || null;
+  const pdf = s.slides?.pdf || null;
 
   if (!pptx && !pdf) {
     return `

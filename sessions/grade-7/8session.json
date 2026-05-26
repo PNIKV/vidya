@@ -1,0 +1,315 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/grade-1/",
+    "slides_folder": "sessions/grade-1/slides/",
+    "images_folder": "sessions/grade-1/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "What is a Computer?",
+  "subtitle": "Smart Machines Around Us!",
+  "date": "Session 01",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#4F46E5",
+  "icon": "💻",
+  "tags": [
+    "Computer Basics",
+    "Technology",
+    "Digital Learning",
+    "STEM"
+  ],
+  "overview": "In this session, students learn what a computer is, identify different types and sizes of computers, and discuss where they have seen computers in real life such as homes, schools, hospitals, shops, railway stations, and mobile phones.",
+  "grades": [
+    3,
+    4,
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add real classroom photos, computer lab images, laptop photos, tablets, ATM machines, and students using computers.",
+    "gallery": [
+      {
+        "file": "data/desktop-computer.jpg",
+        "_placeholder": "ADD: Photo of desktop computer in classroom or office",
+        "caption": "Desktop Computer used in schools and offices",
+        "category": "Computer Types"
+      },
+      {
+        "file": "data/laptop.jpg",
+        "_placeholder": "ADD: Photo of laptop being used by students",
+        "caption": "Laptop — Portable computer we can carry anywhere",
+        "category": "Computer Types"
+      },
+      {
+        "file": "data/tablet.jpg",
+        "_placeholder": "ADD: Photo of tablet device",
+        "caption": "Tablet computer used for learning and games",
+        "category": "Devices"
+      },
+      {
+        "file": "data/smartphone.jpg",
+        "_placeholder": "ADD: Photo of smartphone",
+        "caption": "Smartphone is also a small computer",
+        "category": "Devices"
+      },
+      {
+        "file": "data/atm-machine.jpg",
+        "_placeholder": "ADD: Photo of ATM machine",
+        "caption": "ATM machine uses a computer to give money",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/hospital-computer.jpg",
+        "_placeholder": "ADD: Photo of computer in hospital",
+        "caption": "Doctors use computers in hospitals",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/classroom-computer.jpg",
+        "_placeholder": "ADD: Photo of students using computer in lab",
+        "caption": "Students learning computers in school lab",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Computer?",
+    "Computer = Smart Machine that helps us work fast",
+    "Input → Process → Output",
+    "Different Types of Computers",
+    "Desktop Computer",
+    "Laptop Computer",
+    "Tablet",
+    "Smartphone",
+    "Where we see computers in daily life",
+    "Computer in School, Hospital, Bank, Shop, Railway Station",
+    "Big vs Small Computers",
+    "Real-life examples of computers"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is a Computer for Kids?",
+      "videoId": "mCq8-xTH7jA",
+      "_note": "Replace with preferred educational video ID",
+      "desc": "Simple introduction explaining what a computer is and how it helps us in daily life."
+    },
+    {
+      "title": "Different Types of Computers",
+      "videoId": "Q2K1JmL7P3w",
+      "_note": "Replace with actual educational video",
+      "desc": "Learn about desktops, laptops, tablets and smartphones."
+    },
+    {
+      "title": "How Computers Work",
+      "videoId": "OAx_6-wdslM",
+      "desc": "Basic explanation of how computers take input, process data and give output."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Computer Basics for Beginners",
+      "url": "https://edu.gcfglobal.org/en/computerbasics/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Typing Practice for Kids",
+      "url": "https://www.typingclub.com/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Fun Computer Games for Learning",
+      "url": "https://www.abcya.com/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Identify Computers Around You",
+    "parts": [
+      "Desktop computer",
+      "Laptop",
+      "Tablet",
+      "Smartphone",
+      "Pictures of ATM, hospital, shop billing machine"
+    ],
+    "steps": [
+      "Show students different computer pictures",
+      "Ask students where they have seen these devices",
+      "Students identify computer size — big or small",
+      "Discuss how each computer helps people",
+      "Students draw their favorite computer device",
+      "Challenge: Find 5 computers at home or outside"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a computer?",
+      "options": [
+        "A toy only",
+        "A smart machine that helps us work and learn",
+        "A cooking machine",
+        "A musical instrument"
+      ],
+      "answer": 1,
+      "explanation": "A computer is a smart electronic machine that helps us study, play games, draw, calculate and do many tasks quickly."
+    },
+    {
+      "q": "Which of these is a computer?",
+      "options": [
+        "Laptop",
+        "Desktop",
+        "Tablet",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Laptop, desktop and tablet are all types of computers."
+    },
+    {
+      "q": "Which computer can we easily carry in a bag?",
+      "options": [
+        "Desktop",
+        "Laptop",
+        "ATM machine",
+        "Server"
+      ],
+      "answer": 1,
+      "explanation": "Laptop is portable and easy to carry."
+    },
+    {
+      "q": "Where have you seen computers?",
+      "options": [
+        "School",
+        "Hospital",
+        "Bank",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Computers are used almost everywhere in daily life."
+    },
+    {
+      "q": "Which device is also a small computer?",
+      "options": [
+        "Fan",
+        "Smartphone",
+        "Bottle",
+        "Book"
+      ],
+      "answer": 1,
+      "explanation": "Smartphones are small computers that can call, calculate, play games and use the internet."
+    },
+    {
+      "q": "What do students use computers for?",
+      "options": [
+        "Learning",
+        "Drawing",
+        "Games",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Students use computers for many educational and fun activities."
+    },
+    {
+      "q": "Which computer is usually kept on a table?",
+      "options": [
+        "Desktop",
+        "Tablet",
+        "Phone",
+        "Smartwatch"
+      ],
+      "answer": 0,
+      "explanation": "Desktop computers are usually placed on desks or tables."
+    },
+    {
+      "q": "What does a computer help us do?",
+      "options": [
+        "Work faster",
+        "Store information",
+        "Learn new things",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Computers help us in many ways including learning and working faster."
+    },
+    {
+      "q": "Which machine gives money using a computer?",
+      "options": [
+        "ATM",
+        "Television",
+        "Fan",
+        "Printer"
+      ],
+      "answer": 0,
+      "explanation": "ATM machines use computers to manage bank transactions."
+    },
+    {
+      "q": "Who uses computers in hospitals?",
+      "options": [
+        "Doctors",
+        "Nurses",
+        "Reception staff",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Many hospital workers use computers for patient records and reports."
+    },
+    {
+      "q": "Which is the biggest computer among these?",
+      "options": [
+        "Desktop",
+        "Laptop",
+        "Tablet",
+        "Phone"
+      ],
+      "answer": 0,
+      "explanation": "Desktop computers are generally bigger than laptops, tablets and phones."
+    },
+    {
+      "q": "What can we do on a computer?",
+      "options": [
+        "Type",
+        "Watch videos",
+        "Play games",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Computers can perform many tasks."
+    },
+    {
+      "q": "A computer works using:",
+      "options": [
+        "Electricity",
+        "Water",
+        "Petrol",
+        "Wood"
+      ],
+      "answer": 0,
+      "explanation": "Computers need electricity or battery power to work."
+    },
+    {
+      "q": "Which of these is NOT a computer?",
+      "options": [
+        "Laptop",
+        "Desktop",
+        "Tablet",
+        "Pencil"
+      ],
+      "answer": 3,
+      "explanation": "A pencil is not an electronic computer device."
+    },
+    {
+      "q": "Computers make our work:",
+      "options": [
+        "Slower",
+        "Harder",
+        "Faster and easier",
+        "Impossible"
+      ],
+      "answer": 2,
+      "explanation": "Computers help us complete work quickly and efficiently."
+    }
+  ]
+}

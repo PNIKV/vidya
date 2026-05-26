@@ -1,0 +1,250 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-6/",
+        "slides_folder": "sessions/session-6/slides/",
+        "images_folder": "sessions/session-6/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-19",
+    "number": 19,
+    "title": "What NOT to Do",
+    "subtitle": "Use computers safely and carefully!",
+    "date": "Session 019",
+    "duration": "1 Hour",
+    "phase": "Foundation",
+    "color": "#FF6B6B",
+    "icon": "⚠️",
+    "tags": [
+        "Computer Safety",
+        "Technology",
+        "Digital Responsibility",
+        "Computer Basics"
+    ],
+    "overview": "Students learn safe and responsible computer usage habits through fun role-play activities. They understand what actions can damage computers and how to handle devices carefully in real life.",
+    "grades": [
+        3,
+        4,
+        5,
+        6
+    ],
+    "slides": {
+        "pdf": "sessions/session-6/slides.pdf"
+    },
+    "images": {
+        "_note": "Add actual classroom photos and role-play activities from the session.",
+        "gallery": [
+            {
+                "file": "data/gentle-keyboard.jpg",
+                "_placeholder": "ADD: Students typing gently on keyboard",
+                "caption": "Use keyboard softly and carefully",
+                "category": "Safety"
+            },
+            {
+                "file": "data/unplug-warning.jpg",
+                "_placeholder": "ADD: Teacher showing safe cable handling",
+                "caption": "Do not pull wires forcefully",
+                "category": "Safety"
+            },
+            {
+                "file": "data/computer-lab.jpg",
+                "_placeholder": "ADD: Students sitting properly in computer lab",
+                "caption": "Proper computer lab behavior",
+                "category": "Lab"
+            },
+            {
+                "file": "data/roleplay.jpg",
+                "_placeholder": "ADD: Students acting good and bad computer habits",
+                "caption": "Fun role-play activity during session",
+                "category": "Activity"
+            },
+            {
+                "file": "data/clean-hands.jpg",
+                "_placeholder": "ADD: Washing hands before computer use",
+                "caption": "Keep hands clean before touching devices",
+                "category": "Safety"
+            },
+            {
+                "file": "data/no-food.jpg",
+                "_placeholder": "ADD: Teacher explaining no food near computer",
+                "caption": "Food and water should stay away from electronics",
+                "category": "Safety"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Do not bang keyboard keys",
+        "Never pull or unplug wires forcefully",
+        "Keep food and water away from computers",
+        "Use mouse gently — no throwing or hitting",
+        "Always ask teacher before changing connections",
+        "Sit properly while using computer",
+        "Keep hands clean before touching devices",
+        "Switch OFF devices safely after use"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Computer Lab Rules for Kids",
+            "videoId": "dQw4w9WgXcQ",
+            "_note": "Replace with actual educational video ID",
+            "desc": "Fun classroom rules for using computers safely and responsibly."
+        },
+        {
+            "title": "How to Take Care of a Computer",
+            "videoId": "3KANI2dpXLw",
+            "desc": "Simple computer care habits for beginners."
+        },
+        {
+            "title": "Computer Safety Tips for Students",
+            "videoId": "KGVB2RkP7q8",
+            "desc": "Learn safe and smart computer usage."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Typing Practice for Kids",
+            "url": "https://www.typingclub.com",
+            "icon": "⌨️"
+        },
+        {
+            "title": "Computer Safety Rules",
+            "url": "https://www.internetmatters.org",
+            "icon": "🛡️"
+        },
+        {
+            "title": "Kids Computer Learning",
+            "url": "https://www.abcya.com",
+            "icon": "💻"
+        }
+    ],
+    "activity": {
+        "title": "Good Habit vs Bad Habit Role Play",
+        "parts": [
+            "Computer or keyboard",
+            "Mouse",
+            "Monitor",
+            "Dummy wires/cables",
+            "Flash cards showing good and bad habits"
+        ],
+        "steps": [
+            "Teacher demonstrates a bad habit like banging keys",
+            "Students identify what is wrong",
+            "Students perform correct computer behavior",
+            "Role-play unplugging wires safely",
+            "Discuss why safety rules are important",
+            "Students repeat safety pledge together"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What should you do while typing on a keyboard?",
+            "options": [
+                "Hit keys very hard",
+                "Press keys gently",
+                "Throw the keyboard",
+                "Use only one finger forcefully"
+            ],
+            "answer": 1,
+            "explanation": "Keyboards should be used gently to avoid damage."
+        },
+        {
+            "q": "Should you pull computer wires forcefully?",
+            "options": [
+                "Yes, always",
+                "Only when angry",
+                "No, wires can get damaged",
+                "Only during games"
+            ],
+            "answer": 2,
+            "explanation": "Pulling wires can damage computers and may be dangerous."
+        },
+        {
+            "q": "What should stay away from computers?",
+            "options": [
+                "Books",
+                "Water and food",
+                "Mouse",
+                "Notebook"
+            ],
+            "answer": 1,
+            "explanation": "Water and food can damage electronic devices."
+        },
+        {
+            "q": "How should we use a mouse?",
+            "options": [
+                "Throw it",
+                "Hit it on desk",
+                "Use it carefully",
+                "Pull its wire hard"
+            ],
+            "answer": 2,
+            "explanation": "Mouse should be handled softly and carefully."
+        },
+        {
+            "q": "Who should you ask before changing computer connections?",
+            "options": [
+                "Friend",
+                "Nobody",
+                "Teacher or adult",
+                "Random person"
+            ],
+            "answer": 2,
+            "explanation": "Always ask a teacher or adult before changing wires or settings."
+        },
+        {
+            "q": "Why should hands be clean before using computers?",
+            "options": [
+                "To make keyboard colorful",
+                "To keep devices clean and safe",
+                "To type faster magically",
+                "No reason"
+            ],
+            "answer": 1,
+            "explanation": "Clean hands help protect devices from dirt and damage."
+        },
+        {
+            "q": "What is the correct way to sit while using a computer?",
+            "options": [
+                "Lie down",
+                "Sit properly and comfortably",
+                "Stand on chair",
+                "Jump near computer"
+            ],
+            "answer": 1,
+            "explanation": "Good posture helps safe and comfortable computer use."
+        },
+        {
+            "q": "What should you do after using a computer?",
+            "options": [
+                "Leave it running forever",
+                "Throw the mouse",
+                "Switch it OFF properly",
+                "Pull power cable immediately"
+            ],
+            "answer": 2,
+            "explanation": "Devices should always be shut down safely."
+        },
+        {
+            "q": "Which action is unsafe?",
+            "options": [
+                "Typing softly",
+                "Keeping water near laptop",
+                "Using clean hands",
+                "Listening to teacher"
+            ],
+            "answer": 1,
+            "explanation": "Water near electronics is dangerous."
+        },
+        {
+            "q": "Why are computer safety rules important?",
+            "options": [
+                "To damage devices",
+                "To keep devices safe and working properly",
+                "To make class noisy",
+                "To waste time"
+            ],
+            "answer": 1,
+            "explanation": "Safety rules protect both students and devices."
+        }
+    ]
+}

@@ -1,2032 +1,463 @@
-﻿{
-    "_instructions":  {
-                          "purpose":  "This is the MASTER CONFIG file. The website reads this to know which sessions exist.",
-                          "how_to_add_session":  [
-                                                     "1. Create a new folder: sessions/session-4/",
-                                                     "2. Create subfolders: sessions/session-4/slides/ and sessions/session-4/images/",
-                                                     "3. Copy sessions/session-1/session.json to sessions/session-4/session.json",
-                                                     "4. Edit the new session.json â€” change id, number, title, slides, images, quiz etc.",
-                                                     "5. Add the session entry below in the \u0027sessions\u0027 array",
-                                                     "6. Export PPT slides as JPG into sessions/session-4/slides/",
-                                                     "7. Add activity photos into sessions/session-4/images/",
-                                                     "Done! The website will automatically show the new session."
-                                                 ],
-                          "folder_structure":  {
-                                                   "root":  "/",
-                                                   "index.html":  "Main website file",
-                                                   "style.css":  "All styling",
-                                                   "app.js":  "All JavaScript logic",
-                                                   "site.json":  "THIS FILE â€” master config",
-                                                   "sessions/":  {
-                                                                     "session-1/":  {
-                                                                                        "session.json":  "Session 1 data, quiz, topics",
-                                                                                        "slides/":  "slide-01.jpg, slide-02.jpg ... OR slides.pdf",
-                                                                                        "images/":  "img-01.jpg, img-02.jpg ..."
-                                                                                    },
-                                                                     "session-2/":  "Same structure",
-                                                                     "session-3/":  "Same structure",
-                                                                     "session-N/":  "Copy structure for each new session"
-                                                                 },
-                                                   "projects/":  {
-                                                                     "projects.json":  "All projects data",
-                                                                     "images/":  "project photos"
-                                                                 }
-                                               }
-                      },
-    "site":  {
-                 "name":  "Vidya STEAM",
-                 "tagline":  "Build. Break. Learn. Repeat.",
-                 "subtitle":  "Tinkering Lab for Grades 5â€“9",
-                 "description":  "A hands-on STEAM education program where kids learn electronics, Arduino, robotics, IoT, and 3D printing by building real projects.",
-                 "logo_emoji":  "âš¡",
-                 "accent_color":  "#FF6B35"
-             },
-    "sessions":  [
-                     {
-                         "id":  "session-1",
-                         "number":  1,
-                         "file":  "sessions/session-1/1session.json"
-                     },
-                     {
-                         "id":  "session-2",
-                         "number":  2,
-                         "file":  "sessions/session-2/2session.json"
-                     },
-                     {
-                         "id":  "session-3",
-                         "number":  3,
-                         "file":  "sessions/session-3/3session.json"
-                     },
-                     {
-                         "id":  "session-4",
-                         "number":  4,
-                         "file":  "sessions/session-4/4session.json"
-                     },
-                     {
-                         "id":  "session-5",
-                         "number":  5,
-                         "file":  "sessions/session-5/5session.json"
-                     },
-                     {
-                         "id":  "session-6",
-                         "number":  6,
-                         "file":  "sessions/session-6/6session.json"
-                     },
-                     {
-                         "id":  "session-7",
-                         "number":  7,
-                         "file":  "sessions/session-7/7session.json"
-                     },
-                     {
-                         "id":  "session-8",
-                         "number":  8,
-                         "file":  "sessions/session-8/8session.json"
-                     },
-                     {
-                         "id":  "session-9",
-                         "number":  9,
-                         "file":  "sessions/session-9/9session.json"
-                     },
-                     {
-                         "id":  "session-10",
-                         "number":  10,
-                         "file":  "sessions/session-10/10session.json"
-                     },
-                     {
-                         "id":  "session-11",
-                         "number":  11,
-                         "file":  "sessions/session-11/11session.json"
-                     },
-                     {
-                         "id":  "session-12",
-                         "number":  12,
-                         "file":  "sessions/session-12/12session.json"
-                     },
-                     {
-                         "id":  "session-13",
-                         "number":  13,
-                         "file":  "sessions/session-13/13session.json"
-                     },
-                     {
-                         "id":  "session-14",
-                         "number":  14,
-                         "file":  "sessions/session-14/14session.json"
-                     },
-                     {
-                         "id":  "session-15",
-                         "number":  15,
-                         "file":  "sessions/session-15/15session.json"
-                     },
-                     {
-                         "id":  "session-16",
-                         "number":  16,
-                         "file":  "sessions/session-16/16session.json"
-                     },
-                     {
-                         "id":  "session-17",
-                         "number":  17,
-                         "file":  "sessions/session-17/17session.json"
-                     },
-                     {
-                         "id":  "session-18",
-                         "number":  18,
-                         "file":  "sessions/session-18/18session.json"
-                     },
-                     {
-                         "id":  "session-19",
-                         "number":  19,
-                         "file":  "sessions/session-19/19session.json"
-                     },
-                     {
-                         "id":  "session-20",
-                         "number":  20,
-                         "file":  "sessions/session-20/20session.json"
-                     },
-                     {
-                         "id":  "session-21",
-                         "number":  21,
-                         "file":  "sessions/session-21/21session.json"
-                     },
-                     {
-                         "id":  "session-22",
-                         "number":  22,
-                         "file":  "sessions/session-22/22session.json"
-                     },
-                     {
-                         "id":  "session-23",
-                         "number":  23,
-                         "file":  "sessions/session-23/23session.json"
-                     },
-                     {
-                         "id":  "session-24",
-                         "number":  24,
-                         "file":  "sessions/session-24/24session.json"
-                     },
-                     {
-                         "id":  "session-25",
-                         "number":  25,
-                         "file":  "sessions/session-25/25session.json"
-                     },
-                     {
-                         "id":  "session-26",
-                         "number":  26,
-                         "file":  "sessions/session-26/26session.json"
-                     },
-                     {
-                         "id":  "session-27",
-                         "number":  27,
-                         "file":  "sessions/session-27/27session.json"
-                     },
-                     {
-                         "id":  "session-28",
-                         "number":  28,
-                         "file":  "sessions/session-28/28session.json"
-                     },
-                     {
-                         "id":  "session-29",
-                         "number":  29,
-                         "file":  "sessions/session-29/29session.json"
-                     },
-                     {
-                         "id":  "session-30",
-                         "number":  30,
-                         "file":  "sessions/session-30/30session.json"
-                     },
-                     {
-                         "id":  "session-31",
-                         "number":  31,
-                         "file":  "sessions/session-31/31session.json"
-                     },
-                     {
-                         "id":  "session-32",
-                         "number":  32,
-                         "file":  "sessions/session-32/32session.json"
-                     },
-                     {
-                         "id":  "session-33",
-                         "number":  33,
-                         "file":  "sessions/session-33/33session.json"
-                     },
-                     {
-                         "id":  "session-34",
-                         "number":  34,
-                         "file":  "sessions/session-34/34session.json"
-                     },
-                     {
-                         "id":  "session-35",
-                         "number":  35,
-                         "file":  "sessions/session-35/35session.json"
-                     },
-                     {
-                         "id":  "session-36",
-                         "number":  36,
-                         "file":  "sessions/session-36/36session.json"
-                     },
-                     {
-                         "id":  "session-37",
-                         "number":  37,
-                         "file":  "sessions/session-37/37session.json"
-                     },
-                     {
-                         "id":  "session-38",
-                         "number":  38,
-                         "file":  "sessions/session-38/38session.json"
-                     },
-                     {
-                         "id":  "session-39",
-                         "number":  39,
-                         "file":  "sessions/session-39/39session.json"
-                     },
-                     {
-                         "id":  "session-40",
-                         "number":  40,
-                         "file":  "sessions/session-40/40session.json"
-                     },
-                     {
-                         "id":  "session-41",
-                         "number":  41,
-                         "file":  "sessions/session-41/41session.json"
-                     },
-                     {
-                         "id":  "session-42",
-                         "number":  42,
-                         "file":  "sessions/session-42/42session.json"
-                     },
-                     {
-                         "id":  "session-43",
-                         "number":  43,
-                         "file":  "sessions/session-43/43session.json"
-                     },
-                     {
-                         "id":  "session-44",
-                         "number":  44,
-                         "file":  "sessions/session-44/44session.json"
-                     },
-                     {
-                         "id":  "session-45",
-                         "number":  45,
-                         "file":  "sessions/session-45/45session.json"
-                     },
-                     {
-                         "id":  "session-46",
-                         "number":  46,
-                         "file":  "sessions/session-46/46session.json"
-                     },
-                     {
-                         "id":  "session-47",
-                         "number":  47,
-                         "file":  "sessions/session-47/47session.json"
-                     },
-                     {
-                         "id":  "session-48",
-                         "number":  48,
-                         "file":  "sessions/session-48/48session.json"
-                     },
-                     {
-                         "id":  "session-49",
-                         "number":  49,
-                         "file":  "sessions/session-49/49session.json"
-                     },
-                     {
-                         "id":  "session-50",
-                         "number":  50,
-                         "file":  "sessions/session-50/50session.json"
-                     },
-                     {
-                         "id":  "session-51",
-                         "number":  51,
-                         "file":  "sessions/session-51/51session.json"
-                     },
-                     {
-                         "id":  "session-52",
-                         "number":  52,
-                         "file":  "sessions/session-52/52session.json"
-                     },
-                     {
-                         "id":  "session-53",
-                         "number":  53,
-                         "file":  "sessions/session-53/53session.json"
-                     },
-                     {
-                         "id":  "session-54",
-                         "number":  54,
-                         "file":  "sessions/session-54/54session.json"
-                     },
-                     {
-                         "id":  "session-55",
-                         "number":  55,
-                         "file":  "sessions/session-55/55session.json"
-                     },
-                     {
-                         "id":  "session-56",
-                         "number":  56,
-                         "file":  "sessions/session-56/56session.json"
-                     },
-                     {
-                         "id":  "session-57",
-                         "number":  57,
-                         "file":  "sessions/session-57/57session.json"
-                     },
-                     {
-                         "id":  "session-58",
-                         "number":  58,
-                         "file":  "sessions/session-58/58session.json"
-                     },
-                     {
-                         "id":  "session-59",
-                         "number":  59,
-                         "file":  "sessions/session-59/59session.json"
-                     },
-                     {
-                         "id":  "session-60",
-                         "number":  60,
-                         "file":  "sessions/session-60/60session.json"
-                     },
-                     {
-                         "id":  "session-61",
-                         "number":  61,
-                         "file":  "sessions/session-61/61session.json"
-                     },
-                     {
-                         "id":  "session-62",
-                         "number":  62,
-                         "file":  "sessions/session-62/62session.json"
-                     },
-                     {
-                         "id":  "session-63",
-                         "number":  63,
-                         "file":  "sessions/session-63/63session.json"
-                     },
-                     {
-                         "id":  "session-64",
-                         "number":  64,
-                         "file":  "sessions/session-64/64session.json"
-                     },
-                     {
-                         "id":  "session-65",
-                         "number":  65,
-                         "file":  "sessions/session-65/65session.json"
-                     },
-                     {
-                         "id":  "session-66",
-                         "number":  66,
-                         "file":  "sessions/session-66/66session.json"
-                     },
-                     {
-                         "id":  "session-67",
-                         "number":  67,
-                         "file":  "sessions/session-67/67session.json"
-                     },
-                     {
-                         "id":  "session-68",
-                         "number":  68,
-                         "file":  "sessions/session-68/68session.json"
-                     },
-                     {
-                         "id":  "session-69",
-                         "number":  69,
-                         "file":  "sessions/session-69/69session.json"
-                     },
-                     {
-                         "id":  "session-70",
-                         "number":  70,
-                         "file":  "sessions/session-70/70session.json"
-                     },
-                     {
-                         "id":  "session-71",
-                         "number":  71,
-                         "file":  "sessions/session-71/71session.json"
-                     },
-                     {
-                         "id":  "session-72",
-                         "number":  72,
-                         "file":  "sessions/session-72/72session.json"
-                     },
-                     {
-                         "id":  "session-73",
-                         "number":  73,
-                         "file":  "sessions/session-73/73session.json"
-                     },
-                     {
-                         "id":  "session-74",
-                         "number":  74,
-                         "file":  "sessions/session-74/74session.json"
-                     },
-                     {
-                         "id":  "session-75",
-                         "number":  75,
-                         "file":  "sessions/session-75/75session.json"
-                     },
-                     {
-                         "id":  "session-76",
-                         "number":  76,
-                         "file":  "sessions/session-76/76session.json"
-                     },
-                     {
-                         "id":  "session-77",
-                         "number":  77,
-                         "file":  "sessions/session-77/77session.json"
-                     },
-                     {
-                         "id":  "session-78",
-                         "number":  78,
-                         "file":  "sessions/session-78/78session.json"
-                     },
-                     {
-                         "id":  "session-79",
-                         "number":  79,
-                         "file":  "sessions/session-79/79session.json"
-                     },
-                     {
-                         "id":  "session-80",
-                         "number":  80,
-                         "file":  "sessions/session-80/80session.json"
-                     },
-                     {
-                         "id":  "session-81",
-                         "number":  81,
-                         "file":  "sessions/session-81/81session.json"
-                     },
-                     {
-                         "id":  "session-82",
-                         "number":  82,
-                         "file":  "sessions/session-82/82session.json"
-                     },
-                     {
-                         "id":  "session-83",
-                         "number":  83,
-                         "file":  "sessions/session-83/83session.json"
-                     },
-                     {
-                         "id":  "session-84",
-                         "number":  84,
-                         "file":  "sessions/session-84/84session.json"
-                     },
-                     {
-                         "id":  "session-85",
-                         "number":  85,
-                         "file":  "sessions/session-85/85session.json"
-                     },
-                     {
-                         "id":  "session-86",
-                         "number":  86,
-                         "file":  "sessions/session-86/86session.json"
-                     },
-                     {
-                         "id":  "session-87",
-                         "number":  87,
-                         "file":  "sessions/session-87/87session.json"
-                     },
-                     {
-                         "id":  "session-88",
-                         "number":  88,
-                         "file":  "sessions/session-88/88session.json"
-                     },
-                     {
-                         "id":  "session-89",
-                         "number":  89,
-                         "file":  "sessions/session-89/89session.json"
-                     },
-                     {
-                         "id":  "session-90",
-                         "number":  90,
-                         "file":  "sessions/session-90/90session.json"
-                     },
-                     {
-                         "id":  "session-91",
-                         "number":  91,
-                         "file":  "sessions/session-91/91session.json"
-                     },
-                     {
-                         "id":  "session-92",
-                         "number":  92,
-                         "file":  "sessions/session-92/92session.json"
-                     },
-                     {
-                         "id":  "session-93",
-                         "number":  93,
-                         "file":  "sessions/session-93/93session.json"
-                     },
-                     {
-                         "id":  "session-94",
-                         "number":  94,
-                         "file":  "sessions/session-94/94session.json"
-                     },
-                     {
-                         "id":  "session-95",
-                         "number":  95,
-                         "file":  "sessions/session-95/95session.json"
-                     },
-                     {
-                         "id":  "session-96",
-                         "number":  96,
-                         "file":  "sessions/session-96/96session.json"
-                     },
-                     {
-                         "id":  "session-97",
-                         "number":  97,
-                         "file":  "sessions/session-97/97session.json"
-                     },
-                     {
-                         "id":  "session-98",
-                         "number":  98,
-                         "file":  "sessions/session-98/98session.json"
-                     },
-                     {
-                         "id":  "session-99",
-                         "number":  99,
-                         "file":  "sessions/session-99/99session.json"
-                     },
-                     {
-                         "id":  "session-100",
-                         "number":  100,
-                         "file":  "sessions/session-100/100session.json"
-                     },
-                     {
-                         "id":  "session-101",
-                         "number":  101,
-                         "file":  "sessions/session-101/101session.json"
-                     },
-                     {
-                         "id":  "session-102",
-                         "number":  102,
-                         "file":  "sessions/session-102/102session.json"
-                     },
-                     {
-                         "id":  "session-103",
-                         "number":  103,
-                         "file":  "sessions/session-103/103session.json"
-                     },
-                     {
-                         "id":  "session-104",
-                         "number":  104,
-                         "file":  "sessions/session-104/104session.json"
-                     },
-                     {
-                         "id":  "session-105",
-                         "number":  105,
-                         "file":  "sessions/session-105/105session.json"
-                     },
-                     {
-                         "id":  "session-106",
-                         "number":  106,
-                         "file":  "sessions/session-106/106session.json"
-                     },
-                     {
-                         "id":  "session-107",
-                         "number":  107,
-                         "file":  "sessions/session-107/107session.json"
-                     },
-                     {
-                         "id":  "session-108",
-                         "number":  108,
-                         "file":  "sessions/session-108/108session.json"
-                     },
-                     {
-                         "id":  "session-109",
-                         "number":  109,
-                         "file":  "sessions/session-109/109session.json"
-                     },
-                     {
-                         "id":  "session-110",
-                         "number":  110,
-                         "file":  "sessions/session-110/110session.json"
-                     },
-                     {
-                         "id":  "session-111",
-                         "number":  111,
-                         "file":  "sessions/session-111/111session.json"
-                     },
-                     {
-                         "id":  "session-112",
-                         "number":  112,
-                         "file":  "sessions/session-112/112session.json"
-                     },
-                     {
-                         "id":  "session-113",
-                         "number":  113,
-                         "file":  "sessions/session-113/113session.json"
-                     },
-                     {
-                         "id":  "session-114",
-                         "number":  114,
-                         "file":  "sessions/session-114/114session.json"
-                     },
-                     {
-                         "id":  "session-115",
-                         "number":  115,
-                         "file":  "sessions/session-115/115session.json"
-                     },
-                     {
-                         "id":  "session-116",
-                         "number":  116,
-                         "file":  "sessions/session-116/116session.json"
-                     },
-                     {
-                         "id":  "session-117",
-                         "number":  117,
-                         "file":  "sessions/session-117/117session.json"
-                     },
-                     {
-                         "id":  "session-118",
-                         "number":  118,
-                         "file":  "sessions/session-118/118session.json"
-                     },
-                     {
-                         "id":  "session-119",
-                         "number":  119,
-                         "file":  "sessions/session-119/119session.json"
-                     },
-                     {
-                         "id":  "session-120",
-                         "number":  120,
-                         "file":  "sessions/session-120/120session.json"
-                     },
-                     {
-                         "id":  "session-121",
-                         "number":  121,
-                         "file":  "sessions/session-121/121session.json"
-                     },
-                     {
-                         "id":  "session-122",
-                         "number":  122,
-                         "file":  "sessions/session-122/122session.json"
-                     },
-                     {
-                         "id":  "session-123",
-                         "number":  123,
-                         "file":  "sessions/session-123/123session.json"
-                     },
-                     {
-                         "id":  "session-124",
-                         "number":  124,
-                         "file":  "sessions/session-124/124session.json"
-                     },
-                     {
-                         "id":  "session-125",
-                         "number":  125,
-                         "file":  "sessions/session-125/125session.json"
-                     },
-                     {
-                         "id":  "session-126",
-                         "number":  126,
-                         "file":  "sessions/session-126/126session.json"
-                     },
-                     {
-                         "id":  "session-127",
-                         "number":  127,
-                         "file":  "sessions/session-127/127session.json"
-                     },
-                     {
-                         "id":  "session-128",
-                         "number":  128,
-                         "file":  "sessions/session-128/128session.json"
-                     },
-                     {
-                         "id":  "session-129",
-                         "number":  129,
-                         "file":  "sessions/session-129/129session.json"
-                     },
-                     {
-                         "id":  "session-130",
-                         "number":  130,
-                         "file":  "sessions/session-130/130session.json"
-                     },
-                     {
-                         "id":  "session-131",
-                         "number":  131,
-                         "file":  "sessions/session-131/131session.json"
-                     },
-                     {
-                         "id":  "session-132",
-                         "number":  132,
-                         "file":  "sessions/session-132/132session.json"
-                     },
-                     {
-                         "id":  "session-133",
-                         "number":  133,
-                         "file":  "sessions/session-133/133session.json"
-                     },
-                     {
-                         "id":  "session-134",
-                         "number":  134,
-                         "file":  "sessions/session-134/134session.json"
-                     },
-                     {
-                         "id":  "session-135",
-                         "number":  135,
-                         "file":  "sessions/session-135/135session.json"
-                     },
-                     {
-                         "id":  "session-136",
-                         "number":  136,
-                         "file":  "sessions/session-136/136session.json"
-                     },
-                     {
-                         "id":  "session-137",
-                         "number":  137,
-                         "file":  "sessions/session-137/137session.json"
-                     },
-                     {
-                         "id":  "session-138",
-                         "number":  138,
-                         "file":  "sessions/session-138/138session.json"
-                     },
-                     {
-                         "id":  "session-139",
-                         "number":  139,
-                         "file":  "sessions/session-139/139session.json"
-                     },
-                     {
-                         "id":  "session-140",
-                         "number":  140,
-                         "file":  "sessions/session-140/140session.json"
-                     },
-                     {
-                         "id":  "session-141",
-                         "number":  141,
-                         "file":  "sessions/session-141/141session.json"
-                     },
-                     {
-                         "id":  "session-142",
-                         "number":  142,
-                         "file":  "sessions/session-142/142session.json"
-                     },
-                     {
-                         "id":  "session-143",
-                         "number":  143,
-                         "file":  "sessions/session-143/143session.json"
-                     },
-                     {
-                         "id":  "session-144",
-                         "number":  144,
-                         "file":  "sessions/session-144/144session.json"
-                     },
-                     {
-                         "id":  "session-145",
-                         "number":  145,
-                         "file":  "sessions/session-145/145session.json"
-                     },
-                     {
-                         "id":  "session-146",
-                         "number":  146,
-                         "file":  "sessions/session-146/146session.json"
-                     },
-                     {
-                         "id":  "session-147",
-                         "number":  147,
-                         "file":  "sessions/session-147/147session.json"
-                     },
-                     {
-                         "id":  "session-148",
-                         "number":  148,
-                         "file":  "sessions/session-148/148session.json"
-                     },
-                     {
-                         "id":  "session-149",
-                         "number":  149,
-                         "file":  "sessions/session-149/149session.json"
-                     },
-                     {
-                         "id":  "session-150",
-                         "number":  150,
-                         "file":  "sessions/session-150/150session.json"
-                     },
-                     {
-                         "id":  "session-151",
-                         "number":  151,
-                         "file":  "sessions/session-151/151session.json"
-                     },
-                     {
-                         "id":  "session-152",
-                         "number":  152,
-                         "file":  "sessions/session-152/152session.json"
-                     },
-                     {
-                         "id":  "session-153",
-                         "number":  153,
-                         "file":  "sessions/session-153/153session.json"
-                     },
-                     {
-                         "id":  "session-154",
-                         "number":  154,
-                         "file":  "sessions/session-154/154session.json"
-                     },
-                     {
-                         "id":  "session-155",
-                         "number":  155,
-                         "file":  "sessions/session-155/155session.json"
-                     },
-                     {
-                         "id":  "session-156",
-                         "number":  156,
-                         "file":  "sessions/session-156/156session.json"
-                     },
-                     {
-                         "id":  "session-157",
-                         "number":  157,
-                         "file":  "sessions/session-157/157session.json"
-                     },
-                     {
-                         "id":  "session-158",
-                         "number":  158,
-                         "file":  "sessions/session-158/158session.json"
-                     },
-                     {
-                         "id":  "session-159",
-                         "number":  159,
-                         "file":  "sessions/session-159/159session.json"
-                     },
-                     {
-                         "id":  "session-160",
-                         "number":  160,
-                         "file":  "sessions/session-160/160session.json"
-                     },
-                     {
-                         "id":  "session-161",
-                         "number":  161,
-                         "file":  "sessions/session-161/161session.json"
-                     },
-                     {
-                         "id":  "session-162",
-                         "number":  162,
-                         "file":  "sessions/session-162/162session.json"
-                     },
-                     {
-                         "id":  "session-163",
-                         "number":  163,
-                         "file":  "sessions/session-163/163session.json"
-                     },
-                     {
-                         "id":  "session-164",
-                         "number":  164,
-                         "file":  "sessions/session-164/164session.json"
-                     },
-                     {
-                         "id":  "session-165",
-                         "number":  165,
-                         "file":  "sessions/session-165/165session.json"
-                     },
-                     {
-                         "id":  "session-166",
-                         "number":  166,
-                         "file":  "sessions/session-166/166session.json"
-                     },
-                     {
-                         "id":  "session-167",
-                         "number":  167,
-                         "file":  "sessions/session-167/167session.json"
-                     },
-                     {
-                         "id":  "session-168",
-                         "number":  168,
-                         "file":  "sessions/session-168/168session.json"
-                     },
-                     {
-                         "id":  "session-169",
-                         "number":  169,
-                         "file":  "sessions/session-169/169session.json"
-                     },
-                     {
-                         "id":  "session-170",
-                         "number":  170,
-                         "file":  "sessions/session-170/170session.json"
-                     },
-                     {
-                         "id":  "session-171",
-                         "number":  171,
-                         "file":  "sessions/session-171/171session.json"
-                     },
-                     {
-                         "id":  "session-172",
-                         "number":  172,
-                         "file":  "sessions/session-172/172session.json"
-                     },
-                     {
-                         "id":  "session-173",
-                         "number":  173,
-                         "file":  "sessions/session-173/173session.json"
-                     },
-                     {
-                         "id":  "session-174",
-                         "number":  174,
-                         "file":  "sessions/session-174/174session.json"
-                     },
-                     {
-                         "id":  "session-175",
-                         "number":  175,
-                         "file":  "sessions/session-175/175session.json"
-                     },
-                     {
-                         "id":  "session-176",
-                         "number":  176,
-                         "file":  "sessions/session-176/176session.json"
-                     },
-                     {
-                         "id":  "session-177",
-                         "number":  177,
-                         "file":  "sessions/session-177/177session.json"
-                     },
-                     {
-                         "id":  "session-178",
-                         "number":  178,
-                         "file":  "sessions/session-178/178session.json"
-                     },
-                     {
-                         "id":  "session-179",
-                         "number":  179,
-                         "file":  "sessions/session-179/179session.json"
-                     },
-                     {
-                         "id":  "session-180",
-                         "number":  180,
-                         "file":  "sessions/session-180/180session.json"
-                     },
-                     {
-                         "id":  "session-181",
-                         "number":  181,
-                         "file":  "sessions/session-181/181session.json"
-                     },
-                     {
-                         "id":  "session-182",
-                         "number":  182,
-                         "file":  "sessions/session-182/182session.json"
-                     },
-                     {
-                         "id":  "session-183",
-                         "number":  183,
-                         "file":  "sessions/session-183/183session.json"
-                     },
-                     {
-                         "id":  "session-184",
-                         "number":  184,
-                         "file":  "sessions/session-184/184session.json"
-                     },
-                     {
-                         "id":  "session-185",
-                         "number":  185,
-                         "file":  "sessions/session-185/185session.json"
-                     },
-                     {
-                         "id":  "session-186",
-                         "number":  186,
-                         "file":  "sessions/session-186/186session.json"
-                     },
-                     {
-                         "id":  "session-187",
-                         "number":  187,
-                         "file":  "sessions/session-187/187session.json"
-                     },
-                     {
-                         "id":  "session-188",
-                         "number":  188,
-                         "file":  "sessions/session-188/188session.json"
-                     },
-                     {
-                         "id":  "session-189",
-                         "number":  189,
-                         "file":  "sessions/session-189/189session.json"
-                     },
-                     {
-                         "id":  "session-190",
-                         "number":  190,
-                         "file":  "sessions/session-190/190session.json"
-                     },
-                     {
-                         "id":  "session-191",
-                         "number":  191,
-                         "file":  "sessions/session-191/191session.json"
-                     },
-                     {
-                         "id":  "session-192",
-                         "number":  192,
-                         "file":  "sessions/session-192/192session.json"
-                     },
-                     {
-                         "id":  "session-193",
-                         "number":  193,
-                         "file":  "sessions/session-193/193session.json"
-                     },
-                     {
-                         "id":  "session-194",
-                         "number":  194,
-                         "file":  "sessions/session-194/194session.json"
-                     },
-                     {
-                         "id":  "session-195",
-                         "number":  195,
-                         "file":  "sessions/session-195/195session.json"
-                     },
-                     {
-                         "id":  "session-196",
-                         "number":  196,
-                         "file":  "sessions/session-196/196session.json"
-                     },
-                     {
-                         "id":  "session-197",
-                         "number":  197,
-                         "file":  "sessions/session-197/197session.json"
-                     },
-                     {
-                         "id":  "session-198",
-                         "number":  198,
-                         "file":  "sessions/session-198/198session.json"
-                     },
-                     {
-                         "id":  "session-199",
-                         "number":  199,
-                         "file":  "sessions/session-199/199session.json"
-                     },
-                     {
-                         "id":  "session-200",
-                         "number":  200,
-                         "file":  "sessions/session-200/200session.json"
-                     },
-                     {
-                         "id":  "session-201",
-                         "number":  201,
-                         "file":  "sessions/session-201/201session.json"
-                     },
-                     {
-                         "id":  "session-202",
-                         "number":  202,
-                         "file":  "sessions/session-202/202session.json"
-                     },
-                     {
-                         "id":  "session-203",
-                         "number":  203,
-                         "file":  "sessions/session-203/203session.json"
-                     },
-                     {
-                         "id":  "session-204",
-                         "number":  204,
-                         "file":  "sessions/session-204/204session.json"
-                     },
-                     {
-                         "id":  "session-205",
-                         "number":  205,
-                         "file":  "sessions/session-205/205session.json"
-                     },
-                     {
-                         "id":  "session-206",
-                         "number":  206,
-                         "file":  "sessions/session-206/206session.json"
-                     },
-                     {
-                         "id":  "session-207",
-                         "number":  207,
-                         "file":  "sessions/session-207/207session.json"
-                     },
-                     {
-                         "id":  "session-208",
-                         "number":  208,
-                         "file":  "sessions/session-208/208session.json"
-                     },
-                     {
-                         "id":  "session-209",
-                         "number":  209,
-                         "file":  "sessions/session-209/209session.json"
-                     },
-                     {
-                         "id":  "session-210",
-                         "number":  210,
-                         "file":  "sessions/session-210/210session.json"
-                     },
-                     {
-                         "id":  "session-211",
-                         "number":  211,
-                         "file":  "sessions/session-211/211session.json"
-                     },
-                     {
-                         "id":  "session-212",
-                         "number":  212,
-                         "file":  "sessions/session-212/212session.json"
-                     },
-                     {
-                         "id":  "session-213",
-                         "number":  213,
-                         "file":  "sessions/session-213/213session.json"
-                     },
-                     {
-                         "id":  "session-214",
-                         "number":  214,
-                         "file":  "sessions/session-214/214session.json"
-                     },
-                     {
-                         "id":  "session-215",
-                         "number":  215,
-                         "file":  "sessions/session-215/215session.json"
-                     },
-                     {
-                         "id":  "session-216",
-                         "number":  216,
-                         "file":  "sessions/session-216/216session.json"
-                     },
-                     {
-                         "id":  "session-217",
-                         "number":  217,
-                         "file":  "sessions/session-217/217session.json"
-                     },
-                     {
-                         "id":  "session-218",
-                         "number":  218,
-                         "file":  "sessions/session-218/218session.json"
-                     },
-                     {
-                         "id":  "session-219",
-                         "number":  219,
-                         "file":  "sessions/session-219/219session.json"
-                     },
-                     {
-                         "id":  "session-220",
-                         "number":  220,
-                         "file":  "sessions/session-220/220session.json"
-                     },
-                     {
-                         "id":  "session-221",
-                         "number":  221,
-                         "file":  "sessions/session-221/221session.json"
-                     },
-                     {
-                         "id":  "session-222",
-                         "number":  222,
-                         "file":  "sessions/session-222/222session.json"
-                     },
-                     {
-                         "id":  "session-223",
-                         "number":  223,
-                         "file":  "sessions/session-223/223session.json"
-                     },
-                     {
-                         "id":  "session-224",
-                         "number":  224,
-                         "file":  "sessions/session-224/224session.json"
-                     },
-                     {
-                         "id":  "session-225",
-                         "number":  225,
-                         "file":  "sessions/session-225/225session.json"
-                     },
-                     {
-                         "id":  "session-226",
-                         "number":  226,
-                         "file":  "sessions/session-226/226session.json"
-                     },
-                     {
-                         "id":  "session-227",
-                         "number":  227,
-                         "file":  "sessions/session-227/227session.json"
-                     },
-                     {
-                         "id":  "session-228",
-                         "number":  228,
-                         "file":  "sessions/session-228/228session.json"
-                     },
-                     {
-                         "id":  "session-229",
-                         "number":  229,
-                         "file":  "sessions/session-229/229session.json"
-                     },
-                     {
-                         "id":  "session-230",
-                         "number":  230,
-                         "file":  "sessions/session-230/230session.json"
-                     },
-                     {
-                         "id":  "session-231",
-                         "number":  231,
-                         "file":  "sessions/session-231/231session.json"
-                     },
-                     {
-                         "id":  "session-232",
-                         "number":  232,
-                         "file":  "sessions/session-232/232session.json"
-                     },
-                     {
-                         "id":  "session-233",
-                         "number":  233,
-                         "file":  "sessions/session-233/233session.json"
-                     },
-                     {
-                         "id":  "session-234",
-                         "number":  234,
-                         "file":  "sessions/session-234/234session.json"
-                     },
-                     {
-                         "id":  "session-235",
-                         "number":  235,
-                         "file":  "sessions/session-235/235session.json"
-                     },
-                     {
-                         "id":  "session-236",
-                         "number":  236,
-                         "file":  "sessions/session-236/236session.json"
-                     },
-                     {
-                         "id":  "session-237",
-                         "number":  237,
-                         "file":  "sessions/session-237/237session.json"
-                     },
-                     {
-                         "id":  "session-238",
-                         "number":  238,
-                         "file":  "sessions/session-238/238session.json"
-                     },
-                     {
-                         "id":  "session-239",
-                         "number":  239,
-                         "file":  "sessions/session-239/239session.json"
-                     },
-                     {
-                         "id":  "session-240",
-                         "number":  240,
-                         "file":  "sessions/session-240/240session.json"
-                     },
-                     {
-                         "id":  "session-241",
-                         "number":  241,
-                         "file":  "sessions/session-241/241session.json"
-                     },
-                     {
-                         "id":  "session-242",
-                         "number":  242,
-                         "file":  "sessions/session-242/242session.json"
-                     },
-                     {
-                         "id":  "session-243",
-                         "number":  243,
-                         "file":  "sessions/session-243/243session.json"
-                     },
-                     {
-                         "id":  "session-244",
-                         "number":  244,
-                         "file":  "sessions/session-244/244session.json"
-                     },
-                     {
-                         "id":  "session-245",
-                         "number":  245,
-                         "file":  "sessions/session-245/245session.json"
-                     },
-                     {
-                         "id":  "session-246",
-                         "number":  246,
-                         "file":  "sessions/session-246/246session.json"
-                     },
-                     {
-                         "id":  "session-247",
-                         "number":  247,
-                         "file":  "sessions/session-247/247session.json"
-                     },
-                     {
-                         "id":  "session-248",
-                         "number":  248,
-                         "file":  "sessions/session-248/248session.json"
-                     },
-                     {
-                         "id":  "session-249",
-                         "number":  249,
-                         "file":  "sessions/session-249/249session.json"
-                     },
-                     {
-                         "id":  "session-250",
-                         "number":  250,
-                         "file":  "sessions/session-250/250session.json"
-                     },
-                     {
-                         "id":  "session-251",
-                         "number":  251,
-                         "file":  "sessions/session-251/251session.json"
-                     },
-                     {
-                         "id":  "session-252",
-                         "number":  252,
-                         "file":  "sessions/session-252/252session.json"
-                     },
-                     {
-                         "id":  "session-253",
-                         "number":  253,
-                         "file":  "sessions/session-253/253session.json"
-                     },
-                     {
-                         "id":  "session-254",
-                         "number":  254,
-                         "file":  "sessions/session-254/254session.json"
-                     },
-                     {
-                         "id":  "session-255",
-                         "number":  255,
-                         "file":  "sessions/session-255/255session.json"
-                     },
-                     {
-                         "id":  "session-256",
-                         "number":  256,
-                         "file":  "sessions/session-256/256session.json"
-                     },
-                     {
-                         "id":  "session-257",
-                         "number":  257,
-                         "file":  "sessions/session-257/257session.json"
-                     },
-                     {
-                         "id":  "session-258",
-                         "number":  258,
-                         "file":  "sessions/session-258/258session.json"
-                     },
-                     {
-                         "id":  "session-259",
-                         "number":  259,
-                         "file":  "sessions/session-259/259session.json"
-                     },
-                     {
-                         "id":  "session-260",
-                         "number":  260,
-                         "file":  "sessions/session-260/260session.json"
-                     },
-                     {
-                         "id":  "session-261",
-                         "number":  261,
-                         "file":  "sessions/session-261/261session.json"
-                     },
-                     {
-                         "id":  "session-262",
-                         "number":  262,
-                         "file":  "sessions/session-262/262session.json"
-                     },
-                     {
-                         "id":  "session-263",
-                         "number":  263,
-                         "file":  "sessions/session-263/263session.json"
-                     },
-                     {
-                         "id":  "session-264",
-                         "number":  264,
-                         "file":  "sessions/session-264/264session.json"
-                     },
-                     {
-                         "id":  "session-265",
-                         "number":  265,
-                         "file":  "sessions/session-265/265session.json"
-                     },
-                     {
-                         "id":  "session-266",
-                         "number":  266,
-                         "file":  "sessions/session-266/266session.json"
-                     },
-                     {
-                         "id":  "session-267",
-                         "number":  267,
-                         "file":  "sessions/session-267/267session.json"
-                     },
-                     {
-                         "id":  "session-268",
-                         "number":  268,
-                         "file":  "sessions/session-268/268session.json"
-                     },
-                     {
-                         "id":  "session-269",
-                         "number":  269,
-                         "file":  "sessions/session-269/269session.json"
-                     },
-                     {
-                         "id":  "session-270",
-                         "number":  270,
-                         "file":  "sessions/session-270/270session.json"
-                     },
-                     {
-                         "id":  "session-271",
-                         "number":  271,
-                         "file":  "sessions/session-271/271session.json"
-                     },
-                     {
-                         "id":  "session-272",
-                         "number":  272,
-                         "file":  "sessions/session-272/272session.json"
-                     },
-                     {
-                         "id":  "session-273",
-                         "number":  273,
-                         "file":  "sessions/session-273/273session.json"
-                     },
-                     {
-                         "id":  "session-274",
-                         "number":  274,
-                         "file":  "sessions/session-274/274session.json"
-                     },
-                     {
-                         "id":  "session-275",
-                         "number":  275,
-                         "file":  "sessions/session-275/275session.json"
-                     },
-                     {
-                         "id":  "session-276",
-                         "number":  276,
-                         "file":  "sessions/session-276/276session.json"
-                     },
-                     {
-                         "id":  "session-277",
-                         "number":  277,
-                         "file":  "sessions/session-277/277session.json"
-                     },
-                     {
-                         "id":  "session-278",
-                         "number":  278,
-                         "file":  "sessions/session-278/278session.json"
-                     },
-                     {
-                         "id":  "session-279",
-                         "number":  279,
-                         "file":  "sessions/session-279/279session.json"
-                     },
-                     {
-                         "id":  "session-280",
-                         "number":  280,
-                         "file":  "sessions/session-280/280session.json"
-                     },
-                     {
-                         "id":  "session-281",
-                         "number":  281,
-                         "file":  "sessions/session-281/281session.json"
-                     },
-                     {
-                         "id":  "session-282",
-                         "number":  282,
-                         "file":  "sessions/session-282/282session.json"
-                     },
-                     {
-                         "id":  "session-283",
-                         "number":  283,
-                         "file":  "sessions/session-283/283session.json"
-                     },
-                     {
-                         "id":  "session-284",
-                         "number":  284,
-                         "file":  "sessions/session-284/284session.json"
-                     },
-                     {
-                         "id":  "session-285",
-                         "number":  285,
-                         "file":  "sessions/session-285/285session.json"
-                     },
-                     {
-                         "id":  "session-286",
-                         "number":  286,
-                         "file":  "sessions/session-286/286session.json"
-                     },
-                     {
-                         "id":  "session-287",
-                         "number":  287,
-                         "file":  "sessions/session-287/287session.json"
-                     },
-                     {
-                         "id":  "session-288",
-                         "number":  288,
-                         "file":  "sessions/session-288/288session.json"
-                     },
-                     {
-                         "id":  "session-289",
-                         "number":  289,
-                         "file":  "sessions/session-289/289session.json"
-                     },
-                     {
-                         "id":  "session-290",
-                         "number":  290,
-                         "file":  "sessions/session-290/290session.json"
-                     },
-                     {
-                         "id":  "session-291",
-                         "number":  291,
-                         "file":  "sessions/session-291/291session.json"
-                     },
-                     {
-                         "id":  "session-292",
-                         "number":  292,
-                         "file":  "sessions/session-292/292session.json"
-                     },
-                     {
-                         "id":  "session-293",
-                         "number":  293,
-                         "file":  "sessions/session-293/293session.json"
-                     },
-                     {
-                         "id":  "session-294",
-                         "number":  294,
-                         "file":  "sessions/session-294/294session.json"
-                     },
-                     {
-                         "id":  "session-295",
-                         "number":  295,
-                         "file":  "sessions/session-295/295session.json"
-                     },
-                     {
-                         "id":  "session-296",
-                         "number":  296,
-                         "file":  "sessions/session-296/296session.json"
-                     },
-                     {
-                         "id":  "session-297",
-                         "number":  297,
-                         "file":  "sessions/session-297/297session.json"
-                     },
-                     {
-                         "id":  "session-298",
-                         "number":  298,
-                         "file":  "sessions/session-298/298session.json"
-                     },
-                     {
-                         "id":  "session-299",
-                         "number":  299,
-                         "file":  "sessions/session-299/299session.json"
-                     },
-                     {
-                         "id":  "session-300",
-                         "number":  300,
-                         "file":  "sessions/session-300/300session.json"
-                     },
-                     {
-                         "id":  "session-301",
-                         "number":  301,
-                         "file":  "sessions/session-301/301session.json"
-                     },
-                     {
-                         "id":  "session-302",
-                         "number":  302,
-                         "file":  "sessions/session-302/302session.json"
-                     },
-                     {
-                         "id":  "session-303",
-                         "number":  303,
-                         "file":  "sessions/session-303/303session.json"
-                     },
-                     {
-                         "id":  "session-304",
-                         "number":  304,
-                         "file":  "sessions/session-304/304session.json"
-                     },
-                     {
-                         "id":  "session-305",
-                         "number":  305,
-                         "file":  "sessions/session-305/305session.json"
-                     },
-                     {
-                         "id":  "session-306",
-                         "number":  306,
-                         "file":  "sessions/session-306/306session.json"
-                     },
-                     {
-                         "id":  "session-307",
-                         "number":  307,
-                         "file":  "sessions/session-307/307session.json"
-                     },
-                     {
-                         "id":  "session-308",
-                         "number":  308,
-                         "file":  "sessions/session-308/308session.json"
-                     },
-                     {
-                         "id":  "session-309",
-                         "number":  309,
-                         "file":  "sessions/session-309/309session.json"
-                     },
-                     {
-                         "id":  "session-310",
-                         "number":  310,
-                         "file":  "sessions/session-310/310session.json"
-                     },
-                     {
-                         "id":  "session-311",
-                         "number":  311,
-                         "file":  "sessions/session-311/311session.json"
-                     },
-                     {
-                         "id":  "session-312",
-                         "number":  312,
-                         "file":  "sessions/session-312/312session.json"
-                     },
-                     {
-                         "id":  "session-313",
-                         "number":  313,
-                         "file":  "sessions/session-313/313session.json"
-                     },
-                     {
-                         "id":  "session-314",
-                         "number":  314,
-                         "file":  "sessions/session-314/314session.json"
-                     },
-                     {
-                         "id":  "session-315",
-                         "number":  315,
-                         "file":  "sessions/session-315/315session.json"
-                     },
-                     {
-                         "id":  "session-316",
-                         "number":  316,
-                         "file":  "sessions/session-316/316session.json"
-                     },
-                     {
-                         "id":  "session-317",
-                         "number":  317,
-                         "file":  "sessions/session-317/317session.json"
-                     },
-                     {
-                         "id":  "session-318",
-                         "number":  318,
-                         "file":  "sessions/session-318/318session.json"
-                     },
-                     {
-                         "id":  "session-319",
-                         "number":  319,
-                         "file":  "sessions/session-319/319session.json"
-                     },
-                     {
-                         "id":  "session-320",
-                         "number":  320,
-                         "file":  "sessions/session-320/320session.json"
-                     },
-                     {
-                         "id":  "session-321",
-                         "number":  321,
-                         "file":  "sessions/session-321/321session.json"
-                     },
-                     {
-                         "id":  "session-322",
-                         "number":  322,
-                         "file":  "sessions/session-322/322session.json"
-                     },
-                     {
-                         "id":  "session-323",
-                         "number":  323,
-                         "file":  "sessions/session-323/323session.json"
-                     },
-                     {
-                         "id":  "session-324",
-                         "number":  324,
-                         "file":  "sessions/session-324/324session.json"
-                     },
-                     {
-                         "id":  "session-325",
-                         "number":  325,
-                         "file":  "sessions/session-325/325session.json"
-                     },
-                     {
-                         "id":  "session-326",
-                         "number":  326,
-                         "file":  "sessions/session-326/326session.json"
-                     },
-                     {
-                         "id":  "session-327",
-                         "number":  327,
-                         "file":  "sessions/session-327/327session.json"
-                     },
-                     {
-                         "id":  "session-328",
-                         "number":  328,
-                         "file":  "sessions/session-328/328session.json"
-                     },
-                     {
-                         "id":  "session-329",
-                         "number":  329,
-                         "file":  "sessions/session-329/329session.json"
-                     },
-                     {
-                         "id":  "session-330",
-                         "number":  330,
-                         "file":  "sessions/session-330/330session.json"
-                     },
-                     {
-                         "id":  "session-331",
-                         "number":  331,
-                         "file":  "sessions/session-331/331session.json"
-                     },
-                     {
-                         "id":  "session-332",
-                         "number":  332,
-                         "file":  "sessions/session-332/332session.json"
-                     },
-                     {
-                         "id":  "session-333",
-                         "number":  333,
-                         "file":  "sessions/session-333/333session.json"
-                     },
-                     {
-                         "id":  "session-334",
-                         "number":  334,
-                         "file":  "sessions/session-334/334session.json"
-                     },
-                     {
-                         "id":  "session-335",
-                         "number":  335,
-                         "file":  "sessions/session-335/335session.json"
-                     },
-                     {
-                         "id":  "session-336",
-                         "number":  336,
-                         "file":  "sessions/session-336/336session.json"
-                     },
-                     {
-                         "id":  "session-337",
-                         "number":  337,
-                         "file":  "sessions/session-337/337session.json"
-                     },
-                     {
-                         "id":  "session-338",
-                         "number":  338,
-                         "file":  "sessions/session-338/338session.json"
-                     },
-                     {
-                         "id":  "session-339",
-                         "number":  339,
-                         "file":  "sessions/session-339/339session.json"
-                     },
-                     {
-                         "id":  "session-340",
-                         "number":  340,
-                         "file":  "sessions/session-340/340session.json"
-                     },
-                     {
-                         "id":  "session-341",
-                         "number":  341,
-                         "file":  "sessions/session-341/341session.json"
-                     },
-                     {
-                         "id":  "session-342",
-                         "number":  342,
-                         "file":  "sessions/session-342/342session.json"
-                     },
-                     {
-                         "id":  "session-343",
-                         "number":  343,
-                         "file":  "sessions/session-343/343session.json"
-                     },
-                     {
-                         "id":  "session-344",
-                         "number":  344,
-                         "file":  "sessions/session-344/344session.json"
-                     },
-                     {
-                         "id":  "session-345",
-                         "number":  345,
-                         "file":  "sessions/session-345/345session.json"
-                     },
-                     {
-                         "id":  "session-346",
-                         "number":  346,
-                         "file":  "sessions/session-346/346session.json"
-                     },
-                     {
-                         "id":  "session-347",
-                         "number":  347,
-                         "file":  "sessions/session-347/347session.json"
-                     },
-                     {
-                         "id":  "session-348",
-                         "number":  348,
-                         "file":  "sessions/session-348/348session.json"
-                     },
-                     {
-                         "id":  "session-349",
-                         "number":  349,
-                         "file":  "sessions/session-349/349session.json"
-                     },
-                     {
-                         "id":  "session-350",
-                         "number":  350,
-                         "file":  "sessions/session-350/350session.json"
-                     },
-                     {
-                         "id":  "session-351",
-                         "number":  351,
-                         "file":  "sessions/session-351/351session.json"
-                     },
-                     {
-                         "id":  "session-352",
-                         "number":  352,
-                         "file":  "sessions/session-352/352session.json"
-                     },
-                     {
-                         "id":  "session-353",
-                         "number":  353,
-                         "file":  "sessions/session-353/353session.json"
-                     },
-                     {
-                         "id":  "session-354",
-                         "number":  354,
-                         "file":  "sessions/session-354/354session.json"
-                     },
-                     {
-                         "id":  "session-355",
-                         "number":  355,
-                         "file":  "sessions/session-355/355session.json"
-                     },
-                     {
-                         "id":  "session-356",
-                         "number":  356,
-                         "file":  "sessions/session-356/356session.json"
-                     },
-                     {
-                         "id":  "session-357",
-                         "number":  357,
-                         "file":  "sessions/session-357/357session.json"
-                     },
-                     {
-                         "id":  "session-358",
-                         "number":  358,
-                         "file":  "sessions/session-358/358session.json"
-                     },
-                     {
-                         "id":  "session-359",
-                         "number":  359,
-                         "file":  "sessions/session-359/359session.json"
-                     },
-                     {
-                         "id":  "session-360",
-                         "number":  360,
-                         "file":  "sessions/session-360/360session.json"
-                     },
-                     {
-                         "id":  "session-361",
-                         "number":  361,
-                         "file":  "sessions/session-361/361session.json"
-                     },
-                     {
-                         "id":  "session-362",
-                         "number":  362,
-                         "file":  "sessions/session-362/362session.json"
-                     },
-                     {
-                         "id":  "session-363",
-                         "number":  363,
-                         "file":  "sessions/session-363/363session.json"
-                     },
-                     {
-                         "id":  "session-364",
-                         "number":  364,
-                         "file":  "sessions/session-364/364session.json"
-                     },
-                     {
-                         "id":  "session-365",
-                         "number":  365,
-                         "file":  "sessions/session-365/365session.json"
-                     },
-                     {
-                         "id":  "session-366",
-                         "number":  366,
-                         "file":  "sessions/session-366/366session.json"
-                     },
-                     {
-                         "id":  "session-367",
-                         "number":  367,
-                         "file":  "sessions/session-367/367session.json"
-                     },
-                     {
-                         "id":  "session-368",
-                         "number":  368,
-                         "file":  "sessions/session-368/368session.json"
-                     },
-                     {
-                         "id":  "session-369",
-                         "number":  369,
-                         "file":  "sessions/session-369/369session.json"
-                     },
-                     {
-                         "id":  "session-370",
-                         "number":  370,
-                         "file":  "sessions/session-370/370session.json"
-                     }
-                 ],
-    "projects_file":  "projects/projects.json",
-    "roadmap":  [
-                    {
-                        "num":  "01",
-                        "label":  "Foundation",
-                        "desc":  "Electronics \u0026 Arduino basics",
-                        "color":  "#FF6B35"
-                    },
-                    {
-                        "num":  "02",
-                        "label":  "Sensors",
-                        "desc":  "Inputs, outputs \u0026 coding logic",
-                        "color":  "#00D4FF"
-                    },
-                    {
-                        "num":  "03",
-                        "label":  "Motion",
-                        "desc":  "Motors, servos \u0026 movement",
-                        "color":  "#00FF88"
-                    },
-                    {
-                        "num":  "04",
-                        "label":  "Connectivity",
-                        "desc":  "IoT, Wi-Fi \u0026 dashboards",
-                        "color":  "#9B6BFF"
-                    },
-                    {
-                        "num":  "â­",
-                        "label":  "Final Project!",
-                        "desc":  "Present to the world!",
-                        "color":  "#FFD600",
-                        "final":  true
-                    }
-                ],
-    "lab_tools":  [
-                      {
-                          "icon":  "ðŸ§ ",
-                          "name":  "Arduino",
-                          "role":  "The Brain",
-                          "desc":  "Programs that control hardware"
-                      },
-                      {
-                          "icon":  "ðŸ‘ï¸",
-                          "name":  "Sensors",
-                          "role":  "Eyes \u0026 Ears",
-                          "desc":  "Detect light, sound, motion, temp"
-                      },
-                      {
-                          "icon":  "âš™ï¸",
-                          "name":  "Motors",
-                          "role":  "Muscles",
-                          "desc":  "Make things spin and move"
-                      },
-                      {
-                          "icon":  "ðŸŒ",
-                          "name":  "IoT",
-                          "role":  "Connected Mind",
-                          "desc":  "Link your device to the internet"
-                      },
-                      {
-                          "icon":  "ðŸ–¨ï¸",
-                          "name":  "3D Printing",
-                          "role":  "The Maker",
-                          "desc":  "Print anything you can design"
-                      },
-                      {
-                          "icon":  "âš¡",
-                          "name":  "Electronics",
-                          "role":  "The Blood",
-                          "desc":  "Circuits, LEDs, resistors \u0026 more"
-                      }
-                  ],
-    "steam":  [
-                  {
-                      "letter":  "S",
-                      "name":  "Science",
-                      "desc":  "Understand how nature works",
-                      "color":  "#EF4444"
-                  },
-                  {
-                      "letter":  "T",
-                      "name":  "Technology",
-                      "desc":  "Build tools that solve problems",
-                      "color":  "#06B6D4"
-                  },
-                  {
-                      "letter":  "E",
-                      "name":  "Engineering",
-                      "desc":  "Design \u0026 test real solutions",
-                      "color":  "#F97316"
-                  },
-                  {
-                      "letter":  "A",
-                      "name":  "Arts",
-                      "desc":  "Think creatively, design beautifully",
-                      "color":  "#A855F7"
-                  },
-                  {
-                      "letter":  "M",
-                      "name":  "Mathematics",
-                      "desc":  "The language of everything",
-                      "color":  "#22C55E"
-                  }
-              ],
-    "lab_culture":  [
-                        {
-                            "icon":  "ðŸ’¥",
-                            "title":  "Fail Loudly",
-                            "desc":  "If something doesn\u0027t work, share it. Everyone learns from your mistake."
-                        },
-                        {
-                            "icon":  "ðŸ¤",
-                            "title":  "Team First",
-                            "desc":  "No lone wolves. Build together, debug together, celebrate together."
-                        },
-                        {
-                            "icon":  "â“",
-                            "title":  "Ask Questions",
-                            "desc":  "There are no dumb questions. Curiosity is your biggest tool here."
-                        },
-                        {
-                            "icon":  "ðŸ”„",
-                            "title":  "Iterate Always",
-                            "desc":  "Version 1 is never the best. Improve, improve, improve."
-                        },
-                        {
-                            "icon":  "ðŸ§¹",
-                            "title":  "Leave it Better",
-                            "desc":  "Clean your workspace. Put components back. Respect shared tools."
-                        },
-                        {
-                            "icon":  "ðŸŒ±",
-                            "title":  "Support Each Other",
-                            "desc":  "If you figure something out, help the person next to you."
-                        }
-                    ]
+{
+  "_instructions": {
+    "purpose": "This is the MASTER CONFIG file. The website reads this to know which sessions exist.",
+    "how_to_add_session": [
+      "1. Choose a grade folder (e.g. sessions/grade-1/)",
+      "2. Create a new session JSON file (e.g. sessions/grade-1/5session.json)",
+      "3. Put PPT slides in sessions/grade-1/slides/ or use a PDF file",
+      "4. Add your session file path to the corresponding grade list in site.json under 'sessions'",
+      "Done! The website will automatically load and display the session under the correct grade."
+    ],
+    "folder_structure": {
+      "root": "/",
+      "index.html": "Main website file",
+      "style.css": "All styling",
+      "js/": "All JavaScript logic modules",
+      "site.json": "THIS FILE — master config",
+      "sessions/": {
+        "grade-1/": {
+          "1session.json": "Grade 1, Session 1 content",
+          "3session.json": "Grade 1, Session 3 content",
+          "slides/": "Presentation slides",
+          "images/": "Classroom photos"
+        },
+        "grade-2/": "Same structure for Grade 2",
+        "grade-N/": "Folders for Grade 3 to 9"
+      }
+    }
+  },
+  "site": {
+    "name": "Vidya STEAM",
+    "tagline": "Build. Break. Learn. Repeat.",
+    "subtitle": "Tinkering Lab for Grades 1–9",
+    "description": "A hands-on STEAM education program where kids learn electronics, Arduino, robotics, IoT, and 3D printing by building real projects.",
+    "logo_emoji": "⚡",
+    "accent_color": "#FF6B35"
+  },
+  "sessions": {
+    "grade-1": [
+      "sessions/grade-1/1session.json",
+      "sessions/grade-1/2session.json",
+      "sessions/grade-1/3session.json",
+      "sessions/grade-1/4session.json",
+      "sessions/grade-1/5session.json",
+      "sessions/grade-1/6session.json",
+      "sessions/grade-1/7session.json",
+      "sessions/grade-1/8session.json",
+      "sessions/grade-1/9session.json",
+      "sessions/grade-1/10session.json",
+      "sessions/grade-1/11session.json",
+      "sessions/grade-1/12session.json",
+      "sessions/grade-1/13session.json",
+      "sessions/grade-1/14session.json",
+      "sessions/grade-1/15session.json",
+      "sessions/grade-1/16session.json",
+      "sessions/grade-1/17session.json",
+      "sessions/grade-1/18session.json",
+      "sessions/grade-1/19session.json",
+      "sessions/grade-1/20session.json",
+      "sessions/grade-1/21session.json",
+      "sessions/grade-1/22session.json",
+      "sessions/grade-1/23session.json",
+      "sessions/grade-1/24session.json",
+      "sessions/grade-1/25session.json",
+      "sessions/grade-1/26session.json",
+      "sessions/grade-1/27session.json",
+      "sessions/grade-1/28session.json",
+      "sessions/grade-1/29session.json",
+      "sessions/grade-1/30session.json"
+    ],
+    "grade-2": [
+      "sessions/grade-2/31session.json",
+      "sessions/grade-2/32session.json",
+      "sessions/grade-2/33session.json",
+      "sessions/grade-2/34session.json",
+      "sessions/grade-2/35session.json",
+      "sessions/grade-2/36session.json",
+      "sessions/grade-2/37session.json",
+      "sessions/grade-2/38session.json",
+      "sessions/grade-2/39session.json",
+      "sessions/grade-2/40session.json",
+      "sessions/grade-2/41session.json",
+      "sessions/grade-2/42session.json",
+      "sessions/grade-2/43session.json",
+      "sessions/grade-2/44session.json",
+      "sessions/grade-2/45session.json",
+      "sessions/grade-2/46session.json",
+      "sessions/grade-2/47session.json",
+      "sessions/grade-2/48session.json",
+      "sessions/grade-2/49session.json",
+      "sessions/grade-2/50session.json",
+      "sessions/grade-2/51session.json",
+      "sessions/grade-2/52session.json",
+      "sessions/grade-2/53session.json",
+      "sessions/grade-2/54session.json",
+      "sessions/grade-2/55session.json",
+      "sessions/grade-2/56session.json",
+      "sessions/grade-2/57session.json",
+      "sessions/grade-2/58session.json",
+      "sessions/grade-2/59session.json",
+      "sessions/grade-2/60session.json"
+    ],
+    "grade-3": [
+      "sessions/grade-3/61session.json",
+      "sessions/grade-3/62session.json",
+      "sessions/grade-3/63session.json",
+      "sessions/grade-3/64session.json",
+      "sessions/grade-3/65session.json",
+      "sessions/grade-3/66session.json",
+      "sessions/grade-3/67session.json",
+      "sessions/grade-3/68session.json",
+      "sessions/grade-3/69session.json",
+      "sessions/grade-3/70session.json",
+      "sessions/grade-3/71session.json",
+      "sessions/grade-3/72session.json",
+      "sessions/grade-3/73session.json",
+      "sessions/grade-3/74session.json",
+      "sessions/grade-3/75session.json",
+      "sessions/grade-3/76session.json",
+      "sessions/grade-3/77session.json",
+      "sessions/grade-3/78session.json",
+      "sessions/grade-3/79session.json",
+      "sessions/grade-3/80session.json",
+      "sessions/grade-3/81session.json",
+      "sessions/grade-3/82session.json",
+      "sessions/grade-3/83session.json",
+      "sessions/grade-3/84session.json",
+      "sessions/grade-3/85session.json",
+      "sessions/grade-3/86session.json",
+      "sessions/grade-3/87session.json",
+      "sessions/grade-3/88session.json",
+      "sessions/grade-3/89session.json",
+      "sessions/grade-3/90session.json"
+    ],
+    "grade-4": [
+      "sessions/grade-4/91session.json",
+      "sessions/grade-4/92session.json",
+      "sessions/grade-4/93session.json",
+      "sessions/grade-4/94session.json",
+      "sessions/grade-4/95session.json",
+      "sessions/grade-4/96session.json",
+      "sessions/grade-4/97session.json",
+      "sessions/grade-4/98session.json",
+      "sessions/grade-4/99session.json",
+      "sessions/grade-4/100session.json",
+      "sessions/grade-4/101session.json",
+      "sessions/grade-4/102session.json",
+      "sessions/grade-4/103session.json",
+      "sessions/grade-4/104session.json",
+      "sessions/grade-4/105session.json",
+      "sessions/grade-4/106session.json",
+      "sessions/grade-4/107session.json",
+      "sessions/grade-4/108session.json",
+      "sessions/grade-4/109session.json",
+      "sessions/grade-4/110session.json",
+      "sessions/grade-4/111session.json",
+      "sessions/grade-4/112session.json",
+      "sessions/grade-4/113session.json",
+      "sessions/grade-4/114session.json",
+      "sessions/grade-4/115session.json",
+      "sessions/grade-4/116session.json",
+      "sessions/grade-4/117session.json",
+      "sessions/grade-4/118session.json",
+      "sessions/grade-4/119session.json",
+      "sessions/grade-4/120session.json"
+    ],
+    "grade-5": [
+      "sessions/grade-5/121session.json",
+      "sessions/grade-5/122session.json",
+      "sessions/grade-5/123session.json",
+      "sessions/grade-5/124session.json",
+      "sessions/grade-5/125session.json",
+      "sessions/grade-5/126session.json",
+      "sessions/grade-5/127session.json",
+      "sessions/grade-5/128session.json",
+      "sessions/grade-5/129session.json",
+      "sessions/grade-5/130session.json",
+      "sessions/grade-5/131session.json",
+      "sessions/grade-5/132session.json",
+      "sessions/grade-5/133session.json",
+      "sessions/grade-5/134session.json",
+      "sessions/grade-5/135session.json",
+      "sessions/grade-5/136session.json",
+      "sessions/grade-5/137session.json",
+      "sessions/grade-5/138session.json",
+      "sessions/grade-5/139session.json",
+      "sessions/grade-5/140session.json",
+      "sessions/grade-5/141session.json",
+      "sessions/grade-5/142session.json",
+      "sessions/grade-5/143session.json",
+      "sessions/grade-5/144session.json",
+      "sessions/grade-5/145session.json",
+      "sessions/grade-5/146session.json",
+      "sessions/grade-5/147session.json",
+      "sessions/grade-5/148session.json",
+      "sessions/grade-5/149session.json",
+      "sessions/grade-5/150session.json"
+    ],
+    "grade-6": [
+      "sessions/grade-6/151session.json",
+      "sessions/grade-6/152session.json",
+      "sessions/grade-6/153session.json",
+      "sessions/grade-6/154session.json",
+      "sessions/grade-6/155session.json",
+      "sessions/grade-6/156session.json",
+      "sessions/grade-6/157session.json",
+      "sessions/grade-6/158session.json",
+      "sessions/grade-6/159session.json",
+      "sessions/grade-6/160session.json",
+      "sessions/grade-6/161session.json",
+      "sessions/grade-6/162session.json",
+      "sessions/grade-6/163session.json",
+      "sessions/grade-6/164session.json",
+      "sessions/grade-6/165session.json",
+      "sessions/grade-6/166session.json",
+      "sessions/grade-6/167session.json",
+      "sessions/grade-6/168session.json",
+      "sessions/grade-6/169session.json",
+      "sessions/grade-6/170session.json",
+      "sessions/grade-6/171session.json",
+      "sessions/grade-6/172session.json",
+      "sessions/grade-6/173session.json",
+      "sessions/grade-6/174session.json",
+      "sessions/grade-6/175session.json",
+      "sessions/grade-6/176session.json",
+      "sessions/grade-6/177session.json",
+      "sessions/grade-6/178session.json",
+      "sessions/grade-6/179session.json",
+      "sessions/grade-6/180session.json"
+    ],
+    "grade-7": [
+      "sessions/grade-7/181session.json",
+      "sessions/grade-7/182session.json",
+      "sessions/grade-7/183session.json",
+      "sessions/grade-7/184session.json",
+      "sessions/grade-7/185session.json",
+      "sessions/grade-7/186session.json",
+      "sessions/grade-7/187session.json",
+      "sessions/grade-7/188session.json",
+      "sessions/grade-7/189session.json",
+      "sessions/grade-7/190session.json",
+      "sessions/grade-7/191session.json",
+      "sessions/grade-7/192session.json",
+      "sessions/grade-7/193session.json",
+      "sessions/grade-7/194session.json",
+      "sessions/grade-7/195session.json",
+      "sessions/grade-7/196session.json",
+      "sessions/grade-7/197session.json",
+      "sessions/grade-7/198session.json",
+      "sessions/grade-7/199session.json",
+      "sessions/grade-7/200session.json",
+      "sessions/grade-7/201session.json",
+      "sessions/grade-7/202session.json",
+      "sessions/grade-7/203session.json",
+      "sessions/grade-7/204session.json",
+      "sessions/grade-7/205session.json",
+      "sessions/grade-7/206session.json",
+      "sessions/grade-7/207session.json",
+      "sessions/grade-7/208session.json",
+      "sessions/grade-7/209session.json",
+      "sessions/grade-7/210session.json"
+    ],
+    "grade-8": [
+      "sessions/grade-8/211session.json",
+      "sessions/grade-8/212session.json",
+      "sessions/grade-8/213session.json",
+      "sessions/grade-8/214session.json",
+      "sessions/grade-8/215session.json",
+      "sessions/grade-8/216session.json",
+      "sessions/grade-8/217session.json",
+      "sessions/grade-8/218session.json",
+      "sessions/grade-8/219session.json",
+      "sessions/grade-8/220session.json",
+      "sessions/grade-8/221session.json",
+      "sessions/grade-8/222session.json",
+      "sessions/grade-8/223session.json",
+      "sessions/grade-8/224session.json",
+      "sessions/grade-8/225session.json",
+      "sessions/grade-8/226session.json",
+      "sessions/grade-8/227session.json",
+      "sessions/grade-8/228session.json",
+      "sessions/grade-8/229session.json",
+      "sessions/grade-8/230session.json",
+      "sessions/grade-8/231session.json",
+      "sessions/grade-8/232session.json",
+      "sessions/grade-8/233session.json",
+      "sessions/grade-8/234session.json",
+      "sessions/grade-8/235session.json",
+      "sessions/grade-8/236session.json",
+      "sessions/grade-8/237session.json",
+      "sessions/grade-8/238session.json",
+      "sessions/grade-8/239session.json",
+      "sessions/grade-8/240session.json"
+    ],
+    "grade-9": [
+      "sessions/grade-9/241session.json",
+      "sessions/grade-9/242session.json",
+      "sessions/grade-9/243session.json",
+      "sessions/grade-9/244session.json",
+      "sessions/grade-9/245session.json",
+      "sessions/grade-9/246session.json",
+      "sessions/grade-9/247session.json",
+      "sessions/grade-9/248session.json",
+      "sessions/grade-9/249session.json",
+      "sessions/grade-9/250session.json",
+      "sessions/grade-9/251session.json",
+      "sessions/grade-9/252session.json",
+      "sessions/grade-9/253session.json",
+      "sessions/grade-9/254session.json",
+      "sessions/grade-9/255session.json",
+      "sessions/grade-9/256session.json",
+      "sessions/grade-9/257session.json",
+      "sessions/grade-9/258session.json",
+      "sessions/grade-9/259session.json",
+      "sessions/grade-9/260session.json",
+      "sessions/grade-9/261session.json",
+      "sessions/grade-9/262session.json",
+      "sessions/grade-9/263session.json",
+      "sessions/grade-9/264session.json",
+      "sessions/grade-9/265session.json",
+      "sessions/grade-9/266session.json",
+      "sessions/grade-9/267session.json",
+      "sessions/grade-9/268session.json",
+      "sessions/grade-9/269session.json",
+      "sessions/grade-9/270session.json"
+    ]
+  },
+  "projects_file": "projects/projects.json",
+  "roadmap": [
+    {
+      "num": "01",
+      "label": "Foundation",
+      "desc": "Electronics & Arduino basics",
+      "color": "#FF6B35"
+    },
+    {
+      "num": "02",
+      "label": "Sensors",
+      "desc": "Inputs, outputs & coding logic",
+      "color": "#00D4FF"
+    },
+    {
+      "num": "03",
+      "label": "Motion",
+      "desc": "Motors, servos & movement",
+      "color": "#00FF88"
+    },
+    {
+      "num": "04",
+      "label": "Connectivity",
+      "desc": "IoT, Wi-Fi & dashboards",
+      "color": "#9B6BFF"
+    },
+    {
+      "num": "⭐",
+      "label": "Final Project!",
+      "desc": "Present to the world!",
+      "color": "#FFD600",
+      "final": true
+    }
+  ],
+  "lab_tools": [
+    {
+      "icon": "🧠",
+      "name": "Arduino",
+      "role": "The Brain",
+      "desc": "Programs that control hardware"
+    },
+    {
+      "icon": "👀",
+      "name": "Sensors",
+      "role": "Eyes & Ears",
+      "desc": "Detect light, sound, motion, temp"
+    },
+    {
+      "icon": "⚙️",
+      "name": "Motors",
+      "role": "Muscles",
+      "desc": "Make things spin and move"
+    },
+    {
+      "icon": "🌐",
+      "name": "IoT",
+      "role": "Connected Mind",
+      "desc": "Link your device to the internet"
+    },
+    {
+      "icon": "🖨️",
+      "name": "3D Printing",
+      "role": "The Maker",
+      "desc": "Print anything you can design"
+    },
+    {
+      "icon": "⚡",
+      "name": "Electronics",
+      "role": "The Blood",
+      "desc": "Circuits, LEDs, resistors & more"
+    }
+  ],
+  "steam": [
+    {
+      "letter": "S",
+      "name": "Science",
+      "desc": "Understand how nature works",
+      "color": "#EF4444"
+    },
+    {
+      "letter": "T",
+      "name": "Technology",
+      "desc": "Build tools that solve problems",
+      "color": "#06B6D4"
+    },
+    {
+      "letter": "E",
+      "name": "Engineering",
+      "desc": "Design & test real solutions",
+      "color": "#F97316"
+    },
+    {
+      "letter": "A",
+      "name": "Arts",
+      "desc": "Think creatively, design beautifully",
+      "color": "#A855F7"
+    },
+    {
+      "letter": "M",
+      "name": "Mathematics",
+      "desc": "The language of everything",
+      "color": "#22C55E"
+    }
+  ],
+  "lab_culture": [
+    {
+      "icon": "💥",
+      "title": "Fail Loudly",
+      "desc": "If something doesn't work, share it. Everyone learns from your mistake."
+    },
+    {
+      "icon": "🤝",
+      "title": "Team First",
+      "desc": "No lone wolves. Build together, debug together, celebrate together."
+    },
+    {
+      "icon": "❓",
+      "title": "Ask Questions",
+      "desc": "There are no dumb questions. Curiosity is your biggest tool here."
+    },
+    {
+      "icon": "🔄",
+      "title": "Iterate Always",
+      "desc": "Version 1 is never the best. Improve, improve, improve."
+    },
+    {
+      "icon": "🧹",
+      "title": "Leave it Better",
+      "desc": "Clean your workspace. Put components back. Respect shared tools."
+    },
+    {
+      "icon": "🌱",
+      "title": "Support Each Other",
+      "desc": "If you figure something out, help the person next to you."
+    }
+  ]
 }

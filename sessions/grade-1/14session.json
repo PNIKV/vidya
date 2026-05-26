@@ -1,0 +1,317 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-1",
+    "number": 1,
+    "title": "What is Software?",
+    "subtitle": "Computer ko instructions kaun deta hai?",
+    "date": "Session 01",
+    "duration": "1 Hour",
+    "phase": "Foundation",
+    "color": "#7B61FF",
+    "icon": "💻",
+    "tags": [
+        "Computer Basics",
+        "Software",
+        "Technology",
+        "Digital Learning"
+    ],
+    "overview": "Students learn that software is a set of instructions that tells the computer what to do. Through real-life examples like games, YouTube, calculator apps, and drawing programs, students understand how software helps computers perform different tasks.",
+    "grades": [
+        1,
+        2,
+        3,
+        4
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add actual classroom photos, software screenshots, students using computers, and app examples.",
+        "gallery": [
+            {
+                "file": "data/computer-screen.jpg",
+                "_placeholder": "ADD: Students observing computer desktop",
+                "caption": "Software helps computers show pictures, games, and videos",
+                "category": "Concept"
+            },
+            {
+                "file": "data/paint-app.png",
+                "_placeholder": "ADD: MS Paint or drawing software screenshot",
+                "caption": "Drawing software helps us create art on the computer",
+                "category": "Software"
+            },
+            {
+                "file": "data/calculator-app.jpg",
+                "_placeholder": "ADD: Calculator app photo",
+                "caption": "Calculator software solves maths problems quickly",
+                "category": "Apps"
+            },
+            {
+                "file": "data/youtube-app.jpg",
+                "_placeholder": "ADD: Students watching educational video",
+                "caption": "Video apps help us learn and enjoy content",
+                "category": "Apps"
+            },
+            {
+                "file": "data/game-software.jpg",
+                "_placeholder": "ADD: Child-friendly game software image",
+                "caption": "Games are also software!",
+                "category": "Fun"
+            },
+            {
+                "file": "data/typing-software.jpg",
+                "_placeholder": "ADD: Students typing on keyboard",
+                "caption": "Typing software helps us write on computers",
+                "category": "Activity"
+            },
+            {
+                "file": "data/software-vs-hardware.jpg",
+                "_placeholder": "ADD: Chart showing hardware and software difference",
+                "caption": "Hardware is touchable, software is instructions",
+                "category": "Learning"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Software = Instructions for computer",
+        "Computer follows commands given by software",
+        "Games, apps, videos are examples of software",
+        "Software cannot be touched physically",
+        "Hardware + Software work together",
+        "Paint software helps us draw",
+        "Music apps play songs",
+        "Typing software helps us write words"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is Software for Kids?",
+            "videoId": "m2m1ghVQ9l4",
+            "_note": "Replace with actual educational video ID",
+            "desc": "Simple explanation of software and how computers follow instructions."
+        },
+        {
+            "title": "Hardware vs Software",
+            "videoId": "0ykqepn8Yws",
+            "desc": "Easy comparison between hardware and software for beginners."
+        },
+        {
+            "title": "How Computers Work",
+            "videoId": "QXjU9qTsYCc",
+            "desc": "Fun animation explaining how computers work using software."
+        },
+        {
+            "title": "Computer Apps for Kids",
+            "videoId": "M0mx8S05v60",
+            "desc": "Learn about different apps and software used daily."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Paint Online",
+            "url": "https://jspaint.app/",
+            "icon": "🎨"
+        },
+        {
+            "title": "Typing Practice for Kids",
+            "url": "https://www.typingclub.com/",
+            "icon": "⌨️"
+        },
+        {
+            "title": "Scratch Coding for Kids",
+            "url": "https://scratch.mit.edu/",
+            "icon": "🧩"
+        }
+    ],
+    "activity": {
+        "title": "Find the Software Around You",
+        "parts": [
+            "Computer or Laptop",
+            "Mouse",
+            "Keyboard",
+            "Paint Application",
+            "Music Player",
+            "Calculator App"
+        ],
+        "steps": [
+            "Open the computer desktop",
+            "Identify different software icons",
+            "Open Paint and draw something",
+            "Open Calculator and solve a simple sum",
+            "Play a song using music software",
+            "Discuss which software students use at home"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is software?",
+            "options": [
+                "A computer chair",
+                "Instructions that tell computer what to do",
+                "A keyboard",
+                "A monitor"
+            ],
+            "answer": 1,
+            "explanation": "Software gives instructions to the computer to perform tasks."
+        },
+        {
+            "q": "Which of these is software?",
+            "options": [
+                "Mouse",
+                "Keyboard",
+                "Paint App",
+                "Monitor"
+            ],
+            "answer": 2,
+            "explanation": "Paint App is software because it helps the computer perform drawing tasks."
+        },
+        {
+            "q": "Can we touch software?",
+            "options": [
+                "Yes",
+                "No",
+                "Sometimes",
+                "Only at night"
+            ],
+            "answer": 1,
+            "explanation": "Software cannot be touched physically because it is made of programs and instructions."
+        },
+        {
+            "q": "Which software helps us draw pictures?",
+            "options": [
+                "Music Player",
+                "Calculator",
+                "Paint",
+                "Clock"
+            ],
+            "answer": 2,
+            "explanation": "Paint software is used for drawing and coloring pictures."
+        },
+        {
+            "q": "Games on computers are:",
+            "options": [
+                "Hardware",
+                "Software",
+                "Wires",
+                "Machines"
+            ],
+            "answer": 1,
+            "explanation": "Computer games are software applications."
+        },
+        {
+            "q": "What does calculator software do?",
+            "options": [
+                "Play songs",
+                "Take photos",
+                "Solve maths problems",
+                "Print papers"
+            ],
+            "answer": 2,
+            "explanation": "Calculator software helps solve mathematical calculations."
+        },
+        {
+            "q": "Which device follows software instructions?",
+            "options": [
+                "Computer",
+                "Bottle",
+                "Fan",
+                "Pencil"
+            ],
+            "answer": 0,
+            "explanation": "Computers follow instructions given by software."
+        },
+        {
+            "q": "Software helps us:",
+            "options": [
+                "Watch videos",
+                "Play games",
+                "Draw pictures",
+                "All of these"
+            ],
+            "answer": 3,
+            "explanation": "Software helps us perform many different activities on computers."
+        },
+        {
+            "q": "Which is NOT software?",
+            "options": [
+                "Paint",
+                "Calculator App",
+                "Keyboard",
+                "Game"
+            ],
+            "answer": 2,
+            "explanation": "Keyboard is hardware because we can touch it physically."
+        },
+        {
+            "q": "Software is like:",
+            "options": [
+                "Instructions or recipes",
+                "Food",
+                "Bag",
+                "Bottle"
+            ],
+            "answer": 0,
+            "explanation": "Software gives step-by-step instructions just like a recipe."
+        },
+        {
+            "q": "YouTube app is an example of:",
+            "options": [
+                "Hardware",
+                "Software",
+                "Wire",
+                "Battery"
+            ],
+            "answer": 1,
+            "explanation": "YouTube is software used for watching videos."
+        },
+        {
+            "q": "Which helps us type words?",
+            "options": [
+                "Typing software",
+                "Speaker",
+                "Camera",
+                "Table"
+            ],
+            "answer": 0,
+            "explanation": "Typing software allows us to write letters and words on the computer."
+        },
+        {
+            "q": "Hardware and software work:",
+            "options": [
+                "Separately",
+                "Together",
+                "Never",
+                "Only in school"
+            ],
+            "answer": 1,
+            "explanation": "Both hardware and software work together to make the computer useful."
+        },
+        {
+            "q": "Which software can play music?",
+            "options": [
+                "Music Player",
+                "Paint",
+                "Calculator",
+                "Browser only"
+            ],
+            "answer": 0,
+            "explanation": "Music player software helps us listen to songs."
+        },
+        {
+            "q": "What happens if a computer has no software?",
+            "options": [
+                "It becomes super fast",
+                "It cannot do useful work",
+                "It starts dancing",
+                "It changes color"
+            ],
+            "answer": 1,
+            "explanation": "Without software, a computer does not know what task to perform."
+        }
+    ]
+}

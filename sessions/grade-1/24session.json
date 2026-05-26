@@ -1,0 +1,111 @@
+{
+  "id": "session-12",
+  "number": 12,
+  "title": "Night Light Project",
+  "subtitle": "LDR + LED: Automatic Light in Darkness",
+  "date": "Session 12",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#3F51B5",
+  "icon": "💡",
+  "tags": [
+    "Electronics",
+    "LDR",
+    "LED",
+    "Sensors",
+    "STEM Project"
+  ],
+  "overview": "Students learn how an LDR (Light Dependent Resistor) and LED work together to create an automatic night light that turns ON in darkness. Teacher demonstrates the project and students test the circuit.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-12/slides.pdf"
+  },
+  "images": {
+    "_note": "Add classroom demonstration and project photos.",
+    "gallery": [
+      {
+        "file": "data/ldr-sensor.jpg",
+        "caption": "LDR sensor detects light and darkness",
+        "category": "Component"
+      },
+      {
+        "file": "data/night-light-project.jpg",
+        "caption": "Night light project demonstration",
+        "category": "Project"
+      },
+      {
+        "file": "data/student-testing.jpg",
+        "caption": "Students testing the night light circuit",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is an LDR?",
+    "How LED works",
+    "Detecting darkness",
+    "Automatic light control",
+    "Sensor-based electronics"
+  ],
+  "concept": {
+    "title": "How Night Light Works",
+    "content": "An LDR changes its resistance based on light. When it becomes dark, the circuit allows the LED to glow automatically. This creates a simple automatic night light."
+  },
+  "activity": {
+    "title": "Night Light Testing Activity",
+    "parts": [
+      "LDR Sensor",
+      "LED",
+      "220Ω Resistor",
+      "Battery",
+      "Breadboard",
+      "Jumper Wires"
+    ],
+    "steps": [
+      "Teacher builds the LDR and LED circuit",
+      "Observe LED in normal light",
+      "Cover the LDR with your hand",
+      "Observe LED lighting up in darkness",
+      "Discuss how sensors help automation"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does LDR detect?",
+      "options": [
+        "Sound",
+        "Light",
+        "Heat",
+        "Motion"
+      ],
+      "answer": 1,
+      "explanation": "LDR detects light levels."
+    },
+    {
+      "q": "What happens when darkness increases?",
+      "options": [
+        "LED turns ON",
+        "LED breaks",
+        "Battery stops",
+        "Wire melts"
+      ],
+      "answer": 0,
+      "explanation": "The LED lights up when darkness is detected."
+    },
+    {
+      "q": "What is the purpose of this project?",
+      "options": [
+        "Automatic lighting",
+        "Water control",
+        "Motor control",
+        "Sound recording"
+      ],
+      "answer": 0,
+      "explanation": "The project creates an automatic night light."
+    }
+  ]
+}

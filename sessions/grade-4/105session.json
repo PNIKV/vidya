@@ -1,0 +1,309 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put cyber safety activity photos here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Safe Web Browsing",
+  "subtitle": "Stay Smart, Stay Safe Online!",
+  "date": "Session 02",
+  "duration": "1 Hours",
+  "phase": "Digital Safety",
+  "color": "#4CAF50",
+  "icon": "🛡️",
+  "tags": [
+    "Cyber Safety",
+    "Internet",
+    "Technology",
+    "Digital Literacy"
+  ],
+  "overview": "This session helps students learn how to browse the internet safely, protect personal information, identify fake websites, avoid cyber threats, and become responsible digital citizens.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from cyber safety activities, safe browsing demos, students discussing phishing examples, and classroom presentations.",
+    "gallery": [
+      {
+        "file": "data/safe-web.jpg",
+        "_placeholder": "ADD: Poster showing safe web browsing rules",
+        "caption": "Students learning the rules of safe internet browsing",
+        "category": "Concept"
+      },
+      {
+        "file": "data/password-security.jpg",
+        "_placeholder": "ADD: Password safety activity photo",
+        "caption": "Strong passwords help protect online accounts",
+        "category": "Cyber Safety"
+      },
+      {
+        "file": "data/phishing-email.jpg",
+        "_placeholder": "ADD: Example phishing email screenshot",
+        "caption": "Students identifying fake phishing emails",
+        "category": "Examples"
+      },
+      {
+        "file": "data/secure-website.jpg",
+        "_placeholder": "ADD: Browser showing HTTPS secure lock icon",
+        "caption": "Always check for HTTPS and the lock symbol",
+        "category": "Concept"
+      },
+      {
+        "file": "data/computer-lab.jpg",
+        "_placeholder": "ADD: Students using computers safely",
+        "caption": "Practicing safe browsing in the computer lab",
+        "category": "Lab"
+      },
+      {
+        "file": "data/cyber-awareness.png",
+        "_placeholder": "ADD: Cyber awareness classroom activity",
+        "caption": "Cyber awareness discussion with students",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Safe Web Browsing?",
+    "Importance of keeping personal information private",
+    "Strong Passwords — Mix letters, numbers, and symbols",
+    "HTTPS & Lock Symbol — Safe websites",
+    "Phishing Scams — Fake emails and messages",
+    "Cyberbullying Awareness and Reporting",
+    "Avoiding Unsafe Downloads and Unknown Links",
+    "Responsible Social Media Usage",
+    "Digital Footprint — What you post stays online",
+    "Using Antivirus and Safe Search Tools"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Internet Safety for Kids",
+      "videoId": "yiKeLOKc1tw",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A beginner-friendly introduction to internet safety and smart online behavior."
+    },
+    {
+      "title": "How to Create Strong Passwords",
+      "videoId": "3NjQ9b3pgIg",
+      "desc": "Learn how strong passwords protect your accounts from hackers."
+    },
+    {
+      "title": "What is Phishing?",
+      "videoId": "XBkzBrXlle0",
+      "desc": "Understanding phishing scams and how to avoid fake emails and websites."
+    },
+    {
+      "title": "Cyber Safety Tips for Students",
+      "videoId": "HxySrSbSY7o",
+      "desc": "Important cyber safety tips every student should know."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Safety Center",
+      "url": "https://safety.google",
+      "icon": "🔗"
+    },
+    {
+      "title": "Cyber Safety Tips for Kids",
+      "url": "https://www.internetmatters.org",
+      "icon": "🔗"
+    },
+    {
+      "title": "Safe Search Engine for Students",
+      "url": "https://www.kiddle.co",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Spot the Safe Website Activity",
+    "parts": [
+      "Computer or Laptop",
+      "Internet Browser",
+      "Projector",
+      "Sample Website Links",
+      "Cyber Safety Worksheet"
+    ],
+    "steps": [
+      "Open different example websites",
+      "Check whether the URL starts with HTTPS",
+      "Look for the lock icon in the browser",
+      "Identify fake popups or suspicious ads",
+      "Discuss which websites are safe or unsafe",
+      "Create a list of internet safety rules"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What should you check before entering personal information on a website?",
+      "options": [
+        "Website color",
+        "HTTPS and lock symbol",
+        "Number of ads",
+        "Background music"
+      ],
+      "answer": 1,
+      "explanation": "HTTPS and the lock symbol show that the website connection is secure."
+    },
+    {
+      "q": "Which of these is a strong password?",
+      "options": [
+        "123456",
+        "password",
+        "MyDog@2026",
+        "abcd"
+      ],
+      "answer": 2,
+      "explanation": "Strong passwords use letters, numbers, and symbols together."
+    },
+    {
+      "q": "What is phishing?",
+      "options": [
+        "Playing online games",
+        "A fake attempt to steal information online",
+        "Watching videos",
+        "Downloading music"
+      ],
+      "answer": 1,
+      "explanation": "Phishing scams trick users into giving personal information."
+    },
+    {
+      "q": "What should you do if a stranger messages you online?",
+      "options": [
+        "Share your address",
+        "Reply immediately",
+        "Ignore and tell a trusted adult",
+        "Send your password"
+      ],
+      "answer": 2,
+      "explanation": "Never share personal information with strangers online."
+    },
+    {
+      "q": "Which symbol usually means a website is secure?",
+      "options": [
+        "Star",
+        "Heart",
+        "Lock",
+        "Arrow"
+      ],
+      "answer": 2,
+      "explanation": "A lock symbol indicates a secure website connection."
+    },
+    {
+      "q": "What should you do before downloading a file?",
+      "options": [
+        "Download immediately",
+        "Check if the source is trusted",
+        "Ignore warnings",
+        "Turn off antivirus"
+      ],
+      "answer": 1,
+      "explanation": "Only download files from trusted websites."
+    },
+    {
+      "q": "What is cyberbullying?",
+      "options": [
+        "Helping others online",
+        "Bullying someone using digital devices",
+        "Creating passwords",
+        "Watching videos"
+      ],
+      "answer": 1,
+      "explanation": "Cyberbullying means hurting or harassing others online."
+    },
+    {
+      "q": "Why should you avoid clicking unknown links?",
+      "options": [
+        "They may contain viruses or scams",
+        "They make the internet slow",
+        "They change screen color",
+        "They delete games"
+      ],
+      "answer": 0,
+      "explanation": "Unknown links can lead to unsafe websites or malware."
+    },
+    {
+      "q": "What is a digital footprint?",
+      "options": [
+        "Your shoe size",
+        "Information you leave online",
+        "A computer virus",
+        "A gaming account"
+      ],
+      "answer": 1,
+      "explanation": "Everything you post online becomes part of your digital footprint."
+    },
+    {
+      "q": "Who should you tell if something online makes you uncomfortable?",
+      "options": [
+        "Nobody",
+        "Online strangers",
+        "A trusted adult or teacher",
+        "Random websites"
+      ],
+      "answer": 2,
+      "explanation": "Always tell a trusted adult if you face problems online."
+    },
+    {
+      "q": "Which is safe to share online?",
+      "options": [
+        "Password",
+        "Home address",
+        "Favorite hobby",
+        "Bank details"
+      ],
+      "answer": 2,
+      "explanation": "Personal and financial information should never be shared online."
+    },
+    {
+      "q": "What does antivirus software do?",
+      "options": [
+        "Makes games faster",
+        "Protects devices from harmful software",
+        "Deletes homework",
+        "Changes passwords"
+      ],
+      "answer": 1,
+      "explanation": "Antivirus software helps detect and remove harmful programs."
+    },
+    {
+      "q": "What should you do after using a public computer?",
+      "options": [
+        "Leave accounts open",
+        "Log out from your accounts",
+        "Share passwords",
+        "Turn off internet forever"
+      ],
+      "answer": 1,
+      "explanation": "Always log out from accounts on shared or public computers."
+    },
+    {
+      "q": "Which website is safer?",
+      "options": [
+        "http://randomsite.com",
+        "https://schoolwebsite.com",
+        "fake-login-page.net",
+        "unknown-freegift.com"
+      ],
+      "answer": 1,
+      "explanation": "HTTPS websites are generally safer and encrypted."
+    },
+    {
+      "q": "Why is safe web browsing important?",
+      "options": [
+        "To protect personal information and devices",
+        "To slow down the internet",
+        "To stop learning",
+        "To avoid homework"
+      ],
+      "answer": 0,
+      "explanation": "Safe browsing protects users from scams, viruses, and online dangers."
+    }
+  ]
+}

@@ -1,0 +1,317 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-6/",
+    "slides_folder": "sessions/session-6/slides/",
+    "images_folder": "sessions/session-6/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-6",
+  "number": 6,
+  "title": "Push Button Magic",
+  "subtitle": "press, glow, learn!",
+  "date": "Session 06",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FF4D6D",
+  "icon": "🔘",
+  "tags": [
+    "Electronics",
+    "Breadboard",
+    "Push Button",
+    "LED",
+    "Circuits"
+  ],
+  "overview": "Students learn how push buttons work in real life by building a simple breadboard circuit using a battery, LED, resistor and push button. They understand how pressing a button completes a circuit and allows electricity to flow.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-6/slides.pdf"
+  },
+  "images": {
+    "_note": "Add real classroom activity photos and breadboard connection pictures.",
+    "gallery": [
+      {
+        "file": "data/push-button.jpg",
+        "_placeholder": "ADD: Close-up photo of push button switch",
+        "caption": "Push button acts like a temporary ON switch",
+        "category": "Components"
+      },
+      {
+        "file": "data/led-glow.jpg",
+        "_placeholder": "ADD: LED glowing after button press",
+        "caption": "LED glows only when the button is pressed",
+        "category": "Concept"
+      },
+      {
+        "file": "data/breadboard-button-circuit.jpg",
+        "_placeholder": "ADD: Breadboard button circuit photo",
+        "caption": "Students building push button circuit on breadboard",
+        "category": "Lab"
+      },
+      {
+        "file": "data/button-doorbell.jpg",
+        "_placeholder": "ADD: Real life button examples",
+        "caption": "Doorbells use push buttons to complete circuits",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/game-controller.jpg",
+        "_placeholder": "ADD: Gaming controller buttons",
+        "caption": "Game controllers work using push buttons",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/elevator-button.jpg",
+        "_placeholder": "ADD: Elevator buttons photo",
+        "caption": "Elevator buttons send signals when pressed",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/student-activity.jpg",
+        "_placeholder": "ADD: Students testing button circuits",
+        "caption": "Students experimenting with button magic!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Push Button = Temporary switch",
+    "Circuit completes only when button is pressed",
+    "Battery provides electrical energy",
+    "LED glows when electricity flows",
+    "Breadboard helps connect components easily",
+    "Resistor protects LED from too much current",
+    "Open Circuit vs Closed Circuit",
+    "Real-life buttons: Doorbell, Keyboard, Elevator, TV Remote"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Push Buttons Work",
+      "videoId": "58VobwWJ6Io",
+      "desc": "Simple explanation of push buttons and switches for beginners."
+    },
+    {
+      "title": "Breadboard Basics",
+      "videoId": "6WReFkfrUIk",
+      "desc": "Learn how breadboards work and how to connect components."
+    },
+    {
+      "title": "Simple LED Circuit",
+      "videoId": "kEcZmjYd0BA",
+      "desc": "Build a basic LED circuit using battery and resistor."
+    },
+    {
+      "title": "Open and Closed Circuits",
+      "videoId": "mc979OhitAg",
+      "desc": "Understanding how electricity flows in a circuit."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Online Breadboard Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Circuit Simulator",
+      "url": "https://www.falstad.com/circuit/",
+      "icon": "🔗"
+    },
+    {
+      "title": "LED Circuit Basics",
+      "url": "https://learn.sparkfun.com/tutorials/light-emitting-diodes-leds/all",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Push Button LED Circuit",
+    "parts": [
+      "Breadboard",
+      "LED",
+      "220Ω Resistor",
+      "Push Button",
+      "Battery",
+      "Jumper Wires"
+    ],
+    "steps": [
+      "Insert LED into breadboard",
+      "Connect resistor to LED positive leg",
+      "Place push button across breadboard gap",
+      "Connect battery positive to push button",
+      "Connect LED negative to battery negative",
+      "Press the button to complete the circuit",
+      "Observe the LED glowing only while pressing the button"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What happens when you press a push button in a circuit?",
+      "options": [
+        "The battery stops working",
+        "The circuit breaks",
+        "The circuit gets completed",
+        "The LED disappears"
+      ],
+      "answer": 2,
+      "explanation": "Pressing the button closes the circuit and allows electricity to flow."
+    },
+    {
+      "q": "Why does the LED glow when the button is pressed?",
+      "options": [
+        "Because air enters the wire",
+        "Because electricity flows through the circuit",
+        "Because the resistor heats up",
+        "Because the battery shakes"
+      ],
+      "answer": 1,
+      "explanation": "The LED glows because current flows through it when the circuit is complete."
+    },
+    {
+      "q": "What is the role of the resistor in the circuit?",
+      "options": [
+        "Increase electricity",
+        "Store electricity",
+        "Protect LED by limiting current",
+        "Make sound"
+      ],
+      "answer": 2,
+      "explanation": "The resistor protects the LED from too much current."
+    },
+    {
+      "q": "A push button is an example of:",
+      "options": [
+        "Motor",
+        "Switch",
+        "Battery",
+        "Sensor"
+      ],
+      "answer": 1,
+      "explanation": "Push buttons act like temporary switches."
+    },
+    {
+      "q": "What type of circuit is formed when the button is NOT pressed?",
+      "options": [
+        "Closed circuit",
+        "Open circuit",
+        "Parallel circuit",
+        "Short circuit"
+      ],
+      "answer": 1,
+      "explanation": "Without pressing the button, the circuit path is broken."
+    },
+    {
+      "q": "Which real-life device uses push buttons?",
+      "options": [
+        "Doorbell",
+        "Keyboard",
+        "Elevator",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "All these devices use push buttons to send signals."
+    },
+    {
+      "q": "What does a battery provide in a circuit?",
+      "options": [
+        "Light",
+        "Sound",
+        "Electrical energy",
+        "Air"
+      ],
+      "answer": 2,
+      "explanation": "Battery provides electrical energy to the circuit."
+    },
+    {
+      "q": "What happens if there is no battery in the circuit?",
+      "options": [
+        "LED glows brighter",
+        "Nothing works",
+        "Button glows",
+        "Resistor spins"
+      ],
+      "answer": 1,
+      "explanation": "Without battery there is no electrical energy."
+    },
+    {
+      "q": "What is a breadboard used for?",
+      "options": [
+        "Cooking bread",
+        "Holding water",
+        "Building circuits without soldering",
+        "Charging batteries"
+      ],
+      "answer": 2,
+      "explanation": "Breadboards help build and test circuits easily."
+    },
+    {
+      "q": "What does an LED convert electricity into?",
+      "options": [
+        "Motion",
+        "Heat only",
+        "Light",
+        "Water"
+      ],
+      "answer": 2,
+      "explanation": "LED converts electrical energy into light energy."
+    },
+    {
+      "q": "What is another name for a complete circuit?",
+      "options": [
+        "Broken circuit",
+        "Closed circuit",
+        "Dry circuit",
+        "Loose circuit"
+      ],
+      "answer": 1,
+      "explanation": "A closed circuit allows electricity to flow."
+    },
+    {
+      "q": "Which leg of LED is usually longer?",
+      "options": [
+        "Negative leg",
+        "Positive leg",
+        "Both equal",
+        "Middle leg"
+      ],
+      "answer": 1,
+      "explanation": "The longer leg is usually the positive terminal."
+    },
+    {
+      "q": "Why is the push button called temporary switch?",
+      "options": [
+        "Because it works forever",
+        "Because it works only while pressing",
+        "Because it stores current",
+        "Because it glows"
+      ],
+      "answer": 1,
+      "explanation": "The button works only while it is being pressed."
+    },
+    {
+      "q": "What happens when the button is released?",
+      "options": [
+        "Circuit opens again",
+        "Battery explodes",
+        "LED becomes motor",
+        "Resistor glows"
+      ],
+      "answer": 0,
+      "explanation": "Releasing the button breaks the circuit again."
+    },
+    {
+      "q": "Which component glows in this activity?",
+      "options": [
+        "Battery",
+        "Breadboard",
+        "LED",
+        "Button"
+      ],
+      "answer": 2,
+      "explanation": "The LED is the glowing component in the circuit."
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Potentiometer + LED",
+  "subtitle": "Control Light with a Knob!",
+  "date": "Session 02",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FF9800",
+  "icon": "💡",
+  "tags": [
+    "Electronics",
+    "Arduino",
+    "LED",
+    "Potentiometer"
+  ],
+  "overview": "In this session, students learn how a potentiometer works like a volume knob or fan regulator to control the brightness of an LED using Arduino UNO.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — potentiometer wiring, glowing LEDs, Arduino setup, student activities.",
+    "gallery": [
+      {
+        "file": "data/potentiometer.jpg",
+        "_placeholder": "ADD: Photo of potentiometer component",
+        "caption": "Potentiometer — Adjustable knob to control electricity flow",
+        "category": "Components"
+      },
+      {
+        "file": "data/led-glow.jpg",
+        "_placeholder": "ADD: Photo of glowing LED",
+        "caption": "LED brightness changes with potentiometer rotation",
+        "category": "Concept"
+      },
+      {
+        "file": "data/arduino-uno.jpg",
+        "_placeholder": "ADD: Photo of Arduino UNO board",
+        "caption": "Arduino UNO — Smart brain controlling the circuit",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard-circuit.jpg",
+        "_placeholder": "ADD: Photo of breadboard circuit",
+        "caption": "Students building Potentiometer + LED circuit",
+        "category": "Lab"
+      },
+      {
+        "file": "data/jumper-wire.jpg",
+        "_placeholder": "ADD: Photo of jumper wires",
+        "caption": "Jumper wires connect all components together",
+        "category": "Components"
+      },
+      {
+        "file": "data/pwm-led.gif",
+        "_placeholder": "ADD: LED dimming animation/photo",
+        "caption": "PWM controls LED brightness smoothly",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Potentiometer?",
+    "Potentiometer works like a fan regulator or volume knob",
+    "LED brightness control using analog values",
+    "Arduino reads analog input from potentiometer",
+    "PWM (Pulse Width Modulation) basics",
+    "Analog Input and Output",
+    "Circuit connections using breadboard",
+    "Electricity flow control using variable resistance"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Potentiometer with LED using Arduino",
+      "videoId": "YCJ6P5r0VZU",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Learn how to control LED brightness using a potentiometer and Arduino."
+    },
+    {
+      "title": "What is a Potentiometer?",
+      "videoId": "APTPLdR1RXc",
+      "desc": "Simple explanation of potentiometer working principle."
+    },
+    {
+      "title": "PWM Explained for Beginners",
+      "videoId": "sXsJX1PqN5k",
+      "desc": "Understand how PWM controls LED brightness."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad Circuits",
+      "url": "https://www.tinkercad.com/circuits",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Control LED Brightness using Potentiometer",
+    "parts": [
+      "Arduino UNO",
+      "Breadboard",
+      "LED",
+      "220Ω Resistor",
+      "Potentiometer (10k)",
+      "Jumper wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Place the potentiometer on the breadboard",
+      "Connect one side pin to 5V",
+      "Connect the other side pin to GND",
+      "Connect middle pin to A0 pin of Arduino",
+      "Connect LED with resistor to PWM pin 9",
+      "Upload Arduino code",
+      "Rotate potentiometer knob",
+      "Observe LED brightness changing smoothly"
+    ]
+  },
+  "exampleCode": {
+    "title": "Arduino Code for Potentiometer + LED",
+    "language": "cpp",
+    "code": "int potPin = A0;\\nint ledPin = 9;\\nint potValue = 0;\\nint brightness = 0;\\n\\nvoid setup() {\\n  pinMode(ledPin, OUTPUT);\\n  Serial.begin(9600);\\n}\\n\\nvoid loop() {\\n  potValue = analogRead(potPin);\\n  brightness = map(potValue, 0, 1023, 0, 255);\\n  analogWrite(ledPin, brightness);\\n\\n  Serial.print(\\\"Pot Value: \\ \");\\n  Serial.print(potValue);\\n  Serial.print(\\\" Brightness: \\ \");\\n  Serial.println(brightness);\\n\\n  delay(10);\\n}"
+  },
+  "quiz": [
+    {
+      "q": "What is a Potentiometer?",
+      "options": [
+        "A battery",
+        "A fixed resistor",
+        "An adjustable resistor",
+        "A motor"
+      ],
+      "answer": 2,
+      "explanation": "A potentiometer is an adjustable resistor used to control current or voltage."
+    },
+    {
+      "q": "Which real-life device works like a potentiometer?",
+      "options": [
+        "Bulb",
+        "Fan regulator",
+        "Battery charger",
+        "Speaker"
+      ],
+      "answer": 1,
+      "explanation": "Fan regulators and volume knobs are examples of potentiometers."
+    },
+    {
+      "q": "Which Arduino pin reads analog values from the potentiometer?",
+      "options": [
+        "Digital Pin 13",
+        "PWM Pin 9",
+        "A0",
+        "GND"
+      ],
+      "answer": 2,
+      "explanation": "Analog pin A0 is used to read potentiometer values."
+    },
+    {
+      "q": "What happens when you rotate the potentiometer knob?",
+      "options": [
+        "LED turns into motor",
+        "LED brightness changes",
+        "Battery charges",
+        "Wire heats up"
+      ],
+      "answer": 1,
+      "explanation": "Rotating the potentiometer changes resistance and controls LED brightness."
+    },
+    {
+      "q": "What is the range of analogRead() values in Arduino?",
+      "options": [
+        "0 to 100",
+        "0 to 255",
+        "0 to 1023",
+        "1 to 10"
+      ],
+      "answer": 2,
+      "explanation": "Arduino analogRead() gives values from 0 to 1023."
+    },
+    {
+      "q": "Which function is used to control LED brightness?",
+      "options": [
+        "digitalRead()",
+        "analogWrite()",
+        "pinMode()",
+        "delay()"
+      ],
+      "answer": 1,
+      "explanation": "analogWrite() controls LED brightness using PWM."
+    },
+    {
+      "q": "PWM stands for:",
+      "options": [
+        "Power Wire Method",
+        "Pulse Width Modulation",
+        "Power Width Motion",
+        "Pulse Wire Mode"
+      ],
+      "answer": 1,
+      "explanation": "PWM means Pulse Width Modulation — used to control brightness and speed."
+    },
+    {
+      "q": "Which component glows when electricity flows through it?",
+      "options": [
+        "Motor",
+        "Battery",
+        "LED",
+        "Potentiometer"
+      ],
+      "answer": 2,
+      "explanation": "LED converts electrical energy into light energy."
+    },
+    {
+      "q": "What is the use of a 220Ω resistor with LED?",
+      "options": [
+        "Increase voltage",
+        "Protect LED from excess current",
+        "Store electricity",
+        "Make LED blink automatically"
+      ],
+      "answer": 1,
+      "explanation": "The resistor limits current and protects the LED."
+    },
+    {
+      "q": "What does Arduino do in this project?",
+      "options": [
+        "Stores water",
+        "Controls the LED brightness",
+        "Acts like a battery only",
+        "Produces sound"
+      ],
+      "answer": 1,
+      "explanation": "Arduino reads potentiometer values and controls LED brightness accordingly."
+    }
+  ]
+}

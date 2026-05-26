@@ -1,0 +1,252 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/",
+    "images_folder": "sessions/session-1/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+  },
+  "id": "session-software-examples",
+  "number": 16,
+  "title": "Examples of Software",
+  "subtitle": "Paint, Word & Video Player",
+  "date": "Session 01",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#4F9DFF",
+  "icon": "💻",
+  "tags": [
+    "Computer Basics",
+    "Software",
+    "Paint",
+    "Word",
+    "Video Player"
+  ],
+  "overview": "Students learn different examples of software such as Paint, Word and Video Player. They observe buttons, menus, icons and understand how software helps people perform different tasks on a computer.",
+  "grades": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add classroom photos and screenshots of software interfaces.",
+    "gallery": [
+      {
+        "file": "data/paint-software.jpg",
+        "_placeholder": "ADD: Screenshot of Paint software",
+        "caption": "Paint software helps us draw and color pictures",
+        "category": "Software"
+      },
+      {
+        "file": "data/ms-word.jpg",
+        "_placeholder": "ADD: Screenshot of Word interface",
+        "caption": "Word software is used for typing documents",
+        "category": "Software"
+      },
+      {
+        "file": "data/video-player.jpg",
+        "_placeholder": "ADD: Screenshot of video player",
+        "caption": "Video player software plays movies and songs",
+        "category": "Software"
+      },
+      {
+        "file": "data/software-icons.jpg",
+        "_placeholder": "ADD: Desktop icons image",
+        "caption": "Students observing software icons on desktop",
+        "category": "Activity"
+      },
+      {
+        "file": "data/computer-lab.jpg",
+        "_placeholder": "ADD: Students using software in computer lab",
+        "caption": "Students exploring software interfaces",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Software tells the computer what to do",
+    "Paint software is used for drawing",
+    "Word software is used for typing",
+    "Video player is used for watching videos",
+    "Every software has buttons and menus",
+    "Icons help us open software easily",
+    "Software makes work faster and easier",
+    "Different software has different uses"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is Software?",
+      "videoId": "0ykX6x2q4qE",
+      "desc": "Simple explanation of software for beginners."
+    },
+    {
+      "title": "Learn MS Paint for Kids",
+      "videoId": "dYgxx8R3hFE",
+      "desc": "Fun introduction to Paint software."
+    },
+    {
+      "title": "Microsoft Word Basics",
+      "videoId": "eJ0m0M7w0YQ",
+      "desc": "Basic typing and document creation in Word."
+    }
+  ],
+  "resources": [
+    {
+      "title": "MS Paint Online",
+      "url": "https://jspaint.app",
+      "icon": "🎨"
+    },
+    {
+      "title": "Typing Practice",
+      "url": "https://www.typingclub.com",
+      "icon": "⌨️"
+    },
+    {
+      "title": "W3Schools Computer Basics",
+      "url": "https://www.w3schools.com/computer/computer_software.asp",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Explore Different Software",
+    "parts": [
+      "Computer or Laptop",
+      "Paint Software",
+      "Word Software",
+      "Video Player",
+      "Mouse and Keyboard"
+    ],
+    "steps": [
+      "Open Paint software",
+      "Draw a simple house or flower",
+      "Open Word software",
+      "Type your name and favorite color",
+      "Open Video Player",
+      "Observe play, pause and volume buttons",
+      "Students identify different icons and menus"
+    ]
+  },
+  "realLifeExamples": [
+    "Paint is used to make drawings and posters",
+    "Word is used in schools and offices for typing",
+    "Video players are used to watch movies and cartoons",
+    "Mobile apps are also software",
+    "Games are software used for entertainment"
+  ],
+  "quiz": [
+    {
+      "q": "What is software?",
+      "options": [
+        "A computer table",
+        "Instructions that tell the computer what to do",
+        "A computer wire",
+        "A mouse pad"
+      ],
+      "answer": 1,
+      "explanation": "Software gives instructions to the computer."
+    },
+    {
+      "q": "Which software is used for drawing pictures?",
+      "options": [
+        "Paint",
+        "Calculator",
+        "Video Player",
+        "Clock"
+      ],
+      "answer": 0,
+      "explanation": "Paint software helps users draw and color pictures."
+    },
+    {
+      "q": "Which software is used for typing documents?",
+      "options": [
+        "Paint",
+        "Word",
+        "Camera",
+        "Music Player"
+      ],
+      "answer": 1,
+      "explanation": "Word software is used for typing letters and documents."
+    },
+    {
+      "q": "What does a video player do?",
+      "options": [
+        "Washes clothes",
+        "Types documents",
+        "Plays videos and songs",
+        "Prints paper"
+      ],
+      "answer": 2,
+      "explanation": "Video player software helps us watch videos."
+    },
+    {
+      "q": "What do icons help us do?",
+      "options": [
+        "Cook food",
+        "Open software quickly",
+        "Charge battery",
+        "Clean the screen"
+      ],
+      "answer": 1,
+      "explanation": "Icons are small pictures used to open programs."
+    },
+    {
+      "q": "Which device uses software?",
+      "options": [
+        "Computer",
+        "Mobile phone",
+        "Tablet",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "All smart devices use software."
+    },
+    {
+      "q": "What button starts a video?",
+      "options": [
+        "Play",
+        "Delete",
+        "Close",
+        "Print"
+      ],
+      "answer": 0,
+      "explanation": "The Play button starts the video."
+    },
+    {
+      "q": "What can students do in Paint?",
+      "options": [
+        "Cook food",
+        "Draw pictures",
+        "Wash clothes",
+        "Drive a car"
+      ],
+      "answer": 1,
+      "explanation": "Paint software is made for drawing and coloring."
+    },
+    {
+      "q": "Which software helps students write homework on computer?",
+      "options": [
+        "Word",
+        "Video Player",
+        "Paint",
+        "Calculator"
+      ],
+      "answer": 0,
+      "explanation": "Word software is used for typing homework and notes."
+    },
+    {
+      "q": "Software makes work:",
+      "options": [
+        "Harder",
+        "Slower",
+        "Easier and faster",
+        "Impossible"
+      ],
+      "answer": 2,
+      "explanation": "Software helps people complete tasks easily and quickly."
+    }
+  ]
+}

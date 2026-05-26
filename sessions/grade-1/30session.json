@@ -1,0 +1,106 @@
+{
+    "id": "session-18",
+    "number": 18,
+    "title": "Showcase Day!",
+    "subtitle": "Share Yearbook and STEM Projects Celebration",
+    "date": "Session 18",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#FFB300",
+    "icon": "🏆",
+    "tags": [
+        "STEM",
+        "Presentation",
+        "Celebration",
+        "Projects",
+        "Creativity"
+    ],
+    "overview": "Students celebrate learning by sharing their yearbook work and STEM projects with classmates. Every student participates and receives a small certificate of appreciation.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-18/slides.pdf"
+    },
+    "images": {
+        "_note": "Add showcase event and project presentation photos.",
+        "gallery": [
+            {
+                "file": "data/project-showcase.jpg",
+                "caption": "Students presenting STEM projects",
+                "category": "Presentation"
+            },
+            {
+                "file": "data/yearbook-sharing.jpg",
+                "caption": "Students sharing yearbook work",
+                "category": "Celebration"
+            },
+            {
+                "file": "data/certificates.jpg",
+                "caption": "Certificates for participation",
+                "category": "Achievement"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Sharing STEM learning",
+        "Presenting projects",
+        "Celebrating achievements",
+        "Learning from classmates",
+        "Building confidence"
+    ],
+    "activity": {
+        "title": "Showcase Celebration Activity",
+        "parts": [
+            "Student STEM Project",
+            "Yearbook",
+            "Certificate",
+            "Presentation Area"
+        ],
+        "steps": [
+            "Students display their STEM projects",
+            "Share yearbook work with classmates",
+            "Explain project ideas",
+            "Observe and appreciate others' work",
+            "Distribute tiny certificates to all students"
+        ]
+    },
+    "certificateMessage": "Congratulations! Thank you for participating, learning, creating, and sharing your ideas.",
+    "quiz": [
+        {
+            "q": "Why do students present projects?",
+            "options": [
+                "To share learning",
+                "To hide ideas",
+                "To avoid teamwork",
+                "To stop discussion"
+            ],
+            "answer": 0,
+            "explanation": "Presentations help students share ideas and learning."
+        },
+        {
+            "q": "What is shared during showcase day?",
+            "options": [
+                "Yearbook and STEM projects",
+                "Only homework",
+                "Only notebooks",
+                "Nothing"
+            ],
+            "answer": 0,
+            "explanation": "Students celebrate by sharing projects and yearbook work."
+        },
+        {
+            "q": "Why are certificates given?",
+            "options": [
+                "To appreciate participation",
+                "To create competition",
+                "To avoid learning",
+                "To replace projects"
+            ],
+            "answer": 0,
+            "explanation": "Certificates celebrate effort and participation."
+        }
+    ]
+}

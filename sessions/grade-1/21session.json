@@ -1,0 +1,106 @@
+{
+    "id": "session-9",
+    "number": 9,
+    "title": "Internet Safety Rules",
+    "subtitle": "Safe Internet Use and Online Awareness",
+    "date": "Session 09",
+    "duration": "1 Hours",
+    "phase": "Foundation",
+    "color": "#4CAF50",
+    "icon": "🛡️",
+    "tags": [
+        "Internet",
+        "Safety",
+        "Digital Awareness",
+        "Cyber Safety"
+    ],
+    "overview": "Students learn basic Internet safety rules including avoiding pop-ups, asking adults for help, and staying safe while using online platforms.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-9/slides.pdf"
+    },
+    "images": {
+        "_note": "Add internet safety awareness images.",
+        "gallery": [
+            {
+                "file": "data/popups-warning.jpg",
+                "caption": "Do not click unknown pop-ups",
+                "category": "Safety"
+            },
+            {
+                "file": "data/ask-adult.jpg",
+                "caption": "Ask an adult when unsure online",
+                "category": "Guidance"
+            },
+            {
+                "file": "data/no-strangers.jpg",
+                "caption": "Never chat with strangers online",
+                "category": "Safety"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Do not click unknown pop-ups",
+        "Ask an adult before downloading or opening unknown links",
+        "Do not chat with strangers online",
+        "Keep personal information private",
+        "Use the Internet safely"
+    ],
+    "safetyRules": [
+        "Do not click on pop-up advertisements.",
+        "Ask parents or teachers before opening unknown websites.",
+        "Never share passwords or personal information.",
+        "Do not chat with strangers online.",
+        "Tell an adult if something online feels unsafe."
+    ],
+    "activity": {
+        "title": "Internet Safety Discussion",
+        "parts": [
+            "Notebook",
+            "Pencil"
+        ],
+        "steps": [
+            "Read each safety rule",
+            "Discuss why each rule is important",
+            "Write three online safety habits",
+            "Share answers in class"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What should you do when a strange pop-up appears?",
+            "options": [
+                "Click it",
+                "Ignore it and ask an adult",
+                "Download files",
+                "Share information"
+            ],
+            "answer": 1,
+            "explanation": "Always ask an adult before clicking unknown pop-ups."
+        },
+        {
+            "q": "Who should help if something online feels unsafe?",
+            "options": [
+                "Stranger online",
+                "Friend only",
+                "Trusted adult",
+                "Nobody"
+            ],
+            "answer": 2,
+            "explanation": "Always ask a trusted adult."
+        },
+        {
+            "q": "Should you chat with strangers online?",
+            "options": [
+                "Yes",
+                "No"
+            ],
+            "answer": 1,
+            "explanation": "Never chat with strangers online."
+        }
+    ]
+}

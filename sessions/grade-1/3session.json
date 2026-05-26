@@ -1,250 +1,317 @@
 {
-  "_instructions": {
-    "folder_structure": "sessions/session-2/",
-    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
-    "images_folder": "sessions/session-2/images/   ← Put desktop and taskbar related images here (JPG/PNG)",
-    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
-    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
-  },
-  "id": "session-2",
-  "number": 2,
-  "title": "Desktop and Taskbar Features",
-  "subtitle": "Learn, Explore, Click!",
-  "date": "Session 02",
-  "duration": "1 Hour",
-  "phase": "Computer Basics",
-  "color": "#4CAF50",
-  "icon": "🖥️",
-  "tags": [
-    "Computer Basics",
-    "Desktop",
-    "Taskbar",
-    "Windows",
-    "Technology"
-  ],
-  "overview": "This session helps students understand the desktop screen, taskbar features, icons, start menu, shortcuts, and how to use basic computer navigation in Windows.",
-  "grades": [
-    5,
-    6,
-    7
-  ],
-  "slides": {
-    "pdf": "sessions/session-2/slides.pdf"
-  },
-  "images": {
-    "_note": "Add screenshots of desktop, taskbar, start menu, icons, folders, and student practical activities.",
-    "gallery": [
-      {
-        "file": "data/windows-desktop.jpg",
-        "_placeholder": "ADD: Screenshot of Windows desktop",
-        "caption": "Desktop — Main screen of the computer",
-        "category": "Concept"
-      },
-      {
-        "file": "data/taskbar.png",
-        "_placeholder": "ADD: Screenshot of taskbar",
-        "caption": "Taskbar helps open and switch applications quickly",
-        "category": "Concept"
-      },
-      {
-        "file": "data/start-menu.jpg",
-        "_placeholder": "ADD: Screenshot of Start Menu",
-        "caption": "Start Menu gives access to apps and settings",
-        "category": "Features"
-      },
-      {
-        "file": "data/icons.png",
-        "_placeholder": "ADD: Desktop icons screenshot",
-        "caption": "Icons are shortcuts to programs and files",
-        "category": "Features"
-      },
-      {
-        "file": "data/folder.jpg",
-        "_placeholder": "ADD: Folder opening screenshot",
-        "caption": "Folders help organize files and documents",
-        "category": "Files"
-      },
-      {
-        "file": "data/student-practice.jpg",
-        "_placeholder": "ADD: Students practicing on computers",
-        "caption": "Students exploring desktop and taskbar",
-        "category": "Lab"
-      }
-    ]
-  },
-  "keyTopics": [
-    "Desktop — Main screen after computer starts",
-    "Taskbar — Shows running apps and shortcuts",
-    "Start Menu — Access apps, files, and settings",
-    "Icons — Small pictures representing programs",
-    "Recycle Bin — Stores deleted files temporarily",
-    "Wallpaper — Background image of desktop",
-    "Clock and Notification Area — Shows time and alerts",
-    "Search Bar — Helps find files and applications quickly"
-  ],
-  "youtubeVideos": [
-    {
-      "title": "Introduction to Desktop and Taskbar",
-      "videoId": "6Gu2QMTAkEU",
-      "_note": "Replace videoId with actual YouTube video ID from the URL",
-      "desc": "Learn the basics of desktop and taskbar in Windows."
+    "_instructions": {
+        "folder_structure": "sessions/session-3/",
+        "slides_folder": "sessions/session-3/slides/",
+        "images_folder": "sessions/session-3/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
     },
-    {
-      "title": "Windows Desktop Explained for Beginners",
-      "videoId": "8g1Ysyx8J5Q",
-      "desc": "Understanding icons, taskbar, and start menu."
-    },
-    {
-      "title": "How to Use Taskbar Features",
-      "videoId": "MKuM2Tw5e0o",
-      "desc": "Learn taskbar shortcuts and navigation."
-    }
-  ],
-  "resources": [
-    {
-      "title": "Microsoft Windows Basics",
-      "url": "https://support.microsoft.com/windows",
-      "icon": "🔗"
-    },
-    {
-      "title": "Computer Fundamentals Tutorial",
-      "url": "https://edu.gcfglobal.org/en/computerbasics/",
-      "icon": "🔗"
-    },
-    {
-      "title": "Learn Windows Interface",
-      "url": "https://www.wikihow.com/Use-a-Computer",
-      "icon": "🔗"
-    }
-  ],
-  "activity": {
-    "title": "Explore the Desktop and Taskbar",
-    "parts": [
-      "Computer/Laptop",
-      "Windows Operating System",
-      "Mouse",
-      "Keyboard"
+    "id": "session-3",
+    "number": 3,
+    "title": "What is STEAM?",
+    "subtitle": "Create, Innovate and Build the Future!",
+    "date": "Session 03",
+    "duration": "1 Hour",
+    "phase": "Foundation",
+    "color": "#F97316",
+    "icon": "🚀",
+    "tags": [
+        "Science",
+        "Technology",
+        "Engineering",
+        "Arts",
+        "Mathematics",
+        "Innovation"
     ],
-    "steps": [
-      "Start the computer and observe the desktop screen",
-      "Identify desktop icons like This PC and Recycle Bin",
-      "Click the Start button and open applications",
-      "Observe the taskbar and running apps",
-      "Change desktop wallpaper",
-      "Use search bar to find Paint or Calculator",
-      "Minimize and maximize application windows"
+    "overview": "In this session, students learn about STEAM education — Science, Technology, Engineering, Arts and Mathematics. Students explore real-life applications of STEAM, understand future career opportunities, and discover how STEAM helps solve real-world problems using creativity and innovation.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-3/slides.pdf"
+    },
+    "images": {
+        "_note": "Add real photos of robotics, science experiments, coding activities, art projects, engineering models and student innovation activities.",
+        "gallery": [
+            {
+                "file": "data/robotics-lab.jpg",
+                "_placeholder": "ADD: Photo of robotics activity",
+                "caption": "Robotics combines Science, Technology and Engineering",
+                "category": "STEAM"
+            },
+            {
+                "file": "data/science-experiment.jpg",
+                "_placeholder": "ADD: Photo of students doing science experiment",
+                "caption": "Science helps us understand the world",
+                "category": "Science"
+            },
+            {
+                "file": "data/coding-class.jpg",
+                "_placeholder": "ADD: Photo of coding or programming activity",
+                "caption": "Technology includes coding and computers",
+                "category": "Technology"
+            },
+            {
+                "file": "data/bridge-model.jpg",
+                "_placeholder": "ADD: Photo of engineering bridge model",
+                "caption": "Engineering is about designing and building",
+                "category": "Engineering"
+            },
+            {
+                "file": "data/art-design.jpg",
+                "_placeholder": "ADD: Photo of creative art/design activity",
+                "caption": "Arts bring creativity and imagination",
+                "category": "Arts"
+            },
+            {
+                "file": "data/maths-activity.jpg",
+                "_placeholder": "ADD: Photo of mathematics classroom activity",
+                "caption": "Mathematics helps solve problems logically",
+                "category": "Mathematics"
+            },
+            {
+                "file": "data/future-careers.jpg",
+                "_placeholder": "ADD: Photo collage of scientist, engineer, doctor, game designer",
+                "caption": "STEAM opens doors to exciting future careers",
+                "category": "Future"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is STEAM?",
+        "S = Science",
+        "T = Technology",
+        "E = Engineering",
+        "A = Arts",
+        "M = Mathematics",
+        "STEAM in real life",
+        "Future careers in STEAM",
+        "Creativity + Innovation",
+        "Problem solving skills",
+        "Robotics and coding",
+        "Artificial Intelligence and future technology",
+        "Importance of teamwork and creativity"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is STEAM Education?",
+            "videoId": "njtfsMolFGA",
+            "_note": "Replace with preferred educational video ID",
+            "desc": "Fun and easy explanation of STEAM and how it helps students create amazing things."
+        },
+        {
+            "title": "Future Careers in STEAM",
+            "videoId": "H14bBuluwB8",
+            "_note": "Replace with actual educational video",
+            "desc": "Learn how STEAM skills are used in future jobs and technologies."
+        },
+        {
+            "title": "Robotics and Coding for Kids",
+            "videoId": "6DnThJ5JTB0",
+            "desc": "Introduction to robotics, coding and innovation using STEAM."
+        }
+    ],
+    "resources": [
+        {
+            "title": "NASA STEM Activities",
+            "url": "https://www.nasa.gov/stem",
+            "icon": "🔗"
+        },
+        {
+            "title": "Code.org Learning",
+            "url": "https://code.org/",
+            "icon": "🔗"
+        },
+        {
+            "title": "STEAM Activities for Students",
+            "url": "https://www.steampoweredfamily.com/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Find STEAM Around You",
+        "parts": [
+            "Notebook",
+            "Pencil colors",
+            "Pictures of robots, doctors, bridges, apps and art",
+            "Computer or projector"
+        ],
+        "steps": [
+            "Explain each letter of STEAM",
+            "Show real-life examples of STEAM",
+            "Ask students where they see Science and Technology daily",
+            "Students draw a future invention",
+            "Discuss future careers using STEAM",
+            "Challenge: Think of one problem and create a STEAM solution"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does STEAM stand for?",
+            "options": [
+                "Science, Technology, Engineering, Arts and Mathematics",
+                "Sports, Travel, Energy, Air and Machines",
+                "Science, Tools, Electricity, Art and Magic",
+                "Study, Test, Exam, Answer and Marks"
+            ],
+            "answer": 0,
+            "explanation": "STEAM stands for Science, Technology, Engineering, Arts and Mathematics."
+        },
+        {
+            "q": "Which subject helps us understand nature and experiments?",
+            "options": [
+                "Arts",
+                "Science",
+                "Music",
+                "Sports"
+            ],
+            "answer": 1,
+            "explanation": "Science helps us understand how the world works."
+        },
+        {
+            "q": "Coding and computers are part of:",
+            "options": [
+                "Technology",
+                "Arts",
+                "Sports",
+                "History"
+            ],
+            "answer": 0,
+            "explanation": "Technology includes computers, coding and digital tools."
+        },
+        {
+            "q": "Who designs and builds bridges and machines?",
+            "options": [
+                "Doctors",
+                "Artists",
+                "Engineers",
+                "Singers"
+            ],
+            "answer": 2,
+            "explanation": "Engineers design and build useful structures and machines."
+        },
+        {
+            "q": "Which part of STEAM adds creativity and imagination?",
+            "options": [
+                "Mathematics",
+                "Engineering",
+                "Arts",
+                "Technology"
+            ],
+            "answer": 2,
+            "explanation": "Arts help us think creatively and design beautifully."
+        },
+        {
+            "q": "Mathematics helps us:",
+            "options": [
+                "Dance",
+                "Cook only",
+                "Solve problems and calculate",
+                "Sleep"
+            ],
+            "answer": 2,
+            "explanation": "Mathematics helps us calculate and solve problems logically."
+        },
+        {
+            "q": "Which of these uses STEAM skills?",
+            "options": [
+                "Robotics",
+                "Mobile apps",
+                "Space research",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "STEAM skills are used in many modern technologies."
+        },
+        {
+            "q": "Which future field is growing very fast?",
+            "options": [
+                "Artificial Intelligence",
+                "Robotics",
+                "Space Technology",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Many future technologies depend on STEAM learning."
+        },
+        {
+            "q": "Doctors and scientists use STEAM for:",
+            "options": [
+                "Research and inventions",
+                "Medical technology",
+                "Experiments",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "STEAM helps improve healthcare and scientific discoveries."
+        },
+        {
+            "q": "What skill does STEAM improve?",
+            "options": [
+                "Creativity",
+                "Problem solving",
+                "Critical thinking",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "STEAM develops important future-ready skills."
+        },
+        {
+            "q": "Which of these is a STEAM career?",
+            "options": [
+                "Engineer",
+                "Game Designer",
+                "Scientist",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Many exciting careers are connected to STEAM."
+        },
+        {
+            "q": "Why is STEAM important for the future?",
+            "options": [
+                "It helps create inventions",
+                "It improves technology",
+                "It solves real-world problems",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "STEAM helps students prepare for future innovation and careers."
+        },
+        {
+            "q": "Which technology is used in smart robots?",
+            "options": [
+                "Artificial Intelligence",
+                "Coding",
+                "Sensors",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Robots use multiple STEAM technologies together."
+        },
+        {
+            "q": "Students learning STEAM become:",
+            "options": [
+                "Innovators",
+                "Problem solvers",
+                "Creative thinkers",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "STEAM helps students become future innovators."
+        },
+        {
+            "q": "STEAM learning is mostly about:",
+            "options": [
+                "Memorizing only",
+                "Creativity and practical learning",
+                "Watching TV only",
+                "Doing nothing"
+            ],
+            "answer": 1,
+            "explanation": "STEAM focuses on hands-on learning, creativity and innovation."
+        }
     ]
-  },
-  "quiz": [
-    {
-      "q": "What is the Desktop?",
-      "options": [
-        "A type of keyboard",
-        "The main screen of a computer",
-        "A printer",
-        "A software virus"
-      ],
-      "answer": 1,
-      "explanation": "Desktop is the main screen that appears after the computer starts."
-    },
-    {
-      "q": "Which part of the screen shows running applications?",
-      "options": [
-        "Wallpaper",
-        "Desktop",
-        "Taskbar",
-        "Monitor"
-      ],
-      "answer": 2,
-      "explanation": "Taskbar shows opened and running applications."
-    },
-    {
-      "q": "What does the Start Menu help you do?",
-      "options": [
-        "Turn off monitor",
-        "Open apps and settings",
-        "Print papers",
-        "Delete keyboard"
-      ],
-      "answer": 1,
-      "explanation": "Start Menu provides access to applications, files, and settings."
-    },
-    {
-      "q": "What are Icons?",
-      "options": [
-        "Computer viruses",
-        "Pictures representing programs or files",
-        "Speakers",
-        "Internet cables"
-      ],
-      "answer": 1,
-      "explanation": "Icons are small pictures used to open programs and files."
-    },
-    {
-      "q": "Which icon stores deleted files temporarily?",
-      "options": [
-        "Calculator",
-        "Recycle Bin",
-        "Paint",
-        "Chrome"
-      ],
-      "answer": 1,
-      "explanation": "Recycle Bin stores deleted files temporarily."
-    },
-    {
-      "q": "What is Wallpaper?",
-      "options": [
-        "Desktop background image",
-        "A keyboard cover",
-        "Internet browser",
-        "Computer battery"
-      ],
-      "answer": 0,
-      "explanation": "Wallpaper is the background picture on the desktop."
-    },
-    {
-      "q": "Where is the clock usually displayed in Windows?",
-      "options": [
-        "Start Menu",
-        "Taskbar",
-        "Desktop icon",
-        "Browser"
-      ],
-      "answer": 1,
-      "explanation": "Clock is displayed on the right side of the taskbar."
-    },
-    {
-      "q": "Which feature helps you quickly find apps and files?",
-      "options": [
-        "Recycle Bin",
-        "Search Bar",
-        "Wallpaper",
-        "Speaker"
-      ],
-      "answer": 1,
-      "explanation": "Search Bar helps find applications and files quickly."
-    },
-    {
-      "q": "What happens when you minimize a window?",
-      "options": [
-        "It closes permanently",
-        "It hides to the taskbar",
-        "It deletes the app",
-        "It restarts the computer"
-      ],
-      "answer": 1,
-      "explanation": "Minimized windows move to the taskbar."
-    },
-    {
-      "q": "Which device is mainly used to click desktop icons?",
-      "options": [
-        "Printer",
-        "Mouse",
-        "Speaker",
-        "Scanner"
-      ],
-      "answer": 1,
-      "explanation": "Mouse helps select and click icons on the desktop."
-    }
-  ]
 }

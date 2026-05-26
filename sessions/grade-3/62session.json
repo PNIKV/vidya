@@ -1,0 +1,318 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/",
+    "images_folder": "sessions/session-1/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "What is a Microcontroller?",
+  "subtitle": "UNO & ESP — Smart Brain of Electronics",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FF6B35",
+  "icon": "🧠",
+  "tags": [
+    "Microcontroller",
+    "Arduino UNO",
+    "ESP8266",
+    "Electronics",
+    "Programming"
+  ],
+  "overview": "This session introduces students to microcontrollers using real-life examples. Students will learn how Arduino UNO and ESP boards act like smart brains that control LEDs, motors, sensors, and smart devices.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos of Arduino UNO, ESP8266, students coding, and simple electronic projects.",
+    "gallery": [
+      {
+        "file": "data/arduino-uno.jpg",
+        "_placeholder": "ADD: Photo of Arduino UNO board",
+        "caption": "Arduino UNO — Beginner friendly microcontroller board",
+        "category": "Components"
+      },
+      {
+        "file": "data/esp8266.jpg",
+        "_placeholder": "ADD: Photo of ESP8266 NodeMCU board",
+        "caption": "ESP8266 — WiFi enabled smart microcontroller",
+        "category": "Components"
+      },
+      {
+        "file": "data/led-blink.gif",
+        "_placeholder": "ADD: LED blinking project photo",
+        "caption": "Microcontroller controlling LED blinking",
+        "category": "Concept"
+      },
+      {
+        "file": "data/smart-home.jpg",
+        "_placeholder": "ADD: Smart home project image",
+        "caption": "Smart home devices use microcontrollers",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/robotics.jpg",
+        "_placeholder": "ADD: Robot controlled by Arduino",
+        "caption": "Robots use microcontrollers as their brain",
+        "category": "Applications"
+      },
+      {
+        "file": "data/student-coding.jpg",
+        "_placeholder": "ADD: Students uploading code to Arduino",
+        "caption": "Students learning coding with Arduino IDE",
+        "category": "Lab"
+      },
+      {
+        "file": "data/traffic-light.jpg",
+        "_placeholder": "ADD: Traffic signal system image",
+        "caption": "Traffic lights are controlled using microcontrollers",
+        "category": "Real Life"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Microcontroller — Small Smart Brain that controls electronics",
+    "Arduino UNO — Beginner friendly programmable board",
+    "ESP8266 / NodeMCU — WiFi enabled microcontroller",
+    "Input Devices — Sensors, buttons, switches",
+    "Output Devices — LED, buzzer, motor",
+    "Programming — Giving instructions to the microcontroller",
+    "Real Life Examples — Washing machine, traffic lights, robots",
+    "USB Cable — Used to upload code into the board"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is a Microcontroller?",
+      "videoId": "BE9SID3icm8",
+      "_note": "Replace with preferred educational video",
+      "desc": "Simple introduction to microcontrollers for beginners."
+    },
+    {
+      "title": "Arduino UNO Explained",
+      "videoId": "nL34zDTPkcs",
+      "desc": "Learn about Arduino UNO board and its parts."
+    },
+    {
+      "title": "ESP8266 NodeMCU Basics",
+      "videoId": "VPw2RC1B9fk",
+      "desc": "Introduction to WiFi based ESP8266 microcontroller."
+    },
+    {
+      "title": "Blink LED with Arduino",
+      "videoId": "fJWR7dBuc18",
+      "desc": "First beginner project using Arduino UNO."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino IDE Download",
+      "url": "https://www.arduino.cc/en/software",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Blink LED using Arduino UNO",
+    "parts": [
+      "Arduino UNO",
+      "USB Cable",
+      "Breadboard",
+      "LED",
+      "220Ω Resistor",
+      "Jumper Wires"
+    ],
+    "steps": [
+      "Connect LED to breadboard",
+      "Connect resistor with LED",
+      "Connect LED to Arduino pin 13",
+      "Connect GND wire",
+      "Open Arduino IDE",
+      "Upload Blink Program",
+      "Watch LED blink ON and OFF"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a Microcontroller?",
+      "options": [
+        "A speaker",
+        "A smart electronic brain",
+        "A battery",
+        "A keyboard"
+      ],
+      "answer": 1,
+      "explanation": "A microcontroller is a tiny smart computer chip that controls electronic devices."
+    },
+    {
+      "q": "Which board is beginner friendly?",
+      "options": [
+        "Arduino UNO",
+        "Monitor",
+        "Printer",
+        "Speaker"
+      ],
+      "answer": 0,
+      "explanation": "Arduino UNO is very beginner friendly and easy to program."
+    },
+    {
+      "q": "What special feature does ESP8266 have?",
+      "options": [
+        "Projector",
+        "WiFi connection",
+        "Camera lens",
+        "Battery charger"
+      ],
+      "answer": 1,
+      "explanation": "ESP8266 can connect to WiFi and create IoT projects."
+    },
+    {
+      "q": "Which software is used to program Arduino UNO?",
+      "options": [
+        "MS Paint",
+        "Arduino IDE",
+        "Chrome",
+        "Calculator"
+      ],
+      "answer": 1,
+      "explanation": "Arduino IDE is used to write and upload code."
+    },
+    {
+      "q": "Which device can be controlled using a microcontroller?",
+      "options": [
+        "LED",
+        "Motor",
+        "Buzzer",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Microcontrollers can control many electronic devices."
+    },
+    {
+      "q": "What is the function of USB cable in Arduino?",
+      "options": [
+        "To wash the board",
+        "To upload code and give power",
+        "To increase sound",
+        "To cool the board"
+      ],
+      "answer": 1,
+      "explanation": "USB cable provides power and uploads code to Arduino."
+    },
+    {
+      "q": "Which real-life system uses microcontrollers?",
+      "options": [
+        "Traffic lights",
+        "Washing machine",
+        "Robots",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Microcontrollers are used in many smart electronic systems."
+    },
+    {
+      "q": "What does a microcontroller follow?",
+      "options": [
+        "Songs",
+        "Programs/Instructions",
+        "Games",
+        "Pictures"
+      ],
+      "answer": 1,
+      "explanation": "Microcontrollers work according to the program uploaded into them."
+    },
+    {
+      "q": "What is an INPUT device?",
+      "options": [
+        "LED",
+        "Motor",
+        "Sensor/Button",
+        "Speaker"
+      ],
+      "answer": 2,
+      "explanation": "Sensors and buttons send information to the microcontroller."
+    },
+    {
+      "q": "What is an OUTPUT device?",
+      "options": [
+        "LED",
+        "Button",
+        "Switch",
+        "Sensor"
+      ],
+      "answer": 0,
+      "explanation": "LED is an output device because it shows results from the microcontroller."
+    },
+    {
+      "q": "What happens after uploading code to Arduino?",
+      "options": [
+        "Board starts following instructions",
+        "Board breaks",
+        "Computer shuts down",
+        "Mouse stops working"
+      ],
+      "answer": 0,
+      "explanation": "After uploading code, Arduino performs the programmed task."
+    },
+    {
+      "q": "What is the nickname of a microcontroller?",
+      "options": [
+        "Electric pipe",
+        "Smart Brain",
+        "Water tank",
+        "Keyboard"
+      ],
+      "answer": 1,
+      "explanation": "Microcontroller is called a smart brain because it controls electronic devices."
+    },
+    {
+      "q": "Which board is commonly used for IoT projects?",
+      "options": [
+        "ESP8266",
+        "Calculator",
+        "Monitor",
+        "Printer"
+      ],
+      "answer": 0,
+      "explanation": "ESP8266 is widely used in IoT because of its WiFi feature."
+    },
+    {
+      "q": "What does UNO mean in Arduino UNO?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Ten"
+      ],
+      "answer": 0,
+      "explanation": "UNO means ONE in Italian."
+    },
+    {
+      "q": "Which activity is best for beginners?",
+      "options": [
+        "LED Blink Project",
+        "Flying drone",
+        "Satellite launch",
+        "Movie editing"
+      ],
+      "answer": 0,
+      "explanation": "LED Blink is the first simple project for learning microcontrollers."
+    }
+  ]
+}

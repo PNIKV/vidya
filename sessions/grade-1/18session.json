@@ -1,0 +1,317 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-18/",
+    "slides_folder": "sessions/session-18/slides/",
+    "images_folder": "sessions/session-18/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-light-dark-sensor",
+  "number": 18,
+  "title": "Light and Dark Sensor",
+  "subtitle": "Observe how light changes electricity!",
+  "date": "Session 18",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FFD54F",
+  "icon": "💡",
+  "tags": [
+    "Sensors",
+    "Electronics",
+    "Light",
+    "STEM"
+  ],
+  "overview": "Students explore how a photoresistor (LDR) reacts to light and darkness. By covering the sensor with a finger, students observe the LED becoming brighter and understand how light sensors are used in real life.",
+  "grades": [
+    1
+  ],
+  "slides": {
+    "pdf": "sessions/session-light-dark-sensor/slides.pdf"
+  },
+  "images": {
+    "_note": "Add actual classroom activity photos, LDR circuits, LEDs glowing, and students testing the sensor.",
+    "gallery": [
+      {
+        "file": "data/ldr-sensor.jpg",
+        "_placeholder": "ADD: Close-up photo of LDR/photoresistor",
+        "caption": "Photoresistor senses light levels",
+        "category": "Components"
+      },
+      {
+        "file": "data/led-bright.jpg",
+        "_placeholder": "ADD: LED glowing brightly in dark condition",
+        "caption": "LED becomes brighter in darkness",
+        "category": "Experiment"
+      },
+      {
+        "file": "data/student-covering-sensor.jpg",
+        "_placeholder": "ADD: Student covering LDR with finger",
+        "caption": "Students testing light and dark sensor behavior",
+        "category": "Lab"
+      },
+      {
+        "file": "data/street-light.jpg",
+        "_placeholder": "ADD: Automatic street light photo",
+        "caption": "Automatic street lights use light sensors",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/mobile-brightness.jpg",
+        "_placeholder": "ADD: Mobile automatic brightness adjustment",
+        "caption": "Phones use light sensors for screen brightness",
+        "category": "Real Life"
+      },
+      {
+        "file": "data/breadboard-ldr.jpg",
+        "_placeholder": "ADD: Breadboard LDR circuit setup",
+        "caption": "Students building LDR sensor circuits",
+        "category": "Lab"
+      },
+      {
+        "file": "data/night-lamp.jpg",
+        "_placeholder": "ADD: Automatic night lamp image",
+        "caption": "Night lamps turn ON automatically in darkness",
+        "category": "Applications"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Light Sensor (LDR / Photoresistor)",
+    "LDR changes resistance based on light",
+    "More light = less resistance",
+    "Less light = more resistance",
+    "LED glows brighter in darkness",
+    "Automatic street lights use LDR sensors",
+    "Mobile phones adjust brightness using light sensors",
+    "Sensors help machines react automatically"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is an LDR Sensor?",
+      "videoId": "gI-qXk7XojA",
+      "_note": "Replace with actual educational YouTube video ID",
+      "desc": "Simple explanation of how a photoresistor works."
+    },
+    {
+      "title": "Automatic Street Light Project",
+      "videoId": "4mX2wZzEytA",
+      "_note": "Replace with actual educational YouTube video ID",
+      "desc": "Demonstration of automatic lights using an LDR sensor."
+    },
+    {
+      "title": "Light Sensor Experiment for Kids",
+      "videoId": "gM7ld_CaYxY",
+      "_note": "Replace with actual educational YouTube video ID",
+      "desc": "Fun experiment showing LED brightness changes with light."
+    },
+    {
+      "title": "How Sensors Work",
+      "videoId": "9xjJ0K7iE8M",
+      "_note": "Replace with actual educational YouTube video ID",
+      "desc": "Introduction to sensors and smart electronics."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad Circuits",
+      "url": "https://www.tinkercad.com/circuits",
+      "icon": "🔗"
+    },
+    {
+      "title": "LDR Sensor Basics",
+      "url": "https://lastminuteengineers.com/lDR-sensor-arduino-tutorial/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Cover the Sensor — Watch the LED Glow!",
+    "parts": [
+      "Arduino UNO",
+      "Breadboard",
+      "LDR / Photoresistor",
+      "LED",
+      "220Ω Resistor",
+      "10KΩ Resistor",
+      "Jumper wires"
+    ],
+    "steps": [
+      "Connect the LDR on the breadboard",
+      "Connect LED with resistor",
+      "Power the circuit using Arduino",
+      "Observe LED brightness in normal light",
+      "Cover the photoresistor with finger",
+      "Watch LED glow brighter in darkness",
+      "Discuss why the LED changes brightness"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does LDR stand for?",
+      "options": [
+        "Light Dependent Resistor",
+        "Light Digital Robot",
+        "Low Dark Reader",
+        "Light Device Relay"
+      ],
+      "answer": 0,
+      "explanation": "LDR means Light Dependent Resistor — its resistance changes with light."
+    },
+    {
+      "q": "What happens when we cover the photoresistor?",
+      "options": [
+        "LED becomes brighter",
+        "LED disappears",
+        "Battery stops",
+        "Wire melts"
+      ],
+      "answer": 0,
+      "explanation": "In darkness, the LED becomes brighter because the LDR resistance changes."
+    },
+    {
+      "q": "An LDR sensor detects:",
+      "options": [
+        "Sound",
+        "Temperature",
+        "Light",
+        "Motion"
+      ],
+      "answer": 2,
+      "explanation": "LDR sensors react to light intensity."
+    },
+    {
+      "q": "Where are light sensors used in real life?",
+      "options": [
+        "Automatic street lights",
+        "Mobile phones",
+        "Night lamps",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Light sensors are used in many smart devices."
+    },
+    {
+      "q": "In bright light, LDR resistance becomes:",
+      "options": [
+        "Higher",
+        "Lower",
+        "Zero always",
+        "Infinite"
+      ],
+      "answer": 1,
+      "explanation": "More light means lower resistance in an LDR."
+    },
+    {
+      "q": "What happens in darkness?",
+      "options": [
+        "LDR resistance increases",
+        "LED disappears",
+        "Battery explodes",
+        "Circuit stops forever"
+      ],
+      "answer": 0,
+      "explanation": "Darkness increases the resistance of the photoresistor."
+    },
+    {
+      "q": "Why do phones use light sensors?",
+      "options": [
+        "To adjust screen brightness automatically",
+        "To make calls only",
+        "To increase battery size",
+        "To charge faster"
+      ],
+      "answer": 0,
+      "explanation": "Phones use light sensors to control brightness automatically."
+    },
+    {
+      "q": "What is the main job of a sensor?",
+      "options": [
+        "To detect changes around it",
+        "To cook food",
+        "To make sounds only",
+        "To replace batteries"
+      ],
+      "answer": 0,
+      "explanation": "Sensors detect environmental changes like light, sound, or temperature."
+    },
+    {
+      "q": "Which component glows in this activity?",
+      "options": [
+        "Motor",
+        "LED",
+        "Capacitor",
+        "Switch"
+      ],
+      "answer": 1,
+      "explanation": "The LED changes brightness during the experiment."
+    },
+    {
+      "q": "Automatic street lights turn ON during:",
+      "options": [
+        "Daytime",
+        "Rain only",
+        "Darkness or night",
+        "Morning only"
+      ],
+      "answer": 2,
+      "explanation": "Street lights use LDR sensors to detect darkness."
+    },
+    {
+      "q": "True or False: LDR sensors can detect sound.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "LDR sensors detect light, not sound."
+    },
+    {
+      "q": "What covers the sensor in the activity?",
+      "options": [
+        "Paper",
+        "Finger",
+        "Bottle",
+        "Water"
+      ],
+      "answer": 1,
+      "explanation": "Students use their finger to block light from reaching the sensor."
+    },
+    {
+      "q": "LED brightness changes because:",
+      "options": [
+        "The sensor reacts to light changes",
+        "The battery jumps",
+        "The breadboard moves",
+        "The wires disappear"
+      ],
+      "answer": 0,
+      "explanation": "The LDR changes resistance based on light levels."
+    },
+    {
+      "q": "Which of these is a smart use of light sensors?",
+      "options": [
+        "Automatic garden lights",
+        "Phone brightness control",
+        "Automatic lamps",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Light sensors are widely used in smart systems."
+    },
+    {
+      "q": "What did students observe in this experiment?",
+      "options": [
+        "Light affects electricity",
+        "Water changes color",
+        "Plastic melts",
+        "Battery becomes ice"
+      ],
+      "answer": 0,
+      "explanation": "Students learned that light changes how the circuit behaves."
+    }
+  ]
+}

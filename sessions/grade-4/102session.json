@@ -1,0 +1,277 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-2/",
+    "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-2/images/   ← Put activity photos, slide examples here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-2",
+  "number": 2,
+  "title": "Slide Design Principles",
+  "subtitle": "make your presentation beautiful & clear!",
+  "date": "Session 02",
+  "duration": "1.5 Hours",
+  "phase": "Presentation Skills",
+  "color": "#FF9800",
+  "icon": "🎨",
+  "tags": [
+    "Presentation",
+    "Design",
+    "Creativity",
+    "Communication"
+  ],
+  "overview": "This session introduces students to the basic principles of slide design. Students learn how to create attractive, readable, and engaging presentations using colors, fonts, images, alignment, and minimal text.",
+  "grades": [
+    4
+  ],
+  "slides": {
+    "pdf": "sessions/session-2/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of good and bad slide examples, student presentations, font examples, color combinations, and classroom activities.",
+    "gallery": [
+      {
+        "file": "data/good-slide-example.jpg",
+        "_placeholder": "ADD: Example of a clean and simple slide",
+        "caption": "A clean slide with less text and clear visuals",
+        "category": "Examples"
+      },
+      {
+        "file": "data/bad-slide-example.jpg",
+        "_placeholder": "ADD: Example of a crowded slide",
+        "caption": "Too much text makes slides difficult to read",
+        "category": "Examples"
+      },
+      {
+        "file": "data/font-example.jpg",
+        "_placeholder": "ADD: Different font style examples",
+        "caption": "Simple fonts improve readability",
+        "category": "Typography"
+      },
+      {
+        "file": "data/color-combination.jpg",
+        "_placeholder": "ADD: Good color palette example",
+        "caption": "Good color contrast helps visibility",
+        "category": "Design"
+      },
+      {
+        "file": "data/alignment-example.jpg",
+        "_placeholder": "ADD: Alignment demonstration slide",
+        "caption": "Proper alignment makes slides organized",
+        "category": "Design"
+      },
+      {
+        "file": "data/student-presentation.jpg",
+        "_placeholder": "ADD: Students presenting slides",
+        "caption": "Students practicing presentation skills",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Keep slides simple and clean",
+    "Use large readable fonts",
+    "Limit text — use keywords only",
+    "Choose proper color combinations",
+    "Use high-quality images",
+    "Maintain alignment and spacing",
+    "One idea per slide",
+    "Use animations carefully",
+    "Visual hierarchy — title bigger than content",
+    "Consistency in design and theme"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How to Make Beautiful PowerPoint Slides",
+      "videoId": "KBTvPpGmNc4",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Learn the basics of creating attractive presentation slides."
+    },
+    {
+      "title": "Presentation Design Basics",
+      "videoId": "Iwpi1Lm6dFo",
+      "desc": "Understanding fonts, colors, and layout for presentations."
+    },
+    {
+      "title": "Good vs Bad Slide Design",
+      "videoId": "SwsW9V59WvQ",
+      "desc": "Examples showing effective and ineffective slide design."
+    },
+    {
+      "title": "PowerPoint Tips for Beginners",
+      "videoId": "XF34-Wu6qWU",
+      "desc": "Simple tips to improve presentation quality."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Canva Presentation Templates",
+      "url": "https://www.canva.com/presentations/templates/",
+      "icon": "🎨"
+    },
+    {
+      "title": "Google Slides",
+      "url": "https://slides.google.com",
+      "icon": "📑"
+    },
+    {
+      "title": "PowerPoint Design Ideas",
+      "url": "https://support.microsoft.com/powerpoint",
+      "icon": "💡"
+    }
+  ],
+  "activity": {
+    "title": "Design Your Own Presentation Slide",
+    "parts": [
+      "Computer or Laptop",
+      "PowerPoint / Google Slides / Canva",
+      "Internet connection",
+      "Sample images"
+    ],
+    "steps": [
+      "Open PowerPoint or Google Slides",
+      "Create a title slide on your favorite topic",
+      "Use only 5–6 keywords on the slide",
+      "Add one relevant image",
+      "Choose matching colors and readable fonts",
+      "Align all text properly",
+      "Present your slide to classmates",
+      "Discuss what makes the slide attractive"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the most important rule in slide design?",
+      "options": [
+        "Add maximum text",
+        "Keep slides simple and clear",
+        "Use many animations",
+        "Use all font styles"
+      ],
+      "answer": 1,
+      "explanation": "Simple and clean slides are easier to understand and look professional."
+    },
+    {
+      "q": "Which font style is easiest to read in presentations?",
+      "options": [
+        "Decorative fonts",
+        "Handwriting fonts",
+        "Simple fonts like Arial or Calibri",
+        "Tiny fonts"
+      ],
+      "answer": 2,
+      "explanation": "Simple fonts improve readability for the audience."
+    },
+    {
+      "q": "How much text should a slide contain?",
+      "options": [
+        "Entire paragraphs",
+        "Only keywords and short points",
+        "No text at all",
+        "Long essays"
+      ],
+      "answer": 1,
+      "explanation": "Slides should contain short points instead of long paragraphs."
+    },
+    {
+      "q": "Why are images used in presentations?",
+      "options": [
+        "To confuse the audience",
+        "To make slides heavy",
+        "To explain ideas visually",
+        "To replace the title"
+      ],
+      "answer": 2,
+      "explanation": "Images help people understand concepts quickly and make slides interesting."
+    },
+    {
+      "q": "What is a good color combination for readability?",
+      "options": [
+        "Yellow text on white background",
+        "Dark text on light background",
+        "Light gray text on white",
+        "Red text on orange background"
+      ],
+      "answer": 1,
+      "explanation": "Dark text on a light background provides good contrast and readability."
+    },
+    {
+      "q": "What does alignment mean in slide design?",
+      "options": [
+        "Adding animations",
+        "Placing items neatly in line",
+        "Changing slide color",
+        "Increasing font size"
+      ],
+      "answer": 1,
+      "explanation": "Alignment keeps slides organized and visually balanced."
+    },
+    {
+      "q": "Why should animations be used carefully?",
+      "options": [
+        "Too many animations distract the audience",
+        "Animations make slides faster",
+        "Animations remove text",
+        "Animations increase internet speed"
+      ],
+      "answer": 0,
+      "explanation": "Excessive animations can distract viewers from the main message."
+    },
+    {
+      "q": "What is visual hierarchy?",
+      "options": [
+        "Making all text same size",
+        "Using bigger titles and smaller content",
+        "Adding many colors",
+        "Using random images"
+      ],
+      "answer": 1,
+      "explanation": "Visual hierarchy helps viewers identify important information quickly."
+    },
+    {
+      "q": "What should be avoided in presentations?",
+      "options": [
+        "Clear images",
+        "Readable fonts",
+        "Crowded slides with too much information",
+        "Simple layouts"
+      ],
+      "answer": 2,
+      "explanation": "Too much content makes slides difficult to read and understand."
+    },
+    {
+      "q": "Which tool can be used to create presentations?",
+      "options": [
+        "Google Slides",
+        "Canva",
+        "PowerPoint",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "All these tools can be used to create beautiful presentations."
+    },
+    {
+      "q": "What is the benefit of using consistent colors and fonts?",
+      "options": [
+        "Slides look messy",
+        "Slides look professional and organized",
+        "Slides become confusing",
+        "Slides load slowly"
+      ],
+      "answer": 1,
+      "explanation": "Consistency improves the professional appearance of presentations."
+    },
+    {
+      "q": "What is better for a presentation slide?",
+      "options": [
+        "One idea per slide",
+        "Many ideas on one slide",
+        "No images",
+        "Tiny text"
+      ],
+      "answer": 0,
+      "explanation": "One idea per slide keeps the audience focused."
+    }
+  ]
+}
