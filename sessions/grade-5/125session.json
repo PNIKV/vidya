@@ -1,0 +1,319 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put accessibility activity photos and screenshots here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Accessibility",
+  "subtitle": "technology for everyone!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#00B894",
+  "icon": "♿",
+  "tags": [
+    "Computer",
+    "Accessibility",
+    "Digital Skills",
+    "Inclusive Technology"
+  ],
+  "overview": "This session introduces students to Accessibility features in computers and mobile devices. Students will learn how technology helps people with different abilities use computers easily and independently.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of accessibility tools, classroom activities, and assistive technology examples.",
+    "gallery": [
+      {
+        "file": "data/accessibility-settings.jpg",
+        "_placeholder": "ADD: Screenshot of accessibility settings menu",
+        "caption": "Accessibility Settings in Windows",
+        "category": "Concept"
+      },
+      {
+        "file": "data/screen-reader.jpg",
+        "_placeholder": "ADD: Screenshot of screen reader tool",
+        "caption": "Screen Reader helps users hear text",
+        "category": "Accessibility Tools"
+      },
+      {
+        "file": "data/magnifier-tool.jpg",
+        "_placeholder": "ADD: Screenshot of magnifier tool",
+        "caption": "Magnifier helps enlarge text and images",
+        "category": "Accessibility Tools"
+      },
+      {
+        "file": "data/on-screen-keyboard.jpg",
+        "_placeholder": "ADD: Screenshot of on-screen keyboard",
+        "caption": "On-Screen Keyboard for easier typing",
+        "category": "Accessibility Tools"
+      },
+      {
+        "file": "data/high-contrast.jpg",
+        "_placeholder": "ADD: Screenshot of high contrast mode",
+        "caption": "High Contrast Mode improves visibility",
+        "category": "Display"
+      },
+      {
+        "file": "data/student-activity.jpg",
+        "_placeholder": "ADD: Students using accessibility features",
+        "caption": "Students exploring accessibility settings",
+        "category": "Activity"
+      },
+      {
+        "file": "data/voice-typing.jpg",
+        "_placeholder": "ADD: Screenshot of voice typing feature",
+        "caption": "Voice Typing converts speech into text",
+        "category": "Accessibility Tools"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Accessibility?",
+    "Why Accessibility is Important",
+    "Accessibility Features in Windows",
+    "Screen Reader and Narrator",
+    "Magnifier Tool for Zooming",
+    "On-Screen Keyboard",
+    "Voice Typing and Speech Recognition",
+    "High Contrast Display Mode",
+    "Closed Captions and Audio Assistance",
+    "Technology for Inclusive Learning"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Introduction to Accessibility",
+      "videoId": "D8kP3M9xL2A",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Learn how accessibility makes technology easier for everyone."
+    },
+    {
+      "title": "Windows Accessibility Features",
+      "videoId": "Q7mN5T1xR8B",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Explore built-in accessibility tools in Windows."
+    },
+    {
+      "title": "How Screen Readers Work",
+      "videoId": "P4xL9M2tK6S",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Understand how visually impaired users interact with computers."
+    },
+    {
+      "title": "Voice Typing Tutorial",
+      "videoId": "W2mR8D4xP7Q",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Learn speech-to-text typing using accessibility tools."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft Accessibility Support",
+      "url": "https://support.microsoft.com/accessibility",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Accessibility Learning",
+      "url": "https://www.google.com/accessibility/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Computer Basics for Accessibility",
+      "url": "https://edu.gcfglobal.org/en/topics/accessibility/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Explore Accessibility Features",
+    "parts": [
+      "Computer/Laptop",
+      "Windows Operating System",
+      "Headphones/Speakers",
+      "Microphone"
+    ],
+    "steps": [
+      "Open Accessibility Settings using Windows Settings",
+      "Turn ON Magnifier and zoom the screen",
+      "Enable Narrator or Screen Reader",
+      "Try typing using On-Screen Keyboard",
+      "Use Voice Typing to write a sentence",
+      "Enable High Contrast Mode",
+      "Adjust text size for better readability",
+      "Discuss how these tools help different users"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is Accessibility in technology?",
+      "options": [
+        "Playing games",
+        "Making technology usable for everyone",
+        "Charging computers",
+        "Downloading videos"
+      ],
+      "answer": 1,
+      "explanation": "Accessibility helps all users use technology easily, including people with disabilities."
+    },
+    {
+      "q": "Which tool reads text aloud on screen?",
+      "options": [
+        "Calculator",
+        "Paint",
+        "Screen Reader",
+        "Camera"
+      ],
+      "answer": 2,
+      "explanation": "Screen Readers help visually impaired users hear screen content."
+    },
+    {
+      "q": "What does Magnifier do?",
+      "options": [
+        "Makes sound louder",
+        "Zooms text and images",
+        "Deletes files",
+        "Changes wallpaper"
+      ],
+      "answer": 1,
+      "explanation": "Magnifier enlarges items on the screen for easier viewing."
+    },
+    {
+      "q": "Which feature helps users type without a physical keyboard?",
+      "options": [
+        "Voice Recorder",
+        "On-Screen Keyboard",
+        "Paint",
+        "Speaker"
+      ],
+      "answer": 1,
+      "explanation": "On-Screen Keyboard allows typing using mouse or touch."
+    },
+    {
+      "q": "What does High Contrast Mode improve?",
+      "options": [
+        "Internet speed",
+        "Visibility and readability",
+        "Battery charging",
+        "Speaker sound"
+      ],
+      "answer": 1,
+      "explanation": "High Contrast makes text easier to see."
+    },
+    {
+      "q": "Which feature converts speech into text?",
+      "options": [
+        "Voice Typing",
+        "Calculator",
+        "Zoom",
+        "Clipboard"
+      ],
+      "answer": 0,
+      "explanation": "Voice Typing allows users to speak instead of typing."
+    },
+    {
+      "q": "Why are accessibility features important?",
+      "options": [
+        "To waste time",
+        "To help all users use technology comfortably",
+        "To increase computer weight",
+        "To decorate computers"
+      ],
+      "answer": 1,
+      "explanation": "Accessibility features support inclusive and equal technology access."
+    },
+    {
+      "q": "Which accessibility feature helps hearing-impaired users?",
+      "options": [
+        "Closed Captions",
+        "Wallpaper",
+        "Mouse Pointer",
+        "Recycle Bin"
+      ],
+      "answer": 0,
+      "explanation": "Closed Captions display spoken words as text."
+    },
+    {
+      "q": "Where can accessibility settings usually be found?",
+      "options": [
+        "Settings Menu",
+        "Recycle Bin",
+        "Taskbar only",
+        "Calculator"
+      ],
+      "answer": 0,
+      "explanation": "Accessibility options are available in device settings."
+    },
+    {
+      "q": "What is the purpose of Narrator?",
+      "options": [
+        "To play music",
+        "To read screen content aloud",
+        "To open games",
+        "To increase internet speed"
+      ],
+      "answer": 1,
+      "explanation": "Narrator helps users by speaking text and buttons aloud."
+    },
+    {
+      "q": "Which device is useful for voice typing?",
+      "options": [
+        "Speaker only",
+        "Microphone",
+        "Printer",
+        "Scanner"
+      ],
+      "answer": 1,
+      "explanation": "A microphone captures voice for speech-to-text features."
+    },
+    {
+      "q": "What does inclusive technology mean?",
+      "options": [
+        "Technology only for experts",
+        "Technology designed for everyone",
+        "Technology for gaming only",
+        "Technology without internet"
+      ],
+      "answer": 1,
+      "explanation": "Inclusive technology supports users with different needs and abilities."
+    },
+    {
+      "q": "Which feature can help users with low vision?",
+      "options": [
+        "Magnifier",
+        "Paint",
+        "Calculator",
+        "Taskbar"
+      ],
+      "answer": 0,
+      "explanation": "Magnifier enlarges content for better visibility."
+    },
+    {
+      "q": "What should students learn about accessibility?",
+      "options": [
+        "Respect and support all users",
+        "Ignore accessibility tools",
+        "Only use games",
+        "Delete system settings"
+      ],
+      "answer": 0,
+      "explanation": "Accessibility teaches inclusion, empathy, and equal access to technology."
+    },
+    {
+      "q": "Which accessibility feature helps reduce eye strain?",
+      "options": [
+        "Dark Mode or High Contrast",
+        "Speaker volume",
+        "Calculator",
+        "USB Port"
+      ],
+      "answer": 0,
+      "explanation": "Dark Mode and High Contrast can improve comfort while viewing screens."
+    }
+  ]
+}

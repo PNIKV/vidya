@@ -1,0 +1,180 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-debug-improve/",
+    "slides_folder": "sessions/session-debug-improve/slides/",
+    "images_folder": "sessions/session-debug-improve/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-debug-improve",
+  "number": 7,
+  "title": "Code Detectives: Debug & Improve!",
+  "subtitle": "find the bug, fix the logic, level up!",
+  "date": "Session 07",
+  "duration": "1 Hours",
+  "phase": "Problem Solving",
+  "color": "#E74C3C",
+  "icon": "🪲",
+  "tags": [
+    "Technology",
+    "Engineering",
+    "Logic",
+    "Critical Thinking"
+  ],
+  "overview": "Students will learn the systematic art of troubleshooting and optimization by tracking down syntax errors, fixing logical bugs in broken code blocks, and implementing performance improvements.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-debug-improve/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — red compilation error screens, code comparison charts, whiteboard debugging workflows.",
+    "gallery": [
+      {
+        "file": "data/syntax-error-console.jpg",
+        "_placeholder": "ADD: Screenshot of an IDE compiler console with a bright red syntax error line",
+        "caption": "The Red Alert — Deciphering compiler errors and missing semicolons!",
+        "category": "Components"
+      },
+      {
+        "file": "data/logic-bug-flow.jpg",
+        "_placeholder": "ADD: Whiteboard diagram of an infinite loop or broken conditional branch logic",
+        "caption": "Logic Trap — When code runs perfectly but does the wrong thing!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/serial-print-debugging.jpg",
+        "_placeholder": "ADD: Screenshot of debugging using strategically placed print statements",
+        "caption": "X-Ray Vision — Using Serial.print() to peek inside variable values live",
+        "category": "Components"
+      },
+      {
+        "file": "data/student-code-review.jpg",
+        "_placeholder": "ADD: Photo of two students conducting a peer review code hunt side-by-side",
+        "caption": "Code Review — Working together to spot bugs hidden in plain sight",
+        "category": "Lab"
+      },
+      {
+        "file": "data/optimized-code-blocks.png",
+        "_placeholder": "ADD: Graphic showing messy nested blocks simplified into clean clean logic steps",
+        "caption": "Refactoring — Cleaning up messy code blocks to make them lightning fast!",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "The Bug Origin Story — Grace Hopper's Moth | How a real moth stuck in a 1947 relay station named a software movement",
+    "Syntax Errors — The Spelling Bee | Broken rules, unclosed brackets, and missing semicolons that make compilers crash",
+    "Logical Bugs — The Misdirected Map | Code that compiles and runs smoothly, but achieves the completely wrong real-world output",
+    "Print Debugging — The Flashlight Trick | Dropping visual status alerts throughout your logic line to trace variable value shifts",
+    "Refactoring — Room Organization | Cleaning up and streamlining repetitive lines without altering the program's primary goal",
+    "Code Comments — Future Letters | Writing clear documentation tags so your future self can understand what your build achieves"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Where Did the Term 'Computer Bug' Actually Come From?",
+      "videoId": "7K6_mBv7KRA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "The historical context of early electronics computing machines and the literal bugs that clogged up old relay cards."
+    },
+    {
+      "title": "How to Read Scary Compiler Error Messages",
+      "videoId": "OlDovb6Ew1U",
+      "desc": "A survival guide to translating confusing syntax console warnings into easy actionable adjustments."
+    },
+    {
+      "title": "The Strategic Art of Refactoring Code Base Layouts",
+      "videoId": "vVaZp_9_G8A",
+      "desc": "See how elite engineers take highly complex, messy spaghetti scripts and condense them down elegantly."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Interactive Broken Code Lab Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Code Hunt — Structural Problem Solving Exercises",
+      "url": "https://www.codehunt.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Grand Bug Hunt Challenge",
+    "parts": [
+      "Workstation computers loaded with pre-broken software project templates",
+      "Red and Green debugging checklist tracker cards",
+      "A software project script containing 3 hidden syntax traps and 2 logic bugs",
+      "Reference sheet containing standard programming rules syntax mappings"
+    ],
+    "steps": [
+      "Open up the buggy challenge file in your IDE—try compiling it immediately and watch the errors pile up!",
+      "Locate the first error line code row flagged by the compiler console panel.",
+      "Hunt down and correct the missing punctuation markers (unmatched braces, missing semicolons, or misspelled variables).",
+      "Once compilation succeeds, execute the software and observe why the system behaves incorrectly (e.g., a green LED turns on instead of a red alarm).",
+      "Insert temporary print status code blocks right above the conditional logic checks to reveal active variables values on screen.",
+      "Fix the mathematical sign error or inverted logic gates causing the structural malfunction.",
+      "Consolidate repetitive code clusters into streamlined execution steps, leaving descriptive comments over your fixes.",
+      "Challenge: Swap files with a nearby peer and test if your updated scripts can survive edge-case inputs without glitching!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the critical difference between a SYNTAX error and a LOGICAL bug?",
+      "options": [
+        "Syntax errors happen in hardware; logical bugs happen inside cloud setups",
+        "Syntax errors break code punctuation rules so it won't run; logical bugs compile fine but output wrong results",
+        "Syntax errors slow down execution speeds; logical bugs instantly delete files from hard drives",
+        "There is no difference; both problems are fixed by turning off the wall switch"
+      ],
+      "answer": 1,
+      "explanation": "Syntax errors are grammar violations that prevent your script from turning into an executable file. Logical bugs mean your script structure runs perfectly but follows a broken plan (like instructing a robot to turn left when it should turn right)."
+    },
+    {
+      "q": "Why do software developers drop text print lines like 'Serial.println(variable)' throughout their workspace scripts when troubleshooting?",
+      "options": [
+        "To make the final execution display screen colorful and interesting to watch",
+        "To spy inside variable changes real-time, verifying exactly where computational logic gets off-track",
+        "To clear out cache files stored inside processing units automatically",
+        "To add automated comments that explain what lines achieve"
+      ],
+      "answer": 1,
+      "explanation": "Printing variables out is like using a flashlight inside your code! It shows you the exact value of a sensor or variable at any given step, revealing where calculations break."
+    },
+    {
+      "q": "What does the process of 'Refactoring' code imply?",
+      "options": [
+        "Completely erasing an entire project and rewriting it from absolute scratch",
+        "Changing the core behavior of your program so it does something completely different",
+        "Cleaning up and organizing code structure to make it cleaner and more efficient without altering how it works",
+        "Encrypting text files with secure passcode layers so others cannot open them"
+      ],
+      "answer": 2,
+      "explanation": "Refactoring is like tidying your bedroom! You aren't changing what house you live in; you're just organizing layout arrays so things run smoothly, efficiently, and are easy to read."
+    },
+    {
+      "q": "If your program requires a sensor threshold check to trigger only when temperature values exceed 30 degrees, which line represents a fixed and corrected setup?",
+      "options": [
+        "if (temperature < 30) { triggerAlarm(); }",
+        "if (temperature == 30) { triggerAlarm(); }",
+        "if (temperature > 30) { triggerAlarm(); }",
+        "if (temperature = 30) { triggerAlarm(); }"
+      ],
+      "answer": 2,
+      "explanation": "The 'greater than' sign (>) correctly flags conditions rising above 30. Option 4 uses a single (=) which mistakenly reassigns numbers instead of comparing them!"
+    },
+    {
+      "q": "What is considered a best practice when writing code comments in a complex workspace setup?",
+      "options": [
+        "Write a comment on every single line describing what a basic bracket does",
+        "Leave vague inside joke notes that only you understand",
+        "Write concise notes explaining the 'why' behind complex logic branches so others can safely update it later",
+        "Avoid using comments entirely because they slow down execution performance on microcontrollers"
+      ],
+      "answer": 2,
+      "explanation": "Comments don't affect computer speed at all—the compiler ignores them. They exist as human signposts to help teammates (and your future self) understand complex engineering blocks easily."
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Debugging Techniques",
+  "subtitle": "Find Bugs, Fix Problems!",
+  "date": "Session 01",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#FF6B35",
+  "icon": "🐞",
+  "tags": [
+    "Programming",
+    "Problem Solving",
+    "Coding",
+    "Computational Thinking"
+  ],
+  "overview": "This session introduces students to debugging techniques used in programming. Students learn how to identify, understand, and fix errors in programs through fun activities and logical thinking exercises.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — students finding mistakes in code, classroom activities, debugging games, whiteboard examples, teamwork photos.",
+    "gallery": [
+      {
+        "file": "data/debugging-code.jpg",
+        "_placeholder": "ADD: Students checking code for mistakes",
+        "caption": "Debugging means finding and fixing errors",
+        "category": "Concept"
+      },
+      {
+        "file": "data/bug-fixing.jpg",
+        "_placeholder": "ADD: Teacher explaining coding mistakes",
+        "caption": "Every programmer fixes bugs!",
+        "category": "Classroom"
+      },
+      {
+        "file": "data/error-example.jpg",
+        "_placeholder": "ADD: Whiteboard example of syntax error",
+        "caption": "Small mistakes can stop a program",
+        "category": "Learning"
+      },
+      {
+        "file": "data/team-debugging.jpg",
+        "_placeholder": "ADD: Students working together to solve bugs",
+        "caption": "Teamwork helps in debugging",
+        "category": "Activity"
+      },
+      {
+        "file": "data/debug-game.jpg",
+        "_placeholder": "ADD: Students playing debugging challenge game",
+        "caption": "Find the hidden bug challenge!",
+        "category": "Fun Activity"
+      },
+      {
+        "file": "data/computer-lab.jpg",
+        "_placeholder": "ADD: Students testing code in computer lab",
+        "caption": "Testing programs step by step",
+        "category": "Lab"
+      },
+      {
+        "file": "data/fixed-program.png",
+        "_placeholder": "ADD: Successful program after debugging",
+        "caption": "Debugging makes programs work correctly",
+        "category": "Success"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Debugging? — Finding and fixing errors in a program",
+    "What is a Bug? — Mistakes in coding",
+    "Types of Errors — Syntax Error, Logical Error, Runtime Error",
+    "Reading Error Messages Carefully",
+    "Testing Programs Step by Step",
+    "Using Print Statements to Check Output",
+    "Importance of Patience in Coding",
+    "Problem Solving and Logical Thinking"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is Debugging?",
+      "videoId": "gJzT9eICG0I",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Simple explanation of debugging and coding mistakes for beginners."
+    },
+    {
+      "title": "Types of Programming Errors",
+      "videoId": "Y9ScxCemsPM",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn about syntax, logical, and runtime errors."
+    },
+    {
+      "title": "How Programmers Fix Bugs",
+      "videoId": "8mAITcNt710",
+      "desc": "Fun introduction to debugging techniques."
+    },
+    {
+      "title": "Coding Mistakes and Solutions",
+      "videoId": "xk4_1vDrzzo",
+      "desc": "Understanding common coding mistakes and how to solve them."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Scratch Coding Platform",
+      "url": "https://scratch.mit.edu/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Code.org Debugging Activities",
+      "url": "https://code.org/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Online Compiler",
+      "url": "https://www.online-python.com/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Find the Bug Challenge",
+    "parts": [
+      "Printed code examples",
+      "Markers",
+      "Computer or laptop",
+      "Whiteboard",
+      "Debugging worksheet"
+    ],
+    "steps": [
+      "Teacher gives students a simple program with mistakes",
+      "Students read the code carefully",
+      "Find syntax or logical errors",
+      "Discuss mistakes with teammates",
+      "Correct the errors step by step",
+      "Run the corrected program and test output"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is Debugging?",
+      "options": [
+        "Creating games",
+        "Finding and fixing errors in a program",
+        "Drawing pictures",
+        "Typing fast"
+      ],
+      "answer": 1,
+      "explanation": "Debugging means identifying and correcting mistakes in programs."
+    },
+    {
+      "q": "What is called a BUG in programming?",
+      "options": [
+        "A computer mouse",
+        "A mistake or error in code",
+        "A keyboard shortcut",
+        "A type of monitor"
+      ],
+      "answer": 1,
+      "explanation": "A bug is an error or mistake in a program."
+    },
+    {
+      "q": "Which error happens because of wrong spelling or missing symbols?",
+      "options": [
+        "Syntax Error",
+        "Logical Error",
+        "Drawing Error",
+        "Internet Error"
+      ],
+      "answer": 0,
+      "explanation": "Syntax errors happen when coding rules are broken."
+    },
+    {
+      "q": "Which error gives wrong output even when the program runs?",
+      "options": [
+        "Logical Error",
+        "Syntax Error",
+        "Hardware Error",
+        "Typing Error"
+      ],
+      "answer": 0,
+      "explanation": "Logical errors make programs give incorrect results."
+    },
+    {
+      "q": "What should programmers do first when they see an error?",
+      "options": [
+        "Delete everything",
+        "Read the error message carefully",
+        "Turn off the computer",
+        "Ignore the error"
+      ],
+      "answer": 1,
+      "explanation": "Error messages help programmers understand the problem."
+    },
+    {
+      "q": "What is a Runtime Error?",
+      "options": [
+        "An error while the program is running",
+        "An error in drawing",
+        "A typing style",
+        "A hardware cable"
+      ],
+      "answer": 0,
+      "explanation": "Runtime errors occur during program execution."
+    },
+    {
+      "q": "Why do programmers test programs step by step?",
+      "options": [
+        "To waste time",
+        "To find mistakes easily",
+        "To make computers slow",
+        "To color the screen"
+      ],
+      "answer": 1,
+      "explanation": "Step-by-step testing helps locate errors quickly."
+    },
+    {
+      "q": "Which tool helps check values during debugging?",
+      "options": [
+        "Print statement",
+        "Paint brush",
+        "Speaker",
+        "Scanner"
+      ],
+      "answer": 0,
+      "explanation": "Print statements help programmers see outputs and values."
+    },
+    {
+      "q": "Debugging improves:",
+      "options": [
+        "Coding and problem-solving skills",
+        "Sleeping habits",
+        "Sports skills only",
+        "Drawing only"
+      ],
+      "answer": 0,
+      "explanation": "Debugging develops logical thinking and coding skills."
+    },
+    {
+      "q": "What should students do if a program does not work?",
+      "options": [
+        "Panic immediately",
+        "Check the code carefully",
+        "Break the computer",
+        "Close the notebook"
+      ],
+      "answer": 1,
+      "explanation": "Careful checking helps identify mistakes."
+    },
+    {
+      "q": "Why is patience important in debugging?",
+      "options": [
+        "Because bugs can take time to fix",
+        "Because computers sleep",
+        "Because coding is boring",
+        "Because internet is slow"
+      ],
+      "answer": 0,
+      "explanation": "Finding errors sometimes requires careful thinking."
+    },
+    {
+      "q": "Which of these is NOT a type of programming error?",
+      "options": [
+        "Syntax Error",
+        "Logical Error",
+        "Runtime Error",
+        "Lunch Error"
+      ],
+      "answer": 3,
+      "explanation": "Lunch Error is not a programming error type."
+    },
+    {
+      "q": "What happens after fixing bugs?",
+      "options": [
+        "Program works correctly",
+        "Computer breaks",
+        "Keyboard disappears",
+        "Screen turns off"
+      ],
+      "answer": 0,
+      "explanation": "Debugging helps programs run properly."
+    },
+    {
+      "q": "Who performs debugging?",
+      "options": [
+        "Only robots",
+        "Programmers and students",
+        "Drivers only",
+        "Doctors only"
+      ],
+      "answer": 1,
+      "explanation": "Anyone who writes code may need debugging."
+    },
+    {
+      "q": "What did students learn from the Find the Bug Challenge?",
+      "options": [
+        "Mistakes can be solved step by step",
+        "Computers never make mistakes",
+        "Coding is impossible",
+        "Errors should be ignored"
+      ],
+      "answer": 0,
+      "explanation": "Debugging teaches problem-solving and careful thinking."
+    }
+  ]
+}

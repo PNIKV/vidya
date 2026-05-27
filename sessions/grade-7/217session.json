@@ -1,0 +1,195 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/",
+        "images_folder": "sessions/session-1/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-217",
+    "number": 217,
+    "title": "Auto Gate using Servo + HC-SR04",
+    "subtitle": "Smart gate opens automatically!",
+    "date": "Session 217",
+    "duration": "1 Hour",
+    "phase": "Robotics",
+    "color": "#FF8C42",
+    "icon": "🚧",
+    "tags": [
+        "Arduino",
+        "Robotics",
+        "Sensors",
+        "Automation"
+    ],
+    "overview": "Students will build an automatic gate system using an ultrasonic sensor and servo motor. When an object comes within 10cm, the gate opens automatically. When the object moves away, the gate closes.",
+    "grades": [
+        5,
+        6,
+        7
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add actual project images from the session",
+        "gallery": [
+            {
+                "file": "data/servo-motor.gif",
+                "caption": "Servo motor rotates the gate arm",
+                "category": "Components"
+            },
+            {
+                "file": "data/hcsr04.jpg",
+                "caption": "HC-SR04 ultrasonic distance sensor",
+                "category": "Components"
+            },
+            {
+                "file": "data/arduino-uno.jpg",
+                "caption": "Arduino UNO controls the system",
+                "category": "Components"
+            },
+            {
+                "file": "data/jumper-wires.jpg",
+                "caption": "Jumper wires used for connections",
+                "category": "Components"
+            },
+            {
+                "file": "data/breadboard.jpg",
+                "caption": "Breadboard setup for the auto gate circuit",
+                "category": "Lab"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is automation?",
+        "How ultrasonic sensors measure distance",
+        "Servo motor angle control",
+        "Object detection using HC-SR04",
+        "Using Arduino to control motion",
+        "Automatic gate systems in real life"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "HC-SR04 Ultrasonic Sensor Tutorial",
+            "videoId": "ZejQOX69K5M",
+            "desc": "Learn how the ultrasonic sensor detects distance."
+        },
+        {
+            "title": "Servo Motor with Arduino",
+            "videoId": "PkgBlYdpbgc",
+            "desc": "Understanding servo motor movement using Arduino."
+        },
+        {
+            "title": "Automatic Gate Project",
+            "videoId": "6fVbJbNPrEU",
+            "desc": "Complete smart gate automation project."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Arduino Official Website",
+            "url": "https://www.arduino.cc/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Wokwi Arduino Simulator",
+            "url": "https://wokwi.com/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Build an Auto Gate System",
+        "parts": [
+            "Arduino UNO",
+            "HC-SR04 Ultrasonic Sensor",
+            "Servo Motor SG90",
+            "Breadboard",
+            "Jumper Wires",
+            "USB Cable"
+        ],
+        "connections": [
+            "HC-SR04 VCC → Arduino 5V",
+            "HC-SR04 GND → Arduino GND",
+            "HC-SR04 TRIG → Pin 9",
+            "HC-SR04 ECHO → Pin 10",
+            "Servo Signal → Pin 6",
+            "Servo VCC → 5V",
+            "Servo GND → GND"
+        ],
+        "steps": [
+            "Connect the ultrasonic sensor to Arduino",
+            "Connect the servo motor",
+            "Upload the Arduino code",
+            "Place an object near the sensor",
+            "When object comes within 10cm → gate opens",
+            "Move object away → gate closes"
+        ],
+        "logic": {
+            "distance_condition": "distance <= 10cm",
+            "action_open": "Servo rotates to 90°",
+            "action_close": "Servo returns to 0°"
+        }
+    },
+    "code": {
+        "language": "Arduino",
+        "file": "auto_gate.ino",
+        "snippet": "#include <Servo.h>\n\nServo gate;\n\nconst int trigPin = 9;\nconst int echoPin = 10;\n\nlong duration;\nint distance;\n\nvoid setup() {\n  pinMode(trigPin, OUTPUT);\n  pinMode(echoPin, INPUT);\n\n  gate.attach(6);\n  gate.write(0);\n\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  digitalWrite(trigPin, LOW);\n  delayMicroseconds(2);\n\n  digitalWrite(trigPin, HIGH);\n  delayMicroseconds(10);\n  digitalWrite(trigPin, LOW);\n\n  duration = pulseIn(echoPin, HIGH);\n  distance = duration * 0.034 / 2;\n\n  Serial.print(\"Distance: \");\n  Serial.println(distance);\n\n  if (distance <= 10) {\n    gate.write(90);\n  } else {\n    gate.write(0);\n  }\n\n  delay(300);\n}"
+    },
+    "quiz": [
+        {
+            "q": "What does the HC-SR04 sensor detect?",
+            "options": [
+                "Light",
+                "Temperature",
+                "Distance",
+                "Sound volume"
+            ],
+            "answer": 2,
+            "explanation": "HC-SR04 is an ultrasonic sensor that measures distance."
+        },
+        {
+            "q": "What happens when an object comes within 10cm?",
+            "options": [
+                "LED turns off",
+                "Gate opens",
+                "Arduino stops",
+                "Sensor disconnects"
+            ],
+            "answer": 1,
+            "explanation": "The servo motor rotates and opens the gate."
+        },
+        {
+            "q": "Which component moves the gate?",
+            "options": [
+                "Breadboard",
+                "Battery",
+                "Servo Motor",
+                "Resistor"
+            ],
+            "answer": 2,
+            "explanation": "The servo motor controls the gate movement."
+        },
+        {
+            "q": "What happens when the object moves away?",
+            "options": [
+                "Gate closes",
+                "Sensor breaks",
+                "Arduino restarts",
+                "Servo stops forever"
+            ],
+            "answer": 0,
+            "explanation": "The servo rotates back and closes the gate."
+        },
+        {
+            "q": "Which board controls the whole project?",
+            "options": [
+                "Motor",
+                "Arduino UNO",
+                "Switch",
+                "Battery"
+            ],
+            "answer": 1,
+            "explanation": "Arduino UNO acts as the brain of the system."
+        }
+    ]
+}

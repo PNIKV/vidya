@@ -27,7 +27,7 @@ async function init() {
       const res = await fetch(path + '?t=' + Date.now());
       if (!res.ok) return;                  // skip missing files silently
       const data = await res.json();
-      
+
       // Parse grade and session number from path/filename to guarantee uniqueness
       // e.g. "sessions/grade-1/3session.json" -> grade = "grade-1", number = 3
       const match = path.match(/sessions\/(grade-\d+)\/(\d+)session\.json/i);
@@ -41,7 +41,7 @@ async function init() {
       data.id = `${sessionGrade}-session-${sessionNum}`;
       data.number = sessionNum;
       data._grade = sessionGrade;                  // tag which grade it belongs to
-      
+
       SESSIONS[data.id] = data;
     } catch (e) {
       console.warn(`Could not load ${path}`, e);
@@ -93,7 +93,7 @@ async function init() {
     window.history.replaceState(null, null, redirectPage);
   } else {
     const pathSegment = window.location.pathname.split('/').filter(Boolean).pop();
-    if (pathSegment && validPages.includes(pathSegment) && pathSegment !== 'vidya') {
+    if (pathSegment && validPages.includes(pathSegment) && pathSegment !== 'VIDYA') {
       targetPage = pathSegment;
     }
   }
@@ -107,7 +107,7 @@ window.addEventListener('popstate', () => {
   const pathSegment = window.location.pathname.split('/').filter(Boolean).pop();
   const validPages = ['home', 'sessions', 'projects', 'whiteboard', 'live-quiz', 'about', 'session-detail'];
 
-  if (pathSegment && validPages.includes(pathSegment) && pathSegment !== 'vidya') {
+  if (pathSegment && validPages.includes(pathSegment) && pathSegment !== 'VIDYA') {
     showPage(pathSegment);
   } else {
     showPage('home');

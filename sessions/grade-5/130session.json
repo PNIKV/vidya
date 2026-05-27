@@ -1,0 +1,317 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Advanced Web Browsing",
+  "subtitle": "Search Smart, Stay Safe!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#2196F3",
+  "icon": "🌐",
+  "tags": [
+    "Internet",
+    "Technology",
+    "Digital Literacy",
+    "Web Browsing"
+  ],
+  "overview": "This session helps students learn advanced web browsing skills including smart searching, using browser tools, managing tabs, bookmarks, downloads, and staying safe online.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of browsers, search examples, classroom activities, and student practice photos.",
+    "gallery": [
+      {
+        "file": "data/web-browser.jpg",
+        "_placeholder": "ADD: Screenshot of Chrome or Edge browser",
+        "caption": "Web browsers help us explore the internet",
+        "category": "Concept"
+      },
+      {
+        "file": "data/search-engine.jpg",
+        "_placeholder": "ADD: Screenshot of Google search page",
+        "caption": "Search engines help find information online",
+        "category": "Concept"
+      },
+      {
+        "file": "data/browser-tabs.jpg",
+        "_placeholder": "ADD: Screenshot showing multiple tabs",
+        "caption": "Tabs help open multiple websites together",
+        "category": "Features"
+      },
+      {
+        "file": "data/bookmarks.jpg",
+        "_placeholder": "ADD: Screenshot of bookmarks bar",
+        "caption": "Bookmarks save favorite websites quickly",
+        "category": "Features"
+      },
+      {
+        "file": "data/downloads-folder.jpg",
+        "_placeholder": "ADD: Screenshot of browser downloads",
+        "caption": "Students learning file downloading safely",
+        "category": "Learning"
+      },
+      {
+        "file": "data/incognito-mode.jpg",
+        "_placeholder": "ADD: Screenshot of incognito/private mode",
+        "caption": "Private browsing protects browsing history",
+        "category": "Safety"
+      },
+      {
+        "file": "data/student-browser-activity.jpg",
+        "_placeholder": "ADD: Students practicing internet search activity",
+        "caption": "Students exploring educational websites",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Web Browser?",
+    "Popular Browsers — Chrome, Edge, Firefox",
+    "Using Search Engines Effectively",
+    "Smart Search Tips and Keywords",
+    "Opening and Managing Tabs",
+    "Bookmarks and Favorites",
+    "Downloading Files Safely",
+    "Incognito / Private Browsing Mode",
+    "Internet Safety and Secure Websites",
+    "Keyboard Shortcuts for Browsing"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Introduction to Web Browsing",
+      "videoId": "dQw4w9WgXcQ",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Learn the basics and advanced features of web browsing."
+    },
+    {
+      "title": "Internet Safety for Students",
+      "videoId": "HxySrSbSY7o",
+      "desc": "Tips for staying safe while using the internet."
+    },
+    {
+      "title": "Google Search Tricks",
+      "videoId": "3K0A6fF6l9Q",
+      "desc": "Smart search techniques to find information faster."
+    },
+    {
+      "title": "Browser Tabs and Bookmarks Explained",
+      "videoId": "uM4FQ7mP6qA",
+      "desc": "Learn how to manage tabs and save websites."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Search Education",
+      "url": "https://edu.google.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Internet Safety Guide",
+      "url": "https://www.commonsensemedia.org",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Chrome Help",
+      "url": "https://support.google.com/chrome",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Smart Web Browsing Activity",
+    "parts": [
+      "Computer/Laptop",
+      "Internet Connection",
+      "Web Browser",
+      "Notebook for observations"
+    ],
+    "steps": [
+      "Open Google Chrome or Microsoft Edge",
+      "Search for 'Solar System for Kids'",
+      "Open three different websites in separate tabs",
+      "Bookmark your favorite educational website",
+      "Download one safe image for a project",
+      "Open Incognito Mode",
+      "Use Ctrl + T to open a new tab",
+      "Use Ctrl + D to bookmark the page",
+      "Challenge: Find information using smart keywords"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a web browser used for?",
+      "options": [
+        "Cooking food",
+        "Browsing websites on the internet",
+        "Washing clothes",
+        "Drawing pictures only"
+      ],
+      "answer": 1,
+      "explanation": "A web browser helps users access and explore websites online."
+    },
+    {
+      "q": "Which of these is a web browser?",
+      "options": [
+        "Google Chrome",
+        "Paint",
+        "Calculator",
+        "MS Excel"
+      ],
+      "answer": 0,
+      "explanation": "Google Chrome is a popular web browser."
+    },
+    {
+      "q": "What is the purpose of tabs in a browser?",
+      "options": [
+        "To close the internet",
+        "To open multiple websites together",
+        "To delete files",
+        "To turn off the computer"
+      ],
+      "answer": 1,
+      "explanation": "Tabs help users open and switch between multiple websites."
+    },
+    {
+      "q": "What does Ctrl + T do?",
+      "options": [
+        "Closes browser",
+        "Opens new tab",
+        "Refreshes page",
+        "Prints document"
+      ],
+      "answer": 1,
+      "explanation": "Ctrl + T opens a new browser tab."
+    },
+    {
+      "q": "What is a search engine?",
+      "options": [
+        "A game",
+        "A tool to search information online",
+        "A printer",
+        "A calculator"
+      ],
+      "answer": 1,
+      "explanation": "Search engines help users find websites and information."
+    },
+    {
+      "q": "Which search engine is most commonly used?",
+      "options": [
+        "Google",
+        "Paint",
+        "Photos",
+        "WordPad"
+      ],
+      "answer": 0,
+      "explanation": "Google is one of the most widely used search engines."
+    },
+    {
+      "q": "What is a bookmark used for?",
+      "options": [
+        "Save favorite websites",
+        "Delete websites",
+        "Close tabs",
+        "Download games"
+      ],
+      "answer": 0,
+      "explanation": "Bookmarks help save websites for quick access later."
+    },
+    {
+      "q": "What does Incognito Mode do?",
+      "options": [
+        "Increases internet speed",
+        "Saves browsing privately",
+        "Deletes computer",
+        "Creates games"
+      ],
+      "answer": 1,
+      "explanation": "Incognito Mode allows private browsing without saving history."
+    },
+    {
+      "q": "Which shortcut bookmarks a webpage?",
+      "options": [
+        "Ctrl + D",
+        "Ctrl + P",
+        "Ctrl + S",
+        "Ctrl + H"
+      ],
+      "answer": 0,
+      "explanation": "Ctrl + D saves the current webpage as a bookmark."
+    },
+    {
+      "q": "Why is internet safety important?",
+      "options": [
+        "To protect personal information",
+        "To damage computers",
+        "To slow internet",
+        "To stop browsing"
+      ],
+      "answer": 0,
+      "explanation": "Internet safety helps protect users from scams and harmful websites."
+    },
+    {
+      "q": "What should students check before downloading files?",
+      "options": [
+        "Website safety",
+        "File type",
+        "Trusted source",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Students should always download files from trusted and safe websites."
+    },
+    {
+      "q": "Which symbol shows a secure website?",
+      "options": [
+        "Lock icon",
+        "Star icon",
+        "Music icon",
+        "Camera icon"
+      ],
+      "answer": 0,
+      "explanation": "The lock icon near the URL shows a secure connection."
+    },
+    {
+      "q": "What happens when too many tabs are open?",
+      "options": [
+        "Browser may slow down",
+        "Computer becomes faster",
+        "Internet disappears",
+        "Monitor turns off"
+      ],
+      "answer": 0,
+      "explanation": "Too many tabs can use more memory and slow browsing."
+    },
+    {
+      "q": "What is the address bar used for?",
+      "options": [
+        "Typing website URLs",
+        "Playing games",
+        "Drawing shapes",
+        "Opening Paint"
+      ],
+      "answer": 0,
+      "explanation": "The address bar is used to type website addresses and searches."
+    },
+    {
+      "q": "Which skill improves with advanced web browsing?",
+      "options": [
+        "Research skills",
+        "Digital literacy",
+        "Internet safety awareness",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Advanced web browsing improves many important digital skills."
+    }
+  ]
+}

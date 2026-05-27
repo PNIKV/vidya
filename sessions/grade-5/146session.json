@@ -1,0 +1,183 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-collaborative-tools/",
+    "slides_folder": "sessions/session-collaborative-tools/slides/",
+    "images_folder": "sessions/session-collaborative-tools/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-collaborative-tools",
+  "number": 4,
+  "title": "Cloud Connection: Working Together Digitally!",
+  "subtitle": "share, sync, create!",
+  "date": "Session 04",
+  "duration": "1 Hours",
+  "phase": "Digital Literacy",
+  "color": "#9B59B6",
+  "icon": "👥",
+  "tags": [
+    "Technology",
+    "Communication",
+    "Productivity"
+  ],
+  "overview": "Students will learn the power of real-time cloud collaboration by working simultaneously on shared documents, managing access permissions, and using digital communication tools to complete a team project without borders.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-collaborative-tools/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots from the cloud tools lab session — multi-cursor views, version histories, and permission menus.",
+    "gallery": [
+      {
+        "file": "data/multi-cursor-collaboration.jpg",
+        "_placeholder": "ADD: Screenshot of multiple anonymous or named user cursors typing at once",
+        "caption": "The Live Classroom — Multiple minds editing a single document simultaneously!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/sharing-permissions.jpg",
+        "_placeholder": "ADD: Screenshot of the Share menu showing Viewer vs Editor options",
+        "caption": "Gatekeeping Access — Setting permissions to Viewer, Commenter, or Editor",
+        "category": "Components"
+      },
+      {
+        "file": "data/version-history.jpg",
+        "_placeholder": "ADD: Screenshot of the document revision history sidebar",
+        "caption": "The Digital Time Machine — Tracking changes and restoring deleted work",
+        "category": "Components"
+      },
+      {
+        "file": "data/collaborative-whiteboard.png",
+        "_placeholder": "ADD: Screenshot of a digital whiteboard filled with student sticky notes",
+        "caption": "Brainstorming Blitz — Brain-dumping ideas using colorful interactive notes",
+        "category": "Lab"
+      },
+      {
+        "file": "data/student-group-work.jpg",
+        "_placeholder": "ADD: Photo of students working together on separate laptops updating one document",
+        "caption": "Teamwork in Sync — Divided tasks merging instantly on screen",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "The Cloud Workspace — The Public Sandbox | Files living securely on the internet rather than trapped on one hard drive",
+    "Real-Time Syncing — The Mirror Effect | Every letter you type updates immediately on your teammate's screen",
+    "Access Control — Security Shields | Deciding who can modify your data (Editor) versus who can only read it (Viewer)",
+    "Version History — The Time Machine | Reviewing past edits to see who wrote what and fixing accidental mistakes",
+    "Comments & Tagging — Digital Sticky Notes | Leaving feedback and using @mentions to assign tasks directly to partners",
+    "Digital Etiquette — Netiquette | Being respectful in shared spaces and not deleting a teammate's hard work"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is Cloud Computing & Collaboration?",
+      "videoId": "1z6E_B08g_k",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A kid-friendly animation breaking down how data travels to cloud servers to make instant sharing possible."
+    },
+    {
+      "title": "Mastering Google Workspace & Microsoft 365 Shared Work",
+      "videoId": "p_Tir7Zg670",
+      "desc": "An introductory guide on sharing links safely without exposing your files to the whole world."
+    },
+    {
+      "title": "Version History: How to Rescue Lost Data",
+      "videoId": "Ew_gZ3v_bI0",
+      "desc": "A quick sanity-saving tutorial on undoing catastrophic accidents using document revision logs."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Docs — Live Collaborative Word Processing",
+      "url": "https://docs.google.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Miro / Jamboard Alternative — Free Collaborative Whiteboard",
+      "url": "https://miro.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft 365 — Online Group Workspaces",
+      "url": "https://office.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Cloud Kingdom: Co-Authoring a Digital Encyclopedia",
+    "parts": [
+      "Computers or Tablets with active internet connections",
+      "Google Workspace or Microsoft 365 school accounts",
+      "Project Assignment Matrix (assigned roles: Writer, Designer, Editor)",
+      "Shared master link provided by the classroom instructor"
+    ],
+    "steps": [
+      "Log into your workstation and open the shared document link sent by the teacher.",
+      "Identify your teammate's custom colored cursor on screen and wave to each other via text!",
+      "Claim your assigned page section—do not type over or replace anyone else's designated workspace.",
+      "Work together to write a 3-paragraph summary on an interesting animal, with writers inputting facts and designers dropping images.",
+      "Highlight a teammate's sentence and insert a constructive feedback comment using the '+' or '@' feature.",
+      "Open up the Version History sidebar to trace how your file evolved from a blank page into a finished project.",
+      "Challenge: Change your document setting link from 'Editor' to 'Viewer' and test if a partner can still type on your page."
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Where are your files physically saved when you use collaborative tools like Google Docs or Word Online?",
+      "options": [
+        "On your computer's local desktop hard drive",
+        "On a physical USB flash drive plugged into your monitor",
+        "On remote cloud servers accessible securely through the internet",
+        "Inside the monitor's built-in memory bank"
+      ],
+      "answer": 2,
+      "explanation": "Cloud tools save files on secure, massive remote servers instead of your local machine. This allows any device with an internet connection to log in and access them!"
+    },
+    {
+      "q": "What happens if two students type on the exact same line of a cloud document at the exact same moment?",
+      "options": [
+        "The computer crashes and deletes all user accounts",
+        "Both edits display live on screen simultaneously in real-time",
+        "The file locks up and prevents editing for 24 hours",
+        "The internet connection drops automatically for safety"
+      ],
+      "answer": 1,
+      "explanation": "Real-time synchronization allows edits to merge instantly! You will see your partner's unique colored cursor jumping around as they type right alongside you."
+    },
+    {
+      "q": "If you want to share a project template with a classmate so they can read it but NOT alter or mess up your words, which permission level should you select?",
+      "options": [
+        "Editor",
+        "Owner",
+        "Viewer",
+        "Administrator"
+      ],
+      "answer": 2,
+      "explanation": "The 'Viewer' setting allows individuals to read the information but locks down the page so they cannot delete text, type additions, or change layout graphics."
+    },
+    {
+      "q": "Oh no! A teammate accidentally deleted a giant paragraph of research right before submission. How can you fix it?",
+      "options": [
+        "Panic and rewrite the entire document from absolute scratch",
+        "Open Version History to locate and restore the previous saved version from an hour ago",
+        "Throw away the computer and request a new account configuration",
+        "The text is gone forever because saving is automatic in the cloud"
+      ],
+      "answer": 1,
+      "explanation": "Cloud suites track every single keystroke automatically. Version history allows you to look back in time and completely restore previous iterations of your document if something goes wrong."
+    },
+    {
+      "q": "Which of the following is an example of GOOD digital etiquette (Netiquette) when collaborating inside a group workspace?",
+      "options": [
+        "Deleting your friend's section as a funny practical joke",
+        "Changing the main heading font size to 100 to annoy your team",
+        "Using the Comments feature to communicate adjustments before rewriting a partner's work",
+        "Writing random words on random slides to fill up space quickly"
+      ],
+      "answer": 2,
+      "explanation": "Respecting other users' boundaries is vital in online collaboration. Communication tools like comments let you coordinate revisions harmoniously without overstepping your bounds."
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put screenshots, lab activities, and settings photos here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "System Settings",
+  "subtitle": "customize, control, manage!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#6C63FF",
+  "icon": "⚙️",
+  "tags": [
+    "Computer",
+    "Windows",
+    "Settings",
+    "Digital Skills"
+  ],
+  "overview": "This session introduces students to System Settings in Windows. Students will learn how to personalize computers, manage display and sound settings, connect devices, and understand important system controls safely.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots from Windows Settings, classroom activities, and device setup examples.",
+    "gallery": [
+      {
+        "file": "data/windows-settings.jpg",
+        "_placeholder": "ADD: Screenshot of Windows Settings Home Page",
+        "caption": "Windows Settings Dashboard",
+        "category": "Concept"
+      },
+      {
+        "file": "data/display-settings.jpg",
+        "_placeholder": "ADD: Screenshot of display settings",
+        "caption": "Changing brightness and display settings",
+        "category": "Display"
+      },
+      {
+        "file": "data/wifi-settings.jpg",
+        "_placeholder": "ADD: Screenshot of Wi-Fi settings",
+        "caption": "Connecting computer to Wi-Fi network",
+        "category": "Network"
+      },
+      {
+        "file": "data/sound-settings.jpg",
+        "_placeholder": "ADD: Screenshot of sound settings",
+        "caption": "Managing speaker and microphone settings",
+        "category": "Audio"
+      },
+      {
+        "file": "data/theme-settings.jpg",
+        "_placeholder": "ADD: Screenshot of theme or wallpaper settings",
+        "caption": "Customizing wallpaper and themes",
+        "category": "Personalization"
+      },
+      {
+        "file": "data/bluetooth-settings.jpg",
+        "_placeholder": "ADD: Screenshot of Bluetooth connection",
+        "caption": "Connecting wireless devices with Bluetooth",
+        "category": "Devices"
+      },
+      {
+        "file": "data/student-settings.jpg",
+        "_placeholder": "ADD: Students exploring system settings",
+        "caption": "Students learning computer customization",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What are System Settings?",
+    "Opening Windows Settings",
+    "Display Settings — brightness and screen resolution",
+    "Sound Settings — speaker and microphone control",
+    "Wi-Fi and Internet Settings",
+    "Bluetooth Device Connection",
+    "Personalization — wallpaper, themes, colors",
+    "Date and Time Settings",
+    "System Update and Security Basics",
+    "Safe and Responsible Computer Usage"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Windows Settings Basics",
+      "videoId": "N4sP8L2mQ7X",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Introduction to Windows System Settings for beginners."
+    },
+    {
+      "title": "Display and Sound Settings Explained",
+      "videoId": "T8dK5R2mP4A",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Learn how to adjust display brightness and audio settings."
+    },
+    {
+      "title": "How to Connect Wi-Fi in Windows",
+      "videoId": "Q5mD7L1xR9B",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Step-by-step Wi-Fi connection tutorial."
+    },
+    {
+      "title": "Customize Windows Desktop",
+      "videoId": "W3xP9K4mT2S",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Learn how to change wallpaper, themes, and personalization settings."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft Windows Support",
+      "url": "https://support.microsoft.com/windows",
+      "icon": "🔗"
+    },
+    {
+      "title": "Computer Basics Tutorial",
+      "url": "https://edu.gcfglobal.org/en/computerbasics/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Windows Keyboard Shortcuts",
+      "url": "https://support.microsoft.com/windows/windows-keyboard-shortcuts",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Customize Your Computer Activity",
+    "parts": [
+      "Computer/Laptop",
+      "Windows Operating System",
+      "Wi-Fi Connection",
+      "Speaker/Headphones"
+    ],
+    "steps": [
+      "Open Windows Settings using Windows + I",
+      "Change desktop wallpaper",
+      "Adjust screen brightness",
+      "Connect to a Wi-Fi network",
+      "Increase and decrease system volume",
+      "Check date and time settings",
+      "Turn Bluetooth ON and OFF",
+      "Explore personalization themes safely"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which shortcut opens Windows Settings?",
+      "options": [
+        "Ctrl + I",
+        "Windows + I",
+        "Shift + I",
+        "Alt + I"
+      ],
+      "answer": 1,
+      "explanation": "Windows + I quickly opens System Settings."
+    },
+    {
+      "q": "Which setting controls screen brightness?",
+      "options": [
+        "Display Settings",
+        "Sound Settings",
+        "Bluetooth Settings",
+        "Printer Settings"
+      ],
+      "answer": 0,
+      "explanation": "Display Settings allow users to adjust brightness and resolution."
+    },
+    {
+      "q": "Which setting is used to connect internet wirelessly?",
+      "options": [
+        "Sound",
+        "Bluetooth",
+        "Wi-Fi",
+        "Themes"
+      ],
+      "answer": 2,
+      "explanation": "Wi-Fi settings help connect computers to the internet."
+    },
+    {
+      "q": "What does Bluetooth help connect?",
+      "options": [
+        "Wireless devices",
+        "Water pipes",
+        "Electric wires",
+        "Books"
+      ],
+      "answer": 0,
+      "explanation": "Bluetooth connects wireless devices like headphones and keyboards."
+    },
+    {
+      "q": "Which setting changes wallpaper?",
+      "options": [
+        "Update",
+        "Personalization",
+        "Sound",
+        "Storage"
+      ],
+      "answer": 1,
+      "explanation": "Personalization settings allow wallpaper and theme changes."
+    },
+    {
+      "q": "What is used to control computer sound?",
+      "options": [
+        "Display Settings",
+        "Volume Control",
+        "Calculator",
+        "Paint"
+      ],
+      "answer": 1,
+      "explanation": "Volume controls speaker and microphone sound levels."
+    },
+    {
+      "q": "Why are System Settings important?",
+      "options": [
+        "To customize and manage computer features",
+        "To play games only",
+        "To draw pictures only",
+        "To charge the computer"
+      ],
+      "answer": 0,
+      "explanation": "System Settings help users manage and personalize computers."
+    },
+    {
+      "q": "Which section shows computer updates?",
+      "options": [
+        "Paint",
+        "Update & Security",
+        "Wallpaper",
+        "Speaker"
+      ],
+      "answer": 1,
+      "explanation": "Update & Security helps keep computers safe and updated."
+    },
+    {
+      "q": "What happens if volume is muted?",
+      "options": [
+        "Screen becomes dark",
+        "No sound is heard",
+        "Internet disconnects",
+        "Wallpaper changes"
+      ],
+      "answer": 1,
+      "explanation": "Muted volume means sound output is turned off."
+    },
+    {
+      "q": "What is personalization?",
+      "options": [
+        "Repairing hardware",
+        "Changing appearance and themes",
+        "Deleting Windows",
+        "Formatting hard disk"
+      ],
+      "answer": 1,
+      "explanation": "Personalization changes the look and feel of the computer."
+    },
+    {
+      "q": "Which option helps save battery life?",
+      "options": [
+        "Increasing brightness fully",
+        "Battery Saver Mode",
+        "Playing videos continuously",
+        "Turning volume to maximum"
+      ],
+      "answer": 1,
+      "explanation": "Battery Saver Mode helps reduce power usage."
+    },
+    {
+      "q": "What does screen resolution control?",
+      "options": [
+        "Internet speed",
+        "Picture clarity on screen",
+        "Volume level",
+        "Bluetooth connection"
+      ],
+      "answer": 1,
+      "explanation": "Resolution controls how clear and sharp items appear on screen."
+    },
+    {
+      "q": "Which device can connect through Bluetooth?",
+      "options": [
+        "Wireless headphones",
+        "Notebook",
+        "Chair",
+        "Fan"
+      ],
+      "answer": 0,
+      "explanation": "Bluetooth is commonly used for wireless headphones and speakers."
+    },
+    {
+      "q": "What should students avoid changing without permission?",
+      "options": [
+        "Critical system settings",
+        "Wallpaper",
+        "Volume",
+        "Mouse pointer color"
+      ],
+      "answer": 0,
+      "explanation": "Important system settings should only be changed carefully or with permission."
+    },
+    {
+      "q": "What is the purpose of Date and Time settings?",
+      "options": [
+        "To play music",
+        "To manage correct system clock and calendar",
+        "To change internet speed",
+        "To delete files"
+      ],
+      "answer": 1,
+      "explanation": "Date and Time settings keep the computer clock accurate."
+    }
+  ]
+}

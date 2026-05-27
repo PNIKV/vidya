@@ -1,0 +1,325 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-7/",
+    "slides_folder": "sessions/session-7/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-7/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-7",
+  "number": 7,
+  "title": "Excel: Intermediate Formulas",
+  "subtitle": "Calculate Smarter, Not Harder!",
+  "date": "Session 07",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#217346",
+  "icon": "📊",
+  "tags": [
+    "MS Excel",
+    "Spreadsheets",
+    "Digital Skills",
+    "Data & Maths"
+  ],
+  "overview": "This session takes students beyond basic SUM and AVERAGE into the world of Intermediate Excel Formulas. Students learn powerful functions like IF, COUNTIF, SUMIF, VLOOKUP, and nested formulas using real-life data sets like class marks, shop inventories, and cricket scoreboards. By the end, students can make Excel think and decide — not just calculate!",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-7/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots and activity photos — Excel formula bar examples, IF formula in action, VLOOKUP demo, student spreadsheets, before/after formula results.",
+    "gallery": [
+      {
+        "file": "data/excel-if-formula.jpg",
+        "_placeholder": "ADD: Screenshot of IF formula checking Pass/Fail in a marks spreadsheet",
+        "caption": "IF formula — Excel makes decisions!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/excel-vlookup.jpg",
+        "_placeholder": "ADD: Screenshot of VLOOKUP finding a student's grade from a table",
+        "caption": "VLOOKUP — Find anything in a table instantly!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/excel-countif.jpg",
+        "_placeholder": "ADD: Screenshot of COUNTIF counting how many students scored above 80",
+        "caption": "COUNTIF counts cells that match a condition",
+        "category": "Learning"
+      },
+      {
+        "file": "data/excel-sumif.jpg",
+        "_placeholder": "ADD: Screenshot of SUMIF adding sales only for a specific product",
+        "caption": "SUMIF adds only the values you need",
+        "category": "Learning"
+      },
+      {
+        "file": "data/nested-if.jpg",
+        "_placeholder": "ADD: Whiteboard diagram showing nested IF logic with A/B/C grades",
+        "caption": "Nested IF — Multiple decisions in one formula!",
+        "category": "Activity"
+      },
+      {
+        "file": "data/student-marksheet.jpg",
+        "_placeholder": "ADD: Students building a class marksheet with IF and VLOOKUP",
+        "caption": "Students building a smart class marksheet",
+        "category": "Lab"
+      },
+      {
+        "file": "data/formula-bar.jpg",
+        "_placeholder": "ADD: Screenshot of Excel formula bar showing a complex formula",
+        "caption": "The formula bar — where the magic happens!",
+        "category": "Fun Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Quick Recap — SUM, AVERAGE, MIN, MAX basics",
+    "IF Formula — Make Excel decide: =IF(condition, value_if_true, value_if_false)",
+    "Nested IF — Multiple conditions: Grade A / B / C / Fail",
+    "COUNTIF — Count cells matching a condition: =COUNTIF(range, criteria)",
+    "SUMIF — Add values that meet a condition: =SUMIF(range, criteria, sum_range)",
+    "VLOOKUP — Search a table and return a value: =VLOOKUP(lookup_value, table, col_index, FALSE)",
+    "Absolute Cell References — Using $ to lock cells in formulas: =$A$1",
+    "Real-world Use — Marksheets, shop inventory, cricket scoreboard, attendance tracker"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Excel IF Formula for Beginners — Pass or Fail",
+      "videoId": "HGDHFyBeBUE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to use the IF function in Excel to make decisions — like checking if a student passed or failed."
+    },
+    {
+      "title": "VLOOKUP Explained Simply — Excel for Students",
+      "videoId": "d3BYVQ6xIE4",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand VLOOKUP step by step with a simple example — search a table and return matching data."
+    },
+    {
+      "title": "COUNTIF and SUMIF — Excel Conditional Formulas",
+      "videoId": "2XgEYtmydmI",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "How to use COUNTIF to count matching data and SUMIF to add only the values you need."
+    },
+    {
+      "title": "Nested IF Formula in Excel — Multiple Conditions",
+      "videoId": "0WZMTLkKM7A",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Step-by-step guide to writing nested IF formulas to assign grades like A, B, C, or Fail."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft Excel Online — Free in Browser",
+      "url": "https://www.office.com/launch/excel",
+      "icon": "🔗"
+    },
+    {
+      "title": "Excel Formula Reference — Microsoft Support",
+      "url": "https://support.microsoft.com/en-us/office/excel-functions-alphabetical-b3944572-255d-4efb-bb96-c6d90033e188",
+      "icon": "🔗"
+    },
+    {
+      "title": "GCFGlobal — Free Excel Tutorials",
+      "url": "https://edu.gcfglobal.org/en/excel/",
+      "icon": "🔗"
+    },
+    {
+      "title": "ExcelJet — Formula Examples & Explanations",
+      "url": "https://exceljet.net/formulas",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Smart Class Marksheet with IF, COUNTIF & VLOOKUP",
+    "parts": [
+      "Computer or laptop with MS Excel or Excel Online",
+      "Sample class marks dataset (provided by teacher — 10 students, 3 subjects)",
+      "Grade chart handout (A: 90+, B: 75–89, C: 60–74, Fail: below 60)",
+      "Internet connection for Excel Online"
+    ],
+    "steps": [
+      "Open Excel and enter the sample dataset: Student Name, Maths, Science, English marks in columns A–D",
+      "In column E, calculate Total using: =SUM(B2:D2) and fill down for all students",
+      "In column F, calculate Average using: =AVERAGE(B2:D2) and fill down",
+      "In column G, use IF formula to show Pass/Fail: =IF(F2>=60,\"Pass\",\"Fail\")",
+      "In column H, use Nested IF to assign Grade: =IF(F2>=90,\"A\",IF(F2>=75,\"B\",IF(F2>=60,\"C\",\"Fail\")))",
+      "Below the table, use COUNTIF to count how many students got Grade A: =COUNTIF(H2:H11,\"A\")",
+      "Use SUMIF to find total marks of only students who Passed: =SUMIF(G2:G11,\"Pass\",E2:E11)",
+      "Create a Grade Table on a separate area (columns J–K) with grades and remarks",
+      "Use VLOOKUP to auto-fill remarks for each student based on their grade: =VLOOKUP(H2,$J$2:$K$5,2,FALSE)",
+      "Challenge: Add conditional formatting — highlight Fail cells in red, Grade A in green",
+      "Groups present their marksheet and explain each formula used"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does the IF formula do in Excel?",
+      "options": [
+        "Adds all numbers in a range",
+        "Checks a condition and returns one value if TRUE, another if FALSE",
+        "Finds the highest value",
+        "Counts all cells"
+      ],
+      "answer": 1,
+      "explanation": "=IF(condition, value_if_true, value_if_false) — Excel checks the condition and decides which value to show!"
+    },
+    {
+      "q": "Which formula checks if a student's marks (in F2) are above 60 and shows Pass or Fail?",
+      "options": [
+        "=SUM(F2,60)",
+        "=AVERAGE(F2)",
+        "=IF(F2>=60,\"Pass\",\"Fail\")",
+        "=COUNTIF(F2,60)"
+      ],
+      "answer": 2,
+      "explanation": "=IF(F2>=60,\"Pass\",\"Fail\") checks if marks are 60 or above — TRUE shows Pass, FALSE shows Fail. Classic IF usage!"
+    },
+    {
+      "q": "What is a Nested IF formula?",
+      "options": [
+        "An IF formula inside a SUM formula",
+        "Multiple IF formulas inside each other to handle more than two outcomes",
+        "An IF formula that uses VLOOKUP",
+        "An IF formula that counts cells"
+      ],
+      "answer": 1,
+      "explanation": "Nested IF puts one IF inside another: =IF(score>=90,\"A\",IF(score>=75,\"B\",IF(score>=60,\"C\",\"Fail\"))) — 4 outcomes!"
+    },
+    {
+      "q": "What does COUNTIF do?",
+      "options": [
+        "Adds values in a range",
+        "Finds the average",
+        "Counts cells that match a specific condition or value",
+        "Searches a table for a value"
+      ],
+      "answer": 2,
+      "explanation": "=COUNTIF(range, criteria) counts how many cells match — e.g. =COUNTIF(G2:G11,\"Pass\") counts all Pass results!"
+    },
+    {
+      "q": "Which formula counts how many students scored above 80 in the range B2:B11?",
+      "options": [
+        "=SUM(B2:B11,\">80\")",
+        "=COUNTIF(B2:B11,\">80\")",
+        "=IF(B2:B11>80)",
+        "=AVERAGE(B2:B11,80)"
+      ],
+      "answer": 1,
+      "explanation": "=COUNTIF(B2:B11,\">80\") counts every cell in that range where the value is greater than 80. Quick and powerful!"
+    },
+    {
+      "q": "What does SUMIF do?",
+      "options": [
+        "Adds all values unconditionally",
+        "Adds only the values in a range that meet a given condition",
+        "Counts values that meet a condition",
+        "Finds the minimum value"
+      ],
+      "answer": 1,
+      "explanation": "=SUMIF(range, criteria, sum_range) adds only values where the condition is met — e.g. total sales only for Mango!"
+    },
+    {
+      "q": "What does VLOOKUP stand for?",
+      "options": [
+        "Very Large Lookup",
+        "Vertical Lookup — searches vertically down a column to find a matching value",
+        "Variable Logic Operation",
+        "Value List Output"
+      ],
+      "answer": 1,
+      "explanation": "VLOOKUP = Vertical Lookup! It searches DOWN a column for a match and returns data from another column in the same row."
+    },
+    {
+      "q": "In =VLOOKUP(H2, $J$2:$K$5, 2, FALSE), what does the number 2 mean?",
+      "options": [
+        "Look in the 2nd row",
+        "Return the value from the 2nd column of the lookup table",
+        "Search 2 columns wide",
+        "Find the 2nd matching result"
+      ],
+      "answer": 1,
+      "explanation": "The 2 is the column index — return the value from the 2nd column of the table range ($J$2:$K$5). Column 1 = J, Column 2 = K."
+    },
+    {
+      "q": "What does FALSE mean at the end of a VLOOKUP formula?",
+      "options": [
+        "The formula is wrong",
+        "Look for an approximate match",
+        "Look for an exact match only",
+        "Ignore the first row"
+      ],
+      "answer": 2,
+      "explanation": "FALSE = Exact Match. Always use FALSE for student names, IDs, or codes. TRUE = approximate match (used for ranges)."
+    },
+    {
+      "q": "What does the $ symbol do in a cell reference like $A$1?",
+      "options": [
+        "Shows the currency symbol",
+        "Locks the cell reference so it does not change when the formula is copied",
+        "Makes the cell bold",
+        "Hides the cell value"
+      ],
+      "answer": 1,
+      "explanation": "$ creates an Absolute Reference. $A$1 stays locked when you copy the formula — essential for lookup tables and grade charts!"
+    },
+    {
+      "q": "A teacher wants to add total marks ONLY for students who Passed. Which formula should she use?",
+      "options": [
+        "=SUM(E2:E11)",
+        "=COUNTIF(G2:G11,\"Pass\")",
+        "=SUMIF(G2:G11,\"Pass\",E2:E11)",
+        "=IF(G2=\"Pass\",E2,0)"
+      ],
+      "answer": 2,
+      "explanation": "=SUMIF(G2:G11,\"Pass\",E2:E11) checks the Pass/Fail column and adds totals only for rows that say Pass. Perfect!"
+    },
+    {
+      "q": "What is the correct syntax for an IF formula?",
+      "options": [
+        "=IF(value, range, condition)",
+        "=IF(condition, value_if_true, value_if_false)",
+        "=IF(true, false, condition)",
+        "=IF(range, sum, average)"
+      ],
+      "answer": 1,
+      "explanation": "=IF(condition, value_if_true, value_if_false) — always 3 parts: the test, what to show if YES, what to show if NO."
+    },
+    {
+      "q": "A student writes =COUNTIF(H2:H11,\"A\"). What will this formula return?",
+      "options": [
+        "The sum of all values in H2:H11",
+        "The number of cells in H2:H11 that contain the letter A",
+        "The average of H2:H11",
+        "The position of A in the column"
+      ],
+      "answer": 1,
+      "explanation": "COUNTIF counts matching cells — this counts how many students received a Grade A. Great for class performance reports!"
+    },
+    {
+      "q": "Which of these is a real-world use of intermediate Excel formulas?",
+      "options": [
+        "Drawing bar charts only",
+        "Changing font colours",
+        "Building a shop inventory that auto-calculates stock value by category",
+        "Printing documents"
+      ],
+      "answer": 2,
+      "explanation": "SUMIF, COUNTIF, and VLOOKUP are used daily in shops, hospitals, schools, and offices to analyse real data automatically!"
+    },
+    {
+      "q": "What did students build in the activity 'Smart Class Marksheet'?",
+      "options": [
+        "A PowerPoint presentation",
+        "A circuit on a breadboard",
+        "An Excel spreadsheet using IF, Nested IF, COUNTIF, SUMIF, and VLOOKUP to automate a class results sheet",
+        "A Word document with tables"
+      ],
+      "answer": 2,
+      "explanation": "Students built a full automated marksheet — formulas calculated totals, assigned grades, counted results, and looked up remarks!"
+    }
+  ]
+}

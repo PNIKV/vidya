@@ -1,0 +1,316 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Evaluating Online Information",
+  "subtitle": "Think Before You Click!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#4CAF50",
+  "icon": "🔍",
+  "tags": [
+    "Digital Literacy",
+    "Internet Safety",
+    "Critical Thinking",
+    "Technology"
+  ],
+  "overview": "This session teaches students how to identify trustworthy online information, avoid fake news, verify websites, and become smart and safe digital learners.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of websites, fake news examples, trusted educational websites, and classroom discussion photos.",
+    "gallery": [
+      {
+        "file": "data/search-results.jpg",
+        "_placeholder": "ADD: Screenshot of search engine results",
+        "caption": "Students learning how to search information online",
+        "category": "Concept"
+      },
+      {
+        "file": "data/fake-news-example.jpg",
+        "_placeholder": "ADD: Example of fake news screenshot",
+        "caption": "Not everything online is true",
+        "category": "Safety"
+      },
+      {
+        "file": "data/trusted-website.jpg",
+        "_placeholder": "ADD: Screenshot of trusted educational website",
+        "caption": "Trusted websites provide reliable information",
+        "category": "Learning"
+      },
+      {
+        "file": "data/student-discussion.jpg",
+        "_placeholder": "ADD: Students discussing online information",
+        "caption": "Students comparing real and fake information",
+        "category": "Activity"
+      },
+      {
+        "file": "data/browser-lock-icon.jpg",
+        "_placeholder": "ADD: Screenshot of secure website lock icon",
+        "caption": "Secure websites use HTTPS and lock symbol",
+        "category": "Safety"
+      },
+      {
+        "file": "data/fact-checking.jpg",
+        "_placeholder": "ADD: Screenshot of fact-checking activity",
+        "caption": "Fact-checking helps verify information",
+        "category": "Research"
+      },
+      {
+        "file": "data/classroom-web-research.jpg",
+        "_placeholder": "ADD: Classroom research activity photo",
+        "caption": "Students practicing safe online research",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Online Information?",
+    "Trusted vs Untrusted Websites",
+    "How to Identify Fake News",
+    "Checking Website URLs Carefully",
+    "HTTPS and Secure Websites",
+    "Fact-Checking Information",
+    "Comparing Multiple Sources",
+    "Recognizing Clickbait Titles",
+    "Safe Internet Research Skills",
+    "Critical Thinking While Browsing"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How to Spot Fake News",
+      "videoId": "AkwWcHekMdo",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Learn how to identify fake news and misinformation online."
+    },
+    {
+      "title": "Internet Safety for Students",
+      "videoId": "HxySrSbSY7o",
+      "desc": "Important tips for safe browsing and online learning."
+    },
+    {
+      "title": "Evaluating Websites for Research",
+      "videoId": "7eHuQ8H4R0w",
+      "desc": "Understand how to check if information online is reliable."
+    },
+    {
+      "title": "Digital Literacy for Kids",
+      "videoId": "yrln8nyVBLU",
+      "desc": "Fun introduction to digital literacy and responsible internet use."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Fact Check Explorer",
+      "url": "https://toolbox.google.com/factcheck/explorer",
+      "icon": "🔗"
+    },
+    {
+      "title": "Common Sense Media Digital Citizenship",
+      "url": "https://www.commonsense.org/education/digital-citizenship",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Safety Center",
+      "url": "https://safety.google",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Real or Fake Information Challenge",
+    "parts": [
+      "Computer or Laptop",
+      "Internet Connection",
+      "Search Engine",
+      "Worksheet for Notes"
+    ],
+    "steps": [
+      "Search for a topic online",
+      "Open two different websites",
+      "Check website URL carefully",
+      "Look for HTTPS lock symbol",
+      "Compare information from both websites",
+      "Discuss which website looks more trustworthy",
+      "Identify clickbait headlines",
+      "Challenge: Find one fake and one trusted website example"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What should students do before believing online information?",
+      "options": [
+        "Share it immediately",
+        "Verify and fact-check it",
+        "Ignore everything",
+        "Delete the browser"
+      ],
+      "answer": 1,
+      "explanation": "Students should always verify information before trusting it."
+    },
+    {
+      "q": "Which symbol usually shows a secure website?",
+      "options": [
+        "Star icon",
+        "Lock icon",
+        "Music icon",
+        "Battery icon"
+      ],
+      "answer": 1,
+      "explanation": "A lock icon near the URL shows a secure HTTPS connection."
+    },
+    {
+      "q": "What does HTTPS mean for a website?",
+      "options": [
+        "Website is secure",
+        "Website is broken",
+        "Website is offline",
+        "Website has games"
+      ],
+      "answer": 0,
+      "explanation": "HTTPS helps keep information secure while browsing."
+    },
+    {
+      "q": "What is fake news?",
+      "options": [
+        "True information",
+        "Wrong or misleading information",
+        "School homework",
+        "A web browser"
+      ],
+      "answer": 1,
+      "explanation": "Fake news spreads incorrect or misleading information."
+    },
+    {
+      "q": "Why is comparing multiple websites important?",
+      "options": [
+        "To waste time",
+        "To verify correct information",
+        "To close the internet",
+        "To increase battery"
+      ],
+      "answer": 1,
+      "explanation": "Comparing sources helps confirm if information is accurate."
+    },
+    {
+      "q": "Which website is usually more trustworthy?",
+      "options": [
+        "Unknown random blog",
+        "Educational or government website",
+        "Spam website",
+        "Fake giveaway page"
+      ],
+      "answer": 1,
+      "explanation": "Educational and government websites are often more reliable."
+    },
+    {
+      "q": "What is clickbait?",
+      "options": [
+        "A safe educational website",
+        "A misleading title made to attract clicks",
+        "A browser setting",
+        "A type of computer"
+      ],
+      "answer": 1,
+      "explanation": "Clickbait uses exciting titles to attract attention unfairly."
+    },
+    {
+      "q": "What should students avoid sharing online?",
+      "options": [
+        "Personal information",
+        "Passwords",
+        "Private details",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Personal and private information should stay safe."
+    },
+    {
+      "q": "Which skill helps students judge online information wisely?",
+      "options": [
+        "Critical thinking",
+        "Jumping",
+        "Singing",
+        "Typing fast"
+      ],
+      "answer": 0,
+      "explanation": "Critical thinking helps students evaluate information carefully."
+    },
+    {
+      "q": "What should you check in a website URL?",
+      "options": [
+        "Correct spelling",
+        "HTTPS security",
+        "Trusted domain",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Checking URLs carefully helps avoid fake websites."
+    },
+    {
+      "q": "Why do fake websites exist?",
+      "options": [
+        "To spread misinformation or scams",
+        "To help students",
+        "To improve learning",
+        "To repair computers"
+      ],
+      "answer": 0,
+      "explanation": "Some fake websites try to trick or mislead users."
+    },
+    {
+      "q": "What is fact-checking?",
+      "options": [
+        "Checking if information is true",
+        "Deleting websites",
+        "Creating games",
+        "Opening tabs"
+      ],
+      "answer": 0,
+      "explanation": "Fact-checking helps verify if information is accurate."
+    },
+    {
+      "q": "What should students do if information seems suspicious?",
+      "options": [
+        "Believe it immediately",
+        "Ask a teacher or trusted adult",
+        "Share it with everyone",
+        "Ignore internet safety"
+      ],
+      "answer": 1,
+      "explanation": "Trusted adults can help verify suspicious information."
+    },
+    {
+      "q": "Which of these is a good online habit?",
+      "options": [
+        "Checking sources carefully",
+        "Sharing passwords",
+        "Clicking unknown links",
+        "Ignoring website security"
+      ],
+      "answer": 0,
+      "explanation": "Checking sources helps students stay safe and informed."
+    },
+    {
+      "q": "What is the main goal of evaluating online information?",
+      "options": [
+        "Become a smarter and safer internet user",
+        "Use more battery",
+        "Open more tabs",
+        "Slow down the computer"
+      ],
+      "answer": 0,
+      "explanation": "Evaluating online information helps students browse wisely and safely."
+    }
+  ]
+}

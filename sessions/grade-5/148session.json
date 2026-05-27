@@ -1,0 +1,178 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-email-attachments/",
+    "slides_folder": "sessions/session-email-attachments/slides/",
+    "images_folder": "sessions/session-email-attachments/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-email-attachments",
+  "number": 6,
+  "title": "Email Attachments: Sending Files Safely!",
+  "subtitle": "clip, compress, share!",
+  "date": "Session 06",
+  "duration": "1 Hours",
+  "phase": "Digital Literacy",
+  "color": "#F1C40F",
+  "icon": "📎",
+  "tags": [
+    "Technology",
+    "Communication",
+    "Digital Safety"
+  ],
+  "overview": "Students will learn how to send digital files using email attachments. The session covers file types, understanding size limits, compression techniques, and essential cybersecurity safety rules for downloading files from the internet.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-email-attachments/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots from the actual session — paperclip icons, file explorer views, and file size warning dialogues.",
+    "gallery": [
+      {
+        "file": "data/paperclip-icon.jpg",
+        "_placeholder": "ADD: Screenshot of the composition window highlighting the paperclip button",
+        "caption": "The Paperclip Button — The universal symbol for attaching a file!",
+        "category": "Components"
+      },
+      {
+        "file": "data/file-extensions.jpg",
+        "_placeholder": "ADD: Graphic showing common safe extensions like .pdf, .png, .docx",
+        "caption": "File Extensions — Checking the identity card of your files",
+        "category": "Concept"
+      },
+      {
+        "file": "data/file-size-limit.png",
+        "_placeholder": "ADD: Screenshot of a 25MB file size limit warning error in an email client",
+        "caption": "The Size Limit Wall — When a file is too heavy for traditional email channels",
+        "category": "Concept"
+      },
+      {
+        "file": "data/zipping-files.jpg",
+        "_placeholder": "ADD: Screenshot of right-clicking a folder to compress / send to zipped folder",
+        "caption": "File Compression — Squeezing multiple assets into a single lightweight package",
+        "category": "Lab"
+      },
+      {
+        "file": "data/phishing-attachment-warning.jpg",
+        "_placeholder": "ADD: Screenshot of a malicious warning prompt flag on an unknown sender's file",
+        "caption": "Cyber Safety First — Inspecting attachments carefully before double-clicking",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "The Paperclip Analogy — Stapling a Document | The email is your letter, the attachment is a physical printout stapled to the back",
+    "File Extensions — Know your Guest | Recognizing safe formats (.pdf, .jpg, .docx) vs dangerous executable formats (.exe, .scr)",
+    "Size Limits — The Mailbox Slot | Why email platforms stop you from attaching large assets over 25 Megabytes (MB)",
+    "Compression (Zipping) — Luggage Packing | Shrinking file scale and grouping items together into a clean .zip bundle",
+    "Cloud Links — The Warehouse Key | Switching to Drive or OneDrive shares when files are too massive to fit inside standard messages",
+    "Attachment Security — Trojan Horses | Learning why you should NEVER open suspicious file loads from unfamiliar email contacts"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Do Email Attachments Actually Work?",
+      "videoId": "2_vX2A9b9k0",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A simple visualization explaining how digital files break down into binary code to travel along text-based email pipelines."
+    },
+    {
+      "title": "File Sizes Explained: Kilobytes, Megabytes, and Gigabytes",
+      "videoId": "q807E_9v9I0",
+      "desc": "A visual scale reference guide to understanding computer data capacity and mail delivery limits."
+    },
+    {
+      "title": "Cybersecurity for Kids: Dangerous Email Downloads",
+      "videoId": "Y-m_HnUv3W0",
+      "desc": "Learn how bad actors hide computer bugs inside innocent-looking file attachments."
+    }
+  ],
+  "resources": [
+    {
+      "title": "VirusTotal — Free Online Attachment Scanner",
+      "url": "https://www.virustotal.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Online File Compressor Tool Sandbox",
+      "url": "https://www.ilovepdf.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Digital Courier Challenge",
+    "parts": [
+      "Computers with student email accounts configured",
+      "Sample project assets (3 high-resolution images, 2 text documents)",
+      "Built-in file archival application (WinZip, 7-Zip, or OS archive toolkit)",
+      "A test recipient partner email address"
+    ],
+    "steps": [
+      "Open your computer file folder and locate the target digital package assets designated for shipping.",
+      "Check the total scale properties of the folder—confirm if it passes or breaks the standard 25MB mailbox threshold.",
+      "Highlight multiple project components, right-click, and select 'Compress to ZIP file' to create a unified bundle.",
+      "Log into your email suite dashboard and click the 'Compose' button to open a fresh communication terminal.",
+      "Locate the universal paperclip interface icon at the base menu, click it, and browse out to select your new .zip bundle asset.",
+      "Fill in the destination email coordinate, supply an explicit subject header, and draft a short message indicating what you attached.",
+      "Challenge: Try attaching a massive file to see the system automatically convert it into a shared Cloud Drive access link!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What universal symbol do email programs use to let you attach a file?",
+      "options": [
+        "A magnifying glass icon",
+        "A traditional metal paperclip icon",
+        "A red warning triangle",
+        "A circular rotating arrow"
+      ],
+      "answer": 1,
+      "explanation": "The paperclip is the worldwide design standard for attaching documents digitally! Just like stapling or clipping papers to a real letter."
+    },
+    {
+      "q": "What is the typical maximum size limit for file attachments on major email systems like Gmail or Outlook?",
+      "options": [
+        "1 Gigabyte (GB)",
+        "25 Megabytes (MB)",
+        "5 Kilobytes (KB)",
+        "There is no size limit at all"
+      ],
+      "answer": 1,
+      "explanation": "Most traditional email networks cap individual deliveries at 25 Megabytes (MB). Anything bigger blocks the digital pipeline and will bounce back to your outbox."
+    },
+    {
+      "q": "If you need to send 15 separate photos to a teammate via email, what is the neatest way to prepare them?",
+      "options": [
+        "Send 15 separate individual emails one after another",
+        "Print out the photos and mail them via physical delivery truck",
+        "Compress the files together into a single unified .zip folder asset",
+        "Delete half the photos so they fit without effort"
+      ],
+      "answer": 2,
+      "explanation": "Creating a zipped (.zip) archive packs all 15 images together into a single, smaller digital package, making it clean and easy to attach and download."
+    },
+    {
+      "q": "Which type of file extension is generally considered DANGEROUS to open from unknown sources?",
+      "options": [
+        ".pdf (Portable Document Format)",
+        ".png (Image graphic file)",
+        ".exe (Executable system application script)",
+        ".txt (Plain simple text note)"
+      ],
+      "answer": 2,
+      "explanation": "An .exe file stands for an 'executable' program. Opening an unknown .exe file can launch background malware installation setups that corrupt your operating system."
+    },
+    {
+      "q": "What should you do if an unknown address sends you an email with the title 'YOU WON A PRIZE!' and an attached file called 'prize.zip'?",
+      "options": [
+        "Double-click it immediately to open the package assets",
+        "Forward it to all your school friends right away",
+        "Do NOT open the attachment, report it as spam, and delete the message safely",
+        "Rename the file extension to make it run faster"
+      ],
+      "answer": 2,
+      "explanation": "This is a classic cybersecurity threat called phishing! Strange senders promising rewards with hidden file attachments are almost always attempting to trick you into downloading viruses."
+    }
+  ]
+}

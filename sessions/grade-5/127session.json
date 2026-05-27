@@ -1,0 +1,312 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Clipboard & Snipping Tool",
+  "subtitle": "Copy, Paste & Capture Screens Easily!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#4CAF50",
+  "icon": "✂️",
+  "tags": [
+    "Computer Basics",
+    "Windows Tools",
+    "Digital Skills",
+    "Productivity"
+  ],
+  "overview": "This session helps students understand how to use Clipboard tools and the Snipping Tool in Windows for copying, cutting, pasting, and capturing screenshots effectively.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots and classroom activity photos from the actual session.",
+    "gallery": [
+      {
+        "file": "data/copy-paste.png",
+        "_placeholder": "ADD: Screenshot showing copy and paste process",
+        "caption": "Copy and Paste makes work faster and easier",
+        "category": "Concept"
+      },
+      {
+        "file": "data/clipboard-history.jpg",
+        "_placeholder": "ADD: Screenshot of Clipboard History window",
+        "caption": "Clipboard stores copied text and images",
+        "category": "Concept"
+      },
+      {
+        "file": "data/snipping-tool.png",
+        "_placeholder": "ADD: Screenshot of Snipping Tool interface",
+        "caption": "Snipping Tool helps capture screenshots",
+        "category": "Software"
+      },
+      {
+        "file": "data/shortcut-keys.jpg",
+        "_placeholder": "ADD: Keyboard shortcut chart photo",
+        "caption": "Shortcut keys save time while working",
+        "category": "Learning"
+      },
+      {
+        "file": "data/student-practice.jpg",
+        "_placeholder": "ADD: Students practicing copy-paste activity",
+        "caption": "Students learning Clipboard operations",
+        "category": "Lab"
+      },
+      {
+        "file": "data/screenshot-demo.jpg",
+        "_placeholder": "ADD: Classroom screenshot activity photo",
+        "caption": "Students capturing screenshots using Snipping Tool",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Clipboard in Windows?",
+    "Difference between Copy, Cut and Paste",
+    "Keyboard Shortcuts — Ctrl+C, Ctrl+X, Ctrl+V",
+    "Clipboard History — Windows + V",
+    "What is Snipping Tool?",
+    "Types of Snips — Rectangular, Window, Full Screen",
+    "Taking Screenshots in Windows",
+    "Saving and Sharing Screenshots",
+    "Using Snipping Tool for school projects",
+    "Improving productivity using shortcuts"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Clipboard Basics for Beginners",
+      "videoId": "8Eme4nXn9T0",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Learn how Copy, Cut and Paste work in Windows."
+    },
+    {
+      "title": "How to Use Snipping Tool in Windows",
+      "videoId": "oY1Y8nYdA4Q",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Simple tutorial on taking screenshots using Snipping Tool."
+    },
+    {
+      "title": "Keyboard Shortcut Keys Explained",
+      "videoId": "1ArVtCQqQRE",
+      "desc": "Useful keyboard shortcuts every student should know."
+    },
+    {
+      "title": "Windows Clipboard History Feature",
+      "videoId": "2j8mK6Y7R5Q",
+      "desc": "Learn how Clipboard History stores multiple copied items."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft Snipping Tool Guide",
+      "url": "https://support.microsoft.com/windows",
+      "icon": "🔗"
+    },
+    {
+      "title": "Keyboard Shortcut Reference",
+      "url": "https://support.microsoft.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Windows Learning Center",
+      "url": "https://www.microsoft.com/windows",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Copy-Paste & Screenshot Practice Activity",
+    "parts": [
+      "Computer/Laptop",
+      "Windows Operating System",
+      "Keyboard",
+      "Snipping Tool Application"
+    ],
+    "steps": [
+      "Open a text document",
+      "Type a short paragraph",
+      "Use Ctrl+C to copy the text",
+      "Use Ctrl+V to paste it below",
+      "Use Ctrl+X to cut one line",
+      "Open Snipping Tool",
+      "Capture a screenshot of the document",
+      "Save the screenshot in Pictures folder",
+      "Challenge: Take screenshot of desktop and paste into Paint"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does Ctrl + C do?",
+      "options": [
+        "Cut text",
+        "Copy text",
+        "Paste text",
+        "Delete text"
+      ],
+      "answer": 1,
+      "explanation": "Ctrl + C is used to COPY selected text or files."
+    },
+    {
+      "q": "What does Ctrl + V do?",
+      "options": [
+        "Paste copied item",
+        "Delete item",
+        "Save file",
+        "Open file"
+      ],
+      "answer": 0,
+      "explanation": "Ctrl + V is used to PASTE copied or cut items."
+    },
+    {
+      "q": "What is Clipboard used for?",
+      "options": [
+        "Playing games",
+        "Storing copied items temporarily",
+        "Drawing pictures",
+        "Opening internet"
+      ],
+      "answer": 1,
+      "explanation": "Clipboard temporarily stores copied or cut text, files, and images."
+    },
+    {
+      "q": "Which shortcut is used for CUT?",
+      "options": [
+        "Ctrl + P",
+        "Ctrl + X",
+        "Ctrl + S",
+        "Ctrl + Z"
+      ],
+      "answer": 1,
+      "explanation": "Ctrl + X removes selected content and stores it in Clipboard."
+    },
+    {
+      "q": "What is the Snipping Tool used for?",
+      "options": [
+        "Editing videos",
+        "Taking screenshots",
+        "Playing music",
+        "Browsing internet"
+      ],
+      "answer": 1,
+      "explanation": "Snipping Tool is used to capture screenshots in Windows."
+    },
+    {
+      "q": "Which shortcut opens Clipboard History?",
+      "options": [
+        "Windows + V",
+        "Ctrl + V",
+        "Alt + V",
+        "Shift + V"
+      ],
+      "answer": 0,
+      "explanation": "Windows + V opens Clipboard History."
+    },
+    {
+      "q": "Which type of snip captures the whole screen?",
+      "options": [
+        "Rectangular Snip",
+        "Window Snip",
+        "Full-screen Snip",
+        "Freeform Snip"
+      ],
+      "answer": 2,
+      "explanation": "Full-screen Snip captures the entire screen."
+    },
+    {
+      "q": "Which shortcut is used for PASTE?",
+      "options": [
+        "Ctrl + X",
+        "Ctrl + C",
+        "Ctrl + V",
+        "Ctrl + Z"
+      ],
+      "answer": 2,
+      "explanation": "Ctrl + V pastes copied or cut content."
+    },
+    {
+      "q": "What happens when you CUT a file?",
+      "options": [
+        "It gets deleted permanently",
+        "It is copied only",
+        "It moves to Clipboard for pasting elsewhere",
+        "Nothing happens"
+      ],
+      "answer": 2,
+      "explanation": "Cut removes the item from its original place and stores it in Clipboard."
+    },
+    {
+      "q": "Which application can be used to paste screenshots for drawing?",
+      "options": [
+        "Paint",
+        "Calculator",
+        "Notepad",
+        "Chrome"
+      ],
+      "answer": 0,
+      "explanation": "Paint allows students to paste and edit screenshots."
+    },
+    {
+      "q": "Why are keyboard shortcuts useful?",
+      "options": [
+        "They make computer slow",
+        "They save time",
+        "They close Windows",
+        "They reduce storage"
+      ],
+      "answer": 1,
+      "explanation": "Keyboard shortcuts help users work faster and efficiently."
+    },
+    {
+      "q": "Which tool helps capture only a selected area of screen?",
+      "options": [
+        "Calculator",
+        "Snipping Tool",
+        "Paint",
+        "WordPad"
+      ],
+      "answer": 1,
+      "explanation": "Snipping Tool can capture selected screen areas."
+    },
+    {
+      "q": "Where are copied items stored temporarily?",
+      "options": [
+        "Recycle Bin",
+        "Clipboard",
+        "Desktop",
+        "Downloads"
+      ],
+      "answer": 1,
+      "explanation": "Clipboard stores copied and cut items temporarily."
+    },
+    {
+      "q": "What is the full form of GUI?",
+      "options": [
+        "Graphical User Interface",
+        "General User Internet",
+        "Global Utility Interface",
+        "Graphic Universal Input"
+      ],
+      "answer": 0,
+      "explanation": "GUI means Graphical User Interface."
+    },
+    {
+      "q": "Which key is commonly used with Ctrl for copying?",
+      "options": [
+        "C",
+        "P",
+        "S",
+        "D"
+      ],
+      "answer": 0,
+      "explanation": "Ctrl + C is the shortcut for Copy."
+    }
+  ]
+}

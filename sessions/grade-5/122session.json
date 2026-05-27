@@ -1,0 +1,322 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, Arduino screenshots here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Serial Monitor Deep Dive",
+  "subtitle": "see, debug, communicate!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Intermediate",
+  "color": "#FF6B35",
+  "icon": "🖥️",
+  "tags": [
+    "Arduino",
+    "Programming",
+    "Electronics",
+    "Debugging"
+  ],
+  "overview": "This session helps students understand how the Arduino Serial Monitor works, how computers communicate with microcontrollers, and how to use Serial Monitor for debugging, sensor readings, and user interaction.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add real classroom screenshots, Arduino IDE photos, sensor outputs, and student activities.",
+    "gallery": [
+      {
+        "file": "data/serial-monitor-window.jpg",
+        "_placeholder": "ADD: Screenshot of Arduino Serial Monitor",
+        "caption": "Arduino Serial Monitor Interface",
+        "category": "Concept"
+      },
+      {
+        "file": "data/arduino-usb.jpg",
+        "_placeholder": "ADD: Arduino connected to laptop",
+        "caption": "Arduino communicating with computer through USB",
+        "category": "Hardware"
+      },
+      {
+        "file": "data/serial-print-code.jpg",
+        "_placeholder": "ADD: Screenshot of Serial.println code",
+        "caption": "Using Serial.println() in Arduino code",
+        "category": "Programming"
+      },
+      {
+        "file": "data/temperature-sensor.jpg",
+        "_placeholder": "ADD: Sensor value monitoring activity",
+        "caption": "Reading live sensor values using Serial Monitor",
+        "category": "Lab"
+      },
+      {
+        "file": "data/student-debugging.jpg",
+        "_placeholder": "ADD: Students checking output in Serial Monitor",
+        "caption": "Students debugging Arduino programs",
+        "category": "Activity"
+      },
+      {
+        "file": "data/baud-rate.jpg",
+        "_placeholder": "ADD: Screenshot showing baud rate settings",
+        "caption": "Baud Rate controls communication speed",
+        "category": "Concept"
+      },
+      {
+        "file": "data/serial-input.jpg",
+        "_placeholder": "ADD: Screenshot of typing into Serial Monitor",
+        "caption": "Sending messages from computer to Arduino",
+        "category": "Interaction"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Serial Communication?",
+    "How Arduino talks to Computer",
+    "Opening Serial Monitor",
+    "Using Serial.begin(9600)",
+    "Difference between Serial.print() and Serial.println()",
+    "Understanding Baud Rate",
+    "Displaying Sensor Values",
+    "Using Serial Monitor for Debugging",
+    "Sending Data from Computer to Arduino",
+    "Real-time Monitoring and Testing"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Serial Monitor Basics",
+      "videoId": "GsXhF8tP9xY",
+      "_note": "Replace videoId with actual YouTube video ID",
+      "desc": "Learn how to use the Serial Monitor in Arduino IDE."
+    },
+    {
+      "title": "Serial.print vs Serial.println",
+      "videoId": "Q8Qm5N4xL1A",
+      "_note": "Replace videoId with actual YouTube video ID",
+      "desc": "Understand how text is displayed in Serial Monitor."
+    },
+    {
+      "title": "Arduino Debugging Tutorial",
+      "videoId": "N7sG4K8mP2D",
+      "_note": "Replace videoId with actual YouTube video ID",
+      "desc": "Learn debugging techniques using Serial Monitor."
+    },
+    {
+      "title": "Reading Sensor Data with Serial Monitor",
+      "videoId": "M5kR8T2wE7P",
+      "_note": "Replace videoId with actual YouTube video ID",
+      "desc": "Display real-time sensor data in Arduino IDE."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Documentation",
+      "url": "https://www.arduino.cc/reference/en/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino IDE Download",
+      "url": "https://www.arduino.cc/en/software",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Live Temperature Monitor using Serial Monitor",
+    "parts": [
+      "Arduino UNO",
+      "USB Cable",
+      "Computer/Laptop",
+      "Temperature Sensor (LM35/DHT11 optional)",
+      "Jumper Wires",
+      "Arduino IDE"
+    ],
+    "steps": [
+      "Connect Arduino to computer using USB cable",
+      "Open Arduino IDE",
+      "Write Serial.begin(9600); inside setup()",
+      "Use Serial.println() to display text",
+      "Upload code to Arduino",
+      "Open Serial Monitor from Tools menu",
+      "Observe live data appearing on screen",
+      "Change baud rate and see communication issues",
+      "Challenge: Display sensor values every second"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the main use of Serial Monitor?",
+      "options": [
+        "Play games",
+        "Communicate between Arduino and Computer",
+        "Charge Arduino",
+        "Store files"
+      ],
+      "answer": 1,
+      "explanation": "Serial Monitor helps Arduino and computer exchange information."
+    },
+    {
+      "q": "Which function starts serial communication?",
+      "options": [
+        "Serial.start()",
+        "Serial.begin()",
+        "Serial.open()",
+        "Serial.connect()"
+      ],
+      "answer": 1,
+      "explanation": "Serial.begin() initializes serial communication."
+    },
+    {
+      "q": "What does 9600 represent in Serial.begin(9600)?",
+      "options": [
+        "Pin number",
+        "Voltage",
+        "Baud Rate",
+        "Memory size"
+      ],
+      "answer": 2,
+      "explanation": "9600 is the baud rate or communication speed."
+    },
+    {
+      "q": "Which function prints text with a new line?",
+      "options": [
+        "Serial.print()",
+        "Serial.write()",
+        "Serial.println()",
+        "Serial.show()"
+      ],
+      "answer": 2,
+      "explanation": "Serial.println() moves output to the next line."
+    },
+    {
+      "q": "Where can you open Serial Monitor in Arduino IDE?",
+      "options": [
+        "Edit Menu",
+        "Tools Menu",
+        "Sketch Menu",
+        "Insert Menu"
+      ],
+      "answer": 1,
+      "explanation": "Serial Monitor is available inside the Tools menu."
+    },
+    {
+      "q": "What happens if baud rates do not match?",
+      "options": [
+        "Arduino becomes faster",
+        "Correct output appears",
+        "Garbled or unreadable text appears",
+        "LED glows brighter"
+      ],
+      "answer": 2,
+      "explanation": "Wrong baud rates create unreadable communication."
+    },
+    {
+      "q": "Why is Serial Monitor useful in projects?",
+      "options": [
+        "For decoration",
+        "To debug and test programs",
+        "To increase voltage",
+        "To cool Arduino"
+      ],
+      "answer": 1,
+      "explanation": "Serial Monitor helps identify errors and monitor values."
+    },
+    {
+      "q": "Which device sends data to the computer?",
+      "options": [
+        "Arduino",
+        "Keyboard only",
+        "Speaker",
+        "Monitor"
+      ],
+      "answer": 0,
+      "explanation": "Arduino sends live data through serial communication."
+    },
+    {
+      "q": "Which symbol cable is mostly used for Arduino communication?",
+      "options": [
+        "HDMI",
+        "USB",
+        "VGA",
+        "Ethernet"
+      ],
+      "answer": 1,
+      "explanation": "USB cable is commonly used for programming and communication."
+    },
+    {
+      "q": "What can be displayed in Serial Monitor?",
+      "options": [
+        "Sensor values",
+        "Messages",
+        "Debug information",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Serial Monitor can display text, numbers, and sensor data."
+    },
+    {
+      "q": "What is debugging?",
+      "options": [
+        "Making bugs",
+        "Finding and fixing errors",
+        "Deleting Arduino code",
+        "Formatting computer"
+      ],
+      "answer": 1,
+      "explanation": "Debugging means finding and solving problems in code."
+    },
+    {
+      "q": "Which function prints text without moving to next line?",
+      "options": [
+        "Serial.println()",
+        "Serial.print()",
+        "Serial.line()",
+        "Serial.text()"
+      ],
+      "answer": 1,
+      "explanation": "Serial.print() keeps printing on the same line."
+    },
+    {
+      "q": "What type of data can Arduino send to Serial Monitor?",
+      "options": [
+        "Text",
+        "Numbers",
+        "Sensor readings",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Arduino can send many types of information."
+    },
+    {
+      "q": "Which shortcut opens Serial Monitor quickly?",
+      "options": [
+        "Ctrl + Shift + M",
+        "Ctrl + Alt + S",
+        "Shift + Enter",
+        "Ctrl + D"
+      ],
+      "answer": 0,
+      "explanation": "Ctrl + Shift + M opens Serial Monitor in Arduino IDE."
+    },
+    {
+      "q": "Why do students use Serial Monitor in robotics?",
+      "options": [
+        "To watch movies",
+        "To test sensors and robot behavior",
+        "To draw pictures",
+        "To play songs"
+      ],
+      "answer": 1,
+      "explanation": "Serial Monitor helps students understand how robots and sensors work in real time."
+    }
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-3/",
+    "slides_folder": "sessions/session-3/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-3/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-3",
+  "number": 3,
+  "title": "Decomposition & Abstraction",
+  "subtitle": "Break It Down, Keep It Simple!",
+  "date": "Session 03",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#FF6B35",
+  "icon": "🧩",
+  "tags": [
+    "Computational Thinking",
+    "Problem Solving",
+    "Logic",
+    "Programming"
+  ],
+  "overview": "This session introduces students to two powerful computational thinking skills — Decomposition (breaking a big problem into smaller parts) and Abstraction (hiding unnecessary details and focusing on what matters). Using fun real-life examples like making a pizza, planning a school trip, and building a Lego set, students will learn how programmers tackle complex problems step by step.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-3/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — whiteboard breakdowns, student group activity sheets, abstraction sorting games, puzzle activities.",
+    "gallery": [
+      {
+        "file": "data/decomposition-intro.jpg",
+        "_placeholder": "ADD: Whiteboard diagram showing a big problem split into smaller parts",
+        "caption": "Big problems become small when you decompose them!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/pizza-decomposition.jpg",
+        "_placeholder": "ADD: Diagram or drawing showing pizza-making steps broken into sub-tasks",
+        "caption": "Making pizza = Decomposition in real life!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/abstraction-intro.jpg",
+        "_placeholder": "ADD: Diagram showing details being hidden — car dashboard example",
+        "caption": "Abstraction — focus on WHAT, not HOW!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/map-abstraction.jpg",
+        "_placeholder": "ADD: Google Maps screenshot vs real city photo comparison",
+        "caption": "A map is an abstraction of the real world",
+        "category": "Concept"
+      },
+      {
+        "file": "data/group-decompose.jpg",
+        "_placeholder": "ADD: Students working in groups decomposing a problem on chart paper",
+        "caption": "Students breaking down a school trip plan",
+        "category": "Activity"
+      },
+      {
+        "file": "data/sorting-game.jpg",
+        "_placeholder": "ADD: Students sorting cards into 'important' vs 'not important' piles",
+        "caption": "Abstraction sorting card game!",
+        "category": "Fun Activity"
+      },
+      {
+        "file": "data/lego-analogy.jpg",
+        "_placeholder": "ADD: Lego set or building block activity showing modular sub-parts",
+        "caption": "Lego blocks = Decomposition in action",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Decomposition? — Breaking a big problem into smaller, manageable parts",
+    "Real-life Decomposition — Making pizza, planning a trip, building a Lego set",
+    "Why Decomposition Helps — Easier to solve, test, and fix smaller parts",
+    "What is Abstraction? — Hiding unnecessary details, focusing on what matters",
+    "Real-life Abstraction — Google Maps, car dashboard, TV remote",
+    "Difference Between Decomposition and Abstraction",
+    "How Programmers Use Both Skills Together",
+    "Connection to Algorithms and Pseudocode"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is Decomposition? — Computational Thinking",
+      "videoId": "D5h5TXsZmck",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A fun explanation of decomposition using real-world examples for beginners."
+    },
+    {
+      "title": "Abstraction Explained Simply",
+      "videoId": "L1-zCdrx8Lk",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn what abstraction means and how it's used in everyday life and coding."
+    },
+    {
+      "title": "Computational Thinking: Decomposition & Abstraction",
+      "videoId": "SiBPmRrmGaA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "How decomposition and abstraction work together in computational thinking."
+    },
+    {
+      "title": "Problem Solving for Kids — Think Like a Programmer",
+      "videoId": "m3BzoEo0S8s",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Fun introduction to problem-solving skills that every young programmer needs."
+    }
+  ],
+  "resources": [
+    {
+      "title": "BBC — Computational Thinking Guide",
+      "url": "https://www.bbc.co.uk/bitesize/guides/zp92mp3/revision/1",
+      "icon": "🔗"
+    },
+    {
+      "title": "Code.org — Problem Solving Activities",
+      "url": "https://code.org/",
+      "icon": "🔗"
+    },
+    {
+      "title": "CS Unplugged — Activities Without Computers",
+      "url": "https://csunplugged.org/en/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Scratch — Build by Breaking Into Parts",
+      "url": "https://scratch.mit.edu/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Pizza Problem Decomposition + Abstraction Card Sort",
+    "parts": [
+      "Chart paper (one per group)",
+      "Marker pens",
+      "Printed or hand-written task cards",
+      "Scissors",
+      "Sticky notes (two colors)",
+      "Whiteboard / blackboard"
+    ],
+    "steps": [
+      "Teacher writes 'Plan a School Trip' on the board as the big problem",
+      "Groups brainstorm and list ALL the smaller tasks needed on sticky notes",
+      "Groups arrange sticky notes into categories (Transport, Food, Permission, Activities)",
+      "Discuss: How did breaking it down make it easier to solve?",
+      "Now play the Abstraction Card Sort — each group gets cards with details",
+      "Students sort cards: IMPORTANT (keep) vs NOT IMPORTANT (hide/ignore)",
+      "Groups share their sorting and justify their choices",
+      "Teacher connects both activities: Decomposition = break it down, Abstraction = focus on what matters",
+      "Students write a short pseudocode plan using both skills for a chosen problem"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is Decomposition in computational thinking?",
+      "options": [
+        "Writing code very fast",
+        "Breaking a big problem into smaller, easier parts",
+        "Hiding details from the user",
+        "Drawing a flowchart"
+      ],
+      "answer": 1,
+      "explanation": "Decomposition means splitting a complex problem into smaller pieces that are easier to understand and solve."
+    },
+    {
+      "q": "Which of these is the best example of Decomposition?",
+      "options": [
+        "Guessing the answer",
+        "Planning a birthday party by listing: food, decorations, invites, games",
+        "Ignoring the problem",
+        "Using a calculator"
+      ],
+      "answer": 1,
+      "explanation": "Breaking a party into sub-tasks (food, decorations, invites, games) is decomposition — managing each piece separately!"
+    },
+    {
+      "q": "Why do programmers use Decomposition?",
+      "options": [
+        "To make programs look colorful",
+        "To make the problem harder",
+        "To solve smaller parts one at a time, making work easier",
+        "To avoid using algorithms"
+      ],
+      "answer": 2,
+      "explanation": "Decomposition makes big problems manageable. Fix one small part at a time — less confusion, fewer errors!"
+    },
+    {
+      "q": "What is Abstraction?",
+      "options": [
+        "Adding more steps to a solution",
+        "Focusing on important details and hiding unnecessary ones",
+        "Breaking a problem into parts",
+        "Writing pseudocode"
+      ],
+      "answer": 1,
+      "explanation": "Abstraction = filter! You keep what matters and ignore what doesn't, to keep things simple and clear."
+    },
+    {
+      "q": "Which of these is an example of Abstraction?",
+      "options": [
+        "Learning every mechanical part of a car engine to drive a car",
+        "Using a TV remote without knowing how it works inside",
+        "Writing all steps from scratch every time",
+        "Memorizing every street in a city"
+      ],
+      "answer": 1,
+      "explanation": "You use a TV remote without understanding its circuits — that's abstraction! You only need to know what buttons do."
+    },
+    {
+      "q": "Google Maps shows roads and landmarks but hides underground pipes and wiring. This is an example of:",
+      "options": [
+        "Decomposition",
+        "Algorithm",
+        "Abstraction",
+        "Pseudocode"
+      ],
+      "answer": 2,
+      "explanation": "Google Maps hides irrelevant details (pipes, wires) and shows only what's useful for navigation. That's abstraction!"
+    },
+    {
+      "q": "A student wants to build a school website. She splits it into: Home Page, About Page, Contact Page, and Gallery. She is using:",
+      "options": [
+        "Abstraction",
+        "Decomposition",
+        "Flowcharts",
+        "Debugging"
+      ],
+      "answer": 1,
+      "explanation": "Breaking the website into separate page tasks is decomposition — solve one page at a time!"
+    },
+    {
+      "q": "What is the main DIFFERENCE between Decomposition and Abstraction?",
+      "options": [
+        "They are exactly the same thing",
+        "Decomposition breaks problems into parts; Abstraction filters out unnecessary details",
+        "Abstraction breaks problems into parts; Decomposition filters details",
+        "Both are only used in mathematics"
+      ],
+      "answer": 1,
+      "explanation": "Decomposition = Break It Down. Abstraction = Keep What Matters. Two different but related skills!"
+    },
+    {
+      "q": "Making a pizza can be decomposed into: prepare dough, add sauce, add toppings, bake. What happens if you SKIP decomposition?",
+      "options": [
+        "Pizza tastes better",
+        "Nothing changes",
+        "Steps get confused, things go wrong, problem becomes harder",
+        "It gets done faster"
+      ],
+      "answer": 2,
+      "explanation": "Without decomposition, you might forget steps, do them in the wrong order, or get overwhelmed. Chaos!"
+    },
+    {
+      "q": "A car dashboard shows speed and fuel level but hides engine details. This is:",
+      "options": [
+        "Decomposition",
+        "Pseudocode",
+        "An algorithm",
+        "Abstraction"
+      ],
+      "answer": 3,
+      "explanation": "The dashboard abstracts engine complexity — you see only what you need to drive safely. Classic abstraction!"
+    },
+    {
+      "q": "Lego building instructions break the final model into small step-by-step stages. This is an example of:",
+      "options": [
+        "Abstraction",
+        "Decomposition",
+        "Flowchart",
+        "Debugging"
+      ],
+      "answer": 1,
+      "explanation": "Each Lego step is a small sub-task. Together they build the full model — that's decomposition in action!"
+    },
+    {
+      "q": "Which skill helps a programmer focus on WHAT a function does without worrying about HOW it works inside?",
+      "options": [
+        "Decomposition",
+        "Flowcharting",
+        "Abstraction",
+        "Pseudocode writing"
+      ],
+      "answer": 2,
+      "explanation": "Abstraction lets you use functions/tools without knowing every internal detail. Focus on WHAT, not HOW."
+    },
+    {
+      "q": "A recipe can be seen as a real-life example of:",
+      "options": [
+        "Abstraction only",
+        "Decomposition only",
+        "Both Decomposition and Algorithm",
+        "Neither"
+      ],
+      "answer": 2,
+      "explanation": "A recipe decomposes cooking into smaller steps AND is an algorithm — ordered instructions to reach a goal!"
+    },
+    {
+      "q": "When solving any big problem, what is the CORRECT order?",
+      "options": [
+        "Code first, think later",
+        "Decompose the problem → Identify key details (Abstraction) → Plan algorithm → Code",
+        "Draw pictures first",
+        "Skip planning and guess"
+      ],
+      "answer": 1,
+      "explanation": "Good programmers decompose first, then abstract key details, then plan an algorithm, then write code. Always plan!"
+    },
+    {
+      "q": "Which two skills are part of the four pillars of Computational Thinking covered in this session?",
+      "options": [
+        "Typing and Drawing",
+        "Googling and Copying",
+        "Decomposition and Abstraction",
+        "Memorizing and Repeating"
+      ],
+      "answer": 2,
+      "explanation": "Decomposition and Abstraction are two of the four pillars of Computational Thinking — essential skills for every programmer!"
+    }
+  ]
+}

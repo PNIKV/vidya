@@ -1,0 +1,327 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-5/",
+    "slides_folder": "sessions/session-5/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-5/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-5",
+  "number": 5,
+  "title": "LED Matrix: Initials",
+  "subtitle": "Light Up Your Name!",
+  "date": "Session 05",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#E91E63",
+  "icon": "💡",
+  "tags": [
+    "Electronics",
+    "Arduino",
+    "LED",
+    "Creative Coding",
+    "Hardware"
+  ],
+  "overview": "In this session, students learn how an 8x8 LED Matrix works and program it to display their name initials using Arduino. They explore how individual LEDs in a grid are controlled using rows and columns, understand binary patterns, and write code to light up custom letters — turning their name into a glowing display!",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-5/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — LED matrix close-ups, student initials displayed on matrix, wiring diagrams, Arduino code screenshots, completed projects.",
+    "gallery": [
+      {
+        "file": "data/led-matrix-intro.jpg",
+        "_placeholder": "ADD: Photo of 8x8 LED matrix glowing",
+        "caption": "8x8 LED Matrix — 64 tiny lights in a grid!",
+        "category": "Components"
+      },
+      {
+        "file": "data/led-matrix-grid.png",
+        "_placeholder": "ADD: Diagram showing row and column structure of LED matrix",
+        "caption": "Rows and Columns control every LED",
+        "category": "Concept"
+      },
+      {
+        "file": "data/initial-display.jpg",
+        "_placeholder": "ADD: Photo of student's initial letter glowing on LED matrix",
+        "caption": "My initial — glowing in LEDs!",
+        "category": "Activity"
+      },
+      {
+        "file": "data/binary-pattern.png",
+        "_placeholder": "ADD: Whiteboard diagram showing 0s and 1s mapped to LED on/off pattern",
+        "caption": "1 = LED ON, 0 = LED OFF — binary magic!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/arduino-matrix-wiring.jpg",
+        "_placeholder": "ADD: Photo of LED matrix connected to Arduino with jumper wires",
+        "caption": "Wiring the LED matrix to Arduino",
+        "category": "Lab"
+      },
+      {
+        "file": "data/student-coding.jpg",
+        "_placeholder": "ADD: Students writing array code in Arduino IDE",
+        "caption": "Students designing their letter in code",
+        "category": "Lab"
+      },
+      {
+        "file": "data/group-initials.jpg",
+        "_placeholder": "ADD: Group of students holding up their LED matrix displays",
+        "caption": "Everyone's initials — glowing together!",
+        "category": "Fun Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is an LED Matrix? — A grid of LEDs arranged in rows and columns",
+    "8x8 Matrix = 64 LEDs — Each controlled by row + column combination",
+    "How Rows and Columns Work — Multiplexing to control many LEDs with few pins",
+    "Binary Patterns — 1 = LED ON, 0 = LED OFF",
+    "Designing Letters on Grid Paper — Map initials on 8x8 grid",
+    "Using the MAX7219 Driver IC — Simplifies wiring to just 3 Arduino pins",
+    "Arduino Code — 2D Arrays to store letter patterns",
+    "Scrolling Text and Animations — Bonus challenge!"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "LED Matrix 8x8 with Arduino — Beginner Tutorial",
+      "videoId": "G4lIo-MRSiY",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Step-by-step guide to wiring an 8x8 LED matrix with Arduino and displaying patterns."
+    },
+    {
+      "title": "MAX7219 LED Matrix Arduino Tutorial",
+      "videoId": "3OLMnTDOEFY",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to use the MAX7219 driver module to easily control an 8x8 LED matrix."
+    },
+    {
+      "title": "How LED Matrices Work — Row and Column Explained",
+      "videoId": "G4lIo-MRSiY",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand how multiplexing works to control 64 LEDs using only a few pins."
+    },
+    {
+      "title": "Binary Numbers for Kids — 0s and 1s Explained",
+      "videoId": "qdFmSlFojIw",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Fun introduction to binary numbers and how computers use 0 and 1 to control things."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Wokwi — Simulate LED Matrix + Arduino Online",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "LED Matrix Font Designer Tool",
+      "url": "https://xantorohara.github.io/led-matrix-editor/",
+      "icon": "🔗"
+    },
+    {
+      "title": "MD_MAX72XX Arduino Library",
+      "url": "https://github.com/MajicDesigns/MD_MAX72XX",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad — Free Arduino Circuit Simulator",
+      "url": "https://www.tinkercad.com/circuits",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Design & Display Your Initial on LED Matrix",
+    "parts": [
+      "Arduino UNO",
+      "8x8 LED Matrix module with MAX7219 driver",
+      "Breadboard",
+      "Jumper wires (at least 5)",
+      "USB cable and laptop with Arduino IDE",
+      "8x8 grid paper and pencil (for designing initials)",
+      "MD_MAX72XX or LedControl Arduino library"
+    ],
+    "steps": [
+      "Give each student an 8x8 grid paper — draw your name initial by shading squares",
+      "Translate the drawing: shaded square = 1 (ON), empty square = 0 (OFF)",
+      "Wire the MAX7219 LED Matrix to Arduino: VCC → 5V, GND → GND, DIN → Pin 11, CS → Pin 10, CLK → Pin 13",
+      "Install the LedControl or MD_MAX72XX library in Arduino IDE",
+      "Open the starter code template and enter your 8-row binary pattern as a 2D array",
+      "Upload the code and watch your initial light up on the matrix!",
+      "Challenge 1: Change brightness using the library's setIntensity() function",
+      "Challenge 2: Display two initials alternating every second",
+      "Groups present their glowing initials and explain their binary pattern"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is an LED Matrix?",
+      "options": [
+        "A single very bright LED",
+        "A grid of LEDs arranged in rows and columns",
+        "A type of battery",
+        "A wireless speaker"
+      ],
+      "answer": 1,
+      "explanation": "An LED matrix is a grid of individual LEDs. An 8x8 matrix has 8 rows × 8 columns = 64 LEDs total!"
+    },
+    {
+      "q": "How many LEDs are in an 8x8 LED Matrix?",
+      "options": [
+        "8",
+        "16",
+        "32",
+        "64"
+      ],
+      "answer": 3,
+      "explanation": "8 rows × 8 columns = 64 LEDs! Each one can be turned ON or OFF individually."
+    },
+    {
+      "q": "In an LED matrix pattern, what does the number 1 represent?",
+      "options": [
+        "LED is OFF",
+        "LED is broken",
+        "LED is ON",
+        "LED is blinking"
+      ],
+      "answer": 2,
+      "explanation": "1 = LED ON, 0 = LED OFF. This binary pattern is how we design letters and shapes on the matrix!"
+    },
+    {
+      "q": "What is the MAX7219 chip used for?",
+      "options": [
+        "Storing photos",
+        "Controlling the LED matrix with fewer Arduino pins",
+        "Charging the battery",
+        "Connecting to WiFi"
+      ],
+      "answer": 1,
+      "explanation": "MAX7219 is a driver IC that lets you control all 64 LEDs using just 3 Arduino pins instead of 16!"
+    },
+    {
+      "q": "How many Arduino pins does the MAX7219 module need?",
+      "options": [
+        "64",
+        "16",
+        "8",
+        "3"
+      ],
+      "answer": 3,
+      "explanation": "MAX7219 needs only 3 pins — DIN (data), CS (chip select), and CLK (clock). Much simpler than direct wiring!"
+    },
+    {
+      "q": "What does DIN stand for in the LED matrix wiring?",
+      "options": [
+        "Digital Input Number",
+        "Data Input",
+        "Display Interface Node",
+        "Diode IN"
+      ],
+      "answer": 1,
+      "explanation": "DIN = Data IN. It carries the pattern data from Arduino to the MAX7219 driver chip."
+    },
+    {
+      "q": "A student designs the letter 'A' on grid paper by shading squares. What is the next step?",
+      "options": [
+        "Throw away the paper",
+        "Translate shaded squares to 1s and empty squares to 0s",
+        "Count all squares",
+        "Color the squares with paint"
+      ],
+      "answer": 1,
+      "explanation": "Shaded = 1 (ON), Empty = 0 (OFF). This creates a binary pattern that Arduino uses to light up the correct LEDs."
+    },
+    {
+      "q": "What data structure is used in Arduino code to store the LED matrix letter pattern?",
+      "options": [
+        "A single variable",
+        "A sentence",
+        "A 2D array of 0s and 1s",
+        "A WiFi password"
+      ],
+      "answer": 2,
+      "explanation": "A 2D array stores the 8 rows of 8 values each — perfectly matching the 8x8 LED grid structure."
+    },
+    {
+      "q": "What is multiplexing in an LED matrix?",
+      "options": [
+        "Using one pin to control all LEDs at the same time",
+        "Quickly switching rows ON/OFF so eyes see all LEDs lit at once",
+        "Connecting LEDs in a star pattern",
+        "Doubling the brightness of each LED"
+      ],
+      "answer": 1,
+      "explanation": "Multiplexing rapidly scans rows so fast (faster than human eye) it appears all LEDs are lit simultaneously!"
+    },
+    {
+      "q": "Which Arduino pin is typically connected to CLK on the MAX7219?",
+      "options": [
+        "Pin 2",
+        "Pin 7",
+        "Pin 13",
+        "Pin A0"
+      ],
+      "answer": 2,
+      "explanation": "CLK (clock) connects to Pin 13 on Arduino. It synchronises data transfer between Arduino and MAX7219."
+    },
+    {
+      "q": "What does setIntensity() do in the LED matrix library?",
+      "options": [
+        "Changes the LED color",
+        "Controls the brightness of the LED matrix",
+        "Rotates the display",
+        "Deletes the pattern"
+      ],
+      "answer": 1,
+      "explanation": "setIntensity() lets you set brightness from 0 (dim) to 15 (very bright). Great for power saving!"
+    },
+    {
+      "q": "If a student's initial is 'S', they need to design it on a:",
+      "options": [
+        "5x5 grid",
+        "8x8 grid",
+        "16x16 grid",
+        "4x4 grid"
+      ],
+      "answer": 1,
+      "explanation": "We use an 8x8 grid to match the LED matrix. Design your letter within 8 rows and 8 columns!"
+    },
+    {
+      "q": "What does the CS pin on MAX7219 do?",
+      "options": [
+        "Provides power to the matrix",
+        "Selects which MAX7219 chip receives data — enables communication",
+        "Resets the display",
+        "Controls LED color"
+      ],
+      "answer": 1,
+      "explanation": "CS = Chip Select. It tells the MAX7219 when to listen for incoming data from Arduino."
+    },
+    {
+      "q": "In the bonus challenge, how can two initials alternate on the display?",
+      "options": [
+        "Using two separate Arduino boards",
+        "Using delay() and switching between two byte arrays in a loop",
+        "Buying a bigger LED matrix",
+        "Using a remote control"
+      ],
+      "answer": 1,
+      "explanation": "Use a loop: display initial 1, delay(1000), display initial 2, delay(1000) — repeat! Simple and effective."
+    },
+    {
+      "q": "What is the biggest skill students gain from the LED Matrix Initials project?",
+      "options": [
+        "Only soldering wires",
+        "Connecting hardware wiring, binary thinking, and Arduino coding into one creative project",
+        "Only drawing on paper",
+        "Only watching videos"
+      ],
+      "answer": 1,
+      "explanation": "This project combines electronics wiring, binary logic, 2D arrays, and creative design — real engineering thinking!"
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-6/",
+    "slides_folder": "sessions/session-6/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-6/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-6",
+  "number": 6,
+  "title": "Word: Styles & Templates",
+  "subtitle": "Design Once, Use Everywhere!",
+  "date": "Session 06",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#2B579A",
+  "icon": "📝",
+  "tags": [
+    "MS Word",
+    "Digital Skills",
+    "Productivity",
+    "Document Design"
+  ],
+  "overview": "This session teaches students how to use Styles and Templates in Microsoft Word to create professional, consistent, and beautifully formatted documents. Students learn how Heading Styles, Paragraph Styles, and pre-built Templates save time and make documents look polished — just like real-world reports, letters, and newsletters.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-6/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots and activity photos — Word Styles panel, before/after formatting comparisons, template gallery, student documents, table of contents generated from styles.",
+    "gallery": [
+      {
+        "file": "data/word-styles-panel.jpg",
+        "_placeholder": "ADD: Screenshot of MS Word Styles panel showing Heading 1, Heading 2, Normal styles",
+        "caption": "The Styles panel — your formatting superpower!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/before-after-styles.jpg",
+        "_placeholder": "ADD: Side-by-side screenshot of plain document vs styled document",
+        "caption": "Same content — totally different look with Styles!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/word-template-gallery.jpg",
+        "_placeholder": "ADD: Screenshot of Word template gallery (File → New)",
+        "caption": "Hundreds of ready-made templates in Word!",
+        "category": "Apps"
+      },
+      {
+        "file": "data/heading-styles.jpg",
+        "_placeholder": "ADD: Screenshot showing Heading 1, Heading 2, Heading 3 applied to a document",
+        "caption": "Headings create structure in your document",
+        "category": "Learning"
+      },
+      {
+        "file": "data/table-of-contents.jpg",
+        "_placeholder": "ADD: Screenshot of automatic Table of Contents generated from Heading Styles",
+        "caption": "Auto Table of Contents — magic from Styles!",
+        "category": "Activity"
+      },
+      {
+        "file": "data/student-newsletter.jpg",
+        "_placeholder": "ADD: Student-created newsletter using a Word template",
+        "caption": "Students designing their own school newsletter!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/modify-style.jpg",
+        "_placeholder": "ADD: Screenshot of Modify Style dialog box in Word",
+        "caption": "Modify once — it changes everywhere instantly!",
+        "category": "Fun Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What are Styles in MS Word? — Pre-set formatting rules for text and paragraphs",
+    "Types of Styles — Character Styles, Paragraph Styles, Linked Styles",
+    "Built-in Styles — Normal, Heading 1, Heading 2, Heading 3, Title, Subtitle",
+    "Why Use Styles? — Consistency, speed, and professional appearance",
+    "Modifying Styles — Change once, update everywhere automatically",
+    "What are Templates? — Ready-made document designs you can reuse",
+    "Using Word's Built-in Templates — Resume, Newsletter, Report, Letter",
+    "Creating Your Own Custom Template — Save as .dotx file",
+    "Automatic Table of Contents from Heading Styles",
+    "Real-world Use — School reports, letters, newsletters, resumes"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "MS Word Styles Explained for Beginners",
+      "videoId": "qmFhA_2MSRE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to use Heading and Paragraph Styles in Microsoft Word to format documents quickly and professionally."
+    },
+    {
+      "title": "How to Use Word Templates",
+      "videoId": "NxKHrFAMKSc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Step-by-step guide to finding, using, and customising MS Word templates for school and work."
+    },
+    {
+      "title": "Create an Automatic Table of Contents in Word",
+      "videoId": "OPCtBIxMIBs",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "How to use Heading Styles to automatically generate a professional Table of Contents in seconds."
+    },
+    {
+      "title": "Modify Styles in Microsoft Word — Change Everything at Once",
+      "videoId": "H-KvBjqjAoE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how modifying a Style updates all matching text throughout the document instantly."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft Word Online — Free in Browser",
+      "url": "https://www.office.com/launch/word",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft Word Templates Gallery",
+      "url": "https://templates.office.com/en-us/templates-for-word",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft Word Help & Learning",
+      "url": "https://support.microsoft.com/en-us/word",
+      "icon": "🔗"
+    },
+    {
+      "title": "GCFGlobal — Free Word Tutorials",
+      "url": "https://edu.gcfglobal.org/en/word/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Style It Up! — Format a School Report Using Styles & Templates",
+    "parts": [
+      "Computer or laptop with MS Word or Word Online",
+      "Printed or digital plain-text report sample (no formatting)",
+      "MS Word template examples handout",
+      "Internet connection (for online templates)"
+    ],
+    "steps": [
+      "Open the plain-text school report provided by the teacher in MS Word",
+      "Apply 'Title' style to the document title using the Styles panel (Home tab)",
+      "Apply 'Heading 1' to each main section heading in the report",
+      "Apply 'Heading 2' to sub-section headings",
+      "Apply 'Normal' style to all body paragraph text",
+      "Observe how the document instantly looks structured and professional",
+      "Now go to References tab → Table of Contents → Insert automatic TOC",
+      "See the Table of Contents appear based on your Heading Styles!",
+      "Challenge 1: Right-click any style → Modify → Change font or colour — watch all headings update at once",
+      "Challenge 2: File → New → Browse templates → Choose a Newsletter template and type your own content",
+      "Groups present their styled documents and compare — whose looks most professional?"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a Style in MS Word?",
+      "options": [
+        "A font colour only",
+        "A pre-set collection of formatting rules applied to text",
+        "A drawing tool",
+        "A type of table"
+      ],
+      "answer": 1,
+      "explanation": "A Style is a saved set of formatting rules (font, size, colour, spacing) that you apply to text with one click!"
+    },
+    {
+      "q": "Which Style is used for the main title of a document?",
+      "options": [
+        "Normal",
+        "Heading 3",
+        "Title",
+        "Subtle Emphasis"
+      ],
+      "answer": 2,
+      "explanation": "The 'Title' style is designed for the main document title — large, bold, and eye-catching!"
+    },
+    {
+      "q": "What is Heading 1 used for?",
+      "options": [
+        "Body paragraph text",
+        "The smallest subheading",
+        "Main section headings in a document",
+        "Image captions"
+      ],
+      "answer": 2,
+      "explanation": "Heading 1 is for top-level sections. Heading 2 goes inside Heading 1 sections, Heading 3 goes even deeper."
+    },
+    {
+      "q": "What is the biggest advantage of using Styles?",
+      "options": [
+        "It adds pictures automatically",
+        "Changing one Style updates all matching text throughout the document instantly",
+        "It connects to the internet",
+        "It prints the document faster"
+      ],
+      "answer": 1,
+      "explanation": "Modify a Style once and every paragraph using that Style updates automatically — no manual changes needed!"
+    },
+    {
+      "q": "Where is the Styles panel found in MS Word?",
+      "options": [
+        "Insert tab",
+        "View tab",
+        "Home tab",
+        "Review tab"
+      ],
+      "answer": 2,
+      "explanation": "The Styles panel is in the Home tab — look for the row of style thumbnails (Normal, Heading 1, Heading 2...)."
+    },
+    {
+      "q": "What is a Template in MS Word?",
+      "options": [
+        "A blank white page",
+        "A pre-designed document layout you can reuse and fill with your own content",
+        "A type of font",
+        "A printing setting"
+      ],
+      "answer": 1,
+      "explanation": "Templates are ready-made documents (resumes, newsletters, reports) with design, fonts, and layout already done!"
+    },
+    {
+      "q": "How do you access built-in templates in MS Word?",
+      "options": [
+        "Edit → Paste",
+        "File → New → Browse Templates",
+        "View → Outline",
+        "Insert → Chart"
+      ],
+      "answer": 1,
+      "explanation": "Go to File → New to see hundreds of free built-in templates for resumes, letters, reports, flyers, and more!"
+    },
+    {
+      "q": "What file extension is used for a Word Template?",
+      "options": [
+        ".docx",
+        ".pdf",
+        ".dotx",
+        ".xlsx"
+      ],
+      "answer": 2,
+      "explanation": ".dotx is the Word Template format. Regular documents are .docx. Templates are saved as .dotx so they can be reused!"
+    },
+    {
+      "q": "What amazing feature do Heading Styles unlock in MS Word?",
+      "options": [
+        "Auto spell check",
+        "Automatic Table of Contents generation",
+        "Auto image insertion",
+        "Auto translation"
+      ],
+      "answer": 1,
+      "explanation": "Apply Heading Styles → go to References → Table of Contents → Word builds a TOC automatically from your headings!"
+    },
+    {
+      "q": "A student applies Heading 1 to 5 section titles. She changes Heading 1 font to blue. How many titles change colour?",
+      "options": [
+        "Only the first one",
+        "Only the one she clicked",
+        "All 5 titles change to blue automatically",
+        "None of them change"
+      ],
+      "answer": 2,
+      "explanation": "Modifying a Style updates ALL text using that Style at once — that's the power of Styles over manual formatting!"
+    },
+    {
+      "q": "Which of these is a real-world document where Templates save time?",
+      "options": [
+        "Drawing a sketch",
+        "Writing a resume or job application letter",
+        "Playing a game",
+        "Sending a text message"
+      ],
+      "answer": 1,
+      "explanation": "Resumes, cover letters, school reports, and newsletters are all made faster and better using Word Templates!"
+    },
+    {
+      "q": "What is the 'Normal' style used for?",
+      "options": [
+        "Main document title",
+        "Section headings",
+        "Regular body paragraph text",
+        "Image borders"
+      ],
+      "answer": 2,
+      "explanation": "'Normal' is the default style for body text — the plain paragraph style used for most content in a document."
+    },
+    {
+      "q": "Why should students use Heading Styles instead of just making text bold and big manually?",
+      "options": [
+        "Because bold text is not allowed",
+        "Heading Styles enable TOC, navigation, and bulk updates — manual formatting cannot do this",
+        "Because it uses less ink when printing",
+        "Because manual formatting is too colourful"
+      ],
+      "answer": 1,
+      "explanation": "Manual bold/big text LOOKS like a heading but has no functionality. Heading Styles power the TOC, Navigation Pane, and bulk edits!"
+    },
+    {
+      "q": "What does 'consistency' mean when using Styles in a document?",
+      "options": [
+        "All pages have the same background color only",
+        "Every heading, paragraph, and title follows the same formatting rules throughout",
+        "The document has only one font size",
+        "Images are the same size"
+      ],
+      "answer": 1,
+      "explanation": "Consistency means every Heading 1 looks identical, every paragraph is the same size — professional and easy to read!"
+    },
+    {
+      "q": "What did students create in the 'Style It Up!' activity?",
+      "options": [
+        "A video game",
+        "A circuit on a breadboard",
+        "A professionally formatted school report using Styles and an automatic Table of Contents",
+        "A drawing in Paint"
+      ],
+      "answer": 2,
+      "explanation": "Students applied Styles to a plain report, generated an automatic TOC, modified styles, and explored newsletter templates!"
+    }
+  ]
+}

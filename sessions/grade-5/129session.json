@@ -1,0 +1,320 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Servo Temperature Fan",
+  "subtitle": "Smart Cooling with Arduino!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FF5722",
+  "icon": "🌡️",
+  "tags": [
+    "Arduino",
+    "Electronics",
+    "Temperature Sensor",
+    "Automation"
+  ],
+  "overview": "This session introduces students to building a smart temperature-controlled fan using Arduino, a servo motor, and a temperature sensor. Students learn automation, sensors, and smart cooling systems through hands-on activities.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add actual project photos, wiring diagrams, student activities, and screenshots.",
+    "gallery": [
+      {
+        "file": "data/servo-motor.jpg",
+        "_placeholder": "ADD: Photo of servo motor",
+        "caption": "Servo motor rotates accurately based on temperature",
+        "category": "Components"
+      },
+      {
+        "file": "data/temperature-sensor.jpg",
+        "_placeholder": "ADD: Photo of LM35 or DHT11 sensor",
+        "caption": "Temperature sensor detects heat around it",
+        "category": "Components"
+      },
+      {
+        "file": "data/arduino-uno.jpg",
+        "_placeholder": "ADD: Photo of Arduino UNO board",
+        "caption": "Arduino acts as the smart brain of the project",
+        "category": "Components"
+      },
+      {
+        "file": "data/fan-project.jpg",
+        "_placeholder": "ADD: Photo of mini fan connected to servo",
+        "caption": "Smart fan moves automatically when temperature increases",
+        "category": "Project"
+      },
+      {
+        "file": "data/breadboard-wiring.jpg",
+        "_placeholder": "ADD: Wiring setup photo",
+        "caption": "Students connecting components on breadboard",
+        "category": "Lab"
+      },
+      {
+        "file": "data/student-project.jpg",
+        "_placeholder": "ADD: Students testing temperature fan project",
+        "caption": "Students learning automation with sensors",
+        "category": "Lab"
+      },
+      {
+        "file": "data/servo-angle.gif",
+        "_placeholder": "ADD: Servo movement animation",
+        "caption": "Servo changes angle based on sensor reading",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Automation?",
+    "Introduction to Servo Motor",
+    "What is a Temperature Sensor?",
+    "Arduino as Smart Brain",
+    "How Temperature Detection Works",
+    "Servo Rotation using Arduino Code",
+    "Smart Fan System",
+    "Sensor Input and Motor Output",
+    "Real-life Uses of Smart Cooling Systems",
+    "Basic Arduino Programming"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Servo Motor Basics for Beginners",
+      "videoId": "cYzaJPKjvQk",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Learn how servo motors rotate and work with Arduino."
+    },
+    {
+      "title": "Temperature Sensor Explained",
+      "videoId": "GJmRfhxQhjk",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Understanding temperature sensors and smart projects."
+    },
+    {
+      "title": "Arduino Smart Fan Project",
+      "videoId": "f8KqP9M5xRM",
+      "desc": "Build an automatic temperature-controlled fan using Arduino."
+    },
+    {
+      "title": "Arduino Servo Motor Tutorial",
+      "videoId": "ggh3VhPAQEA",
+      "desc": "Simple servo motor coding and wiring tutorial."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad Circuits",
+      "url": "https://www.tinkercad.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Servo Temperature Fan",
+    "parts": [
+      "Arduino UNO",
+      "Servo Motor",
+      "Temperature Sensor (LM35/DHT11)",
+      "Mini Fan",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect temperature sensor to Arduino",
+      "Connect servo motor signal pin to Arduino PWM pin",
+      "Attach mini fan to servo motor",
+      "Upload Arduino code",
+      "Open Serial Monitor to check temperature",
+      "Increase temperature near sensor using hand heat",
+      "Observe servo rotating automatically",
+      "Challenge: Change fan angle for different temperatures"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the main purpose of the temperature sensor?",
+      "options": [
+        "Play music",
+        "Detect temperature",
+        "Store energy",
+        "Glow light"
+      ],
+      "answer": 1,
+      "explanation": "The temperature sensor detects heat and sends data to Arduino."
+    },
+    {
+      "q": "Which component acts as the brain of the project?",
+      "options": [
+        "Servo Motor",
+        "Fan",
+        "Arduino UNO",
+        "Battery"
+      ],
+      "answer": 2,
+      "explanation": "Arduino UNO controls all components using programming."
+    },
+    {
+      "q": "What does a servo motor do?",
+      "options": [
+        "Stores power",
+        "Rotates to specific angles",
+        "Measures voltage",
+        "Creates sound"
+      ],
+      "answer": 1,
+      "explanation": "Servo motors move accurately to selected angles."
+    },
+    {
+      "q": "What happens when temperature increases?",
+      "options": [
+        "Servo rotates fan",
+        "Arduino shuts down",
+        "LED breaks",
+        "Battery disappears"
+      ],
+      "answer": 0,
+      "explanation": "The servo motor rotates the fan when temperature becomes high."
+    },
+    {
+      "q": "Which coding platform is commonly used with Arduino?",
+      "options": [
+        "Arduino IDE",
+        "Paint",
+        "MS Word",
+        "Photoshop"
+      ],
+      "answer": 0,
+      "explanation": "Arduino IDE is used to write and upload Arduino code."
+    },
+    {
+      "q": "What is automation?",
+      "options": [
+        "Doing work manually only",
+        "Machines working automatically",
+        "Drawing pictures",
+        "Playing games"
+      ],
+      "answer": 1,
+      "explanation": "Automation means systems work automatically with sensors and programming."
+    },
+    {
+      "q": "Which component provides movement in this project?",
+      "options": [
+        "Breadboard",
+        "Servo Motor",
+        "Wire",
+        "Resistor"
+      ],
+      "answer": 1,
+      "explanation": "Servo motor creates controlled movement."
+    },
+    {
+      "q": "Why is a breadboard used?",
+      "options": [
+        "For cooking",
+        "For temporary circuit connections",
+        "For storing files",
+        "For charging phones"
+      ],
+      "answer": 1,
+      "explanation": "Breadboards help build circuits without soldering."
+    },
+    {
+      "q": "Which sensor is commonly used in temperature projects?",
+      "options": [
+        "Ultrasonic Sensor",
+        "LM35",
+        "IR Sensor",
+        "LDR"
+      ],
+      "answer": 1,
+      "explanation": "LM35 is a popular temperature sensor."
+    },
+    {
+      "q": "What type of project is a smart fan?",
+      "options": [
+        "Manual system",
+        "Automation project",
+        "Cooking project",
+        "Drawing project"
+      ],
+      "answer": 1,
+      "explanation": "Smart fans work automatically using sensors and coding."
+    },
+    {
+      "q": "What powers the Arduino UNO?",
+      "options": [
+        "Water",
+        "USB cable or adapter",
+        "Paper",
+        "Air"
+      ],
+      "answer": 1,
+      "explanation": "Arduino UNO can be powered using USB or adapters."
+    },
+    {
+      "q": "Which part connects electronic components together?",
+      "options": [
+        "Fan",
+        "Jumper wires",
+        "Bottle",
+        "Paper"
+      ],
+      "answer": 1,
+      "explanation": "Jumper wires connect different parts of the circuit."
+    },
+    {
+      "q": "What happens when the sensor detects cool temperature?",
+      "options": [
+        "Fan movement reduces or stops",
+        "Fan explodes",
+        "Arduino melts",
+        "Wire disappears"
+      ],
+      "answer": 0,
+      "explanation": "The fan slows down or stops when temperature becomes low."
+    },
+    {
+      "q": "Which skill improves through this project?",
+      "options": [
+        "Problem solving",
+        "Coding",
+        "Electronics learning",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Students improve coding, electronics, and creative problem-solving skills."
+    },
+    {
+      "q": "What is the real-life use of temperature-controlled systems?",
+      "options": [
+        "Smart cooling systems",
+        "Automatic room fans",
+        "Industrial machines",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Temperature-controlled systems are used in many smart devices and industries."
+    }
+  ]
+}

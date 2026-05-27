@@ -1,0 +1,323 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, sensor images, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Photoresistor Mapping",
+  "subtitle": "light to numbers, numbers to actions!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FFD93D",
+  "icon": "💡",
+  "tags": [
+    "Arduino",
+    "Sensors",
+    "Electronics",
+    "Coding"
+  ],
+  "overview": "This session introduces students to Photoresistors (LDR sensors) and mapping values in Arduino. Students will learn how light intensity changes sensor values and how mapping converts sensor readings into useful outputs like LED brightness.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from actual classroom session — LDR sensor setup, Arduino circuit, Serial Monitor readings, students testing flashlight and shadow.",
+    "gallery": [
+      {
+        "file": "data/photoresistor.jpg",
+        "_placeholder": "ADD: Photo of LDR sensor",
+        "caption": "Photoresistor (LDR) senses light intensity",
+        "category": "Components"
+      },
+      {
+        "file": "data/arduino-ldr-circuit.jpg",
+        "_placeholder": "ADD: Photo of Arduino with LDR circuit",
+        "caption": "Arduino connected with Photoresistor",
+        "category": "Circuit"
+      },
+      {
+        "file": "data/serial-monitor.png",
+        "_placeholder": "ADD: Screenshot of Serial Monitor values",
+        "caption": "Serial Monitor showing changing light values",
+        "category": "Software"
+      },
+      {
+        "file": "data/led-brightness.jpg",
+        "_placeholder": "ADD: Photo of LED brightness changing",
+        "caption": "LED brightness controlled using mapped values",
+        "category": "Output"
+      },
+      {
+        "file": "data/student-shadow-test.jpg",
+        "_placeholder": "ADD: Students testing shadow on LDR",
+        "caption": "Students covering sensor to test darkness",
+        "category": "Activity"
+      },
+      {
+        "file": "data/flashlight-test.jpg",
+        "_placeholder": "ADD: Flashlight testing activity",
+        "caption": "Using flashlight to increase sensor values",
+        "category": "Experiment"
+      },
+      {
+        "file": "data/breadboard-setup.jpg",
+        "_placeholder": "ADD: Breadboard wiring photo",
+        "caption": "Students building the LDR breadboard circuit",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Photoresistor (LDR)?",
+    "How light changes resistance",
+    "Analog sensor values in Arduino",
+    "Using analogRead()",
+    "Serial Monitor for reading values",
+    "Understanding Mapping in Arduino",
+    "map() function basics",
+    "Converting light values into LED brightness",
+    "Bright light vs darkness sensor readings",
+    "Real-life applications of LDR sensors"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is an LDR Sensor?",
+      "videoId": "Q0f4K9dJ6nA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Simple explanation of how photoresistors detect light."
+    },
+    {
+      "title": "Arduino LDR Sensor Tutorial",
+      "videoId": "sK4zA4A6d2k",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to connect and use an LDR with Arduino."
+    },
+    {
+      "title": "Arduino map() Function Explained",
+      "videoId": "Wpd9uQfC7Io",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understanding mapping values in Arduino programming."
+    },
+    {
+      "title": "Automatic Light Control Project",
+      "videoId": "0ZQhRkUBm5Q",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Real-life use of photoresistors in automatic lighting."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino map() Reference",
+      "url": "https://reference.arduino.cc/reference/en/language/functions/math/map/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "LDR Sensor Light Mapping Activity",
+    "parts": [
+      "Arduino UNO",
+      "Breadboard",
+      "Photoresistor (LDR)",
+      "10kΩ Resistor",
+      "LED",
+      "Jumper wires",
+      "USB cable"
+    ],
+    "steps": [
+      "Connect LDR and resistor on breadboard",
+      "Connect LDR output to Arduino analog pin A0",
+      "Upload Arduino code using analogRead()",
+      "Open Serial Monitor to view sensor values",
+      "Cover the sensor using your hand",
+      "Use flashlight/mobile torch on sensor",
+      "Observe changing values in Serial Monitor",
+      "Use map() function to control LED brightness",
+      "Test different light levels and compare outputs"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does an LDR sensor detect?",
+      "options": [
+        "Temperature",
+        "Sound",
+        "Light",
+        "Water"
+      ],
+      "answer": 2,
+      "explanation": "An LDR (Light Dependent Resistor) detects light intensity."
+    },
+    {
+      "q": "What happens to LDR resistance in bright light?",
+      "options": [
+        "Resistance increases",
+        "Resistance decreases",
+        "Resistance becomes zero",
+        "Nothing changes"
+      ],
+      "answer": 1,
+      "explanation": "In bright light, LDR resistance becomes lower."
+    },
+    {
+      "q": "Which Arduino function reads analog sensor values?",
+      "options": [
+        "digitalWrite()",
+        "analogRead()",
+        "delay()",
+        "pinMode()"
+      ],
+      "answer": 1,
+      "explanation": "analogRead() reads analog values from sensors like LDR."
+    },
+    {
+      "q": "Which Arduino pin is commonly used for LDR input?",
+      "options": [
+        "Digital Pin 13",
+        "Analog Pin A0",
+        "GND",
+        "5V"
+      ],
+      "answer": 1,
+      "explanation": "LDR sensor values are usually connected to analog pins like A0."
+    },
+    {
+      "q": "What does the Serial Monitor show?",
+      "options": [
+        "Videos",
+        "Sensor data and messages",
+        "Battery charging",
+        "Music"
+      ],
+      "answer": 1,
+      "explanation": "Serial Monitor displays sensor values and Arduino output text."
+    },
+    {
+      "q": "What is the purpose of the map() function?",
+      "options": [
+        "To draw maps",
+        "To convert one range of values into another range",
+        "To connect internet",
+        "To delete sensor values"
+      ],
+      "answer": 1,
+      "explanation": "map() converts sensor values into another useful range."
+    },
+    {
+      "q": "What happens when you cover the LDR sensor?",
+      "options": [
+        "More light reaches sensor",
+        "Less light reaches sensor",
+        "Sensor disappears",
+        "LED breaks"
+      ],
+      "answer": 1,
+      "explanation": "Covering the LDR reduces light reaching the sensor."
+    },
+    {
+      "q": "Which component can be controlled using mapped values?",
+      "options": [
+        "LED brightness",
+        "Notebook",
+        "Keyboard",
+        "Mouse pad"
+      ],
+      "answer": 0,
+      "explanation": "Mapped sensor values can control LED brightness."
+    },
+    {
+      "q": "What type of sensor is an LDR?",
+      "options": [
+        "Light sensor",
+        "Water sensor",
+        "Smoke sensor",
+        "Touch sensor"
+      ],
+      "answer": 0,
+      "explanation": "LDR is a light-sensitive sensor."
+    },
+    {
+      "q": "Which range is commonly returned by analogRead()?",
+      "options": [
+        "0 to 10",
+        "0 to 100",
+        "0 to 1023",
+        "0 to 9999"
+      ],
+      "answer": 2,
+      "explanation": "Arduino analogRead() usually returns values between 0 and 1023."
+    },
+    {
+      "q": "What real-life device uses an LDR sensor?",
+      "options": [
+        "Automatic street lights",
+        "Water bottle",
+        "School bag",
+        "Fan regulator only"
+      ],
+      "answer": 0,
+      "explanation": "Automatic street lights use LDR sensors to detect darkness."
+    },
+    {
+      "q": "What increases the LDR reading quickly?",
+      "options": [
+        "Darkness",
+        "Torch or flashlight",
+        "Closing laptop",
+        "Disconnecting wires"
+      ],
+      "answer": 1,
+      "explanation": "More light from a torch increases sensor readings."
+    },
+    {
+      "q": "What does mapping help students understand?",
+      "options": [
+        "Value conversion",
+        "Drawing cartoons",
+        "Charging batteries",
+        "Deleting files"
+      ],
+      "answer": 0,
+      "explanation": "Mapping helps convert one sensor value range into another useful output range."
+    },
+    {
+      "q": "Why do we use a resistor with an LDR?",
+      "options": [
+        "To make sound",
+        "To create a voltage divider circuit",
+        "To play music",
+        "To charge battery"
+      ],
+      "answer": 1,
+      "explanation": "A resistor is used with LDR to create measurable voltage changes."
+    },
+    {
+      "q": "What did students observe in this activity?",
+      "options": [
+        "Light changes sensor values",
+        "Sensor plays songs",
+        "LDR creates water",
+        "Arduino becomes wireless"
+      ],
+      "answer": 0,
+      "explanation": "Students observed how changing light changes sensor readings and outputs."
+    }
+  ]
+}

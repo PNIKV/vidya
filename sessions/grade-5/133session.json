@@ -1,0 +1,314 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Online Etiquette",
+  "subtitle": "Think Before You Click & Type!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Digital Citizenship",
+  "color": "#4A90E2",
+  "icon": "💻",
+  "tags": [
+    "Internet Safety",
+    "Digital Citizenship",
+    "Communication",
+    "Technology"
+  ],
+  "overview": "This session helps students understand how to behave respectfully and safely online. Students learn about polite communication, responsible posting, respecting privacy, avoiding cyberbullying, and becoming kind digital citizens.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of chats, online classes, emails, social media examples, and classroom activities.",
+    "gallery": [
+      {
+        "file": "data/online-class.jpg",
+        "_placeholder": "ADD: Photo of students attending online class politely",
+        "caption": "Students learning proper online behavior",
+        "category": "Concept"
+      },
+      {
+        "file": "data/chat-example.png",
+        "_placeholder": "ADD: Screenshot of polite vs rude messages",
+        "caption": "Think before you type!",
+        "category": "Communication"
+      },
+      {
+        "file": "data/social-media.png",
+        "_placeholder": "ADD: Screenshot of social media safety examples",
+        "caption": "Be responsible while posting online",
+        "category": "Safety"
+      },
+      {
+        "file": "data/cyberbullying.jpg",
+        "_placeholder": "ADD: Anti-cyberbullying awareness poster",
+        "caption": "Stop cyberbullying — be kind online",
+        "category": "Awareness"
+      },
+      {
+        "file": "data/password-security.jpg",
+        "_placeholder": "ADD: Photo showing strong password example",
+        "caption": "Keep your accounts safe",
+        "category": "Security"
+      },
+      {
+        "file": "data/group-activity.jpg",
+        "_placeholder": "ADD: Students discussing online manners",
+        "caption": "Group discussion on digital etiquette",
+        "category": "Activity"
+      },
+      {
+        "file": "data/email-etiquette.png",
+        "_placeholder": "ADD: Screenshot of proper email format",
+        "caption": "Learning professional online communication",
+        "category": "Communication"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Online Etiquette (Netiquette)?",
+    "Think Before You Type — Words Matter Online",
+    "Respect Others During Online Chats & Classes",
+    "Avoid Cyberbullying and Hurtful Messages",
+    "Do Not Share Personal Information Publicly",
+    "Use Polite Language in Emails and Chats",
+    "Respect Privacy — Ask Before Posting Photos",
+    "Strong Passwords and Safe Online Accounts",
+    "Responsible Social Media Usage",
+    "Digital Footprint — Internet Never Forgets"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is Netiquette?",
+      "videoId": "YyQj5D4twE0",
+      "_note": "Replace videoId with actual YouTube video ID",
+      "desc": "An introduction to online etiquette and good digital behavior."
+    },
+    {
+      "title": "Internet Safety for Kids",
+      "videoId": "HxySrSbSY7o",
+      "desc": "Learn how to stay safe online and protect personal information."
+    },
+    {
+      "title": "Cyberbullying Awareness",
+      "videoId": "5oYpD9sJkSU",
+      "desc": "Understanding cyberbullying and how to stop it."
+    },
+    {
+      "title": "Digital Citizenship Explained",
+      "videoId": "yrln8nyVBLU",
+      "desc": "Learn how to become a responsible digital citizen."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Be Internet Awesome",
+      "url": "https://beinternetawesome.withgoogle.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Common Sense Media Digital Citizenship",
+      "url": "https://www.commonsense.org/education/digital-citizenship",
+      "icon": "🔗"
+    },
+    {
+      "title": "Cyber Safety Tips for Students",
+      "url": "https://www.staysafeonline.org",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Polite or Rude? Online Chat Activity",
+    "parts": [
+      "Projector or board",
+      "Sample chat screenshots",
+      "Paper and pen",
+      "Internet-enabled computer"
+    ],
+    "steps": [
+      "Show students examples of online chat messages",
+      "Ask students to identify polite and rude behavior",
+      "Discuss why respectful communication matters",
+      "Students rewrite rude messages politely",
+      "Create classroom online etiquette rules together",
+      "Challenge: Make a 'Think Before You Post' poster"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does Online Etiquette mean?",
+      "options": [
+        "Playing games online",
+        "Good manners and respectful behavior online",
+        "Buying things online",
+        "Watching videos online"
+      ],
+      "answer": 1,
+      "explanation": "Online Etiquette means behaving politely and responsibly on the internet."
+    },
+    {
+      "q": "What should you do before posting online?",
+      "options": [
+        "Post quickly without reading",
+        "Think if it is kind, safe, and respectful",
+        "Share personal information",
+        "Copy others"
+      ],
+      "answer": 1,
+      "explanation": "Always THINK before posting anything online."
+    },
+    {
+      "q": "Which of these is an example of polite online behavior?",
+      "options": [
+        "Using rude words",
+        "Typing in ALL CAPS to shout",
+        "Respecting others during chats",
+        "Sharing fake rumors"
+      ],
+      "answer": 2,
+      "explanation": "Respectful communication is part of good online etiquette."
+    },
+    {
+      "q": "What is Cyberbullying?",
+      "options": [
+        "Helping friends online",
+        "Using the internet for homework",
+        "Hurting or teasing someone online",
+        "Playing educational games"
+      ],
+      "answer": 2,
+      "explanation": "Cyberbullying means using technology to hurt or bully others."
+    },
+    {
+      "q": "Should you share your password with friends?",
+      "options": [
+        "Yes, always",
+        "Only in school",
+        "No, passwords should stay private",
+        "Only with strangers"
+      ],
+      "answer": 2,
+      "explanation": "Passwords protect your accounts and should remain private."
+    },
+    {
+      "q": "What is a Digital Footprint?",
+      "options": [
+        "Footprints on a keyboard",
+        "Your online activity history",
+        "A computer virus",
+        "A gaming score"
+      ],
+      "answer": 1,
+      "explanation": "Everything you do online can leave a digital footprint."
+    },
+    {
+      "q": "Why is typing in ALL CAPS usually avoided?",
+      "options": [
+        "It saves battery",
+        "It looks like shouting",
+        "It improves internet speed",
+        "It deletes messages"
+      ],
+      "answer": 1,
+      "explanation": "ALL CAPS can seem rude because it looks like shouting."
+    },
+    {
+      "q": "What should you do if someone is rude online?",
+      "options": [
+        "Be rude back",
+        "Share their message publicly",
+        "Tell a trusted adult or teacher",
+        "Ignore all internet safety"
+      ],
+      "answer": 2,
+      "explanation": "Report harmful behavior to a trusted adult."
+    },
+    {
+      "q": "What is safe to share online?",
+      "options": [
+        "Your home address",
+        "Your passwords",
+        "Personal information",
+        "General school project ideas"
+      ],
+      "answer": 3,
+      "explanation": "Avoid sharing private or personal details online."
+    },
+    {
+      "q": "What should you do before posting someone’s photo online?",
+      "options": [
+        "Post without asking",
+        "Edit it secretly",
+        "Ask for permission",
+        "Share it publicly immediately"
+      ],
+      "answer": 2,
+      "explanation": "Respect privacy and ask before sharing photos."
+    },
+    {
+      "q": "Which is a good online class behavior?",
+      "options": [
+        "Interrupting others",
+        "Muting microphone when not speaking",
+        "Sending spam messages",
+        "Playing games during class"
+      ],
+      "answer": 1,
+      "explanation": "Good online manners help everyone learn better."
+    },
+    {
+      "q": "What kind of password is strong?",
+      "options": [
+        "123456",
+        "password",
+        "Your name only",
+        "A mix of letters, numbers, and symbols"
+      ],
+      "answer": 3,
+      "explanation": "Strong passwords are harder for others to guess."
+    },
+    {
+      "q": "Why should we respect others online?",
+      "options": [
+        "To avoid learning",
+        "To create a safe and friendly internet",
+        "To become famous",
+        "To use more data"
+      ],
+      "answer": 1,
+      "explanation": "Respect makes the online world safer and kinder."
+    },
+    {
+      "q": "Which action is NOT good online etiquette?",
+      "options": [
+        "Helping classmates online",
+        "Using polite words",
+        "Spreading fake news",
+        "Listening respectfully"
+      ],
+      "answer": 2,
+      "explanation": "Sharing fake information is irresponsible behavior."
+    },
+    {
+      "q": "What should students remember while using social media?",
+      "options": [
+        "Everything online disappears forever",
+        "Post anything without thinking",
+        "Internet posts can stay online permanently",
+        "Passwords should be public"
+      ],
+      "answer": 2,
+      "explanation": "Online posts can stay forever, so always post responsibly."
+    }
+  ]
+}

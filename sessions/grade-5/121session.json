@@ -1,0 +1,263 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put File Explorer activity photos here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "File Explorer Advanced",
+  "subtitle": "organize, search, manage!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Intermediate",
+  "color": "#4A90E2",
+  "icon": "📁",
+  "tags": [
+    "Computer",
+    "Windows",
+    "File Management",
+    "Digital Skills"
+  ],
+  "overview": "This session helps students learn advanced features of File Explorer such as creating folders, managing files, searching files, renaming, copying, moving, deleting, and understanding storage organization in Windows.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots from actual class activities, file organization practice, and Windows File Explorer examples.",
+    "gallery": [
+      {
+        "file": "data/file-explorer.jpg",
+        "_placeholder": "ADD: Screenshot of Windows File Explorer",
+        "caption": "Windows File Explorer Interface",
+        "category": "Concept"
+      },
+      {
+        "file": "data/folder-create.jpg",
+        "_placeholder": "ADD: Students creating folders",
+        "caption": "Creating new folders for organizing files",
+        "category": "Activity"
+      },
+      {
+        "file": "data/copy-paste.jpg",
+        "_placeholder": "ADD: Copy and paste practice",
+        "caption": "Students learning Copy and Paste",
+        "category": "Lab"
+      },
+      {
+        "file": "data/search-files.jpg",
+        "_placeholder": "ADD: File searching screenshot",
+        "caption": "Searching files quickly using search bar",
+        "category": "Concept"
+      },
+      {
+        "file": "data/rename-files.jpg",
+        "_placeholder": "ADD: File renaming practice",
+        "caption": "Renaming files properly",
+        "category": "Activity"
+      },
+      {
+        "file": "data/recycle-bin.jpg",
+        "_placeholder": "ADD: Recycle Bin screenshot",
+        "caption": "Deleted files go to Recycle Bin",
+        "category": "Concept"
+      },
+      {
+        "file": "data/usb-drive.jpg",
+        "_placeholder": "ADD: USB drive connection photo",
+        "caption": "Understanding external storage devices",
+        "category": "Hardware"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is File Explorer?",
+    "Understanding Files and Folders",
+    "Creating New Folder",
+    "Copy, Cut and Paste Files",
+    "Rename Files and Folders",
+    "Delete Files and Restore from Recycle Bin",
+    "Search Files using Search Bar",
+    "Different Drives — C:, D:, USB Drive",
+    "View Options — Large Icons, Details, List",
+    "Importance of Organizing Files Properly"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Introduction to File Explorer",
+      "videoId": "K7tq3X9mJ5E",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Basic introduction to Windows File Explorer and folder navigation."
+    },
+    {
+      "title": "Copy, Cut and Paste Files",
+      "videoId": "5z0x7M9jF1Q",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Learn how to move and organize files easily."
+    },
+    {
+      "title": "How to Search Files in Windows",
+      "videoId": "A8dP7L2mQ9I",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Learn quick file searching techniques."
+    },
+    {
+      "title": "Recycle Bin Explained",
+      "videoId": "V3mK9N7xR2P",
+      "_note": "Replace with actual YouTube video ID",
+      "desc": "Understand deleted files and file recovery."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft File Explorer Guide",
+      "url": "https://support.microsoft.com/windows",
+      "icon": "🔗"
+    },
+    {
+      "title": "Windows Keyboard Shortcuts",
+      "url": "https://support.microsoft.com/windows/windows-keyboard-shortcuts",
+      "icon": "🔗"
+    },
+    {
+      "title": "Computer Basics Tutorial",
+      "url": "https://edu.gcfglobal.org/en/computerbasics/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Folder Organization Activity",
+    "parts": [
+      "Computer/Laptop",
+      "Windows Operating System",
+      "Sample files (images, documents)",
+      "USB Drive (optional)"
+    ],
+    "steps": [
+      "Open File Explorer using Windows + E",
+      "Create a folder named 'My School Work'",
+      "Inside it create folders: Maths, Science, English",
+      "Copy files into correct subject folders",
+      "Rename files properly",
+      "Delete one file and restore it from Recycle Bin",
+      "Search for a file using the search bar"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the shortcut key to open File Explorer?",
+      "options": [
+        "Ctrl + E",
+        "Windows + E",
+        "Alt + E",
+        "Shift + E"
+      ],
+      "answer": 1,
+      "explanation": "Windows + E opens File Explorer quickly."
+    },
+    {
+      "q": "What is used to organize files?",
+      "options": [
+        "Folders",
+        "Calculator",
+        "Paint",
+        "Speaker"
+      ],
+      "answer": 0,
+      "explanation": "Folders help organize and store files properly."
+    },
+    {
+      "q": "Which option is used to duplicate a file?",
+      "options": [
+        "Delete",
+        "Rename",
+        "Copy",
+        "Close"
+      ],
+      "answer": 2,
+      "explanation": "Copy creates another version of the file."
+    },
+    {
+      "q": "Where do deleted files go first?",
+      "options": [
+        "Desktop",
+        "Downloads",
+        "Recycle Bin",
+        "Taskbar"
+      ],
+      "answer": 2,
+      "explanation": "Deleted files are stored temporarily in the Recycle Bin."
+    },
+    {
+      "q": "What does Rename do?",
+      "options": [
+        "Deletes file",
+        "Changes file name",
+        "Moves file",
+        "Opens file"
+      ],
+      "answer": 1,
+      "explanation": "Rename changes the name of a file or folder."
+    },
+    {
+      "q": "Which drive usually contains Windows system files?",
+      "options": [
+        "C: Drive",
+        "USB Drive",
+        "DVD Drive",
+        "Downloads"
+      ],
+      "answer": 0,
+      "explanation": "C: Drive is commonly the main system drive."
+    },
+    {
+      "q": "Which feature helps find files quickly?",
+      "options": [
+        "Paint",
+        "Search Bar",
+        "Recycle Bin",
+        "Task Manager"
+      ],
+      "answer": 1,
+      "explanation": "Search Bar helps users quickly locate files and folders."
+    },
+    {
+      "q": "What does Cut + Paste do?",
+      "options": [
+        "Copies file",
+        "Deletes file",
+        "Moves file to another location",
+        "Renames file"
+      ],
+      "answer": 2,
+      "explanation": "Cut + Paste moves files from one place to another."
+    },
+    {
+      "q": "Which view shows file details like size and date?",
+      "options": [
+        "Large Icons",
+        "Details",
+        "Tiles",
+        "Small Icons"
+      ],
+      "answer": 1,
+      "explanation": "Details view shows file information clearly."
+    },
+    {
+      "q": "Why is file organization important?",
+      "options": [
+        "Makes computer slow",
+        "Helps find files easily",
+        "Deletes files automatically",
+        "Changes wallpapers"
+      ],
+      "answer": 1,
+      "explanation": "Proper organization helps users manage and find files quickly."
+    }
+  ]
+}

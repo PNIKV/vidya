@@ -1,0 +1,182 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-multi-sensor/",
+    "slides_folder": "sessions/session-multi-sensor/slides/",
+    "images_folder": "sessions/session-multi-sensor/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-multi-sensor",
+  "number": 5,
+  "title": "The Ultimate Multi-Sensor Station!",
+  "subtitle": "detect, process, react!",
+  "date": "Session 05",
+  "duration": "1 Hours",
+  "phase": "Advanced Integration",
+  "color": "#E67E22",
+  "icon": "🕹️",
+  "tags": [
+    "Science",
+    "Technology",
+    "Engineering",
+    "Data Integration"
+  ],
+  "overview": "Students step into advanced prototyping by integrating multiple distinct sensors into a unified smart hub, learning how microcontrollers process parallel streams of sensory data to make real-world decisions.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-multi-sensor/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — complex circuit layouts, multi-sensor calibration boards, software data streams.",
+    "gallery": [
+      {
+        "file": "data/ultrasonic-sensor.jpg",
+        "_placeholder": "ADD: Photo of Ultrasonic Sensor (HC-SR04) component",
+        "caption": "Ultrasonic Sensor — The Bat Ears! Measures distance using sound waves",
+        "category": "Components"
+      },
+      {
+        "file": "data/dht11-sensor.jpg",
+        "_placeholder": "ADD: Photo of DHT11 Temperature and Humidity sensor module",
+        "caption": "DHT11 Sensor — The Weather Station! Reads temperature and dampness",
+        "category": "Components"
+      },
+      {
+        "file": "data/ldr-sensor.jpg",
+        "_placeholder": "ADD: Photo of Light Dependent Resistor (LDR) setup",
+        "caption": "LDR Sensor — The Electronic Eye! Its resistance shifts based on lighting",
+        "category": "Components"
+      },
+      {
+        "file": "data/serial-monitor-stream.png",
+        "_placeholder": "ADD: Screenshot of Arduino Serial Monitor reading 3 data columns simultaneously",
+        "caption": "Parallel Data Streams — Watching multiple sensors talk at once over the serial channel",
+        "category": "Concept"
+      },
+      {
+        "file": "data/multi-sensor-complex-wiring.jpg",
+        "_placeholder": "ADD: Photo of a breadboard packed with multi-sensor components and an LCD display",
+        "caption": "Students conquering multi-device wiring layout challenges during the lab",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "The Human Body Analogy — Multitasking Senses | Brain (Arduino), Eyes (LDR), Ears (Ultrasonic), Skin (DHT11)",
+    "Parallel Processing Limitations — The One-Track Mind | How code mimics multi-tasking sequentially",
+    "Ultrasonic Echo Time — The Canyon Shout | Distance = (Speed of Sound * Time Elapsed) / 2",
+    "Light Resistance Scaling — LDR Mechanics | Bright light blocks resistance, dark skies unleash it",
+    "Data Nesting — Conditional Branching | Building safe parameters: 'If dark AND object close → trigger system'",
+    "Common Ground Sharing — Power Grid Laws | Bridging multiple VCC/GND rails smoothly using bus networks"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Multiple Sensors Communicate at the Same Time",
+      "videoId": "9_N7gP_3N_0",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "An animated look at how computer chips read multiple parameters within milliseconds without crashing."
+    },
+    {
+      "title": "Deep Dive: Ultrasonic Sensors vs LDRs",
+      "videoId": "v4X_v_H3SRE",
+      "desc": "A foundational exploration into analog values versus precise digital time intervals."
+    },
+    {
+      "title": "Arduino Multi-Tasking: Beyond the Delay() Function",
+      "videoId": "BYKQ93CH660",
+      "desc": "Why using long delay windows ruins multi-sensor setups, and how code timers remedy it."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Wokwi Multi-Sensor Project Sandbox Template",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "DHT Sensor Standard Library Repository",
+      "url": "https://github.com/adafruit/DHT-sensor-library",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Environmental Defender Security Array",
+    "parts": [
+      "Arduino UNO & USB interface wire",
+      "Large Breadboard & diverse pack of jumper links",
+      "HC-SR04 Ultrasonic Distance Sensor",
+      "LDR (Photoresistor) + 10kΩ balancing resistor",
+      "DHT11 Temperature & Humidity Sensor",
+      "Active alarm Piezo Buzzer",
+      "RGB LED status indicator"
+    ],
+    "steps": [
+      "Mount the Ultrasonic, LDR, and DHT11 sensors at separate nodes across the layout field.",
+      "Bridge all sensor VCC and GND pins back to the shared power rails on the breadboard parameters.",
+      "Wire the Ultrasonic Trigger and Echo to Digital Pins 2 and 3; wire the DHT11 data line to Pin 4.",
+      "Construct a voltage divider circuit with your LDR feeding directly into Analog input Pin A0.",
+      "Upload base software to systematically ping all three sensors and output findings to the monitor stream.",
+      "Program security rules: If light level drops low AND proximity is under 15cm, activate warning alarms!",
+      "Challenge: Alter the RGB LED color patterns dynamically based on your current room temperature readings."
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Why is sharing a single common Ground (GND) rail essential in a multi-sensor project system layout?",
+      "options": [
+        "It speeds up execution speeds inside the main processor memory framework",
+        "It establishes a steady 0V baseline reference level across all sensor measurement points",
+        "It acts as a primary software pathway for serial transmission data lines",
+        "It transforms standard analog components directly into digital devices automatically"
+      ],
+      "answer": 1,
+      "explanation": "Voltage is a relative comparison! Without a shared reference ground link to link all sub-circuits together, device signals drift or read as erratic static noise."
+    },
+    {
+      "q": "What happens if you use a long blocking command like 'delay(5000);' inside a multi-sensor loop program?",
+      "options": [
+        "The computer memory capacity doubles to house the extra timeline gap",
+        "The system completely freezes up, missing target sensory events across that 5-second blind window",
+        "All connected sensors run five times more accurately because of stabilization fields",
+        "The input signals are systematically mirrored over to alternative pins automatically"
+      ],
+      "answer": 1,
+      "explanation": "Standard delay() freezes your microcontroller's entire action cycle. If an object jumps in front of your distance sensor during that delay timeframe, your code is blind to it!"
+    },
+    {
+      "q": "When utilizing an Ultrasonic Sensor, why do we divide the calculated echo return travel window calculation in half?",
+      "options": [
+        "To clean up external noise distortion variations introduced by the plastic housing frame",
+        "Because sound travels exactly twice as fast through normal air spaces as electrical current",
+        "The ping wave has to travel forward to strike the wall, and then bounce back again over that total loop",
+        "To easily downscale larger floating point calculations into cleaner integers"
+      ],
+      "answer": 2,
+      "explanation": "The measured time duration charts the complete round trip path from sensor to wall and back. We only need the single one-way gap to establish true spatial distance!"
+    },
+    {
+      "q": "If your goal is to design an automated night-light that triggers ONLY when it gets dark outside AND someone approaches, which logic operator handles the parameter bridge?",
+      "options": [
+        "The OR logical operator system block",
+        "The NOT inversion operator system block",
+        "The AND conditional operator system block",
+        "The EQUAL baseline match system block"
+      ],
+      "answer": 2,
+      "explanation": "The AND operator demands that every criteria point resolves true concurrently before taking action. If it is bright, or if no one is close by, your indicator system safely stays dormant."
+    },
+    {
+      "q": "Which data type option fits best for compiling incoming data records streaming straight off a precision temperature chip?",
+      "options": [
+        "Boolean data parameter switch options",
+        "Float data types accommodating fractional values with decimal points",
+        "String text layout arrangement variables",
+        "Unsigned integers strictly rejecting negative numbers"
+      ],
+      "answer": 1,
+      "explanation": "Environmental parameters like heat fluctuate by micro-steps (e.g., 24.5 degrees). Float values permit data tracking down past basic whole numbers, capturing minor changes safely."
+    }
+  ]
+}

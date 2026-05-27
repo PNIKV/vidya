@@ -1,0 +1,317 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "PIR Auto Light",
+  "subtitle": "Smart Motion Sensor Lighting System",
+  "date": "Session 01",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#FFB300",
+  "icon": "💡",
+  "tags": [
+    "Electronics",
+    "Arduino",
+    "Sensors",
+    "Automation"
+  ],
+  "overview": "This session introduces students to PIR motion sensors and automatic lighting systems. Students will learn how motion detection works and build a smart auto-light project using Arduino and PIR sensors.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual classroom session — PIR sensor, Arduino setup, student activity, auto light demo, wiring diagrams.",
+    "gallery": [
+      {
+        "file": "data/pir-sensor.jpg",
+        "_placeholder": "ADD: Photo of PIR motion sensor",
+        "caption": "PIR Sensor detects human movement using infrared heat",
+        "category": "Concept"
+      },
+      {
+        "file": "data/arduino-uno.jpg",
+        "_placeholder": "ADD: Photo of Arduino UNO board",
+        "caption": "Arduino UNO — Smart brain controlling the auto light",
+        "category": "Components"
+      },
+      {
+        "file": "data/led-light.jpg",
+        "_placeholder": "ADD: Photo of LED connected in circuit",
+        "caption": "LED automatically glows when motion is detected",
+        "category": "Components"
+      },
+      {
+        "file": "data/jumper-wire.jpg",
+        "_placeholder": "ADD: Photo of jumper wires",
+        "caption": "Jumper wires connect all electronic parts together",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard.jpg",
+        "_placeholder": "ADD: Photo of breadboard setup",
+        "caption": "Breadboard helps students build circuits easily",
+        "category": "Lab"
+      },
+      {
+        "file": "data/student-pir-project.jpg",
+        "_placeholder": "ADD: Photo of students testing PIR auto light",
+        "caption": "Students testing the smart automatic light project",
+        "category": "Activity"
+      },
+      {
+        "file": "data/pir-demo.gif",
+        "_placeholder": "ADD: GIF/photo showing motion detection",
+        "caption": "Motion detected → Light ON automatically!",
+        "category": "Demo"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a PIR Sensor? — Motion detector using body heat",
+    "Automation — Devices working automatically without touching",
+    "Infrared Detection — PIR senses heat movement",
+    "Arduino UNO — Smart Brain controlling the system",
+    "LED Light — Turns ON when motion is detected",
+    "Digital Input Signals — Sensor sends HIGH or LOW signal",
+    "Smart Home Technology — Automatic lights in buildings",
+    "Energy Saving — Lights turn OFF when no movement"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is a PIR Motion Sensor?",
+      "videoId": "evKzPwDKxGs",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Simple explanation of PIR motion sensors for beginners."
+    },
+    {
+      "title": "Arduino PIR Motion Sensor Project",
+      "videoId": "dJgD8n9kapM",
+      "desc": "Build an automatic motion detection light using Arduino."
+    },
+    {
+      "title": "How Smart Lights Work",
+      "videoId": "Kx8Xg6Qk6W8",
+      "desc": "Learn how automatic smart lights are used in homes and malls."
+    },
+    {
+      "title": "Introduction to Arduino",
+      "videoId": "nL34zDTPkcs",
+      "desc": "Basic introduction to Arduino for school students."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad Circuit Simulator",
+      "url": "https://www.tinkercad.com/circuits",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a PIR Motion Sensor Auto Light",
+    "parts": [
+      "Arduino UNO",
+      "PIR Motion Sensor",
+      "LED",
+      "220Ω Resistor",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect PIR sensor VCC to Arduino 5V",
+      "Connect GND to Arduino GND",
+      "Connect PIR OUT pin to Arduino digital pin",
+      "Connect LED with resistor on breadboard",
+      "Upload Arduino PIR auto light code",
+      "Wave hand in front of sensor",
+      "Observe LED turning ON automatically",
+      "Wait a few seconds — LED turns OFF automatically"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does PIR stand for?",
+      "options": [
+        "Power Infrared Receiver",
+        "Passive Infrared Sensor",
+        "Primary Input Reader",
+        "Power Input Resistor"
+      ],
+      "answer": 1,
+      "explanation": "PIR stands for Passive Infrared Sensor. It detects heat and motion from humans and animals."
+    },
+    {
+      "q": "What does a PIR sensor detect?",
+      "options": [
+        "Water",
+        "Sound",
+        "Motion and body heat",
+        "Wind"
+      ],
+      "answer": 2,
+      "explanation": "PIR sensors detect infrared heat energy from moving humans or animals."
+    },
+    {
+      "q": "What happens when motion is detected?",
+      "options": [
+        "The LED turns ON",
+        "The Arduino shuts down",
+        "The resistor melts",
+        "Nothing happens"
+      ],
+      "answer": 0,
+      "explanation": "When motion is detected, the PIR sensor sends a signal and the LED turns ON."
+    },
+    {
+      "q": "Which component acts as the smart brain?",
+      "options": [
+        "LED",
+        "Battery",
+        "Arduino UNO",
+        "Breadboard"
+      ],
+      "answer": 2,
+      "explanation": "Arduino UNO controls the sensor and light system like a smart brain."
+    },
+    {
+      "q": "Why are PIR auto lights useful?",
+      "options": [
+        "They waste electricity",
+        "They save energy automatically",
+        "They make sound",
+        "They increase heat"
+      ],
+      "answer": 1,
+      "explanation": "Auto lights save electricity because they turn ON only when needed."
+    },
+    {
+      "q": "Which signal does the PIR sensor send when motion is detected?",
+      "options": [
+        "LOW",
+        "HIGH",
+        "OFF",
+        "ZERO"
+      ],
+      "answer": 1,
+      "explanation": "The PIR sensor sends a HIGH digital signal when motion is detected."
+    },
+    {
+      "q": "What is used to connect electronic parts without soldering?",
+      "options": [
+        "Tape",
+        "Breadboard",
+        "Glue",
+        "Paper"
+      ],
+      "answer": 1,
+      "explanation": "Breadboards allow students to build circuits easily without soldering."
+    },
+    {
+      "q": "What type of light is commonly used in Arduino projects?",
+      "options": [
+        "Tube light",
+        "LED",
+        "Candle",
+        "Bulb only"
+      ],
+      "answer": 1,
+      "explanation": "LEDs are small, safe, and energy-efficient lights used in projects."
+    },
+    {
+      "q": "Where are automatic motion lights commonly used?",
+      "options": [
+        "Malls and staircases",
+        "Underwater",
+        "Inside books",
+        "On pencils"
+      ],
+      "answer": 0,
+      "explanation": "Automatic lights are used in staircases, malls, washrooms, and smart homes."
+    },
+    {
+      "q": "What happens when no motion is detected for some time?",
+      "options": [
+        "LED becomes brighter",
+        "LED turns OFF",
+        "Arduino breaks",
+        "Sensor stops forever"
+      ],
+      "answer": 1,
+      "explanation": "The auto light turns OFF automatically when no movement is detected."
+    },
+    {
+      "q": "Which pin on the PIR sensor sends data to Arduino?",
+      "options": [
+        "VCC",
+        "GND",
+        "OUT",
+        "RESET"
+      ],
+      "answer": 2,
+      "explanation": "The OUT pin sends motion detection signals to the Arduino."
+    },
+    {
+      "q": "What kind of project is a PIR auto light?",
+      "options": [
+        "Manual system",
+        "Automation project",
+        "Water project",
+        "Drawing project"
+      ],
+      "answer": 1,
+      "explanation": "A PIR auto light is an automation project because it works automatically."
+    },
+    {
+      "q": "What powers the Arduino UNO during class activity?",
+      "options": [
+        "USB cable",
+        "Stone",
+        "Paper clip",
+        "Plastic pipe"
+      ],
+      "answer": 0,
+      "explanation": "Arduino UNO is commonly powered using a USB cable connected to a computer."
+    },
+    {
+      "q": "Which real-life technology uses PIR sensors?",
+      "options": [
+        "Automatic doors and security systems",
+        "Water bottles",
+        "School bags",
+        "Pencils"
+      ],
+      "answer": 0,
+      "explanation": "PIR sensors are widely used in automatic doors, alarms, and smart lighting systems."
+    },
+    {
+      "q": "What do students learn from this project?",
+      "options": [
+        "Only drawing",
+        "Motion sensing and automation",
+        "Cooking skills",
+        "Swimming"
+      ],
+      "answer": 1,
+      "explanation": "Students learn how sensors and automation systems work together in smart technology."
+    }
+  ]
+}

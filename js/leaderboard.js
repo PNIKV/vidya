@@ -2,7 +2,7 @@
 //  LEADERBOARD
 // =============================================
 function getScores() {
-  try { return JSON.parse(localStorage.getItem('vidyaSteamScores') || '{}'); }
+  try { return JSON.parse(localStorage.getItem('VIDYASteamScores') || '{}'); }
   catch { return {}; }
 }
 
@@ -16,7 +16,7 @@ function saveScore(sessionId, name, score, total) {
   });
   scores[sessionId].sort((a, b) => b.pct - a.pct || b.score - a.score);
   scores[sessionId] = scores[sessionId].slice(0, 20);
-  localStorage.setItem('vidyaSteamScores', JSON.stringify(scores));
+  localStorage.setItem('VIDYASteamScores', JSON.stringify(scores));
 }
 
 function renderLeaderboard() {

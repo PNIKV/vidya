@@ -1,0 +1,188 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-auto-watering/",
+    "slides_folder": "sessions/session-auto-watering/slides/",
+    "images_folder": "sessions/session-auto-watering/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-auto-watering",
+  "number": 2,
+  "title": "Smart Gardens: Automated Plant Watering!",
+  "subtitle": "code, sense, grow!",
+  "date": "Session 02",
+  "duration": "1 Hours",
+  "phase": "Application",
+  "color": "#2ECC71",
+  "icon": "🌱",
+  "tags": [
+    "Science",
+    "Technology",
+    "Engineering",
+    "Agriculture"
+  ],
+  "overview": "Students will design, build, and program an automated plant watering system using a soil moisture sensor and a water pump, exploring how technology solves real-world ecological challenges.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-auto-watering/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — component photos, activity shots, student experiments, whiteboard diagrams.",
+    "gallery": [
+      {
+        "file": "data/soil-moisture-sensor.jpg",
+        "_placeholder": "ADD: Photo of soil moisture sensor used in the session",
+        "caption": "Soil Moisture Sensor — measuring the soil's thirst!",
+        "category": "Components"
+      },
+      {
+        "file": "data/submersible-pump.jpg",
+        "_placeholder": "ADD: Photo of mini water pump component",
+        "caption": "5V Submersible Water Pump — pushes water to the plant",
+        "category": "Components"
+      },
+      {
+        "file": "data/relay-module.jpg",
+        "_placeholder": "ADD: Photo of relay module component",
+        "caption": "Relay Module — An electronic switch controlled by code",
+        "category": "Components"
+      },
+      {
+        "file": "data/watering-system-circuit.png",
+        "_placeholder": "ADD: Whiteboard diagram of sensor-to-pump loop",
+        "caption": "System Loop: Sensor → Arduino Brain → Relay → Pump",
+        "category": "Concept"
+      },
+      {
+        "file": "data/student-testing-soil.jpg",
+        "_placeholder": "ADD: Photo of students testing sensor in wet vs dry soil",
+        "caption": "Students calibrating sensors with dry and wet soil cups",
+        "category": "Lab"
+      },
+      {
+        "file": "data/final-project-working.gif",
+        "_placeholder": "ADD: GIF or photo of working watering setup",
+        "caption": "Success! The pump turns on automatically when soil dries out",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Soil Moisture Sensor — Sponge Analogy | Wet soil (easy flow) vs Dry soil (blocked flow)",
+    "Relay Module — The Safe Bridge | Electronic switch separating low power (Arduino) from high power (Pump)",
+    "Submersible Pump — The Mechanical Straw | Moves water uphill against gravity",
+    "Calibration — Finding the Sweet Spot | Reading values for 'thirsty' vs 'happy' plants",
+    "Automation Loop — Check Soil → Is it dry? → Yes? Water! → No? Wait.",
+    "Water Conservation — Using technology to prevent wastage | Hindi: Jal Sanrakshan"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Automated Irrigation Systems Work",
+      "videoId": "FWeM_I6k0Bw",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "An engaging look into modern smart farming and automatic watering systems."
+    },
+    {
+      "title": "Soil Moisture Sensor Explained",
+      "videoId": "udmJ9v9wzS8",
+      "desc": "How a simple probe measures electricity to determine how wet the soil is."
+    },
+    {
+      "title": "How a Relay Works in Electronics",
+      "videoId": "n594CkrP6zA",
+      "desc": "A beginner-friendly breakdown of how a small signal flips a big switch."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Interactive Soil Moisture Code Block",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Smart Agriculture Project Guide",
+      "url": "https://create.arduino.cc",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Smart Plant Watering System Build",
+    "parts": [
+      "Arduino UNO",
+      "Soil Moisture Sensor Module",
+      "5V Relay Module",
+      "5V Mini Submersible Water Pump & Tubing",
+      "Breadboard & Jumper Wires",
+      "Two cups (one with dry soil, one with wet soil)",
+      "Small container of water"
+    ],
+    "steps": [
+      "Connect the Soil Moisture Sensor to Arduino Analog Pin A0, VCC, and GND.",
+      "Test sensor values in dry soil vs wet soil using the Serial Monitor.",
+      "Connect the Relay Module input pin to Arduino Digital Pin 8.",
+      "Wire the mini water pump to the external power source through the Relay's Normally Open (NO) contacts.",
+      "Upload the control code: If sensor reading is high (dry), turn Relay ON; else, turn Relay OFF.",
+      "Place the pump in water, tube in the dry soil, and watch it water itself until happy!",
+      "Challenge: Add a buzzer alarm that sounds if the water reservoir is completely empty."
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does the Soil Moisture Sensor actually measure to guess how much water is in the dirt?",
+      "options": [
+        "The temperature of the mud",
+        "Electrical resistance / conductivity of the soil",
+        "The weight of the flower pot",
+        "The color of the soil"
+      ],
+      "answer": 1,
+      "explanation": "Water conducts electricity! Wet soil allows current to flow easily (low resistance), while dry soil blocks it (high resistance)."
+    },
+    {
+      "q": "Why do we use a RELAY module instead of connecting the water pump directly to the Arduino pins?",
+      "options": [
+        "The pump needs too much current/power, which can damage or overload the Arduino pins",
+        "The relay makes the water cleaner",
+        "The pump cannot understand digital code without a relay",
+        "To change the color of the pump"
+      ],
+      "answer": 0,
+      "explanation": "Pumps have motors that draw a lot of electrical current. Arduino pins can only supply a tiny amount of power. The relay acts as an electronic switch to safely pass higher power from an external battery/supply."
+    },
+    {
+      "q": "In our code loop, what is the correct logic for an automated watering machine?",
+      "options": [
+        "If soil is WET → Turn pump ON",
+        "If soil is DRY → Turn pump ON",
+        "Keep pump ON all the time forever",
+        "Turn pump ON only when the sun goes down"
+      ],
+      "answer": 1,
+      "explanation": "We only want to water the plant when it is thirsty! So, If soil is DRY → Turn pump ON. Once it becomes wet, the pump should turn off automatically."
+    },
+    {
+      "q": "What is the process of testing your sensor in dry soil and wet soil to find the target code values called?",
+      "options": [
+        "Acceleration",
+        "Evaporation",
+        "Calibration",
+        "Combustion"
+      ],
+      "answer": 2,
+      "explanation": "Calibration means tuning or adjusting an instrument so it reads correctly. Finding your specific sensor's 'dry' and 'wet' numbers on the monitor is calibrating it!"
+    },
+    {
+      "q": "What is the primary ecological benefit of an automated watering system?",
+      "options": [
+        "It makes plants grow blue leaves",
+        "It eliminates the need for sunlight",
+        "It conserves water by giving plants only what they need, reducing waste",
+        "It charges the Arduino using soil power"
+      ],
+      "answer": 2,
+      "explanation": "Smart irrigation saves water (Jal Sanrakshan)! It stops watering the moment the soil is damp enough, preventing overwatering and runoff."
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Joystick + Servo Control",
+  "subtitle": "Control Motion with Your Hands!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FF9800",
+  "icon": "🕹️",
+  "tags": [
+    "Robotics",
+    "Arduino",
+    "Electronics",
+    "STEM"
+  ],
+  "overview": "This session introduces students to joystick modules and servo motors using Arduino. Students will learn how joystick movement controls servo motor rotation and understand basic robotics control systems.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add actual classroom photos, joystick module pictures, servo movement activities, and Arduino wiring diagrams.",
+    "gallery": [
+      {
+        "file": "data/joystick-module.jpg",
+        "_placeholder": "ADD: Photo of joystick module",
+        "caption": "Joystick module controls movement direction",
+        "category": "Concept"
+      },
+      {
+        "file": "data/servo-motor.gif",
+        "_placeholder": "ADD: Photo or GIF of servo motor rotating",
+        "caption": "Servo motor rotates at specific angles",
+        "category": "Components"
+      },
+      {
+        "file": "data/arduino-uno.jpg",
+        "_placeholder": "ADD: Photo of Arduino UNO board",
+        "caption": "Arduino UNO acts as the smart brain",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard-setup.jpg",
+        "_placeholder": "ADD: Breadboard wiring setup photo",
+        "caption": "Students connecting joystick and servo",
+        "category": "Lab"
+      },
+      {
+        "file": "data/servo-arm.jpg",
+        "_placeholder": "ADD: Servo robotic arm movement photo",
+        "caption": "Servo motors are used in robotic arms",
+        "category": "Applications"
+      },
+      {
+        "file": "data/student-activity.jpg",
+        "_placeholder": "ADD: Students testing joystick control",
+        "caption": "Students controlling servo using joystick",
+        "category": "Activity"
+      },
+      {
+        "file": "data/wiring-diagram.png",
+        "_placeholder": "ADD: Circuit wiring diagram screenshot",
+        "caption": "Joystick to servo connection diagram",
+        "category": "Circuit"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Joystick Module?",
+    "What is a Servo Motor?",
+    "Arduino as Smart Brain",
+    "Analog Input from Joystick",
+    "Servo Rotation Angles (0° to 180°)",
+    "Joystick X-axis and Y-axis Movement",
+    "Signal, VCC and GND Connections",
+    "Using Arduino IDE to Upload Code",
+    "Real-life Uses — Robots, Cranes, RC Cars",
+    "Basic Robotics Control System"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Joystick and Servo Arduino Project",
+      "videoId": "g8m6n6Nf6YQ",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Learn how a joystick controls a servo motor using Arduino."
+    },
+    {
+      "title": "What is a Servo Motor?",
+      "videoId": "1WnGv-DPexc",
+      "desc": "Simple explanation of servo motor working."
+    },
+    {
+      "title": "Arduino Joystick Module Tutorial",
+      "videoId": "M1m7WmKJ9KQ",
+      "desc": "Understanding joystick inputs and analog values."
+    },
+    {
+      "title": "Beginner Arduino Robotics",
+      "videoId": "fJWR7dBuc18",
+      "desc": "Fun robotics projects using Arduino and sensors."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Servo Motor Tutorial",
+      "url": "https://www.tutorialspoint.com/arduino/arduino_servo_motor.htm",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Joystick Controlled Servo Motor",
+    "parts": [
+      "Arduino UNO",
+      "Joystick Module",
+      "Servo Motor (SG90)",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable",
+      "Computer with Arduino IDE"
+    ],
+    "steps": [
+      "Connect joystick VCC to Arduino 5V",
+      "Connect joystick GND to Arduino GND",
+      "Connect joystick VRx pin to A0",
+      "Connect servo signal pin to D9",
+      "Connect servo VCC and GND properly",
+      "Upload Arduino code",
+      "Move joystick left and right",
+      "Observe servo motor rotation",
+      "Challenge: Control two servos using joystick X and Y axis"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does a joystick module do?",
+      "options": [
+        "Stores electricity",
+        "Controls direction and movement",
+        "Produces sound",
+        "Glows light"
+      ],
+      "answer": 1,
+      "explanation": "A joystick sends movement directions to the Arduino."
+    },
+    {
+      "q": "What type of motor is used in this project?",
+      "options": [
+        "DC Motor",
+        "Fan Motor",
+        "Servo Motor",
+        "Stepper Motor"
+      ],
+      "answer": 2,
+      "explanation": "Servo motors rotate to specific angles precisely."
+    },
+    {
+      "q": "What is the rotation range of a standard servo motor?",
+      "options": [
+        "0° to 45°",
+        "0° to 90°",
+        "0° to 180°",
+        "0° to 360°"
+      ],
+      "answer": 2,
+      "explanation": "Most servo motors rotate from 0° to 180°."
+    },
+    {
+      "q": "Which board acts as the brain of the project?",
+      "options": [
+        "Battery",
+        "Servo",
+        "Joystick",
+        "Arduino UNO"
+      ],
+      "answer": 3,
+      "explanation": "Arduino controls all components using code."
+    },
+    {
+      "q": "Which pin type reads joystick values?",
+      "options": [
+        "Digital pin",
+        "Analog pin",
+        "Power pin",
+        "USB pin"
+      ],
+      "answer": 1,
+      "explanation": "Joystick outputs analog values read by analog pins."
+    },
+    {
+      "q": "Which Arduino pin is commonly used for servo signal?",
+      "options": [
+        "A0",
+        "GND",
+        "D9",
+        "5V"
+      ],
+      "answer": 2,
+      "explanation": "D9 is commonly used for servo signal control."
+    },
+    {
+      "q": "What happens when the joystick moves?",
+      "options": [
+        "Servo angle changes",
+        "Battery explodes",
+        "LED turns off permanently",
+        "Computer shuts down"
+      ],
+      "answer": 0,
+      "explanation": "Joystick movement changes servo motor angle."
+    },
+    {
+      "q": "What does VCC mean in electronics?",
+      "options": [
+        "Ground connection",
+        "Signal wire",
+        "Power supply voltage",
+        "Motor speed"
+      ],
+      "answer": 2,
+      "explanation": "VCC provides power to the component."
+    },
+    {
+      "q": "Which software is used to upload Arduino code?",
+      "options": [
+        "MS Paint",
+        "Arduino IDE",
+        "Chrome Browser",
+        "PowerPoint"
+      ],
+      "answer": 1,
+      "explanation": "Arduino IDE is used to write and upload code."
+    },
+    {
+      "q": "Servo motors are commonly used in:",
+      "options": [
+        "Robotics",
+        "Remote control cars",
+        "Robotic arms",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Servo motors are used in many robotics applications."
+    },
+    {
+      "q": "What kind of signal controls a servo motor?",
+      "options": [
+        "Water signal",
+        "PWM signal",
+        "Light signal",
+        "Sound signal"
+      ],
+      "answer": 1,
+      "explanation": "Servo motors use PWM signals for angle control."
+    },
+    {
+      "q": "What does GND stand for?",
+      "options": [
+        "Ground",
+        "Generator",
+        "Glow Node",
+        "Gear Network"
+      ],
+      "answer": 0,
+      "explanation": "GND means ground connection in a circuit."
+    },
+    {
+      "q": "What happens if wiring is incorrect?",
+      "options": [
+        "Project may not work properly",
+        "Servo may not rotate",
+        "Arduino may not detect joystick",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Proper wiring is important for the project to work."
+    },
+    {
+      "q": "What type of input does the joystick provide?",
+      "options": [
+        "Temperature",
+        "Motion and direction",
+        "Light intensity",
+        "Sound waves"
+      ],
+      "answer": 1,
+      "explanation": "Joystick provides directional movement input."
+    },
+    {
+      "q": "What robotics skill do students learn in this activity?",
+      "options": [
+        "Motion control",
+        "Input and output systems",
+        "Basic programming",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "This project teaches important robotics concepts."
+    }
+  ]
+}

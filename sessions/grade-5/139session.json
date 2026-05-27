@@ -1,0 +1,327 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-4/",
+    "slides_folder": "sessions/session-4/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-4/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-4",
+  "number": 4,
+  "title": "Weather Dashboard",
+  "subtitle": "Read the Sky, Code the Data!",
+  "date": "Session 04",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#1DA1F2",
+  "icon": "🌤️",
+  "tags": [
+    "Sensors",
+    "Data",
+    "Arduino",
+    "IoT",
+    "Real World Projects"
+  ],
+  "overview": "In this session, students build a mini Weather Dashboard using sensors and Arduino. They learn how real-world weather stations measure temperature, humidity, and other parameters — and display live data just like a professional weather app. Students connect DHT11 sensors to Arduino, read data via code, and display it on an LCD or Serial Monitor.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-4/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — DHT11 sensor close-ups, LCD display outputs, student wiring activity, weather station diagrams, Serial Monitor screenshots.",
+    "gallery": [
+      {
+        "file": "data/dht11-sensor.jpg",
+        "_placeholder": "ADD: Close-up photo of DHT11 temperature & humidity sensor",
+        "caption": "DHT11 — Our weather sensor hero!",
+        "category": "Components"
+      },
+      {
+        "file": "data/lcd-display.jpg",
+        "_placeholder": "ADD: Photo of 16x2 LCD showing temperature and humidity values",
+        "caption": "LCD Display showing live weather data",
+        "category": "Components"
+      },
+      {
+        "file": "data/arduino-wiring.jpg",
+        "_placeholder": "ADD: Photo of student wiring DHT11 + LCD to Arduino on breadboard",
+        "caption": "Students wiring the weather circuit",
+        "category": "Lab"
+      },
+      {
+        "file": "data/serial-monitor.png",
+        "_placeholder": "ADD: Screenshot of Arduino Serial Monitor showing temperature and humidity readings",
+        "caption": "Live data on Serial Monitor — it works!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/real-weather-station.jpg",
+        "_placeholder": "ADD: Photo or diagram of a real-world professional weather station",
+        "caption": "Real weather stations use the same sensors!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/weather-app-comparison.jpg",
+        "_placeholder": "ADD: Side-by-side of weather app on phone vs student's LCD output",
+        "caption": "Your dashboard vs a real weather app!",
+        "category": "Fun Activity"
+      },
+      {
+        "file": "data/group-dashboard.jpg",
+        "_placeholder": "ADD: Students comparing readings from different parts of the classroom",
+        "caption": "Is it hotter near the window? Let's measure!",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Weather Dashboard? — Displays real-time climate data",
+    "DHT11 Sensor — Measures Temperature (°C) and Humidity (%)",
+    "How Sensors Convert Physical Data to Digital Signals",
+    "Connecting DHT11 to Arduino — VCC, GND, DATA pins",
+    "Reading Sensor Data Using Arduino Code and DHT Library",
+    "Displaying Data on Serial Monitor vs LCD Display (16x2)",
+    "What is IoT? — Devices that sense, collect, and share data",
+    "Real-world Applications — Weather stations, smart homes, agriculture"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "DHT11 Temperature & Humidity Sensor with Arduino",
+      "videoId": "OogldLc9uYc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Step-by-step tutorial connecting a DHT11 sensor to Arduino and reading live temperature and humidity data."
+    },
+    {
+      "title": "How to Use a 16x2 LCD with Arduino",
+      "videoId": "wEbkuBWiGgU",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to wire and program a 16x2 LCD to display custom messages and sensor data."
+    },
+    {
+      "title": "What is IoT? Internet of Things for Kids",
+      "videoId": "LlhmzVL5bm8",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A simple and fun explanation of how everyday devices collect and share data using the internet."
+    },
+    {
+      "title": "How Do Weather Stations Work?",
+      "videoId": "pHW_SzW7qN4",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Explore how professional weather stations measure and report climate data — just like your mini project!"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Wokwi — Simulate DHT11 + Arduino Online",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino DHT Library Documentation",
+      "url": "https://github.com/adafruit/DHT-sensor-library",
+      "icon": "🔗"
+    },
+    {
+      "title": "OpenWeatherMap — Real Weather API for Kids",
+      "url": "https://openweathermap.org/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad — Free Arduino Circuit Simulator",
+      "url": "https://www.tinkercad.com/circuits",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Mini Weather Dashboard with DHT11 + Arduino",
+    "parts": [
+      "Arduino UNO",
+      "DHT11 Temperature & Humidity Sensor",
+      "16x2 LCD Display (with I2C module)",
+      "Breadboard",
+      "Jumper wires",
+      "USB cable and laptop with Arduino IDE",
+      "10kΩ Resistor (for DHT11 pull-up)"
+    ],
+    "steps": [
+      "Connect DHT11 sensor: VCC → 5V, GND → GND, DATA → Pin 2 on Arduino",
+      "Install the DHT sensor library in Arduino IDE (Sketch → Include Library → Manage Libraries)",
+      "Upload the basic DHT11 code and open Serial Monitor at 9600 baud",
+      "Observe temperature (°C) and humidity (%) values printing live",
+      "Connect 16x2 LCD via I2C module: VCC → 5V, GND → GND, SDA → A4, SCL → A5",
+      "Update code to display readings on LCD instead of Serial Monitor",
+      "Challenge: Add an IF condition — display '🌡️ Too Hot!' if temp > 35°C",
+      "Move sensor near a window, near a fan, and near a lamp — compare readings!",
+      "Groups present their dashboard and discuss: why do readings differ across the room?"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does the DHT11 sensor measure?",
+      "options": [
+        "Light intensity and sound",
+        "Temperature and Humidity",
+        "Wind speed and pressure",
+        "Distance and motion"
+      ],
+      "answer": 1,
+      "explanation": "DHT11 is a temperature & humidity sensor! It measures how hot/cold and how moist the air is."
+    },
+    {
+      "q": "What does 'Humidity' mean?",
+      "options": [
+        "How bright the sunlight is",
+        "How fast the wind blows",
+        "The amount of moisture/water vapour in the air",
+        "The weight of the air"
+      ],
+      "answer": 2,
+      "explanation": "Humidity measures water vapour in the air. High humidity = feels sticky and moist. Low = dry air."
+    },
+    {
+      "q": "Which pin on the DHT11 sends data to the Arduino?",
+      "options": [
+        "VCC",
+        "GND",
+        "DATA",
+        "RESET"
+      ],
+      "answer": 2,
+      "explanation": "The DATA pin carries the sensor readings from DHT11 to the Arduino. VCC = power, GND = ground."
+    },
+    {
+      "q": "What is the Arduino Serial Monitor used for?",
+      "options": [
+        "To charge the Arduino",
+        "To upload programs wirelessly",
+        "To display text and data output from the Arduino program",
+        "To connect to WiFi"
+      ],
+      "answer": 2,
+      "explanation": "Serial Monitor is a window in Arduino IDE that shows text output — perfect for viewing live sensor data!"
+    },
+    {
+      "q": "What does LCD stand for?",
+      "options": [
+        "Light Current Display",
+        "Liquid Crystal Display",
+        "Low Cost Device",
+        "Large Circuit Diagram"
+      ],
+      "answer": 1,
+      "explanation": "LCD = Liquid Crystal Display! It uses liquid crystals to display characters, numbers, and symbols."
+    },
+    {
+      "q": "In a 16x2 LCD, what do the numbers 16 and 2 represent?",
+      "options": [
+        "16 volts and 2 amps",
+        "16 pixels wide and 2 pixels tall",
+        "16 characters per row and 2 rows",
+        "16 colors and 2 brightness levels"
+      ],
+      "answer": 2,
+      "explanation": "16x2 means 16 characters across and 2 rows — enough to display temperature on row 1 and humidity on row 2!"
+    },
+    {
+      "q": "What is IoT (Internet of Things)?",
+      "options": [
+        "A type of video game",
+        "A network of physical devices that collect and share data via the internet",
+        "A programming language",
+        "A special type of computer virus"
+      ],
+      "answer": 1,
+      "explanation": "IoT = smart devices (sensors, appliances) that connect to the internet to share real-world data automatically."
+    },
+    {
+      "q": "A weather app on your phone gets data from:",
+      "options": [
+        "Guessing the weather",
+        "Only looking outside",
+        "Real sensors in weather stations that collect and send data",
+        "The phone's camera"
+      ],
+      "answer": 2,
+      "explanation": "Weather apps use data from thousands of weather stations worldwide — each packed with sensors just like your DHT11!"
+    },
+    {
+      "q": "What library must be installed in Arduino IDE to use the DHT11 sensor?",
+      "options": [
+        "LiquidCrystal library",
+        "DHT sensor library",
+        "Servo library",
+        "WiFi library"
+      ],
+      "answer": 1,
+      "explanation": "The DHT sensor library (by Adafruit) gives Arduino the functions needed to read data from the DHT11 sensor."
+    },
+    {
+      "q": "Temperature in the Arduino code is displayed in which unit by default with DHT11?",
+      "options": [
+        "Kelvin",
+        "Fahrenheit",
+        "Celsius (°C)",
+        "Joules"
+      ],
+      "answer": 2,
+      "explanation": "DHT11 returns temperature in Celsius (°C) by default. You can convert to Fahrenheit using: F = (C × 9/5) + 32."
+    },
+    {
+      "q": "If temperature reads 38°C, what would a smart dashboard display as a warning?",
+      "options": [
+        "All good!",
+        "Too Cold!",
+        "No change",
+        "Too Hot! — using an IF condition in code"
+      ],
+      "answer": 3,
+      "explanation": "With IF conditions in Arduino code, you can trigger warnings: if (temp > 35) { display 'Too Hot!'; }"
+    },
+    {
+      "q": "Why might sensor readings differ near a window vs near a fan?",
+      "options": [
+        "The Arduino changes randomly",
+        "Sensors are broken near windows",
+        "Temperature and humidity vary in different parts of a room",
+        "LCD screens affect the reading"
+      ],
+      "answer": 2,
+      "explanation": "Real environments vary! Sunlight heats the air near a window; fans cool it nearby. Sensors measure these real differences."
+    },
+    {
+      "q": "What does the VCC pin on the DHT11 connect to on the Arduino?",
+      "options": [
+        "GND (Ground)",
+        "Pin 13",
+        "5V (Power)",
+        "A0 (Analog)"
+      ],
+      "answer": 2,
+      "explanation": "VCC = power supply pin. Connect it to Arduino's 5V pin to give the DHT11 the electricity it needs to work."
+    },
+    {
+      "q": "Which of these is a real-world application of weather sensor data?",
+      "options": [
+        "Controlling a video game character",
+        "Smart irrigation — watering crops only when humidity is low",
+        "Changing font sizes on a website",
+        "Turning on a printer"
+      ],
+      "answer": 1,
+      "explanation": "Smart farming uses humidity and temperature sensors to decide when to water crops — saving water and improving yields!"
+    },
+    {
+      "q": "What is the main skill students practise by building the Weather Dashboard?",
+      "options": [
+        "Only drawing circuit diagrams",
+        "Connecting real-world sensors to code to display meaningful data",
+        "Only watching a weather app",
+        "Only soldering components"
+      ],
+      "answer": 1,
+      "explanation": "The Weather Dashboard project brings it all together — hardware wiring, sensor reading, coding logic, and data display. Real engineering!"
+    }
+  ]
+}

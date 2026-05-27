@@ -1,0 +1,185 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-ppt-themes/",
+    "slides_folder": "sessions/session-ppt-themes/slides/",
+    "images_folder": "sessions/session-ppt-themes/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-ppt-themes",
+  "number": 3,
+  "title": "PowerPoint Masterclass: Custom Themes!",
+  "subtitle": "design, brand, present!",
+  "date": "Session 03",
+  "duration": "1 Hours",
+  "phase": "Design Foundations",
+  "color": "#D24726",
+  "icon": "🎨",
+  "tags": [
+    "Technology",
+    "Design",
+    "Arts",
+    "Communication"
+  ],
+  "overview": "Students will explore the world of presentation design by creating unified custom PowerPoint themes. They will master the Slide Master tool, establish cohesive color palettes, select matching typography layouts, and learn how to save their unique designs as reusable template files.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-ppt-themes/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots from the actual lab session — menu layouts, color combinations, master slide configurations.",
+    "gallery": [
+      {
+        "file": "data/slide-master-view.jpg",
+        "_placeholder": "ADD: Screenshot of the Slide Master tab in PowerPoint",
+        "caption": "Slide Master View — The hidden layout engine behind every slide!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/color-palette-picker.jpg",
+        "_placeholder": "ADD: Screenshot of Theme Colors menu selection",
+        "caption": "Theme Colors — Selecting matching dominant and accent tones",
+        "category": "Components"
+      },
+      {
+        "file": "data/font-pairing-guide.jpg",
+        "_placeholder": "ADD: Screenshot of the Theme Fonts setup panel",
+        "caption": "Font Hierarchy — Matching clean headers with readable body styles",
+        "category": "Components"
+      },
+      {
+        "file": "data/bad-vs-good-contrast.png",
+        "_placeholder": "ADD: Comparison graphic of poor color contrast versus accessible pairing",
+        "caption": "Contrast rules! High visibility keeps your audience awake",
+        "category": "Concept"
+      },
+      {
+        "file": "data/saving-potx-file.jpg",
+        "_placeholder": "ADD: Screenshot showing File -> Save As -> PowerPoint Template (.potx)",
+        "caption": "Exporting Style — Saving the file format as a reusable template",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Slide Master — The DNA Pattern | Change it once here, and it updates across all matching slides!",
+    "Theme Colors — The Mood Ring | Picking a balanced palette (Dominant, Supporting, and pop-out Accent colors)",
+    "Typography Hierarchy — The Mega-Phone Effect | Styling massive headers for titles and clean fonts for reading text",
+    "Background Styles — Canvas Control | Using solid tones, subtle gradients, or pattern masks cleanly",
+    "Placeholders — The Designated Parking Spots | Creating dedicated drop-zones for automated text, images, and charts",
+    "Template Formats — Reusable Stamps | Understanding the difference between a project presentation (.pptx) and a design template (.potx)"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Slide Master Works in PowerPoint",
+      "videoId": "J_Sg8ZfI_b0",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear, visual walkthrough demonstrating how modifying the top Master slide alters your entire deck instantly."
+    },
+    {
+      "title": "Color Theory for Presentation Graphics",
+      "videoId": "766NiaZCH7A",
+      "desc": "Discover how professionals choose dynamic colors that look amazing together on projection screens."
+    },
+    {
+      "title": "Typography Rules: Font Pairings That Pop",
+      "videoId": "M8_4S7_F4g0",
+      "desc": "An engaging guide to separating your display fonts from structural body copy for maximum readability."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Adobe Color — Interactive Palette Generator",
+      "url": "https://color.adobe.com/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Fonts — Typography Pairing Previewer",
+      "url": "https://fonts.google.com/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft Support — Slide Master Documentation",
+      "url": "https://support.microsoft.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Brand Blueprint: Building a Reusable Custom Theme",
+    "parts": [
+      "Computer with Microsoft PowerPoint installed",
+      "Color Inspiration Sheet (Warm, Cool, Cyberpunk, Earthy schemes)",
+      "Projector screen (for teacher step-by-step display)",
+      "Practice image assets (Logos, icons, abstract background textures)"
+    ],
+    "steps": [
+      "Open a blank presentation and navigate to View → Slide Master.",
+      "Scroll to the very top, large master thumbnail layout to edit global settings.",
+      "Click Colors → Customize Colors to name and assign a unique 4-color palette.",
+      "Click Fonts → Customize Fonts to choose an impactful header font and highly readable body text pair.",
+      "Insert a custom shape graphic or school/company logo placeholder onto the master slide to display across the entire theme deck.",
+      "Format Title and Content layouts with styled accent background bands.",
+      "Close Master View, insert 4-5 dummy content slides to confirm the automated styling is working perfectly.",
+      "Challenge: Export your creation by choosing File → Save As and selecting .potx format so your theme can load in the default custom menu next time!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the primary function of the Slide Master tool in PowerPoint?",
+      "options": [
+        "To check your presentation for typos and spelling mistakes",
+        "To change global design settings across all layouts simultaneously",
+        "To automatically search and insert stock videos from the internet",
+        "To add animated transitions between individual project elements"
+      ],
+      "answer": 1,
+      "explanation": "The Slide Master acts like the design blueprint or template DNA of your file! Altering it updates fonts, colors, and layout backdrops instantly across your entire deck."
+    },
+    {
+      "q": "If you want an emblem or brand logo to show up on EVERY slide in your deck, where should you place it?",
+      "options": [
+        "Manually copy-paste it onto every individual slide surface",
+        "Drop it only on the very last slide of the file",
+        "Place it directly onto the top-level parent Slide Master canvas",
+        "Hide it inside a text layout frame placeholder"
+      ],
+      "answer": 2,
+      "explanation": "Objects placed on the main parent Slide Master automatically ripple down to appear identically on all sub-layouts, saving you from tedious manual copying."
+    },
+    {
+      "q": "Why is high contrast between your theme text color and background color critical?",
+      "options": [
+        "It reduces the file size of the presentation when saved",
+        "It changes the language properties of your system dictionary",
+        "It makes text legible for audiences in bright rooms or far away",
+        "It permits you to skip adding titles to your slides"
+      ],
+      "answer": 2,
+      "explanation": "Contrast ensures readability! Putting soft gray text on white backgrounds or dark blue text on black blocks leaves audiences squinting and missing information."
+    },
+    {
+      "q": "What unique file format extension should you pick to save a layout configuration strictly as a template asset?",
+      "options": [
+        ".pptx",
+        ".potx",
+        ".mp4",
+        ".docx"
+      ],
+      "answer": 1,
+      "explanation": "A .potx file signifies a PowerPoint Template! When launched, it creates an untitled fresh copy of your styling layout framework, preventing users from accidental file overrides."
+    },
+    {
+      "q": "In layout design, what is a 'Placeholder' element?",
+      "options": [
+        "A sticker that locks your slide count to a set size limit",
+        "A predefined container box where users easily pop text, photos, or data tables later",
+        "A security security password that prevents people from viewing your graphics",
+        "An error message that crops up when a font is missing from the system"
+      ],
+      "answer": 1,
+      "explanation": "Placeholders are pre-formatted content slots. They maintain consistent font styling and structural layout borders no matter what content the speaker drops into them."
+    }
+  ]
+}

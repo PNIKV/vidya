@@ -1,0 +1,314 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Algorithms & Pseudocode",
+  "subtitle": "Think Step by Step!",
+  "date": "Session 01",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#7B61FF",
+  "icon": "🧠",
+  "tags": [
+    "Programming",
+    "Logic",
+    "Problem Solving",
+    "Computational Thinking"
+  ],
+  "overview": "This session introduces students to Algorithms and Pseudocode using fun real-life examples. Students learn how computers follow step-by-step instructions to solve problems and how programmers plan solutions before coding.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — classroom activities, whiteboard notes, students arranging steps, algorithm games, flowchart drawings.",
+    "gallery": [
+      {
+        "file": "data/algorithm-steps.jpg",
+        "_placeholder": "ADD: Students arranging paper steps in correct order",
+        "caption": "Algorithms are step-by-step instructions",
+        "category": "Concept"
+      },
+      {
+        "file": "data/making-tea.jpg",
+        "_placeholder": "ADD: Teacher explaining tea-making steps",
+        "caption": "Making tea is an everyday algorithm",
+        "category": "Concept"
+      },
+      {
+        "file": "data/pseudocode-board.jpg",
+        "_placeholder": "ADD: Whiteboard photo of pseudocode example",
+        "caption": "Writing logic before coding",
+        "category": "Classroom"
+      },
+      {
+        "file": "data/flowchart.jpg",
+        "_placeholder": "ADD: Student flowchart drawing activity",
+        "caption": "Visual thinking with flowcharts",
+        "category": "Activity"
+      },
+      {
+        "file": "data/team-activity.jpg",
+        "_placeholder": "ADD: Students working in groups",
+        "caption": "Students solving problems together",
+        "category": "Lab"
+      },
+      {
+        "file": "data/robot-game.jpg",
+        "_placeholder": "ADD: Robot instruction classroom game photo",
+        "caption": "Give correct instructions to the robot!",
+        "category": "Fun Activity"
+      },
+      {
+        "file": "data/coding-thinking.png",
+        "_placeholder": "ADD: Student writing algorithm in notebook",
+        "caption": "Programmers plan before coding",
+        "category": "Learning"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is an Algorithm? — Step-by-step instructions to solve a problem",
+    "Real-life Algorithms — Brushing teeth, making tea, going to school",
+    "Importance of Correct Order in Instructions",
+    "What is Pseudocode? — Simple language used before coding",
+    "Difference Between Algorithm and Pseudocode",
+    "How Computers Follow Instructions Exactly",
+    "Problem Solving and Logical Thinking",
+    "Introduction to Flowcharts"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is an Algorithm?",
+      "videoId": "6hfOvs8pY1k",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Simple explanation of algorithms using daily life examples."
+    },
+    {
+      "title": "Algorithms and Flowcharts for Beginners",
+      "videoId": "BtN-goy9VOY",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how algorithms and flowcharts work together."
+    },
+    {
+      "title": "Introduction to Pseudocode",
+      "videoId": "qf1jBkr4AzA",
+      "desc": "Understand pseudocode in easy language."
+    },
+    {
+      "title": "Computational Thinking for Kids",
+      "videoId": "dWRnCXbUDgA",
+      "desc": "Fun introduction to logical thinking and problem solving."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Flowchart Maker",
+      "url": "https://app.diagrams.net/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Code.org Problem Solving Activities",
+      "url": "https://code.org/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Scratch Programming",
+      "url": "https://scratch.mit.edu/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Human Robot Algorithm Game",
+    "parts": [
+      "Chart paper",
+      "Flashcards with instructions",
+      "Markers",
+      "Classroom objects",
+      "Student volunteer as robot"
+    ],
+    "steps": [
+      "Select one student to act as a robot",
+      "Other students give step-by-step instructions",
+      "Robot follows instructions exactly as spoken",
+      "Students observe mistakes caused by unclear instructions",
+      "Rewrite instructions correctly",
+      "Convert steps into pseudocode"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is an Algorithm?",
+      "options": [
+        "A computer game",
+        "A step-by-step method to solve a problem",
+        "A programming language",
+        "A robot"
+      ],
+      "answer": 1,
+      "explanation": "An algorithm is a set of steps followed to solve a problem correctly."
+    },
+    {
+      "q": "Which of the following is an example of an algorithm?",
+      "options": [
+        "Playing randomly",
+        "Making tea step-by-step",
+        "Watching TV",
+        "Sleeping"
+      ],
+      "answer": 1,
+      "explanation": "Making tea follows specific steps, so it is an algorithm."
+    },
+    {
+      "q": "Why is the correct order important in an algorithm?",
+      "options": [
+        "Because computers like colors",
+        "Because steps must happen properly",
+        "Because algorithms are drawings",
+        "Because it makes games faster"
+      ],
+      "answer": 1,
+      "explanation": "Wrong order can give wrong results."
+    },
+    {
+      "q": "What is Pseudocode?",
+      "options": [
+        "A dance style",
+        "Simple language used to plan programs",
+        "A hardware device",
+        "A video game"
+      ],
+      "answer": 1,
+      "explanation": "Pseudocode helps programmers think before coding."
+    },
+    {
+      "q": "Pseudocode is written using:",
+      "options": [
+        "Only English",
+        "Only Python",
+        "Simple logical statements",
+        "Only symbols"
+      ],
+      "answer": 2,
+      "explanation": "Pseudocode uses simple logical instructions."
+    },
+    {
+      "q": "Which comes first while solving a problem?",
+      "options": [
+        "Coding directly",
+        "Deleting files",
+        "Planning the algorithm",
+        "Playing games"
+      ],
+      "answer": 2,
+      "explanation": "Good programmers first plan the solution."
+    },
+    {
+      "q": "Computers follow instructions:",
+      "options": [
+        "Exactly",
+        "Randomly",
+        "Sometimes",
+        "Only at night"
+      ],
+      "answer": 0,
+      "explanation": "Computers follow instructions exactly as given."
+    },
+    {
+      "q": "Which tool visually represents algorithms?",
+      "options": [
+        "Calculator",
+        "Paint",
+        "Flowchart",
+        "Keyboard"
+      ],
+      "answer": 2,
+      "explanation": "Flowcharts show steps visually using symbols."
+    },
+    {
+      "q": "Which of these is NOT an algorithm?",
+      "options": [
+        "Recipe for noodles",
+        "Steps to brush teeth",
+        "Random guessing",
+        "Steps to wear shoes"
+      ],
+      "answer": 2,
+      "explanation": "Algorithms require proper ordered steps."
+    },
+    {
+      "q": "What skill improves by learning algorithms?",
+      "options": [
+        "Sleeping",
+        "Logical thinking",
+        "Running",
+        "Drawing only"
+      ],
+      "answer": 1,
+      "explanation": "Algorithms improve logical and problem-solving skills."
+    },
+    {
+      "q": "What happens if instructions are unclear?",
+      "options": [
+        "Computer understands automatically",
+        "Wrong output may happen",
+        "Nothing changes",
+        "Computer sleeps"
+      ],
+      "answer": 1,
+      "explanation": "Incorrect or unclear instructions lead to mistakes."
+    },
+    {
+      "q": "Which statement is an example of pseudocode?",
+      "options": [
+        "START",
+        "Eat Mango",
+        "print('Hello')",
+        "Football"
+      ],
+      "answer": 0,
+      "explanation": "START is commonly used in pseudocode."
+    },
+    {
+      "q": "Why do programmers use pseudocode?",
+      "options": [
+        "To confuse computers",
+        "To plan logic before coding",
+        "To draw cartoons",
+        "To repair hardware"
+      ],
+      "answer": 1,
+      "explanation": "Pseudocode makes coding easier and organized."
+    },
+    {
+      "q": "An algorithm should be:",
+      "options": [
+        "Confusing",
+        "Clear and ordered",
+        "Very long always",
+        "Random"
+      ],
+      "answer": 1,
+      "explanation": "Algorithms should be simple and clear."
+    },
+    {
+      "q": "What did students learn from the Robot Game activity?",
+      "options": [
+        "Robots can dance",
+        "Instructions must be accurate",
+        "Games are easy",
+        "Robots can think like humans"
+      ],
+      "answer": 1,
+      "explanation": "The activity showed the importance of giving proper instructions."
+    }
+  ]
+}

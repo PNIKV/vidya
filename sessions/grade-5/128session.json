@@ -1,0 +1,317 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Productivity Apps",
+  "subtitle": "Work Smart, Learn Fast!",
+  "date": "Session 01",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FF9800",
+  "icon": "📱",
+  "tags": [
+    "Technology",
+    "Digital Skills",
+    "Productivity",
+    "Computer Education"
+  ],
+  "overview": "This session introduces students to productivity apps that help organize tasks, create documents, communicate, manage time, and improve learning efficiency in school and daily life.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of apps, classroom activities, and student practice photos.",
+    "gallery": [
+      {
+        "file": "data/google-docs.jpg",
+        "_placeholder": "ADD: Screenshot of Google Docs",
+        "caption": "Google Docs helps create and edit documents online",
+        "category": "Apps"
+      },
+      {
+        "file": "data/microsoft-word.jpg",
+        "_placeholder": "ADD: Screenshot of MS Word interface",
+        "caption": "MS Word is used for typing and formatting documents",
+        "category": "Apps"
+      },
+      {
+        "file": "data/google-keep.jpg",
+        "_placeholder": "ADD: Screenshot of Google Keep notes",
+        "caption": "Google Keep helps save notes and reminders",
+        "category": "Apps"
+      },
+      {
+        "file": "data/calendar-app.jpg",
+        "_placeholder": "ADD: Screenshot of calendar application",
+        "caption": "Calendar apps help manage schedules and events",
+        "category": "Apps"
+      },
+      {
+        "file": "data/student-computer-lab.jpg",
+        "_placeholder": "ADD: Students using productivity apps",
+        "caption": "Students practicing digital productivity skills",
+        "category": "Lab"
+      },
+      {
+        "file": "data/online-classroom.jpg",
+        "_placeholder": "ADD: Online classroom collaboration photo",
+        "caption": "Students collaborating using productivity tools",
+        "category": "Learning"
+      },
+      {
+        "file": "data/task-manager.jpg",
+        "_placeholder": "ADD: Screenshot of task management app",
+        "caption": "Task apps help organize daily activities",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What are Productivity Apps?",
+    "Types of Productivity Apps",
+    "Document Creation Apps — MS Word, Google Docs",
+    "Presentation Apps — PowerPoint, Google Slides",
+    "Spreadsheet Apps — Excel, Google Sheets",
+    "Note Taking Apps — Google Keep, OneNote",
+    "Communication Apps — Gmail, Google Meet",
+    "Time Management and Calendar Apps",
+    "Benefits of Productivity Apps in School",
+    "Working Smarter using Digital Tools"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What are Productivity Apps?",
+      "videoId": "xT3OqM5xK0Q",
+      "_note": "Replace with actual YouTube video ID if needed",
+      "desc": "Introduction to productivity applications and their uses."
+    },
+    {
+      "title": "Google Docs for Beginners",
+      "videoId": "eRqUE6IHTEA",
+      "desc": "Learn how to create and edit documents using Google Docs."
+    },
+    {
+      "title": "Microsoft PowerPoint Tutorial",
+      "videoId": "XF34-Wu6qWU",
+      "desc": "Basic PowerPoint skills for students."
+    },
+    {
+      "title": "Using Calendar Apps Effectively",
+      "videoId": "Yw6u6YkTgQ4",
+      "desc": "How digital calendars help manage time and schedules."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Workspace for Education",
+      "url": "https://workspace.google.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft Office Learning",
+      "url": "https://support.microsoft.com/office",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Keep Notes",
+      "url": "https://keep.google.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create Notes and Schedule Activity",
+    "parts": [
+      "Computer/Laptop",
+      "Internet Connection",
+      "Google Account",
+      "Productivity Apps"
+    ],
+    "steps": [
+      "Open Google Docs or MS Word",
+      "Create a short document about your daily routine",
+      "Add heading and bullet points",
+      "Save the file with your name",
+      "Open Google Keep or Notes app",
+      "Create a reminder for homework",
+      "Open Calendar app",
+      "Add a school event or exam reminder",
+      "Challenge: Share the document with your friend"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What are productivity apps used for?",
+      "options": [
+        "Playing games only",
+        "Watching cartoons",
+        "Helping users complete tasks efficiently",
+        "Changing wallpapers"
+      ],
+      "answer": 2,
+      "explanation": "Productivity apps help users work smarter, organize tasks, and save time."
+    },
+    {
+      "q": "Which app is commonly used for typing documents?",
+      "options": [
+        "MS Word",
+        "Paint",
+        "Calculator",
+        "Camera"
+      ],
+      "answer": 0,
+      "explanation": "MS Word is used for creating and editing documents."
+    },
+    {
+      "q": "Which app helps create presentations?",
+      "options": [
+        "Excel",
+        "PowerPoint",
+        "Notepad",
+        "Clock"
+      ],
+      "answer": 1,
+      "explanation": "PowerPoint is used to create presentations with slides."
+    },
+    {
+      "q": "Which app is useful for calculations and tables?",
+      "options": [
+        "Excel",
+        "Paint",
+        "Photos",
+        "WordPad"
+      ],
+      "answer": 0,
+      "explanation": "Excel helps organize data and perform calculations."
+    },
+    {
+      "q": "What is Google Keep mainly used for?",
+      "options": [
+        "Watching videos",
+        "Taking notes and reminders",
+        "Playing music",
+        "Drawing only"
+      ],
+      "answer": 1,
+      "explanation": "Google Keep helps users save notes, checklists, and reminders."
+    },
+    {
+      "q": "Which app helps schedule meetings and events?",
+      "options": [
+        "Calendar",
+        "Paint",
+        "Chrome",
+        "Recorder"
+      ],
+      "answer": 0,
+      "explanation": "Calendar apps help organize dates, schedules, and reminders."
+    },
+    {
+      "q": "Which productivity app is used for online meetings?",
+      "options": [
+        "Google Meet",
+        "Paint",
+        "Calculator",
+        "Camera"
+      ],
+      "answer": 0,
+      "explanation": "Google Meet is used for video meetings and online classes."
+    },
+    {
+      "q": "What is one benefit of productivity apps?",
+      "options": [
+        "Waste time",
+        "Reduce efficiency",
+        "Help complete work faster",
+        "Slow down computers"
+      ],
+      "answer": 2,
+      "explanation": "Productivity apps improve efficiency and save time."
+    },
+    {
+      "q": "Which app helps send emails?",
+      "options": [
+        "Gmail",
+        "Paint",
+        "Excel",
+        "Photos"
+      ],
+      "answer": 0,
+      "explanation": "Gmail is used to send and receive emails."
+    },
+    {
+      "q": "What can students use productivity apps for?",
+      "options": [
+        "Homework and projects",
+        "Organizing study schedules",
+        "Taking notes",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Students can use productivity apps for many school-related tasks."
+    },
+    {
+      "q": "Which app is best for making slides?",
+      "options": [
+        "PowerPoint",
+        "Notepad",
+        "Calculator",
+        "Clock"
+      ],
+      "answer": 0,
+      "explanation": "PowerPoint helps create presentations and slide shows."
+    },
+    {
+      "q": "Why are reminders useful?",
+      "options": [
+        "They help remember important tasks",
+        "They delete files",
+        "They slow internet",
+        "They change wallpapers"
+      ],
+      "answer": 0,
+      "explanation": "Reminders help users remember homework, meetings, and events."
+    },
+    {
+      "q": "Which productivity app stores files online?",
+      "options": [
+        "Google Drive",
+        "Calculator",
+        "Paint",
+        "Recorder"
+      ],
+      "answer": 0,
+      "explanation": "Google Drive stores files safely on the cloud."
+    },
+    {
+      "q": "What is collaboration in productivity apps?",
+      "options": [
+        "Working together on the same file",
+        "Deleting documents",
+        "Closing apps",
+        "Playing games"
+      ],
+      "answer": 0,
+      "explanation": "Collaboration allows multiple users to work together on documents."
+    },
+    {
+      "q": "Which skill improves by using productivity apps?",
+      "options": [
+        "Time management",
+        "Organization",
+        "Communication",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Productivity apps improve many important digital and life skills."
+    }
+  ]
+}

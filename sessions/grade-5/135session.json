@@ -1,0 +1,314 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-1/",
+    "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-1/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-1",
+  "number": 1,
+  "title": "Intro to Cloud Storage",
+  "subtitle": "Save, Share & Access Files Anywhere!",
+  "date": "Session 01",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#4FC3F7",
+  "icon": "☁️",
+  "tags": [
+    "Cloud Storage",
+    "Digital Literacy",
+    "Technology",
+    "Internet Safety"
+  ],
+  "overview": "This session introduces students to cloud storage and how files can be saved online instead of only on a computer or mobile device. Students will learn about Google Drive, OneDrive, Dropbox, file sharing, online safety, and teamwork using cloud technology.",
+  "grades": [
+    5
+  ],
+  "slides": {
+    "pdf": "sessions/session-1/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the classroom session — students using cloud storage, screenshots of Google Drive, uploading files, teamwork activities, and internet concepts.",
+    "gallery": [
+      {
+        "file": "data/cloud-storage.jpg",
+        "_placeholder": "ADD: Illustration of cloud storage concept",
+        "caption": "Cloud Storage lets us save files online safely",
+        "category": "Concept"
+      },
+      {
+        "file": "data/google-drive.png",
+        "_placeholder": "ADD: Screenshot/photo of Google Drive",
+        "caption": "Google Drive helps users save and share files online",
+        "category": "Apps"
+      },
+      {
+        "file": "data/upload-files.jpg",
+        "_placeholder": "ADD: Students uploading files to cloud",
+        "caption": "Students learning how to upload files online",
+        "category": "Activity"
+      },
+      {
+        "file": "data/mobile-laptop-sync.jpg",
+        "_placeholder": "ADD: Image showing same files on laptop and mobile",
+        "caption": "Cloud storage syncs files across devices",
+        "category": "Concept"
+      },
+      {
+        "file": "data/teamwork-cloud.jpg",
+        "_placeholder": "ADD: Students sharing documents together",
+        "caption": "Students collaborating using shared cloud documents",
+        "category": "Collaboration"
+      },
+      {
+        "file": "data/password-security.jpg",
+        "_placeholder": "ADD: Internet safety and password image",
+        "caption": "Strong passwords keep cloud accounts safe",
+        "category": "Safety"
+      },
+      {
+        "file": "data/cloud-icons.png",
+        "_placeholder": "ADD: Cloud service logos and icons",
+        "caption": "Popular cloud services: Google Drive, OneDrive, Dropbox",
+        "category": "Technology"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Cloud Storage? — Saving files on the internet",
+    "Google Drive, OneDrive & Dropbox basics",
+    "Upload and Download files",
+    "Access files from mobile, tablet, or computer",
+    "File Sharing and Collaboration",
+    "Folders and File Organization",
+    "Internet Safety and Strong Passwords",
+    "Benefits of Cloud Storage — Backup, Sharing, Teamwork"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is Cloud Storage?",
+      "videoId": "MXl4QWf0Au8",
+      "_note": "Replace with updated YouTube video ID if needed",
+      "desc": "Simple explanation of cloud storage for beginners."
+    },
+    {
+      "title": "How Google Drive Works",
+      "videoId": "gs9A4yEsMOk",
+      "desc": "Learn how to upload and organize files in Google Drive."
+    },
+    {
+      "title": "Internet Safety for Kids",
+      "videoId": "yiKeLOKc1tw",
+      "desc": "Basic internet safety tips for students."
+    },
+    {
+      "title": "Cloud Computing Explained",
+      "videoId": "M988_fsOSWo",
+      "desc": "Easy introduction to cloud technology and online storage."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Drive",
+      "url": "https://drive.google.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Microsoft OneDrive",
+      "url": "https://onedrive.live.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Dropbox",
+      "url": "https://www.dropbox.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Upload and Share a File Using Cloud Storage",
+    "parts": [
+      "Computer or Laptop",
+      "Internet Connection",
+      "Google Account",
+      "Sample Image or Document"
+    ],
+    "steps": [
+      "Open Google Drive in browser",
+      "Sign in using Google account",
+      "Click NEW → File Upload",
+      "Select a photo or document",
+      "Wait for upload to complete",
+      "Create a new folder and move the file inside",
+      "Right-click the file → Share",
+      "Share the file link with teacher or classmate"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is cloud storage?",
+      "options": [
+        "A water storage tank",
+        "Saving files on the internet",
+        "A type of weather cloud",
+        "A video game"
+      ],
+      "answer": 1,
+      "explanation": "Cloud storage means saving files online so they can be accessed anytime using the internet."
+    },
+    {
+      "q": "Which is an example of cloud storage?",
+      "options": [
+        "Google Drive",
+        "Calculator",
+        "Paint",
+        "Speaker"
+      ],
+      "answer": 0,
+      "explanation": "Google Drive is a popular cloud storage platform."
+    },
+    {
+      "q": "What do you need to access cloud files?",
+      "options": [
+        "Internet connection",
+        "Television",
+        "Fan",
+        "Printer only"
+      ],
+      "answer": 0,
+      "explanation": "Cloud storage works using the internet."
+    },
+    {
+      "q": "What is the benefit of cloud storage?",
+      "options": [
+        "Files can be accessed anywhere",
+        "Files disappear automatically",
+        "It damages the computer",
+        "It only works offline"
+      ],
+      "answer": 0,
+      "explanation": "Cloud storage allows users to access files from different devices and places."
+    },
+    {
+      "q": "Which action sends a file to cloud storage?",
+      "options": [
+        "Delete",
+        "Upload",
+        "Close",
+        "Paint"
+      ],
+      "answer": 1,
+      "explanation": "Uploading means sending files from your device to cloud storage."
+    },
+    {
+      "q": "What does downloading mean?",
+      "options": [
+        "Sending files online",
+        "Removing internet",
+        "Saving online files to your device",
+        "Printing photos"
+      ],
+      "answer": 2,
+      "explanation": "Downloading means saving files from the cloud onto your device."
+    },
+    {
+      "q": "Why should we use strong passwords?",
+      "options": [
+        "To protect our account and files",
+        "To slow the internet",
+        "To make files bigger",
+        "To delete folders"
+      ],
+      "answer": 0,
+      "explanation": "Strong passwords help keep cloud accounts safe from hackers."
+    },
+    {
+      "q": "Which device can access cloud storage?",
+      "options": [
+        "Computer only",
+        "Mobile only",
+        "Tablet only",
+        "All of these"
+      ],
+      "answer": 3,
+      "explanation": "Cloud storage can be used on computers, mobiles, and tablets."
+    },
+    {
+      "q": "What is file sharing?",
+      "options": [
+        "Breaking a file",
+        "Sending file access to another person",
+        "Deleting files",
+        "Turning OFF the computer"
+      ],
+      "answer": 1,
+      "explanation": "File sharing allows others to view or edit your files online."
+    },
+    {
+      "q": "Which company created Google Drive?",
+      "options": [
+        "Microsoft",
+        "Apple",
+        "Google",
+        "Samsung"
+      ],
+      "answer": 2,
+      "explanation": "Google Drive is a cloud storage service developed by Google."
+    },
+    {
+      "q": "What helps organize files in cloud storage?",
+      "options": [
+        "Folders",
+        "Keyboard",
+        "Speakers",
+        "Mouse pad"
+      ],
+      "answer": 0,
+      "explanation": "Folders help keep files organized neatly."
+    },
+    {
+      "q": "What happens if your computer is damaged but files are in cloud storage?",
+      "options": [
+        "Files are still safe online",
+        "Files disappear forever",
+        "Internet stops working",
+        "The cloud breaks"
+      ],
+      "answer": 0,
+      "explanation": "Cloud storage keeps files safe online even if your device is damaged."
+    },
+    {
+      "q": "Which feature allows teamwork on the same document?",
+      "options": [
+        "Sharing and collaboration",
+        "Deleting",
+        "Painting",
+        "Gaming"
+      ],
+      "answer": 0,
+      "explanation": "Cloud tools allow multiple users to work together on the same document."
+    },
+    {
+      "q": "What icon is commonly used to represent cloud storage?",
+      "options": [
+        "Cloud",
+        "Tree",
+        "Book",
+        "Clock"
+      ],
+      "answer": 0,
+      "explanation": "Cloud services are usually represented with a cloud symbol."
+    },
+    {
+      "q": "What is the main idea of cloud storage?",
+      "options": [
+        "Store files online safely",
+        "Cook food",
+        "Play outdoor games",
+        "Repair machines"
+      ],
+      "answer": 0,
+      "explanation": "Cloud storage helps users safely save and manage files online."
+    }
+  ]
+}
