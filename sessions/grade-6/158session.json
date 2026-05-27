@@ -1,0 +1,259 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-191/",
+    "slides_folder": "sessions/session-191/slides/",
+    "images_folder": "sessions/session-191/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-191",
+  "number": 191,
+  "title": "Keypad Password Lock",
+  "subtitle": "Secure Access with a 4-Digit PIN!",
+  "date": "Session 191",
+  "duration": "45 Minutes",
+  "phase": "Arduino Security Projects",
+  "color": "#EF4444",
+  "icon": "🔐",
+  "tags": [
+    "Arduino",
+    "Keypad",
+    "Password Lock",
+    "Servo Motor",
+    "Security System"
+  ],
+  "overview": "Students build a simple password-protected door lock system using Arduino, a 4x4 keypad, a servo motor, LEDs, and a buzzer. When the correct 4-digit PIN is entered, the green LED glows and the servo unlocks the door. Incorrect PIN entries activate the red LED and buzzer alarm.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-191/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos of keypad connections, servo lock mechanism, LEDs, buzzer, and student-built security systems.",
+    "gallery": [
+      {
+        "file": "data/4x4-keypad.jpg",
+        "caption": "4x4 Matrix Keypad for PIN Entry",
+        "category": "Components"
+      },
+      {
+        "file": "data/servo-motor.jpg",
+        "caption": "Servo Motor used as a door lock mechanism",
+        "category": "Components"
+      },
+      {
+        "file": "data/green-led.jpg",
+        "caption": "Green LED indicates successful authentication",
+        "category": "Indicators"
+      },
+      {
+        "file": "data/red-led.jpg",
+        "caption": "Red LED indicates wrong password",
+        "category": "Indicators"
+      },
+      {
+        "file": "data/buzzer.jpg",
+        "caption": "Buzzer alarm for incorrect PIN attempts",
+        "category": "Components"
+      },
+      {
+        "file": "data/keypad-lock-project.jpg",
+        "caption": "Complete Arduino Keypad Password Lock Project",
+        "category": "Project"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Introduction to Electronic Security Systems",
+    "Working of a Matrix Keypad",
+    "4-Digit Password Authentication",
+    "Arduino Input and Output Devices",
+    "Servo Motor as an Electronic Door Lock",
+    "Green LED Success Indicator",
+    "Red LED Error Indicator",
+    "Buzzer Alarm System",
+    "Conditional Statements in Arduino",
+    "Real-World Applications of Password Locks",
+    "Home and Office Security Systems",
+    "User Authentication Concepts"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Keypad Door Lock Project",
+      "videoId": "6oJx4xQJQjQ",
+      "desc": "Learn how to build a password-protected door lock using Arduino."
+    },
+    {
+      "title": "4x4 Keypad Interfacing with Arduino",
+      "videoId": "vlgyODL5oI0",
+      "desc": "Understanding keypad scanning and input detection."
+    },
+    {
+      "title": "Servo Motor with Arduino",
+      "videoId": "U1F0ZKQw5lA",
+      "desc": "Control a servo motor for locking and unlocking mechanisms."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Keypad Library",
+      "url": "https://www.arduino.cc/reference/en/libraries/keypad/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Servo Motor Tutorial",
+      "url": "https://docs.arduino.cc/learn/electronics/servo-motors",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Keypad Password Lock",
+    "parts": [
+      "Arduino UNO",
+      "4x4 Matrix Keypad",
+      "Servo Motor (SG90)",
+      "Green LED",
+      "Red LED",
+      "Buzzer",
+      "220Ω Resistors",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect the 4x4 keypad to Arduino digital pins",
+      "Connect the servo motor to a PWM pin",
+      "Connect green and red LEDs with resistors",
+      "Connect the buzzer to a digital output pin",
+      "Upload the password lock program",
+      "Enter the correct 4-digit PIN using the keypad",
+      "Observe the green LED turning ON",
+      "Observe the servo motor rotating to unlock",
+      "Enter an incorrect PIN",
+      "Observe the red LED and buzzer alarm activation",
+      "Discuss real-world password security systems"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What device is used to enter the password?",
+      "options": [
+        "Servo Motor",
+        "Keypad",
+        "LED",
+        "Buzzer"
+      ],
+      "answer": 1,
+      "explanation": "The keypad is used to enter the 4-digit PIN."
+    },
+    {
+      "q": "How many digits are used in the PIN for this project?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "8"
+      ],
+      "answer": 2,
+      "explanation": "The project uses a 4-digit password."
+    },
+    {
+      "q": "What happens when the correct PIN is entered?",
+      "options": [
+        "Red LED glows",
+        "Buzzer sounds",
+        "Green LED glows and servo unlocks",
+        "System shuts down"
+      ],
+      "answer": 2,
+      "explanation": "A correct PIN unlocks the system and turns on the green LED."
+    },
+    {
+      "q": "What happens when the wrong PIN is entered?",
+      "options": [
+        "Green LED glows",
+        "Servo unlocks",
+        "Red LED and buzzer activate",
+        "Nothing happens"
+      ],
+      "answer": 2,
+      "explanation": "Incorrect passwords trigger an alert using the red LED and buzzer."
+    },
+    {
+      "q": "What is the purpose of the servo motor?",
+      "options": [
+        "Measure temperature",
+        "Act as a lock mechanism",
+        "Store data",
+        "Play music"
+      ],
+      "answer": 1,
+      "explanation": "The servo rotates to lock or unlock the door."
+    },
+    {
+      "q": "Which component provides an audible alarm?",
+      "options": [
+        "LED",
+        "Resistor",
+        "Keypad",
+        "Buzzer"
+      ],
+      "answer": 3,
+      "explanation": "The buzzer produces sound when a wrong password is entered."
+    },
+    {
+      "q": "What color LED indicates successful access?",
+      "options": [
+        "Red",
+        "Blue",
+        "Green",
+        "Yellow"
+      ],
+      "answer": 2,
+      "explanation": "Green commonly represents success or access granted."
+    },
+    {
+      "q": "Which Arduino concept is mainly used to check passwords?",
+      "options": [
+        "Conditional Statements",
+        "Drawing Graphics",
+        "Printing Documents",
+        "Audio Recording"
+      ],
+      "answer": 0,
+      "explanation": "The program compares entered values using conditions."
+    },
+    {
+      "q": "Where can similar systems be found?",
+      "options": [
+        "Door Access Systems",
+        "Water Bottles",
+        "Flashlights",
+        "Calculators Only"
+      ],
+      "answer": 0,
+      "explanation": "Password locks are commonly used for doors and restricted access areas."
+    },
+    {
+      "q": "What is the main purpose of this project?",
+      "options": [
+        "Entertainment",
+        "Security and Access Control",
+        "Weather Monitoring",
+        "Lighting Control"
+      ],
+      "answer": 1,
+      "explanation": "The project demonstrates electronic security using password authentication."
+    }
+  ]
+}

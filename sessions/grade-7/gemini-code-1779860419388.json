@@ -1,0 +1,188 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-233/",
+    "slides_folder": "sessions/session-233/slides/",
+    "images_folder": "sessions/session-233/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-233",
+  "number": 233,
+  "title": "Digital Footprint & Privacy: Mapping Your Trail",
+  "subtitle": "Think before you click—your digital shadow follows you forever!",
+  "date": "Session 233",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#FFC107",
+  "icon": "👣",
+  "tags": [
+    "Digital Literacy",
+    "Cybersecurity",
+    "Privacy",
+    "Safety"
+  ],
+  "overview": "In this analytical and reflective session, students investigate the permanent nature of their online activities. By distinguishing between active shares and passive logging, students map out their individual digital trails, learn how data brokers leverage personal metadata, and construct defensive frameworks to audit and shrink their exposed online footprints.",
+  "grades": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-233/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — student-drawn footprint maps, privacy settings checklist slides, and audit results.",
+    "gallery": [
+      {
+        "file": "data/digital-footprint-map.jpg",
+        "_placeholder": "ADD: Photo of a student's hand-drawn footprint diagram branching out into apps, searches, and cookies",
+        "caption": "The Digital Shadow — Visualizing every click, stream, and comment made online.",
+        "category": "Concept"
+      },
+      {
+        "file": "data/active-vs-passive.png",
+        "_placeholder": "ADD: Graphic chart outlining Active footprints (posts) vs. Passive footprints (IP logs, cookies)",
+        "caption": "Active vs. Passive Trails — Knowing what you give versus what is quietly taken.",
+        "category": "Components"
+      },
+      {
+        "file": "data/student-audit-workshop.jpg",
+        "_placeholder": "ADD: Photo of students systematically auditing app authorization screens on their school devices",
+        "caption": "Privacy Sweep — Students checking tracking permissions during the practical lab module.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Digital Footprint? — The permanent trail of data, logs, photos, and history left behind by anyone using the internet",
+    "Active Digital Footprint — Data intentionally released by a user, including social comments, uploaded media, and emails",
+    "Passive Digital Footprint — Data collected behind the scenes without the user's active awareness, such as IP addresses, router histories, and server cookies",
+    "The Data Broker Machine — How corporate agencies buy, compile, and sell fragmented data crumbs to construct commercial profiles",
+    "The Permanence Reality — Why deleting an image or comment doesn't remove it from remote data servers or archival backups",
+    "Metadata Tracking — Information embedded inside common files, like GPS coordinates, capture times, and device models hidden in camera photos",
+    "Privacy Defense Blueprint — Practical steps to lock down accounts, clear historical tracking cookies, and revoke unnecessary app permissions",
+    "The 5-Second Filter Rule — A pause protocol before posting: 'Would I want my grandparents, principal, or future boss to read this?'"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is a Digital Footprint?",
+      "videoId": "digital-footprint-basics",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "An engaging, animated explanation of how everyday online behaviors assemble a permanent, searchable digital shadow."
+    },
+    {
+      "title": "Protecting Your Online Privacy & Personal Data",
+      "videoId": "privacy-tips-kids",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "Simple defensive tactics for kids and teenagers to secure accounts and opt out of predatory web tracking tracks."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Common Sense Media — Privacy & Digital Footprint Hub",
+      "url": "https://www.commonsense.org/education/digital-citizenship",
+      "icon": "🔗"
+    },
+    {
+      "title": "Terms of Service Didn't Read — App Rules Simplified",
+      "url": "https://tosdr.org",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Personal Data-Trail Mapping Lab",
+    "parts": [
+      "A3 Layout Paper with a large central outline of a shoe footprint",
+      "Colored markers (Red for Passive trackers, Blue for Active posts)",
+      "Privacy Audit Guideline Worksheet"
+    ],
+    "steps": [
+      "The Footprint Allocation: Each student receives a blank footprint chart representing their current digital identity shadow.",
+      "Mapping Active Nodes: Inside the sole boundary, students use blue markers to plot apps and behaviors they knowingly input (e.g., streaming sites, video games, messaging boards).",
+      "Exposing Passive Roots: Outside the foot border, students extend red root lines to show background tracking systems (e.g., internet provider logs, website cookies, location services).",
+      "The App Audit Challenge: Students pick one app they use daily, open its phone settings panel, and list how many device features it permissions (e.g., camera, contacts, microchip data).",
+      "The Cleanup Operation: On the back of the chart, students draft 3 immediate actions to shrink their trail (e.g., 'Turn off background location', 'Delete old unused profiles')."
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the core difference between an 'Active' and a 'Passive' digital footprint?",
+      "options": [
+        "Active footprints only happen when you are running, while passive footprints happen while sitting down",
+        "Active footprints consist of data you intentionally post or share, while passive footprints are quietly tracked in the background without your active input",
+        "Active footprints delete themselves within an hour, while passive footprints remain forever",
+        "Active footprints require a credit card to generate"
+      ],
+      "answer": 1,
+      "explanation": "Intentional vs. Background! Active footprints include deliberate updates like posting a status or sending an email. Passive footprints happen automatically behind the scenes, such as web servers recording your IP address or logging which device you used to view a site."
+    },
+    {
+      "q": "Once you hit 'Delete' on an online post or image, is it completely gone from the internet?",
+      "options": [
+        "Yes, hitting delete instantly wipes all copies globally",
+        "No, because other users could have saved screenshots, and remote data databases often store archived copies or backups of that information long after you remove it",
+        "Yes, but only if your computer is plugged into wall power",
+        "No, it stays online only if you turn off your router connection"
+      ],
+      "answer": 1,
+      "explanation": "The Illusion of Deletion! The web is built to duplicate information. Even if you remove a post from your profile feed, hidden server backups, web scraping systems, or external screenshots can keep that file alive indefinitely."
+    },
+    {
+      "q": "What type of invisible data is often embedded inside a smartphone photo file without you typing it?",
+      "options": [
+        "A script that changes your wallpaper screen",
+        "Metadata, which can include exact GPS location coordinates, capture timestamps, and specific device hardware details",
+        "A digital currency wallet token",
+        "An automated computer virus link"
+      ],
+      "answer": 2,
+      "explanation": "Hidden Metadata! Standard smartphone image formats attach EXIF metadata tags to photo assets. This hidden string notes the precise physical latitude/longitude where the snapshot occurred, along with system and timestamp signatures."
+    },
+    {
+      "q": "What is a 'Data Broker'?",
+      "options": [
+        "A technician who repairs broken computer screens and hardware",
+        "A commercial company that collects, aggregates, and sells personal web histories and demographic profiles to marketing agencies",
+        "A fast software loop that speeds up your internet downloading channels",
+        "A system firewall built to block malware scripts"
+      ],
+      "answer": 1,
+      "explanation": "Information Sellers! Data brokers act as information wholesalers. They scan public records, app stores, and cookie trackers to group your habits into marketing data targets to sell to advertisers."
+    },
+    {
+      "q": "Which step represents a valid practice for reducing your exposed digital footprint footprint?",
+      "options": [
+        "Sharing account passwords across all social networks",
+        "Proactively clearing system cookies, deleting abandoned accounts, and turning off unnecessary app location permissions",
+        "Leaving your webcam active continuously throughout the day",
+        "Creating more profiles using your real home address and telephone info"
+      ],
+      "answer": 1,
+      "explanation": "Data Minimization! You can shrink your digital profile by wiping legacy accounts, auditing platform authorization tabs, and restricting device hardware access down to the bare essentials."
+    },
+    {
+      "q": "Why should you use the '5-Second Filter Rule' before clicking the publish option online?",
+      "options": [
+        "To let the computer chip cool down to avoid hardware issues",
+        "To ensure the internet router connection doesn't drop the packet",
+        "To double-check if you would feel comfortable with an educator, guardian, or future employer viewing that text or image in the future",
+        "To allow the system time to encrypt the file extension path"
+      ],
+      "answer": 2,
+      "explanation": "Strategic Evaluation! Since internet history lasts a lifetime, checking posts through an analytical lens protects your reputation from snap decisions that could impact future professional paths."
+    },
+    {
+      "q": "What function do browser 'Cookies' serve on web communication networks?",
+      "options": [
+        "They are files that physically clean dust off internal storage chips",
+        "They are small data packets stored on your device that websites use to remember login sessions, shopping baskets, and tracking preferences",
+        "They are rewards you earn for finishing programming modules",
+        "They are automated firewalls that intercept incoming hacker storms"
+      ],
+      "answer": 1,
+      "explanation": "State Management Records! Cookies keep track of visitor states. While cookies allow sites to keep you logged in securely, tracking variants monitor your movements across multiple sites to serve target advertising models."
+    }
+  ]
+}

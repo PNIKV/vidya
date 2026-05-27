@@ -1,0 +1,365 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-221/",
+    "slides_folder": "sessions/session-221/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-221/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-221",
+  "number": 221,
+  "title": "RFID Smart Lock",
+  "subtitle": "Tap In → Relay Clicks → Door Opens!",
+  "date": "Session 221",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#D32F2F",
+  "icon": "🔐",
+  "tags": [
+    "IoT",
+    "Engineering",
+    "Technology",
+    "Arduino"
+  ],
+  "overview": "Build a real working smart lock! An authorized RFID card makes a relay click and a servo motor swing the door open. Any other card gets denied — red LED, buzzer beep, and 'Access Denied' on the LCD. The same system used in offices, hotels, and secure labs — built by YOU on a breadboard.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-221/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — relay module, servo door model, wiring, access granted/denied demo.",
+    "gallery": [
+      {
+        "file": "data/relay-module.jpg",
+        "_placeholder": "ADD: Photo of 5V relay module used in session",
+        "caption": "Relay Module — an electrically controlled switch. Click = door unlocks!",
+        "category": "Components"
+      },
+      {
+        "file": "data/servo-motor-door.jpg",
+        "_placeholder": "ADD: Photo of servo attached to cardboard door model",
+        "caption": "Servo Motor acting as the door — swings open for authorized cards!",
+        "category": "Components"
+      },
+      {
+        "file": "data/rfid-rc522-smartlock.jpg",
+        "_placeholder": "ADD: Photo of RC522 RFID reader mounted on the lock model",
+        "caption": "RC522 RFID Reader — the gatekeeper. Tap and it decides!",
+        "category": "Components"
+      },
+      {
+        "file": "data/lcd-access-granted.jpg",
+        "_placeholder": "ADD: Photo of LCD showing 'Access Granted!' message",
+        "caption": "LCD says 'Access Granted!' — servo swings open, green LED glows",
+        "category": "Lab"
+      },
+      {
+        "file": "data/lcd-access-denied.jpg",
+        "_placeholder": "ADD: Photo of LCD showing 'Access Denied!' message",
+        "caption": "LCD says 'Access Denied!' — red LED + buzzer warns the intruder!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/smartlock-wiring-full.jpg",
+        "_placeholder": "ADD: Full wiring photo of RFID + Relay + Servo + LCD + LEDs + Buzzer",
+        "caption": "Full smart lock circuit — RFID → Arduino → Relay + Servo + LCD",
+        "category": "Lab"
+      },
+      {
+        "file": "data/smartlock-realworld.jpg",
+        "_placeholder": "ADD: Photo of hotel key card lock or office RFID door",
+        "caption": "Same tech in hotel rooms, offices, and metro gates — now you built one!",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Relay — An electrically controlled switch; Arduino (low power) controls a relay that switches higher-power devices",
+    "Normally Open (NO) vs Normally Closed (NC) — relay contacts: NO = circuit open until relay triggers",
+    "Servo Motor as Door — PWM signal from Arduino rotates servo to 0° (locked) or 90° (unlocked)",
+    "RFID UID Whitelist — a list of authorized card UIDs stored in Arduino code; tap = check against list",
+    "Access Granted Flow — UID matches → relay ON → servo opens → green LED → LCD 'Access Granted!'",
+    "Access Denied Flow — UID unknown → relay stays OFF → red LED → buzzer beeps → LCD 'Access Denied!'",
+    "Auto-Lock Timer — servo returns to 0° and relay OFF after 3 seconds using delay()",
+    "Real-World Applications — hotel key cards, office access control, school gates, ATM rooms, lab doors"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "RFID Door Lock with Arduino — Full Build",
+      "videoId": "1kPSWgqjgNI",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Complete tutorial building an RFID door lock with relay and servo on Arduino — wiring, code, and demo."
+    },
+    {
+      "title": "How a Relay Works — Animated Explanation",
+      "videoId": "LNLGLAm0NHg",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Simple animated explainer showing how a relay uses an electromagnet to switch a circuit — perfect for beginners."
+    },
+    {
+      "title": "Servo Motor with Arduino — Basics",
+      "videoId": "kUHmYKWwuWs",
+      "desc": "How to control a servo motor angle using Arduino — the foundation of our door mechanism."
+    },
+    {
+      "title": "RFID Access Control System Project",
+      "videoId": "KGpDMH0fCwQ",
+      "desc": "Student project demo — RFID card tap triggers relay and servo to open a door model. Access denied for unknown cards."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Wokwi — Simulate RFID + Servo + Relay Online",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "MFRC522 Arduino Library (GitHub)",
+      "url": "https://github.com/miguelbalboa/rfid",
+      "icon": "🔗"
+    },
+    {
+      "title": "LiquidCrystal_I2C Library",
+      "url": "https://github.com/johnrickman/LiquidCrystal_I2C",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino Servo Library Docs",
+      "url": "https://www.arduino.cc/reference/en/libraries/servo/",
+      "icon": "🔗"
+    },
+    {
+      "title": "How Relays Work — HowStuffWorks",
+      "url": "https://electronics.howstuffworks.com/relay.htm",
+      "icon": "🔗"
+    }
+  ],
+  "codeExamples": [
+    {
+      "title": "Wiring Reference — Pin Connections",
+      "language": "cpp",
+      "description": "Wire everything up before uploading any code. Read the voltage warnings carefully!",
+      "code": "/*\n  ┌─────────────────────────────────────────────┐\n  │   RFID RC522      →   Arduino UNO           │\n  ├─────────────────────────────────────────────┤\n  │   SDA (SS)        →   Pin 10                │\n  │   SCK             →   Pin 13                │\n  │   MOSI            →   Pin 11                │\n  │   MISO            →   Pin 12                │\n  │   RST             →   Pin 9                 │\n  │   GND             →   GND                   │\n  │   3.3V            →   3.3V  ⚠️ NOT 5V!     │\n  └─────────────────────────────────────────────┘\n\n  ┌─────────────────────────────────────────────┐\n  │   LCD I2C         →   Arduino UNO           │\n  ├─────────────────────────────────────────────┤\n  │   VCC             →   5V                    │\n  │   GND             →   GND                   │\n  │   SDA             →   A4                    │\n  │   SCL             →   A5                    │\n  └─────────────────────────────────────────────┘\n\n  ┌─────────────────────────────────────────────┐\n  │   Relay Module    →   Arduino UNO           │\n  ├─────────────────────────────────────────────┤\n  │   VCC             →   5V                    │\n  │   GND             →   GND                   │\n  │   IN (signal)     →   Pin 7                 │\n  │   NO  (load +)    →   External device +     │\n  │   COM (common)    →   External device power │\n  └─────────────────────────────────────────────┘\n\n  ┌─────────────────────────────────────────────┐\n  │   Other Components →  Arduino UNO           │\n  ├─────────────────────────────────────────────┤\n  │   Servo signal    →   Pin 6                 │\n  │   Servo VCC       →   5V                    │\n  │   Servo GND       →   GND                   │\n  │   Green LED (+)   →   Pin 4  (+ 220Ω)       │\n  │   Red LED   (+)   →   Pin 5  (+ 220Ω)       │\n  │   Buzzer    (+)   →   Pin 8                 │\n  │   All LED/Buz GND →   GND                   │\n  └─────────────────────────────────────────────┘\n*/"
+    },
+    {
+      "title": "Step 1 — Read Your Card's UID",
+      "language": "cpp",
+      "description": "Upload this first. Open Serial Monitor at 9600 baud, tap each authorized card, and write down its UID bytes. You'll paste them into Step 2.",
+      "code": "#include <SPI.h>\n#include <MFRC522.h>\n\n#define SS_PIN  10\n#define RST_PIN 9\n\nMFRC522 rfid(SS_PIN, RST_PIN);\n\nvoid setup() {\n  Serial.begin(9600);\n  SPI.begin();\n  rfid.PCD_Init();\n  Serial.println(\"=== UID Scanner ===\");\n  Serial.println(\"Tap a card to read its UID...\");\n}\n\nvoid loop() {\n  if (!rfid.PICC_IsNewCardPresent()) return;\n  if (!rfid.PICC_ReadCardSerial())  return;\n\n  Serial.print(\"UID: \");\n  for (byte i = 0; i < rfid.uid.size; i++) {\n    // Print with leading zero so each byte is 2 hex digits\n    if (rfid.uid.uidByte[i] < 0x10) Serial.print(\"0\");\n    Serial.print(rfid.uid.uidByte[i], HEX);\n    Serial.print(\" \");\n  }\n  Serial.println();\n  Serial.println(\"Copy these bytes into your smart lock code!\");\n  Serial.println(\"---\");\n\n  rfid.PICC_HaltA();\n  delay(1000);\n}"
+    },
+    {
+      "title": "Step 2 — Full RFID Smart Lock",
+      "language": "cpp",
+      "description": "The complete smart lock! Authorized card → relay clicks → servo opens door → green LED + LCD 'Access Granted!'. Unknown card → red LED + buzzer + LCD 'Access Denied!'. Auto-locks after 3 seconds.",
+      "code": "#include <SPI.h>\n#include <MFRC522.h>\n#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n#include <Servo.h>\n\n// ── PIN DEFINITIONS ───────────────────────────────\n#define SS_PIN     10\n#define RST_PIN    9\n#define RELAY_PIN  7\n#define GREEN_PIN  4\n#define RED_PIN    5\n#define BUZZER_PIN 8\n#define SERVO_PIN  6\n\n// ── OBJECTS ───────────────────────────────────────\nMFRC522 rfid(SS_PIN, RST_PIN);\nLiquidCrystal_I2C lcd(0x27, 16, 2);\nServo doorServo;\n\n// ── AUTHORIZED CARD WHITELIST ─────────────────────\n// Replace with YOUR card UIDs from Step 1!\nstruct AuthCard {\n  byte uid[4];\n  String name;\n};\n\nAuthCard authorized[] = {\n  { {0xA1, 0xB2, 0xC3, 0xD4}, \"Jason\"  },\n  { {0x12, 0x34, 0x56, 0x78}, \"Priya\"  },\n  { {0xDE, 0xAD, 0xBE, 0xEF}, \"Arjun\"  }\n};\n\nint authCount = sizeof(authorized) / sizeof(authorized[0]);\n\n// ── SETUP ─────────────────────────────────────────\nvoid setup() {\n  Serial.begin(9600);\n  SPI.begin();\n  rfid.PCD_Init();\n\n  pinMode(RELAY_PIN,  OUTPUT);\n  pinMode(GREEN_PIN,  OUTPUT);\n  pinMode(RED_PIN,    OUTPUT);\n  pinMode(BUZZER_PIN, OUTPUT);\n\n  // Relay OFF = door locked (HIGH = relay inactive for most modules)\n  digitalWrite(RELAY_PIN, HIGH);\n  digitalWrite(GREEN_PIN, LOW);\n  digitalWrite(RED_PIN,   LOW);\n\n  doorServo.attach(SERVO_PIN);\n  doorServo.write(0);   // 0° = locked position\n\n  lcd.init();\n  lcd.backlight();\n  lcd.setCursor(0, 0);\n  lcd.print(\"  Smart Lock  \");\n  lcd.setCursor(0, 1);\n  lcd.print(\" Tap your card\");\n  Serial.println(\"Smart Lock ready. Tap a card...\");\n}\n\n// ── HELPERS ───────────────────────────────────────\nbool isAuthorized(byte* tappedUID, String &ownerName) {\n  for (int i = 0; i < authCount; i++) {\n    bool match = true;\n    for (byte j = 0; j < 4; j++) {\n      if (authorized[i].uid[j] != tappedUID[j]) {\n        match = false;\n        break;\n      }\n    }\n    if (match) {\n      ownerName = authorized[i].name;\n      return true;\n    }\n  }\n  return false;\n}\n\nvoid grantAccess(String name) {\n  Serial.println(\"✅ ACCESS GRANTED: \" + name);\n\n  // LCD\n  lcd.clear();\n  lcd.setCursor(0, 0);\n  lcd.print(\"Access Granted!\");\n  lcd.setCursor(0, 1);\n  lcd.print(\"Welcome, \" + name + \"!\");\n\n  // Green LED ON\n  digitalWrite(GREEN_PIN, HIGH);\n\n  // Relay ON → unlocks electronic lock\n  digitalWrite(RELAY_PIN, LOW);   // LOW = relay active (most modules)\n\n  // Servo swings to 90° → door opens\n  doorServo.write(90);\n\n  delay(3000);   // Door stays open 3 seconds\n\n  // Auto-lock\n  doorServo.write(0);\n  digitalWrite(RELAY_PIN, HIGH);\n  digitalWrite(GREEN_PIN, LOW);\n\n  lcd.clear();\n  lcd.print(\" Tap your card\");\n}\n\nvoid denyAccess() {\n  Serial.println(\"❌ ACCESS DENIED — Unknown card.\");\n\n  // LCD\n  lcd.clear();\n  lcd.setCursor(0, 0);\n  lcd.print(\" Access Denied!\");\n  lcd.setCursor(0, 1);\n  lcd.print(\"Unknown User!  \");\n\n  // Red LED + Buzzer (3 short beeps)\n  for (int i = 0; i < 3; i++) {\n    digitalWrite(RED_PIN,    HIGH);\n    digitalWrite(BUZZER_PIN, HIGH);\n    delay(200);\n    digitalWrite(RED_PIN,    LOW);\n    digitalWrite(BUZZER_PIN, LOW);\n    delay(150);\n  }\n\n  delay(1500);\n  lcd.clear();\n  lcd.print(\" Tap your card\");\n}\n\n// ── MAIN LOOP ─────────────────────────────────────\nvoid loop() {\n  if (!rfid.PICC_IsNewCardPresent()) return;\n  if (!rfid.PICC_ReadCardSerial())  return;\n\n  byte tappedUID[4];\n  for (byte i = 0; i < 4; i++) {\n    tappedUID[i] = rfid.uid.uidByte[i];\n  }\n\n  String ownerName = \"\";\n  if (isAuthorized(tappedUID, ownerName)) {\n    grantAccess(ownerName);\n  } else {\n    denyAccess();\n  }\n\n  rfid.PICC_HaltA();\n  rfid.PCD_StopCrypto1();\n}"
+    },
+    {
+      "title": "How a Relay Works — Code Concept",
+      "language": "cpp",
+      "description": "A simple standalone sketch showing how to control a relay — understand it before wiring the full system.",
+      "code": "/*\n  RELAY CONCEPT:\n  A relay is an electrically controlled switch.\n  Arduino's pin (5V, tiny current) controls\n  an electromagnet inside the relay that physically\n  snaps a bigger switch — which can handle\n  higher currents (like a door lock solenoid).\n\n  Most relay modules are ACTIVE LOW:\n    digitalWrite(RELAY_PIN, LOW)  → relay ON  (click! circuit closes)\n    digitalWrite(RELAY_PIN, HIGH) → relay OFF (circuit opens)\n\n  The relay has 3 screw terminals:\n    COM = Common (always connected)\n    NO  = Normally Open   (open until relay triggers)\n    NC  = Normally Closed (closed until relay triggers)\n\n  For a door lock: wire COM and NO.\n  When relay triggers → COM and NO connect → lock releases.\n*/\n\n#define RELAY_PIN 7\n\nvoid setup() {\n  pinMode(RELAY_PIN, OUTPUT);\n  digitalWrite(RELAY_PIN, HIGH);  // Start OFF (door locked)\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  Serial.println(\"Relay ON  → CLICK → door unlocks\");\n  digitalWrite(RELAY_PIN, LOW);   // Relay ON\n  delay(3000);\n\n  Serial.println(\"Relay OFF → door locks again\");\n  digitalWrite(RELAY_PIN, HIGH);  // Relay OFF\n  delay(3000);\n}"
+    },
+    {
+      "title": "Servo as Door — Angle Control",
+      "language": "cpp",
+      "description": "Understand servo angle control before adding it to the full smart lock circuit.",
+      "code": "#include <Servo.h>\n\nServo doorServo;\n\n/*\n  SERVO CONCEPT:\n  A servo motor rotates to a specific ANGLE (0° to 180°).\n  We use it to physically push/pull a door model.\n\n  doorServo.write(0)   → 0°  = locked position\n  doorServo.write(90)  → 90° = door fully open\n  doorServo.write(45)  → 45° = half open\n\n  In the smart lock:\n  - Authorized card  → write(90) → door opens\n  - After 3 seconds  → write(0)  → door closes (auto-lock)\n*/\n\nvoid setup() {\n  doorServo.attach(6);    // Servo signal wire → Pin 6\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  Serial.println(\"Door LOCKED (0 degrees)\");\n  doorServo.write(0);\n  delay(2000);\n\n  Serial.println(\"Door OPEN (90 degrees)\");\n  doorServo.write(90);\n  delay(2000);\n\n  Serial.println(\"Door HALF OPEN (45 degrees)\");\n  doorServo.write(45);\n  delay(2000);\n}"
+    }
+  ],
+  "activity": {
+    "title": "Build a Working RFID Smart Lock with Relay + Servo Door",
+    "parts": [
+      "Arduino UNO",
+      "MFRC522 RFID Reader + cards / key fobs (at least 2)",
+      "5V Relay Module",
+      "SG90 Servo Motor",
+      "16×2 LCD with I2C backpack",
+      "Green LED + Red LED + 2× 220Ω resistors",
+      "Buzzer (active)",
+      "Cardboard (to build a mini door model)",
+      "Jumper wires + USB cable + Laptop with Arduino IDE"
+    ],
+    "steps": [
+      "Wire the RC522 to Arduino using 3.3V — NOT 5V! See wiring reference above.",
+      "Wire the relay module (IN → Pin 7, VCC → 5V, GND → GND).",
+      "Attach the servo to Pin 6. Hot-glue or tape servo arm to your cardboard door model.",
+      "Wire LCD I2C (SDA → A4, SCL → A5). Wire green LED → Pin 4, red LED → Pin 5, buzzer → Pin 8.",
+      "Upload Step 1 — scan each card, write down its UID bytes from Serial Monitor.",
+      "Paste UIDs + names into Step 2's authorized[] array. Upload Step 2.",
+      "Test: tap an authorized card → relay clicks → servo swings open → green LED + 'Access Granted!'",
+      "Test: tap an unknown card → 3 buzzer beeps → red LED → LCD 'Access Denied!'",
+      "Bonus Challenge: Add a keypad so users must also enter a PIN after tapping — two-factor access!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a RELAY in electronics?",
+      "options": [
+        "A type of RFID card",
+        "An electrically controlled switch — a low-power signal controls a higher-power circuit",
+        "A wireless communication module",
+        "A type of resistor that changes value"
+      ],
+      "answer": 1,
+      "explanation": "A relay uses an electromagnet to physically snap a switch open or closed. Arduino's tiny 5V signal controls the relay coil, which then switches a bigger circuit — like a door lock solenoid!"
+    },
+    {
+      "q": "What does 'Normally Open' (NO) mean on a relay?",
+      "options": [
+        "The relay is always ON",
+        "The relay circuit is OPEN (broken) by default and CLOSES only when the relay is triggered",
+        "The relay is broken and needs fixing",
+        "The relay is open to any signal"
+      ],
+      "answer": 1,
+      "explanation": "Normally Open = circuit is open (disconnected) when the relay is OFF. When the relay triggers, the switch snaps CLOSED — completing the circuit. Perfect for a door lock that should stay locked by default!"
+    },
+    {
+      "q": "In our smart lock code, what happens when an authorized card is tapped?",
+      "options": [
+        "Red LED turns on and buzzer beeps 3 times",
+        "Nothing happens — the system waits",
+        "Relay turns ON, servo rotates to 90°, green LED glows, LCD shows 'Access Granted!'",
+        "Arduino resets automatically"
+      ],
+      "answer": 2,
+      "explanation": "Authorized card → isAuthorized() returns true → grantAccess() runs: relay LOW (ON), servo to 90° (door opens), green LED HIGH, LCD shows 'Access Granted! Welcome, [name]!' — then auto-locks after 3 seconds."
+    },
+    {
+      "q": "What happens when an UNKNOWN card is tapped?",
+      "options": [
+        "The servo opens halfway",
+        "Green LED blinks slowly",
+        "Red LED + buzzer gives 3 short beeps, LCD shows 'Access Denied! Unknown User!'",
+        "The Arduino shuts down"
+      ],
+      "answer": 2,
+      "explanation": "denyAccess() runs: 3 short buzzer + red LED beeps, LCD shows 'Access Denied! Unknown User!'. Relay stays OFF so the door never unlocks. Security!"
+    },
+    {
+      "q": "What angle does the servo rotate to when the door OPENS?",
+      "options": [
+        "0 degrees",
+        "180 degrees",
+        "45 degrees",
+        "90 degrees"
+      ],
+      "answer": 3,
+      "explanation": "doorServo.write(90) rotates the servo to 90° — the open position. doorServo.write(0) returns it to 0° — the locked position. After 3 seconds the code auto-locks by calling write(0) again."
+    },
+    {
+      "q": "Why does our relay use LOW to turn ON and HIGH to turn OFF?",
+      "options": [
+        "It's a mistake in the code",
+        "Most relay modules are ACTIVE LOW — they activate when the signal pin is pulled LOW",
+        "Arduino can only output LOW signals",
+        "HIGH voltage would burn the relay"
+      ],
+      "answer": 1,
+      "explanation": "Most common relay breakout modules are active LOW — the internal transistor pulls the coil to ground when the signal pin is LOW, energising the electromagnet. Always check your module's datasheet!"
+    },
+    {
+      "q": "What is the purpose of the UID whitelist (authorized[] array) in the code?",
+      "options": [
+        "It stores the WiFi password",
+        "It is a list of approved card UIDs — only cards on this list get access",
+        "It controls the servo speed",
+        "It sets the LCD brightness"
+      ],
+      "answer": 1,
+      "explanation": "The authorized[] array is our approved list. Each entry holds a UID (4 bytes) and the owner's name. When a card is tapped, isAuthorized() checks if its UID matches any entry — only matches unlock the door."
+    },
+    {
+      "q": "Why does the code call rfid.PCD_StopCrypto1() at the end of loop()?",
+      "options": [
+        "To encrypt the card data",
+        "To turn off the RFID reader permanently",
+        "To properly end the card communication session so the next tap is read cleanly",
+        "To save power"
+      ],
+      "answer": 2,
+      "explanation": "PCD_StopCrypto1() ends the encrypted communication session with the card. Without it, the reader may get stuck and fail to read the next card. Always pair it with PICC_HaltA() at the end of each read."
+    },
+    {
+      "q": "What voltage does the RC522 RFID module require — and why does it matter?",
+      "options": [
+        "5V — same as all other Arduino modules",
+        "12V — it needs extra power for radio transmission",
+        "3.3V — connecting to 5V will permanently damage the module",
+        "1.5V — it runs on a AA battery internally"
+      ],
+      "answer": 2,
+      "explanation": "The RC522 is a 3.3V module. Connecting VCC to Arduino's 5V pin will immediately damage or destroy it. Always use the Arduino's 3.3V pin for this module!"
+    },
+    {
+      "q": "Which Arduino library controls the servo motor in our smart lock?",
+      "options": [
+        "MFRC522.h",
+        "Wire.h",
+        "Servo.h",
+        "LiquidCrystal_I2C.h"
+      ],
+      "answer": 2,
+      "explanation": "Servo.h is Arduino's built-in servo library — no installation needed! It provides doorServo.attach(pin) to connect the servo and doorServo.write(angle) to set its position."
+    },
+    {
+      "q": "What is the auto-lock feature in our smart lock?",
+      "options": [
+        "The door locks if no card is tapped for 1 hour",
+        "After 3 seconds of being open, servo returns to 0° and relay turns OFF automatically",
+        "The lock sends an email when someone is denied",
+        "The LCD turns off to save power after 10 minutes"
+      ],
+      "answer": 1,
+      "explanation": "After grantAccess() opens the door (servo 90°, relay ON), delay(3000) waits 3 seconds, then servo returns to 0° and relay goes HIGH (OFF) — auto-locking the door without anyone pressing a button!"
+    },
+    {
+      "q": "What is the buzzer pattern when access is DENIED?",
+      "options": [
+        "One long continuous beep",
+        "No sound — only the red LED activates",
+        "Three short beeps with red LED flashing in sync",
+        "A musical tune"
+      ],
+      "answer": 2,
+      "explanation": "The denyAccess() loop runs 3 times: red LED HIGH + buzzer HIGH for 200ms, then both LOW for 150ms. Three short sharp beeps with synchronized red flashes — a clear alarm signal!"
+    },
+    {
+      "q": "In the smart lock, what do the COM and NO terminals of the relay connect to?",
+      "options": [
+        "COM → Arduino GND, NO → Arduino 5V",
+        "COM → one side of the external load's power path, NO → the other side (circuit completes when relay triggers)",
+        "COM → relay signal pin, NO → buzzer",
+        "Both connect to Arduino pin 7"
+      ],
+      "answer": 1,
+      "explanation": "COM (Common) and NO (Normally Open) are the relay's output switch terminals. Wire your external load (like a door solenoid or bulb) between COM and NO. When the relay triggers, the switch closes and current flows through the load."
+    },
+    {
+      "q": "What is a TWO-FACTOR access system (the bonus challenge)?",
+      "options": [
+        "Using two RFID cards at the same time",
+        "Having two relay modules in series",
+        "Requiring BOTH an authorized RFID card tap AND a correct PIN keypad entry to unlock",
+        "Installing two servo motors on one door"
+      ],
+      "answer": 2,
+      "explanation": "Two-factor = two separate checks. Factor 1: tap authorized RFID card. Factor 2: enter correct PIN on keypad. BOTH must pass to open the lock — much more secure! Banks and phones use this concept (card + PIN, phone + fingerprint)."
+    },
+    {
+      "q": "Which real-world places use RFID smart lock technology?",
+      "options": [
+        "Only science fiction movies",
+        "Only very expensive government buildings",
+        "Hotel rooms, office access gates, school labs, metro entry barriers, and ATM rooms",
+        "Only NASA spacecraft"
+      ],
+      "answer": 2,
+      "explanation": "RFID access control is everywhere! Hotel key cards, office turnstiles, school lab doors, metro tap gates, and ATM room locks all use the same core principle you just built — RFID UID check → relay → door mechanism."
+    }
+  ]
+}

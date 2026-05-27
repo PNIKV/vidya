@@ -1,0 +1,304 @@
+{
+  "id": "session-205",
+  "number": 205,
+  "title": "HTML Structure & Tags",
+  "subtitle": "Create Your First Web Page",
+  "date": "Session 205",
+  "duration": "45 Minutes",
+  "phase": "Web Development",
+  "color": "#E44D26",
+  "icon": "🌐",
+  "tags": [
+    "HTML",
+    "Web Development",
+    "Tags",
+    "Headings",
+    "Paragraphs"
+  ],
+  "overview": "Students will learn the basic structure of an HTML document and use common tags such as headings and paragraphs to create their first web page named index.html.",
+  "grades": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-205/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of HTML code, browser output, and student activities.",
+    "gallery": [
+      {
+        "file": "data/html-logo.jpg",
+        "caption": "Introduction to HTML",
+        "category": "Concept"
+      },
+      {
+        "file": "data/html-structure.jpg",
+        "caption": "Basic Structure of an HTML Document",
+        "category": "Concept"
+      },
+      {
+        "file": "data/html-tags.jpg",
+        "caption": "Understanding HTML Tags",
+        "category": "Concept"
+      },
+      {
+        "file": "data/headings-example.jpg",
+        "caption": "Using Heading Tags h1 to h6",
+        "category": "Practice"
+      },
+      {
+        "file": "data/paragraph-example.jpg",
+        "caption": "Writing Content with Paragraph Tags",
+        "category": "Practice"
+      },
+      {
+        "file": "data/student-html.jpg",
+        "caption": "Students Creating Their First Web Page",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is HTML?",
+    "Purpose of Web Pages",
+    "HTML Document Structure",
+    "DOCTYPE Declaration",
+    "HTML Tag",
+    "HEAD Tag",
+    "TITLE Tag",
+    "BODY Tag",
+    "Heading Tags (h1 to h6)",
+    "Paragraph Tag (p)",
+    "Opening and Closing Tags",
+    "Saving Files as index.html",
+    "Viewing HTML in a Browser",
+    "Common HTML Mistakes"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "HTML for Beginners",
+      "videoId": "qz0aGYrrlhU",
+      "desc": "Learn the basics of HTML and create your first web page."
+    },
+    {
+      "title": "HTML Structure Explained",
+      "videoId": "UB1O30fR-EE",
+      "desc": "Understanding the structure of an HTML document."
+    },
+    {
+      "title": "HTML Headings and Paragraphs",
+      "videoId": "kUMe1FH4CHE",
+      "desc": "Learn how to use heading and paragraph tags."
+    }
+  ],
+  "resources": [
+    {
+      "title": "MDN HTML Guide",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+      "icon": "🔗"
+    },
+    {
+      "title": "W3Schools HTML Tutorial",
+      "url": "https://www.w3schools.com/html/",
+      "icon": "🔗"
+    },
+    {
+      "title": "HTML Online Editor",
+      "url": "https://www.programiz.com/html/online-compiler",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create Your First index.html Page",
+    "parts": [
+      "Computer",
+      "Text Editor (Notepad/VS Code)",
+      "Web Browser"
+    ],
+    "steps": [
+      "Open a text editor",
+      "Create a new file named index.html",
+      "Type the basic HTML structure",
+      "Add a title inside the title tag",
+      "Add an h1 heading",
+      "Add two paragraph tags",
+      "Save the file",
+      "Open the file in a web browser",
+      "Observe the webpage output",
+      "Modify the heading and paragraph text"
+    ]
+  },
+  "sampleCode": {
+    "language": "html",
+    "code": "<!DOCTYPE html>\n<html>\n<head>\n<title>My First Web Page</title>\n</head>\n<body>\n<h1>Welcome to HTML</h1>\n<p>This is my first webpage.</p>\n<p>I am learning HTML structure and tags.</p>\n</body>\n</html>"
+  },
+  "quiz": [
+    {
+      "q": "What does HTML stand for?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Tech Machine Language",
+        "Hyper Tool Markup Language",
+        "Home Text Management Language"
+      ],
+      "answer": 0,
+      "explanation": "HTML stands for Hyper Text Markup Language."
+    },
+    {
+      "q": "Which tag is used as the root element of an HTML document?",
+      "options": [
+        "<body>",
+        "<head>",
+        "<html>",
+        "<title>"
+      ],
+      "answer": 2,
+      "explanation": "The <html> tag contains the entire HTML document."
+    },
+    {
+      "q": "Which section contains information about the webpage?",
+      "options": [
+        "<body>",
+        "<head>",
+        "<h1>",
+        "<p>"
+      ],
+      "answer": 1,
+      "explanation": "The <head> section contains metadata and title information."
+    },
+    {
+      "q": "Which tag displays the webpage title in the browser tab?",
+      "options": [
+        "<body>",
+        "<title>",
+        "<p>",
+        "<h1>"
+      ],
+      "answer": 1,
+      "explanation": "The <title> tag defines the page title."
+    },
+    {
+      "q": "Which tag is used for the largest heading?",
+      "options": [
+        "<h6>",
+        "<head>",
+        "<h1>",
+        "<p>"
+      ],
+      "answer": 2,
+      "explanation": "The h1 tag creates the largest heading."
+    },
+    {
+      "q": "How many heading levels are available in HTML?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "6"
+      ],
+      "answer": 3,
+      "explanation": "HTML provides headings from h1 to h6."
+    },
+    {
+      "q": "Which tag is used to create a paragraph?",
+      "options": [
+        "<para>",
+        "<text>",
+        "<p>",
+        "<h2>"
+      ],
+      "answer": 2,
+      "explanation": "The p tag is used for paragraphs."
+    },
+    {
+      "q": "Where is the visible webpage content written?",
+      "options": [
+        "<head>",
+        "<title>",
+        "<body>",
+        "<html>"
+      ],
+      "answer": 2,
+      "explanation": "The body tag contains all visible content."
+    },
+    {
+      "q": "What is the recommended name for the homepage file?",
+      "options": [
+        "home.html",
+        "page.html",
+        "index.html",
+        "web.html"
+      ],
+      "answer": 2,
+      "explanation": "index.html is commonly used as the default homepage."
+    },
+    {
+      "q": "What symbol is used to create HTML tags?",
+      "options": [
+        "()",
+        "[]",
+        "< >",
+        "{}"
+      ],
+      "answer": 2,
+      "explanation": "HTML tags are enclosed within angle brackets."
+    },
+    {
+      "q": "Which tag marks the end of a paragraph?",
+      "options": [
+        "</paragraph>",
+        "</p>",
+        "</body>",
+        "</h1>"
+      ],
+      "answer": 1,
+      "explanation": "The closing paragraph tag is </p>."
+    },
+    {
+      "q": "What happens if you save a file with a .html extension?",
+      "options": [
+        "It becomes an image",
+        "It becomes a spreadsheet",
+        "It can be opened as a webpage",
+        "It becomes a PDF"
+      ],
+      "answer": 2,
+      "explanation": "HTML files can be viewed in web browsers."
+    },
+    {
+      "q": "Which tag contains both head and body sections?",
+      "options": [
+        "<html>",
+        "<head>",
+        "<title>",
+        "<h1>"
+      ],
+      "answer": 0,
+      "explanation": "The html tag wraps the entire webpage."
+    },
+    {
+      "q": "Why are HTML tags important?",
+      "options": [
+        "They tell the browser how to display content",
+        "They create hardware",
+        "They install software",
+        "They connect the internet"
+      ],
+      "answer": 0,
+      "explanation": "HTML tags define the structure and content of a webpage."
+    },
+    {
+      "q": "What is the main objective of today's session?",
+      "options": [
+        "Build a robot",
+        "Create a basic webpage using HTML structure and tags",
+        "Install an operating system",
+        "Edit a video"
+      ],
+      "answer": 1,
+      "explanation": "Students learn to create a simple webpage using headings and paragraphs."
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-214/",
+    "slides_folder": "sessions/session-214/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-214/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-214",
+  "number": 214,
+  "title": "Keypad Calculator",
+  "subtitle": "Press numbers and + − × ÷ → show result on LCD!",
+  "date": "Session 214",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#00D4FF",
+  "icon": "🔢",
+  "tags": [
+    "Arduino",
+    "Keypad",
+    "LCD",
+    "Electronics",
+    "Programming"
+  ],
+  "overview": "Students build a working calculator using a 4x4 keypad and 16x2 LCD display connected to an Arduino. By pressing number keys and operator keys, the result is computed and shown live on the LCD — combining hardware wiring, library usage, and logic programming.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-214/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — keypad wiring, LCD display, Arduino setup, student experiments.",
+    "gallery": [
+      {
+        "file": "data/keypad-4x4.jpg",
+        "_placeholder": "ADD: Photo of 4x4 membrane keypad",
+        "caption": "4×4 Keypad — 16 buttons for numbers and operators",
+        "category": "Components"
+      },
+      {
+        "file": "data/lcd-16x2.jpg",
+        "_placeholder": "ADD: Photo of 16x2 LCD display",
+        "caption": "16×2 LCD Display — Shows 16 characters across 2 rows",
+        "category": "Components"
+      },
+      {
+        "file": "data/i2c-module.jpg",
+        "_placeholder": "ADD: Photo of I2C module attached to LCD",
+        "caption": "I2C Module — Reduces LCD wiring from 16 pins to just 4!",
+        "category": "Components"
+      },
+      {
+        "file": "data/Arduino-uno.jpg",
+        "_placeholder": "ADD: Photo of Arduino UNO",
+        "caption": "Arduino UNO — The brain that runs the calculator logic",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard.jpg",
+        "_placeholder": "ADD: Photo of breadboard wiring for the project",
+        "caption": "Breadboard wiring for keypad + LCD circuit",
+        "category": "Lab"
+      },
+      {
+        "file": "data/calculator-demo.gif",
+        "_placeholder": "ADD: GIF/photo of calculator working — showing result on LCD",
+        "caption": "Live demo: pressing 3 + 5 = shows 8 on LCD!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "4×4 Keypad — 16 keys wired in a row-column matrix; Arduino scans to detect which key is pressed",
+    "16×2 LCD Display — Shows 32 characters total; used with I2C module for easy 4-wire connection",
+    "I2C Protocol — Lets Arduino talk to LCD using only 2 wires (SDA + SCL) instead of 8",
+    "Keypad Library — keypad.getKey() reads which button is pressed",
+    "LiquidCrystal_I2C Library — lcd.print() sends text to the display",
+    "String Concatenation — Building a number digit by digit as user presses keys",
+    "Arithmetic Operations — Performing +, −, ×, ÷ based on operator key pressed",
+    "Input Parsing — Splitting the entered expression into two numbers and an operator",
+    "Edge Cases — Handling division by zero, decimal results, and clearing with # key"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Keypad Tutorial",
+      "videoId": "kRgKlMqTHoQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how a 4x4 matrix keypad works and how to read key presses using Arduino and the Keypad library."
+    },
+    {
+      "title": "16x2 LCD with I2C — Arduino Tutorial",
+      "videoId": "Mr9FQKcrGpA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "How to wire and program a 16x2 LCD display using the I2C module — just 4 wires!"
+    },
+    {
+      "title": "Arduino Calculator Project",
+      "videoId": "SDfHDnPB5r4",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Full walkthrough of building a calculator with keypad and LCD on Arduino."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Keypad Library Documentation",
+      "url": "https://playground.arduino.cc/Code/Keypad/",
+      "icon": "🔗"
+    },
+    {
+      "title": "LiquidCrystal_I2C Library",
+      "url": "https://github.com/johnrickman/LiquidCrystal_I2C",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi — Free Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "I2C LCD Interface Guide",
+      "url": "https://lastminuteengineers.com/i2c-lcd-arduino-tutorial/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Keypad + LCD Calculator",
+    "parts": [
+      "Arduino UNO",
+      "4×4 Membrane Keypad",
+      "16×2 LCD Display",
+      "I2C Module (attached to LCD)",
+      "Breadboard",
+      "Jumper wires",
+      "USB cable for power"
+    ],
+    "steps": [
+      "Connect the I2C module to the LCD display (comes pre-soldered on most modules)",
+      "Wire LCD I2C to Arduino: VCC→5V, GND→GND, SDA→A4, SCL→A5",
+      "Connect 4×4 keypad row pins to Arduino digital pins 9, 8, 7, 6",
+      "Connect 4×4 keypad column pins to Arduino digital pins 5, 4, 3, 2",
+      "Install Keypad and LiquidCrystal_I2C libraries from Arduino Library Manager",
+      "Upload the calculator code to Arduino",
+      "Press number keys → operator (* / + -) → number → # to see result on LCD!",
+      "Challenge: Add a memory button to store the last result!"
+    ],
+    "code": "sessions/session-214/calculator.ino"
+  },
+  "quiz": [
+    {
+      "q": "How many buttons does a 4×4 keypad have?",
+      "options": [
+        "10",
+        "12",
+        "16",
+        "20"
+      ],
+      "answer": 2,
+      "explanation": "A 4×4 keypad has 4 rows × 4 columns = 16 buttons total — numbers 0–9, letters A–D, *, #, and operators."
+    },
+    {
+      "q": "How does the Arduino know which key on the keypad is pressed?",
+      "options": [
+        "Each key has its own dedicated wire to Arduino",
+        "It scans rows and columns in a grid pattern to detect which key is pressed",
+        "The keypad sends a Bluetooth signal",
+        "It uses a camera to read the key"
+      ],
+      "answer": 1,
+      "explanation": "Keypad uses a ROW-COLUMN matrix. Arduino sends signals through rows and reads columns to figure out which key is pressed — saves pins!"
+    },
+    {
+      "q": "What does the I2C module do for the LCD?",
+      "options": [
+        "Makes the LCD brighter",
+        "Adds colour to the display",
+        "Reduces the number of wires needed from 16 to just 4",
+        "Connects the LCD to WiFi"
+      ],
+      "answer": 2,
+      "explanation": "I2C module is a clever adapter — instead of 8+ wires for a normal LCD, you only need VCC, GND, SDA, SCL — just 4 wires!"
+    },
+    {
+      "q": "Which Arduino pins are used for I2C communication?",
+      "options": [
+        "D0 and D1",
+        "A4 (SDA) and A5 (SCL)",
+        "D9 and D10",
+        "3.3V and 5V"
+      ],
+      "answer": 1,
+      "explanation": "On Arduino UNO, I2C uses A4 for SDA (data) and A5 for SCL (clock). These are the dedicated I2C pins!"
+    },
+    {
+      "q": "In the calculator code, what does keypad.getKey() do?",
+      "options": [
+        "Opens the Arduino IDE",
+        "Reads which key on the keypad was most recently pressed",
+        "Sends data to the LCD",
+        "Resets the Arduino"
+      ],
+      "answer": 1,
+      "explanation": "keypad.getKey() checks the keypad and returns the character of whichever key is currently being pressed — or nothing if no key is pressed."
+    },
+    {
+      "q": "How many characters can a 16×2 LCD display show at once?",
+      "options": [
+        "16",
+        "20",
+        "32",
+        "64"
+      ],
+      "answer": 2,
+      "explanation": "16×2 means 16 columns × 2 rows = 32 characters total displayed at once. Row 1 shows the input, Row 2 shows the result!"
+    },
+    {
+      "q": "In the calculator, which key is used to calculate and show the result?",
+      "options": [
+        "* key",
+        "A key",
+        "# key",
+        "D key"
+      ],
+      "answer": 2,
+      "explanation": "The # key acts as the EQUALS button! When pressed, Arduino evaluates the expression and shows the result on the LCD."
+    },
+    {
+      "q": "What happens if you divide a number by zero on the calculator?",
+      "options": [
+        "Arduino crashes",
+        "The LCD shows infinity",
+        "The code should detect it and show an error message like 'Error!'",
+        "The number gets very big and wraps around"
+      ],
+      "answer": 2,
+      "explanation": "Good code checks for division by zero and prints 'Error!' on the LCD instead of crashing — this is called edge case handling!"
+    },
+    {
+      "q": "Which library is used to control the LCD display?",
+      "options": [
+        "Servo.h",
+        "LiquidCrystal_I2C.h",
+        "Wire.h only",
+        "Keypad.h"
+      ],
+      "answer": 1,
+      "explanation": "LiquidCrystal_I2C library provides easy commands like lcd.print(), lcd.clear(), lcd.setCursor() to control the LCD over I2C."
+    },
+    {
+      "q": "What is String concatenation used for in the calculator project?",
+      "options": [
+        "To connect the LCD to Arduino",
+        "To build a multi-digit number as the user presses keys one by one",
+        "To calculate the result",
+        "To control the brightness of the LCD"
+      ],
+      "answer": 1,
+      "explanation": "When you press '1', '2', '3' separately, the code concatenates them into the String '123' — then converts to a number for calculation!"
+    },
+    {
+      "q": "Which command moves the LCD cursor to the second row?",
+      "options": [
+        "lcd.nextLine()",
+        "lcd.row(2)",
+        "lcd.setCursor(0, 1)",
+        "lcd.down()"
+      ],
+      "answer": 2,
+      "explanation": "lcd.setCursor(column, row) positions the cursor. lcd.setCursor(0, 1) moves to column 0, row 1 (second row — rows start at 0)!"
+    },
+    {
+      "q": "What does the * key represent in this calculator?",
+      "options": [
+        "Clear / Reset",
+        "Equals",
+        "Multiplication operator",
+        "Decimal point"
+      ],
+      "answer": 2,
+      "explanation": "On the keypad, * is used as the MULTIPLY operator. The code checks if the pressed key is '*' and stores multiplication as the operation."
+    },
+    {
+      "q": "What is the purpose of lcd.clear() in the code?",
+      "options": [
+        "Turns off the LCD backlight",
+        "Deletes the last character typed",
+        "Wipes all text from the LCD screen — used before showing a new result",
+        "Resets the Arduino"
+      ],
+      "answer": 2,
+      "explanation": "lcd.clear() clears all 32 characters on the display. We use it before showing the result so old text doesn't mix with new text!"
+    },
+    {
+      "q": "In a row-column keypad matrix, how many Arduino pins does a 4×4 keypad use?",
+      "options": [
+        "16 pins — one per button",
+        "8 pins — 4 row pins + 4 column pins",
+        "4 pins",
+        "2 pins"
+      ],
+      "answer": 1,
+      "explanation": "Smart matrix design! 4 rows + 4 columns = only 8 Arduino pins needed to handle 16 buttons. Much better than 16 separate wires!"
+    },
+    {
+      "q": "What challenge can students try after the basic calculator works?",
+      "options": [
+        "Add a memory button to store the last result",
+        "Make the LCD play music",
+        "Add WiFi to the calculator",
+        "Replace Arduino with a motor"
+      ],
+      "answer": 0,
+      "explanation": "A great extension challenge is adding a memory feature — press a key to store the last result and use it in the next calculation!"
+    }
+  ]
+}

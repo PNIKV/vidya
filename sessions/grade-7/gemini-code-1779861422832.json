@@ -1,0 +1,134 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-240/",
+    "slides_folder": "sessions/session-240/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-240/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-240",
+  "number": 240,
+  "title": "Innovation Fair & Web Launch",
+  "subtitle": "Demo Projects. View Class Website.",
+  "date": "Session 240",
+  "duration": "1 Hours",
+  "phase": "Capestone",
+  "color": "#FFD700",
+  "icon": "🚀",
+  "tags": [
+    "Science",
+    "Technology",
+    "Engineering",
+    "Mathematics"
+  ],
+  "overview": "The grand finale where students showcase their innovative STEAM projects at the Innovation Fair and officially launch their custom-built class website to the public.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-240/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — project demo photos, web launch event shots, student presentations, showcase gallery.",
+    "gallery": [
+      {
+        "file": "data/project-showcase.jpg",
+        "_placeholder": "ADD: Photo of student team presenting their project at the fair",
+        "caption": "Students presenting their innovative project designs to peers and mentors",
+        "category": "Fair"
+      },
+      {
+        "file": "data/website-launch.jpg",
+        "_placeholder": "ADD: Photo of the class website live preview on screen",
+        "caption": "The moment the live class website is officially launched",
+        "category": "Launch"
+      },
+      {
+        "file": "data/student-demo.gif",
+        "_placeholder": "ADD: GIF of working student project demo",
+        "caption": "Live demo of working automated prototypes",
+        "category": "Demo"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Project Demonstration — Presenting prototypes clearly to an audience",
+    "Web Deployment — Transitioning a project from local code to a live public URL",
+    "Feedback Loops — Gathering structured peer reviews and guest feedback",
+    "Public Speaking — Explaining complex tech concepts in simple terms",
+    "STEAM Integration — Celebrating the intersection of design, code, and engineering"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How to Present a STEAM Project Professionally",
+      "videoId": "njtfsMolFGA",
+      "_note": "Replace videoId with actual YouTube video ID from your fair summary video if available",
+      "desc": "Tips and tricks for students on how to pitch their inventions and present their websites confidently to tech judges."
+    }
+  ],
+  "resources": [
+    {
+      "title": "GitHub Pages — Host Your Project Website Free",
+      "url": "https://pages.github.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Netlify — Instant Web Deployment",
+      "url": "https://www.netlify.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Live Project Exhibition & Website Unveiling",
+    "parts": [
+      "Completed Student Hardware/Software Prototypes",
+      "Project Display Boards / Posters",
+      "Projector or Monitor for Website Launch",
+      "Feedback Forms / QR Codes for Guest Reviews"
+    ],
+    "steps": [
+      "Set up the project booths with working hardware and posters",
+      "Load up the class web application onto the main display terminal",
+      "Initiate the 'Launch Countdown' and push the project repository live",
+      "Conduct live 3-minute lightning demos for visitors and class peers",
+      "Collect audience feedback and iterate based on user interactions"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the primary purpose of an 'Innovation Fair'?",
+      "options": [
+        "To take a written examination",
+        "To demonstrate working projects, pitch creative solutions, and share knowledge",
+        "To sit quietly and watch a movie",
+        "To buy new electronic components"
+      ],
+      "answer": 1,
+      "explanation": "An Innovation Fair is designed to celebrate creative problem-solving by showcasing functional prototypes and sharing concepts with a live community audience!"
+    },
+    {
+      "q": "What does a 'Web Launch' mean in practical technology terms?",
+      "options": [
+        "Deleting all your source code",
+        "Turning off your computer monitor",
+        "Deploying your local project code to a public server so anyone can access it via a URL",
+        "Buying a brand new keyboard"
+      ],
+      "answer": 2,
+      "explanation": "Web Launch means taking your files online! Your website becomes live on the global internet, moving from local staging to user-facing production."
+    },
+    {
+      "q": "Why is gathering user and peer feedback crucial during a project launch?",
+      "options": [
+        "It helps identify bugs, improvements, and validates if the product solves a real problem",
+        "It acts as a permanent grade penalty",
+        "It ensures nobody else can copy your design ideas",
+        "It marks the absolute end of the project without any future changes"
+      ],
+      "answer": 0,
+      "explanation": "Iterative engineering relies heavily on feedback loops! User data allows developers to polish UI/UX elements and fix unexpected software vulnerabilities."
+    }
+  ]
+}

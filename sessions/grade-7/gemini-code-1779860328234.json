@@ -1,0 +1,188 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-232/",
+    "slides_folder": "sessions/session-232/slides/",
+    "images_folder": "sessions/session-232/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-232",
+  "number": 232,
+  "title": "AI vs. Human Intelligence",
+  "subtitle": "Silicon vs. Brainpower: Discovering who wins where!",
+  "date": "Session 232",
+  "duration": "1 Hours",
+  "phase": "Advanced AI",
+  "color": "#9C27B0",
+  "icon": "🧠",
+  "tags": [
+    "Artificial Intelligence",
+    "Cognitive Science",
+    "Technology",
+    "Future Skills"
+  ],
+  "overview": "In this analytical and highly interactive session, students evaluate the core differences between Artificial Intelligence (AI) and Human Intelligence (HI). By comparing mathematical scale against organic creativity, students discover why computers excel at heavy data computation while humans dominate in emotional empathy, complex reasoning, and outside-the-box adaptability.",
+  "grades": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-232/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — comparative matrices on the board, student sorting challenge photos, and group debate setups.",
+    "gallery": [
+      {
+        "file": "data/ai-vs-human-matrix.jpg",
+        "_placeholder": "ADD: Whiteboard Venn diagram charting overlapping skills between algorithms and human minds",
+        "caption": "Intelligence Mapping — Comparing the boundaries of computation vs. cognition.",
+        "category": "Concept"
+      },
+      {
+        "file": "data/narrow-vs-general-ai.png",
+        "_placeholder": "ADD: Graphic detailing Narrow AI (doing one single task flawlessly) versus human general capability",
+        "caption": "Narrow Excellence — Why chess-playing software can't drive cars or write poetry.",
+        "category": "Components"
+      },
+      {
+        "file": "data/sorting-activity-live.jpg",
+        "_placeholder": "ADD: Photo of students racing to sort real-world tasks into 'Team AI' or 'Team Human' boxes",
+        "caption": "Students sorting task-cards during the live interaction matrix challenge.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Computation vs. Comprehension — AI calculates millions of mathematical equations instantly, but humans actually understand what the results mean",
+    "Narrow Intelligence (ANI) — Why modern AI systems are specialized tools built for single tasks (e.g., medical scanning) rather than general common sense",
+    "The Human Edge — The unique nature of emotional intelligence (EQ), genuine empathy, ethics, and shared human experiences",
+    "Moravec's Paradox — The irony that computers find high-level math easy, but find simple physical survival tasks (like picking up a cup) incredibly difficult",
+    "Pattern Recognition vs. True Creativity — Algorithms recombine old historical training data, while humans invent entirely new art forms out of raw emotion",
+    "Energy Efficiency Marvel — A supercomputer requires megawatts of electrical current, while the human brain processes complex survival tasks using just 20 Watts (like a dim light bulb!)",
+    "Adaptability & Common Sense — How humans instantly navigate unexpected, chaotic daily problems without needing a new software update",
+    "The Collaboration Paradigm — Shifting the mindset from 'AI replacing humans' to 'AI augmenting humans' (Centaur teams) | COLLABORATE & CONQUER!"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "AI vs Human Brain: What's the Difference?",
+      "videoId": "brain-vs-computer",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "An animated comparison examining processing architecture, storage, and flexibility between neurons and microchips."
+    },
+    {
+      "title": "Moravec's Paradox Explained Visually",
+      "videoId": "moravecs-paradox",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "Discover why things that are easy for infants are incredibly hard for advanced robotic machines."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Code.org — How AI Works Lessons",
+      "url": "https://code.org/ai",
+      "icon": "🔗"
+    },
+    {
+      "title": "Human Benchmark — Test Your Brain Functions",
+      "url": "https://humanbenchmark.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Ultimate Skill-Sorting Arena",
+    "parts": [
+      "2 Core Arena Boxes on table ('Team AI - Fast & Numeric' vs 'Team Human - Creative & Kind')",
+      "30 Task Cards (e.g., 'Detect patterns in 10,000 X-ray scans', 'Comfort a crying friend', 'Write code syntax', 'Invent an original cultural joke', 'Calculate compound interest')",
+      "Stopwatch timer"
+    ],
+    "steps": [
+      "The Brief: Divide students into evaluation panels and distribute a deck of unsorted Task Cards.",
+      "The Analysis Phase: Teams review each card based on whether it requires lightning-fast numerical computation or organic human emotional intelligence.",
+      "The Sorting Battle: Under a 3-minute timer, students place cards into the correct bucket (e.g., 'Predict traffic routes' → AI, 'Negotiate peace in an argument' → Human).",
+      "The Paradox Review: The teacher brings out the controversial cards (e.g., 'Walking through a cluttered room') to introduce Moravec's Paradox.",
+      "The Future Blueprint: Students pick one AI card and one Human card, showing how an AI assistant and a human expert can merge forces to finish the task perfectly!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "At which task type does an Artificial Intelligence model easily outperform a human?",
+      "options": [
+        "Sensing when someone feels sad or discouraged",
+        "Analyzing millions of rows of data instantly to locate hidden statistical anomalies",
+        "Adapting to an unplanned power outage in a dynamic workspace",
+        "Writing a book based on real-world childhood emotions"
+      ],
+      "answer": 1,
+      "explanation": "Data Power! AI excels at scale and speed. Give an algorithm a massive dataset of spreadsheet rows, and it will spot mathematical anomalies in milliseconds—a task that would take a human analyst weeks."
+    },
+    {
+      "q": "What does 'Moravec's Paradox' state about intelligence?",
+      "options": [
+        "Computers are better at painting than humans",
+        "Tasks that are computationally hard for humans (like calculus) are easy for AI, while basic physical human tasks (like walking or grasping objects) are incredibly hard for AI",
+        "AI will eventually turn off the internet",
+        "The human brain uses more power than a city skyline"
+      ],
+      "answer": 1,
+      "explanation": "The Hard-Easy Paradox! Advanced mathematical equations are straightforward to process using structured code loops. However, sensory-motor skills developed over millions of years of human evolution—like climbing stairs or recognizing a dropped pencil—require immense processing resources for machines."
+    },
+    {
+      "q": "How much estimated electrical energy does the human brain require to process complex thought and survival decisions?",
+      "options": [
+        "Around 20 Watts (similar to a dim home light bulb)",
+        "Over 10,000 Watts",
+        "It runs entirely without energy",
+        "Same as an electric locomotive train engine"
+      ],
+      "answer": 0,
+      "explanation": "Organic Efficiency! The human brain is a masterpiece of efficiency, managing real-world navigation, language comprehension, and survival instincts simultaneously using only about 20 Watts of power."
+    },
+    {
+      "q": "Why is an AI translation tool considered 'Narrow Intelligence' (ANI)?",
+      "options": [
+        "Because it only runs inside very small smartphones",
+        "Because it is highly engineered to execute one single task (translating words) and cannot cook food, drive cars, or understand abstract jokes",
+        "Because its code contains very few lines of script",
+        "Because it operates slower than internet routers"
+      ],
+      "answer": 1,
+      "explanation": "Single-Track Focus! Modern AI is narrow intelligence. A translation system processes text blocks efficiently, but it cannot apply that training to unrelated fields like driving a delivery van or comforting a patient."
+    },
+    {
+      "q": "Which capability represents a true human advantage that AI models cannot genuinely experience?",
+      "options": [
+        "Multiplying huge decimals together",
+        "Storing text files inside hard drive arrays",
+        "True empathy, moral context, and ethical reasoning rooted in genuine emotional feeling",
+        "Refreshing web links at high speeds"
+      ],
+      "answer": 2,
+      "explanation": "The Empathy Barrier! Algorithms can mimic language expressions, but they lack organic sentience. True empathy, consciousness, and moral judgment are inherently human traits."
+    },
+    {
+      "q": "If an AI generates a piece of landscape artwork, where does that image ultimately come from?",
+      "options": [
+        "The machine dreaming up an original thought from scratch",
+        "Recombining patterns, color sets, and brush styles extracted from thousands of human-made paintings in its training data",
+        "A small camera inside the processing box taking photos out the window",
+        "The computer downloading images randomly from a satellite"
+      ],
+      "answer": 1,
+      "explanation": "Statistical Remapping! Generative AI doesn't witness a beautiful sunset to feel inspired; it blends mathematical patterns from human art assets to predict what a target output image should look like."
+    },
+    {
+      "q": "Instead of replacing humans, what is the best way to leverage AI in schools and jobs?",
+      "options": [
+        "Letting computers handle all thinking tasks while humans stop learning",
+        "Turning off all computers to avoid technology entirely",
+        "Using AI as a powerful assistant tool to handle tedious computing, leaving humans free to focus on creativity, empathy, and complex strategy",
+        "Using AI to write all communication emails automatically without reading them"
+      ],
+      "answer": 2,
+      "explanation": "Augmented Collaboration! The strongest modern systems combine human strategy, emotional intelligence, and direction with machine data processing speeds. This synergy creates highly capable solutions."
+    }
+  ]
+}

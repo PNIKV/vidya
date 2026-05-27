@@ -1,0 +1,301 @@
+{
+  "id": "session-203",
+  "number": 203,
+  "title": "Lists & Dictionaries",
+  "subtitle": "Create, Access, and Modify Collections",
+  "date": "Session 203",
+  "duration": "45 Minutes",
+  "phase": "Programming Fundamentals",
+  "color": "#4CAF50",
+  "icon": "📚",
+  "tags": [
+    "Python",
+    "Lists",
+    "Dictionaries",
+    "Collections",
+    "Programming"
+  ],
+  "overview": "Students will learn how to store multiple values using lists and dictionaries. They will practice creating, accessing, updating, adding, and removing data from collections using Python.",
+  "grades": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-203/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of Python code, collection examples, and student practice activities.",
+    "gallery": [
+      {
+        "file": "data/list-concept.jpg",
+        "caption": "Lists Store Multiple Items in Order",
+        "category": "Concept"
+      },
+      {
+        "file": "data/dictionary-concept.jpg",
+        "caption": "Dictionaries Store Data as Key-Value Pairs",
+        "category": "Concept"
+      },
+      {
+        "file": "data/list-index.jpg",
+        "caption": "Accessing List Elements Using Indexes",
+        "category": "Practice"
+      },
+      {
+        "file": "data/list-modify.jpg",
+        "caption": "Adding and Removing Items from Lists",
+        "category": "Practice"
+      },
+      {
+        "file": "data/dictionary-access.jpg",
+        "caption": "Accessing Dictionary Values Using Keys",
+        "category": "Practice"
+      },
+      {
+        "file": "data/student-python.jpg",
+        "caption": "Students Working with Collections in Python",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What are Collections?",
+    "Introduction to Lists",
+    "Creating a List",
+    "Accessing List Elements",
+    "List Indexing",
+    "Adding Items with append()",
+    "Removing Items from Lists",
+    "Updating List Values",
+    "Introduction to Dictionaries",
+    "Key-Value Pairs",
+    "Creating a Dictionary",
+    "Accessing Dictionary Values",
+    "Adding New Key-Value Pairs",
+    "Updating Dictionary Data",
+    "Real-Life Uses of Collections"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Python Lists for Beginners",
+      "videoId": "ohCDWZgNIU0",
+      "desc": "Learn how to create and use lists in Python."
+    },
+    {
+      "title": "Python Dictionaries Explained",
+      "videoId": "daefaLgNkw0",
+      "desc": "Understanding key-value pairs in Python dictionaries."
+    },
+    {
+      "title": "Python Collections Tutorial",
+      "videoId": "W8KRzm-HUcc",
+      "desc": "Learn how lists and dictionaries help organize data."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Python Official Documentation",
+      "url": "https://docs.python.org/3/",
+      "icon": "🔗"
+    },
+    {
+      "title": "W3Schools Python Lists",
+      "url": "https://www.w3schools.com/python/python_lists.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "W3Schools Python Dictionaries",
+      "url": "https://www.w3schools.com/python/python_dictionaries.asp",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create a Student Record System",
+    "parts": [
+      "Computer",
+      "Python IDE (Thonny)",
+      "Student Worksheet"
+    ],
+    "steps": [
+      "Create a list of favorite fruits",
+      "Print the first item in the list",
+      "Add a new fruit using append()",
+      "Remove an item from the list",
+      "Create a dictionary for student information",
+      "Store name, age, and grade",
+      "Print dictionary values using keys",
+      "Update the student's grade",
+      "Add a new key called city",
+      "Display the updated dictionary"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a list in Python?",
+      "options": [
+        "A single number",
+        "A collection of ordered items",
+        "A programming language",
+        "A variable type only for text"
+      ],
+      "answer": 1,
+      "explanation": "Lists store multiple items in a specific order."
+    },
+    {
+      "q": "Which symbol is used to create a list?",
+      "options": [
+        "()",
+        "{}",
+        "[]",
+        "<>"
+      ],
+      "answer": 2,
+      "explanation": "Lists are created using square brackets []."
+    },
+    {
+      "q": "What is the index of the first item in a list?",
+      "options": [
+        "1",
+        "0",
+        "-1",
+        "10"
+      ],
+      "answer": 1,
+      "explanation": "Python indexing starts from 0."
+    },
+    {
+      "q": "Which method adds an item to a list?",
+      "options": [
+        "append()",
+        "add()",
+        "insertItem()",
+        "push()"
+      ],
+      "answer": 0,
+      "explanation": "append() adds a new item to the end of a list."
+    },
+    {
+      "q": "Which method removes an item from a list?",
+      "options": [
+        "delete()",
+        "erase()",
+        "remove()",
+        "cut()"
+      ],
+      "answer": 2,
+      "explanation": "remove() deletes a specified item from a list."
+    },
+    {
+      "q": "What is a dictionary in Python?",
+      "options": [
+        "A collection of key-value pairs",
+        "A list of numbers",
+        "A text editor",
+        "A loop"
+      ],
+      "answer": 0,
+      "explanation": "Dictionaries store information as key-value pairs."
+    },
+    {
+      "q": "Which symbol is used to create a dictionary?",
+      "options": [
+        "{}",
+        "[]",
+        "()",
+        "<>"
+      ],
+      "answer": 0,
+      "explanation": "Dictionaries are created using curly braces {}."
+    },
+    {
+      "q": "How do you access a value in a dictionary?",
+      "options": [
+        "Using an index",
+        "Using a key",
+        "Using a loop only",
+        "Using append()"
+      ],
+      "answer": 1,
+      "explanation": "Dictionary values are accessed through keys."
+    },
+    {
+      "q": "What will fruits[0] return?",
+      "options": [
+        "Last item",
+        "First item",
+        "Entire list",
+        "Error always"
+      ],
+      "answer": 1,
+      "explanation": "Index 0 refers to the first item in a list."
+    },
+    {
+      "q": "Which collection keeps items in key-value format?",
+      "options": [
+        "List",
+        "Tuple",
+        "Dictionary",
+        "String"
+      ],
+      "answer": 2,
+      "explanation": "Dictionaries organize data using keys and values."
+    },
+    {
+      "q": "How can you change an item in a list?",
+      "options": [
+        "Using its index",
+        "Only by deleting it",
+        "It cannot be changed",
+        "Using append() only"
+      ],
+      "answer": 0,
+      "explanation": "List items can be updated using their index."
+    },
+    {
+      "q": "What does append() do?",
+      "options": [
+        "Deletes an item",
+        "Sorts a list",
+        "Adds a new item",
+        "Prints a list"
+      ],
+      "answer": 2,
+      "explanation": "append() adds a new item at the end of the list."
+    },
+    {
+      "q": "Which collection is best for storing student name and marks?",
+      "options": [
+        "Dictionary",
+        "String",
+        "Integer",
+        "Boolean"
+      ],
+      "answer": 0,
+      "explanation": "A dictionary stores related information using keys and values."
+    },
+    {
+      "q": "What is the output of len([1,2,3,4])?",
+      "options": [
+        "3",
+        "4",
+        "5",
+        "1"
+      ],
+      "answer": 1,
+      "explanation": "len() returns the total number of items in the list."
+    },
+    {
+      "q": "Why are lists and dictionaries useful?",
+      "options": [
+        "They organize and manage data efficiently",
+        "They increase computer size",
+        "They only store numbers",
+        "They replace variables"
+      ],
+      "answer": 0,
+      "explanation": "Collections help programmers store and manage multiple pieces of data easily."
+    }
+  ]
+}

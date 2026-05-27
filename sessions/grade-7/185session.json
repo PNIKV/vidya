@@ -1,0 +1,326 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-215/",
+    "slides_folder": "sessions/session-215/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-215/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-215",
+  "number": 215,
+  "title": "Binary Number System",
+  "subtitle": "Represent decimal 1–8 in binary!",
+  "date": "Session 215",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#FF6B35",
+  "icon": "🔟",
+  "tags": [
+    "Binary",
+    "Mathematics",
+    "Arduino",
+    "LEDs",
+    "Computer Science"
+  ],
+  "overview": "Students explore the binary number system — the language computers use! Using just two digits (0 and 1), they learn to convert decimal numbers 1 to 8 into binary, and then represent each binary digit using LEDs: LED ON = 1, LED OFF = 0. Maths meets electronics!",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-215/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — LED binary displays, student activities, whiteboard binary tables.",
+    "gallery": [
+      {
+        "file": "data/binary-leds.jpg",
+        "_placeholder": "ADD: Photo of 4 LEDs showing a binary number",
+        "caption": "4 LEDs = 4 binary bits — ON is 1, OFF is 0!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/binary-table.jpg",
+        "_placeholder": "ADD: Photo of binary conversion table on whiteboard",
+        "caption": "Decimal to Binary conversion table 1–8",
+        "category": "Concept"
+      },
+      {
+        "file": "data/Arduino-uno.jpg",
+        "_placeholder": "ADD: Photo of Arduino UNO used in the activity",
+        "caption": "Arduino UNO — controls which LEDs are ON or OFF",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard.jpg",
+        "_placeholder": "ADD: Photo of breadboard with 4 LEDs wired up",
+        "caption": "4 LEDs on breadboard representing a 4-bit binary number",
+        "category": "Lab"
+      },
+      {
+        "file": "data/blink.gif",
+        "_placeholder": "ADD: GIF of LEDs switching ON/OFF for different binary numbers",
+        "caption": "LEDs switching to show binary counting 0001 → 1000",
+        "category": "Lab"
+      },
+      {
+        "file": "data/binary-hands.jpg",
+        "_placeholder": "ADD: Photo of students using fingers to count in binary",
+        "caption": "Fingers as bits! Students count to 31 using one hand in binary",
+        "category": "Activity"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Decimal system — Base-10, uses digits 0–9, what we use every day",
+    "Binary system — Base-2, uses only 0 and 1, the language of computers",
+    "Bit — A single binary digit, either 0 or 1 (BInary digiT)",
+    "4-Bit Binary — Using 4 bits we can represent numbers 0 to 15",
+    "Place values in binary — 8, 4, 2, 1 (powers of 2: 2³ 2² 2¹ 2⁰)",
+    "Decimal to Binary conversion — Repeatedly divide by 2, read remainders bottom to top",
+    "Binary to Decimal conversion — Multiply each bit by its place value and add",
+    "LED Representation — LED ON = 1 (current flows), LED OFF = 0 (no current)",
+    "Arduino digitalWrite() — HIGH turns LED on (1), LOW turns LED off (0)"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Binary Numbers Explained for Beginners",
+      "videoId": "LpuPe81bc2w",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A simple, fun explanation of the binary number system — how computers count using only 0s and 1s."
+    },
+    {
+      "title": "How Computers Use Binary",
+      "videoId": "M41M9ATm49M",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Why do computers only understand 0 and 1? This video explains the link between binary and electronics."
+    },
+    {
+      "title": "Arduino LED Binary Counter",
+      "videoId": "XNKEorSu8kE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Build a binary counter using 4 LEDs and Arduino — watch the lights count up in binary!"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Binary to Decimal Converter",
+      "url": "https://www.rapidtables.com/convert/number/binary-to-decimal.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "Decimal to Binary Converter",
+      "url": "https://www.rapidtables.com/convert/number/decimal-to-binary.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi — Free Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "CS Unplugged — Binary Numbers Activity",
+      "url": "https://csunplugged.org/en/topics/binary-numbers/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Binary LED Display — Show Decimal 1 to 8 in Binary",
+    "parts": [
+      "Arduino UNO",
+      "4 LEDs (any colour)",
+      "4 × 220Ω Resistors",
+      "Breadboard",
+      "Jumper wires",
+      "USB cable for power"
+    ],
+    "steps": [
+      "Place 4 LEDs on the breadboard — these represent bits 8, 4, 2, 1 (left to right)",
+      "Connect each LED's long leg through a 220Ω resistor to Arduino pins 8, 7, 6, 5",
+      "Connect each LED's short leg to GND on the breadboard",
+      "Upload the binary counter code to Arduino",
+      "Watch the LEDs count from 0001 (decimal 1) to 1000 (decimal 8)!",
+      "Challenge: Use a push button to manually step through each number",
+      "Bonus: Can you make it count backwards from 8 to 1?"
+    ],
+    "binaryTable": [
+      { "decimal": 1, "binary": "0001", "bits": [0, 0, 0, 1] },
+      { "decimal": 2, "binary": "0010", "bits": [0, 0, 1, 0] },
+      { "decimal": 3, "binary": "0011", "bits": [0, 0, 1, 1] },
+      { "decimal": 4, "binary": "0100", "bits": [0, 1, 0, 0] },
+      { "decimal": 5, "binary": "0101", "bits": [0, 1, 0, 1] },
+      { "decimal": 6, "binary": "0110", "bits": [0, 1, 1, 0] },
+      { "decimal": 7, "binary": "0111", "bits": [0, 1, 1, 1] },
+      { "decimal": 8, "binary": "1000", "bits": [1, 0, 0, 0] }
+    ],
+    "code": "sessions/session-215/binary_leds.ino"
+  },
+  "quiz": [
+    {
+      "q": "How many digits does the binary number system use?",
+      "options": [
+        "10 digits (0–9)",
+        "8 digits (0–7)",
+        "2 digits (0 and 1)",
+        "16 digits (0–F)"
+      ],
+      "answer": 2,
+      "explanation": "Binary is Base-2 — it only uses 0 and 1. Every number a computer stores is made of millions of 0s and 1s!"
+    },
+    {
+      "q": "What does the word 'bit' stand for?",
+      "options": [
+        "Binary Integer Type",
+        "BInary digiT",
+        "Basic Input Token",
+        "Byte In Transfer"
+      ],
+      "answer": 1,
+      "explanation": "BIT = BInary digiT! It is the smallest unit of data in computing — a single 0 or 1."
+    },
+    {
+      "q": "What is the binary representation of decimal 5?",
+      "options": [
+        "0110",
+        "1010",
+        "0101",
+        "1001"
+      ],
+      "answer": 2,
+      "explanation": "5 = 4 + 1 = 0101 in binary. Place values are 8-4-2-1, so bit 4 (value 4) = 1 and bit 1 (value 1) = 1 → 0101!"
+    },
+    {
+      "q": "What is the binary representation of decimal 8?",
+      "options": [
+        "0111",
+        "1000",
+        "1111",
+        "0001"
+      ],
+      "answer": 1,
+      "explanation": "8 = 2³ = 1000 in binary. Only the 8s-place bit is ON, all others are OFF. It takes 4 bits to represent 8!"
+    },
+    {
+      "q": "What is the decimal value of binary 0011?",
+      "options": [
+        "4",
+        "11",
+        "3",
+        "6"
+      ],
+      "answer": 2,
+      "explanation": "0011 → 0×8 + 0×4 + 1×2 + 1×1 = 0 + 0 + 2 + 1 = 3. The two rightmost bits (2 and 1) are ON!"
+    },
+    {
+      "q": "In the LED activity, what does a glowing LED represent?",
+      "options": [
+        "0 — no signal",
+        "1 — binary digit is ON",
+        "The number 5",
+        "An error in the circuit"
+      ],
+      "answer": 1,
+      "explanation": "LED ON = 1, LED OFF = 0. By controlling which LEDs glow, we can show any binary number visually!"
+    },
+    {
+      "q": "What are the place values of a 4-bit binary number from left to right?",
+      "options": [
+        "1, 2, 3, 4",
+        "4, 3, 2, 1",
+        "8, 4, 2, 1",
+        "16, 8, 4, 2"
+      ],
+      "answer": 2,
+      "explanation": "Binary place values are powers of 2: 2³=8, 2²=4, 2¹=2, 2⁰=1. So a 4-bit number has places 8, 4, 2, 1!"
+    },
+    {
+      "q": "What is the largest number you can represent with 4 bits?",
+      "options": [
+        "8",
+        "10",
+        "15",
+        "16"
+      ],
+      "answer": 2,
+      "explanation": "With 4 bits all ON (1111) = 8+4+2+1 = 15. Four bits can represent numbers from 0 to 15 — that's 16 different values!"
+    },
+    {
+      "q": "Which Arduino command turns an LED ON (represents binary 1)?",
+      "options": [
+        "digitalWrite(pin, LOW)",
+        "analogWrite(pin, 0)",
+        "digitalWrite(pin, HIGH)",
+        "pinMode(pin, INPUT)"
+      ],
+      "answer": 2,
+      "explanation": "digitalWrite(pin, HIGH) sends 5V to the LED pin, turning it ON — representing binary 1. LOW turns it OFF (binary 0)."
+    },
+    {
+      "q": "What is the binary representation of decimal 7?",
+      "options": [
+        "1000",
+        "0110",
+        "0111",
+        "1110"
+      ],
+      "answer": 2,
+      "explanation": "7 = 4+2+1 = 0111. The 4, 2, and 1 place bits are all ON, only the 8 place is OFF. Three LEDs glow!"
+    },
+    {
+      "q": "How do you convert decimal 6 to binary?",
+      "options": [
+        "6 = 4+2 = 0110",
+        "6 = 4+1+1 = 0111",
+        "6 = 8-2 = 1010",
+        "6 = 2+2+2 = 0110 (wrong method but same answer)"
+      ],
+      "answer": 0,
+      "explanation": "6 = 4 + 2 = 0110. Find the largest power of 2 that fits (4), then what's left (2), place a 1 in those positions!"
+    },
+    {
+      "q": "Why do computers use binary (0 and 1) instead of decimal (0–9)?",
+      "options": [
+        "Because binary looks cooler",
+        "Because computer circuits have two states: electricity ON or OFF",
+        "Because binary numbers are smaller",
+        "Because it was invented first"
+      ],
+      "answer": 1,
+      "explanation": "Electronics are naturally two-state: a switch is ON or OFF, voltage is HIGH or LOW. Binary 1 = ON, 0 = OFF — perfect match!"
+    },
+    {
+      "q": "How many different values can you represent with 3 bits?",
+      "options": [
+        "3",
+        "6",
+        "7",
+        "8"
+      ],
+      "answer": 3,
+      "explanation": "3 bits → 2³ = 8 combinations (000 to 111, which is 0 to 7). The formula is 2^(number of bits)!"
+    },
+    {
+      "q": "What is decimal 4 in binary?",
+      "options": [
+        "0010",
+        "0100",
+        "1000",
+        "0001"
+      ],
+      "answer": 1,
+      "explanation": "4 = 2² = 0100. Only the 4s-place bit is ON. In the LED display, only the second LED from the left glows!"
+    },
+    {
+      "q": "In the binary counter activity, how many LEDs are needed to display all numbers from 1 to 8?",
+      "options": [
+        "2 LEDs",
+        "3 LEDs",
+        "4 LEDs",
+        "8 LEDs"
+      ],
+      "answer": 2,
+      "explanation": "We need 4 LEDs for bits 8, 4, 2, 1. The number 8 in binary is 1000 — the leftmost (8s) bit is ON, so 4 bits are needed!"
+    }
+  ]
+}

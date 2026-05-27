@@ -1,0 +1,198 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-229/",
+    "slides_folder": "sessions/session-229/slides/",
+    "images_folder": "sessions/session-229/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-229",
+  "number": 229,
+  "title": "Line Follower Robot: 2 IR Sensors + L298N",
+  "subtitle": "Track the track, hunt the line!",
+  "date": "Session 229",
+  "duration": "1 Hours",
+  "phase": "Core Robotics",
+  "color": "#FF5722",
+  "icon": "🤖",
+  "tags": [
+    "Robotics",
+    "Electronics",
+    "Engineering",
+    "Arduino"
+  ],
+  "overview": "In this exciting hands-on session, students build an autonomous Line Follower Robot using two Infrared (IR) sensors, an L298N H-Bridge motor driver, and DC motors. Students explore automation logic and understand how robots interact with physical tracks.",
+  "grades": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-229/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — robot hardware chassis, wiring connections, and tracking test beds.",
+    "gallery": [
+      {
+        "file": "data/ir-sensor-working.jpg",
+        "_placeholder": "ADD: Diagram or photo showing IR emitter/receiver bouncing light off white vs black surfaces",
+        "caption": "IR Sensor Principle — White reflects light, Black absorbs light!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/l298n-motor-driver.jpg",
+        "_placeholder": "ADD: Clean close-up photo of the L298N H-Bridge module with pins labeled",
+        "caption": "L298N Motor Driver — The heavy-lifter muscle that drives our DC motors.",
+        "category": "Components"
+      },
+      {
+        "file": "data/robot-wiring-diagram.png",
+        "_placeholder": "ADD: Circuit connection chart linking Arduino, Sensors, L298N, and Battery",
+        "caption": "Complete Electrical Schematic — Connecting the brain, muscle, and eyes.",
+        "category": "Components"
+      },
+      {
+        "file": "data/robot-track-testing.jpg",
+        "_placeholder": "ADD: Photo of students adjusting sensor sensitivity on a black electrical tape track",
+        "caption": "Students calibration phase — testing real-time movement behavior on white charts.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "IR Sensor Eyes — Infrared emitter (TX) sends light, receiver (RX) checks returns | White = Reflect ✅, Black = Absorb ❌",
+    "Sensor Threshold Calibration — Tuning the onboard potentiometer screw to correctly distinguish background from tape",
+    "L298N Motor Driver — Why microcontrollers need an H-bridge middleman to safely manage high-current batteries",
+    "Differential Steering Logic — Turning left/right by running one motor forward while stopping or reversing the other",
+    "Tracking Matrix — 4 core truth states: Both on White (Forward), Left on Black (Turn Left), Right on Black (Turn Right), Both on Black (Stop)",
+    "Chassis Balance — Ensuring weight distribution allows front castor wheels to spin freely without friction drag",
+    "Power Isolation — Keeping logic power (Arduino) clean from motor electrical feedback noise using common grounds",
+    "Troubleshooting Realities — Managing exterior ambient lighting variables and battery voltage drops during runtime"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How 2-Sensor Line Follower Robots Work",
+      "videoId": "line-follower-logic",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "An animated walkthrough showing exactly what a robot does when a sensor falls off the black tape."
+    },
+    {
+      "title": "L298N Motor Driver Explained Simply",
+      "videoId": "l298n-tutorial",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "Understand H-Bridge technology and how to control motor direction and speed using code."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Tinkercad — Virtual Robotics Simulator",
+      "url": "https://www.tinkercad.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino IDE Download Page",
+      "url": "https://www.arduino.cc/en/software",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Building and Calibrating the Dual-Sensor Line Follower",
+    "parts": [
+      "Robot Chassis + 2 DC Motors + Front Castor Wheel",
+      "Arduino Uno (Brain)",
+      "L298N Motor Driver Module",
+      "2 Digital IR Sensor Modules",
+      "7.4V / 9V Li-ion Battery pack",
+      "Jumper Wires (M-M and M-F)",
+      "White poster sheets & Black insulation electrical tape"
+    ],
+    "steps": [
+      "Mechanical Assembly: Mount the DC motors, wheels, and place the 2 IR sensors at the front facing downwards (spaced slightly wider than the tape).",
+      "Motor Wiring: Connect Left and Right motors to OUT1/OUT2 and OUT3/OUT4 terminals of the L298N driver.",
+      "Logic Connections: Hook L298N control pins (IN1, IN2, IN3, IN4) and IR sensor output pins to Arduino digital input/output pins.",
+      "Common Grounding: Connect the negative (-) terminal of the motor battery directly to both the L298N GND and Arduino GND pins.",
+      "Sensor Calibration: Place the robot on the white paper. Twist the sensor potentiometer until the indicator LED turns ON, then verify it turns OFF when over black tape.",
+      "The Track Test: Lay down a curved loop track using black electrical tape, load the logic code, power up, and observe the steering adjustments!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Why does an IR sensor report a different value when it moves over black tape?",
+      "options": [
+        "Black tape generates its own internal electricity",
+        "The black color absorbs the infrared light beam, preventing it from reflecting back to the receiver",
+        "Black surfaces turn off the power supply completely",
+        "The tape has a magnetic field that stops the sensor"
+      ],
+      "answer": 1,
+      "explanation": "Light Absorption! White surfaces reflect the infrared beam back into the receiver tube ✅, while black surfaces absorb the light beam ❌, triggering a logic change."
+    },
+    {
+      "q": "What is the primary job of the L298N module in this robot?",
+      "options": [
+        "To measure distances to obstacles",
+        "To act as an amplifier shield that delivers high battery current to turn the DC motors based on weak Arduino control signals",
+        "To store the program code data safely",
+        "To emit sound alerts when turning"
+      ],
+      "answer": 1,
+      "explanation": "Motor Driver Muscle! Arduino output pins can only give tiny signals (up to 40mA). The L298N draws high current straight from the battery pack to drive heavy motors safely."
+    },
+    {
+      "q": "If the LEFT IR sensor detects BLACK tape while the right sensor is on white, what action should the robot take?",
+      "options": [
+        "Move straight forward immediately",
+        "Turn sharply to the Left to realign onto the track center",
+        "Turn right away from the track",
+        "Reverse backwards and stop completely"
+      ],
+      "answer": 1,
+      "explanation": "Left Corrective Adjustment! If the Left sensor sees black, the robot has drifted too far right. It must adjust by stopping or backing off the left wheel while driving the right wheel to spin LEFT."
+    },
+    {
+      "q": "What does a basic 2-sensor line follower do when BOTH sensors read WHITE simultaneously?",
+      "options": [
+        "It stops completely",
+        "It drives straight forward because it assumes the track runs straight down the middle between both sensors",
+        "It spins continuously in a circle",
+        "It activates multi-factor authentication"
+      ],
+      "answer": 1,
+      "explanation": "Straddle the Track! The sensors are intentionally spaced apart to ride on the white paper outside the line edges. When both see white, the path is safe to drive straight forward."
+    },
+    {
+      "q": "Why is it absolutely necessary to connect the Battery GND, L298N GND, and Arduino GND together?",
+      "options": [
+        "To charge the battery while running",
+        "To give all modules a shared zero-volt voltage reference point so control signals work reliably",
+        "To increase the total speed of the motor shafts",
+        "To change the color of the sensor indicator lights"
+      ],
+      "answer": 1,
+      "explanation": "Common Ground Rule! Voltage is always measured relative to a baseline reference. Without a shared common ground, control signals fluctuate wildly and components fail to talk correctly."
+    },
+    {
+      "q": "How does the robot perform a sharp RIGHT turn using differential steering?",
+      "options": [
+        "By applying brakes to both wheels",
+        "By running the Left motor forward and stopping or reversing the Right motor",
+        "By turning a mechanical steering wheel assembly at the front",
+        "By increasing the voltage to the battery charger"
+      ],
+      "answer": 1,
+      "explanation": "Differential Spin! Robots turn by creating speed differences. Spinning the Left side forward while locking or backing up the Right side forces the chassis to pivot directly toward the right."
+    },
+    {
+      "q": "What component on the IR sensor board allows you to change its detection sensitivity distance?",
+      "options": [
+        "The DC motor shaft",
+        "The tiny adjustable screw potentiometer knob",
+        "The H-Bridge logic terminal block",
+        "The plastic battery mounting base case"
+      ],
+      "answer": 1,
+      "explanation": "Potentiometer Calibration! Turning the little blue/white variable resistor screw tweaks the comparison voltage point, shifting how close or far surfaces must be to trigger a reflection response."
+    }
+  ]
+}

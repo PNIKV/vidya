@@ -1,0 +1,199 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-231/",
+    "slides_folder": "sessions/session-231/slides/",
+    "images_folder": "sessions/session-231/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-231",
+  "number": 231,
+  "title": "Bluetooth RC Car: HC-05 + L298N + DC Motors",
+  "subtitle": "Cut the wires, take wireless control!",
+  "date": "Session 231",
+  "duration": "1 Hours",
+  "phase": "Core Robotics",
+  "color": "#00E5FF",
+  "icon": "🚗",
+  "tags": [
+    "Robotics",
+    "Wireless Communication",
+    "Electronics",
+    "Arduino"
+  ],
+  "overview": "In this exciting hands-on session, students build a smartphone-controlled Bluetooth Remote Control (RC) car. They will interface an HC-05 Bluetooth transceiver module with an Arduino Uno, route logic signals through an L298N H-bridge motor driver, and establish a wireless communication link to send real-time steering commands directly from a mobile application.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-231/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — breadboard layouts, serial terminal data logs, Bluetooth app setup screenshots, and assembled chassis.",
+    "gallery": [
+      {
+        "file": "data/hc05-bluetooth-pins.jpg",
+        "_placeholder": "ADD: Photo of HC-05 Bluetooth module showing TX/RX/VCC/GND pins clearly labeled",
+        "caption": "HC-05 Bluetooth Module — The wireless ears of our robot chassis.",
+        "category": "Components"
+      },
+      {
+        "file": "data/serial-communication-analogy.png",
+        "_placeholder": "ADD: Whiteboard diagram of data bits traveling in a single line from Phone to HC-05 to Arduino",
+        "caption": "Serial Communication — Passing numerical message tokens one byte at a time!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/l298n-wiring-rc-car.jpg",
+        "_placeholder": "ADD: Clean overhead photo of wiring connections connecting Arduino to L298N driver and power supply",
+        "caption": "Power Distribution Network — Separating delicate logic lanes from high-drain motor currents.",
+        "category": "Components"
+      },
+      {
+        "file": "data/bluetooth-car-app-ui.jpg",
+        "_placeholder": "ADD: Smartphone screen photo showing the directional button layout used to pilot the car",
+        "caption": "Mobile Interface Application — Mapping touchscreen button events to character data tags.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Wireless Bluetooth Spectrum — How data hops through radio frequency waves to link smart accessories across short spaces",
+    "Serial Communication (UART) — Cross-connecting communication coordinates: Arduino RX (Receive) links to HC-05 TX (Transmit) | TX to RX crosslink!",
+    "Voltage Divider Safety — Sneaking a resistor step-down circuit into the HC-05 RX line to lower Arduino's 5V signals to a safe 3.3V logic ceiling",
+    "Command Parsing Logic — Teaching the microchip brain to look for individual data codes (e.g., 'F'=Forward, 'B'=Back, 'L'=Left, 'R'=Right, 'S'=Stop)",
+    "H-Bridge Signal Mapping — Programming the L298N pins (IN1, IN2, IN3, IN4) to toggle direction patterns in response to serial input characters",
+    "Common Grounding Protocol — Maintaining a shared reference point across the phone's adapter node, logic boards, and battery packs",
+    "Debug Monitoring — Monitoring raw feedback lines via the serial monitor window to ensure hardware channels stay synchronized",
+    "Signal Range and Interference — Understanding how physical obstacles and metal shields degrade low-energy wireless fields"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How to Build an Arduino Bluetooth RC Car",
+      "videoId": "bluetooth-car-tutorial",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "Step-by-step assembly guide covering chassis layout, motor driver mounting, and mobile pairing routines."
+    },
+    {
+      "title": "Understanding Serial Communication (TX / RX) in 3 Minutes",
+      "videoId": "uart-serial-basics",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "A fast, animated primer on how microcontrollers send strings of bits through digital pins using serial links."
+    }
+  ],
+  "resources": [
+    {
+      "title": "MIT App Inventor — Create Your Own Control App",
+      "url": "https://appinventor.mit.edu",
+      "icon": "🔗"
+    },
+    {
+      "title": "Keuwlsoft Bluetooth Controller App (Android)",
+      "url": "https://www.keuwl.com/apps/bluetoothterminal/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Wireless Link Setup and Remote Chassis Pilot Run",
+    "parts": [
+      "Assembled 2WD/4WD Robot Chassis with DC Motors",
+      "Arduino Uno Microcontroller Module",
+      "L298N Motor Driver Unit",
+      "HC-05 Bluetooth Transceiver Module",
+      "1kΩ and 2kΩ Resistors (for logic level translation setup)",
+      "Rechargeable Li-ion Power Cells (7.4V or higher)",
+      "Android Smartphone with Bluetooth Serial Controller App installed"
+    ],
+    "steps": [
+      "Signal Line Interfacing: Mount and hook up the HC-05 Module. Ensure the HC-05 TX goes directly to Arduino Pin 0 (RX), and use a resistor voltage divider to connect Arduino Pin 1 (TX) down to the HC-05 RX pin.",
+      "Motor Pipeline Connection: Bridge the L298N control block (IN1 through IN4) to designated Arduino digital pins, then secure motor outputs to the side terminal block lanes.",
+      "Code Provisioning Phase: Disconnect the HC-05 VCC line temporarily (to free up shared programming serial bands), upload the driver code structure via USB link, then reconnect wireless power.",
+      "Application Provisioning: Boot up the controller application, search for nearby devices, discover the 'HC-05' signature tag, and punch in the classic default password '1234' or '0000'.",
+      "Button Configuration: Map the application touch layouts so pressing arrow keys sends distinct characters ('F', 'B', 'L', 'R', 'S') down the radio channel.",
+      "The Launch Trial: Place the vehicle safely on a test lane, disconnect tether cables, open the control dashboard, and test wireless steering reflexes!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Why must you cross-connect communication pins between the Arduino and the HC-05 module (TX to RX, RX to TX)?",
+      "options": [
+        "To increase the speed of the motor tracking wheels",
+        "Because one device's Transmit (TX) line must broadcast directly into the other device's Receive (RX) ears",
+        "To merge battery charging paths with logic data loops",
+        "To turn off the indicator lights when information is flowing"
+      ],
+      "answer": 1,
+      "explanation": "Crossed Signal Lanes! Communication requires a talker and a listener. The transmitter pin (TX) of the HC-05 shouts information out into space, which must be received by the listening ear (RX) pin of the Arduino module."
+    },
+    {
+      "q": "Why is it important to temporarily disconnect or disable the HC-05 module while uploading code to an Arduino Uno over USB?",
+      "options": [
+        "The Bluetooth module might run out of battery juice",
+        "The computer's USB port will crash due to electrical overload",
+        "Both the USB link and the Bluetooth module share the exact same Serial Pins (0 and 1), creating data collision conflicts during uploads",
+        "The code compiler doesn't accept wireless connections"
+      ],
+      "answer": 2,
+      "explanation": "Shared Serial Line Conflict! The Arduino Uno relies on Pins 0 and 1 to flash programs from the computer over the USB cable. Leaving the HC-05 connected to those same tracks creates data collisions that stall the upload routine."
+    },
+    {
+      "q": "What is the purpose of placing a voltage divider circuit on the HC-05 module's RX pin?",
+      "options": [
+        "To double the driving force of the rear motor wheels",
+        "To step down the Arduino's 5V signal to a safe 3.3V logic level, protecting the delicate internal circuits of the HC-05 module",
+        "To filter out bad background noise coming from room lights",
+        "To track black electrical lines on paper tracks"
+      ],
+      "answer": 1,
+      "explanation": "Logic Protection! While the Arduino Uno reads and writes 5V electrical signals, the internal processor inside the HC-05 operates at a lower 3.3V threshold. Sending an unregulated 5V down its RX line can bake its internal microchip layers over time."
+    },
+    {
+      "q": "If your phone sends the character code 'L' to the car, how does differential steering make the car turn LEFT?",
+      "options": [
+        "It angles the front castor wheel using a steering wheel motor",
+        "It cuts power to or reverses the Left side motor while driving the Right side motor forward",
+        "It speeds up both motors simultaneously",
+        "It triggers an alert buzzer to sound from the dashboard"
+      ],
+      "answer": 1,
+      "explanation": "Differential Pivot! Since two-wheeled and four-wheeled chassis models don't feature adjustable mechanical rack steering, they execute turns by creating speed imbalances—slowing down the left track forces the active right track to pivot around it to the left."
+    },
+    {
+      "q": "What default passcode combination is usually configured out-of-the-box for pairing with an HC-05 module?",
+      "options": [
+        "9999 or 8888",
+        "1234 or 0000",
+        "ABCD or XYZW",
+        "No password is required to connect"
+      ],
+      "answer": 1,
+      "explanation": "Factory Pairing Token! Almost all standard HC-05 and HC-06 Bluetooth communication chips are pre-flashed from factory benches with basic security authentication codes—either '1234' or '0000'."
+    },
+    {
+      "q": "What happens inside the Arduino software script when a button on the smartphone application is held down?",
+      "options": [
+        "The microcontroller downloads a brand new program file",
+        "The phone beams continuous character codes via serial communication that are unpacked using the 'Serial.read()' command",
+        "The battery voltage automatically jumps to maximum levels",
+        "The Bluetooth antenna swaps channels to pick up radio stations"
+      ],
+      "answer": 1,
+      "explanation": "Serial Processing Stream! Pressing down an option button prompts the phone app to stream data strings over wireless waves. The Arduino reads these codes character-by-character to run matching conditional statements."
+    },
+    {
+      "q": "If the Bluetooth car drives forward fine but spins in reverse when given a 'Turn Right' command, what is the most likely issue?",
+      "options": [
+        "The smartphone battery is running out of charge",
+        "The positive and negative motor wires are swapped on one of the motor driver terminals, reversing its rotation direction",
+        "The room's ambient lighting is interfering with the radio wave frequencies",
+        "The code needs to be recompiled into an ancient dialect"
+      ],
+      "answer": 1,
+      "explanation": "Motor Polarization Error! If direction logic breaks down on isolated wheel channels, it indicates a hardware polarity issue. Reversing the physical wire positions inside the L298N terminal blocks instantly corrects the code alignment."
+    }
+  ]
+}

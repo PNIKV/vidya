@@ -1,0 +1,267 @@
+{
+  "id": "session-186",
+  "number": 186,
+  "title": "IR Sensor + Relay Controlled Lamp",
+  "subtitle": "Motion Detected → Relay Clicks → Lamp Turns ON",
+  "date": "Session 186",
+  "duration": "45 Minutes",
+  "phase": "Arduino Automation",
+  "color": "#FF9800",
+  "icon": "💡",
+  "tags": [
+    "Arduino",
+    "IR Sensor",
+    "Relay Module",
+    "Automation",
+    "Smart Home"
+  ],
+  "overview": "Students learn how an IR sensor can detect motion or obstacles and automatically control a relay module. When motion is detected, the relay switches ON a lamp, demonstrating the basic principle behind automatic lighting and smart home systems.",
+  "grades": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-186/slides.pdf"
+  },
+  "images": {
+    "gallery": [
+      {
+        "file": "data/ir-sensor.jpeg",
+        "caption": "IR Sensor used for motion/object detection",
+        "category": "Components"
+      },
+      {
+        "file": "data/relay-module.jpg",
+        "caption": "Relay module acts as an electronic switch",
+        "category": "Components"
+      },
+      {
+        "file": "data/lamp-control.jpg",
+        "caption": "Lamp controlled through relay",
+        "category": "Project"
+      },
+      {
+        "file": "data/arduino-relay.jpg",
+        "caption": "Arduino controlling a relay module",
+        "category": "Programming"
+      },
+      {
+        "file": "data/smart-light.jpg",
+        "caption": "Automatic smart lighting system",
+        "category": "Application"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is an IR Sensor?",
+    "Infrared Light Detection",
+    "Digital Output from IR Sensor",
+    "What is a Relay?",
+    "Relay as an Electronic Switch",
+    "Automatic Lamp Control",
+    "Smart Home Automation",
+    "Reading Sensor Values",
+    "Controlling Relay with Arduino",
+    "Safety While Using Relays"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "IR Sensor with Arduino",
+      "videoId": "8M7jA4Jv1hM",
+      "desc": "Learn how IR sensors detect objects."
+    },
+    {
+      "title": "Relay Module Tutorial",
+      "videoId": "n9jzVxK5g4U",
+      "desc": "Understanding relay working principles."
+    },
+    {
+      "title": "Arduino Home Automation Project",
+      "videoId": "KxQf5fG7G8E",
+      "desc": "Automatic light control using sensors and relays."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino Digital Read Reference",
+      "url": "https://www.arduino.cc/reference/en/language/functions/digital-io/digitalread/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Automatic Lamp Using IR Sensor and Relay",
+    "parts": [
+      "Arduino UNO",
+      "IR Sensor Module",
+      "1-Channel Relay Module",
+      "LED or Small DC Lamp",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect the IR Sensor to Arduino.",
+      "Connect the Relay Module to Arduino.",
+      "Connect LED/Lamp to relay output.",
+      "Upload the Arduino program.",
+      "Open Serial Monitor (optional).",
+      "Place an object in front of the IR sensor.",
+      "Observe relay clicking sound.",
+      "Lamp turns ON when motion/object is detected.",
+      "Remove the object and observe lamp turning OFF."
+    ]
+  },
+  "wiring": {
+    "irSensor": {
+      "VCC": "Arduino 5V",
+      "GND": "Arduino GND",
+      "OUT": "Arduino D2"
+    },
+    "relayModule": {
+      "VCC": "Arduino 5V",
+      "GND": "Arduino GND",
+      "IN": "Arduino D8"
+    },
+    "lamp": {
+      "Positive": "Relay NO (Normally Open)",
+      "Common": "Relay COM",
+      "Negative": "Power Supply GND"
+    }
+  },
+  "sampleCode": {
+    "title": "IR Sensor Controls Relay",
+    "code": "const int irSensor = 2;\\nconst int relayPin = 8;\\n\\nvoid setup() {\\n  pinMode(irSensor, INPUT);\\n  pinMode(relayPin, OUTPUT);\\n  digitalWrite(relayPin, LOW);\\n  Serial.begin(9600);\\n}\\n\\nvoid loop() {\\n  int motion = digitalRead(irSensor);\\n\\n  if(motion == LOW) {\\n    digitalWrite(relayPin, HIGH);\\n    Serial.println(\"Motion Detected - Lamp ON\");\\n  }\\n  else {\\n    digitalWrite(relayPin, LOW);\\n    Serial.println(\"No Motion - Lamp OFF\");\\n  }\\n\\n  delay(100);\\n}"
+  },
+  "realLifeApplications": [
+    "Automatic Room Lights",
+    "Smart Home Systems",
+    "Security Alarm Systems",
+    "Automatic Door Opening Systems",
+    "Energy Saving Lighting",
+    "Industrial Automation"
+  ],
+  "quiz": [
+    {
+      "q": "What does an IR sensor detect?",
+      "options": [
+        "Sound",
+        "Infrared reflections from objects",
+        "Temperature only",
+        "Voltage"
+      ],
+      "answer": 1,
+      "explanation": "IR sensors detect objects using reflected infrared light."
+    },
+    {
+      "q": "What is the purpose of a relay?",
+      "options": [
+        "Store energy",
+        "Measure temperature",
+        "Act as an electronic switch",
+        "Generate sound"
+      ],
+      "answer": 2,
+      "explanation": "A relay allows Arduino to control higher-power devices."
+    },
+    {
+      "q": "Which Arduino pin receives data from the IR sensor in this project?",
+      "options": [
+        "D2",
+        "D8",
+        "A0",
+        "D13"
+      ],
+      "answer": 0,
+      "explanation": "The IR sensor output is connected to pin D2."
+    },
+    {
+      "q": "Which Arduino pin controls the relay?",
+      "options": [
+        "D1",
+        "D3",
+        "D8",
+        "A1"
+      ],
+      "answer": 2,
+      "explanation": "Relay IN pin is connected to Arduino D8."
+    },
+    {
+      "q": "What happens when motion is detected?",
+      "options": [
+        "Relay turns OFF",
+        "Lamp turns ON",
+        "Arduino restarts",
+        "Sensor disconnects"
+      ],
+      "answer": 1,
+      "explanation": "Motion detection activates the relay and turns ON the lamp."
+    },
+    {
+      "q": "What sound is often heard when a relay activates?",
+      "options": [
+        "Buzz",
+        "Click",
+        "Whistle",
+        "Beep"
+      ],
+      "answer": 1,
+      "explanation": "Mechanical relays produce a clicking sound."
+    },
+    {
+      "q": "What type of project is this?",
+      "options": [
+        "Gaming",
+        "Automation",
+        "Drawing",
+        "Audio Recording"
+      ],
+      "answer": 1,
+      "explanation": "Automatic lamp control is an automation project."
+    },
+    {
+      "q": "Why are relays used with Arduino?",
+      "options": [
+        "To increase memory",
+        "To switch external devices safely",
+        "To improve internet speed",
+        "To display graphics"
+      ],
+      "answer": 1,
+      "explanation": "Relays allow low-power Arduino pins to control larger loads."
+    },
+    {
+      "q": "Which component acts as the brain of this project?",
+      "options": [
+        "Relay",
+        "Lamp",
+        "Arduino UNO",
+        "IR Sensor"
+      ],
+      "answer": 2,
+      "explanation": "Arduino reads sensor data and controls the relay."
+    },
+    {
+      "q": "Where is this project commonly used?",
+      "options": [
+        "Automatic lighting systems",
+        "Water bottles",
+        "School notebooks",
+        "Pencils"
+      ],
+      "answer": 0,
+      "explanation": "Motion-controlled lighting is a common real-life application."
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+  "id": "session-184",
+  "number": 184,
+  "title": "Serial Monitor Debugging",
+  "subtitle": "Read Sensor Data, Detect Noise & Filter Values",
+  "date": "Session 184",
+  "duration": "45 Minutes",
+  "phase": "Arduino Programming",
+  "color": "#4CAF50",
+  "icon": "📟",
+  "tags": [
+    "Arduino",
+    "Serial Monitor",
+    "Sensors",
+    "Debugging",
+    "Programming"
+  ],
+  "overview": "Students learn how to use the Arduino Serial Monitor to view sensor readings in real time, identify noisy data, and use if-conditions to filter unwanted values. This session develops debugging and troubleshooting skills essential for IoT and robotics projects.",
+  "grades": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-184/slides.pdf"
+  },
+  "images": {
+    "gallery": [
+      {
+        "file": "data/arduino-serial-monitor.jpg",
+        "caption": "Arduino Serial Monitor displaying sensor values",
+        "category": "Concept"
+      },
+      {
+        "file": "data/ultrasonic-sensor.jpg",
+        "caption": "Sensor sending data to Arduino",
+        "category": "Components"
+      },
+      {
+        "file": "data/debugging-code.jpg",
+        "caption": "Debugging Arduino code using Serial.print()",
+        "category": "Programming"
+      },
+      {
+        "file": "data/noise-data-graph.jpg",
+        "caption": "Understanding noisy sensor readings",
+        "category": "Concept"
+      },
+      {
+        "file": "data/student-debugging.jpg",
+        "caption": "Students analyzing sensor outputs",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Serial Communication?",
+    "Opening the Arduino Serial Monitor",
+    "Using Serial.begin(9600)",
+    "Using Serial.print() and Serial.println()",
+    "Reading Sensor Values",
+    "Understanding Noise in Sensor Data",
+    "Filtering Incorrect Values",
+    "Using if-conditions for Validation",
+    "Debugging Techniques",
+    "Real-time Monitoring of Sensors"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Serial Monitor Tutorial",
+      "videoId": "V4x6QJ1QJ3A",
+      "desc": "Learn how to display values using Serial Monitor."
+    },
+    {
+      "title": "Arduino Sensor Debugging",
+      "videoId": "Yj4LhP2T6JY",
+      "desc": "Debug sensor projects using Serial.print()."
+    },
+    {
+      "title": "Arduino Programming Basics",
+      "videoId": "fJWR7dBuc18",
+      "desc": "Introduction to Arduino programming and debugging."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Serial Reference",
+      "url": "https://www.arduino.cc/reference/en/language/functions/communication/serial/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino IDE Download",
+      "url": "https://www.arduino.cc/en/software",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Sensor Value Monitoring and Filtering",
+    "parts": [
+      "Arduino UNO",
+      "Ultrasonic Sensor or LDR",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable",
+      "Computer with Arduino IDE"
+    ],
+    "steps": [
+      "Connect the sensor to Arduino.",
+      "Upload a program that reads sensor values.",
+      "Open Serial Monitor from Arduino IDE.",
+      "Observe values changing in real time.",
+      "Identify abnormal or noisy readings.",
+      "Add if-condition to reject invalid values.",
+      "Upload modified code and compare results.",
+      "Discuss how filtering improves accuracy."
+    ]
+  },
+  "sampleCode": {
+    "title": "Filtering Noisy Sensor Values",
+    "code": "int sensorPin = A0;\\nint sensorValue;\\n\\nvoid setup() {\\n  Serial.begin(9600);\\n}\\n\\nvoid loop() {\\n  sensorValue = analogRead(sensorPin);\\n\\n  if(sensorValue > 10 && sensorValue < 1000) {\\n    Serial.print(\"Valid Value: \");\\n    Serial.println(sensorValue);\\n  }\\n  else {\\n    Serial.println(\"Noise Detected\");\\n  }\\n\\n  delay(500);\\n}"
+  },
+  "quiz": [
+    {
+      "q": "What is the purpose of Serial Monitor?",
+      "options": [
+        "Store data",
+        "Display values from Arduino",
+        "Power the sensor",
+        "Compile code"
+      ],
+      "answer": 1,
+      "explanation": "Serial Monitor displays data sent from Arduino in real time."
+    },
+    {
+      "q": "Which command starts serial communication?",
+      "options": [
+        "Serial.start()",
+        "Serial.open()",
+        "Serial.begin()",
+        "Serial.read()"
+      ],
+      "answer": 2,
+      "explanation": "Serial.begin(9600) initializes serial communication."
+    },
+    {
+      "q": "Which function prints data and moves to the next line?",
+      "options": [
+        "Serial.print()",
+        "Serial.println()",
+        "Serial.show()",
+        "Serial.display()"
+      ],
+      "answer": 1,
+      "explanation": "Serial.println() prints data and adds a new line."
+    },
+    {
+      "q": "What is sensor noise?",
+      "options": [
+        "Sound from a buzzer",
+        "Incorrect or random sensor readings",
+        "A type of motor",
+        "A coding error"
+      ],
+      "answer": 1,
+      "explanation": "Noise refers to unwanted fluctuations in sensor values."
+    },
+    {
+      "q": "Which statement helps filter sensor values?",
+      "options": [
+        "for",
+        "while",
+        "if",
+        "switch"
+      ],
+      "answer": 2,
+      "explanation": "if-condition checks whether a value is within an acceptable range."
+    },
+    {
+      "q": "What baud rate is commonly used in Arduino examples?",
+      "options": [
+        "100",
+        "9600",
+        "500",
+        "2400"
+      ],
+      "answer": 1,
+      "explanation": "9600 is the most commonly used baud rate."
+    },
+    {
+      "q": "What does Serial.print() do?",
+      "options": [
+        "Turns on LED",
+        "Reads sensor",
+        "Displays data",
+        "Uploads code"
+      ],
+      "answer": 2,
+      "explanation": "Serial.print() sends information to the Serial Monitor."
+    },
+    {
+      "q": "Why do we debug sensor data?",
+      "options": [
+        "To make sensors larger",
+        "To identify problems and improve accuracy",
+        "To increase voltage",
+        "To change wiring color"
+      ],
+      "answer": 1,
+      "explanation": "Debugging helps identify errors and noisy readings."
+    },
+    {
+      "q": "Which sensor function reads analog values?",
+      "options": [
+        "analogRead()",
+        "digitalWrite()",
+        "pinMode()",
+        "delay()"
+      ],
+      "answer": 0,
+      "explanation": "analogRead() reads values from analog sensors."
+    },
+    {
+      "q": "What is the main benefit of filtering noisy values?",
+      "options": [
+        "Faster LEDs",
+        "More accurate sensor data",
+        "Higher voltage",
+        "Less wiring"
+      ],
+      "answer": 1,
+      "explanation": "Filtering improves reliability and accuracy of measurements."
+    }
+  ]
+}

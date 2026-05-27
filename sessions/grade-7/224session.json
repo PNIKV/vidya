@@ -1,0 +1,92 @@
+{
+  "id": "session-224",
+  "number": 45,
+  "title": "RTC Alarm Clock",
+  "subtitle": "DS3231 Real Time Clock + Buzzer Alarm",
+  "date": "Session 45",
+  "duration": "45 Minutes",
+  "phase": "Intermediate",
+  "color": "#FF6B35",
+  "icon": "⏰",
+  "tags": [
+    "Arduino",
+    "RTC Module",
+    "DS3231",
+    "Alarm Clock",
+    "Electronics"
+  ],
+  "overview": "Students will learn how a DS3231 RTC (Real Time Clock) module keeps track of time and how Arduino can compare current time with a target alarm time to activate a buzzer automatically.",
+  "grades": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-224/slides.pdf"
+  },
+  "images": {
+    "gallery": [
+      {
+        "file": "data/ds3231.jpg",
+        "caption": "DS3231 RTC Module keeps accurate time",
+        "category": "Components"
+      },
+      {
+        "file": "data/arduino-uno.jpg",
+        "caption": "Arduino UNO controls the project",
+        "category": "Components"
+      },
+      {
+        "file": "data/buzzer.jpg",
+        "caption": "Buzzer rings when alarm time matches",
+        "category": "Components"
+      },
+      {
+        "file": "data/breadboard.jpg",
+        "caption": "Breadboard used for circuit connections",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is RTC (Real Time Clock)",
+    "DS3231 Module working",
+    "How Arduino reads time",
+    "Comparing current time with target time",
+    "Triggering buzzer automatically",
+    "Battery backup in RTC module",
+    "Hour and minute concepts"
+  ],
+  "activity": {
+    "title": "Build RTC Alarm Clock",
+    "parts": [
+      "Arduino UNO",
+      "DS3231 RTC Module",
+      "Breadboard",
+      "Jumper Wires",
+      "Active Buzzer",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect DS3231 VCC to Arduino 5V",
+      "Connect DS3231 GND to Arduino GND",
+      "Connect SDA to A4",
+      "Connect SCL to A5",
+      "Connect buzzer positive pin to D8",
+      "Connect buzzer negative pin to GND",
+      "Upload Arduino code",
+      "Set target alarm minute",
+      "RTC reads current time continuously",
+      "When time matches target → buzzer sounds"
+    ]
+  },
+  "codeConcept": {
+    "logic": [
+      "Read current hour and minute from DS3231",
+      "Compare current minute with target minute",
+      "If match found → buzzer ON",
+      "Otherwise buzzer OFF"
+    ]
+  }
+}

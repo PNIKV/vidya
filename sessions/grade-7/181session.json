@@ -1,0 +1,327 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-211/",
+    "slides_folder": "sessions/session-211/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-211/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-211",
+  "number": 211,
+  "title": "Hardware: Motherboard & Buses",
+  "subtitle": "Label it, Name it, Know it!",
+  "date": "Session 211",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#FF6B2B",
+  "icon": "🖥️",
+  "tags": [
+    "Technology",
+    "Engineering",
+    "Hardware",
+    "Computer Science"
+  ],
+  "overview": "Students explore the heart of a computer — the motherboard! They learn to identify key components, ports, and buses through diagram labeling activities, real hardware observation, and hands-on port identification challenges.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-211/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — motherboard close-ups, port identification activities, student diagrams, whiteboard sketches.",
+    "gallery": [
+      {
+        "file": "data/motherboard-overview.jpg",
+        "_placeholder": "ADD: Full photo of a motherboard showing major components",
+        "caption": "The Motherboard — the city map of your computer!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/cpu-socket.jpg",
+        "_placeholder": "ADD: Photo of CPU socket on motherboard",
+        "caption": "CPU Socket — where the Brain plugs in!",
+        "category": "Components"
+      },
+      {
+        "file": "data/ram-slots.jpg",
+        "_placeholder": "ADD: Photo of RAM slots on motherboard",
+        "caption": "RAM Slots — Short-term memory banks",
+        "category": "Components"
+      },
+      {
+        "file": "data/pcie-slots.jpg",
+        "_placeholder": "ADD: Photo of PCIe expansion slots",
+        "caption": "PCIe Slots — Superhighways for GPUs and cards",
+        "category": "Components"
+      },
+      {
+        "file": "data/io-ports.jpg",
+        "_placeholder": "ADD: Photo of rear I/O panel with labeled ports",
+        "caption": "Rear I/O Panel — where everything connects!",
+        "category": "Components"
+      },
+      {
+        "file": "data/power-connector.jpg",
+        "_placeholder": "ADD: Photo of 24-pin ATX power connector",
+        "caption": "24-pin ATX Power Connector — gives life to the motherboard",
+        "category": "Components"
+      },
+      {
+        "file": "data/bus-diagram.jpg",
+        "_placeholder": "ADD: Whiteboard diagram of data bus, address bus, control bus",
+        "caption": "The Three Buses — Data, Address & Control highways",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Motherboard — The City Map connecting CPU, RAM, GPU and all peripherals",
+    "CPU Socket — Where the processor (brain) plugs in | LGA vs PGA socket types",
+    "RAM Slots — DIMM slots for short-term memory sticks",
+    "PCIe Slots (Peripheral Component Interconnect Express) — Superhighway for GPU, sound cards, Wi-Fi cards",
+    "SATA Connectors — Connect Hard Drives and SSDs for storage",
+    "Chipset — Traffic controller between CPU and peripherals (Northbridge / Southbridge)",
+    "BIOS/UEFI Chip — The startup brain that wakes the computer when you press power",
+    "CMOS Battery — Tiny watch battery that keeps time and BIOS settings alive",
+    "System Bus — Data highway between CPU, RAM, and components | 3 types: Data Bus, Address Bus, Control Bus",
+    "I/O Ports — USB, HDMI, DisplayPort, Audio Jack, Ethernet, PS/2 — all on the rear panel",
+    "Front Panel Connectors — Power button, Reset button, USB 3.0 headers",
+    "Form Factors — ATX (full size), Micro-ATX, Mini-ITX (tiny)"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Motherboard Explained — Every Part & Port!",
+      "videoId": "9UjYf0NclDQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A beginner-friendly walkthrough of every part of a motherboard, explained with simple analogies. Perfect for first-time learners!"
+    },
+    {
+      "title": "What is a Bus in Computer Architecture?",
+      "videoId": "7J7X7aZvMXQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand how Data Bus, Address Bus and Control Bus work together as highways for computer communication."
+    },
+    {
+      "title": "All Computer Ports Explained",
+      "videoId": "IroL_8RHQEM",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Every port on your computer — USB, HDMI, DisplayPort, Ethernet, audio — identified and explained in simple terms."
+    },
+    {
+      "title": "How a Motherboard Works",
+      "videoId": "B7BD8gJRsyc",
+      "desc": "How all the parts of a motherboard work together to run a computer."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Interactive Motherboard Diagram — PCPartPicker",
+      "url": "https://pcpartpicker.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "HWiNFO — See Your Computer's Hardware Live",
+      "url": "https://www.hwinfo.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "CPU-Z — Identify Motherboard & CPU Details",
+      "url": "https://www.cpuid.com/softwares/cpu-z.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "Open Source Hardware Guide — iFixit",
+      "url": "https://www.ifixit.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Label the Motherboard Diagram + Port Identification Challenge",
+    "parts": [
+      "Printed A3 motherboard diagram (blank labels)",
+      "Colored marker pens (6 colors)",
+      "Real or dummy motherboard for observation (optional)",
+      "Port identification card set (USB, HDMI, Ethernet, Audio, etc.)",
+      "Sticky label stickers"
+    ],
+    "steps": [
+      "Hand out blank motherboard diagram sheets to each student",
+      "Show real motherboard photo on screen — students identify parts together",
+      "Students label: CPU Socket, RAM Slots, PCIe Slot, SATA Connector, Power Connector, BIOS Chip, CMOS Battery",
+      "Color-code each zone: CPU area (red), Memory area (blue), Storage area (green), Power area (yellow)",
+      "Port Identification Challenge: Show a port photo → students race to name it (USB-A, USB-C, HDMI, RJ45, 3.5mm Audio)",
+      "Bus Diagram Activity: Draw the 3 buses on the board — Data Bus (red arrows), Address Bus (blue arrows), Control Bus (green arrows)",
+      "Challenge: Which motherboard form factor fits in a mini PC? (Mini-ITX wins!)"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the main role of a Motherboard?",
+      "options": [
+        "Store files permanently",
+        "The central circuit board connecting all computer components",
+        "Display images on screen",
+        "Power the computer only"
+      ],
+      "answer": 1,
+      "explanation": "Motherboard = City Map! It connects the CPU, RAM, GPU, storage and all peripherals so they can communicate."
+    },
+    {
+      "q": "Where does the CPU (processor) connect on the motherboard?",
+      "options": [
+        "PCIe Slot",
+        "RAM Slot",
+        "CPU Socket",
+        "SATA Port"
+      ],
+      "answer": 2,
+      "explanation": "CPU Socket is where the processor plugs in. Different CPUs need different socket types — LGA (Intel) or PGA (AMD)."
+    },
+    {
+      "q": "What are RAM slots used for?",
+      "options": [
+        "Connecting the hard drive",
+        "Inserting memory (RAM) sticks for short-term storage",
+        "Connecting the power supply",
+        "Plugging in the GPU"
+      ],
+      "answer": 1,
+      "explanation": "RAM Slots (DIMM slots) hold memory sticks. RAM is short-term memory — it stores what the computer is currently working on!"
+    },
+    {
+      "q": "What does PCIe stand for?",
+      "options": [
+        "Power Circuit in Electronics",
+        "Peripheral Component Interconnect Express",
+        "Processor Core Interface Extension",
+        "Printed Circuit Input Engine"
+      ],
+      "answer": 1,
+      "explanation": "PCIe = Peripheral Component Interconnect Express — a high-speed slot used for Graphics Cards (GPU), sound cards, and Wi-Fi cards."
+    },
+    {
+      "q": "Which connector is used to attach a Hard Drive or SSD to the motherboard?",
+      "options": [
+        "PCIe Slot",
+        "CPU Socket",
+        "SATA Connector",
+        "USB Header"
+      ],
+      "answer": 2,
+      "explanation": "SATA (Serial ATA) connectors link Hard Drives and SSDs to the motherboard, allowing data to flow to and from storage."
+    },
+    {
+      "q": "What is the BIOS/UEFI chip responsible for?",
+      "options": [
+        "Processing game graphics",
+        "Storing all your files",
+        "Starting up the computer and checking hardware before the OS loads",
+        "Connecting to the internet"
+      ],
+      "answer": 2,
+      "explanation": "BIOS/UEFI = Startup Brain! It runs first when you press power, checks all hardware, then hands control to the Operating System."
+    },
+    {
+      "q": "Why is there a CMOS battery on the motherboard?",
+      "options": [
+        "To power the CPU",
+        "To keep the BIOS settings and system clock running even when the PC is off",
+        "To boost internet speed",
+        "To charge the RAM"
+      ],
+      "answer": 1,
+      "explanation": "CMOS Battery is a tiny watch battery. Without it, your clock resets and BIOS settings vanish every time you turn the PC off!"
+    },
+    {
+      "q": "What does the DATA BUS do?",
+      "options": [
+        "Tells the memory which address to use",
+        "Carries the actual data/information between CPU and RAM",
+        "Controls read/write operations",
+        "Connects USB devices"
+      ],
+      "answer": 1,
+      "explanation": "Data Bus = the highway carrying actual information (data bits) between the CPU and memory. More lanes (wider bus) = faster transfer!"
+    },
+    {
+      "q": "What is the role of the ADDRESS BUS?",
+      "options": [
+        "Carries data between CPU and hard drive",
+        "Specifies the memory location (address) where data should be read or written",
+        "Supplies power to the CPU",
+        "Connects the monitor to the motherboard"
+      ],
+      "answer": 1,
+      "explanation": "Address Bus = the GPS! It tells the memory exactly which location (address) to store or fetch data from."
+    },
+    {
+      "q": "Which port would you use to connect a computer to a TV or monitor for video?",
+      "options": [
+        "USB-A",
+        "RJ45 (Ethernet)",
+        "HDMI or DisplayPort",
+        "3.5mm Audio Jack"
+      ],
+      "answer": 2,
+      "explanation": "HDMI and DisplayPort carry high-definition video and audio from your computer to a monitor or TV. HDMI is most common!"
+    },
+    {
+      "q": "What does the RJ45 port connect to?",
+      "options": [
+        "Headphones",
+        "A wired Ethernet network / internet cable",
+        "A USB flash drive",
+        "A graphics card"
+      ],
+      "answer": 1,
+      "explanation": "RJ45 = Ethernet port for wired internet connection. Wired is faster and more stable than Wi-Fi for gaming and large downloads!"
+    },
+    {
+      "q": "Which motherboard form factor is the SMALLEST?",
+      "options": [
+        "ATX",
+        "Micro-ATX",
+        "Mini-ITX",
+        "Extended ATX (E-ATX)"
+      ],
+      "answer": 2,
+      "explanation": "Mini-ITX is the smallest common form factor — great for tiny compact PCs! ATX is full-size, used in most desktop towers."
+    },
+    {
+      "q": "What is the Chipset's job on a motherboard?",
+      "options": [
+        "Store the operating system",
+        "Acts as a traffic controller managing data flow between CPU and all other components",
+        "Render graphics for games",
+        "Supply electricity to the GPU"
+      ],
+      "answer": 1,
+      "explanation": "Chipset = Traffic Controller! It manages how data moves between the CPU, RAM, storage, and peripherals — keeping everything organized."
+    },
+    {
+      "q": "How many types of buses are in a computer system bus?",
+      "options": [
+        "1 — just the Data Bus",
+        "2 — Data Bus and Address Bus",
+        "3 — Data Bus, Address Bus, and Control Bus",
+        "4 — Data, Address, Control, and Power Bus"
+      ],
+      "answer": 2,
+      "explanation": "3 buses! Data Bus (carries information), Address Bus (carries memory location), Control Bus (carries read/write commands). They work as a team!"
+    },
+    {
+      "q": "You plug in your keyboard and mouse using which type of port?",
+      "options": [
+        "HDMI",
+        "SATA",
+        "USB (Universal Serial Bus)",
+        "PCIe"
+      ],
+      "answer": 2,
+      "explanation": "USB = Universal Serial Bus — the most common port for keyboards, mice, flash drives, and almost all external devices!"
+    }
+  ]
+}

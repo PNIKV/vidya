@@ -1,0 +1,297 @@
+{
+  "id": "session-208",
+  "number": 208,
+  "title": "Advanced Excel Formulas",
+  "subtitle": "Master VLOOKUP, CONCATENATE & TEXT Functions",
+  "date": "Session 208",
+  "duration": "45 Minutes",
+  "phase": "Spreadsheet Skills",
+  "color": "#217346",
+  "icon": "📊",
+  "tags": [
+    "Excel",
+    "Spreadsheets",
+    "Formulas",
+    "VLOOKUP",
+    "Data Management"
+  ],
+  "overview": "Students will learn advanced Excel formulas including VLOOKUP, CONCATENATE, and TEXT functions. They will understand how to search data, combine text, and format numbers and dates efficiently.",
+  "grades": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-208/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of Excel worksheets, formula examples, and student practice activities.",
+    "gallery": [
+      {
+        "file": "data/excel-formulas.jpg",
+        "caption": "Introduction to Advanced Excel Formulas",
+        "category": "Concept"
+      },
+      {
+        "file": "data/vlookup-example.jpg",
+        "caption": "Finding Data Using VLOOKUP",
+        "category": "Practice"
+      },
+      {
+        "file": "data/concatenate-example.jpg",
+        "caption": "Combining Text with CONCATENATE",
+        "category": "Practice"
+      },
+      {
+        "file": "data/text-function.jpg",
+        "caption": "Formatting Data Using TEXT Function",
+        "category": "Practice"
+      },
+      {
+        "file": "data/excel-table.jpg",
+        "caption": "Working with Structured Data Tables",
+        "category": "Concept"
+      },
+      {
+        "file": "data/student-excel-work.jpg",
+        "caption": "Students Practicing Advanced Formulas",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Introduction to Advanced Formulas",
+    "Understanding Function Syntax",
+    "VLOOKUP Function",
+    "Searching Data in Tables",
+    "Exact Match vs Approximate Match",
+    "CONCATENATE Function",
+    "Combining Names and Text",
+    "TEXT Function",
+    "Formatting Numbers and Dates",
+    "Real-Life Applications of Formulas",
+    "Formula Errors and Troubleshooting",
+    "Best Practices in Excel"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "VLOOKUP Tutorial for Beginners",
+      "videoId": "E7gQ-PgYkMc",
+      "desc": "Learn how to find information using VLOOKUP."
+    },
+    {
+      "title": "CONCATENATE Function Explained",
+      "videoId": "zjK6l0g8f8g",
+      "desc": "Combine text from multiple cells."
+    },
+    {
+      "title": "TEXT Function in Excel",
+      "videoId": "s0xP4Dg2xvA",
+      "desc": "Format dates, currency, and numbers using TEXT."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft Excel Functions Guide",
+      "url": "https://support.microsoft.com/excel",
+      "icon": "🔗"
+    },
+    {
+      "title": "Excel Formula Reference",
+      "url": "https://exceljet.net/functions",
+      "icon": "🔗"
+    },
+    {
+      "title": "Excel Practice Worksheets",
+      "url": "https://www.vertex42.com/ExcelTemplates/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Student Information Lookup System",
+    "parts": [
+      "Computer",
+      "Microsoft Excel",
+      "Student Data Table",
+      "Practice Worksheet"
+    ],
+    "steps": [
+      "Create a table with Roll Number, Name, and Marks",
+      "Use VLOOKUP to find student details",
+      "Combine First Name and Last Name using CONCATENATE",
+      "Format marks and dates using TEXT",
+      "Test formulas with different values",
+      "Check formula accuracy",
+      "Save the workbook",
+      "Present results to classmates"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the purpose of VLOOKUP?",
+      "options": [
+        "Create charts",
+        "Find data in a table",
+        "Print worksheets",
+        "Insert images"
+      ],
+      "answer": 1,
+      "explanation": "VLOOKUP searches for a value in a table and returns related information."
+    },
+    {
+      "q": "What does the 'V' in VLOOKUP stand for?",
+      "options": [
+        "Value",
+        "Vertical",
+        "Variable",
+        "View"
+      ],
+      "answer": 1,
+      "explanation": "VLOOKUP performs a vertical lookup in a table."
+    },
+    {
+      "q": "Which function combines text from different cells?",
+      "options": [
+        "SUM",
+        "AVERAGE",
+        "CONCATENATE",
+        "COUNT"
+      ],
+      "answer": 2,
+      "explanation": "CONCATENATE joins text strings together."
+    },
+    {
+      "q": "Which function formats numbers or dates as text?",
+      "options": [
+        "TEXT",
+        "MAX",
+        "MIN",
+        "ROUND"
+      ],
+      "answer": 0,
+      "explanation": "TEXT converts values into formatted text."
+    },
+    {
+      "q": "What is the first argument in VLOOKUP?",
+      "options": [
+        "Table Array",
+        "Lookup Value",
+        "Column Index",
+        "Range Lookup"
+      ],
+      "answer": 1,
+      "explanation": "The lookup value is the item you want to search for."
+    },
+    {
+      "q": "Which symbol starts a formula in Excel?",
+      "options": [
+        "#",
+        "&",
+        "=",
+        "@"
+      ],
+      "answer": 2,
+      "explanation": "All Excel formulas begin with an equals sign."
+    },
+    {
+      "q": "What happens if VLOOKUP cannot find a match?",
+      "options": [
+        "Excel closes",
+        "Returns an error",
+        "Creates a chart",
+        "Deletes data"
+      ],
+      "answer": 1,
+      "explanation": "Excel usually displays #N/A when no match is found."
+    },
+    {
+      "q": "Which operator can also combine text in Excel?",
+      "options": [
+        "+",
+        "-",
+        "&",
+        "*"
+      ],
+      "answer": 2,
+      "explanation": "The ampersand (&) joins text strings."
+    },
+    {
+      "q": "Which formula combines A1 and B1?",
+      "options": [
+        "=A1+B1",
+        "=CONCATENATE(A1,B1)",
+        "=SUM(A1,B1)",
+        "=TEXT(A1,B1)"
+      ],
+      "answer": 1,
+      "explanation": "CONCATENATE joins text from multiple cells."
+    },
+    {
+      "q": "Which function helps display a date as '01-Jan-2025'?",
+      "options": [
+        "SUM",
+        "TEXT",
+        "COUNT",
+        "LOOKUP"
+      ],
+      "answer": 1,
+      "explanation": "TEXT allows custom date formatting."
+    },
+    {
+      "q": "What type of data is best for VLOOKUP?",
+      "options": [
+        "Tables",
+        "Pictures",
+        "Videos",
+        "Audio Files"
+      ],
+      "answer": 0,
+      "explanation": "VLOOKUP works with structured tables."
+    },
+    {
+      "q": "Why is VLOOKUP useful?",
+      "options": [
+        "It searches data automatically",
+        "It changes screen brightness",
+        "It plays music",
+        "It creates animations"
+      ],
+      "answer": 0,
+      "explanation": "VLOOKUP quickly retrieves related information."
+    },
+    {
+      "q": "What does CONCATENATE return?",
+      "options": [
+        "A chart",
+        "Combined text",
+        "A number only",
+        "A worksheet"
+      ],
+      "answer": 1,
+      "explanation": "CONCATENATE joins multiple text strings into one."
+    },
+    {
+      "q": "Which function improves the appearance of reports?",
+      "options": [
+        "TEXT",
+        "COUNT",
+        "AVERAGE",
+        "SUM"
+      ],
+      "answer": 0,
+      "explanation": "TEXT helps display data in user-friendly formats."
+    },
+    {
+      "q": "What is the main goal of today's lesson?",
+      "options": [
+        "Learn advanced Excel formulas",
+        "Install software",
+        "Create videos",
+        "Browse websites"
+      ],
+      "answer": 0,
+      "explanation": "Students will use VLOOKUP, CONCATENATE, and TEXT functions effectively."
+    }
+  ]
+}

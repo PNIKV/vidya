@@ -1,0 +1,178 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-236/",
+    "slides_folder": "sessions/session-236/slides/",
+    "images_folder": "sessions/session-236/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-236",
+  "number": 236,
+  "title": "Capstone Project: Student Choice Exhibition",
+  "subtitle": "Bring your ideas to life—your ultimate engineering showcase!",
+  "date": "Session 236",
+  "duration": "1 Hours",
+  "phase": "Core Robotics",
+  "color": "#E040FB",
+  "icon": "🏆",
+  "tags": [
+    "Robotics",
+    "Electronics",
+    "Product Design",
+    "Arduino",
+    "Capstone"
+  ],
+  "overview": "In this high-stakes capstone session, students synthesize everything they have learned across the curriculum into an independent project of their choice. Selecting from engineering paths like automated agriculture, autonomous robotics, home security networks, IoT weather channels, or interactive music modules, teams plan, execute, debug, and present a completely custom functional prototype.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-236/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the live presentation floor — students testing prototypes, presentation pitch slides, and functional project diagrams.",
+    "gallery": [
+      {
+        "file": "data/capstone-design-cycle.jpg",
+        "_placeholder": "ADD: Flowchart graphic illustrating the full engineering cycle: Ideate -> Wire -> Code -> Debug -> Present",
+        "caption": "The Engineering Design Cycle — Turning custom concepts into physical hardware real estate.",
+        "category": "Concept"
+      },
+      {
+        "file": "data/project-options-matrix.png",
+        "_placeholder": "ADD: Matrix showing student project pathways (Automated Plant, Security Alarm, Weather Station, Robotic Vehicle)",
+        "caption": "Project Pathways — Choosing application ecosystems based on core problem statements.",
+        "category": "Components"
+      },
+      {
+        "file": "data/student-showcase-live.jpg",
+        "_placeholder": "ADD: Photo of students excitedly demonstrating their final automated watering and security projects to peers",
+        "caption": "The Exhibition Floor — Students pitching finished hardware systems during peer review.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "The Engineering Design Process — Navigating the lifecycle of creation: problem definition, material selection, circuit breadboarding, software writing, and aggressive field validation",
+    "Project Architecture Planning — Breaking down complex custom ideas into self-contained modules (Power Management, Sensing Array, Control Processing, Actuation)",
+    "Hardware Troubleshooting Autonomy — Using algorithmic elimination to split and track circuit assembly line faults without relying on an instructor",
+    "Software Refactoring Protocols — Streamlining conditional code sheets, utilizing strategic function blocks, and cleaning variable descriptions for public evaluation",
+    "Resource Optimization Constraints — Managing shared power boundaries, pin allocation ceilings, and microchip workspace limits",
+    "User Interface & Human Factors — Styling screen formats, buzzer pacing alerts, and mechanical brackets to be friendly for everyday users",
+    "Technical Presentation Pitching — Articulating how your custom product operates, detailing problems encountered, and illustrating the real-world scale of your engineering build"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Top 10 Arduino Capstone Projects for Beginners",
+      "videoId": "arduino-capstone-ideas",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "An inspiration reel showcasing creative, highly polished student projects ranging from smart home vaults to robotic sorters."
+    },
+    {
+      "title": "How to Present a Technical Engineering Project",
+      "videoId": "engineering-pitch-guide",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "Pro-tips on explaining your source code, structuring a physical demonstration, and handling complex peer evaluation questions."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Reference Guide",
+      "url": "https://www.arduino.cc/reference/en/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Instructables Circuits — Step-by-Step Project Database",
+      "url": "https://www.instructables.com/circuits/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Independent Capstone Lab & Pitch Presentation",
+    "parts": [
+      "Custom Student Component Kit (Servos, Sensors, Relays, Boards, Chassis based on chosen theme)",
+      "Arduino Uno Processor Module with high-capacity power supplies",
+      "Capstone Roadmap & System Diagram Template Worksheet",
+      "Exhibition Display Board & Showcase Card"
+    ],
+    "steps": [
+      "The Blueprint Selection: Teams select one clear track theme (e.g., Automated Plant Care, Anti-Theft Security Laser, Wireless Rover, Electronic Instrument) and draft their input/output logic chart.",
+      "The Hardware Integration Grid: Students organize their master breadboard layout, establishing solid grounding structures across all peripheral boards and sub-modules.",
+      "The Software Synthesis Phase: Codebases are combined, ensuring different functions (like scanning sensors and shifting servo arms) run smoothly inside the infinite main execution loop.",
+      "The Stress Validation Challenge: Students intentionally test extreme scenarios (e.g., bone-dry soil loops, rapid laser breaks, over-range distance movements) to patch bugs before lock-in.",
+      "The Showcase Demonstration: Prototypes are set up across exhibition tables, running actively while students deliver a 3-minute pitch detailing their code structure, wiring design, and practical hardware innovations to the evaluation panel!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the primary objective of the 'Ideation & Prototyping' phase inside the engineering design lifecycle?",
+      "options": [
+        "To buy the most expensive tools on the market before deciding on a plan",
+        "To research project constraints, sketch electrical pathways, and model basic systems before building final assemblies",
+        "To wait until the last day of class to quickly upload an existing internet project",
+        "To write instruction books for parts you did not use in your layout"
+      ],
+      "answer": 1,
+      "explanation": "Strategic Planning! Sketching block connections and organizing variable assignments prevents wiring accidents and conflicting code instructions before hardware construction begins."
+    },
+    {
+      "q": "If you are designing an 'Automated Smart Greenhouse' prototype, which sensor tracking combo is most effective?",
+      "options": [
+        "Ultrasonic distance radar and a piezo audio microphone element",
+        "A soil moisture sensor to check earth hydration paired with an environmental temperature probe to regulate airflow fans",
+        "An infrared remote controller tracking receiver and an RGB colorful indicator led matrix",
+        "A high-frequency digital radio antenna wire setup"
+      ],
+      "answer": 1,
+      "explanation": "Target Sensor Alignment! To automate an agriculture pod, you must monitor moisture and temperature changes to trigger corrective actuator units like watering pumps or cooling fans."
+    },
+    {
+      "q": "What engineering approach helps locate a hardware bug when your capstone prototype suddenly stops responding?",
+      "options": [
+        "Shake the complete board unit rapidly until a status indicator light blinks",
+        "Isolate individual modules by printing sensor loops directly onto the Serial Monitor to verify which specific hardware line or logic loop fails",
+        "Delete the entire sketch code asset file and start typing code paths again from zero",
+        "Swap out your primary 5V battery source for a high-voltage household wall plug channel"
+      ],
+      "answer": 1,
+      "explanation": "Systematic Isolation Strategy! Printing data logs directly from target pins allows you to confirm if a bug stems from a broken component wire, an inverted variable conditional, or a full processor freeze."
+    },
+    {
+      "q": "Why is structural 'Common Grounding' essential when linking distinct external sub-modules (like separate battery packs, driver chips, and Arduinos)?",
+      "options": [
+        "It prevents the microchip from running too hot during long math processes",
+        "It links all device negative ground traces together to create a single, stable zero-volt reference level for clear electrical signals",
+        "It changes manual analog control signals into fast automated digital commands",
+        "It removes the requirement of placing resistors on signal lines"
+      ],
+      "answer": 1,
+      "explanation": "Shared Voltage References! Without a shared negative rail link, logic boards cannot establish a reliable reference point to judge high or low voltage signals, leading to communication errors and erratic component behaviors."
+    },
+    {
+      "q": "What function do 'Non-Blocking' timing frameworks (like using 'millis()') perform in advanced student capstone scripts?",
+      "options": [
+        "They permanently block unauthorized code uploads over your USB port",
+        "They track elapsed system runtimes, allowing the processor to execute code tasks simultaneously without freezing loop activities like 'delay()' does",
+        "They automatically multiply memory registers to double program space ceilings",
+        "They switch serial data interface connections into backup parallel buses"
+      ],
+      "answer": 1,
+      "explanation": "Parallel Task Operations! Relying on millis() checks timestamps continuously on the background clock chip. This frees up the loop to track security sensors rapidly while pacing buzzer alerts concurrently."
+    },
+    {
+      "q": "When pitching your completed capstone prototype to peer evaluators or prospective clients, what details should your presentation highlight?",
+      "options": [
+        "Just the cosmetic exterior of the outer protective box enclosure",
+        "The clear problem statement, structural circuit schematic choices, unique software parsing logic, debugging obstacles overcome, and real-world system applications",
+        "An overview of other internet projects that you found online but chose not to construct",
+        "A simple statement saying that everything operates perfectly without displaying the code sheets"
+      ],
+      "answer": 1,
+      "explanation": "Technical Pitching Competence! An impactful review focuses on engineering choices—explaining system mapping, code structure, and structural problem-solving methods used to resolve hardware bugs."
+    }
+  ]
+}

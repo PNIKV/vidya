@@ -1,0 +1,255 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-195/",
+    "slides_folder": "sessions/session-195/slides/",
+    "images_folder": "sessions/session-195/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-195",
+  "number": 195,
+  "title": "Conditional Statements",
+  "subtitle": "Making Decisions with Python",
+  "date": "Session 195",
+  "duration": "45 Minutes",
+  "phase": "Python Programming Fundamentals",
+  "color": "#4CAF50",
+  "icon": "🔀",
+  "tags": [
+    "Python",
+    "Conditional Statements",
+    "if",
+    "elif",
+    "else",
+    "Programming Logic"
+  ],
+  "overview": "Students learn how computers make decisions using conditional statements. Through practical examples, they explore if, elif, and else statements to create programs that respond differently based on user input and conditions.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-195/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of Python conditional statement examples, flowcharts, and student coding activities.",
+    "gallery": [
+      {
+        "file": "data/python-if-statement.png",
+        "caption": "Understanding the if Statement",
+        "category": "Concept"
+      },
+      {
+        "file": "data/if-else-flowchart.png",
+        "caption": "Decision Making Flowchart",
+        "category": "Concept"
+      },
+      {
+        "file": "data/python-elif-example.png",
+        "caption": "Using elif for Multiple Conditions",
+        "category": "Programming"
+      },
+      {
+        "file": "data/python-editor.jpg",
+        "caption": "Writing Conditional Programs",
+        "category": "Programming"
+      },
+      {
+        "file": "data/student-coding.jpg",
+        "caption": "Students Practicing Python Logic",
+        "category": "Lab"
+      },
+      {
+        "file": "data/traffic-light-logic.png",
+        "caption": "Real-Life Example of Conditional Logic",
+        "category": "Application"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Introduction to Decision Making",
+    "What is a Conditional Statement?",
+    "Using the if Statement",
+    "Using the else Statement",
+    "Using the elif Statement",
+    "Comparison Operators",
+    "Greater Than and Less Than",
+    "Equal To and Not Equal To",
+    "Boolean Expressions",
+    "Real-Life Decision Making Examples",
+    "Traffic Light Logic",
+    "Grading System Program",
+    "Simple Login Validation",
+    "Nested Conditions Basics"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Python If Else Statements for Beginners",
+      "videoId": "Zp5MuPOtsSY",
+      "desc": "Learn how conditional statements work in Python."
+    },
+    {
+      "title": "Python Decision Making",
+      "videoId": "wKPlQkOdpFQ",
+      "desc": "Understanding if, elif and else statements."
+    },
+    {
+      "title": "Python Programming Tutorial",
+      "videoId": "rfscVS0vtbw",
+      "desc": "Beginner-friendly Python programming concepts."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Python Official Tutorial",
+      "url": "https://docs.python.org/3/tutorial/controlflow.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "W3Schools Python Conditions",
+      "url": "https://www.w3schools.com/python/python_conditions.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "Thonny IDE",
+      "url": "https://thonny.org",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Grade Checker Program",
+    "parts": [
+      "Computer",
+      "Python Installed",
+      "Thonny IDE",
+      "Notebook"
+    ],
+    "steps": [
+      "Open Thonny IDE",
+      "Create a new Python file",
+      "Create a variable named marks",
+      "Assign a score to the variable",
+      "Use if statement to check marks above 90",
+      "Use elif statement for marks between 75 and 90",
+      "Use else statement for marks below 75",
+      "Display the grade using print()",
+      "Run the program with different values",
+      "Observe how the output changes based on conditions"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which keyword is used to check a condition in Python?",
+      "options": [
+        "for",
+        "if",
+        "while",
+        "print"
+      ],
+      "answer": 1,
+      "explanation": "The if keyword is used to test a condition."
+    },
+    {
+      "q": "Which statement runs when the if condition is False?",
+      "options": [
+        "else",
+        "print",
+        "for",
+        "break"
+      ],
+      "answer": 0,
+      "explanation": "The else block executes when the if condition is False."
+    },
+    {
+      "q": "What is the purpose of elif?",
+      "options": [
+        "Repeat code",
+        "Check another condition",
+        "Stop the program",
+        "Print output"
+      ],
+      "answer": 1,
+      "explanation": "elif allows checking additional conditions."
+    },
+    {
+      "q": "Which operator means 'equal to'?",
+      "options": [
+        "=",
+        "==",
+        ">",
+        "<"
+      ],
+      "answer": 1,
+      "explanation": "== is used to compare two values."
+    },
+    {
+      "q": "What is the output of if 5 > 3?",
+      "options": [
+        "False",
+        "Error",
+        "True",
+        "None"
+      ],
+      "answer": 2,
+      "explanation": "5 is greater than 3, so the condition is True."
+    },
+    {
+      "q": "Which data type is returned by a condition?",
+      "options": [
+        "String",
+        "Integer",
+        "Boolean",
+        "Float"
+      ],
+      "answer": 2,
+      "explanation": "Conditions evaluate to True or False."
+    },
+    {
+      "q": "Which symbol means 'not equal to'?",
+      "options": [
+        "=",
+        "!=",
+        "==",
+        ">="
+      ],
+      "answer": 1,
+      "explanation": "!= checks whether two values are different."
+    },
+    {
+      "q": "A traffic signal deciding Red or Green is an example of:",
+      "options": [
+        "Looping",
+        "Conditional Logic",
+        "Variable Storage",
+        "Printing"
+      ],
+      "answer": 1,
+      "explanation": "Traffic signals use decision-making logic."
+    },
+    {
+      "q": "Which keyword checks multiple conditions?",
+      "options": [
+        "elif",
+        "import",
+        "input",
+        "range"
+      ],
+      "answer": 0,
+      "explanation": "elif is used after if to test additional conditions."
+    },
+    {
+      "q": "Why are conditional statements important?",
+      "options": [
+        "To decorate code",
+        "To help programs make decisions",
+        "To increase internet speed",
+        "To save files"
+      ],
+      "answer": 1,
+      "explanation": "Conditional statements allow programs to react to different situations."
+    }
+  ]
+}

@@ -1,0 +1,370 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-222/",
+    "slides_folder": "sessions/session-222/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-222/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-222",
+  "number": 222,
+  "title": "Computer Vision Concept",
+  "subtitle": "How Computers See the World Through Pixels!",
+  "date": "Session 222",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#0288D1",
+  "icon": "👁️",
+  "tags": [
+    "Artificial Intelligence",
+    "Computer Science",
+    "Technology",
+    "Mathematics"
+  ],
+  "overview": "Discover how computers 'see' images — not as pictures, but as grids of numbers! Explore pixels, RGB colour channels, grayscale, and how a computer reads an image the same way it reads data. Then write real Python code to load, inspect, and manipulate images pixel by pixel — the foundation of all AI vision systems.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-222/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — pixel grid activity, RGB channel diagrams, Python output screenshots, student work.",
+    "gallery": [
+      {
+        "file": "data/pixel-grid-zoomed.jpg",
+        "_placeholder": "ADD: Zoomed-in image showing individual pixels as coloured squares",
+        "caption": "Zoom in far enough and any image becomes a grid of tiny coloured squares — pixels!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/rgb-channels.jpg",
+        "_placeholder": "ADD: Diagram splitting an image into Red, Green, Blue channel layers",
+        "caption": "Every pixel = 3 numbers: Red, Green, Blue — each from 0 to 255",
+        "category": "Concept"
+      },
+      {
+        "file": "data/grayscale-vs-colour.jpg",
+        "_placeholder": "ADD: Side-by-side colour image vs grayscale version",
+        "caption": "Grayscale: 1 number per pixel (0=black, 255=white). Colour: 3 numbers!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/image-as-array.jpg",
+        "_placeholder": "ADD: Screenshot of numpy array printed from an image — showing pixel numbers",
+        "caption": "To a computer, an image is just a table of numbers — a 2D (or 3D) array!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/pixel-art-activity.jpg",
+        "_placeholder": "ADD: Photo of students colouring grid paper to make pixel art",
+        "caption": "Pixel art activity — students manually encode an 8×8 image as a number grid",
+        "category": "Lab"
+      },
+      {
+        "file": "data/edge-detection-output.jpg",
+        "_placeholder": "ADD: Side-by-side original image and edge-detected version",
+        "caption": "Edge detection: computer finds where pixel values change sharply — it 'sees' outlines!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/computer-vision-uses.jpg",
+        "_placeholder": "ADD: Collage of CV use cases — face unlock, self-driving car, medical scan",
+        "caption": "Computer Vision powers face unlock, self-driving cars, medical X-ray analysis and more!",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Pixel — the smallest unit of a digital image; every image is a grid of pixels",
+    "Resolution — the number of pixels (e.g. 1920×1080 = over 2 million pixels!)",
+    "RGB Colour Model — each pixel stores 3 values: Red (0–255), Green (0–255), Blue (0–255)",
+    "Grayscale — 1 number per pixel (0 = black, 255 = white, in-between = shades of grey)",
+    "Image as Array — a computer stores an image as a 2D array (grayscale) or 3D array (colour)",
+    "Brightness & Contrast — changing pixel values makes images lighter, darker, or more vivid",
+    "Edge Detection — finding places where pixel values change sharply; outlines objects for AI",
+    "Real-World Computer Vision — face unlock, self-driving cars, medical imaging, Google Lens, QR codes"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Computers See Images — Computerphile",
+      "videoId": "OtqhYLdVEY0",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear explanation of how digital images are stored as grids of numbers and how computers process them."
+    },
+    {
+      "title": "What is a Pixel? — How Images Work",
+      "videoId": "15aqFQQVBWU",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Brilliant animated explainer on pixels, resolution, and how colour is encoded in digital images."
+    },
+    {
+      "title": "RGB Colour Model Explained",
+      "videoId": "uYbdx4I7STg",
+      "desc": "How Red, Green, and Blue values combine to create every colour a screen can display."
+    },
+    {
+      "title": "Computer Vision Crash Course",
+      "videoId": "2hXG8v8p0KM",
+      "desc": "An overview of computer vision — from pixels to object detection — and how AI systems learn to see."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Teachable Machine — Train Image Classifier",
+      "url": "https://teachablemachine.withgoogle.com",
+      "icon": "🧠"
+    },
+    {
+      "title": "Pillow (PIL) Python Library Docs",
+      "url": "https://pillow.readthedocs.io/en/stable/",
+      "icon": "🔗"
+    },
+    {
+      "title": "OpenCV Python Tutorials — Official",
+      "url": "https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "Image Pixel Viewer — See RGB Values Online",
+      "url": "https://www.ginifab.com/feeds/pms/pms_color_in_image.php",
+      "icon": "🎨"
+    },
+    {
+      "title": "CS Unplugged — Image Representation Activity",
+      "url": "https://www.csunplugged.org/en/topics/image-representation/",
+      "icon": "🔗"
+    }
+  ],
+  "codeExamples": [
+    {
+      "title": "What a Computer Sees — Image as a Number Grid",
+      "language": "python",
+      "description": "Create a tiny 5×5 grayscale 'image' by hand as a 2D list. This is exactly how a computer stores any image — just numbers!",
+      "code": "# A 5×5 grayscale image — each number is one pixel\n# 0 = black,  255 = white,  128 = mid-grey\n\nimage = [\n    [  0,   0,   0,   0,   0],   # row 0 — all black\n    [  0, 255, 255, 255,   0],   # row 1\n    [  0, 255, 128, 255,   0],   # row 2 — grey centre\n    [  0, 255, 255, 255,   0],   # row 3\n    [  0,   0,   0,   0,   0],   # row 4 — all black\n]\n\nprint(\"Image stored as numbers:\")\nfor row in image:\n    # Print each pixel value padded to 3 digits\n    print('  ' + '  '.join(f\"{px:3d}\" for px in row))\n\nprint()\nprint(f\"Image size : {len(image)} rows × {len(image[0])} columns\")\nprint(f\"Total pixels: {len(image) * len(image[0])}\")\nprint(f\"Top-left pixel value : {image[0][0]} (black)\")\nprint(f\"Centre pixel value   : {image[2][2]} (mid-grey)\")"
+    },
+    {
+      "title": "RGB Pixels — Colour as Three Numbers",
+      "language": "python",
+      "description": "Every colour pixel is a tuple of (Red, Green, Blue) — each 0 to 255. See how mixing numbers creates any colour.",
+      "code": "# Each colour pixel = (Red, Green, Blue) — values 0 to 255\n\n# Define some colours as RGB tuples\ncolours = {\n    \"Black\"   : (  0,   0,   0),\n    \"White\"   : (255, 255, 255),\n    \"Red\"     : (255,   0,   0),\n    \"Green\"   : (  0, 255,   0),\n    \"Blue\"    : (  0,   0, 255),\n    \"Yellow\"  : (255, 255,   0),   # Red + Green!\n    \"Cyan\"    : (  0, 255, 255),   # Green + Blue!\n    \"Magenta\" : (255,   0, 255),   # Red + Blue!\n    \"Orange\"  : (255, 165,   0),\n    \"Purple\"  : (128,   0, 128),\n}\n\nprint(f\"{'Colour':<10}  R    G    B    Hex Code\")\nprint(\"-\" * 42)\nfor name, (r, g, b) in colours.items():\n    hex_code = f\"#{r:02X}{g:02X}{b:02X}\"\n    print(f\"{name:<10}  {r:3d}  {g:3d}  {b:3d}  {hex_code}\")\n\nprint()\nprint(\"Fun fact: #FF0000 is pure red — the same hex\")\nprint(\"code you see in CSS and web design!\")"
+    },
+    {
+      "title": "Load and Inspect a Real Image with Pillow",
+      "language": "python",
+      "description": "Use Python's Pillow library to open an image, check its size, and read individual pixel values — just like a computer vision system does.",
+      "code": "# pip install Pillow\nfrom PIL import Image\n\n# ── OPEN AN IMAGE ─────────────────────────────────\n# Replace 'photo.jpg' with any image file you have\nimg = Image.open('photo.jpg')\n\nprint(\"=== Image Info ===\")\nprint(f\"Format    : {img.format}\")          # JPEG, PNG, etc.\nprint(f\"Mode      : {img.mode}\")            # 'RGB', 'L' (grayscale), etc.\nprint(f\"Size      : {img.width} × {img.height} pixels\")\nprint(f\"Total px  : {img.width * img.height:,}\")\n\n# ── READ PIXEL VALUES ─────────────────────────────\n# getpixel((x, y)) — x = column, y = row\ntop_left  = img.getpixel((0, 0))\ncenter    = img.getpixel((img.width // 2, img.height // 2))\n\nprint()\nprint(f\"Top-left pixel  : R={top_left[0]}, G={top_left[1]}, B={top_left[2]}\")\nprint(f\"Centre pixel    : R={center[0]},  G={center[1]},  B={center[2]}\")\n\n# ── CONVERT TO GRAYSCALE ──────────────────────────\ngray = img.convert('L')   # 'L' mode = 1 value per pixel\ngray_px = gray.getpixel((img.width // 2, img.height // 2))\nprint(f\"Centre pixel (grayscale): {gray_px}\")\n\n# ── SHOW THE IMAGE ────────────────────────────────\nimg.show()    # Opens the image in your default viewer"
+    },
+    {
+      "title": "Manipulate Pixels — Brightness & Invert",
+      "language": "python",
+      "description": "Change every pixel's value to make an image brighter, darker, or inverted. This is the foundation of all image filters!",
+      "code": "from PIL import Image\nimport os\n\nimg  = Image.open('photo.jpg').convert('RGB')\npixels = img.load()   # Pixel access object\nwidth, height = img.size\n\n# ── MAKE IMAGE BRIGHTER ───────────────────────────\nbright = Image.new('RGB', (width, height))\nbright_px = bright.load()\n\nfor y in range(height):\n    for x in range(width):\n        r, g, b = pixels[x, y]\n        # Add 60 to each channel — clamp at 255\n        bright_px[x, y] = (\n            min(r + 60, 255),\n            min(g + 60, 255),\n            min(b + 60, 255)\n        )\n\nbright.save('photo_bright.jpg')\nprint(\"Saved: photo_bright.jpg\")\n\n# ── INVERT IMAGE (negative effect) ────────────────\ninvert = Image.new('RGB', (width, height))\ninvert_px = invert.load()\n\nfor y in range(height):\n    for x in range(width):\n        r, g, b = pixels[x, y]\n        # 255 minus each channel flips it\n        invert_px[x, y] = (255 - r, 255 - g, 255 - b)\n\ninvert.save('photo_inverted.jpg')\nprint(\"Saved: photo_inverted.jpg\")\n\n# ── GRAYSCALE CONVERSION FORMULA ──────────────────\n# Real grayscale isn't just averaging R+G+B!\n# Human eyes are most sensitive to green.\n# Standard formula: Y = 0.299R + 0.587G + 0.114B\ngray = Image.new('L', (width, height))\ngray_px = gray.load()\n\nfor y in range(height):\n    for x in range(width):\n        r, g, b = pixels[x, y]\n        value = int(0.299*r + 0.587*g + 0.114*b)\n        gray_px[x, y] = value\n\ngray.save('photo_gray.jpg')\nprint(\"Saved: photo_gray.jpg\")"
+    },
+    {
+      "title": "Edge Detection — Where Pixel Values Change",
+      "language": "python",
+      "description": "The simplest edge detector: compare each pixel to its neighbour. Big difference = edge! This is how AI finds outlines in images.",
+      "code": "from PIL import Image, ImageFilter\n\nimg  = Image.open('photo.jpg').convert('L')  # grayscale\n\n# ── METHOD 1: Pillow built-in edge filter ─────────\nedge_img = img.filter(ImageFilter.FIND_EDGES)\nedge_img.save('photo_edges.jpg')\nprint(\"Saved: photo_edges.jpg\")\n\n# ── METHOD 2: Manual — compare neighbours ─────────\n# If a pixel is much brighter than its right neighbour\n# → that's an edge!\npixels = img.load()\nwidth, height = img.size\nmanual = Image.new('L', (width, height), 0)\nout_px = manual.load()\n\nfor y in range(height):\n    for x in range(width - 1):   # stop 1 before edge\n        current  = pixels[x,     y]\n        next_px  = pixels[x + 1, y]\n        diff = abs(int(current) - int(next_px))\n        # Amplify the difference so edges are visible\n        out_px[x, y] = min(diff * 5, 255)\n\nmanual.save('photo_edges_manual.jpg')\nprint(\"Saved: photo_edges_manual.jpg\")\n\nprint()\nprint(\"Edge detection finds outlines by looking for\")\nprint(\"places where brightness changes sharply.\")\nprint(\"This is how AI systems detect object borders!\")"
+    }
+  ],
+  "activity": {
+    "title": "Pixel Art Grid + Python Image Inspector",
+    "parts": [
+      "Grid paper (8×8 or 10×10 squares)",
+      "Coloured pencils or markers",
+      "Laptop with Python + Pillow installed (pip install Pillow)",
+      "Any JPG or PNG image file",
+      "Printed RGB colour chart (optional)"
+    ],
+    "steps": [
+      "Pixel Art Round: On grid paper, design a simple 8×8 image (smiley face, heart, letter). Shade each square — this is your pixel grid!",
+      "Encode it: number each row and column 0–7. Write the brightness value (0=black, 128=grey, 255=white) for each square into a 2D table.",
+      "Run Code Example 1 — create your own 5×5 number grid in Python. Try changing values and predict what the image 'looks like'.",
+      "Run Code Example 2 — explore RGB colour mixing. Challenge: find the RGB values for your favourite colour!",
+      "Run Code Example 3 with a real photo — print its width, height, and read pixel values from different corners.",
+      "Run Code Example 4 — save brightened and inverted versions of your photo. Compare them side by side.",
+      "Bonus Challenge: Run Code Example 5 — edge detection on your photo. Can you see where the computer found the outlines?"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a PIXEL?",
+      "options": [
+        "A type of camera lens",
+        "The smallest individual unit of a digital image — a tiny square of colour",
+        "A Python library for images",
+        "The file size of an image"
+      ],
+      "answer": 1,
+      "explanation": "Pixel = Picture Element. Every digital image is made of a grid of pixels — zoom in far enough on any photo and you'll see the individual coloured squares. A computer stores each pixel as one or more numbers."
+    },
+    {
+      "q": "How does a computer store a COLOUR pixel?",
+      "options": [
+        "As a single number from 0 to 100",
+        "As the name of the colour (e.g. 'red')",
+        "As three numbers — Red, Green, Blue — each from 0 to 255",
+        "As a binary ON/OFF value"
+      ],
+      "answer": 2,
+      "explanation": "Every colour pixel is an RGB triplet: (R, G, B). Each channel ranges from 0 (none) to 255 (full). Red=(255,0,0), Green=(0,255,0), Blue=(0,0,255). Mix them to make any colour!"
+    },
+    {
+      "q": "What does a pixel value of 0 mean in GRAYSCALE?",
+      "options": [
+        "White",
+        "Transparent",
+        "Black",
+        "The pixel is missing"
+      ],
+      "answer": 2,
+      "explanation": "In grayscale, 0 = pure black and 255 = pure white. Values in between are shades of grey. A grayscale image stores just ONE number per pixel instead of three (RGB)."
+    },
+    {
+      "q": "What is the RGB value for PURE WHITE?",
+      "options": [
+        "(0, 0, 0)",
+        "(128, 128, 128)",
+        "(255, 0, 0)",
+        "(255, 255, 255)"
+      ],
+      "answer": 3,
+      "explanation": "White = maximum of all three channels: (255, 255, 255). Black = minimum of all three: (0, 0, 0). Grey = equal values in the middle, like (128, 128, 128)."
+    },
+    {
+      "q": "What is image RESOLUTION?",
+      "options": [
+        "The brightness of the image",
+        "The number of colours used",
+        "The total number of pixels — width × height (e.g. 1920×1080)",
+        "The file format (JPG or PNG)"
+      ],
+      "answer": 2,
+      "explanation": "Resolution = how many pixels the image contains. A 1920×1080 image has 1,920 × 1,080 = over 2 million pixels! More pixels = more detail = bigger file size."
+    },
+    {
+      "q": "How does a computer store a colour image as data?",
+      "options": [
+        "As a painting saved in a special art format",
+        "As a 3D array of numbers — rows × columns × 3 colour channels",
+        "As a list of shape names (circle, square, etc.)",
+        "As compressed audio data"
+      ],
+      "answer": 1,
+      "explanation": "A colour image is a 3D array: height × width × 3. The 3 represents R, G, B channels. A 100×100 colour image stores 100 × 100 × 3 = 30,000 numbers. A grayscale image is 2D: height × width."
+    },
+    {
+      "q": "In Python Pillow, what does img.getpixel((x, y)) return for a colour image?",
+      "options": [
+        "A single brightness value",
+        "The pixel's filename",
+        "A tuple of (Red, Green, Blue) values for that pixel",
+        "The image's total file size"
+      ],
+      "answer": 2,
+      "explanation": "getpixel((x, y)) returns the pixel at column x, row y as an (R, G, B) tuple. For example, (255, 0, 0) means pure red. You can use this to inspect exactly what colour is at any location in an image."
+    },
+    {
+      "q": "What does converting an image to GRAYSCALE do?",
+      "options": [
+        "Removes all pixels below a certain brightness",
+        "Reduces each pixel from 3 colour values (RGB) to 1 brightness value",
+        "Makes the image smaller in file size only",
+        "Converts the image to black and white pixels with no grey"
+      ],
+      "answer": 1,
+      "explanation": "Grayscale conversion collapses R, G, B into a single brightness value per pixel using a weighted formula: Y = 0.299R + 0.587G + 0.114B. Green is weighted most because human eyes are most sensitive to it!"
+    },
+    {
+      "q": "What does EDGE DETECTION do to an image?",
+      "options": [
+        "Removes the border around the image",
+        "Makes all colours brighter",
+        "Finds places where pixel values change sharply — highlighting outlines and boundaries",
+        "Compresses the image to a smaller file"
+      ],
+      "answer": 2,
+      "explanation": "Edges appear where pixel brightness changes suddenly — like the border between a face and the background. Edge detection highlights these changes, giving AI a way to find objects and shapes in a scene."
+    },
+    {
+      "q": "What is the RGB value for YELLOW?",
+      "options": [
+        "(255, 0, 255)",
+        "(0, 255, 255)",
+        "(255, 255, 0)",
+        "(128, 128, 0)"
+      ],
+      "answer": 2,
+      "explanation": "Yellow = Red + Green at full intensity: (255, 255, 0). Think of it like mixing paint — red and green light combine to make yellow. Cyan = (0,255,255), Magenta = (255,0,255)."
+    },
+    {
+      "q": "In our brightness code, why do we use min(r + 60, 255)?",
+      "options": [
+        "To make sure the value never goes below 0",
+        "To make sure the brightness value never exceeds 255 — the maximum for a colour channel",
+        "To speed up the calculation",
+        "To convert the value to grayscale"
+      ],
+      "answer": 1,
+      "explanation": "RGB values must stay within 0–255. If a pixel has R=220 and we add 60, we get 280 — which is invalid! min(280, 255) clamps it to 255. Without this clamp, the image data would be corrupted."
+    },
+    {
+      "q": "What does INVERTING an image do to each pixel?",
+      "options": [
+        "Rotates the pixel 180 degrees",
+        "Sets every channel to 0",
+        "Subtracts each channel value from 255, creating a photographic negative effect",
+        "Swaps the red and blue channels"
+      ],
+      "answer": 2,
+      "explanation": "Invert = 255 minus each channel. A bright pixel (200,200,200) becomes dark (55,55,55). A red pixel (255,0,0) becomes cyan (0,255,255). This creates a photographic negative — like the old film negatives!"
+    },
+    {
+      "q": "What Python library do we use to open and manipulate images in this session?",
+      "options": [
+        "numpy",
+        "scikit-learn",
+        "Pillow (PIL)",
+        "matplotlib"
+      ],
+      "answer": 2,
+      "explanation": "Pillow (imported as PIL) is Python's most popular image library. It can open, resize, crop, filter, and save images in dozens of formats. Install it with: pip install Pillow"
+    },
+    {
+      "q": "Which real-world technology uses Computer Vision?",
+      "options": [
+        "FM radio broadcasting",
+        "RFID card reading",
+        "Face unlock on smartphones and self-driving car cameras",
+        "Bluetooth speaker pairing"
+      ],
+      "answer": 2,
+      "explanation": "Computer Vision powers face unlock (phone recognises your face from a camera image), self-driving cars (detecting roads, signs, pedestrians), medical imaging (AI reading X-rays), Google Lens, and QR code scanning!"
+    },
+    {
+      "q": "A 640×480 pixel image contains how many pixels in total?",
+      "options": [
+        "1,120",
+        "640",
+        "307,200",
+        "1,000,000"
+      ],
+      "answer": 2,
+      "explanation": "640 × 480 = 307,200 pixels. A colour version of this image stores 307,200 × 3 = 921,600 individual numbers (one R, G, B value per pixel)! That's nearly 1 million numbers for a small image."
+    },
+    {
+      "q": "Why is the GREEN channel weighted most heavily (0.587) in the grayscale formula?",
+      "options": [
+        "Green pixels are the largest on a screen",
+        "Green is the most common colour in photographs",
+        "Human eyes are most sensitive to green light — it affects perceived brightness the most",
+        "It is a random weighting chosen by programmers"
+      ],
+      "answer": 2,
+      "explanation": "The human eye has more green-sensitive cone cells than red or blue. So green contributes most to how bright we perceive something. The formula Y = 0.299R + 0.587G + 0.114B is based on human vision science — not just maths!"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-235/",
+    "slides_folder": "sessions/session-235/slides/",
+    "images_folder": "sessions/session-235/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-235",
+  "number": 235,
+  "title": "Online Etiquette: Respectful Digital Communication",
+  "subtitle": "Mastering Netiquette—the unwritten laws of a healthy digital space!",
+  "date": "Session 235",
+  "duration": "45 min",
+  "phase": "Foundation",
+  "color": "#4CAF50",
+  "icon": "🤝",
+  "tags": [
+    "Digital Citizenship",
+    "Netiquette",
+    "Communication",
+    "Social-Emotional Learning"
+  ],
+  "overview": "In this interactive, discussion-driven 45-minute session, students explore the core principles of Netiquette (network etiquette). Through engaging role-play scenarios, real-world case studies, and empathy-mapping exercises, they analyze how tone can easily be misinterpreted in text form and establish constructive habits for keeping online spaces civil, inclusive, and professional.",
+  "grades": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-235/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — role-play activity cards, whiteboard brainstorming of rules, and screen examples of proper email templates.",
+    "gallery": [
+      {
+        "file": "data/netiquette-rules.jpg",
+        "_placeholder": "ADD: Graphic listing the golden rules of Netiquette (e.g., Remember the Human, Avoid All-Caps shouting)",
+        "caption": "The Core Elements of Netiquette — Translating empathy into character text strings.",
+        "category": "Concept"
+      },
+      {
+        "file": "data/tone-misinterpretation.png",
+        "_placeholder": "ADD: Diagram showing how a single text message can be read in multiple tones without facial expressions",
+        "caption": "The Text Tone Trap — Why missing vocal cues and expressions alters the intent of your words.",
+        "category": "Components"
+      },
+      {
+        "file": "data/roleplay-activity-live.jpg",
+        "_placeholder": "ADD: Photo of paired students working through debate scripts to diffuse angry forum threads",
+        "caption": "Students working through real-time communication scripts during the collaborative workspace module.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Defining Netiquette — Understanding the foundational social codes and unwritten behaviors that keep online communities safe",
+    "The Empathy Gap — Exploring how the lack of physical body language, tone of voice, and eye contact causes messages to be misread",
+    "The 'All-Caps' Rule — Recognizing how typing in ALL CAPITAL LETTERS reads visually as hostile shouting or aggressive posture",
+    "Constructive Feedback vs. Trolling — Mastering the art of critiquing an idea or a piece of code cleanly without attacking the creator",
+    "Digital Conflict Resolution — De-escalating arguments on chat boards using neutralizing phrases instead of reactive insults",
+    "The Golden Digital Rule — Remembering that behind every username, gaming profile, and avatar rests a real human being with feelings",
+    "Contextual Adaptation — Shifting tone smoothly between casual gaming spaces, school chat groups, and professional email layouts"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Digital Citizenship: What is Netiquette?",
+      "videoId": "netiquette-guide-youth",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "A fast, relatable animated introduction detailing the do's and don'ts of polite online behavior."
+    },
+    {
+      "title": "The Power of Words: Misinterpreting Text Messages",
+      "videoId": "text-tone-misunderstandings",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "An entertaining case study on how easily short texts can be misconstrued without emotional context clues."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Virginia Shea's Core Rules of Netiquette",
+      "url": "http://www.albion.com/netiquette/corerules.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "Be Internet Awesome — Google Digital Safety Games",
+      "url": "https://beinternetawesome.withgoogle.com/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Digital De-Escalation Role-Play Arena",
+    "parts": [
+      "Conflict Cards (e.g., 'A teammate misses a deadline on a group project, and someone posts an angry comment in the group chat')",
+      "The Text Translator Board (Worksheet for rewriting hostile remarks into calm, constructive alternatives)",
+      "Timer tracking blocks (15 minutes total for role-play swaps)"
+    ],
+    "steps": [
+      "Forming Teams: Pair up students and distribute the scenario conflict prompts.",
+      "The Aggressive Stage: One student reads the baseline angry message out loud exactly as typed, utilizing aggressive inflections.",
+      "The Impact Assessment: The partner explains how that phrasing instantly shifts the conversation into a defensive, unproductive cycle.",
+      "The Reframing Phase: Together, they use the Text Translator board to strip out the emotion and restructure the problem around a clean resolution path.",
+      "The Presentation Run: Pairs perform their 'Before' and 'After' communication comparisons live to show how respectful language fixes friction!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does the hybrid word 'Netiquette' refer to?",
+      "options": [
+        "A special layout structure for repairing broken internet hardware routing cords",
+        "The combination of 'Network' and 'Etiquette' that describes the rules of polite and respectful online behavior",
+        "A fast programming method used to accelerate website downloading speeds",
+        "An encrypted security code sequence that blocks incoming network attacks"
+      ],
+      "answer": 1,
+      "explanation": "Social Protocol Definition! Netiquette blends 'network' and 'etiquette' to form a universal baseline guide for treating others civilly across all interactive web spaces."
+    },
+    {
+      "q": "Why is it remarkably easy for people to misinterpret the true emotional meaning behind a standard text message?",
+      "options": [
+        "Because text screens refresh faster than people can process symbols",
+        "Because written words lack critical human context clues like voice modulation, volume variations, facial expressions, and body language",
+        "Because internet providers filter out parts of sentences randomly",
+        "Because all messages are forced to use complex coded vocabulary shortcuts"
+      ],
+      "answer": 1,
+      "explanation": "Missing Context Factors! In face-to-face chats, over 50% of the message content relies on posture, expressions, and vocal cues. When you strip away those organic markers, plain sentences can easily sound blunt, cold, or hostile."
+    },
+    {
+      "q": "If you compose an entire reply message online group chat using ALL CAPITAL LETTERS, how will other users likely interpret it?",
+      "options": [
+        "They will think your computer system is completely broken",
+        "They will perceive it as intense shouting, anger, or aggressive communication behavior",
+        "They will assume you are sharing an incredibly secret code file",
+        "They will believe it means the chat session is ending immediately"
+      ],
+      "answer": 1,
+      "explanation": "The Universal Text Shouting Rule! Across digital forums, typing in all-caps serves as the visual equivalent of screaming directly in someone's face. It triggers defensive reactions and should be avoided in civil discussions."
+    },
+    {
+      "q": "Which option showcases an ideal example of constructive, respectful review feedback on an open-source project board?",
+      "options": [
+        "Your code design looks absolutely terrible. Delete it and start over from scratch.",
+        "Great try! I noticed your calculation logic breaks down when handling negative values. Here is a link to a function tweak that might patch that error!",
+        "This function is way too slow. Why didn't you fix this before publishing?",
+        "I am not reviewing this because the color scheme hurts my eyes."
+      ],
+      "answer": 1,
+      "explanation": "Constructive Framework Strategy! Respectful critique isolates the objective functional bug cleanly and couples it with a supportive recommendation, maintaining an encouraging learning space for developers."
+    },
+    {
+      "q": "What core psychological anchor acts as the fundamental rule of all proper Netiquette guidelines?",
+      "options": [
+        "Always optimize code structures to run inside minimum hardware spaces",
+        "Remember the human being reading your message on the other side of the monitor screen",
+        "Ensure you update app profiles continuously throughout the day",
+        "Only answer conversations when using private network configurations"
+      ],
+      "answer": 1,
+      "explanation": "The Human Factor Assumption! The screen creates an emotional shield that separates users. Forgetting that a living human receives your phrases leads to toxic behaviors. Keeping that user in mind centers your communication around basic empathy."
+    },
+    {
+      "q": "What should you do if an aggressive user targets you with insulting comments inside an online gaming arena or public chat server?",
+      "options": [
+        "Type back longer, more intense insults to show you can fight back",
+        "Avoid feeding the toxic cycle; mute the user, utilize the platform report button, and speak with a trusted adult if needed",
+        "Share your home telephone coordinates so you can talk things out over a voice link",
+        "Delete the game application off your computer hardware drive immediately"
+      ],
+      "answer": 1,
+      "explanation": "De-escalation Through Separation! Retaliating against hostile users ('trolls') only validates and accelerates bad behaviors. Leveraging systemic moderation tools like mute/block chains isolates toxicity quickly and protects your peace."
+    }
+  ]
+}

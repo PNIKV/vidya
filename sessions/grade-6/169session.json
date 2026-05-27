@@ -1,0 +1,320 @@
+{
+  "id": "session-206",
+  "number": 206,
+  "title": "Smart Home Device Project",
+  "subtitle": "Build a Real-World Automation Solution",
+  "date": "Session 206",
+  "duration": "45 Minutes",
+  "phase": "STEM Project",
+  "color": "#9C27B0",
+  "icon": "🏠",
+  "tags": [
+    "Arduino",
+    "Smart Home",
+    "IoT",
+    "Automation",
+    "STEM Project"
+  ],
+  "overview": "Students will design and build a smart home device using Arduino. They can choose from an Auto Fan, Smart Lock, Garden Monitor, or Parking Aid project. The session focuses on applying sensors, actuators, and programming to solve real-world problems.",
+  "grades": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-206/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos of student projects, sensors, actuators, and final prototypes.",
+    "gallery": [
+      {
+        "file": "data/auto-fan.jpg",
+        "caption": "Automatic Fan Using Temperature Sensor",
+        "category": "Project"
+      },
+      {
+        "file": "data/smart-lock.jpg",
+        "caption": "Smart Lock Using Servo Motor",
+        "category": "Project"
+      },
+      {
+        "file": "data/garden-monitor.jpg",
+        "caption": "Garden Monitor Using Soil Moisture Sensor",
+        "category": "Project"
+      },
+      {
+        "file": "data/parking-aid.jpg",
+        "caption": "Parking Aid Using Ultrasonic Sensor",
+        "category": "Project"
+      },
+      {
+        "file": "data/smart-home.jpg",
+        "caption": "Smart Home Automation Concepts",
+        "category": "Concept"
+      },
+      {
+        "file": "data/student-projects.jpg",
+        "caption": "Students Presenting Their Smart Home Devices",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Smart Home?",
+    "Introduction to Home Automation",
+    "Sensors and Actuators",
+    "Auto Fan Project",
+    "Smart Lock Project",
+    "Garden Monitoring System",
+    "Parking Assistance System",
+    "Problem Solving Through Technology",
+    "Arduino-Based Automation",
+    "Real-Life Applications of IoT",
+    "Project Design Process",
+    "Testing and Troubleshooting"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Smart Home Projects",
+      "videoId": "4zCwK4B9K0Q",
+      "desc": "Learn how smart devices automate daily life."
+    },
+    {
+      "title": "Automatic Fan Arduino Project",
+      "videoId": "mV0p9sH6d7M",
+      "desc": "Build a fan that turns on automatically based on temperature."
+    },
+    {
+      "title": "Ultrasonic Parking Sensor Project",
+      "videoId": "ZejQOX69K5M",
+      "desc": "Create a parking aid using distance measurement."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Documentation",
+      "url": "https://docs.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino Project Hub",
+      "url": "https://projecthub.arduino.cc",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build Your Own Smart Home Device",
+    "parts": [
+      "Arduino UNO",
+      "Breadboard",
+      "Jumper Wires",
+      "Sensors (Temperature, Soil Moisture, Ultrasonic, etc.)",
+      "Servo Motor or Relay Module",
+      "LEDs and Buzzer",
+      "USB Cable"
+    ],
+    "steps": [
+      "Choose a smart home project idea",
+      "Identify required sensors and outputs",
+      "Create a circuit diagram",
+      "Connect components to Arduino",
+      "Write or upload the program",
+      "Test the sensor inputs",
+      "Observe the automated response",
+      "Fix wiring or coding errors if needed",
+      "Demonstrate the project",
+      "Explain how the project solves a real-life problem"
+    ]
+  },
+  "projectOptions": [
+    {
+      "name": "Auto Fan",
+      "description": "Fan automatically turns ON when temperature increases."
+    },
+    {
+      "name": "Smart Lock",
+      "description": "Servo motor lock controlled by password or button."
+    },
+    {
+      "name": "Garden Monitor",
+      "description": "Monitors soil moisture and alerts when watering is needed."
+    },
+    {
+      "name": "Parking Aid",
+      "description": "Uses an ultrasonic sensor and buzzer to help parking."
+    }
+  ],
+  "quiz": [
+    {
+      "q": "What is a smart home device?",
+      "options": [
+        "A decorative item",
+        "A device that uses automation and sensors",
+        "A type of battery",
+        "A manual tool"
+      ],
+      "answer": 1,
+      "explanation": "Smart devices use sensors and programming to automate tasks."
+    },
+    {
+      "q": "Which board is commonly used for smart home projects?",
+      "options": [
+        "Calculator",
+        "Arduino UNO",
+        "Keyboard",
+        "Monitor"
+      ],
+      "answer": 1,
+      "explanation": "Arduino UNO is widely used for beginner automation projects."
+    },
+    {
+      "q": "What does a temperature sensor measure?",
+      "options": [
+        "Distance",
+        "Light",
+        "Temperature",
+        "Sound"
+      ],
+      "answer": 2,
+      "explanation": "Temperature sensors detect heat levels."
+    },
+    {
+      "q": "Which project can automatically cool a room?",
+      "options": [
+        "Smart Lock",
+        "Garden Monitor",
+        "Auto Fan",
+        "Parking Aid"
+      ],
+      "answer": 2,
+      "explanation": "The Auto Fan responds to temperature changes."
+    },
+    {
+      "q": "What component is commonly used in a smart lock?",
+      "options": [
+        "Servo Motor",
+        "LED",
+        "Resistor",
+        "Capacitor"
+      ],
+      "answer": 0,
+      "explanation": "Servo motors can open and close locks."
+    },
+    {
+      "q": "Which sensor is used in a garden monitor?",
+      "options": [
+        "PIR Sensor",
+        "Soil Moisture Sensor",
+        "Gas Sensor",
+        "IR Sensor"
+      ],
+      "answer": 1,
+      "explanation": "Soil moisture sensors measure water content in soil."
+    },
+    {
+      "q": "What does a parking aid measure?",
+      "options": [
+        "Humidity",
+        "Temperature",
+        "Distance",
+        "Voltage"
+      ],
+      "answer": 2,
+      "explanation": "Parking aids use distance measurements."
+    },
+    {
+      "q": "Which sensor is commonly used in a parking aid?",
+      "options": [
+        "Temperature Sensor",
+        "Ultrasonic Sensor",
+        "PIR Sensor",
+        "LDR"
+      ],
+      "answer": 1,
+      "explanation": "Ultrasonic sensors measure distance accurately."
+    },
+    {
+      "q": "What is automation?",
+      "options": [
+        "Doing tasks manually",
+        "Using technology to perform tasks automatically",
+        "Drawing diagrams",
+        "Repairing hardware"
+      ],
+      "answer": 1,
+      "explanation": "Automation allows devices to work with minimal human effort."
+    },
+    {
+      "q": "What is the purpose of sensors?",
+      "options": [
+        "Store files",
+        "Detect changes in the environment",
+        "Play music",
+        "Print documents"
+      ],
+      "answer": 1,
+      "explanation": "Sensors collect information from surroundings."
+    },
+    {
+      "q": "What is the role of an actuator?",
+      "options": [
+        "Store data",
+        "Perform an action",
+        "Measure temperature",
+        "Connect to Wi-Fi"
+      ],
+      "answer": 1,
+      "explanation": "Actuators perform actions based on sensor input."
+    },
+    {
+      "q": "Why are smart home devices useful?",
+      "options": [
+        "They waste energy",
+        "They improve convenience and efficiency",
+        "They increase manual work",
+        "They only provide decoration"
+      ],
+      "answer": 1,
+      "explanation": "Smart devices save time, energy, and effort."
+    },
+    {
+      "q": "What should be done after building a project?",
+      "options": [
+        "Throw it away",
+        "Test and troubleshoot it",
+        "Disconnect everything immediately",
+        "Delete the code"
+      ],
+      "answer": 1,
+      "explanation": "Testing ensures the project works correctly."
+    },
+    {
+      "q": "What skill is developed by creating smart home projects?",
+      "options": [
+        "Problem Solving",
+        "Memorization Only",
+        "Typing Speed Only",
+        "Drawing Only"
+      ],
+      "answer": 0,
+      "explanation": "Students learn to solve real-world problems using technology."
+    },
+    {
+      "q": "What is the main objective of this session?",
+      "options": [
+        "Build and demonstrate a smart home automation project",
+        "Play video games",
+        "Install software only",
+        "Learn spreadsheet formulas"
+      ],
+      "answer": 0,
+      "explanation": "Students apply electronics and programming to create a useful smart device."
+    }
+  ]
+}

@@ -1,0 +1,338 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-217/",
+    "slides_folder": "sessions/session-217/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-217/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-217",
+  "number": 217,
+  "title": "What is AI?",
+  "subtitle": "Difference between Explicit Programming and Machine Learning!",
+  "date": "Session 217",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#7C3AED",
+  "icon": "🤖",
+  "tags": [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Computer Science",
+    "Programming",
+    "Technology"
+  ],
+  "overview": "Students discover what Artificial Intelligence really means — and how it differs from regular programming. Through fun comparisons and activities, they learn that traditional (explicit) programming follows strict rules written by humans, while Machine Learning lets computers learn patterns from data on their own — just like how we learn from experience!",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-217/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — AI concept diagrams, ML vs programming flowcharts, activity photos.",
+    "gallery": [
+      {
+        "file": "data/explicit-programming.jpg",
+        "_placeholder": "ADD: Diagram of explicit programming — INPUT → RULES → OUTPUT",
+        "caption": "Explicit Programming: Humans write all the rules",
+        "category": "Concept"
+      },
+      {
+        "file": "data/machine-learning.jpg",
+        "_placeholder": "ADD: Diagram of machine learning — INPUT + OUTPUT → RULES (learned)",
+        "caption": "Machine Learning: Computer finds the rules from data!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/ai-examples.jpg",
+        "_placeholder": "ADD: Collage of AI in real life — face unlock, recommendation, spam filter",
+        "caption": "AI is everywhere — your phone, YouTube, Gmail!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/sorting-activity.jpg",
+        "_placeholder": "ADD: Photo of students sorting fruit/animal picture cards by hand",
+        "caption": "Students act as the algorithm — sorting cards like a classifier!",
+        "category": "Activity"
+      },
+      {
+        "file": "data/ml-training.gif",
+        "_placeholder": "ADD: GIF or diagram showing model training loop",
+        "caption": "Training loop: Data → Model → Prediction → Correction → Repeat!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/teachable-machine.jpg",
+        "_placeholder": "ADD: Screenshot of students using Google Teachable Machine",
+        "caption": "Google Teachable Machine — train your own AI in the browser!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Intelligence? — Ability to learn, reason, and solve problems",
+    "What is Artificial Intelligence? — Making machines mimic human intelligence",
+    "Explicit Programming — Humans write exact rules: IF this → DO that (calculator, traffic light)",
+    "Limitations of Explicit Programming — Can't handle new situations not covered by rules",
+    "Machine Learning — Computer learns rules automatically from lots of examples (data)",
+    "Training vs Prediction — ML first trains on data, then predicts on new inputs",
+    "Supervised Learning — Learning from labelled examples (cat/dog photos with labels)",
+    "Real-world AI examples — Face recognition, spam filters, YouTube recommendations, voice assistants",
+    "AI vs ML vs Deep Learning — AI is the big idea; ML is one approach; Deep Learning is a powerful ML technique",
+    "Bias in AI — If training data is unfair, the AI learns to be unfair too"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is Artificial Intelligence? (AI Explained for Kids)",
+      "videoId": "mJeNghZXtMo",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A simple, fun explanation of what AI is and how it works — perfect for beginners."
+    },
+    {
+      "title": "Machine Learning Explained Simply",
+      "videoId": "f_uwKZIAeM0",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "What is machine learning and how is it different from normal programming? Explained with great examples."
+    },
+    {
+      "title": "How Does AI Learn?",
+      "videoId": "R9OHn5ZF4Uo",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A visual journey through how AI models are trained on data to recognise patterns and make predictions."
+    },
+    {
+      "title": "Google Teachable Machine Tutorial",
+      "videoId": "T2qQGqZxkD0",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "How to train your own image classifier using Google's Teachable Machine — no code needed!"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Teachable Machine — Train AI in Browser",
+      "url": "https://teachablemachine.withgoogle.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "AI for Kids — Machine Learning for Kids",
+      "url": "https://machinelearningforkids.co.uk",
+      "icon": "🔗"
+    },
+    {
+      "title": "Scratch + ML — ML4Scratch Extension",
+      "url": "https://stretch3.github.io",
+      "icon": "🔗"
+    },
+    {
+      "title": "Quick, Draw! — Neural Network Guessing Game",
+      "url": "https://quickdraw.withgoogle.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Elements of AI — Free Online Course",
+      "url": "https://www.elementsofai.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Be the Algorithm! — Card Sorting Classifier",
+    "description": "Students experience the difference between explicit programming and machine learning by acting as both a rule-based classifier and a learning classifier.",
+    "parts": [
+      "Set of picture cards (animals, fruits, vehicles — printed or drawn)",
+      "Label cards: 'Cat', 'Dog', 'Car', 'Bike', 'Apple', 'Banana'",
+      "Whiteboard or chart paper",
+      "Markers"
+    ],
+    "steps": [
+      "Round 1 — Explicit Programming: Teacher gives written IF-THEN rules (e.g. IF has 4 legs AND fur → Cat). Students must sort cards using ONLY the written rules. Discuss: what happens with a photo the rules don't cover?",
+      "Round 2 — Machine Learning: No rules given! Show students 10 labelled example cards. They study the patterns themselves. Now give 5 new unlabelled cards — can they classify correctly from what they learned?",
+      "Discuss: Which round was easier to adapt to new examples? Which needed more preparation?",
+      "Online Activity: Open Google Teachable Machine. Train it with webcam photos of two hand gestures. Test how well it predicts — this is real ML running in the browser!",
+      "Reflection: Where do you see AI in your daily life? Make a list on the board.",
+      "Challenge: What could go wrong if the training data only shows one type of person or object? Discuss AI bias!"
+    ]
+  },
+  "comparisonTable": {
+    "title": "Explicit Programming vs Machine Learning",
+    "columns": ["Feature", "Explicit Programming", "Machine Learning"],
+    "rows": [
+      ["Who writes the rules?", "Human programmer writes every rule", "Computer learns rules from data"],
+      ["How does it work?", "INPUT → RULES → OUTPUT", "INPUT + OUTPUT (data) → RULES learned"],
+      ["Handles new situations?", "Only if a rule was written for it", "Can generalise to new, unseen inputs"],
+      ["Example", "Calculator, Traffic light, ATM", "Face recognition, Spam filter, Chatbot"],
+      ["Needs lots of data?", "No — just needs clear rules", "Yes — needs many examples to learn from"],
+      ["Easy to explain?", "Yes — rules are visible and logical", "Hard — the model is often a 'black box'"],
+      ["Best for", "Fixed, well-defined problems", "Complex problems with patterns in data"]
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does AI stand for?",
+      "options": [
+        "Automated Internet",
+        "Artificial Intelligence",
+        "Advanced Input",
+        "Arithmetic Integration"
+      ],
+      "answer": 1,
+      "explanation": "AI = Artificial Intelligence — making machines that can perform tasks that normally require human intelligence, like recognising faces or understanding speech."
+    },
+    {
+      "q": "In explicit programming, who writes the rules the computer follows?",
+      "options": [
+        "The computer learns them from data",
+        "The user teaches them by example",
+        "The human programmer writes every rule",
+        "Rules are downloaded from the internet"
+      ],
+      "answer": 2,
+      "explanation": "Explicit Programming = human-written rules. IF this happens → DO that. Every situation must be covered by a rule the programmer wrote."
+    },
+    {
+      "q": "Which of these is an example of explicit programming?",
+      "options": [
+        "YouTube recommending videos you like",
+        "A calculator that adds two numbers",
+        "A spam filter learning from emails",
+        "Face unlock on a phone"
+      ],
+      "answer": 1,
+      "explanation": "A calculator follows exact rules: press 2 + 3, always get 5. No learning involved — the programmer wrote every operation!"
+    },
+    {
+      "q": "What is Machine Learning?",
+      "options": [
+        "Teaching a robot to walk using remote control",
+        "Programming a computer with thousands of IF-THEN rules",
+        "Letting a computer find patterns and learn rules automatically from data",
+        "Building a machine that repairs itself"
+      ],
+      "answer": 2,
+      "explanation": "Machine Learning = the computer studies lots of examples (data) and figures out the rules itself — without a human writing every rule!"
+    },
+    {
+      "q": "In Machine Learning, what is 'training'?",
+      "options": [
+        "Exercising the computer's processor",
+        "Feeding the model many labelled examples so it can learn patterns",
+        "Writing rules line by line in code",
+        "Connecting the computer to the internet"
+      ],
+      "answer": 1,
+      "explanation": "Training = showing the model thousands of examples with correct answers, so it learns to recognise patterns and make predictions on new data."
+    },
+    {
+      "q": "Which of these is a real-world example of Machine Learning?",
+      "options": [
+        "A traffic light switching green after 60 seconds",
+        "An ATM dispensing cash when correct PIN is entered",
+        "Gmail automatically filtering spam emails",
+        "A calculator dividing two numbers"
+      ],
+      "answer": 2,
+      "explanation": "Gmail's spam filter uses ML — it learned from millions of spam examples what spam looks like, and keeps learning from new emails!"
+    },
+    {
+      "q": "What is the key difference between explicit programming and ML in terms of rules?",
+      "options": [
+        "Explicit programming has no rules; ML has many",
+        "In explicit programming humans write rules; in ML the computer learns rules from data",
+        "Both work exactly the same way",
+        "ML uses rules written in binary; explicit uses English"
+      ],
+      "answer": 1,
+      "explanation": "The core difference: Explicit → human writes rules. ML → machine learns rules from data. Same goal, completely different approach!"
+    },
+    {
+      "q": "What happens in explicit programming when the computer encounters a situation no rule was written for?",
+      "options": [
+        "It learns from the situation automatically",
+        "It asks the user what to do",
+        "It fails or gives a wrong result — it can only follow written rules",
+        "It searches the internet for an answer"
+      ],
+      "answer": 2,
+      "explanation": "Explicit programming is limited — if no rule covers a situation, the program is stuck. ML handles new situations better because it generalises from patterns."
+    },
+    {
+      "q": "In Supervised Learning, what does 'labelled data' mean?",
+      "options": [
+        "Data stored in labelled folders on a computer",
+        "Training examples where each input has a correct answer attached",
+        "Data that has been compressed and zipped",
+        "Information shared only with labelled users"
+      ],
+      "answer": 1,
+      "explanation": "Labelled data = examples with answers! Photo of a cat labelled 'CAT', photo of a dog labelled 'DOG'. The model learns by studying these labelled pairs."
+    },
+    {
+      "q": "Which tool lets students train their own image classifier in a browser without any code?",
+      "options": [
+        "Microsoft Word",
+        "Wokwi Arduino Simulator",
+        "Google Teachable Machine",
+        "Scratch 3.0"
+      ],
+      "answer": 2,
+      "explanation": "Google Teachable Machine lets you train a real ML model using your webcam — no code needed! You can classify images, sounds, or poses."
+    },
+    {
+      "q": "Which is correct about AI, ML, and Deep Learning?",
+      "options": [
+        "They are three completely different, unrelated technologies",
+        "AI is the biggest idea; ML is one way to achieve AI; Deep Learning is a powerful type of ML",
+        "Deep Learning came before Machine Learning",
+        "Machine Learning and AI mean exactly the same thing"
+      ],
+      "answer": 1,
+      "explanation": "Think of it as nested circles: AI (biggest) → Machine Learning (a type of AI) → Deep Learning (a powerful type of ML using neural networks)."
+    },
+    {
+      "q": "What is 'bias' in AI?",
+      "options": [
+        "When an AI runs too slowly",
+        "When the AI prefers a certain programming language",
+        "When an AI makes unfair decisions because its training data was unfair or incomplete",
+        "When the AI uses too much electricity"
+      ],
+      "answer": 2,
+      "explanation": "If training data is biased (e.g. only shows one type of face), the AI learns that bias and makes unfair predictions. Garbage in = garbage out!"
+    },
+    {
+      "q": "Quick, Draw! by Google is an example of:",
+      "options": [
+        "Explicit programming with drawing rules",
+        "A neural network that learned to recognise doodles from millions of examples",
+        "A simple calculator for artists",
+        "A robot that draws pictures"
+      ],
+      "answer": 1,
+      "explanation": "Quick, Draw! uses a neural network trained on millions of doodles from around the world. It guesses what you're drawing — that's ML in action!"
+    },
+    {
+      "q": "A YouTube recommendation system that suggests videos you will enjoy is an example of:",
+      "options": [
+        "Explicit programming — a human curates the list",
+        "Machine Learning — it learns your taste from your watch history",
+        "Random selection from all available videos",
+        "A timer-based system"
+      ],
+      "answer": 1,
+      "explanation": "YouTube's recommendation engine uses ML — it studies your watch history, likes, and search patterns to predict which videos you'll enjoy next!"
+    },
+    {
+      "q": "In the card-sorting classroom activity, Round 2 (no rules given — learn from examples) represents:",
+      "options": [
+        "Explicit programming",
+        "Hardware programming",
+        "Machine Learning",
+        "Binary coding"
+      ],
+      "answer": 2,
+      "explanation": "In Round 2, students received labelled examples and figured out patterns themselves — just like Machine Learning! No pre-written rules, just learning from data."
+    }
+  ]
+}

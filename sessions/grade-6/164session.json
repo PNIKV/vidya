@@ -1,0 +1,259 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-199/",
+    "slides_folder": "sessions/session-199/slides/",
+    "images_folder": "sessions/session-199/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-199",
+  "number": 199,
+  "title": "Smart Garden Monitor",
+  "subtitle": "Monitor Soil, Rain and Water Levels in Real-Time",
+  "date": "Session 199",
+  "duration": "45 Minutes",
+  "phase": "IoT & Smart Agriculture",
+  "color": "#4CAF50",
+  "icon": "🌱",
+  "tags": [
+    "Arduino",
+    "IoT",
+    "Smart Farming",
+    "Soil Moisture Sensor",
+    "Rain Sensor",
+    "Water Level Sensor",
+    "LCD Display"
+  ],
+  "overview": "Students build a Smart Garden Monitoring System using a Soil Moisture Sensor, Rain Sensor, Water Level Sensor, and LCD Display. The system continuously measures soil moisture, rainfall detection, and water tank level, displaying all three readings simultaneously on an LCD screen. This project introduces environmental monitoring and smart agriculture concepts.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-199/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos of sensors, LCD display, smart garden setup, wiring diagrams, and student project activities.",
+    "gallery": [
+      {
+        "file": "data/soil-moisture-sensor.jpg",
+        "caption": "Soil Moisture Sensor Measures Soil Wetness",
+        "category": "Components"
+      },
+      {
+        "file": "data/rain-sensor.jpg",
+        "caption": "Rain Sensor Detects Rainfall",
+        "category": "Components"
+      },
+      {
+        "file": "data/water-level-sensor.jpg",
+        "caption": "Water Level Sensor Measures Tank Water",
+        "category": "Components"
+      },
+      {
+        "file": "data/lcd-display.jpg",
+        "caption": "LCD Displays All Sensor Readings",
+        "category": "Components"
+      },
+      {
+        "file": "data/smart-garden-project.jpg",
+        "caption": "Smart Garden Monitoring System",
+        "category": "Project"
+      },
+      {
+        "file": "data/student-iot-project.jpg",
+        "caption": "Students Testing Smart Agriculture Project",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Introduction to Smart Agriculture",
+    "Environmental Monitoring Systems",
+    "Soil Moisture Sensor Working",
+    "Rain Sensor Working",
+    "Water Level Sensor Working",
+    "Reading Analog Sensor Values",
+    "Displaying Data on LCD",
+    "Monitoring Multiple Sensors",
+    "Real-Time Data Collection",
+    "Smart Irrigation Concepts",
+    "Water Conservation",
+    "IoT in Agriculture",
+    "Sensor Calibration Basics",
+    "Arduino Sensor Integration"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Soil Moisture Sensor with Arduino",
+      "videoId": "fT0g7P8oK4Y",
+      "desc": "Learn how soil moisture sensors work with Arduino."
+    },
+    {
+      "title": "Rain Sensor Arduino Project",
+      "videoId": "6j8F4qM5N6A",
+      "desc": "Detect rainfall using a rain sensor module."
+    },
+    {
+      "title": "Smart Farming Using Arduino",
+      "videoId": "xR6gGm8W0jE",
+      "desc": "Build smart agriculture monitoring systems."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Documentation",
+      "url": "https://docs.arduino.cc"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com"
+    },
+    {
+      "title": "Arduino LCD Tutorial",
+      "url": "https://docs.arduino.cc/learn/electronics/lcd-displays"
+    }
+  ],
+  "activity": {
+    "title": "Build a Smart Garden Monitor",
+    "parts": [
+      "Arduino UNO",
+      "Soil Moisture Sensor",
+      "Rain Sensor Module",
+      "Water Level Sensor",
+      "16x2 LCD Display",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect the Soil Moisture Sensor to Arduino",
+      "Connect the Rain Sensor module",
+      "Connect the Water Level Sensor",
+      "Connect the LCD Display",
+      "Upload the monitoring program",
+      "Read values from all three sensors",
+      "Display Soil Moisture on LCD",
+      "Display Rain Status on LCD",
+      "Display Water Level on LCD",
+      "Test soil sensor using dry and wet soil",
+      "Test rain sensor using water droplets",
+      "Observe all three readings displayed together"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which sensor measures soil wetness?",
+      "options": [
+        "Rain Sensor",
+        "Water Level Sensor",
+        "Soil Moisture Sensor",
+        "Ultrasonic Sensor"
+      ],
+      "answer": 2,
+      "explanation": "The Soil Moisture Sensor measures the amount of moisture present in soil."
+    },
+    {
+      "q": "What is the purpose of a Rain Sensor?",
+      "options": [
+        "Measure temperature",
+        "Detect rainfall",
+        "Measure distance",
+        "Control motors"
+      ],
+      "answer": 1,
+      "explanation": "Rain sensors detect water droplets and rainfall."
+    },
+    {
+      "q": "Which component displays sensor readings?",
+      "options": [
+        "Servo Motor",
+        "LCD Display",
+        "Relay",
+        "LED"
+      ],
+      "answer": 1,
+      "explanation": "The LCD shows all sensor data to the user."
+    },
+    {
+      "q": "How many sensor readings are displayed in this project?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "answer": 2,
+      "explanation": "Soil Moisture, Rain Status, and Water Level are displayed together."
+    },
+    {
+      "q": "Which sensor measures water inside a tank?",
+      "options": [
+        "Rain Sensor",
+        "Water Level Sensor",
+        "IR Sensor",
+        "LDR"
+      ],
+      "answer": 1,
+      "explanation": "The Water Level Sensor measures the amount of water present."
+    },
+    {
+      "q": "What is the main controller used in this project?",
+      "options": [
+        "Raspberry Pi",
+        "Mobile Phone",
+        "Arduino UNO",
+        "Laptop"
+      ],
+      "answer": 2,
+      "explanation": "Arduino UNO reads sensor values and controls the LCD display."
+    },
+    {
+      "q": "This project is an example of:",
+      "options": [
+        "Video Editing",
+        "Smart Agriculture",
+        "Gaming",
+        "Animation"
+      ],
+      "answer": 1,
+      "explanation": "The system helps monitor agricultural conditions automatically."
+    },
+    {
+      "q": "Why is soil moisture monitoring important?",
+      "options": [
+        "To improve gaming",
+        "To know when plants need water",
+        "To charge batteries",
+        "To increase internet speed"
+      ],
+      "answer": 1,
+      "explanation": "Monitoring soil moisture helps provide water only when required."
+    },
+    {
+      "q": "Which technology field does this project belong to?",
+      "options": [
+        "IoT",
+        "Graphic Design",
+        "Video Production",
+        "Typing"
+      ],
+      "answer": 0,
+      "explanation": "This project uses sensors and automation, which are part of IoT."
+    },
+    {
+      "q": "What is one benefit of Smart Garden Monitoring?",
+      "options": [
+        "Wastes water",
+        "Reduces plant growth",
+        "Helps monitor plant conditions efficiently",
+        "Disables sensors"
+      ],
+      "answer": 2,
+      "explanation": "The system provides real-time information about garden conditions."
+    }
+  ]
+}

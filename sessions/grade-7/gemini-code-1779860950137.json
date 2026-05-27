@@ -1,0 +1,177 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-238/",
+    "slides_folder": "sessions/session-238/slides/",
+    "images_folder": "sessions/session-238/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-238",
+  "number": 238,
+  "title": "Database Concepts: Tables, Records & Fields",
+  "subtitle": "Demystifying Data—How computers organize massive amounts of information structured cleanly!",
+  "date": "Session 238",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#00BCD4",
+  "icon": "🗄️",
+  "tags": [
+    "Data Science",
+    "Databases",
+    "Computational Thinking",
+    "SQL"
+  ],
+  "overview": "In this foundational data science session, students transition from chaotic flat spreadsheets to structured Relational Database Management Systems (RDBMS). By dissecting real-world applications like streaming services, gaming inventories, and school rosters, students unpack the structural anatomy of information storage: Tables, Records (Rows), Fields (Columns), Data Types, and Primary Keys.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-238/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the live session — database anatomy whiteboard sketches, physical paper database rows, and entity relationship layout templates.",
+    "gallery": [
+      {
+        "file": "data/database-anatomy.jpg",
+        "_placeholder": "ADD: Visual diagram labeling a mock database table highlighting columns as fields, rows as records, and a unique identification primary key column",
+        "caption": "Anatomy of a Data Table — Visualizing the grid architecture of modern relational storage hubs.",
+        "category": "Concept"
+      },
+      {
+        "file": "data/data-types-matrix.png",
+        "_placeholder": "ADD: Graphic chart mapping out primary database data types (e.g., VARCHAR for text, INT for whole numbers, BOOLEAN for true/false)",
+        "caption": "Data Type Constraints — Assigning strict validation classes to individual attributes.",
+        "category": "Components"
+      },
+      {
+        "file": "data/live-database-querying.jpg",
+        "_placeholder": "ADD: Photo of students working on a relational table worksheet, manually sorting records according to specific filter parameters",
+        "caption": "Structural Sorting Lab — Students organizing scattered item metrics into safe data schemas.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Introduction to Databases — Discerning the deep architectural limitations of plain text records versus structured relational storage engines",
+    "The Anatomy of a Table — Understanding a database table as a dedicated grid collection of related subject data fields",
+    "Fields (Columns) Explained — Defining fields as single attribute parameters that hold one specific element type across all entities",
+    "Records (Rows) Dissected — Comprehending records as complete horizontal rows representing one individual unique entity item dataset",
+    "Data Type Constraints — Exploring structural typing rules like Integers, Strings (VARCHAR), Floats/Decimals, Dates, and Boolean toggles",
+    "The Primary Key Paradigm — Investigating why every table requires a completely unique, unalterable ID field to avoid duplicate entity confusion",
+    "Data Redundancy Prevention — Learning how splitting giant spreadsheets into multiple clean tables keeps information fast and error-free"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Database Basics: What are Tables, Rows, and Columns?",
+      "videoId": "database-fundamentals-basics",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "A crystal-clear, highly intuitive visual guide explaining how data objects translate into clean relational architecture layouts."
+    },
+    {
+      "title": "What is a Primary Key and Why Does It Matter?",
+      "videoId": "primary-keys-explained",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "An interactive look at how indexing and matching unique identity numbers protects big corporate platforms from cross-wiring records."
+    }
+  ],
+  "resources": [
+    {
+      "title": "W3Schools — Introduction to SQL and Relational Databases",
+      "url": "https://www.w3schools.com/sql/sql_intro.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "DB Fiddle — Interactive Web Sandbox for Testing Tables",
+      "url": "https://www.db-fiddle.com/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Video Streaming Platform Schema Architecture Blueprint",
+    "parts": [
+      "The Media Archive Asset Source Sheets (Unstructured mixed lists of movies, actors, runtimes, and user ratings)",
+      "Grid Array Workspace Matrix (A3-sized template sheets matching structured schema rows)",
+      "Colored validation dot markers (Blue for Primary Keys, Orange for Fields, Purple for individual Records)"
+    ],
+    "steps": [
+      "The System Briefing: Students look at a messy text document containing scattered profile metadata from an online video database.",
+      "Defining the Fields: Teams identify the structural column parameters required to classify the library (e.g., Movie_ID, Title, Release_Year, Genre, Runtime).",
+      "Data Type Validation: For each column field, students assign a strict validation parameter (e.g., Title must be Text/VARCHAR, Release_Year must be a 4-digit Integer).",
+      "Populating the Records: Using the raw source sheets, students transcribe information onto the horizontal row lanes, creating distinct, clean records.",
+      "Enforcing Identity Integrity: Students evaluate and assign a solid unique Primary Key column to guarantee that duplicate movie titles never scramble network requests.",
+      "The Query Verification Test: The instructor reads custom data filter requests (e.g., 'Find all records where Genre is Sci-Fi AND Release_Year > 2010') to see if teams can isolate data lines instantly."
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the primary difference between a spreadsheet and a Relational Database Management System (RDBMS)?",
+      "options": [
+        "Spreadsheets can hold color formatting, while database grids can only display black text characters",
+        "Databases enforce strict data type structures, handle millions of interconnected records safely without slowing down, and prevent duplicate data through structural constraints",
+        "Spreadsheets are completely automatic, while databases require manual wiring pins to operate",
+        "Databases can only be loaded onto supercomputers and cannot run on standard laptops"
+      ],
+      "answer": 1,
+      "explanation": "Structural Stability and Scale! While flat spreadsheets allow users to mix numbers and text words in random columns, relational databases use strict schemas. This structure keeps data safe and lets websites query millions of rows instantly."
+    },
+    {
+      "q": "In a database table, what does a 'Field' represent?",
+      "options": [
+        "A complete horizontal row item detailing a single historical checkout transaction",
+        "A vertical column that defines a specific attribute or property shared across every item record in the table",
+        "The total physical storage size of the microchip hosting the tracking index",
+        "A hidden backup file that saves the table schema safely when power drops out"
+      ],
+      "answer": 1,
+      "explanation": "Vertical Columns define Attributes! A field corresponds to a vertical column. It specifies a single characteristic of the table entity—such as 'Email_Address' or 'Price'—and forces every cell in that column to use the same data style."
+    },
+    {
+      "q": "In a database table tracking a school library, what does a single horizontal 'Record' represent?",
+      "options": [
+        "The complete set of specific properties (such as ID, Title, Author, and Status) belonging to one individual book entity",
+        "The name string listed at the very top of a tracking column",
+        "A command line that deletes empty table files off a device hard drive",
+        "The total amount of columns present across the entire active network"
+      ],
+      "answer": 0,
+      "explanation": "Horizontal Rows are Full Entities! A record is a horizontal row. It gathers all the individual field values for one distinct object, tracking it as a single row from left to right."
+    },
+    {
+      "q": "Why is it absolutely critical to designate a 'Primary Key' inside a relational database table?",
+      "options": [
+        "To compress the file size format so it downloads faster over cellular web connections",
+        "To provide a completely unique, non-null identifier code for every record row, preventing duplicate items from getting mixed up during database searches",
+        "To allow multiple users to edit the same cell text strings simultaneously without internet access",
+        "To shift text fonts into uppercase characters automatically across the entire app interface"
+      ],
+      "answer": 1,
+      "explanation": "Guaranteed Identity Security! If a tracking system has two users named 'John Smith', a name column cannot tell them apart. A unique Primary Key column (like User_ID 1042 vs 1043) ensures every record row can be found without errors."
+    },
+    {
+      "q": "What type of database 'Data Type' restriction is ideal for storing a user's exact account creation timestamp or birthday event?",
+      "options": [
+        "BOOLEAN",
+        "DATE / DATETIME",
+        "INTEGER (INT)",
+        "VARCHAR"
+      ],
+      "answer": 1,
+      "explanation": "Chronological Tracking Precision! Choosing the DATE or DATETIME type ensures the database organizes calendar events and clock cycles perfectly. This lets systems filter records chronologically without parsing plain text strings."
+    },
+    {
+      "q": "What event occurs if a software system tries to write a long text phrase string like 'New York City' into a table field column locked down as an INTEGER data type?",
+      "options": [
+        "The database will automatically translate the text characters into binary numbering arrays and accept the input",
+        "The database engine will reject the entry and return a data type validation error message, blocking corrupt data from entering the table",
+        "The entire database table will delete its internal configuration layout permanently",
+        "The database will convert the text input into a true or false boolean statement"
+      ],
+      "answer": 1,
+      "explanation": "Schema Enforcement Protection! Databases maintain system integrity by blocking incorrect inputs. If a column is configured as an INTEGER type, it will reject string words. This keeps corrupt information from breaking downstream application code."
+    }
+  ]
+}

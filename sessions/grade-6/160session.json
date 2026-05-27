@@ -1,0 +1,253 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-193/",
+    "slides_folder": "sessions/session-193/slides/",
+    "images_folder": "sessions/session-193/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-193",
+  "number": 193,
+  "title": "Variables & Data Types",
+  "subtitle": "Store Information and Perform Calculations!",
+  "date": "Session 193",
+  "duration": "45 Minutes",
+  "phase": "Python Programming Fundamentals",
+  "color": "#FFD43B",
+  "icon": "📦",
+  "tags": [
+    "Python",
+    "Variables",
+    "Data Types",
+    "Programming",
+    "Calculations"
+  ],
+  "overview": "Students learn how variables store information in Python and explore common data types such as numbers, strings, and booleans. They perform simple calculations, display results using print(), and understand how data is used in real-world programs.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-193/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of Python code, variable examples, calculations, and student activities.",
+    "gallery": [
+      {
+        "file": "data/python-variables.png",
+        "caption": "Variables store information in Python",
+        "category": "Concept"
+      },
+      {
+        "file": "data/data-types.png",
+        "caption": "Common Python Data Types",
+        "category": "Concept"
+      },
+      {
+        "file": "data/string-example.png",
+        "caption": "String Variables and Text Storage",
+        "category": "Programming"
+      },
+      {
+        "file": "data/number-calculation.png",
+        "caption": "Performing Calculations with Numbers",
+        "category": "Programming"
+      },
+      {
+        "file": "data/boolean-example.png",
+        "caption": "Boolean Values: True and False",
+        "category": "Programming"
+      },
+      {
+        "file": "data/student-python-practice.jpg",
+        "caption": "Students practicing variables and calculations",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Variable?",
+    "Variables as Storage Boxes",
+    "Naming Rules for Variables",
+    "Integer Data Type",
+    "Float Data Type",
+    "String Data Type",
+    "Boolean Data Type",
+    "Assigning Values to Variables",
+    "Using print() with Variables",
+    "Basic Arithmetic Operations",
+    "Addition, Subtraction, Multiplication and Division",
+    "Real-Life Examples of Data Storage",
+    "Combining Variables in Programs"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Python Variables for Beginners",
+      "videoId": "GHMjD0Lp5DY",
+      "desc": "Learn how variables work in Python."
+    },
+    {
+      "title": "Python Data Types Explained",
+      "videoId": "khKv-8q7YmY",
+      "desc": "Introduction to numbers, strings, and booleans."
+    },
+    {
+      "title": "Python Arithmetic Operators",
+      "videoId": "gCCVsvgR2KU",
+      "desc": "Perform calculations using Python."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Python Official Tutorial",
+      "url": "https://docs.python.org/3/tutorial/",
+      "icon": "🔗"
+    },
+    {
+      "title": "W3Schools Python Variables",
+      "url": "https://www.w3schools.com/python/python_variables.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "Thonny IDE",
+      "url": "https://thonny.org",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create Variables and Perform Calculations",
+    "parts": [
+      "Computer",
+      "Python Installed",
+      "Thonny IDE",
+      "Notebook"
+    ],
+    "steps": [
+      "Open Thonny IDE",
+      "Create a new Python file",
+      "Create a variable named student_name",
+      "Assign your name as a string",
+      "Create age = 12",
+      "Create is_student = True",
+      "Display all variables using print()",
+      "Create two number variables",
+      "Perform addition, subtraction, multiplication, and division",
+      "Display the results and discuss different data types"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a variable in Python?",
+      "options": [
+        "A storage location for data",
+        "A type of computer",
+        "A keyboard shortcut",
+        "A printer setting"
+      ],
+      "answer": 0,
+      "explanation": "Variables are used to store information that can be used later in a program."
+    },
+    {
+      "q": "Which data type stores text?",
+      "options": [
+        "Integer",
+        "Boolean",
+        "String",
+        "Float"
+      ],
+      "answer": 2,
+      "explanation": "Strings are used to store text values."
+    },
+    {
+      "q": "Which data type stores whole numbers?",
+      "options": [
+        "String",
+        "Integer",
+        "Boolean",
+        "List"
+      ],
+      "answer": 1,
+      "explanation": "Integers store whole numbers such as 5, 10, and 100."
+    },
+    {
+      "q": "What are the two Boolean values?",
+      "options": [
+        "Yes and No",
+        "On and Off",
+        "True and False",
+        "Up and Down"
+      ],
+      "answer": 2,
+      "explanation": "Boolean variables can only contain True or False."
+    },
+    {
+      "q": "Which symbol is used for multiplication in Python?",
+      "options": [
+        "+",
+        "-",
+        "*",
+        "/"
+      ],
+      "answer": 2,
+      "explanation": "The * symbol is used for multiplication."
+    },
+    {
+      "q": "What will x = 10 store?",
+      "options": [
+        "A string",
+        "A boolean",
+        "An integer",
+        "A file"
+      ],
+      "answer": 2,
+      "explanation": "The value 10 is stored as an integer."
+    },
+    {
+      "q": "Which function displays variable values on the screen?",
+      "options": [
+        "show()",
+        "display()",
+        "write()",
+        "print()"
+      ],
+      "answer": 3,
+      "explanation": "print() is used to display output in Python."
+    },
+    {
+      "q": "What is the result of 5 + 3?",
+      "options": [
+        "53",
+        "2",
+        "8",
+        "15"
+      ],
+      "answer": 2,
+      "explanation": "Adding 5 and 3 gives 8."
+    },
+    {
+      "q": "Which variable name is valid?",
+      "options": [
+        "1name",
+        "student_name",
+        "student-name",
+        "@name"
+      ],
+      "answer": 1,
+      "explanation": "Variable names can contain letters, numbers, and underscores but cannot start with a number."
+    },
+    {
+      "q": "What is the data type of True?",
+      "options": [
+        "String",
+        "Integer",
+        "Boolean",
+        "Float"
+      ],
+      "answer": 2,
+      "explanation": "True is a Boolean value."
+    }
+  ]
+}

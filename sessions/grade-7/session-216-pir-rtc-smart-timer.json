@@ -1,0 +1,85 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-216/",
+    "slides_folder": "sessions/session-216/slides/",
+    "images_folder": "sessions/session-216/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+  },
+  "id": "session-216",
+  "number": 216,
+  "title": "PIR + RTC Smart Timer",
+  "subtitle": "Attendance using PIR Sensor and RTC Module",
+  "date": "Session 216",
+  "duration": "45 Minutes",
+  "phase": "IoT and Automation",
+  "color": "#3498DB",
+  "icon": "\u23f0",
+  "tags": [
+    "Arduino",
+    "PIR Sensor",
+    "RTC",
+    "Attendance System",
+    "Automation"
+  ],
+  "overview": "Students build a smart attendance system using PIR Motion Sensor and RTC module. If a person enters before 9:00 AM and motion is detected, the system marks attendance automatically.",
+  "grades": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-216/slides.pdf"
+  },
+  "keyTopics": [
+    "What is PIR Sensor?",
+    "What is RTC Module?",
+    "How Real Time Clock Works",
+    "Motion Detection using PIR",
+    "Smart Attendance Logic",
+    "Automation using Arduino"
+  ],
+  "activity": {
+    "title": "Build Smart Attendance Timer",
+    "parts": [
+      "Arduino UNO",
+      "PIR Motion Sensor",
+      "RTC Module (DS3231)",
+      "Breadboard",
+      "Jumper Wires",
+      "Buzzer (Optional)"
+    ],
+    "steps": [
+      "Connect RTC module to Arduino",
+      "Connect PIR sensor output pin",
+      "Set attendance time to 9:00 AM",
+      "Read current time from RTC",
+      "Detect motion using PIR",
+      "If time is before 9 AM and motion detected \u2192 mark present"
+    ]
+  },
+  "logic": "IF Current_Time < 09:00 AM AND PIR = Motion Detected THEN Attendance = Present",
+  "quiz": [
+    {
+      "q": "What does RTC stand for?",
+      "options": [
+        "Real Time Clock",
+        "Random Timer Circuit",
+        "Rapid Time Counter",
+        "Remote Timing Controller"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "What does PIR sensor detect?",
+      "options": [
+        "Temperature",
+        "Motion",
+        "Light",
+        "Sound"
+      ],
+      "answer": 1
+    }
+  ]
+}

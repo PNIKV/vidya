@@ -1,0 +1,253 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-192/",
+    "slides_folder": "sessions/session-192/slides/",
+    "images_folder": "sessions/session-192/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-192",
+  "number": 192,
+  "title": "Python Syntax Concepts",
+  "subtitle": "Write Your First Python Program!",
+  "date": "Session 192",
+  "duration": "45 Minutes",
+  "phase": "Python Programming Fundamentals",
+  "color": "#3776AB",
+  "icon": "🐍",
+  "tags": [
+    "Python",
+    "Programming",
+    "Syntax",
+    "IDE",
+    "Coding Basics"
+  ],
+  "overview": "Students are introduced to Python programming language and learn the basic syntax rules. They write their first Python script, run it in an IDE, understand print statements, comments, variables, and common programming errors. This session lays the foundation for future Python programming lessons.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-192/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of Python IDEs, code examples, and student coding activities.",
+    "gallery": [
+      {
+        "file": "data/python-logo.png",
+        "caption": "Python Programming Language",
+        "category": "Concept"
+      },
+      {
+        "file": "data/thonny-ide.png",
+        "caption": "Thonny IDE for Beginners",
+        "category": "Software"
+      },
+      {
+        "file": "data/python-script.png",
+        "caption": "Writing the First Python Script",
+        "category": "Programming"
+      },
+      {
+        "file": "data/print-function.png",
+        "caption": "Using the print() Function",
+        "category": "Syntax"
+      },
+      {
+        "file": "data/python-output.png",
+        "caption": "Program Output Window",
+        "category": "Programming"
+      },
+      {
+        "file": "data/student-python-lab.jpg",
+        "caption": "Students practicing Python coding",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Python?",
+    "Applications of Python",
+    "Installing and Opening an IDE",
+    "Introduction to Thonny IDE",
+    "Python File Extension (.py)",
+    "Writing the First Program",
+    "print() Function",
+    "Comments in Python",
+    "Variables and Data Storage",
+    "Python Syntax Rules",
+    "Indentation Basics",
+    "Running Python Programs",
+    "Understanding Errors and Debugging"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Python for Beginners",
+      "videoId": "kqtD5dpn9C8",
+      "desc": "Learn the basics of Python programming."
+    },
+    {
+      "title": "Python Tutorial for Kids and Beginners",
+      "videoId": "rfscVS0vtbw",
+      "desc": "Introduction to Python syntax and coding."
+    },
+    {
+      "title": "Thonny IDE Tutorial",
+      "videoId": "n0m0kE6vP5A",
+      "desc": "Getting started with Python using Thonny IDE."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Python Official Website",
+      "url": "https://www.python.org",
+      "icon": "🔗"
+    },
+    {
+      "title": "Thonny IDE",
+      "url": "https://thonny.org",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Documentation",
+      "url": "https://docs.python.org/3/tutorial/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Write and Run Your First Python Script",
+    "parts": [
+      "Computer",
+      "Python Installed",
+      "Thonny IDE",
+      "Notebook for Notes"
+    ],
+    "steps": [
+      "Open Thonny IDE",
+      "Create a new Python file",
+      "Type: print('Hello, World!')",
+      "Save the file as hello.py",
+      "Click Run to execute the program",
+      "Observe the output window",
+      "Add another print statement with your name",
+      "Create a variable and store your age",
+      "Display the variable using print()",
+      "Discuss syntax errors and how to fix them"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is Python?",
+      "options": [
+        "A snake only",
+        "A programming language",
+        "A web browser",
+        "An operating system"
+      ],
+      "answer": 1,
+      "explanation": "Python is a popular and easy-to-learn programming language."
+    },
+    {
+      "q": "Which symbol is used to create comments in Python?",
+      "options": [
+        "#",
+        "$",
+        "@",
+        "&"
+      ],
+      "answer": 0,
+      "explanation": "Comments begin with the # symbol."
+    },
+    {
+      "q": "Which function is used to display output in Python?",
+      "options": [
+        "show()",
+        "write()",
+        "display()",
+        "print()"
+      ],
+      "answer": 3,
+      "explanation": "print() is used to display text and values."
+    },
+    {
+      "q": "What is the extension of a Python file?",
+      "options": [
+        ".txt",
+        ".html",
+        ".py",
+        ".doc"
+      ],
+      "answer": 2,
+      "explanation": "Python files are saved with a .py extension."
+    },
+    {
+      "q": "Which IDE is commonly used by beginners for Python?",
+      "options": [
+        "Paint",
+        "Notepad",
+        "Thonny",
+        "Calculator"
+      ],
+      "answer": 2,
+      "explanation": "Thonny is a beginner-friendly Python IDE."
+    },
+    {
+      "q": "What does a variable do?",
+      "options": [
+        "Stores data",
+        "Deletes files",
+        "Runs programs",
+        "Creates folders"
+      ],
+      "answer": 0,
+      "explanation": "Variables are used to store information."
+    },
+    {
+      "q": "Which statement is correct?",
+      "options": [
+        "print('Hello')",
+        "Print('Hello')",
+        "PRINT('Hello')",
+        "show('Hello')"
+      ],
+      "answer": 0,
+      "explanation": "Python is case-sensitive and uses lowercase print()."
+    },
+    {
+      "q": "What happens when you click Run in an IDE?",
+      "options": [
+        "The program executes",
+        "The computer shuts down",
+        "The file is deleted",
+        "The monitor turns off"
+      ],
+      "answer": 0,
+      "explanation": "Run executes the Python program."
+    },
+    {
+      "q": "Why is indentation important in Python?",
+      "options": [
+        "It improves graphics",
+        "It defines code structure",
+        "It increases internet speed",
+        "It changes screen brightness"
+      ],
+      "answer": 1,
+      "explanation": "Python uses indentation to organize blocks of code."
+    },
+    {
+      "q": "What will print('Hello World') display?",
+      "options": [
+        "Error",
+        "Nothing",
+        "Hello World",
+        "Python"
+      ],
+      "answer": 2,
+      "explanation": "The print() function displays the text inside quotes."
+    }
+  ]
+}

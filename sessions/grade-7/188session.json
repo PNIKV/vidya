@@ -1,0 +1,346 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-219/",
+    "slides_folder": "sessions/session-219/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-219/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-219",
+  "number": 219,
+  "title": "RFID Attendance System",
+  "subtitle": "Tap Your Card — See Your Name!",
+  "date": "Session 219",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#7B2FBE",
+  "icon": "📡",
+  "tags": [
+    "Technology",
+    "Engineering",
+    "IoT",
+    "Arduino"
+  ],
+  "overview": "Build a real RFID attendance system! Students tap an RFID card on a reader, and an LCD display shows their name. Unknown cards display 'Unknown User'. Learn how contactless technology works — the same tech used in metro cards, school ID badges, and tap-to-pay.",
+  "grades": [
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-219/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — RFID module, LCD wiring, card tap demo, student builds.",
+    "gallery": [
+      {
+        "file": "data/rfid-rc522.jpg",
+        "_placeholder": "ADD: Photo of MFRC522 RFID module used in session",
+        "caption": "RFID RC522 Module — reads the unique ID from your card!",
+        "category": "Components"
+      },
+      {
+        "file": "data/rfid-card-fob.jpg",
+        "_placeholder": "ADD: Photo of RFID card and key fob",
+        "caption": "RFID Card & Key Fob — each has a hidden unique UID inside",
+        "category": "Components"
+      },
+      {
+        "file": "data/lcd-i2c-module.jpg",
+        "_placeholder": "ADD: Photo of 16x2 LCD with I2C backpack",
+        "caption": "16×2 LCD Display — shows 'Welcome, Jason!' when card is tapped",
+        "category": "Components"
+      },
+      {
+        "file": "data/rfid-wiring-diagram.jpg",
+        "_placeholder": "ADD: Wiring diagram of RFID + LCD + Arduino",
+        "caption": "Full wiring: RFID → Arduino → LCD — your attendance machine!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/rfid-tap-demo.gif",
+        "_placeholder": "ADD: GIF or photo of card being tapped on reader",
+        "caption": "Tap! → LCD shows name instantly. That's RFID magic!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/rfid-real-world.jpg",
+        "_placeholder": "ADD: Photo of metro card / school ID / tap-to-pay terminal",
+        "caption": "Same tech in your metro card, school ID, and UPI tap payments!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/serial-monitor-uid.jpg",
+        "_placeholder": "ADD: Screenshot of Arduino Serial Monitor showing card UID",
+        "caption": "Serial Monitor showing the card UID — every card is unique!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "RFID = Radio Frequency Identification — uses invisible radio waves, no contact needed",
+    "RFID Reader (RC522) — sends a radio signal, card responds with its unique ID (UID)",
+    "UID — Every RFID card has a unique number burned in at the factory (like a fingerprint)",
+    "SPI Communication — how the RC522 module talks to the Arduino (MOSI, MISO, SCK, SS)",
+    "LCD 16×2 with I2C — displays 2 lines of 16 characters; I2C needs only 2 wires to Arduino",
+    "Attendance Logic — check UID against a list: match = show name, no match = 'Unknown User'",
+    "Real-World RFID — Metro cards, school IDs, library cards, UPI tap-to-pay, toll booths",
+    "Security Thinking — what happens if someone copies a card? How do real systems stay safe?"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "RFID RC522 with Arduino — Full Tutorial",
+      "videoId": "AYFxxV_X6XY",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Step-by-step guide to wiring the MFRC522 RFID reader with Arduino and reading card UIDs via Serial Monitor."
+    },
+    {
+      "title": "How RFID Works — Explained Simply",
+      "videoId": "KYQBHMiMOmk",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Animation explaining radio frequency identification — how cards, readers, and antennas work together."
+    },
+    {
+      "title": "LCD I2C with Arduino — Quick Setup",
+      "videoId": "dZZynJLmTn8",
+      "desc": "How to wire and program a 16x2 LCD display using I2C with just 4 wires to your Arduino."
+    },
+    {
+      "title": "RFID Attendance System Project",
+      "videoId": "sKD7gkgAEDA",
+      "desc": "A complete student project showing RFID card tap → name display on LCD — exactly what we're building!"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Wokwi — Simulate RFID + Arduino Online (Free)",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "MFRC522 Arduino Library (GitHub)",
+      "url": "https://github.com/miguelbalboa/rfid",
+      "icon": "🔗"
+    },
+    {
+      "title": "LiquidCrystal_I2C Library",
+      "url": "https://github.com/johnrickman/LiquidCrystal_I2C",
+      "icon": "🔗"
+    },
+    {
+      "title": "How RFID Works — HowStuffWorks",
+      "url": "https://electronics.howstuffworks.com/gadgets/high-tech-gadgets/rfid.htm",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino Official Docs",
+      "url": "https://docs.arduino.cc",
+      "icon": "🔗"
+    }
+  ],
+  "codeExamples": [
+    {
+      "title": "Step 1 — Read Card UID (Find Your Card's ID First!)",
+      "language": "cpp",
+      "description": "Upload this first. Open Serial Monitor at 9600 baud, tap your card, and note down the UID — you'll need it for the attendance code.",
+      "code": "#include <SPI.h>\n#include <MFRC522.h>\n\n#define SS_PIN  10   // SDA pin on RC522 → Arduino pin 10\n#define RST_PIN 9    // RST pin on RC522 → Arduino pin 9\n\nMFRC522 rfid(SS_PIN, RST_PIN);\n\nvoid setup() {\n  Serial.begin(9600);\n  SPI.begin();\n  rfid.PCD_Init();\n  Serial.println(\"Tap your RFID card...\");\n}\n\nvoid loop() {\n  // Wait for a card\n  if (!rfid.PICC_IsNewCardPresent()) return;\n  if (!rfid.PICC_ReadCardSerial())  return;\n\n  // Print UID to Serial Monitor\n  Serial.print(\"Card UID: \");\n  for (byte i = 0; i < rfid.uid.size; i++) {\n    Serial.print(rfid.uid.uidByte[i], HEX);\n    if (i < rfid.uid.size - 1) Serial.print(\" \");\n  }\n  Serial.println();\n\n  rfid.PICC_HaltA();  // Stop reading\n}"
+    },
+    {
+      "title": "Step 2 — Full Attendance System (Tap → LCD Shows Name)",
+      "language": "cpp",
+      "description": "The complete project! Replace the UID bytes with the ones you found in Step 1. Tap a known card → see name. Tap unknown card → 'Unknown User'.",
+      "code": "#include <SPI.h>\n#include <MFRC522.h>\n#include <Wire.h>\n#include <LiquidCrystal_I2C.h>\n\n#define SS_PIN  10\n#define RST_PIN 9\n\nMFRC522 rfid(SS_PIN, RST_PIN);\nLiquidCrystal_I2C lcd(0x27, 16, 2);  // I2C address 0x27, 16 cols, 2 rows\n\n// ── STUDENT DATABASE ──────────────────────────────\n// Replace these UID bytes with your actual card UIDs!\nstruct Student {\n  byte uid[4];\n  String name;\n};\n\nStudent students[] = {\n  { {0xA1, 0xB2, 0xC3, 0xD4}, \"Jason\"   },\n  { {0x12, 0x34, 0x56, 0x78}, \"Priya\"   },\n  { {0xDE, 0xAD, 0xBE, 0xEF}, \"Arjun\"   },\n  { {0x11, 0x22, 0x33, 0x44}, \"Sneha\"   }\n};\n\nint studentCount = sizeof(students) / sizeof(students[0]);\n// ──────────────────────────────────────────────────\n\nvoid setup() {\n  Serial.begin(9600);\n  SPI.begin();\n  rfid.PCD_Init();\n\n  lcd.init();\n  lcd.backlight();\n  lcd.setCursor(0, 0);\n  lcd.print(\" Attendance \"  );\n  lcd.setCursor(0, 1);\n  lcd.print(\"  System Ready\");\n  delay(2000);\n  lcd.clear();\n  lcd.print(\"Tap your card!\");\n}\n\nvoid loop() {\n  if (!rfid.PICC_IsNewCardPresent()) return;\n  if (!rfid.PICC_ReadCardSerial())  return;\n\n  // Get tapped card UID\n  byte tappedUID[4];\n  for (byte i = 0; i < 4; i++) {\n    tappedUID[i] = rfid.uid.uidByte[i];\n  }\n\n  // Search database for matching UID\n  String foundName = \"\";\n  for (int i = 0; i < studentCount; i++) {\n    bool match = true;\n    for (byte j = 0; j < 4; j++) {\n      if (students[i].uid[j] != tappedUID[j]) {\n        match = false;\n        break;\n      }\n    }\n    if (match) {\n      foundName = students[i].name;\n      break;\n    }\n  }\n\n  // Display result on LCD\n  lcd.clear();\n  if (foundName != \"\") {\n    lcd.setCursor(0, 0);\n    lcd.print(\"Welcome back,\");\n    lcd.setCursor(0, 1);\n    lcd.print(foundName + \"!\");\n    Serial.println(\"✅ Attendance marked: \" + foundName);\n  } else {\n    lcd.setCursor(0, 0);\n    lcd.print(\"  Access Denied\");\n    lcd.setCursor(0, 1);\n    lcd.print(\" Unknown User!\");\n    Serial.println(\"❌ Unknown card tapped.\");\n  }\n\n  delay(3000);       // Show message for 3 seconds\n  lcd.clear();\n  lcd.print(\"Tap your card!\");\n  rfid.PICC_HaltA();\n}"
+    },
+    {
+      "title": "Wiring Reference (Pin Connections)",
+      "language": "cpp",
+      "description": "Use these comments as a wiring guide before uploading any code.",
+      "code": "/*\n  ┌─────────────────────────────────────────┐\n  │   RFID RC522  →  Arduino UNO            │\n  ├─────────────────────────────────────────┤\n  │   SDA (SS)    →  Pin 10                 │\n  │   SCK         →  Pin 13                 │\n  │   MOSI        →  Pin 11                 │\n  │   MISO        →  Pin 12                 │\n  │   RST         →  Pin 9                  │\n  │   GND         →  GND                    │\n  │   3.3V        →  3.3V  ⚠️ NOT 5V!      │\n  └─────────────────────────────────────────┘\n\n  ┌─────────────────────────────────────────┐\n  │   LCD I2C     →  Arduino UNO            │\n  ├─────────────────────────────────────────┤\n  │   VCC         →  5V                     │\n  │   GND         →  GND                    │\n  │   SDA         →  A4                     │\n  │   SCL         →  A5                     │\n  └─────────────────────────────────────────┘\n\n  ⚠️  IMPORTANT: RC522 runs on 3.3V — connecting\n  to 5V will damage the module permanently!\n*/"
+    }
+  ],
+  "activity": {
+    "title": "Build Your Own RFID Attendance Machine",
+    "parts": [
+      "Arduino UNO",
+      "MFRC522 RFID Reader Module",
+      "RFID Cards / Key Fobs (at least 2 per group)",
+      "16×2 LCD Display with I2C backpack",
+      "Jumper wires",
+      "USB cable + Laptop with Arduino IDE"
+    ],
+    "steps": [
+      "Wire the RC522 module to Arduino (use 3.3V — NOT 5V!). See wiring reference above.",
+      "Wire the LCD I2C module to Arduino (SDA → A4, SCL → A5, VCC → 5V).",
+      "Install libraries: MFRC522 and LiquidCrystal_I2C via Arduino IDE → Library Manager.",
+      "Upload Step 1 code, open Serial Monitor, tap your card — write down the UID numbers!",
+      "Open Step 2 code, replace the UID bytes with your actual card UIDs and add student names.",
+      "Upload Step 2 — tap your card → see your name on LCD! Tap an unregistered card → 'Unknown User'.",
+      "Bonus Challenge: Add a buzzer — beep once for known user, two beeps for unknown!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does RFID stand for?",
+      "options": [
+        "Remote Frequency Input Device",
+        "Radio Frequency Identification",
+        "Rapid File and ID",
+        "Radio File Input Data"
+      ],
+      "answer": 1,
+      "explanation": "RFID = Radio Frequency Identification. It uses radio waves to identify tags/cards without any physical contact — that's why it's called 'contactless'!"
+    },
+    {
+      "q": "What is a UID in an RFID system?",
+      "options": [
+        "The name of the student stored on the card",
+        "A Unique ID — a one-of-a-kind number permanently stored in each RFID card",
+        "The password to unlock the reader",
+        "The radio frequency the card uses"
+      ],
+      "answer": 1,
+      "explanation": "Every RFID card has a Unique Identifier (UID) burned in during manufacturing — like a fingerprint. No two cards have the same UID. Our code uses this UID to identify students!"
+    },
+    {
+      "q": "What voltage does the MFRC522 RFID module require?",
+      "options": [
+        "5V",
+        "12V",
+        "3.3V",
+        "9V"
+      ],
+      "answer": 2,
+      "explanation": "The RC522 module runs on 3.3V. Connecting it to 5V (Arduino's default power pin) will permanently damage it! Always use the 3.3V pin."
+    },
+    {
+      "q": "In our attendance code, what does the LCD show when an unregistered card is tapped?",
+      "options": [
+        "The card's UID number",
+        "Nothing — it stays blank",
+        "'Unknown User'",
+        "An error and restarts"
+      ],
+      "answer": 2,
+      "explanation": "When the tapped card's UID doesn't match any entry in our student database, the LCD shows 'Unknown User' — access is denied!"
+    },
+    {
+      "q": "What communication protocol does the MFRC522 use to talk to Arduino?",
+      "options": [
+        "I2C",
+        "UART / Serial",
+        "Bluetooth",
+        "SPI (Serial Peripheral Interface)"
+      ],
+      "answer": 3,
+      "explanation": "RC522 uses SPI (Serial Peripheral Interface) which requires 4 data wires: MOSI, MISO, SCK, and SS. This is faster than I2C for reading card data quickly."
+    },
+    {
+      "q": "Which protocol does the I2C LCD use to communicate with Arduino?",
+      "options": [
+        "SPI — uses 4 wires",
+        "I2C — uses only 2 wires (SDA and SCL)",
+        "WiFi",
+        "RFID radio waves"
+      ],
+      "answer": 1,
+      "explanation": "I2C (Inter-Integrated Circuit) uses just 2 wires: SDA (data) and SCL (clock). On Arduino UNO, SDA = A4 and SCL = A5. The backpack module converts the LCD to I2C!"
+    },
+    {
+      "q": "In the attendance code, where is the student database stored?",
+      "options": [
+        "On the RFID card itself",
+        "On the LCD screen",
+        "In the Arduino code as a struct array",
+        "In an online database"
+      ],
+      "answer": 2,
+      "explanation": "The database is a struct array inside the Arduino code — each entry holds a UID (byte array) and the student's name. The card only carries its UID; the name mapping lives in the code."
+    },
+    {
+      "q": "What is the first step before building the full attendance system?",
+      "options": [
+        "Wire the LCD first and display 'Hello World'",
+        "Upload Step 1 code to read and find out your card's UID via Serial Monitor",
+        "Buy more RFID cards",
+        "Connect the buzzer"
+      ],
+      "answer": 1,
+      "explanation": "You must first discover each card's UID! Upload Step 1, open Serial Monitor, tap each card, and write down the UIDs. Then hardcode those UIDs into Step 2's student database."
+    },
+    {
+      "q": "Which real-world device uses RFID technology?",
+      "options": [
+        "FM Radio",
+        "Bluetooth speaker",
+        "Mumbai Metro card / Delhi Metro card",
+        "Microwave oven"
+      ],
+      "answer": 2,
+      "explanation": "Metro cards use RFID — tap to enter! Other examples: library cards, school ID badges, UPI tap-to-pay terminals, and toll booth FASTag passes all use RFID."
+    },
+    {
+      "q": "What does rfid.PICC_HaltA() do in the code?",
+      "options": [
+        "Turns off the RFID reader permanently",
+        "Tells the card to stop communicating so the next tap can be read fresh",
+        "Saves the card UID to memory",
+        "Resets the Arduino"
+      ],
+      "answer": 1,
+      "explanation": "PICC_HaltA() tells the card to stop responding. Without it, the reader keeps detecting the same card repeatedly. Calling it allows the next new card tap to be registered properly."
+    },
+    {
+      "q": "How does the RFID card send its UID to the reader?",
+      "options": [
+        "Through a USB cable",
+        "Via Bluetooth pairing",
+        "The reader emits radio waves, which power the card and trigger it to transmit its UID wirelessly",
+        "By touching metal contacts on the card"
+      ],
+      "answer": 2,
+      "explanation": "RFID cards are passive — they have no battery! The reader sends out radio waves that power the card's tiny antenna, which then transmits its UID back. All wirelessly, no contact needed!"
+    },
+    {
+      "q": "In the student struct, what two pieces of information does each entry store?",
+      "options": [
+        "Name and phone number",
+        "UID (4-byte array) and student name (String)",
+        "Card color and grade level",
+        "Login ID and password"
+      ],
+      "answer": 1,
+      "explanation": "Each Student struct holds uid[4] — the 4-byte unique identifier — and name (a String). When a card is tapped, the code loops through all entries comparing UIDs to find the matching name."
+    },
+    {
+      "q": "What Arduino library do we use to control the RFID RC522 module?",
+      "options": [
+        "LiquidCrystal_I2C",
+        "Servo.h",
+        "MFRC522",
+        "Wire.h"
+      ],
+      "answer": 2,
+      "explanation": "The MFRC522 library (by miguelbalboa on GitHub) provides all the functions to initialize the RFID reader, detect cards, and read their UIDs. Install it via Arduino IDE → Library Manager."
+    },
+    {
+      "q": "What is the LCD I2C address used in our code?",
+      "options": [
+        "0xFF",
+        "0x27",
+        "0x10",
+        "0xA4"
+      ],
+      "answer": 1,
+      "explanation": "LiquidCrystal_I2C lcd(0x27, 16, 2) — 0x27 is the I2C address of most common LCD backpack modules. If the LCD shows nothing, the address might be 0x3F instead (run an I2C scanner sketch to find it)."
+    },
+    {
+      "q": "What is a good bonus challenge to add after the basic system works?",
+      "options": [
+        "Replace the Arduino with a calculator",
+        "Remove the LCD to save power",
+        "Add a buzzer — one beep for known users, two beeps for unknown cards",
+        "Print the attendance to paper automatically"
+      ],
+      "answer": 2,
+      "explanation": "Adding a buzzer makes the system more like a real access control system! One beep = welcome, two beeps = access denied. Great extension for students who finish early!"
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "id": "session-182",
+  "number": 182,
+  "title": "Code Structure Deep Dive",
+  "subtitle": "Write Better, Smarter Arduino Programs!",
+  "date": "Session 182",
+  "duration": "45 Minutes",
+  "phase": "Programming Fundamentals",
+  "color": "#FF9800",
+  "icon": "💻",
+  "tags": [
+    "Arduino",
+    "Programming",
+    "Functions",
+    "Variables",
+    "Coding"
+  ],
+  "overview": "Students will explore the structure of Arduino programs, understand the purpose of functions, variables, constants, and compare delay() with millis() to create efficient and organized code.",
+  "grades": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-182/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of Arduino IDE, coding examples, and classroom activities.",
+    "gallery": [
+      {
+        "file": "data/arduino-code.jpg",
+        "caption": "Understanding Arduino Program Structure",
+        "category": "Concept"
+      },
+      {
+        "file": "data/functions.jpg",
+        "caption": "Functions Make Code Reusable",
+        "category": "Concept"
+      },
+      {
+        "file": "data/variables.jpg",
+        "caption": "Variables Store Data Values",
+        "category": "Concept"
+      },
+      {
+        "file": "data/constants.jpg",
+        "caption": "Constants Keep Important Values Fixed",
+        "category": "Concept"
+      },
+      {
+        "file": "data/delay-vs-millis.jpg",
+        "caption": "Comparing delay() and millis()",
+        "category": "Practice"
+      },
+      {
+        "file": "data/student-coding.jpg",
+        "caption": "Students Writing Modular Arduino Programs",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Structure of an Arduino Program",
+    "setup() Function — Runs Once",
+    "loop() Function — Runs Repeatedly",
+    "What are Variables?",
+    "Declaring and Using Variables",
+    "What are Constants?",
+    "Using const for Fixed Values",
+    "Creating Custom Functions",
+    "Benefits of Modular Code",
+    "delay() Function and Its Limitations",
+    "millis() Function for Non-Blocking Timing",
+    "Best Practices for Writing Clean Code"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Program Structure Explained",
+      "videoId": "nL34zDTPkcs",
+      "desc": "Learn about setup() and loop() functions."
+    },
+    {
+      "title": "Arduino Variables and Constants",
+      "videoId": "J5xR4A4P8Gg",
+      "desc": "Understanding variables and constants in Arduino."
+    },
+    {
+      "title": "delay() vs millis() Tutorial",
+      "videoId": "YQ6j5j4i6hA",
+      "desc": "Why millis() is often better than delay()."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Reference",
+      "url": "https://www.arduino.cc/reference/en/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino Functions Guide",
+      "url": "https://docs.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Convert Blink Code into Modular Code",
+    "parts": [
+      "Arduino UNO",
+      "LED",
+      "220Ω Resistor",
+      "Breadboard",
+      "Jumper Wires",
+      "Arduino IDE"
+    ],
+    "steps": [
+      "Open the Arduino Blink example",
+      "Create a constant for LED pin",
+      "Create a custom function called blinkLED()",
+      "Move LED ON/OFF code into the function",
+      "Call the function from loop()",
+      "Replace delay() with millis() timing logic",
+      "Upload and test the code",
+      "Observe how millis() allows multitasking"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which function runs only once when Arduino starts?",
+      "options": [
+        "main()",
+        "setup()",
+        "loop()",
+        "start()"
+      ],
+      "answer": 1,
+      "explanation": "setup() executes only once when the Arduino powers up or resets."
+    },
+    {
+      "q": "Which function runs repeatedly?",
+      "options": [
+        "repeat()",
+        "main()",
+        "loop()",
+        "start()"
+      ],
+      "answer": 2,
+      "explanation": "loop() continuously runs after setup() finishes."
+    },
+    {
+      "q": "What is a variable?",
+      "options": [
+        "A fixed value",
+        "A storage location for data that can change",
+        "A type of sensor",
+        "A function"
+      ],
+      "answer": 1,
+      "explanation": "Variables store values that may change during program execution."
+    },
+    {
+      "q": "Which keyword is commonly used to create a constant?",
+      "options": [
+        "int",
+        "float",
+        "const",
+        "void"
+      ],
+      "answer": 2,
+      "explanation": "The const keyword makes a value fixed and unchangeable."
+    },
+    {
+      "q": "Why do programmers use functions?",
+      "options": [
+        "To make code longer",
+        "To repeat code manually",
+        "To organize and reuse code",
+        "To increase memory usage"
+      ],
+      "answer": 2,
+      "explanation": "Functions improve readability and reduce duplicate code."
+    },
+    {
+      "q": "What does delay(1000) do?",
+      "options": [
+        "Waits for 1 second",
+        "Waits for 100 seconds",
+        "Turns off Arduino",
+        "Reads a sensor"
+      ],
+      "answer": 0,
+      "explanation": "1000 milliseconds equals 1 second."
+    },
+    {
+      "q": "What is a drawback of delay()?",
+      "options": [
+        "It uses too little memory",
+        "It blocks other code from running",
+        "It turns off sensors",
+        "It changes variables automatically"
+      ],
+      "answer": 1,
+      "explanation": "delay() pauses the entire program during the waiting period."
+    },
+    {
+      "q": "What does millis() return?",
+      "options": [
+        "Temperature",
+        "Pin number",
+        "Time since Arduino started running",
+        "Voltage level"
+      ],
+      "answer": 2,
+      "explanation": "millis() returns the number of milliseconds since the board started."
+    },
+    {
+      "q": "Why is millis() preferred for advanced projects?",
+      "options": [
+        "It stops the program",
+        "It allows multiple tasks to run without blocking",
+        "It reduces pin count",
+        "It changes sensor values"
+      ],
+      "answer": 1,
+      "explanation": "millis() enables non-blocking programming."
+    },
+    {
+      "q": "Which is an example of a constant?",
+      "options": [
+        "sensorValue",
+        "counter",
+        "const int ledPin = 13;",
+        "temperature"
+      ],
+      "answer": 2,
+      "explanation": "A constant value should not change during program execution."
+    },
+    {
+      "q": "What is the benefit of meaningful variable names?",
+      "options": [
+        "Makes code harder to read",
+        "Improves code understanding",
+        "Uses less memory",
+        "Removes functions"
+      ],
+      "answer": 1,
+      "explanation": "Clear variable names make programs easier to understand and maintain."
+    },
+    {
+      "q": "Which data type stores whole numbers?",
+      "options": [
+        "float",
+        "String",
+        "int",
+        "char"
+      ],
+      "answer": 2,
+      "explanation": "int is commonly used to store integer values."
+    },
+    {
+      "q": "What is modular programming?",
+      "options": [
+        "Writing everything in one function",
+        "Dividing code into smaller functions",
+        "Using only variables",
+        "Using only constants"
+      ],
+      "answer": 1,
+      "explanation": "Modular programming breaks large programs into smaller reusable functions."
+    },
+    {
+      "q": "Which timing method is better for controlling multiple LEDs independently?",
+      "options": [
+        "delay()",
+        "millis()",
+        "digitalWrite()",
+        "pinMode()"
+      ],
+      "answer": 1,
+      "explanation": "millis() allows independent timing without blocking other tasks."
+    },
+    {
+      "q": "What is the main goal of good code structure?",
+      "options": [
+        "Make code confusing",
+        "Increase errors",
+        "Make code organized, reusable, and maintainable",
+        "Use more memory"
+      ],
+      "answer": 2,
+      "explanation": "Well-structured code is easier to understand, debug, and expand."
+    }
+  ]
+}

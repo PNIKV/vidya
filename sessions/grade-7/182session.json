@@ -1,0 +1,358 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-212/",
+    "slides_folder": "sessions/session-212/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-212/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-212",
+  "number": 212,
+  "title": "Advanced Arduino Code",
+  "subtitle": "Functions, Arrays & For-Loops — Write Cleaner Sketches!",
+  "date": "Session 212",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#00C853",
+  "icon": "⚡",
+  "tags": [
+    "Technology",
+    "Engineering",
+    "Programming",
+    "Arduino"
+  ],
+  "overview": "Students level up from basic Arduino blink sketches to writing clean, structured code using functions, arrays, and for-loops. By the end, they will refactor messy repetitive code into elegant, reusable sketches — the mark of a real programmer!",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-212/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — Arduino IDE screenshots, student code on screen, breadboard with LEDs, loop diagrams on whiteboard.",
+    "gallery": [
+      {
+        "file": "data/arduino-ide.jpg",
+        "_placeholder": "ADD: Screenshot of Arduino IDE with a function example",
+        "caption": "Arduino IDE — where your code comes to life!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/for-loop-diagram.jpg",
+        "_placeholder": "ADD: Whiteboard diagram showing a for-loop flowchart",
+        "caption": "For-Loop — do it again, again, again... automatically!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/function-diagram.jpg",
+        "_placeholder": "ADD: Diagram showing a function box with input/output arrows",
+        "caption": "Functions — a mini-program inside your program!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/array-diagram.jpg",
+        "_placeholder": "ADD: Whiteboard drawing of an array as a row of labelled boxes",
+        "caption": "Arrays — a row of boxes storing multiple values!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/led-array-circuit.jpg",
+        "_placeholder": "ADD: Photo of multiple LEDs on breadboard connected to Arduino",
+        "caption": "5 LEDs, 1 array, 1 for-loop — clean code wins!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/messy-vs-clean-code.jpg",
+        "_placeholder": "ADD: Side-by-side photo of messy repeated code vs clean loop code on screen",
+        "caption": "Before vs After — from copy-paste chaos to clean code!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/student-coding.jpg",
+        "_placeholder": "ADD: Photo of students typing code in Arduino IDE",
+        "caption": "Students writing their first functions!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Why Clean Code? — Messy repeated code vs. elegant reusable code | DRY principle: Don't Repeat Yourself!",
+    "Functions — A named mini-program: void blinkLED() { ... } | Call it anywhere, anytime",
+    "Function Parameters — Passing values into a function: blinkLED(3, 500) → blink 3 times, 500ms delay",
+    "Return Values — Functions that give back a result: int addNumbers(int a, int b) { return a + b; }",
+    "Arrays — A numbered row of boxes: int pins[] = {3, 5, 6, 9, 11};",
+    "Accessing Array Elements — pins[0] is first, pins[4] is fifth | Index starts at ZERO!",
+    "For-Loop — Repeat with a counter: for (int i = 0; i < 5; i++) { ... }",
+    "For-Loop + Array = Power Combo — Loop through all LEDs with 3 lines instead of 20!",
+    "setup() vs loop() — setup() runs ONCE, loop() runs FOREVER | Know the difference!",
+    "pinMode() inside a for-loop — Set multiple pins as OUTPUT in one clean loop",
+    "Nested For-Loops — A loop inside a loop: rows × columns, wave effects",
+    "Debugging Tips — Serial.println() to print values; check index out of bounds errors"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Functions Tutorial for Beginners",
+      "videoId": "9UjYf0NclDQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to write and call functions in Arduino — make your code reusable and organized like a pro!"
+    },
+    {
+      "title": "Arduino Arrays and For Loops Explained",
+      "videoId": "7J7X7aZvMXQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "How to store multiple values in arrays and loop through them — control 10 LEDs with just 3 lines of code!"
+    },
+    {
+      "title": "DRY Principle — Don't Repeat Yourself in Code",
+      "videoId": "IroL_8RHQEM",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Why copy-pasting code is bad practice and how functions and loops fix it for good."
+    },
+    {
+      "title": "Arduino Serial Monitor & Debugging",
+      "videoId": "B7BD8gJRsyc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Use Serial.println() to debug your Arduino sketches and understand what your code is doing step by step."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Wokwi — Free Arduino Simulator (test code online!)",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino Language Reference — Official Docs",
+      "url": "https://www.arduino.cc/reference/en/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino Project Hub — Inspiring Projects",
+      "url": "https://projecthub.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Tinkercad Circuits — Visual Arduino Coding",
+      "url": "https://www.tinkercad.com/circuits",
+      "icon": "🔗"
+    }
+  ],
+  "codeExamples": [
+    {
+      "title": "Messy Code — The Wrong Way (Copy-Paste Chaos!)",
+      "language": "cpp",
+      "code": "// BAD CODE — repetitive, hard to change!\nvoid setup() {\n  pinMode(3, OUTPUT);\n  pinMode(5, OUTPUT);\n  pinMode(6, OUTPUT);\n  pinMode(9, OUTPUT);\n  pinMode(11, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(3, HIGH); delay(500); digitalWrite(3, LOW); delay(500);\n  digitalWrite(5, HIGH); delay(500); digitalWrite(5, LOW); delay(500);\n  digitalWrite(6, HIGH); delay(500); digitalWrite(6, LOW); delay(500);\n  digitalWrite(9, HIGH); delay(500); digitalWrite(9, LOW); delay(500);\n  digitalWrite(11, HIGH); delay(500); digitalWrite(11, LOW); delay(500);\n}",
+      "note": "If you want to change the delay from 500 to 300, you must edit 10 lines! Very painful."
+    },
+    {
+      "title": "Clean Code — Using Arrays + For-Loop (The Right Way!)",
+      "language": "cpp",
+      "code": "// CLEAN CODE — array + for-loop = magic!\nint ledPins[] = {3, 5, 6, 9, 11};  // Array of LED pins\nint numLEDs = 5;                    // Number of LEDs\n\nvoid setup() {\n  for (int i = 0; i < numLEDs; i++) {\n    pinMode(ledPins[i], OUTPUT);    // Set each pin as OUTPUT\n  }\n}\n\nvoid loop() {\n  for (int i = 0; i < numLEDs; i++) {\n    blinkLED(ledPins[i], 300);     // Call function for each LED\n  }\n}\n\n// Function: blinks one LED a given number of ms\nvoid blinkLED(int pin, int delayTime) {\n  digitalWrite(pin, HIGH);\n  delay(delayTime);\n  digitalWrite(pin, LOW);\n  delay(delayTime);\n}",
+      "note": "Now changing delay is ONE edit. Adding a new LED is ONE line. This is clean code!"
+    },
+    {
+      "title": "Functions with Parameters & Return Values",
+      "language": "cpp",
+      "code": "// Function that RETURNS a value\nint addNumbers(int a, int b) {\n  return a + b;   // sends the result back\n}\n\n// Function with parameters (inputs)\nvoid blinkTimes(int pin, int times, int speed) {\n  for (int i = 0; i < times; i++) {\n    digitalWrite(pin, HIGH);\n    delay(speed);\n    digitalWrite(pin, LOW);\n    delay(speed);\n  }\n}\n\nvoid setup() {\n  pinMode(13, OUTPUT);\n  Serial.begin(9600);\n\n  int result = addNumbers(4, 6);   // result = 10\n  Serial.println(result);          // prints: 10\n\n  blinkTimes(13, 5, 200);         // blink pin 13, 5 times, 200ms speed\n}",
+      "note": "Functions with parameters are like recipes — you pass ingredients (inputs) and get a dish (output)!"
+    },
+    {
+      "title": "Nested For-Loop — LED Wave Effect",
+      "language": "cpp",
+      "code": "// Nested loops: a loop inside a loop!\nint ledPins[] = {3, 5, 6, 9, 11};\nint numLEDs = 5;\n\nvoid setup() {\n  for (int i = 0; i < numLEDs; i++) {\n    pinMode(ledPins[i], OUTPUT);\n  }\n}\n\nvoid loop() {\n  // Forward wave: LED 0 → 1 → 2 → 3 → 4\n  for (int i = 0; i < numLEDs; i++) {\n    digitalWrite(ledPins[i], HIGH);\n    delay(100);\n    digitalWrite(ledPins[i], LOW);\n  }\n\n  // Reverse wave: LED 4 → 3 → 2 → 1 → 0\n  for (int i = numLEDs - 1; i >= 0; i--) {\n    digitalWrite(ledPins[i], HIGH);\n    delay(100);\n    digitalWrite(ledPins[i], LOW);\n  }\n}",
+      "note": "Reverse loop uses i-- instead of i++. The condition flips too: i >= 0 instead of i < numLEDs."
+    }
+  ],
+  "activity": {
+    "title": "Refactor Challenge — Clean Up the Messy Sketch!",
+    "parts": [
+      "Arduino UNO",
+      "Breadboard",
+      "5x LEDs (different colors)",
+      "5x 220Ω Resistors",
+      "Jumper wires",
+      "Computer with Arduino IDE or Wokwi simulator"
+    ],
+    "steps": [
+      "Wire up 5 LEDs on breadboard to Arduino pins 3, 5, 6, 9, 11 (each with a 220Ω resistor)",
+      "Upload the MESSY code first — watch all 5 LEDs blink one by one",
+      "Discuss: what's wrong with the messy code? How many lines would we need for 10 LEDs?",
+      "Refactor Step 1: Create an array int ledPins[] = {3, 5, 6, 9, 11};",
+      "Refactor Step 2: Replace the setup() pinMode lines with a for-loop",
+      "Refactor Step 3: Write a blinkLED(pin, delayTime) function",
+      "Refactor Step 4: Replace the loop() body with a for-loop calling blinkLED()",
+      "Challenge 1: Change delay to 100ms — how many lines did you edit? (Just ONE!)",
+      "Challenge 2: Add a 6th LED — how many lines did you add? (Just TWO!)",
+      "Bonus Challenge: Make a forward-then-reverse wave effect using the nested loop pattern"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does DRY stand for in programming?",
+      "options": [
+        "Delete Redundant Yield",
+        "Don't Repeat Yourself",
+        "Define Reusable Yield",
+        "Declare Return Yes"
+      ],
+      "answer": 1,
+      "explanation": "DRY = Don't Repeat Yourself! If you find yourself copy-pasting the same code, it's time to use a function or loop!"
+    },
+    {
+      "q": "What is a FUNCTION in Arduino code?",
+      "options": [
+        "A type of variable that stores numbers",
+        "A named block of reusable code that performs a specific task",
+        "A special LED command",
+        "The main power supply for the board"
+      ],
+      "answer": 1,
+      "explanation": "Function = Mini-program! You write it once, give it a name, then call it anywhere. void blinkLED() { ... } is a function."
+    },
+    {
+      "q": "What does this line do? → void blinkLED(int pin, int speed)",
+      "options": [
+        "Declares a variable called pin",
+        "Defines a function named blinkLED that accepts two input values: pin number and speed",
+        "Creates an array of LED pins",
+        "Sets up the Serial Monitor"
+      ],
+      "answer": 1,
+      "explanation": "This declares a function blinkLED with two parameters: pin (which LED) and speed (how fast). Parameters are the inputs to the function!"
+    },
+    {
+      "q": "What is an ARRAY in programming?",
+      "options": [
+        "A single variable storing one value",
+        "A list of values stored together under one name, accessed by index",
+        "A type of for-loop",
+        "A function that returns nothing"
+      ],
+      "answer": 1,
+      "explanation": "Array = Row of boxes! int ledPins[] = {3, 5, 6, 9, 11}; stores 5 pin numbers. Access them as ledPins[0], ledPins[1], etc."
+    },
+    {
+      "q": "What index does the FIRST element of an array have?",
+      "options": [
+        "1",
+        "0",
+        "-1",
+        "It depends on the array size"
+      ],
+      "answer": 1,
+      "explanation": "Arrays start at index 0! So ledPins[0] is the first element, ledPins[1] is second. Always remember: start counting from ZERO!"
+    },
+    {
+      "q": "What does this for-loop do? → for (int i = 0; i < 5; i++)",
+      "options": [
+        "Runs the loop 4 times (i = 1, 2, 3, 4)",
+        "Runs the loop 5 times (i = 0, 1, 2, 3, 4)",
+        "Runs the loop forever",
+        "Runs the loop once then stops"
+      ],
+      "answer": 1,
+      "explanation": "Starts at i=0, runs while i < 5, increments i each time → runs for i = 0, 1, 2, 3, 4. That's 5 total runs!"
+    },
+    {
+      "q": "In a for-loop: for (int i = 0; i < numLEDs; i++) — what does i++ mean?",
+      "options": [
+        "i is multiplied by itself",
+        "i increases by 1 after each loop cycle",
+        "i is reset to 0",
+        "the loop stops immediately"
+      ],
+      "answer": 1,
+      "explanation": "i++ means i = i + 1. After each loop cycle, i goes up by 1. This is how the loop steps through each element!"
+    },
+    {
+      "q": "How do you access the 3rd LED in: int ledPins[] = {3, 5, 6, 9, 11};",
+      "options": [
+        "ledPins[3]",
+        "ledPins[2]",
+        "ledPins(3)",
+        "ledPins.third"
+      ],
+      "answer": 1,
+      "explanation": "Index starts at 0! ledPins[0]=3, ledPins[1]=5, ledPins[2]=6. So the 3rd LED (value 6) is at ledPins[2]."
+    },
+    {
+      "q": "What is the difference between setup() and loop() in Arduino?",
+      "options": [
+        "setup() is faster, loop() is slower",
+        "setup() runs once at start, loop() runs repeatedly forever",
+        "setup() controls LEDs, loop() controls motors",
+        "There is no difference"
+      ],
+      "answer": 1,
+      "explanation": "setup() runs ONCE when the Arduino powers on (great for pinMode). loop() runs FOREVER after setup — it's your main program cycle!"
+    },
+    {
+      "q": "Which keyword is used to send a value BACK from a function?",
+      "options": [
+        "send",
+        "output",
+        "return",
+        "give"
+      ],
+      "answer": 2,
+      "explanation": "return sends a value back from a function! Example: int add(int a, int b) { return a + b; } — calling add(3,4) gives back 7."
+    },
+    {
+      "q": "What data type is used for a function that returns NOTHING?",
+      "options": [
+        "int",
+        "null",
+        "void",
+        "empty"
+      ],
+      "answer": 2,
+      "explanation": "void means the function returns nothing — it just does a job. void blinkLED() { ... } runs commands but gives nothing back."
+    },
+    {
+      "q": "What will Serial.println(ledPins[1]) print if ledPins[] = {3, 5, 6, 9, 11}?",
+      "options": [
+        "3",
+        "5",
+        "1",
+        "6"
+      ],
+      "answer": 1,
+      "explanation": "ledPins[1] is the SECOND element (index 1 = second position). ledPins[0]=3, ledPins[1]=5. So it prints 5!"
+    },
+    {
+      "q": "What is a NESTED for-loop?",
+      "options": [
+        "A for-loop that never ends",
+        "A for-loop placed inside another for-loop",
+        "Two for-loops running at the same time",
+        "A for-loop inside a function only"
+      ],
+      "answer": 1,
+      "explanation": "Nested loop = loop inside a loop! Outer loop runs once, inner loop completes fully. Used for wave effects, grids, and patterns."
+    },
+    {
+      "q": "How do you set all 5 LED pins as OUTPUT using a for-loop and array?",
+      "options": [
+        "pinMode(ledPins, OUTPUT);",
+        "for (int i = 0; i < 5; i++) { pinMode(ledPins[i], OUTPUT); }",
+        "OUTPUT(ledPins[]);",
+        "setAll(ledPins, OUTPUT);"
+      ],
+      "answer": 1,
+      "explanation": "Loop through each index from 0 to 4, use ledPins[i] to get the pin number, then call pinMode. Clean and scalable!"
+    },
+    {
+      "q": "If you want to make a REVERSE LED wave (last LED first), which loop direction is correct?",
+      "options": [
+        "for (int i = 0; i < numLEDs; i++)",
+        "for (int i = numLEDs - 1; i >= 0; i--)",
+        "for (int i = numLEDs; i > 0; i++)",
+        "for (int i = 1; i <= numLEDs; i--)"
+      ],
+      "answer": 1,
+      "explanation": "Reverse loop: start at last index (numLEDs-1), go while i >= 0, decrement with i--. This steps backward through the array!"
+    }
+  ]
+}

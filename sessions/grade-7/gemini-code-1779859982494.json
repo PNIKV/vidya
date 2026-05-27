@@ -1,0 +1,188 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-230/",
+    "slides_folder": "sessions/session-230/slides/",
+    "images_folder": "sessions/session-230/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-230",
+  "number": 230,
+  "title": "Ethics in AI: Algorithmic Bias & Diverse Data",
+  "subtitle": "Building fair, balanced, and inclusive intelligent systems!",
+  "date": "Session 230",
+  "duration": "1 Hours",
+  "phase": "Advanced AI",
+  "color": "#E91E63",
+  "icon": "⚖️",
+  "tags": [
+    "Artificial Intelligence",
+    "Ethics",
+    "Data Science",
+    "Social Impact"
+  ],
+  "overview": "In this crucial conceptual and discussion-based session, students explore the ethical boundaries of Machine Learning. They examine how algorithmic bias creeps into AI models, investigate real-world impacts of unrepresentative data, and discover why diverse data pools are essential to engineering fair software.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-230/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — student debate panels, sample biased-classification printouts on boards, and whiteboard mind-maps.",
+    "gallery": [
+      {
+        "file": "data/algorithmic-bias-loop.jpg",
+        "_placeholder": "ADD: Whiteboard diagram showing the loop of biased historical data training a biased model which creates more biased data",
+        "caption": "The Algorithmic Feedback Loop — Garbage In, Garbage Out!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/unrepresentative-dataset.png",
+        "_placeholder": "ADD: Chart showing a dataset missing key demographic slices",
+        "caption": "Data Imbalance — When an AI is trained on only one type of voice, face, or perspective.",
+        "category": "Components"
+      },
+      {
+        "file": "data/student-debate-activity.jpg",
+        "_placeholder": "ADD: Photo of students split into groups acting out an 'AI Ethics Board' testing a hiring algorithm",
+        "caption": "Students roleplaying as an AI Ethics Review Board reviewing automated decisions.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is AI Bias? — When a computer model consistently makes unfair or prejudiced decisions against certain groups",
+    "The Source of Bias — Machine Learning learns strictly from historical human data; if human history is biased, the AI clones it",
+    "Underrepresentation — Why a facial recognition system fails when its training photos lack diverse skin tones and features",
+    "Echo Chambers & Feedback Loops — How biased automated choices reinforce real-world stereotypes over time",
+    "The Diversity Mandate — Why gathering varied, inclusive datasets creates accurate, internationally capable technology",
+    "Algorithmic Auditing — Actively checking and checking again to find hidden mathematical imbalances before deploying code",
+    "Inclusive Engineering Teamwork — Why diverse human engineering groups naturally anticipate and fix algorithmic traps early",
+    "Ethical Frameworks — Establishing basic ground rules: Accountability, Transparency, Fairness, and Privacy"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is Algorithmic Bias?",
+      "videoId": "algorithmic-bias-intro",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "A simple visual breakdown of how machine learning models pick up human prejudices from training data."
+    },
+    {
+      "title": "Joy Buolamwini — Coded Bias & Facial Recognition",
+      "videoId": "coded-bias-ted",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "An eye-opening talk showing how data exclusion impacts real-world identity technologies."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google's AI Principles",
+      "url": "https://ai.google/responsibility/principles/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Teachable Machine — Test Your Own Dataset Balance",
+      "url": "https://teachablemachine.withgoogle.com/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The AI Ethics Board Audit Challenge",
+    "parts": [
+      "Scenario Cards (e.g., 'An automated college admission AI rejecting students who mention specific hobbies')",
+      "Data Profile sheets (showing 90% male resumes and 10% female resumes used for a tech hiring bot)",
+      "Red & Green marker check sheets"
+    ],
+    "steps": [
+      "Setup: Divide the class into 'AI Audit Panels' tasked with assessing a newly proposed automation software tool.",
+      "The Disclosure: Hand out the data profile sheet showing where the engineering team got their training samples.",
+      "Root Cause Discovery: Teams highlight where the training data lacks balance (e.g., 'All face samples were collected under direct studio lighting from only one country').",
+      "Impact Mapping: Students deduce who gets hurt or unfairly rejected if this flawed tool runs in production.",
+      "The Correction Strategy: Teams rewrite the data collection guidelines, mapping exactly how to source balanced data and fix the algorithm!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Where does a Machine Learning model get its bias from?",
+      "options": [
+        "The computer's hardware wires overheating",
+        "Imbalances, gaps, or human prejudices present inside the historical data used to train it",
+        "The internet router connection speed",
+        "The AI choosing to be mean on purpose"
+      ],
+      "answer": 1,
+      "explanation": "Data Mirrors History! AI models don't possess independent human emotions; they act like a mirror to whatever training information humans feed them. Flawed data creates a flawed model."
+    },
+    {
+      "q": "If an AI sorting tool evaluates software engineer resumes using old data from an era where only men were hired, what will it likely do?",
+      "options": [
+        "Automatically fix historical injustices",
+        "Unfairly down-rate or reject applications from women because its training data implies tech workers are exclusively male",
+        "Delete all resumes to save space",
+        "Stop working and ask for help"
+      ],
+      "answer": 1,
+      "explanation": "Cloning the Past! Because the data teaches the computer that successful past hires matched a certain demographic, it copies that exact pattern and punishes clean, highly qualified outside candidates."
+    },
+    {
+      "q": "What happens when an AI dataset is 'Underrepresentative'?",
+      "options": [
+        "The file sizes are too small to open",
+        "It lacks diverse data or leaves out key groups of people, leading to broken performance for those skipped groups",
+        "It trains the model much faster than normal",
+        "The system becomes perfectly fair"
+      ],
+      "answer": 1,
+      "explanation": "Exclusion Errors! If a voice recognition system is trained entirely on adult male accents, it will fail to accurately understand children or diverse regional accents."
+    },
+    {
+      "q": "Why does diverse training data matter in modern AI systems?",
+      "options": [
+        "It ensures the system behaves accurately, safely, and fairly for people across different backgrounds, accents, and skin tones",
+        "It makes the computer use less electricity",
+        "It changes the appearance of the code window",
+        "It allows the AI to run without any source code"
+      ],
+      "answer": 0,
+      "explanation": "Inclusivity Equals Accuracy! A wide, varied dataset trains the mathematical parameters to notice patterns across all groups, preventing blind spots."
+    },
+    {
+      "q": "What is the goal of an 'Algorithmic Audit'?",
+      "options": [
+        "To buy newer, faster computer processors",
+        "To actively check, challenge, and test a model's outputs for unfair patterns and bias before it goes live",
+        "To clear out temporary internet cookies",
+        "To translate the program into ancient languages"
+      ],
+      "answer": 1,
+      "explanation": "Quality Defense! Auditing means proactively stress-testing the neural network against different demographics to spot hidden mathematical skews."
+    },
+    {
+      "q": "What term describes the system loop where an unfair AI output generates more biased real-world data, which then reinforces the bad AI?",
+      "options": [
+        "Data compression",
+        "Algorithmic Feedback Loop",
+        "Battery drain cycle",
+        "Memory leak"
+      ],
+      "answer": 1,
+      "explanation": "The Feedback Loop! When a biased algorithm makes choices, those choices create new skewed historical data points. Sourcing future versions on this data traps the system in a self-fulfilling prophecy."
+    },
+    {
+      "q": "Which practice helps prevent bias during the creation of an AI application?",
+      "options": [
+        "Hiding the training data from the engineers",
+        "Employing a diverse engineering group and collecting wide, thoroughly balanced datasets",
+        "Only testing the software on the team lead's computer",
+        "Turning off all warning labels in the code"
+      ],
+      "answer": 1,
+      "explanation": "Multi-Layered Protection! Combining a diverse developer team (who spot issues from unique perspectives) with an inclusive dataset keeps algorithmic bias from slipping through undetected."
+    }
+  ]
+}

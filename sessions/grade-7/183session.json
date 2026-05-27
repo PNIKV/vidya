@@ -1,0 +1,376 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-213/",
+    "slides_folder": "sessions/session-213/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-213/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-213",
+  "number": 213,
+  "title": "CPU, RAM & Storage",
+  "subtitle": "Compare RAM vs. ROM vs. HDD/SSD — Know Your Memory!",
+  "date": "Session 213",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#7C3AED",
+  "icon": "🧠",
+  "tags": [
+    "Technology",
+    "Engineering",
+    "Hardware",
+    "Computer Science"
+  ],
+  "overview": "Students explore the three memory heroes of every computer — RAM, ROM, and Storage (HDD/SSD). Using real-world analogies like a chef's kitchen, students understand where data lives, how fast it moves, and why computers need different types of memory. Includes a hands-on comparison activity and deep dive into how the CPU talks to each one.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-213/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — RAM sticks, HDD opened, SSD chip, CPU close-up, whiteboard kitchen analogy diagram.",
+    "gallery": [
+      {
+        "file": "data/cpu-chip.jpg",
+        "_placeholder": "ADD: Close-up photo of a CPU processor chip",
+        "caption": "CPU — the Chef who does ALL the cooking (processing)!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/ram-sticks.jpg",
+        "_placeholder": "ADD: Photo of RAM sticks side by side",
+        "caption": "RAM — the Kitchen Counter: fast, temporary workspace!",
+        "category": "Components"
+      },
+      {
+        "file": "data/rom-bios-chip.jpg",
+        "_placeholder": "ADD: Photo of BIOS/ROM chip on motherboard",
+        "caption": "ROM — the Recipe Book: permanent, read-only instructions!",
+        "category": "Components"
+      },
+      {
+        "file": "data/hdd-opened.jpg",
+        "_placeholder": "ADD: Photo of an opened HDD showing spinning platters",
+        "caption": "HDD — the Pantry with spinning plates: slow but huge storage!",
+        "category": "Components"
+      },
+      {
+        "file": "data/ssd-chip.jpg",
+        "_placeholder": "ADD: Photo of an M.2 NVMe SSD or SATA SSD",
+        "caption": "SSD — the Modern Pantry: no moving parts, lightning fast!",
+        "category": "Components"
+      },
+      {
+        "file": "data/memory-hierarchy-diagram.jpg",
+        "_placeholder": "ADD: Whiteboard pyramid diagram — Cache → RAM → SSD → HDD",
+        "caption": "Memory Hierarchy — faster at top, more storage at bottom!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/comparison-activity.jpg",
+        "_placeholder": "ADD: Photo of students filling out RAM vs ROM vs HDD comparison chart",
+        "caption": "Students comparing memory types — who wins the speed race?",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "CPU (Central Processing Unit) — The Chef! Processes all instructions | Measured in GHz (billions of operations per second)",
+    "CPU Cores — One chef vs. many chefs | Dual-core, Quad-core, Octa-core = more tasks at once",
+    "RAM (Random Access Memory) — Kitchen Counter: fast, temporary, VOLATILE | Data vanishes when power off",
+    "RAM Speed & Size — Measured in GB and MHz | More RAM = more apps open at once | DDR4, DDR5",
+    "ROM (Read-Only Memory) — Recipe Book: permanent, NON-VOLATILE | Stores BIOS/firmware | Cannot be easily changed",
+    "Cache Memory — The Chef's pocket: tiny, ultra-fast memory inside CPU | L1, L2, L3 Cache",
+    "HDD (Hard Disk Drive) — Spinning Pantry: magnetic platters spinning at 5400–7200 RPM | Cheap, slow, large",
+    "SSD (Solid State Drive) — Flash Pantry: no moving parts, uses NAND flash chips | Fast, silent, expensive per GB",
+    "NVMe vs SATA SSD — NVMe (M.2 slot) is 5× faster than SATA SSD | NVMe = Formula 1, SATA SSD = regular car",
+    "Volatile vs Non-Volatile Memory — Volatile (RAM) loses data on power off | Non-Volatile (ROM, HDD, SSD) keeps data",
+    "Memory Hierarchy Pyramid — Cache (fastest) → RAM → SSD → HDD (largest, slowest)",
+    "How CPU Uses Memory — Fetch from storage → Load into RAM → Process in CPU cache → Output result"
+  ],
+  "analogies": [
+    {
+      "component": "CPU",
+      "analogy": "The Chef",
+      "explanation": "The chef (CPU) does all the cooking (processing). A faster chef = faster meals. More chefs (cores) = more dishes at once!"
+    },
+    {
+      "component": "RAM",
+      "analogy": "Kitchen Counter",
+      "explanation": "The counter holds ingredients the chef is currently using. Bigger counter = more ingredients out at once. But clear the counter when done — it's temporary!"
+    },
+    {
+      "component": "ROM",
+      "analogy": "Printed Recipe Book",
+      "explanation": "The recipe book has fixed instructions. You can read it but not easily change it. It survives even if the kitchen loses power!"
+    },
+    {
+      "component": "Cache",
+      "analogy": "Chef's Shirt Pocket",
+      "explanation": "Tiny pocket holding the most-used spices RIGHT next to the chef. Ultra-fast access! But very small — only the most important things fit."
+    },
+    {
+      "component": "HDD",
+      "analogy": "Spinning Pantry with shelves",
+      "explanation": "A big pantry with shelves that spin to find ingredients. Lots of storage but slow — you have to wait for the shelf to spin to the right spot!"
+    },
+    {
+      "component": "SSD",
+      "analogy": "Modern Smart Pantry",
+      "explanation": "A modern pantry where everything is instantly accessible — no spinning, no waiting. Faster than HDD but smaller and costs more per GB."
+    }
+  ],
+  "youtubeVideos": [
+    {
+      "title": "RAM vs ROM vs Storage — What's the Difference?",
+      "videoId": "9UjYf0NclDQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear beginner explanation of how RAM, ROM, and Storage differ — with real-world examples that make it click instantly!"
+    },
+    {
+      "title": "How a CPU Works — Simply Explained",
+      "videoId": "7J7X7aZvMXQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Inside the brain of a computer — how the CPU fetches, decodes, and executes instructions millions of times per second."
+    },
+    {
+      "title": "HDD vs SSD — Which is Better?",
+      "videoId": "IroL_8RHQEM",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A side-by-side speed comparison of Hard Disk Drives and Solid State Drives — with a teardown of both!"
+    },
+    {
+      "title": "Memory Hierarchy Explained — Cache, RAM, Storage",
+      "videoId": "B7BD8gJRsyc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "The pyramid of computer memory — from ultra-fast CPU cache all the way down to slow magnetic hard drives."
+    }
+  ],
+  "resources": [
+    {
+      "title": "CPU Benchmark Rankings — PassMark",
+      "url": "https://www.cpubenchmark.net",
+      "icon": "🔗"
+    },
+    {
+      "title": "UserBenchmark — Compare RAM, SSD, CPU Speed",
+      "url": "https://www.userbenchmark.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "HWiNFO — See Your PC Memory Details Live",
+      "url": "https://www.hwinfo.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "CPU-Z — Check RAM Speed, Type & CPU Info",
+      "url": "https://www.cpuid.com/softwares/cpu-z.html",
+      "icon": "🔗"
+    }
+  ],
+  "comparisonTable": {
+    "title": "RAM vs ROM vs HDD vs SSD — Quick Comparison",
+    "headers": ["Feature", "RAM", "ROM", "HDD", "SSD"],
+    "rows": [
+      ["Full Name", "Random Access Memory", "Read-Only Memory", "Hard Disk Drive", "Solid State Drive"],
+      ["Type", "Volatile (temporary)", "Non-Volatile (permanent)", "Non-Volatile (permanent)", "Non-Volatile (permanent)"],
+      ["Speed", "Very Fast", "Fast (read only)", "Slow (spinning)", "Very Fast"],
+      ["Data on Power Off", "LOST ❌", "KEPT ✅", "KEPT ✅", "KEPT ✅"],
+      ["Can be Written?", "Yes, freely", "No (or rarely)", "Yes", "Yes"],
+      ["Typical Size", "8–64 GB", "A few MB", "500 GB – 4 TB", "256 GB – 2 TB"],
+      ["Used For", "Running programs", "BIOS / Firmware", "Long-term file storage", "Fast long-term storage"],
+      ["Kitchen Analogy", "Counter workspace", "Recipe book", "Spinning pantry", "Smart instant pantry"],
+      ["Cost", "Medium", "Low", "Cheapest per GB", "Higher per GB"]
+    ]
+  },
+  "activity": {
+    "title": "Memory Comparison Chart + Kitchen Analogy Role Play",
+    "parts": [
+      "Printed comparison chart worksheet (RAM vs ROM vs HDD vs SSD)",
+      "Colored markers (4 colors — one per memory type)",
+      "Memory Hierarchy pyramid printout (blank, to be filled)",
+      "Real components to pass around (if available): RAM stick, SSD, HDD",
+      "Speed race cards (for class quiz game)"
+    ],
+    "steps": [
+      "Show the Kitchen Analogy slide — assign roles: students act as Chef (CPU), Counter (RAM), Recipe Book (ROM), Pantry (HDD/SSD)",
+      "Role play: Chef asks Counter for ingredients → Counter asks Pantry if empty → Pantry finds and delivers",
+      "Fill in the comparison chart worksheet — students color-code each memory type",
+      "Pyramid Activity: arrange memory types from fastest → slowest on the blank pyramid printout",
+      "Speed Race Game: show a task (e.g. 'Load a game'), students decide which memory type is used first, second, third",
+      "Real hardware round: pass around a RAM stick, SSD, and HDD — identify connectors, size, weight",
+      "Discussion: Why does your phone freeze when RAM is full? (RAM = counter is too small for all the dishes!)",
+      "Challenge: If your laptop is slow, what upgrade helps most — more RAM or bigger HDD? (Answer: more RAM or SSD!)"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does CPU stand for?",
+      "options": [
+        "Central Power Unit",
+        "Central Processing Unit",
+        "Computer Program Utility",
+        "Core Processing Uplink"
+      ],
+      "answer": 1,
+      "explanation": "CPU = Central Processing Unit — the brain of the computer! It processes all instructions, calculations, and logic operations."
+    },
+    {
+      "q": "In the Kitchen Analogy, what does RAM represent?",
+      "options": [
+        "The chef cooking the food",
+        "The recipe book with fixed instructions",
+        "The kitchen counter — fast, temporary workspace",
+        "The pantry storing all ingredients"
+      ],
+      "answer": 2,
+      "explanation": "RAM = Kitchen Counter! It holds data the CPU is actively working on. It's fast and close to the CPU — but cleared when power is off!"
+    },
+    {
+      "q": "What happens to RAM data when you turn the computer OFF?",
+      "options": [
+        "It saves automatically to the hard drive",
+        "It stays in RAM permanently",
+        "It is lost completely — RAM is volatile",
+        "It moves to ROM for safekeeping"
+      ],
+      "answer": 2,
+      "explanation": "RAM is VOLATILE — data vanishes the moment power is cut! That's why you save your work to storage (HDD/SSD) before shutting down."
+    },
+    {
+      "q": "What does ROM stand for and what is it used for?",
+      "options": [
+        "Random Output Memory — for printing",
+        "Read-Only Memory — stores permanent firmware like BIOS",
+        "Rapid Online Memory — for internet data",
+        "Reusable Optical Memory — for DVDs"
+      ],
+      "answer": 1,
+      "explanation": "ROM = Read-Only Memory! It stores permanent instructions like the BIOS that start your computer. You can read it but not easily change it."
+    },
+    {
+      "q": "Is ROM volatile or non-volatile?",
+      "options": [
+        "Volatile — data is lost when power is off",
+        "Non-volatile — data is kept even without power",
+        "It depends on the computer brand",
+        "Neither — ROM has no memory"
+      ],
+      "answer": 1,
+      "explanation": "ROM is NON-VOLATILE — it keeps its data even when the computer is turned off. That's why BIOS settings survive a power cut!"
+    },
+    {
+      "q": "What makes an HDD (Hard Disk Drive) slow compared to an SSD?",
+      "options": [
+        "HDD uses less electricity",
+        "HDD has spinning magnetic platters that must physically rotate to read data",
+        "HDD stores less data",
+        "HDD is connected by slower cables"
+      ],
+      "answer": 1,
+      "explanation": "HDD = Spinning Pantry! Magnetic platters spin at 5400–7200 RPM and a read head must physically move to find data — that mechanical movement takes time!"
+    },
+    {
+      "q": "What is the main advantage of an SSD over an HDD?",
+      "options": [
+        "SSD stores more data for less money",
+        "SSD has spinning platters for reliability",
+        "SSD has no moving parts — it is much faster and silent",
+        "SSD uses magnetic storage like a cassette tape"
+      ],
+      "answer": 2,
+      "explanation": "SSD = Smart Pantry! No spinning parts means instant data access. SSDs are 5–10× faster than HDDs, completely silent, and more shock-resistant."
+    },
+    {
+      "q": "What is Cache Memory?",
+      "options": [
+        "A type of external USB storage",
+        "Tiny ultra-fast memory built directly inside the CPU for most-used data",
+        "A backup copy of the RAM",
+        "The memory used by the graphics card only"
+      ],
+      "answer": 1,
+      "explanation": "Cache = Chef's pocket! L1, L2, L3 cache sits inside the CPU and holds the most frequently used data for lightning-fast access — faster than even RAM!"
+    },
+    {
+      "q": "Which memory type is at the TOP of the memory hierarchy pyramid (fastest)?",
+      "options": [
+        "HDD",
+        "RAM",
+        "SSD",
+        "CPU Cache (L1)"
+      ],
+      "answer": 3,
+      "explanation": "CPU Cache (L1) is at the top — the fastest memory! Pyramid goes: Cache → RAM → SSD → HDD. Faster = smaller and more expensive per GB."
+    },
+    {
+      "q": "Your computer has 4GB of RAM and you open too many apps. What happens?",
+      "options": [
+        "The CPU speeds up automatically",
+        "The computer uses the HDD/SSD as slow 'virtual RAM' and slows down",
+        "ROM takes over and helps RAM",
+        "The apps delete themselves"
+      ],
+      "answer": 1,
+      "explanation": "When RAM is full, the OS uses the HDD/SSD as virtual memory (page file/swap). This is MUCH slower — like putting things on the floor because the counter is full!"
+    },
+    {
+      "q": "What does GHz measure in a CPU?",
+      "options": [
+        "Gigabytes of storage",
+        "Gigahertz — the number of processing cycles per second (speed)",
+        "Gigawatts of power used",
+        "Gigapixels of screen resolution"
+      ],
+      "answer": 1,
+      "explanation": "GHz = Gigahertz = billions of cycles per second. A 3.5 GHz CPU does 3.5 BILLION operations every second. More GHz generally means faster processing!"
+    },
+    {
+      "q": "What is a CPU Core?",
+      "options": [
+        "The power socket of the CPU",
+        "An independent processing unit inside the CPU — more cores = more parallel tasks",
+        "The cooling fan attached to the CPU",
+        "The cache memory layer"
+      ],
+      "answer": 1,
+      "explanation": "Core = Individual Chef! A quad-core CPU has 4 independent processors inside. More cores = more tasks handled simultaneously — great for gaming and video editing!"
+    },
+    {
+      "q": "What type of storage does an SSD use?",
+      "options": [
+        "Spinning magnetic platters",
+        "Optical laser discs",
+        "NAND Flash memory chips (no moving parts)",
+        "Magnetic tape reels"
+      ],
+      "answer": 2,
+      "explanation": "SSD uses NAND Flash chips — the same technology as a USB pen drive but much faster. No spinning, no moving parts, no noise!"
+    },
+    {
+      "q": "NVMe SSD vs SATA SSD — which is faster?",
+      "options": [
+        "SATA SSD is faster because it is older technology",
+        "They are exactly the same speed",
+        "NVMe SSD is faster — it uses the PCIe slot and is up to 5× quicker than SATA SSD",
+        "NVMe is slower but cheaper"
+      ],
+      "answer": 2,
+      "explanation": "NVMe = Formula 1 car! It plugs into the PCIe/M.2 slot and reaches speeds of 3500 MB/s vs SATA SSD's 550 MB/s. NVMe wins by a mile!"
+    },
+    {
+      "q": "If you want to make a slow old laptop faster WITHOUT buying a new one, what is the BEST single upgrade?",
+      "options": [
+        "Replace the screen",
+        "Add more USB ports",
+        "Replace the HDD with an SSD",
+        "Change the keyboard"
+      ],
+      "answer": 2,
+      "explanation": "Swapping HDD → SSD is the single biggest speed boost for an old laptop! Boot times drop from 2 minutes to 15 seconds. It feels like a brand new machine!"
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-189/",
+    "slides_folder": "sessions/session-189/slides/",
+    "images_folder": "sessions/session-189/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-189",
+  "number": 189,
+  "title": "Smart Parking Sensor",
+  "subtitle": "Park Accurately Using Distance Detection!",
+  "date": "Session 189",
+  "duration": "45 Minutes",
+  "phase": "IoT & Arduino Projects",
+  "color": "#3B82F6",
+  "icon": "🚗",
+  "tags": [
+    "Arduino",
+    "Ultrasonic Sensor",
+    "LED Bar",
+    "Distance Measurement",
+    "Smart Parking"
+  ],
+  "overview": "Students build a Smart Parking Sensor using an Arduino UNO, Ultrasonic Sensor, and multiple LEDs. As an object gets closer, more LEDs light up, helping drivers park accurately. Each LED represents approximately 10 cm of distance.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-189/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos of the ultrasonic sensor setup, LED bar display, Arduino connections, and student projects.",
+    "gallery": [
+      {
+        "file": "data/hc-sr04.jpg",
+        "caption": "HC-SR04 Ultrasonic Distance Sensor",
+        "category": "Components"
+      },
+      {
+        "file": "data/arduino-uno.jpg",
+        "caption": "Arduino UNO controls the parking system",
+        "category": "Components"
+      },
+      {
+        "file": "data/led-bar.jpg",
+        "caption": "LED bar showing distance levels",
+        "category": "Concept"
+      },
+      {
+        "file": "data/smart-parking-demo.jpg",
+        "caption": "Smart parking distance indicator",
+        "category": "Project"
+      },
+      {
+        "file": "data/wiring-diagram.jpg",
+        "caption": "Sensor and LED wiring connections",
+        "category": "Circuit"
+      },
+      {
+        "file": "data/student-testing.jpg",
+        "caption": "Students testing parking distances",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Smart Parking?",
+    "Introduction to Ultrasonic Sensors",
+    "How HC-SR04 measures distance",
+    "Sending and receiving sound waves",
+    "LED Bar Distance Indicator",
+    "Distance-to-LED Mapping",
+    "Arduino Digital Output Pins",
+    "Real-life Parking Assistance Systems",
+    "Object Detection and Safety",
+    "Basic Arduino Programming"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Ultrasonic Sensor Tutorial",
+      "videoId": "ZejQOX69K5M",
+      "desc": "Learn how to measure distance using HC-SR04."
+    },
+    {
+      "title": "Smart Parking Sensor Project",
+      "videoId": "s7L2PVdrb_8",
+      "desc": "Build a parking assistance system using Arduino."
+    },
+    {
+      "title": "HC-SR04 Working Principle",
+      "videoId": "Yv_Kw2ems5I",
+      "desc": "Understanding ultrasonic distance measurement."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "HC-SR04 Documentation",
+      "url": "https://randomnerdtutorials.com/complete-guide-for-ultrasonic-sensor-hc-sr04/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Smart Parking Sensor",
+    "parts": [
+      "Arduino UNO",
+      "HC-SR04 Ultrasonic Sensor",
+      "5 LEDs",
+      "220Ω Resistors",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect HC-SR04 to Arduino",
+      "Connect 5 LEDs with 220Ω resistors",
+      "Upload Smart Parking Sensor code",
+      "Place an object in front of the sensor",
+      "Observe LEDs turning ON as the object moves closer",
+      "Each LED represents approximately 10 cm",
+      "Move the object away and observe LEDs turning OFF",
+      "Test different parking distances",
+      "Discuss real-world parking assistance systems"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which sensor is used in this project?",
+      "options": [
+        "IR Sensor",
+        "Temperature Sensor",
+        "HC-SR04 Ultrasonic Sensor",
+        "Light Sensor"
+      ],
+      "answer": 2,
+      "explanation": "The HC-SR04 Ultrasonic Sensor measures distance using sound waves."
+    },
+    {
+      "q": "What does the ultrasonic sensor measure?",
+      "options": [
+        "Temperature",
+        "Distance",
+        "Light",
+        "Humidity"
+      ],
+      "answer": 1,
+      "explanation": "Ultrasonic sensors calculate the distance to an object."
+    },
+    {
+      "q": "How does the HC-SR04 detect distance?",
+      "options": [
+        "Using light",
+        "Using sound waves",
+        "Using magnets",
+        "Using heat"
+      ],
+      "answer": 1,
+      "explanation": "It sends ultrasonic sound waves and measures their return time."
+    },
+    {
+      "q": "What happens when an object gets closer?",
+      "options": [
+        "Fewer LEDs glow",
+        "More LEDs glow",
+        "All LEDs switch off",
+        "Sensor stops working"
+      ],
+      "answer": 1,
+      "explanation": "As the distance decreases, additional LEDs turn ON."
+    },
+    {
+      "q": "What is the main purpose of this project?",
+      "options": [
+        "Play music",
+        "Measure temperature",
+        "Assist parking using distance indication",
+        "Control a motor"
+      ],
+      "answer": 2,
+      "explanation": "The project helps drivers park accurately."
+    },
+    {
+      "q": "Which board controls the project?",
+      "options": [
+        "Arduino UNO",
+        "Monitor",
+        "Keyboard",
+        "Speaker"
+      ],
+      "answer": 0,
+      "explanation": "Arduino UNO processes sensor data and controls LEDs."
+    },
+    {
+      "q": "Why are resistors connected with LEDs?",
+      "options": [
+        "To increase brightness infinitely",
+        "To protect LEDs from excess current",
+        "To measure distance",
+        "To power the sensor"
+      ],
+      "answer": 1,
+      "explanation": "Resistors limit current and protect LEDs."
+    },
+    {
+      "q": "What real-world system uses similar technology?",
+      "options": [
+        "Smart parking assist",
+        "Calculator",
+        "Television remote",
+        "Printer"
+      ],
+      "answer": 0,
+      "explanation": "Many modern cars use parking assistance sensors."
+    },
+    {
+      "q": "What happens when the object moves farther away?",
+      "options": [
+        "More LEDs turn ON",
+        "LEDs gradually turn OFF",
+        "The Arduino stops",
+        "The sensor disconnects"
+      ],
+      "answer": 1,
+      "explanation": "As distance increases, fewer LEDs remain ON."
+    },
+    {
+      "q": "What is a major benefit of smart parking systems?",
+      "options": [
+        "Reduce parking accuracy",
+        "Increase collision risk",
+        "Help park safely and accurately",
+        "Turn off vehicle lights"
+      ],
+      "answer": 2,
+      "explanation": "Parking sensors help drivers avoid obstacles and park more accurately."
+    }
+  ]
+}

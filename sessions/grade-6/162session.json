@@ -1,0 +1,257 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-196/",
+    "slides_folder": "sessions/session-196/slides/",
+    "images_folder": "sessions/session-196/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-196",
+  "number": 196,
+  "title": "Smart Classroom Alert System",
+  "subtitle": "Monitor Classroom Temperature Automatically!",
+  "date": "Session 196",
+  "duration": "45 Minutes",
+  "phase": "IoT & Smart Automation",
+  "color": "#FF6B35",
+  "icon": "🌡️",
+  "tags": [
+    "Arduino",
+    "DHT Sensor",
+    "LCD Display",
+    "Buzzer",
+    "Temperature Monitoring",
+    "Smart Classroom"
+  ],
+  "overview": "Students build a Smart Classroom Alert System using a DHT temperature sensor, LCD display, and buzzer. The system continuously monitors room temperature. If the temperature rises above 38°C, the LCD displays 'Too Hot!' and the buzzer sounds an alert. This project introduces environmental monitoring and smart automation concepts.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-196/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos of DHT sensor, LCD display, buzzer connections, classroom monitoring setup, and student activities.",
+    "gallery": [
+      {
+        "file": "data/dht11-sensor.jpg",
+        "caption": "DHT11 Temperature and Humidity Sensor",
+        "category": "Components"
+      },
+      {
+        "file": "data/lcd-display.jpg",
+        "caption": "16x2 LCD Display for Temperature Monitoring",
+        "category": "Components"
+      },
+      {
+        "file": "data/buzzer.jpg",
+        "caption": "Buzzer Alert System",
+        "category": "Components"
+      },
+      {
+        "file": "data/arduino-uno.jpg",
+        "caption": "Arduino UNO Controls the System",
+        "category": "Components"
+      },
+      {
+        "file": "data/classroom-monitoring.jpg",
+        "caption": "Smart Classroom Monitoring Setup",
+        "category": "Project"
+      },
+      {
+        "file": "data/student-project.jpg",
+        "caption": "Students Testing Temperature Alerts",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Introduction to Smart Classroom Systems",
+    "Temperature Monitoring",
+    "Working of DHT11 Sensor",
+    "Reading Sensor Data",
+    "Displaying Data on LCD",
+    "Using Conditional Statements",
+    "Temperature Threshold Detection",
+    "Buzzer Alert Mechanism",
+    "Real-Time Monitoring",
+    "Environmental Safety Systems",
+    "Smart Automation Concepts",
+    "IoT Applications in Schools"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "DHT11 Sensor with Arduino",
+      "videoId": "1M8L7dM0h1w",
+      "desc": "Learn how to measure temperature using a DHT11 sensor."
+    },
+    {
+      "title": "LCD Display with Arduino",
+      "videoId": "4BaDAHt5JQ4",
+      "desc": "Display sensor readings on a 16x2 LCD."
+    },
+    {
+      "title": "Arduino Temperature Alarm Project",
+      "videoId": "y8qYQxR8Jt4",
+      "desc": "Create a temperature-based warning system using Arduino."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino DHT Sensor Library",
+      "url": "https://github.com/adafruit/DHT-sensor-library",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino LCD Tutorial",
+      "url": "https://docs.arduino.cc/learn/electronics/lcd-displays",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Smart Temperature Alert System",
+    "parts": [
+      "Arduino UNO",
+      "DHT11 Sensor",
+      "16x2 LCD Display",
+      "Buzzer",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "steps": [
+      "Connect the DHT11 sensor to Arduino",
+      "Connect the 16x2 LCD display",
+      "Connect the buzzer to a digital pin",
+      "Upload the temperature monitoring code",
+      "Display current temperature on the LCD",
+      "Set the alert threshold to 38°C",
+      "Observe normal temperature readings",
+      "Increase the sensor temperature using your hand or warm air",
+      "Watch the LCD display 'Too Hot!'",
+      "Listen for the buzzer alert",
+      "Discuss real-world applications of environmental monitoring"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which sensor is used to measure temperature in this project?",
+      "options": [
+        "IR Sensor",
+        "Ultrasonic Sensor",
+        "DHT11 Sensor",
+        "LDR Sensor"
+      ],
+      "answer": 2,
+      "explanation": "The DHT11 sensor measures temperature and humidity."
+    },
+    {
+      "q": "What happens when the temperature exceeds 38°C?",
+      "options": [
+        "Nothing happens",
+        "Arduino turns OFF",
+        "LCD displays 'Too Hot!' and buzzer sounds",
+        "LED turns blue"
+      ],
+      "answer": 2,
+      "explanation": "The system alerts users with a message and buzzer sound."
+    },
+    {
+      "q": "Which component displays the temperature?",
+      "options": [
+        "Servo Motor",
+        "LCD Display",
+        "Relay",
+        "Switch"
+      ],
+      "answer": 1,
+      "explanation": "The LCD shows temperature readings and warning messages."
+    },
+    {
+      "q": "What is the alert temperature in this project?",
+      "options": [
+        "25°C",
+        "30°C",
+        "35°C",
+        "38°C"
+      ],
+      "answer": 3,
+      "explanation": "The alert is triggered when temperature exceeds 38°C."
+    },
+    {
+      "q": "What is the purpose of the buzzer?",
+      "options": [
+        "Measure temperature",
+        "Display text",
+        "Provide an audible alert",
+        "Store data"
+      ],
+      "answer": 2,
+      "explanation": "The buzzer warns users when temperature becomes too high."
+    },
+    {
+      "q": "Which device controls the entire system?",
+      "options": [
+        "LCD",
+        "Arduino UNO",
+        "Buzzer",
+        "Battery"
+      ],
+      "answer": 1,
+      "explanation": "Arduino UNO reads sensor data and controls outputs."
+    },
+    {
+      "q": "Which programming concept is used to check if temperature is above 38°C?",
+      "options": [
+        "Loop",
+        "Function",
+        "Conditional Statement",
+        "Comment"
+      ],
+      "answer": 2,
+      "explanation": "An if statement is used to compare temperature values."
+    },
+    {
+      "q": "What does DHT stand for?",
+      "options": [
+        "Digital Humidity and Temperature",
+        "Data Heat Tool",
+        "Dynamic Heat Tester",
+        "Digital Heat Terminal"
+      ],
+      "answer": 0,
+      "explanation": "DHT sensors measure humidity and temperature digitally."
+    },
+    {
+      "q": "This project is an example of:",
+      "options": [
+        "Game Development",
+        "Environmental Monitoring",
+        "Graphic Design",
+        "Video Editing"
+      ],
+      "answer": 1,
+      "explanation": "The project monitors environmental conditions in a classroom."
+    },
+    {
+      "q": "Where can similar systems be used?",
+      "options": [
+        "Schools",
+        "Hospitals",
+        "Offices",
+        "All of the Above"
+      ],
+      "answer": 3,
+      "explanation": "Temperature monitoring systems are useful in many places."
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-202/",
+    "slides_folder": "sessions/session-202/slides/",
+    "images_folder": "sessions/session-202/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-202",
+  "number": 202,
+  "title": "Algorithms & Flowcharts",
+  "subtitle": "Planning Solutions Before Coding",
+  "date": "Session 202",
+  "duration": "45 Minutes",
+  "phase": "Programming Fundamentals",
+  "color": "#3498DB",
+  "icon": "📋",
+  "tags": [
+    "Algorithms",
+    "Flowcharts",
+    "Programming",
+    "Problem Solving",
+    "Logic",
+    "Computer Science"
+  ],
+  "overview": "Students learn how programmers plan solutions using algorithms and flowcharts before writing code. They explore flowchart symbols, create step-by-step algorithms, and design flowcharts for simple programming tasks and web-based processes.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-202/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of flowcharts, algorithm examples, planning activities, and student worksheets.",
+    "gallery": [
+      {
+        "file": "data/algorithm-concept.jpg",
+        "caption": "Understanding Algorithms",
+        "category": "Concept"
+      },
+      {
+        "file": "data/flowchart-symbols.png",
+        "caption": "Common Flowchart Symbols",
+        "category": "Concept"
+      },
+      {
+        "file": "data/simple-flowchart.png",
+        "caption": "Simple Programming Flowchart",
+        "category": "Example"
+      },
+      {
+        "file": "data/web-process-flowchart.png",
+        "caption": "Website Login Process Flowchart",
+        "category": "Application"
+      },
+      {
+        "file": "data/problem-solving.jpg",
+        "caption": "Planning Before Coding",
+        "category": "Concept"
+      },
+      {
+        "file": "data/student-flowchart-activity.jpg",
+        "caption": "Students Creating Flowcharts",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is an Algorithm?",
+    "Step-by-Step Problem Solving",
+    "Importance of Planning Before Coding",
+    "Introduction to Flowcharts",
+    "Flowchart Symbols",
+    "Start and End Symbols",
+    "Input and Output Symbols",
+    "Decision Symbols",
+    "Process Symbols",
+    "Flow Lines and Connectors",
+    "Creating Programming Flowcharts",
+    "Website Login Process Flowchart",
+    "Debugging with Flowcharts",
+    "Real-World Applications of Algorithms"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Introduction to Algorithms",
+      "videoId": "6hfOvs8pY1k",
+      "desc": "Learn what algorithms are and why they are important."
+    },
+    {
+      "title": "Flowcharts Explained",
+      "videoId": "SWRDqTx8d4k",
+      "desc": "Understand common flowchart symbols and their uses."
+    },
+    {
+      "title": "Algorithm and Flowchart Basics",
+      "videoId": "Q4l4sT6jA6I",
+      "desc": "A beginner-friendly introduction to flowcharts and algorithms."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Flowgorithm Flowchart Software",
+      "url": "https://flowgorithm.org",
+      "icon": "🔗"
+    },
+    {
+      "title": "Lucidchart Flowchart Maker",
+      "url": "https://www.lucidchart.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Draw.io Diagram Tool",
+      "url": "https://app.diagrams.net",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create a Student Login Flowchart",
+    "parts": [
+      "Notebook",
+      "Pencil",
+      "Computer",
+      "Flowchart Software (Optional)"
+    ],
+    "steps": [
+      "Discuss the process of logging into a website",
+      "Write the steps as an algorithm",
+      "Identify inputs and outputs",
+      "Draw a Start symbol",
+      "Add a process for entering username and password",
+      "Create a decision symbol to check credentials",
+      "Add a path for valid login",
+      "Add a path for invalid login",
+      "Connect all symbols using arrows",
+      "Review and improve the flowchart",
+      "Present the flowchart to classmates"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is an algorithm?",
+      "options": [
+        "A computer game",
+        "A step-by-step procedure to solve a problem",
+        "A web browser",
+        "A database"
+      ],
+      "answer": 1,
+      "explanation": "An algorithm is a sequence of steps used to solve a problem."
+    },
+    {
+      "q": "Why do programmers use algorithms?",
+      "options": [
+        "To play games",
+        "To plan solutions before coding",
+        "To browse the internet",
+        "To format documents"
+      ],
+      "answer": 1,
+      "explanation": "Algorithms help organize logical steps before writing code."
+    },
+    {
+      "q": "What is a flowchart?",
+      "options": [
+        "A type of spreadsheet",
+        "A visual representation of a process",
+        "A database table",
+        "A programming language"
+      ],
+      "answer": 1,
+      "explanation": "Flowcharts visually show the sequence of steps in a process."
+    },
+    {
+      "q": "Which symbol is used for a decision in a flowchart?",
+      "options": [
+        "Rectangle",
+        "Oval",
+        "Diamond",
+        "Arrow"
+      ],
+      "answer": 2,
+      "explanation": "The diamond shape represents decisions."
+    },
+    {
+      "q": "Which symbol represents a process?",
+      "options": [
+        "Rectangle",
+        "Oval",
+        "Diamond",
+        "Circle"
+      ],
+      "answer": 0,
+      "explanation": "A rectangle is used to represent a process or action."
+    },
+    {
+      "q": "Which symbol is commonly used for Start and End?",
+      "options": [
+        "Rectangle",
+        "Oval",
+        "Diamond",
+        "Arrow"
+      ],
+      "answer": 1,
+      "explanation": "An oval shape is used for Start and End points."
+    },
+    {
+      "q": "What connects symbols in a flowchart?",
+      "options": [
+        "Colors",
+        "Arrows",
+        "Numbers",
+        "Tables"
+      ],
+      "answer": 1,
+      "explanation": "Arrows show the flow and direction of the process."
+    },
+    {
+      "q": "What is the first step in creating a flowchart?",
+      "options": [
+        "Write code",
+        "Identify the problem and steps",
+        "Print the document",
+        "Create a database"
+      ],
+      "answer": 1,
+      "explanation": "Understanding the problem is the first step."
+    },
+    {
+      "q": "Flowcharts help programmers to:",
+      "options": [
+        "Visualize logic",
+        "Increase internet speed",
+        "Play videos",
+        "Edit photos"
+      ],
+      "answer": 0,
+      "explanation": "Flowcharts make program logic easier to understand."
+    },
+    {
+      "q": "Which real-world process can be represented by a flowchart?",
+      "options": [
+        "Website Login",
+        "ATM Withdrawal",
+        "Making Tea",
+        "All of the Above"
+      ],
+      "answer": 3,
+      "explanation": "Flowcharts can represent any step-by-step process."
+    }
+  ]
+}

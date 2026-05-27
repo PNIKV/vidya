@@ -1,0 +1,398 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-223/",
+    "slides_folder": "sessions/session-223/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-223/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-223",
+  "number": 223,
+  "title": "Computer Viruses & Malware",
+  "subtitle": "Famous Attacks, How They Work & How to Stay Safe!",
+  "date": "Session 223",
+  "duration": "45 Minutes",
+  "phase": "Foundation",
+  "color": "#B71C1C",
+  "icon": "🦠",
+  "tags": [
+    "Cybersecurity",
+    "Technology",
+    "Computer Science",
+    "Digital Safety"
+  ],
+  "overview": "Explore the dark side of software — viruses, worms, ransomware, and trojans. Study real famous attacks that shook the world, understand exactly how malware spreads and causes damage, and learn the habits that keep you and your computer safe. No hacking taught — only defence!",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-223/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — malware type diagrams, case study timelines, newspaper headlines, defence checklist activity.",
+    "gallery": [
+      {
+        "file": "data/malware-types-chart.jpg",
+        "_placeholder": "ADD: Diagram showing types — Virus, Worm, Trojan, Ransomware, Spyware",
+        "caption": "Malware family tree — Virus, Worm, Trojan, Ransomware, Spyware & more",
+        "category": "Concept"
+      },
+      {
+        "file": "data/iloveyou-headline.jpg",
+        "_placeholder": "ADD: Newspaper headline or screenshot about the ILOVEYOU worm (2000)",
+        "caption": "ILOVEYOU (2000) — a love letter email that infected 50 million computers in 10 days!",
+        "category": "Case Study"
+      },
+      {
+        "file": "data/wannacry-screenshot.jpg",
+        "_placeholder": "ADD: WannaCry ransom screen screenshot",
+        "caption": "WannaCry (2017) — locked hospitals and demanded Bitcoin ransom to unlock files",
+        "category": "Case Study"
+      },
+      {
+        "file": "data/stuxnet-diagram.jpg",
+        "_placeholder": "ADD: Diagram of how Stuxnet targeted industrial control systems",
+        "caption": "Stuxnet (2010) — the world's first cyber weapon, designed to destroy nuclear centrifuges",
+        "category": "Case Study"
+      },
+      {
+        "file": "data/phishing-email-example.jpg",
+        "_placeholder": "ADD: Example of a phishing email with red flags annotated",
+        "caption": "Phishing email — spot the fake! Wrong sender, urgent tone, suspicious link",
+        "category": "Concept"
+      },
+      {
+        "file": "data/antivirus-how-it-works.jpg",
+        "_placeholder": "ADD: Diagram showing how antivirus scans and quarantines threats",
+        "caption": "Antivirus in action — scanning files, matching signatures, quarantining threats",
+        "category": "Concept"
+      },
+      {
+        "file": "data/cybersecurity-defence-layers.jpg",
+        "_placeholder": "ADD: Layered defence diagram — antivirus, firewall, updates, strong passwords",
+        "caption": "Defence in depth — multiple layers of protection keep attackers out",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Virus — attaches to a program and spreads when that program is run; needs a host file",
+    "Worm — self-replicates across networks WITHOUT needing a host; spreads automatically",
+    "Trojan Horse — disguises itself as useful software; once installed, opens a back door",
+    "Ransomware — encrypts your files and demands payment (usually cryptocurrency) to unlock them",
+    "Spyware & Keylogger — secretly records passwords, keystrokes, and personal data",
+    "Phishing — tricks users into revealing passwords via fake emails or websites",
+    "Famous Cases — ILOVEYOU (2000), Stuxnet (2010), WannaCry (2017), Melissa (1999)",
+    "Defence — antivirus software, firewalls, software updates, strong passwords, safe browsing habits"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Computer Viruses Work",
+      "videoId": "e89O_Br7Oqk",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear animated explanation of how viruses, worms, and trojans spread and cause damage — for beginners."
+    },
+    {
+      "title": "WannaCry Ransomware Attack Explained",
+      "videoId": "PNPF2NiNc-Y",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "The story of WannaCry — how it spread across 150 countries, hit hospitals, and was stopped by a 22-year-old researcher finding a kill switch."
+    },
+    {
+      "title": "Stuxnet — The World's First Cyber Weapon",
+      "videoId": "CS01Hmjv1pQ",
+      "desc": "Documentary-style explanation of Stuxnet — the sophisticated malware that physically destroyed Iranian nuclear centrifuges using only code."
+    },
+    {
+      "title": "How to Spot a Phishing Email",
+      "videoId": "XBkzBrXlle0",
+      "desc": "Practical guide to identifying phishing attempts — fake senders, urgent language, suspicious links, and how to verify before clicking."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Have I Been Pwned? — Check if Your Email Was in a Data Breach",
+      "url": "https://haveibeenpwned.com",
+      "icon": "🔐"
+    },
+    {
+      "title": "Google Safe Browsing — Check if a URL is Safe",
+      "url": "https://transparencyreport.google.com/safe-browsing/search",
+      "icon": "🔗"
+    },
+    {
+      "title": "VirusTotal — Scan Files & URLs Online",
+      "url": "https://www.virustotal.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Malware Museum — Famous Historic Viruses (Safe to View)",
+      "url": "https://archive.org/details/malwaremuseum",
+      "icon": "🏛️"
+    },
+    {
+      "title": "NCSC Cyber Aware — Official UK Cybersecurity Tips",
+      "url": "https://www.ncsc.gov.uk/cyberaware/home",
+      "icon": "🔗"
+    }
+  ],
+  "caseStudies": [
+    {
+      "name": "Melissa Virus",
+      "year": 1999,
+      "type": "Macro Virus",
+      "origin": "USA",
+      "damage": "Estimated $80 million",
+      "how": "Spread via a Microsoft Word document emailed to users. When opened, it automatically emailed itself to the first 50 contacts in the victim's Outlook address book. Email servers crashed under the load.",
+      "lesson": "Never open unexpected email attachments — even from people you know."
+    },
+    {
+      "name": "ILOVEYOU Worm",
+      "year": 2000,
+      "type": "Worm",
+      "origin": "Philippines",
+      "damage": "Estimated $10 billion — 50 million computers in 10 days",
+      "how": "Arrived as an email with subject 'ILOVEYOU' and attachment 'LOVE-LETTER-FOR-YOU.TXT.vbs'. Curiosity made people open it. It overwrote files and emailed itself to everyone in the victim's address book.",
+      "lesson": "File extensions matter — .vbs is a script, not a text file. Social engineering exploits human curiosity."
+    },
+    {
+      "name": "Stuxnet",
+      "year": 2010,
+      "type": "Worm / Cyber Weapon",
+      "origin": "Believed to be USA & Israel (never officially confirmed)",
+      "damage": "Destroyed ~1,000 Iranian nuclear centrifuges — physical real-world damage from software",
+      "how": "Spread via infected USB drives into air-gapped (offline) industrial networks. Targeted specific Siemens programmable logic controllers (PLCs) that controlled uranium centrifuges — made them spin at wrong speeds while reporting normal to operators.",
+      "lesson": "Malware can jump air-gaps via physical media. Even offline systems are not completely safe."
+    },
+    {
+      "name": "WannaCry Ransomware",
+      "year": 2017,
+      "type": "Ransomware / Worm",
+      "origin": "Attributed to North Korea's Lazarus Group",
+      "damage": "Estimated $4–8 billion — 200,000 computers in 150 countries. UK NHS hospitals were crippled.",
+      "how": "Exploited a Windows vulnerability called EternalBlue (leaked from NSA tools). Encrypted all files on the computer and demanded $300 in Bitcoin. Spread automatically across networks like a worm. A researcher found a 'kill switch' domain that stopped it.",
+      "lesson": "Keep operating systems updated — WannaCry only worked on unpatched Windows. Software updates are security updates!"
+    },
+    {
+      "name": "Petya / NotPetya",
+      "year": 2017,
+      "type": "Ransomware / Wiper",
+      "origin": "Attributed to Russian military intelligence (GRU)",
+      "damage": "Estimated $10 billion — Maersk (shipping), FedEx, hospitals, Ukrainian banks",
+      "how": "Disguised as ransomware but was actually a 'wiper' — it destroyed data permanently with no way to recover it even if ransom was paid. Spread via a compromised Ukrainian accounting software update.",
+      "lesson": "Supply chain attacks are dangerous — a trusted software update can deliver malware. Always back up your data offline!"
+    }
+  ],
+  "codeExamples": [
+    {
+      "title": "What Does a Virus Actually Do? — Concept in Pseudocode",
+      "language": "python",
+      "description": "This is NOT real malware — it illustrates the CONCEPT of how a virus works using safe Python print statements. Understanding the logic helps you defend against it.",
+      "code": "# ⚠️  EDUCATIONAL CONCEPT ONLY — This does NOTHING harmful.\n# This pseudocode shows the LOGIC of how a virus thinks.\n# Real malware is illegal to create. We study it to DEFEND.\n\ndef virus_concept():\n    \"\"\"\n    A virus has three phases:\n    1. INFECT   — attach a copy of itself to other programs\n    2. TRIGGER  — wait for a condition (date, key press, etc.)\n    3. PAYLOAD  — execute the harmful action\n    \"\"\"\n    print(\"=== Virus Logic (Educational Concept) ===\")\n    print()\n\n    # Phase 1 — Infection\n    print(\"Phase 1: INFECTION\")\n    print(\"  → Find executable files in the system\")\n    print(\"  → Attach a copy of virus code to each file\")\n    print(\"  → Virus now runs every time that program runs\")\n    print()\n\n    # Phase 2 — Trigger condition\n    print(\"Phase 2: TRIGGER\")\n    print(\"  → Wait for a condition...\")\n    trigger_date = \"26th May\"\n    today = \"26th May\"   # simulated\n    if today == trigger_date:\n        print(f\"  → Trigger condition met: today is {today}!\")\n    print()\n\n    # Phase 3 — Payload\n    print(\"Phase 3: PAYLOAD (what the virus actually does)\")\n    print(\"  → Could be: delete files, show a message,\")\n    print(\"     steal passwords, encrypt data (ransomware),\")\n    print(\"     or silently spy on the user.\")\n    print()\n    print(\"Defence: Antivirus detects the infection signature\")\n    print(\"at Phase 1 — BEFORE the trigger and payload run!\")\n\nvirus_concept()"
+    },
+    {
+      "title": "Worm vs Virus — What is the Difference?",
+      "language": "python",
+      "description": "Understand the key difference between a virus (needs a host file) and a worm (self-replicates across a network automatically) through a simple simulation concept.",
+      "code": "# ⚠️  EDUCATIONAL SIMULATION ONLY — No real network activity.\n\nimport time\n\nprint(\"=== Virus vs Worm — Concept Simulation ===\")\nprint()\n\n# ── VIRUS BEHAVIOUR ───────────────────────────────\nprint(\"🦠 VIRUS behaviour:\")\nprint(\"   Needs a HOST file to attach to.\")\nprint(\"   Spreads only when infected file is shared/run.\")\n\nhost_files = ['game.exe', 'homework.docx', 'music_player.exe']\ninfected   = []\n\nfor f in host_files:\n    print(f\"   Attaching to {f}...\")\n    infected.append(f + \" [INFECTED]\")\n    time.sleep(0.3)\n\nprint(f\"   Infected files: {infected}\")\nprint()\n\n# ── WORM BEHAVIOUR ────────────────────────────────\nprint(\"🐛 WORM behaviour:\")\nprint(\"   NO host needed. Copies itself across network.\")\nprint(\"   Spreads automatically — exponential growth!\")\nprint()\n\nnetwork_devices = [\"PC-1\"]\nrounds = 4\n\nfor r in range(1, rounds + 1):\n    new_infections = []\n    for device in network_devices:\n        # Each infected device infects 2 new devices\n        new_infections.append(f\"PC-{len(network_devices)+len(new_infections)+1}\")\n        new_infections.append(f\"PC-{len(network_devices)+len(new_infections)+1}\")\n    network_devices.extend(new_infections)\n    print(f\"   Round {r}: {len(network_devices):4d} devices infected\")\n    time.sleep(0.3)\n\nprint()\nprint(\"That's why worms spread so FAST — ILOVEYOU hit\")\nprint(\"50 million computers in just 10 days!\")"
+    },
+    {
+      "title": "Ransomware Concept — Encrypt Then Demand",
+      "language": "python",
+      "description": "See how ransomware logic works — encrypting files and blocking access. Uses Python's simple Caesar cipher as a stand-in for real encryption. Educational only.",
+      "code": "# ⚠️  EDUCATIONAL CONCEPT ONLY.\n# Real ransomware uses strong encryption (AES, RSA).\n# This uses a simple Caesar cipher shift to SHOW the concept.\n\ndef caesar_encrypt(text, shift=13):\n    \"\"\"Simple letter shift — stand-in for real encryption.\"\"\"\n    result = []\n    for ch in text:\n        if ch.isalpha():\n            base = ord('A') if ch.isupper() else ord('a')\n            result.append(chr((ord(ch) - base + shift) % 26 + base))\n        else:\n            result.append(ch)\n    return ''.join(result)\n\ndef caesar_decrypt(text, shift=13):\n    return caesar_encrypt(text, 26 - shift)   # Reverse shift\n\n# Simulate files on the victim's computer\nmy_files = {\n    \"homework.txt\"    : \"My science project on volcanoes.\",\n    \"family_photo.jpg\": \"Metadata: holiday 2024, Mumbai.\",\n    \"bank_details.txt\": \"Account: 1234, Password: letmein123\",\n}\n\nprint(\"=== BEFORE Ransomware ===\")\nfor name, content in my_files.items():\n    print(f\"  {name}: {content}\")\n\n# Ransomware encrypts all files\nprint()\nprint(\"⚠️  RANSOMWARE EXECUTING — encrypting your files...\")\nencrypted_files = {}\nfor name, content in my_files.items():\n    encrypted_files[name + \".locked\"] = caesar_encrypt(content)\nprint()\n\nprint(\"=== AFTER Ransomware ===\")\nfor name, content in encrypted_files.items():\n    print(f\"  {name}: {content}\")\n\nprint()\nprint(\"💀 YOUR FILES HAVE BEEN ENCRYPTED!\")\nprint(\"   Pay 0.5 Bitcoin to wallet: 1A2B3C... to get the key.\")\nprint()\nprint(\"=== If you have a BACKUP, you can restore: ===\")\nfor name, content in my_files.items():\n    print(f\"  {name}: {content}  ← restored from backup!\")\nprint()\nprint(\"Lesson: ALWAYS keep offline backups. Ransomware loses\")\nprint(\"its power the moment you can restore from a clean copy!\")"
+    },
+    {
+      "title": "Phishing Email Detector — Spot the Red Flags",
+      "language": "python",
+      "description": "A rule-based phishing detector that scans an email for warning signs — the same logic antiphishing filters use.",
+      "code": "# Phishing email red-flag detector\n# Checks for suspicious patterns that real filters look for\n\nRED_FLAGS = {\n    \"urgent language\" : [\"urgent\", \"immediately\", \"act now\",\n                         \"account suspended\", \"verify now\",\n                         \"limited time\", \"expire\"],\n    \"reward bait\"     : [\"you have won\", \"congratulations\",\n                         \"free gift\", \"lucky winner\", \"claim your prize\"],\n    \"threat language\" : [\"your account will be closed\",\n                         \"legal action\", \"arrested\", \"suspended\"],\n    \"suspicious links\": [\"bit.ly\", \"tinyurl\", \"click here\",\n                         \"login-secure\", \"verify-account\"],\n    \"impersonation\"   : [\"dear customer\", \"dear user\",\n                         \"dear account holder\"],\n}\n\ndef check_phishing(email_text):\n    email_lower = email_text.lower()\n    found_flags = {}\n    total_score = 0\n\n    for category, keywords in RED_FLAGS.items():\n        hits = [kw for kw in keywords if kw in email_lower]\n        if hits:\n            found_flags[category] = hits\n            total_score += len(hits)\n\n    print(\"=\" * 45)\n    print(\"PHISHING ANALYSER REPORT\")\n    print(\"=\" * 45)\n    if found_flags:\n        for cat, hits in found_flags.items():\n            print(f\"⚠️  {cat}: {hits}\")\n        print()\n        verdict = \"🚨 HIGH RISK\" if total_score >= 3 else \"⚠️  SUSPICIOUS\"\n        print(f\"Verdict : {verdict} (score: {total_score})\")\n        print(\"Action  : Do NOT click links. Delete immediately.\")\n    else:\n        print(\"✅ No obvious red flags detected.\")\n        print(\"   Still — verify the sender's actual email address!\")\n    print()\n\n# Test emails\ncheck_phishing(\"\"\"\n    Dear Customer, your account will be SUSPENDED immediately.\n    Act now — click here to verify: bit.ly/secure-login-update\n    Limited time offer — urgent action required!\n\"\"\")\n\ncheck_phishing(\"\"\"\n    Hi Ravi, are you coming to play cricket at 4pm today?\n    Let me know!\n\"\"\")"
+    }
+  ],
+  "activity": {
+    "title": "Malware Detective — Case Study Cards + Phishing Spotter",
+    "parts": [
+      "Printed case study cards (one per famous virus — Melissa, ILOVEYOU, Stuxnet, WannaCry, NotPetya)",
+      "Red and green marker pens",
+      "Printed phishing email examples (2–3 per group)",
+      "Laptop to run the phishing detector Python code"
+    ],
+    "steps": [
+      "Case Study Round: Each group gets a virus card. Read the case, then present: What type? How did it spread? What was the damage? What was the lesson?",
+      "Timeline: As a class, arrange the case study cards on the board in chronological order — trace how malware evolved from 1999 to 2017.",
+      "Phishing Spotter: Hand out printed email examples. Students circle red flags in red pen and tick safe signs in green pen.",
+      "Run the Python Phishing Detector — paste in the sample emails and see if the code catches the same red flags you found manually.",
+      "Defence Checklist: As a class, brainstorm and list every defence measure on the whiteboard — antivirus, updates, strong passwords, backups, not clicking unknown links.",
+      "Bonus Challenge: Visit haveibeenpwned.com — safely check if a school/parent email address appeared in a known data breach."
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the key difference between a VIRUS and a WORM?",
+      "options": [
+        "Viruses are more dangerous than worms",
+        "A virus needs a host file to spread; a worm copies itself across networks automatically without a host",
+        "Worms only attack phones; viruses only attack computers",
+        "A virus is old and worms are new"
+      ],
+      "answer": 1,
+      "explanation": "Virus = parasite — needs to attach to a host file and spreads when that file is shared. Worm = self-sufficient — copies itself across networks with no human action needed, which is why worms spread much faster!"
+    },
+    {
+      "q": "What does RANSOMWARE do to your computer?",
+      "options": [
+        "Slows down your internet connection",
+        "Deletes your operating system immediately",
+        "Encrypts your files and demands payment to unlock them",
+        "Sends spam emails from your account"
+      ],
+      "answer": 2,
+      "explanation": "Ransomware locks (encrypts) all your files so you can't open them, then demands a ransom — usually cryptocurrency — to give you the decryption key. WannaCry (2017) demanded $300 in Bitcoin per computer."
+    },
+    {
+      "q": "What made the ILOVEYOU worm spread so effectively in 2000?",
+      "options": [
+        "It spread through USB drives inserted into computers",
+        "It exploited human curiosity — people opened an email attachment named 'LOVE-LETTER-FOR-YOU'",
+        "It was installed by a government agency on all computers",
+        "It hid inside video game software"
+      ],
+      "answer": 1,
+      "explanation": "ILOVEYOU used social engineering — the subject 'ILOVEYOU' made people curious enough to open the attachment. Once opened, it emailed itself to every contact. It infected 50 million computers in 10 days!"
+    },
+    {
+      "q": "What was remarkable about the Stuxnet worm (2010)?",
+      "options": [
+        "It was the first virus to spread via email",
+        "It was the world's first cyber weapon — it caused physical real-world damage by destroying nuclear centrifuges",
+        "It demanded Bitcoin ransom",
+        "It erased social media accounts"
+      ],
+      "answer": 1,
+      "explanation": "Stuxnet was the first malware designed to cause physical destruction. It targeted industrial machines (nuclear centrifuges in Iran) and made them spin at the wrong speeds until they broke — while showing normal readings to operators!"
+    },
+    {
+      "q": "How did WannaCry (2017) spread so quickly across networks?",
+      "options": [
+        "Via fake antivirus software downloads",
+        "Through infected USB drives given to employees",
+        "It exploited a Windows vulnerability called EternalBlue that allowed it to spread automatically like a worm",
+        "By guessing email passwords"
+      ],
+      "answer": 2,
+      "explanation": "WannaCry used EternalBlue — an NSA exploit that was leaked. It automatically scanned networks for vulnerable Windows machines and infected them without any user action. It hit 200,000 computers in 150 countries in just days!"
+    },
+    {
+      "q": "What is a TROJAN HORSE in cybersecurity?",
+      "options": [
+        "A virus that only targets Greek computers",
+        "Malware disguised as useful or legitimate software that secretly gives attackers access once installed",
+        "A type of firewall that blocks attacks",
+        "A worm that spreads via social media"
+      ],
+      "answer": 1,
+      "explanation": "Like the mythological Trojan Horse, this malware looks like a gift (useful app, game, free software) but hides a malicious payload inside. Once you install it, it opens a back door for attackers — without spreading to other files like a virus."
+    },
+    {
+      "q": "What is PHISHING?",
+      "options": [
+        "A type of ransomware that encrypts photo files",
+        "Illegally copying software",
+        "Tricking users into revealing passwords or personal information through fake emails or websites",
+        "Scanning a network for open ports"
+      ],
+      "answer": 2,
+      "explanation": "Phishing = digital deception. Attackers send emails pretending to be your bank, Google, or school — with fake links to fake login pages. When you type your password, they capture it. It's the most common cyberattack today!"
+    },
+    {
+      "q": "What is the BEST protection against ransomware?",
+      "options": [
+        "Paying the ransom immediately",
+        "Turning your computer off every night",
+        "Keeping regular offline backups — if files are encrypted, you can restore from the backup",
+        "Using a faster internet connection"
+      ],
+      "answer": 2,
+      "explanation": "Offline backups are your best ransomware defence. If attackers encrypt your files, you simply restore from your backup — the ransom demand becomes useless. Combine with: keep Windows updated, use antivirus, avoid suspicious downloads."
+    },
+    {
+      "q": "Why was the WannaCry attack particularly dangerous to the UK NHS?",
+      "options": [
+        "NHS computers had no screens",
+        "The NHS used a different internet",
+        "Many NHS computers ran outdated unpatched Windows systems — the EternalBlue vulnerability was not fixed on them",
+        "The NHS had no IT staff"
+      ],
+      "answer": 2,
+      "explanation": "Many NHS hospitals ran old unpatched Windows XP systems. Microsoft had released a patch for EternalBlue two months before WannaCry — but unpatched systems were still vulnerable. Operations were cancelled and patient care was disrupted."
+    },
+    {
+      "q": "What is a KEYLOGGER?",
+      "options": [
+        "A program that speeds up your keyboard",
+        "A type of firewall rule",
+        "Malware that secretly records every keystroke — capturing passwords, messages, and card numbers",
+        "A tool to recover deleted files"
+      ],
+      "answer": 2,
+      "explanation": "A keylogger silently records everything you type — passwords, bank details, private messages. It sends the log to the attacker. Keyloggers are a type of spyware. Antivirus software and two-factor authentication help defend against them."
+    },
+    {
+      "q": "How did Stuxnet get into an AIR-GAPPED (offline) network?",
+      "options": [
+        "Via a phishing email to a nuclear scientist",
+        "Through an infected USB drive physically inserted into a machine on the network",
+        "By hacking the facility's WiFi from outside",
+        "Through a software update pushed over the internet"
+      ],
+      "answer": 1,
+      "explanation": "Air-gapped networks have no internet connection — but humans still carry USB drives. Stuxnet spread via infected USB sticks. Someone unknowingly inserted an infected drive, and the worm jumped into the offline industrial network."
+    },
+    {
+      "q": "What saved the world from WannaCry continuing to spread?",
+      "options": [
+        "Microsoft released an emergency patch that automatically removed it",
+        "A 22-year-old security researcher found and registered a 'kill switch' domain hidden in the code",
+        "All affected governments shut down the internet temporarily",
+        "WannaCry ran out of computers to infect"
+      ],
+      "answer": 1,
+      "explanation": "Marcus Hutchins, a 22-year-old researcher, noticed WannaCry checked for a specific domain before running. He registered that domain for $10.69 — which caused WannaCry to think it was being analysed and stop spreading. Accidental hero!"
+    },
+    {
+      "q": "What is a FIREWALL?",
+      "options": [
+        "A physical wall that protects server rooms from fire",
+        "Software or hardware that monitors and controls network traffic — blocking suspicious or unauthorised connections",
+        "A type of antivirus database",
+        "A backup system for files"
+      ],
+      "answer": 1,
+      "explanation": "A firewall is a digital gatekeeper — it inspects all incoming and outgoing network traffic and blocks anything that doesn't meet security rules. It's one of the first lines of defence against worms trying to enter your network."
+    },
+    {
+      "q": "What is the difference between RANSOMWARE and a WIPER like NotPetya?",
+      "options": [
+        "There is no difference — they are the same thing",
+        "Ransomware locks files and offers a key for payment; a wiper destroys data permanently with no recovery possible",
+        "Wipers are older than ransomware",
+        "Ransomware targets phones; wipers target computers"
+      ],
+      "answer": 1,
+      "explanation": "NotPetya looked like ransomware but was actually a wiper — even paying the ransom could not restore files because it permanently destroyed them. The goal was maximum damage, not money. It caused $10 billion in damage worldwide."
+    },
+    {
+      "q": "Which of these is a strong password habit?",
+      "options": [
+        "Using your birthday as your password",
+        "Using the same password on every website",
+        "Using a long passphrase with numbers and symbols, different for every site — stored in a password manager",
+        "Writing your password on a sticky note on your monitor"
+      ],
+      "answer": 2,
+      "explanation": "Strong passwords are long, unique for every site, and contain mixed characters. A password manager remembers them safely so you only need one master password. This makes keyloggers and data breaches far less damaging!"
+    }
+  ]
+}

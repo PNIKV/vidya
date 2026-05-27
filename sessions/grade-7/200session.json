@@ -1,0 +1,357 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-220/",
+    "slides_folder": "sessions/session-220/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-220/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-220",
+  "number": 220,
+  "title": "How AI Learns",
+  "subtitle": "Training Data, Testing Data & Simple Models!",
+  "date": "Session 220",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#00C853",
+  "icon": "🧠",
+  "tags": [
+    "Artificial Intelligence",
+    "Technology",
+    "Mathematics",
+    "Computer Science"
+  ],
+  "overview": "Discover how Artificial Intelligence actually learns — not by magic, but by studying examples! Students explore training data, testing data, and how a simple model makes predictions. Build an intuition for machine learning by training a human 'AI' in class, then see it work in real Python code.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-220/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — sorting activity, whiteboard diagrams, Python output screenshots, student demos.",
+    "gallery": [
+      {
+        "file": "data/training-vs-testing.jpg",
+        "_placeholder": "ADD: Whiteboard diagram showing training set vs testing set split",
+        "caption": "Training Data teaches the model; Testing Data checks if it actually learned!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/spam-not-spam.jpg",
+        "_placeholder": "ADD: Example of spam vs not-spam email cards used in sorting activity",
+        "caption": "Spam or Not Spam? — A classic AI classification problem!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/decision-tree-diagram.jpg",
+        "_placeholder": "ADD: Hand-drawn or printed decision tree diagram",
+        "caption": "Decision Tree — AI asks YES/NO questions to make a decision",
+        "category": "Concept"
+      },
+      {
+        "file": "data/overfitting-graph.jpg",
+        "_placeholder": "ADD: Graph showing underfitting, good fit, and overfitting curves",
+        "caption": "Overfitting: memorised the answers but can't handle new questions!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/ai-confusion-matrix.jpg",
+        "_placeholder": "ADD: Simple 2x2 confusion matrix drawn on whiteboard",
+        "caption": "Confusion Matrix — counts correct and wrong predictions",
+        "category": "Concept"
+      },
+      {
+        "file": "data/sklearn-python-output.jpg",
+        "_placeholder": "ADD: Screenshot of Python terminal showing model accuracy output",
+        "caption": "Python scikit-learn output — our model scored 95% accuracy!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/human-ai-sorting-activity.jpg",
+        "_placeholder": "ADD: Photo of students sorting fruit cards in the human-AI activity",
+        "caption": "Students acting as AI — sorting examples to find the pattern!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Machine Learning? — AI learns patterns from examples, not from rules we write",
+    "Training Data — the examples the model studies to learn (like textbook chapters)",
+    "Testing Data — unseen examples used to check if the model truly learned (like an exam)",
+    "Label — the correct answer attached to each training example (e.g. spam / not spam)",
+    "Model — the pattern or rules the AI discovers after studying training data",
+    "Classification — predicting which category something belongs to (cat vs dog, spam vs not spam)",
+    "Accuracy — percentage of test examples the model gets right",
+    "Overfitting — model memorises training data but fails on new data (like cramming without understanding)"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Machines Learn — CGP Grey",
+      "videoId": "R9OHn5ZF4Uo",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A brilliant animated video explaining how machine learning works — training, patterns, and what can go wrong. Perfect for beginners of any age."
+    },
+    {
+      "title": "Machine Learning for Kids — Crash Course",
+      "videoId": "OeU5m6CAddA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Crash Course AI explains training data, models, and predictions in a fun, approachable way."
+    },
+    {
+      "title": "What is a Decision Tree?",
+      "videoId": "7VeUPuFGJHk",
+      "desc": "Visual walkthrough of decision trees — the simplest and most explainable AI model, great for beginners."
+    },
+    {
+      "title": "Teachable Machine by Google — No Code AI",
+      "videoId": "T2qQGqZxkD0",
+      "desc": "Train your own image classifier in the browser with zero code using Google's Teachable Machine!"
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Teachable Machine — Train AI in Browser",
+      "url": "https://teachablemachine.withgoogle.com",
+      "icon": "🧠"
+    },
+    {
+      "title": "ML for Kids — Drag-and-drop Machine Learning",
+      "url": "https://machinelearningforkids.co.uk",
+      "icon": "🔗"
+    },
+    {
+      "title": "Scikit-learn — Python ML Library Docs",
+      "url": "https://scikit-learn.org/stable/getting_started.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "Quick Draw! — Google's Neural Network Guessing Game",
+      "url": "https://quickdraw.withgoogle.com",
+      "icon": "🎮"
+    },
+    {
+      "title": "Wokwi — Free Python & Arduino Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    }
+  ],
+  "codeExamples": [
+    {
+      "title": "What is Training vs Testing Data?",
+      "language": "python",
+      "description": "Understand the split with a simple fruit example before touching any ML library.",
+      "code": "# Imagine we want AI to learn: is a fruit an Apple or a Banana?\n# Features: [weight_grams, length_cm, is_yellow]\n# Label:    0 = Apple, 1 = Banana\n\n# ── TRAINING DATA (AI studies these) ──────────────\ntraining_data = [\n    [182, 7,  0],   # heavy, shortish, not yellow → Apple\n    [174, 8,  0],   # Apple\n    [170, 7,  0],   # Apple\n    [155, 20, 1],   # light, long, yellow → Banana\n    [140, 22, 1],   # Banana\n    [160, 19, 1],   # Banana\n]\ntraining_labels = [0, 0, 0, 1, 1, 1]   # 0=Apple, 1=Banana\n\n# ── TESTING DATA (AI has NEVER seen these) ────────\ntesting_data = [\n    [178, 7, 0],    # Should predict: Apple  (0)\n    [145, 21, 1],   # Should predict: Banana (1)\n]\ntesting_labels = [0, 1]   # Correct answers (hidden from model!)\n\nprint(\"Training examples:\", len(training_data))\nprint(\"Testing examples :\", len(testing_data))\nprint()\nprint(\"Rule: Training data TEACHES. Testing data EXAMINES.\")\nprint(\"Never mix them — that's cheating!\")"
+    },
+    {
+      "title": "Training a Simple Classifier with scikit-learn",
+      "language": "python",
+      "description": "Train a real Decision Tree model to classify fruits. See training accuracy vs testing accuracy.",
+      "code": "from sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score\n\n# ── DATA ──────────────────────────────────────────\n# Features: [weight_grams, length_cm, is_yellow]\nX_train = [\n    [182, 7,  0], [174, 8,  0], [170, 7,  0],   # Apples\n    [155, 20, 1], [140, 22, 1], [160, 19, 1],    # Bananas\n]\ny_train = [0, 0, 0, 1, 1, 1]   # 0=Apple, 1=Banana\n\nX_test  = [[178, 7, 0], [145, 21, 1], [165, 8, 0]]\ny_test  = [0, 1, 0]             # Correct answers\n\n# ── TRAIN THE MODEL ───────────────────────────────\nmodel = DecisionTreeClassifier()\nmodel.fit(X_train, y_train)     # ← This is where AI 'learns'!\n\n# ── TEST THE MODEL ────────────────────────────────\npredictions = model.predict(X_test)\nprint(\"Model predictions :\", predictions.tolist())\nprint(\"Correct answers   :\", y_test)\n\naccuracy = accuracy_score(y_test, predictions)\nprint(f\"\\nAccuracy: {accuracy * 100:.0f}%\")\n\n# ── PREDICT A NEW FRUIT ───────────────────────────\nnew_fruit = [[150, 21, 1]]      # What is this?\nresult = model.predict(new_fruit)\nnames  = {0: 'Apple', 1: 'Banana'}\nprint(f\"\\nNew fruit prediction: {names[result[0]]}\")"
+    },
+    {
+      "title": "Spam Detector — Text Classification",
+      "language": "python",
+      "description": "A classic AI problem: decide if a message is SPAM or NOT SPAM. See how keyword counts become features.",
+      "code": "# Simple rule-based spam detector (no library needed!)\n# Real AI learns these rules from data — we write them\n# manually here so you can SEE what the model learns.\n\nSPAM_WORDS = [\"free\", \"win\", \"prize\", \"click\", \"offer\",\n              \"urgent\", \"congratulations\", \"lucky\", \"cash\"]\n\ndef count_spam_words(message):\n    \"\"\"Count how many spam trigger words are in the message.\"\"\"\n    message_lower = message.lower()\n    count = 0\n    found = []\n    for word in SPAM_WORDS:\n        if word in message_lower:\n            count += 1\n            found.append(word)\n    return count, found\n\ndef classify_message(message, threshold=2):\n    \"\"\"Classify as SPAM if spam word count >= threshold.\"\"\"\n    count, found = count_spam_words(message)\n    label = \"🚨 SPAM\" if count >= threshold else \"✅ NOT SPAM\"\n    return label, count, found\n\n# ── TEST MESSAGES ─────────────────────────────────\nmessages = [\n    \"Congratulations! You win a free prize! Click now!\",\n    \"Hey, are you coming to school tomorrow?\",\n    \"Urgent: claim your free cash offer today!\",\n    \"Mom said dinner is ready at 7pm.\",\n    \"LUCKY winner! Free gift — urgent offer inside!\",\n]\n\nprint(\"=== Spam Detector ===\")\nfor msg in messages:\n    label, count, found = classify_message(msg)\n    print(f\"\\nMessage : {msg[:45]}...\" if len(msg)>45 else f\"\\nMessage : {msg}\")\n    print(f\"Result  : {label}  (spam words found: {count})\")\n    if found:\n        print(f\"Triggers: {found}\")"
+    },
+    {
+      "title": "Training vs Testing Split — The Right Way",
+      "language": "python",
+      "description": "Use scikit-learn's train_test_split to automatically divide data — the standard professional approach.",
+      "code": "from sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score\n\n# Full dataset — 12 fruit examples\n# Features: [weight, length, is_yellow]\nX = [\n    [182, 7,  0], [174, 8,  0], [178, 7,  0],\n    [168, 9,  0], [172, 8,  0], [180, 7,  0],   # 6 Apples\n    [155, 20, 1], [140, 22, 1], [160, 19, 1],\n    [148, 23, 1], [152, 21, 1], [145, 24, 1],   # 6 Bananas\n]\ny = [0,0,0,0,0,0, 1,1,1,1,1,1]   # 0=Apple, 1=Banana\n\n# ── SPLIT: 80% train, 20% test ────────────────────\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y,\n    test_size=0.2,      # 20% goes to testing\n    random_state=42     # Fixed seed = reproducible split\n)\n\nprint(f\"Total examples  : {len(X)}\")\nprint(f\"Training examples: {len(X_train)}  (80%)\")\nprint(f\"Testing examples : {len(X_test)}   (20%)\")\n\n# ── TRAIN & EVALUATE ──────────────────────────────\nmodel = DecisionTreeClassifier()\nmodel.fit(X_train, y_train)\n\ntrain_acc = accuracy_score(y_train, model.predict(X_train))\ntest_acc  = accuracy_score(y_test,  model.predict(X_test))\n\nprint(f\"\\nTraining Accuracy : {train_acc * 100:.0f}%\")\nprint(f\"Testing Accuracy  : {test_acc  * 100:.0f}%\")\nprint()\nif train_acc > test_acc + 0.1:\n    print(\"⚠️  Overfitting! Model memorised training data.\")\nelse:\n    print(\"✅ Good fit! Model generalises to new data.\")"
+    },
+    {
+      "title": "What is Overfitting? — Illustrated in Code",
+      "language": "python",
+      "description": "See the difference between a model that truly learns vs one that just memorises. Overfitting = high training accuracy, low testing accuracy.",
+      "code": "# Analogy: imagine two students before an exam\n# Student A: studied concepts → does well on new questions\n# Student B: memorised only the textbook pages → fails new questions\n# Student B is OVERFITTING!\n\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score\n\n# Very small training set (easy to memorise!)\nX_train = [[1,0], [2,0], [3,1], [4,1]]\ny_train = [0, 0, 1, 1]\n\nX_test  = [[1,1], [2,1], [3,0], [4,0]]\ny_test  = [0, 0, 1, 1]\n\n# ── OVERFITTING MODEL (no depth limit = memorises) ─\noverfit_model = DecisionTreeClassifier(max_depth=None)\noverfit_model.fit(X_train, y_train)\n\n# ── GOOD MODEL (limited depth = learns pattern) ────\ngood_model = DecisionTreeClassifier(max_depth=1)\ngood_model.fit(X_train, y_train)\n\nprint(\"=== Overfitting vs Good Fit ===\")\nprint()\nprint(\"Overfit model:\")\nprint(f\"  Training accuracy: {accuracy_score(y_train, overfit_model.predict(X_train))*100:.0f}%  ← looks great!\")\nprint(f\"  Testing  accuracy: {accuracy_score(y_test,  overfit_model.predict(X_test ))*100:.0f}%  ← fails on new data!\")\nprint()\nprint(\"Good model:\")\nprint(f\"  Training accuracy: {accuracy_score(y_train, good_model.predict(X_train))*100:.0f}%\")\nprint(f\"  Testing  accuracy: {accuracy_score(y_test,  good_model.predict(X_test ))*100:.0f}%  ← generalises well!\")"
+    }
+  ],
+  "activity": {
+    "title": "Human AI — Fruit Sorter Training Game + Python Model",
+    "parts": [
+      "Index cards (write fruit features on each: weight, length, colour)",
+      "Two boxes or areas labelled 'Apple' and 'Banana'",
+      "Laptop with Python + scikit-learn installed (or use Google Colab)",
+      "Whiteboard to draw the decision tree"
+    ],
+    "steps": [
+      "Round 1 — Training: Teacher shows 6 fruit cards one by one. Students sort them into Apple/Banana boxes. These are the TRAINING examples.",
+      "Round 2 — Testing: Teacher shows 3 NEW cards students haven't seen. Students predict Apple or Banana based on what they learned. Calculate class accuracy!",
+      "Discussion: What features helped most — weight, length, or colour? That's feature importance!",
+      "Draw a decision tree on the whiteboard together: 'Is it yellow? → If yes, Banana. If no → Is it heavy? → Apple'.",
+      "Now run the Python scikit-learn code — compare the computer's decision tree to the one you drew!",
+      "Bonus: Open Google Teachable Machine (teachablemachine.withgoogle.com) and train an image classifier with your phone camera — no code needed!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is Machine Learning?",
+      "options": [
+        "Programming a robot to follow fixed rules",
+        "AI that learns patterns from examples rather than being given explicit rules",
+        "A machine that repairs itself automatically",
+        "A calculator that does very hard maths"
+      ],
+      "answer": 1,
+      "explanation": "Machine Learning means the AI studies examples and discovers patterns on its own — we don't write every rule. Just like you learned to recognise cats by seeing many cats, not by memorising a definition!"
+    },
+    {
+      "q": "What is TRAINING DATA?",
+      "options": [
+        "Data used to test if the model is correct",
+        "Data deleted after training is complete",
+        "Examples the model studies to learn patterns",
+        "Data collected only from the internet"
+      ],
+      "answer": 2,
+      "explanation": "Training data is the set of labelled examples the model learns from — like textbook chapters before an exam. The model studies these to discover what patterns lead to which answers."
+    },
+    {
+      "q": "What is TESTING DATA used for?",
+      "options": [
+        "To teach the model new skills",
+        "To check if the model learned correctly using examples it has never seen before",
+        "To delete old training examples",
+        "To make the model faster"
+      ],
+      "answer": 1,
+      "explanation": "Testing data is the exam! These are examples the model has NEVER seen during training. If it gets them right, it truly learned the pattern — not just memorised the answers."
+    },
+    {
+      "q": "What is a LABEL in machine learning?",
+      "options": [
+        "The name of the Python library",
+        "A sticker on the hardware",
+        "The correct answer attached to each training example",
+        "The number of features in the dataset"
+      ],
+      "answer": 2,
+      "explanation": "A label is the correct answer for each example. For spam detection: label = 'spam' or 'not spam'. The model learns which features lead to which label during training."
+    },
+    {
+      "q": "What does ACCURACY mean in machine learning?",
+      "options": [
+        "How fast the model runs",
+        "How much memory the model uses",
+        "The percentage of test examples the model predicts correctly",
+        "The number of training examples used"
+      ],
+      "answer": 2,
+      "explanation": "Accuracy = correct predictions ÷ total predictions × 100%. If a model gets 9 out of 10 test examples right, its accuracy is 90%."
+    },
+    {
+      "q": "What is OVERFITTING?",
+      "options": [
+        "When the model has too many features",
+        "When the model memorises training data but performs poorly on new unseen data",
+        "When you use too much testing data",
+        "When the model takes too long to train"
+      ],
+      "answer": 1,
+      "explanation": "Overfitting is like a student who memorises the textbook word-for-word but can't answer new questions. High training accuracy + low testing accuracy = overfitting!"
+    },
+    {
+      "q": "In scikit-learn, what does model.fit(X_train, y_train) do?",
+      "options": [
+        "Tests the model on new data",
+        "Deletes the model",
+        "Trains the model — it studies X_train examples and their y_train labels",
+        "Calculates the accuracy"
+      ],
+      "answer": 2,
+      "explanation": "model.fit() is where the learning happens! The model looks at all training examples (X_train) and their correct answers (y_train) and finds the pattern that connects them."
+    },
+    {
+      "q": "What does model.predict(X_test) return?",
+      "options": [
+        "The training accuracy",
+        "The model's guesses (predictions) for each example in X_test",
+        "The list of training examples",
+        "The number of features"
+      ],
+      "answer": 1,
+      "explanation": "model.predict() runs the model on new data and returns its predictions — one label per example. We then compare these to y_test (correct answers) to calculate accuracy."
+    },
+    {
+      "q": "What is a Decision Tree?",
+      "options": [
+        "A tree diagram of all possible computer programs",
+        "An AI model that makes predictions by asking a series of YES/NO questions",
+        "A type of neural network",
+        "A graph of training accuracy over time"
+      ],
+      "answer": 1,
+      "explanation": "A Decision Tree asks questions at each step: 'Is the fruit yellow? → Yes → Is it long? → Yes → Banana!' It's one of the simplest and most explainable AI models — you can draw it on paper!"
+    },
+    {
+      "q": "Why should you NEVER train and test on the same data?",
+      "options": [
+        "It makes the code run slower",
+        "Python gives an error if you try",
+        "The model could just memorise answers and appear accurate without actually learning",
+        "It uses too much memory"
+      ],
+      "answer": 2,
+      "explanation": "Testing on training data is like giving students the exam questions in advance — of course they score 100%! It tells you nothing about whether the model learned the underlying pattern."
+    },
+    {
+      "q": "In our fruit classifier, what are the FEATURES?",
+      "options": [
+        "Apple and Banana — the two class names",
+        "weight_grams, length_cm, is_yellow — measurements used to make predictions",
+        "The accuracy score",
+        "The Python library version"
+      ],
+      "answer": 1,
+      "explanation": "Features are the input measurements the model uses to make a prediction. In our fruit example: weight, length, and colour. The model learns which combination of features leads to Apple vs Banana."
+    },
+    {
+      "q": "What does train_test_split(X, y, test_size=0.2) do?",
+      "options": [
+        "Trains the model twice",
+        "Randomly splits data: 80% for training and 20% for testing",
+        "Removes 20% of bad data",
+        "Creates 20 different models"
+      ],
+      "answer": 1,
+      "explanation": "train_test_split randomly divides your data. test_size=0.2 means 20% goes to testing and 80% goes to training. This is the standard professional approach to evaluate a model fairly."
+    },
+    {
+      "q": "Which of these is an example of CLASSIFICATION?",
+      "options": [
+        "Predicting tomorrow's temperature in degrees",
+        "Counting how many cars pass a junction",
+        "Deciding if an email is spam or not spam",
+        "Calculating the speed of a train"
+      ],
+      "answer": 2,
+      "explanation": "Classification means predicting a category — spam/not spam, cat/dog, apple/banana. Predicting a number (like temperature) is called Regression. Our session focuses on classification!"
+    },
+    {
+      "q": "What is Google Teachable Machine?",
+      "options": [
+        "A robot that teaches Google employees",
+        "A free browser tool where you train an image or sound classifier with no code",
+        "A Python library for decision trees",
+        "A type of Arduino sensor"
+      ],
+      "answer": 1,
+      "explanation": "Teachable Machine (teachablemachine.withgoogle.com) lets you train a real AI model using your webcam — no coding needed! Show it examples of different things and it learns to recognise them."
+    },
+    {
+      "q": "In the spam detector code, what makes a message get classified as SPAM?",
+      "options": [
+        "If it is longer than 50 characters",
+        "If it contains 2 or more spam trigger words from the SPAM_WORDS list",
+        "If it is written in capital letters",
+        "If it was sent at night"
+      ],
+      "answer": 1,
+      "explanation": "Our rule-based spam detector counts how many words from SPAM_WORDS appear in the message. If 2 or more are found (threshold=2), it's classified as spam. Real AI learns this threshold from data!"
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-188/",
+    "slides_folder": "sessions/session-188/slides/",
+    "images_folder": "sessions/session-188/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-188",
+  "number": 188,
+  "title": "Command Line Basics",
+  "subtitle": "Navigate, Create, and Manage Files Like a Pro!",
+  "date": "Session 188",
+  "duration": "45 Minutes",
+  "phase": "Software Development Fundamentals",
+  "color": "#10B981",
+  "icon": "💻",
+  "tags": [
+    "Command Line",
+    "Terminal",
+    "Operating System",
+    "Programming"
+  ],
+  "overview": "Students learn how to use the command line interface (CLI), open a terminal, navigate folders, create files and directories, and execute basic commands. The session provides hands-on experience with essential terminal operations used by programmers and system administrators.",
+  "grades": [
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "slides": {
+    "pdf": "sessions/session-188/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of terminal windows, folder navigation, and command demonstrations.",
+    "gallery": [
+      {
+        "file": "data/terminal-window.png",
+        "caption": "Introduction to the Terminal Window",
+        "category": "Concept"
+      },
+      {
+        "file": "data/folder-navigation.png",
+        "caption": "Navigating folders using commands",
+        "category": "Activity"
+      },
+      {
+        "file": "data/pwd-command.png",
+        "caption": "Finding the current working directory",
+        "category": "Commands"
+      },
+      {
+        "file": "data/ls-command.png",
+        "caption": "Listing files and folders",
+        "category": "Commands"
+      },
+      {
+        "file": "data/mkdir-command.png",
+        "caption": "Creating new directories",
+        "category": "Commands"
+      },
+      {
+        "file": "data/student-practice.jpg",
+        "caption": "Students practicing terminal commands",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Command Line Interface (CLI)?",
+    "Difference between GUI and CLI",
+    "Opening the Terminal",
+    "Current Working Directory",
+    "pwd command",
+    "ls / dir command",
+    "cd command for navigation",
+    "mkdir command to create folders",
+    "touch command to create files",
+    "clear command to clean terminal screen",
+    "Benefits of using command line",
+    "Basic terminal shortcuts"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Command Line Basics for Beginners",
+      "videoId": "oxuRxtrO2Ag",
+      "desc": "Introduction to terminal commands and navigation."
+    },
+    {
+      "title": "Linux Terminal Tutorial",
+      "videoId": "IVquJh3DXUA",
+      "desc": "Learn essential command-line skills."
+    },
+    {
+      "title": "CLI vs GUI Explained",
+      "videoId": "MBBWVgE0ewk",
+      "desc": "Understanding the difference between graphical and command interfaces."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Linux Command Cheat Sheet",
+      "url": "https://www.guru99.com/linux-commands-cheat-sheet.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "ExplainShell",
+      "url": "https://explainshell.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Command Line Crash Course",
+      "url": "https://learnpythonthehardway.org/book/appendixa.html",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Terminal Navigation Challenge",
+    "parts": [
+      "Computer",
+      "Windows Command Prompt / PowerShell / Linux Terminal",
+      "Practice Folder"
+    ],
+    "steps": [
+      "Open the Terminal",
+      "Use pwd to display the current directory",
+      "Use ls or dir to list files",
+      "Create a folder using mkdir MyProject",
+      "Move into the folder using cd MyProject",
+      "Create a file using touch notes.txt",
+      "Check files using ls",
+      "Return to the previous folder using cd ..",
+      "Clear the screen using clear or cls",
+      "Discuss where command line is used in real projects"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does CLI stand for?",
+      "options": [
+        "Computer Logic Interface",
+        "Command Line Interface",
+        "Control Line Input",
+        "Central Login Interface"
+      ],
+      "answer": 1,
+      "explanation": "CLI stands for Command Line Interface."
+    },
+    {
+      "q": "Which command shows your current directory?",
+      "options": [
+        "cd",
+        "ls",
+        "pwd",
+        "mkdir"
+      ],
+      "answer": 2,
+      "explanation": "pwd means Print Working Directory."
+    },
+    {
+      "q": "Which command lists files and folders?",
+      "options": [
+        "ls",
+        "cd",
+        "pwd",
+        "clear"
+      ],
+      "answer": 0,
+      "explanation": "ls displays the contents of a directory."
+    },
+    {
+      "q": "Which command is used to change folders?",
+      "options": [
+        "mkdir",
+        "cd",
+        "pwd",
+        "touch"
+      ],
+      "answer": 1,
+      "explanation": "cd means Change Directory."
+    },
+    {
+      "q": "What does mkdir do?",
+      "options": [
+        "Delete a folder",
+        "Open a folder",
+        "Create a new folder",
+        "Rename a folder"
+      ],
+      "answer": 2,
+      "explanation": "mkdir creates a new directory."
+    },
+    {
+      "q": "Which command creates an empty file in Linux?",
+      "options": [
+        "touch",
+        "pwd",
+        "ls",
+        "clear"
+      ],
+      "answer": 0,
+      "explanation": "touch is commonly used to create files."
+    },
+    {
+      "q": "What does cd .. do?",
+      "options": [
+        "Delete current folder",
+        "Move to parent directory",
+        "Create a file",
+        "Clear screen"
+      ],
+      "answer": 1,
+      "explanation": "cd .. moves one level up in the folder structure."
+    },
+    {
+      "q": "Which command clears the terminal screen?",
+      "options": [
+        "pwd",
+        "touch",
+        "clear",
+        "mkdir"
+      ],
+      "answer": 2,
+      "explanation": "clear removes previous text from the terminal display."
+    },
+    {
+      "q": "Which interface uses icons and windows?",
+      "options": [
+        "CLI",
+        "GUI",
+        "Terminal",
+        "Shell"
+      ],
+      "answer": 1,
+      "explanation": "GUI stands for Graphical User Interface."
+    },
+    {
+      "q": "Why do programmers use the command line?",
+      "options": [
+        "It is faster and powerful for many tasks",
+        "It only plays games",
+        "It replaces computers",
+        "It removes files automatically"
+      ],
+      "answer": 0,
+      "explanation": "Many development and automation tasks are faster using the command line."
+    }
+  ]
+}

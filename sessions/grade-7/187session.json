@@ -1,0 +1,357 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-218/",
+    "slides_folder": "sessions/session-218/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-218/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-218",
+  "number": 218,
+  "title": "Number Systems in Computing",
+  "subtitle": "Why Computers Think in 0s and 1s!",
+  "date": "Session 218",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#FF6B35",
+  "icon": "🔢",
+  "tags": [
+    "Technology",
+    "Mathematics",
+    "Computer Science",
+    "Engineering"
+  ],
+  "overview": "Explore how computers represent all information using just two digits — 0 and 1. Learn why binary and hexadecimal are the languages computers speak, and write real code to convert between number systems.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-218/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — whiteboard diagrams, binary conversion tables, student activity shots.",
+    "gallery": [
+      {
+        "file": "data/binary-light-bulbs.gif",
+        "_placeholder": "ADD: Diagram showing 0 = OFF bulb, 1 = ON bulb",
+        "caption": "Binary: 0 = OFF, 1 = ON — Just like a light switch!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/decimal-vs-binary.jpg",
+        "_placeholder": "ADD: Side-by-side chart of decimal and binary numbers",
+        "caption": "Decimal (Base-10) vs Binary (Base-2) — spot the pattern!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/hex-color-codes.jpg",
+        "_placeholder": "ADD: Screenshot of hex color codes used in web design",
+        "caption": "Hex color codes — #FF5733 is how computers describe color!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/binary-clock.gif",
+        "_placeholder": "ADD: Binary clock or binary counter animation",
+        "caption": "A binary clock — can you read the time?",
+        "category": "Lab"
+      },
+      {
+        "file": "data/ascii-table.jpg",
+        "_placeholder": "ADD: ASCII table showing letters mapped to binary",
+        "caption": "ASCII Table — every letter has a binary code!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/transistor-switch.jpg",
+        "_placeholder": "ADD: Transistor or switch diagram representing 0 and 1",
+        "caption": "Transistors are tiny switches — the hardware reason computers use binary",
+        "category": "Components"
+      },
+      {
+        "file": "data/hex-digits.png",
+        "_placeholder": "ADD: Chart of hex digits 0-9 and A-F with their decimal equivalents",
+        "caption": "Hex uses 0–9 and A–F — 16 symbols for 16 values!",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Decimal (Base-10) — The 10-finger system humans use every day",
+    "Binary (Base-2) — The language of computers: only 0 and 1 (OFF / ON)",
+    "Why Binary? — Transistors are switches: OFF = 0, ON = 1",
+    "Bit & Byte — 1 bit = one 0 or 1; 8 bits = 1 byte = one character",
+    "Hexadecimal (Base-16) — Shorthand for binary: digits 0–9 and A–F",
+    "Decimal ↔ Binary Conversion — Divide by 2, read remainders upward",
+    "Binary ↔ Hex Conversion — Group binary into 4-bit nibbles",
+    "Real-World Hex — Web colors (#FF0000 = red), memory addresses, error codes"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Binary Numbers and Base Systems",
+      "videoId": "LpuPe81bc2w",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear, beginner-friendly explanation of binary numbers and why computers use base-2 instead of base-10."
+    },
+    {
+      "title": "How Computers Work: Binary & Data",
+      "videoId": "USCBCmwMCDA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Khan Academy explains how all digital data — text, images, sound — is represented using binary."
+    },
+    {
+      "title": "Hexadecimal Explained for Beginners",
+      "videoId": "4EJay-6Bioo",
+      "desc": "Learn the hex number system, why programmers use it, and how to convert between hex and binary."
+    },
+    {
+      "title": "Why Do Computers Use Binary?",
+      "videoId": "Xpk67YzOn5w",
+      "desc": "Explores the physics and engineering reason behind binary — transistors, voltage levels, and reliability."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Binary ↔ Decimal Converter",
+      "url": "https://www.rapidtables.com/convert/number/binary-to-decimal.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "Hex Color Picker (See Hex in Action)",
+      "url": "https://www.google.com/search?q=color+picker",
+      "icon": "🎨"
+    },
+    {
+      "title": "CS Unplugged — Binary Numbers Activity",
+      "url": "https://www.csunplugged.org/en/topics/binary-numbers/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi — Free Arduino/Python Simulator",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "ASCII Table Reference",
+      "url": "https://www.asciitable.com",
+      "icon": "🔗"
+    }
+  ],
+  "codeExamples": [
+    {
+      "title": "Decimal to Binary in Python",
+      "language": "python",
+      "description": "Convert any decimal number to binary using Python's built-in bin() function and manual division method.",
+      "code": "# Method 1: Using Python's built-in function\nnumber = 42\nbinary = bin(number)          # Returns '0b101010'\nprint(f\"{number} in binary is: {binary[2:]}\")  # Strip '0b' prefix\n\n# Method 2: Manual conversion (divide by 2)\ndef decimal_to_binary(n):\n    if n == 0:\n        return '0'\n    bits = []\n    while n > 0:\n        bits.append(str(n % 2))  # Remainder is 0 or 1\n        n = n // 2               # Integer divide by 2\n    return ''.join(reversed(bits))  # Read remainders bottom-up\n\nprint(decimal_to_binary(10))   # Output: 1010\nprint(decimal_to_binary(255))  # Output: 11111111"
+    },
+    {
+      "title": "Binary to Decimal in Python",
+      "language": "python",
+      "description": "Convert a binary string back to its decimal value — two ways.",
+      "code": "# Method 1: Python built-in int() with base\nbinary_string = '101010'\ndecimal = int(binary_string, 2)   # Base 2 = binary\nprint(f\"Binary {binary_string} = Decimal {decimal}\")  # 42\n\n# Method 2: Manual positional value calculation\ndef binary_to_decimal(b):\n    result = 0\n    power = 0\n    for bit in reversed(b):        # Start from rightmost bit\n        result += int(bit) * (2 ** power)\n        power += 1\n    return result\n\nprint(binary_to_decimal('1010'))   # Output: 10\nprint(binary_to_decimal('1111'))   # Output: 15"
+    },
+    {
+      "title": "Decimal ↔ Hexadecimal in Python",
+      "language": "python",
+      "description": "Convert between decimal and hex — the shorthand programmers use.",
+      "code": "# Decimal → Hex\nnumber = 255\nhex_val = hex(number)             # Returns '0xff'\nprint(f\"{number} in hex = {hex_val[2:].upper()}\")  # FF\n\n# Hex → Decimal\nhex_string = 'FF'\ndecimal = int(hex_string, 16)     # Base 16 = hexadecimal\nprint(f\"Hex {hex_string} = Decimal {decimal}\")     # 255\n\n# Fun: Web colors use hex!\nred   = int('FF', 16)   # 255\ngreen = int('A5', 16)   # 165\nblue  = int('00', 16)   # 0\nprint(f\"RGB for #FFA500 = ({red}, {green}, {blue})\")  # Orange!"
+    },
+    {
+      "title": "Number System Converter — All in One",
+      "language": "python",
+      "description": "A handy program to convert any decimal number to binary, octal, and hex all at once.",
+      "code": "def convert_number(decimal):\n    print(f\"\\n=== Converting {decimal} ===\")\n    print(f\"  Decimal     :  {decimal}\")\n    print(f\"  Binary      :  {bin(decimal)[2:]}\")\n    print(f\"  Octal       :  {oct(decimal)[2:]}\")\n    print(f\"  Hexadecimal :  {hex(decimal)[2:].upper()}\")\n\n# Try different numbers!\nconvert_number(10)\nconvert_number(42)\nconvert_number(255)\nconvert_number(1024)\n\n# === Converting 255 ===\n#   Decimal     :  255\n#   Binary      :  11111111\n#   Octal       :  377\n#   Hexadecimal :  FF"
+    },
+    {
+      "title": "ASCII — Letters as Numbers",
+      "language": "python",
+      "description": "Every character on your keyboard has a number. Computers store text as binary numbers!",
+      "code": "# Character → ASCII number → Binary\nletter = 'A'\nascii_val = ord(letter)           # ord() gives ASCII code\nbinary    = bin(ascii_val)[2:]    # Convert to binary\n\nprint(f\"'{letter}' → ASCII {ascii_val} → Binary {binary}\")\n# 'A' → ASCII 65 → Binary 1000001\n\n# Encode a whole word\nword = \"HELLO\"\nprint(f\"\\n'{word}' in binary:\")\nfor char in word:\n    code = ord(char)\n    bits = bin(code)[2:].zfill(8)  # zfill pads to 8 bits\n    print(f\"  {char} = {code:3d} = {bits}\")\n\n# Decode binary back to text\nbinary_message = [72, 73]         # ASCII for 'H', 'I'\nmessage = ''.join(chr(n) for n in binary_message)\nprint(f\"\\nDecoded message: {message}\")  # HI"
+    }
+  ],
+  "activity": {
+    "title": "Binary Card Flip Game + Python Number Converter",
+    "parts": [
+      "5 index cards (write 16, 8, 4, 2, 1 on them — one per card)",
+      "Laptop or tablet with Python (or use Wokwi simulator)",
+      "Whiteboard / chart paper",
+      "Marker"
+    ],
+    "steps": [
+      "Lay cards face-down (= 0) and face-up (= 1). Add the face-up values to get the decimal number.",
+      "Challenge: make the number 13 using your cards. (Answer: 8+4+1 = 01101)",
+      "Try: represent your age in binary using the cards!",
+      "Now open Python and run the number converter code example above.",
+      "Type your birthday year into convert_number() — what is it in binary?",
+      "Bonus: Look up a hex color code for your favourite color at google.com/search?q=color+picker"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "How many digits does the BINARY number system use?",
+      "options": [
+        "10 (0 through 9)",
+        "16 (0 through F)",
+        "2 (only 0 and 1)",
+        "8 (0 through 7)"
+      ],
+      "answer": 2,
+      "explanation": "Binary = Base-2, so it only uses two digits: 0 and 1. Everything in a computer is represented using these two values!"
+    },
+    {
+      "q": "Why do computers use binary (0s and 1s)?",
+      "options": [
+        "Because binary is easier for humans to read",
+        "Because transistors (tiny switches) have two states: OFF (0) and ON (1)",
+        "Because it was invented first",
+        "Because binary numbers are smaller"
+      ],
+      "answer": 1,
+      "explanation": "Transistors are the basic building blocks of processors. They act like switches — OFF represents 0, ON represents 1. That's why binary perfectly matches computer hardware!"
+    },
+    {
+      "q": "What is the decimal value of binary 1010?",
+      "options": [
+        "2",
+        "10",
+        "12",
+        "1010"
+      ],
+      "answer": 1,
+      "explanation": "1010 in binary = 1×8 + 0×4 + 1×2 + 0×1 = 8 + 2 = 10. Count from right: positions are 1, 2, 4, 8!"
+    },
+    {
+      "q": "What does 1 BYTE equal?",
+      "options": [
+        "1 bit",
+        "4 bits",
+        "8 bits",
+        "16 bits"
+      ],
+      "answer": 2,
+      "explanation": "1 Byte = 8 bits. One byte can store one character (like the letter 'A'). 8 bits can represent 256 different values (0–255)."
+    },
+    {
+      "q": "How many digits does HEXADECIMAL use?",
+      "options": [
+        "2 (0 and 1)",
+        "8 (0 through 7)",
+        "10 (0 through 9)",
+        "16 (0–9 and A–F)"
+      ],
+      "answer": 3,
+      "explanation": "Hex = Base-16. It uses 0–9 for the first ten values, then A=10, B=11, C=12, D=13, E=14, F=15. 16 symbols total!"
+    },
+    {
+      "q": "What is the decimal value of hexadecimal 'F'?",
+      "options": [
+        "6",
+        "15",
+        "16",
+        "255"
+      ],
+      "answer": 1,
+      "explanation": "In hex, the letters represent: A=10, B=11, C=12, D=13, E=14, F=15. So F = 15 in decimal."
+    },
+    {
+      "q": "Why do programmers use hexadecimal instead of binary?",
+      "options": [
+        "Hex is what computers actually store",
+        "Hex is a shorter and more readable way to write binary — 4 bits = 1 hex digit",
+        "Computers can't understand binary",
+        "Hex is faster to process"
+      ],
+      "answer": 1,
+      "explanation": "4 binary bits map exactly to 1 hex digit. So 11111111 (8 bits) = FF in hex — much easier to read and write!"
+    },
+    {
+      "q": "What does the Python function bin(10) return?",
+      "options": [
+        "'10'",
+        "'0b1010'",
+        "'1010'",
+        "'A'"
+      ],
+      "answer": 1,
+      "explanation": "bin() returns a string starting with '0b' (which means binary), followed by the binary digits. bin(10) = '0b1010'. To get just the digits, use bin(10)[2:]."
+    },
+    {
+      "q": "What is the decimal number 255 in hexadecimal?",
+      "options": [
+        "EE",
+        "FE",
+        "FF",
+        "100"
+      ],
+      "answer": 2,
+      "explanation": "255 ÷ 16 = 15 remainder 15. Both digits are 15, and 15 = F in hex. So 255 = FF. This is why full-red in web color is #FF0000!"
+    },
+    {
+      "q": "What does the ASCII code represent?",
+      "options": [
+        "A type of binary circuit",
+        "A standard that maps characters (letters, numbers, symbols) to numeric codes",
+        "A hexadecimal color system",
+        "A method for compressing files"
+      ],
+      "answer": 1,
+      "explanation": "ASCII (American Standard Code for Information Interchange) assigns a number to every keyboard character. 'A' = 65, 'a' = 97, '0' = 48. These numbers are then stored in binary!"
+    },
+    {
+      "q": "What is binary 1111 in decimal?",
+      "options": [
+        "8",
+        "11",
+        "15",
+        "16"
+      ],
+      "answer": 2,
+      "explanation": "1111 = 1×8 + 1×4 + 1×2 + 1×1 = 8+4+2+1 = 15. All four bits are ON!"
+    },
+    {
+      "q": "In Python, int('FF', 16) gives you:",
+      "options": [
+        "An error",
+        "255",
+        "'11111111'",
+        "15"
+      ],
+      "answer": 1,
+      "explanation": "int(string, base) converts a string to decimal. int('FF', 16) converts the hex string 'FF' to decimal, giving 255."
+    },
+    {
+      "q": "How many unique values can 8 bits (1 byte) represent?",
+      "options": [
+        "8",
+        "16",
+        "128",
+        "256"
+      ],
+      "answer": 3,
+      "explanation": "Each bit has 2 possible values (0 or 1). For 8 bits: 2⁸ = 256 unique values (from 0 to 255)."
+    },
+    {
+      "q": "What is the binary equivalent of decimal 5?",
+      "options": [
+        "0101",
+        "0110",
+        "1001",
+        "1100"
+      ],
+      "answer": 0,
+      "explanation": "5 in binary: 5 ÷ 2 = 2 remainder 1; 2 ÷ 2 = 1 remainder 0; 1 ÷ 2 = 0 remainder 1. Reading upward: 101, padded to 0101."
+    },
+    {
+      "q": "Which of these is a real-world use of hexadecimal?",
+      "options": [
+        "Measuring temperature",
+        "Web page color codes like #FF5733",
+        "Counting seconds in a minute",
+        "Storing images in JPEG format"
+      ],
+      "answer": 1,
+      "explanation": "Web colors use hex! #FF5733 means Red=FF(255), Green=57(87), Blue=33(51). Open a color picker and try it yourself!"
+    }
+  ]
+}

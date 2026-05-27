@@ -1,0 +1,254 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-197/",
+    "slides_folder": "sessions/session-197/slides/",
+    "images_folder": "sessions/session-197/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-197",
+  "number": 197,
+  "title": "Loops Concept",
+  "subtitle": "Repeat Tasks Efficiently with Python!",
+  "date": "Session 197",
+  "duration": "45 Minutes",
+  "phase": "Python Programming Fundamentals",
+  "color": "#8B5CF6",
+  "icon": "🔄",
+  "tags": [
+    "Python",
+    "Loops",
+    "For Loop",
+    "While Loop",
+    "Programming Logic"
+  ],
+  "overview": "Students learn how loops help computers repeat tasks automatically. They explore for loops and while loops, work with counters and lists, and create simple programs that perform repetitive actions without writing the same code multiple times.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-197/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of loop examples, counters, lists, and student coding activities.",
+    "gallery": [
+      {
+        "file": "data/python-loops.png",
+        "caption": "Introduction to Python Loops",
+        "category": "Concept"
+      },
+      {
+        "file": "data/for-loop-example.png",
+        "caption": "Using a For Loop",
+        "category": "Programming"
+      },
+      {
+        "file": "data/while-loop-example.png",
+        "caption": "Using a While Loop",
+        "category": "Programming"
+      },
+      {
+        "file": "data/python-lists.png",
+        "caption": "Working with Lists in Python",
+        "category": "Concept"
+      },
+      {
+        "file": "data/loop-counter.png",
+        "caption": "Loop Counters and Iterations",
+        "category": "Programming"
+      },
+      {
+        "file": "data/student-coding-loops.jpg",
+        "caption": "Students Practicing Loop Programs",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Loop?",
+    "Why Loops are Important",
+    "Avoiding Repeated Code",
+    "Introduction to For Loops",
+    "Using range() Function",
+    "Counting with Loops",
+    "Introduction to While Loops",
+    "Loop Conditions",
+    "Infinite Loops",
+    "Working with Lists",
+    "Looping Through List Items",
+    "Nested Loops Basics",
+    "Real-Life Examples of Loops",
+    "Debugging Loop Errors"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Python For Loops for Beginners",
+      "videoId": "OnDr4J2UXSA",
+      "desc": "Learn how to repeat actions using for loops."
+    },
+    {
+      "title": "Python While Loops Explained",
+      "videoId": "6iF8Xb7Z3wQ",
+      "desc": "Understand while loops and loop conditions."
+    },
+    {
+      "title": "Python Lists and Loops",
+      "videoId": "ohCDWZgNIU0",
+      "desc": "Learn how loops work with lists."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Python Official Tutorial - Control Flow",
+      "url": "https://docs.python.org/3/tutorial/controlflow.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "W3Schools Python Loops",
+      "url": "https://www.w3schools.com/python/python_for_loops.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "Thonny IDE",
+      "url": "https://thonny.org",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create Loop-Based Programs",
+    "parts": [
+      "Computer",
+      "Python Installed",
+      "Thonny IDE",
+      "Notebook"
+    ],
+    "steps": [
+      "Open Thonny IDE",
+      "Create a new Python file",
+      "Write a for loop that prints numbers from 1 to 10",
+      "Run the program and observe the output",
+      "Create a while loop that counts from 1 to 5",
+      "Display the counter value each time",
+      "Create a list of fruits",
+      "Use a for loop to print each fruit name",
+      "Modify the loop to print item numbers",
+      "Discuss real-life examples of repetitive tasks"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the main purpose of a loop?",
+      "options": [
+        "Store data",
+        "Repeat instructions",
+        "Create graphics",
+        "Connect to the internet"
+      ],
+      "answer": 1,
+      "explanation": "Loops allow programs to repeat instructions automatically."
+    },
+    {
+      "q": "Which loop is commonly used when the number of repetitions is known?",
+      "options": [
+        "for loop",
+        "while loop",
+        "if statement",
+        "elif statement"
+      ],
+      "answer": 0,
+      "explanation": "A for loop is ideal when the number of repetitions is known."
+    },
+    {
+      "q": "Which loop continues until a condition becomes False?",
+      "options": [
+        "for loop",
+        "while loop",
+        "print loop",
+        "list loop"
+      ],
+      "answer": 1,
+      "explanation": "A while loop runs as long as its condition is True."
+    },
+    {
+      "q": "What does range(5) generate?",
+      "options": [
+        "1,2,3,4,5",
+        "0,1,2,3,4",
+        "5,4,3,2,1",
+        "0,5"
+      ],
+      "answer": 1,
+      "explanation": "range(5) generates numbers from 0 to 4."
+    },
+    {
+      "q": "What is a counter in a loop?",
+      "options": [
+        "A variable that tracks repetitions",
+        "A printer",
+        "A data type",
+        "A list"
+      ],
+      "answer": 0,
+      "explanation": "Counters keep track of how many times a loop has executed."
+    },
+    {
+      "q": "Which data structure stores multiple values?",
+      "options": [
+        "Integer",
+        "String",
+        "Boolean",
+        "List"
+      ],
+      "answer": 3,
+      "explanation": "Lists store multiple values in a single variable."
+    },
+    {
+      "q": "What happens in an infinite loop?",
+      "options": [
+        "The loop never stops",
+        "The program closes",
+        "The computer restarts",
+        "The code is deleted"
+      ],
+      "answer": 0,
+      "explanation": "An infinite loop keeps running because its condition never becomes False."
+    },
+    {
+      "q": "Which keyword starts a while loop?",
+      "options": [
+        "for",
+        "loop",
+        "while",
+        "repeat"
+      ],
+      "answer": 2,
+      "explanation": "The while keyword is used to create a while loop."
+    },
+    {
+      "q": "What is the output count of range(3)?",
+      "options": [
+        "1 value",
+        "2 values",
+        "3 values",
+        "4 values"
+      ],
+      "answer": 2,
+      "explanation": "range(3) produces 0, 1, and 2, which are three values."
+    },
+    {
+      "q": "Why are loops useful?",
+      "options": [
+        "They reduce repetitive coding",
+        "They increase file size",
+        "They create viruses",
+        "They slow down programs"
+      ],
+      "answer": 0,
+      "explanation": "Loops save time and make programs shorter and more efficient."
+    }
+  ]
+}

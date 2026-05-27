@@ -1,0 +1,239 @@
+{
+  "id": "session-181",
+  "number": 181,
+  "title": "Advanced File Explorer",
+  "subtitle": "Manage Files Like a Pro!",
+  "date": "Session 181",
+  "duration": "45 Minutes",
+  "phase": "Advanced Computing",
+  "color": "#4CAF50",
+  "icon": "📁",
+  "tags": [
+    "File Management",
+    "Windows",
+    "Search",
+    "Compression"
+  ],
+  "overview": "Students will learn advanced File Explorer features including customizing folder views, using search filters to quickly find files, and compressing/decompressing files for efficient storage and sharing.",
+  "grades": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "slides": {
+    "pdf": "sessions/session-181/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots and photos from the actual session.",
+    "gallery": [
+      {
+        "file": "data/file-explorer.jpg",
+        "caption": "Windows File Explorer Interface",
+        "category": "Concept"
+      },
+      {
+        "file": "data/folder-view.jpg",
+        "caption": "Different Folder View Options",
+        "category": "Concept"
+      },
+      {
+        "file": "data/search-filter.jpg",
+        "caption": "Using Search Filters to Find Files",
+        "category": "Practice"
+      },
+      {
+        "file": "data/zip-file.jpg",
+        "caption": "Compressed ZIP File Example",
+        "category": "Concept"
+      },
+      {
+        "file": "data/extract-files.jpg",
+        "caption": "Extracting Files from a ZIP Folder",
+        "category": "Practice"
+      },
+      {
+        "file": "data/student-activity.jpg",
+        "caption": "Students Organizing Files and Folders",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Introduction to Advanced File Explorer Features",
+    "Changing Folder Views (Icons, List, Details, Tiles)",
+    "Sorting Files by Name, Date, Type, and Size",
+    "Using Search Box Efficiently",
+    "Search Filters (type:, date:, size:)",
+    "Creating and Organizing Folders",
+    "Compressing Files into ZIP Format",
+    "Extracting Files from ZIP Archives",
+    "Benefits of File Compression",
+    "File Management Best Practices"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Windows File Explorer Tutorial",
+      "videoId": "9A5rWlD4H9I",
+      "desc": "Learn the basics and advanced features of File Explorer."
+    },
+    {
+      "title": "How to Search Files Quickly",
+      "videoId": "9sNQW7MZq4Y",
+      "desc": "Using search filters effectively in Windows."
+    },
+    {
+      "title": "Compress and Extract ZIP Files",
+      "videoId": "L1fYlT8xW6Y",
+      "desc": "Step-by-step guide to creating and extracting ZIP files."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft File Explorer Guide",
+      "url": "https://support.microsoft.com/windows",
+      "icon": "🔗"
+    },
+    {
+      "title": "Windows Search Tips",
+      "url": "https://support.microsoft.com/search",
+      "icon": "🔗"
+    },
+    {
+      "title": "7-Zip File Compression Tool",
+      "url": "https://www.7-zip.org",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "File Organization and Compression Challenge",
+    "parts": [
+      "Computer with Windows",
+      "Sample files (Documents, Images, Videos)",
+      "File Explorer"
+    ],
+    "steps": [
+      "Open File Explorer",
+      "Create a folder named 'My Project'",
+      "Create subfolders for Images, Documents, and Videos",
+      "Move files into the correct folders",
+      "Change folder view to Details",
+      "Search for a file using the search box",
+      "Use type: filter to find only image files",
+      "Compress the folder into a ZIP file",
+      "Extract the ZIP file to a new location"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which shortcut opens File Explorer in Windows?",
+      "options": [
+        "Windows + E",
+        "Ctrl + E",
+        "Alt + E",
+        "Shift + E"
+      ],
+      "answer": 0,
+      "explanation": "Windows + E is the shortcut key to open File Explorer."
+    },
+    {
+      "q": "Which view shows the most file information?",
+      "options": [
+        "Large Icons",
+        "Tiles",
+        "Details",
+        "List"
+      ],
+      "answer": 2,
+      "explanation": "Details view displays name, date, type, and size information."
+    },
+    {
+      "q": "Which search filter is used to find image files?",
+      "options": [
+        "date:",
+        "size:",
+        "type:",
+        "name:"
+      ],
+      "answer": 2,
+      "explanation": "The type: filter is used to search files based on file type."
+    },
+    {
+      "q": "What is the purpose of compressing files?",
+      "options": [
+        "Increase file size",
+        "Delete files",
+        "Reduce file size and combine files",
+        "Rename files"
+      ],
+      "answer": 2,
+      "explanation": "Compression reduces storage space and groups files together."
+    },
+    {
+      "q": "Which file extension is commonly used for compressed folders?",
+      "options": [
+        ".txt",
+        ".jpg",
+        ".zip",
+        ".exe"
+      ],
+      "answer": 2,
+      "explanation": "ZIP is the most common compressed file format."
+    },
+    {
+      "q": "What does extracting a ZIP file mean?",
+      "options": [
+        "Deleting the ZIP file",
+        "Opening files from the compressed folder",
+        "Moving files to recycle bin",
+        "Changing file names"
+      ],
+      "answer": 1,
+      "explanation": "Extraction restores files from the compressed folder."
+    },
+    {
+      "q": "Which option helps arrange files alphabetically?",
+      "options": [
+        "Sort by Name",
+        "Compress",
+        "Extract",
+        "Delete"
+      ],
+      "answer": 0,
+      "explanation": "Sorting by Name arranges files alphabetically."
+    },
+    {
+      "q": "Which search filter helps find large files?",
+      "options": [
+        "type:",
+        "date:",
+        "size:",
+        "name:"
+      ],
+      "answer": 2,
+      "explanation": "The size: filter is used to search files by file size."
+    },
+    {
+      "q": "What is File Explorer mainly used for?",
+      "options": [
+        "Drawing pictures",
+        "Managing files and folders",
+        "Playing games",
+        "Editing videos"
+      ],
+      "answer": 1,
+      "explanation": "File Explorer is used to organize and manage files and folders."
+    },
+    {
+      "q": "Which action creates a compressed folder in Windows?",
+      "options": [
+        "Right Click → Send To → Compressed (zipped) Folder",
+        "Delete Folder",
+        "Rename Folder",
+        "Copy Folder"
+      ],
+      "answer": 0,
+      "explanation": "This option creates a ZIP file containing selected files."
+    }
+  ]
+}

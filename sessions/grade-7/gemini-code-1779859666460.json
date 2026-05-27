@@ -1,0 +1,204 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-228/",
+    "slides_folder": "sessions/session-228/slides/",
+    "images_folder": "sessions/session-228/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-228",
+  "number": 228,
+  "title": "Safe Password Practices: Creating Strong Posters",
+  "subtitle": "Lock down your data with uncrackable keys!",
+  "date": "Session 228",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#00E676",
+  "icon": "🔐",
+  "tags": [
+    "Cybersecurity",
+    "Digital Literacy",
+    "Technology",
+    "Safety"
+  ],
+  "overview": "In this hands-on session, students explore the core mechanics of password strength, learn defensive strategies against cyber-attacks, and design informational campaign posters to spread awareness about safe password practices.",
+  "grades": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "slides": {
+    "pdf": "sessions/session-228/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — student-designed posters, password crack-time matrices on the board, and campaign galleries.",
+    "gallery": [
+      {
+        "file": "data/password-complexity.jpg",
+        "_placeholder": "ADD: Photo of the password matrix comparing length vs crack time on the whiteboard",
+        "caption": "Length vs. Complexity matrix — mapping out how quickly hackers crack weak keys!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/poster-design-layout.png",
+        "_placeholder": "ADD: Visual guide or student prototype sketch of their password security poster",
+        "caption": "Poster Blueprint — Bold headlines, simple graphics, and clear security rules.",
+        "category": "Components"
+      },
+      {
+        "file": "data/brute-force-analogy.gif",
+        "_placeholder": "ADD: Diagram showing a robot rapidly trying 10,000 keys in a lock",
+        "caption": "Brute Force Attack — A computer guessing passwords at lightning speed!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/student-poster-exhibition.jpg",
+        "_placeholder": "ADD: Photo of students presenting their cybersecurity awareness posters to the class",
+        "caption": "Students presenting their completed 'Safe Password' posters during the gallery walk",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "The Length Rule — Why a longer sentence-based 'Passphrase' beats a short complex password | Length > Complexity",
+    "Character Mix — Mixing capital letters (A), lowercase letters (a), numbers (7), and symbols (@#$%) to scramble your code",
+    "Brute Force Attack — High-speed software trying millions of random word combinations every single second",
+    "Dictionary Attack — Hackers running automated lists of real words and common names to guess lazy credentials",
+    "Common Traps — Banishing predictable sequences (123456, qwerty) and public details (birthdays, pet names)",
+    "Password Managers — A digital vault that stores and generates uncrackable unique keys for every account",
+    "MFA (Multi-Factor Authentication) — The double-lock system (e.g., Password + OTP code sent to a phone)",
+    "Poster Design Framework — Creating impact using bold titles, catchy slogans, and clear action steps | LOOK LOOK LEARN!"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Secure is Your Password?",
+      "videoId": "xyz-cracktime",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "A visual look at how modern supercomputers guess simple passwords instantly versus taking centuries for strong passphrases."
+    },
+    {
+      "title": "Password vs Passphrase Explained",
+      "videoId": "abc-passphrase",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "Why four random common words hooked together are much safer and easier to remember than short weird symbols."
+    },
+    {
+      "title": "Introduction to Cybersecurity for Kids",
+      "videoId": "123-cybersec",
+      "desc": "An engaging, animated introduction to keeping your digital identity guarded."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Security.org — How Secure is My Password?",
+      "url": "https://www.security.org/how-secure-is-my-password/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Canva — Free Poster Design Templates",
+      "url": "https://www.canva.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Bitwarden — Free Open-Source Password Manager",
+      "url": "https://bitwarden.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Cybersecurity Awareness Poster Campaign",
+    "parts": [
+      "A3 Drawing sheets / Chart paper",
+      "Bright sketch pens and markers",
+      "Printed warning labels / stickers (optional)",
+      "Sample catchphrases (e.g., 'Make it Long, Keep it Strong!', 'Don't Share the Key!')"
+    ],
+    "steps": [
+      "Brainstorming: Students pick one central rule (e.g., Passphrases, MFA, or Avoiding Pet Names).",
+      "Slogan Design: Write a punchy, high-impact title that catches the eye immediately from across the room.",
+      "Visual Illustration: Draw a clear symbol of security (like a shield, a multi-layered vault, or a digital dragon guarding a lock).",
+      "The 'Rule of 3': Add three bullet-point action steps that any student can read and follow in under 10 seconds.",
+      "Gallery Walk: Hang completed posters up in the classroom or school corridors to educate others!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which of the following passwords takes the longest time for a computer to crack?",
+      "options": [
+        "12345678",
+        "password123",
+        "blue-elephants-dance-together",
+        "Monkey!"
+      ],
+      "answer": 2,
+      "explanation": "Long Passphrases win! 'blue-elephants-dance-together' is incredibly long, creating billions of geometric mathematical combinations that confound brute-force systems."
+    },
+    {
+      "q": "What is a 'Brute Force Attack'?",
+      "options": [
+        "A hacker physically breaking a computer screen",
+        "A program trying millions of character combinations at extreme speed until it hits the right one",
+        "Sending fake emails to steal bank accounts",
+        "Forgetting your password multiple times in a row"
+      ],
+      "answer": 1,
+      "explanation": "Brute Force = Guessing Storm! Automated software guesses codes at lightning speeds. The shorter your password, the faster the storm breaks it."
+    },
+    {
+      "q": "Why is using your dog's name or your birthday a dangerous password practice?",
+      "options": [
+        "Because it is too long to type out",
+        "Because pets can guess your password",
+        "Because that public information can be easily searched or guessed by bad actors",
+        "Because computers do not like names"
+      ],
+      "answer": 2,
+      "explanation": "Social Engineering Trap! Hackers can check public social profiles to find out birthdays, favorite sports, or pet names, making them target number one in a custom dictionary attack."
+    },
+    {
+      "q": "What does MFA stand for in digital security?",
+      "options": [
+        "Many File Access",
+        "Multi-Factor Authentication",
+        "Main Frame Allocation",
+        "Mobile Flight Assistant"
+      ],
+      "answer": 1,
+      "explanation": "MFA = Double Lock! Multi-Factor Authentication requires your password AND another verifying item, like an OTP code sent directly to your phone."
+    },
+    {
+      "q": "What is the primary goal of our poster project today?",
+      "options": [
+        "To hide our real passwords inside drawings",
+        "To create a catchy visual campaign that educates our school on safe password habits",
+        "To practice painting landscapes",
+        "To build a software application"
+      ],
+      "answer": 1,
+      "explanation": "Awareness Campaign! The posters serve as bright, communicative public anchors that quickly teach others how to protect their identities."
+    },
+    {
+      "q": "How does a Password Manager help a user?",
+      "options": [
+        "It remembers and auto-fills unique, highly complex passwords for all your accounts inside an encrypted vault",
+        "It posts your passwords securely online so you don't lose them",
+        "It speeds up your internet connection speed",
+        "It types out your homework automatically"
+      ],
+      "answer": 0,
+      "explanation": "Digital Vault! A password manager safely logs every login detail so you only ever have to memorize one singular master key."
+    },
+    {
+      "q": "Which character combination creates the strongest password complexity?",
+      "options": [
+        "Only lowercase letters",
+        "Only numbers and symbols",
+        "A varied mix of capital letters, lowercase letters, numbers, and special symbols",
+        "Repeating the same letter multiple times"
+      ],
+      "answer": 2,
+      "explanation": "Scrambled Mix! Blending uppercase, lowercase, numbers, and symbols (@#$%) exponentially expands the search space a hacking program has to calculate."
+    }
+  ]
+}

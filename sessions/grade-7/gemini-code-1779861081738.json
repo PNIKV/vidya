@@ -1,0 +1,177 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-239/",
+    "slides_folder": "sessions/session-239/slides/",
+    "images_folder": "sessions/session-239/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-239",
+  "number": 239,
+  "title": "Final Assessment & Engineering Documentation",
+  "subtitle": "Publish your masterpiece—Mastering the art of technical project reporting!",
+  "date": "Session 239",
+  "duration": "1 Hours",
+  "phase": "Core Robotics",
+  "color": "#3F51B5",
+  "icon": "📝",
+  "tags": [
+    "Robotics",
+    "Electronics",
+    "Technical Writing",
+    "Arduino",
+    "Assessment"
+  ],
+  "overview": "In this final academic capstone module, students learn how professional engineers preserve and share their inventions. Students wrap up their practical curriculum by undergoing a comprehensive performance evaluation test and compiling a structured, professional 1-page engineering project report detailing their system's Aim, Bill of Materials, Source Code Architecture, Operational Results, and future Iterative Improvements.",
+  "grades": [
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-239/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the final grading floor — completed technical reports, graded project layouts, and students writing their final code breakdowns.",
+    "gallery": [
+      {
+        "file": "data/documentation-framework.jpg",
+        "_placeholder": "ADD: Schematic layout block showing the 5 golden sections of technical documentation: Aim -> Parts -> Code -> Results -> Improvements",
+        "caption": "The Engineering Document Map — Structuring knowledge so other teams can replicate your build.",
+        "category": "Concept"
+      },
+      {
+        "file": "data/sample-report-layout.png",
+        "_placeholder": "ADD: High-resolution picture of a perfectly structured, clean 1-page engineering report with labeled paragraphs",
+        "caption": "Technical Report Blueprint — Balances code blocks, component tables, and observation logs.",
+        "category": "Components"
+      },
+      {
+        "file": "data/final-evaluation-day.jpg",
+        "_placeholder": "ADD: Photo of students systematically reviewing code comments and finalizing their report printouts for submission",
+        "caption": "The Peer Review Module — Validating project records against functional criteria.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Importance of Engineering Documentation — Understanding why precise records prevent lost development work in corporate R&D",
+    "Defining the Engineering 'Aim' — Formulating objective, clear problem statements and quantifiable project goals",
+    "Compiling a Bill of Materials (BOM) — Cataloging hardware parts cleanly along with pin mappings and specifications",
+    "Code Documentation Standards — Utilizing clear descriptive inline comments, indentation rules, and legible variable naming conventions",
+    "Recording Empirical Results — Presenting performance logs, sensor ranges, and operational conditions scientifically",
+    "Iterative Improvement Mapping — Identifying operational failure vectors, bottleneck limitations, and upcoming upgrade tasks",
+    "Peer Validation & Assessment — Critiquing documentation clarity to confirm that a secondary engineer can successfully reproduce the build"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How to Write a Professional Engineering Project Report",
+      "videoId": "engineering-report-guide",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "A step-by-step breakdown explaining how to fit complex technical details cleanly into a brief, professional layout format."
+    },
+    {
+      "title": "Clean Code Practices: Documenting Code and Variables",
+      "videoId": "clean-code-documentation",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "An instructive tutorial on writing inline comments that explain the 'why' behind specific hardware control statements."
+    }
+  ],
+  "resources": [
+    {
+      "title": "IEEE Editorial Style Manual for Technical Writing",
+      "url": "https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/style_manual_version_number.pdf",
+      "icon": "🔗"
+    },
+    {
+      "title": "Markdown Guide — Quick Formatting Cheat Sheet",
+      "url": "https://www.markdownguide.org/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The 1-Page Master Engineering Report & Peer Audit",
+    "parts": [
+      "The 1-Page Technical Document Template (Structured with Aim, Parts, Code, Result, Improvement panels)",
+      "Final Code Archive Repository (The student's fully debugged capstone program file)",
+      "Project Evaluation Assessment Rubric Sheet"
+    ],
+    "steps": [
+      "The Executive Summary: Students compose a concise 'Aim' paragraph, describing the specific problem their capstone machine resolves.",
+      "The Inventory Audit: Teams document the complete hardware stack, filling out an inventory list complete with matching pin destinations.",
+      "The Code Block Refactor: Students extract the core functional block of their Arduino script, clean up variable names, and write supportive inline comments explaining the logic thresholds.",
+      "The Empirical Results Log: Students draft an objective description of how the physical device responded during real-world stress testing.",
+      "The Upgrade Roadmap: Students analyze system vulnerabilities (e.g., 'sensor reads erratically in bright sunlight') and write down two clear hardware/software improvements for future versions.",
+      "The Reproduction Exchange: Pairs swap reports and evaluate if they can reconstruct their peer's complete machine using only the provided document!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Why is technical documentation considered just as valuable as the physical prototype in professional engineering?",
+      "options": [
+        "Because documentation makes the final device weigh less and run cooler",
+        "Because without clear structural records, other engineers cannot repair, recreate, verify, or upgrade the system safely, causing development work to be lost",
+        "Because writing long texts automatically increases the retail price of consumer goods",
+        "Because it serves as a secret code that blocks competitors from buying identical components"
+      ],
+      "answer": 1,
+      "explanation": "Knowledge Redundancy and Replication! In industry, a functional prototype is useless if nobody else can figure out how it was wired or coded. Documentation ensures knowledge survives and allows teams to scale production safely."
+    },
+    {
+      "q": "What detail should be prioritized inside the 'Aim' section of a professional engineering project report?",
+      "options": [
+        "A long list of the student's favorite programming languages",
+        "A concise, clear definition of the real-world problem being solved and the explicit target objective of the automated system",
+        "The overall cost of building the school computer lab facilities",
+        "A timeline describing what the student ate during lab breaks"
+      ],
+      "answer": 1,
+      "explanation": "Clear Goal Definition! The 'Aim' sets the evaluation criteria for the entire build. It acts as an anchor, stating exactly what issue the hardware confronts and what criteria define a successful build."
+    },
+    {
+      "q": "When creating a professional Bill of Materials (BOM) in the 'Parts' segment, what data must be recorded alongside component names?",
+      "options": [
+        "The color of the delivery shipping container box",
+        "The precise quantities utilized and their exact hardware pin/interface connection destinations on the microcontroller board",
+        "A historical review detailing who originally invented breadboards",
+        "The name parameters of every other device inside the laboratory room"
+      ],
+      "answer": 1,
+      "explanation": "Physical Interface Integrity! A professional inventory listing must map connection coordinates (e.g., Echo Pin to D7, SDA to A4) so that any replacement engineer can safely replicate the device wiring architecture."
+    },
+    {
+      "q": "What is the primary rule for writing useful inline 'Code Comments' inside your final software script file?",
+      "options": [
+        "Repeat the exact code command word-for-word in plain capital letters",
+        "Explain the underlying logic and the engineering purpose behind the code thresholds, rather than just translating basic keyword commands",
+        "Make sure comments look long enough to hide the actual code statements underneath",
+        "Delete all space layout boundaries to pack lines as tightly as possible"
+      ],
+      "answer": 1,
+      "explanation": "Explaining the Intent! Writing comments like `int distance = 10; // sets variable to 10` adds no real value. Instead, write `// Threshold set to 10cm to trigger safety alarm before wall collision`. This explains the design intent behind the math parameters."
+    },
+    {
+      "q": "What belongs inside the 'Result' section of an engineering documentation report?",
+      "options": [
+        "An idealized story pretending the system never experienced any bugs or configuration errors",
+        "An objective, database log tracking exactly how the hardware performed, including raw sensor data outcomes, execution results, and operational limits",
+        "A collection of links pointing to retail stores that sell similar pre-built products",
+        "A long request asking for a higher grade score from the evaluation committee"
+      ],
+      "answer": 1,
+      "explanation": "Empirical Authenticity! Professional reporting demands honest data over perfection. Documenting specific sensor limits and noting occasional lag provides the necessary baseline data required to handle the next stage of system upgrades."
+    },
+    {
+      "q": "Why must every technical engineering report conclude with an 'Improvements' roadmap segment?",
+      "options": [
+        "To satisfy a legal constraint that forces companies to modify designs annually",
+        "To explicitly map out system limitations, resolve discovered bottleneck bugs, and outline future enhancements for the next product generation",
+        "To notify readers that the product concept is being entirely abandoned",
+        "To make sure the layout text matches the exact line limits of the display page"
+      ],
+      "answer": 1,
+      "explanation": "The Cycle of Continuous Iteration! No engineering system is flawless on its first deployment run. Outlining future upgrades turns discovered bugs into an actionable plan, providing a clear roadmap for the next development cycle."
+    }
+  ]
+}

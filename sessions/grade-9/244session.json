@@ -1,0 +1,324 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-4/",
+        "slides_folder": "sessions/session-4/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-4/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-4",
+    "number": 4,
+    "title": "Full IoT System",
+    "subtitle": "Sense it, Send it, Control it — Anywhere!",
+    "date": "Session 04",
+    "duration": "1 Hour",
+    "phase": "Advanced",
+    "color": "#00C853",
+    "icon": "🌐",
+    "tags": [
+        "Internet of Things",
+        "Networking",
+        "Sensors",
+        "Automation"
+    ],
+    "overview": "This session brings together sensors, microcontrollers, connectivity, and cloud platforms to build a complete end-to-end IoT system. Students learn how physical devices collect data, send it over the internet, and trigger real-world actions — the backbone of smart homes, smart cities, and Industry 4.0.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-4/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from the actual session — IoT architecture diagrams, NodeMCU wiring, dashboard screenshots, student projects.",
+        "gallery": [
+            {
+                "file": "data/iot-architecture.jpg",
+                "_placeholder": "ADD: Diagram showing full IoT pipeline — Sensor → Device → Internet → Cloud → Dashboard → Actuator",
+                "caption": "IoT Pipeline — From the real world to the internet and back!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/nodemcu-esp8266.jpg",
+                "_placeholder": "ADD: Photo of NodeMCU ESP8266 board with labeled pins",
+                "caption": "NodeMCU ESP8266 — Arduino + Wi-Fi in one tiny board!",
+                "category": "Components"
+            },
+            {
+                "file": "data/dht11-sensor.jpg",
+                "_placeholder": "ADD: Photo of DHT11 temperature and humidity sensor",
+                "caption": "DHT11 — Reads temperature AND humidity in one sensor!",
+                "category": "Components"
+            },
+            {
+                "file": "data/mqtt-protocol.jpg",
+                "_placeholder": "ADD: Diagram showing MQTT broker — publisher and subscriber model",
+                "caption": "MQTT — Lightweight messaging protocol for IoT devices",
+                "category": "Concept"
+            },
+            {
+                "file": "data/thingspeak-dashboard.png",
+                "_placeholder": "ADD: Screenshot of ThingSpeak or Blynk dashboard showing live sensor data",
+                "caption": "IoT Dashboard — Live data from your sensor on the internet!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/smart-home.jpg",
+                "_placeholder": "ADD: Image of a smart home setup — lights, thermostat, security camera",
+                "caption": "Smart Home — Every device connected, controlled from your phone!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/relay-module.jpg",
+                "_placeholder": "ADD: Photo of a relay module connected to NodeMCU",
+                "caption": "Relay Module — IoT brain switches real-world appliances ON/OFF!",
+                "category": "Components"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is IoT? — Connecting physical devices to the internet to collect and exchange data",
+        "IoT Architecture — Sensors → Microcontroller → Connectivity → Cloud → Dashboard → Actuator",
+        "NodeMCU ESP8266 — Wi-Fi enabled microcontroller board (Arduino + Internet in one!)",
+        "DHT11 Sensor — Reads temperature and humidity, sends data over Wi-Fi",
+        "MQTT Protocol — Lightweight publish/subscribe messaging for IoT (like a postal system!)",
+        "IoT Cloud Platforms — ThingSpeak, Blynk, Firebase, AWS IoT — store and visualize data",
+        "Actuators — Output devices that take action (relay, motor, LED) based on cloud commands",
+        "IoT Applications — Smart Home, Smart Agriculture, Industrial Monitoring, Health Wearables"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is IoT? Internet of Things Explained",
+            "videoId": "LlhmzVL5bm8",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "A simple animated introduction to the Internet of Things — how everyday objects connect to the internet and each other."
+        },
+        {
+            "title": "NodeMCU ESP8266 Getting Started",
+            "videoId": "G6CqvhXpBKM",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "How to set up NodeMCU ESP8266 with Arduino IDE and connect it to Wi-Fi for your first IoT project."
+        },
+        {
+            "title": "MQTT Explained Simply",
+            "videoId": "EIxdz-2rhLs",
+            "desc": "What is MQTT? The publish-subscribe protocol explained with real examples for IoT beginners."
+        },
+        {
+            "title": "Build an IoT Weather Station with ThingSpeak",
+            "videoId": "0W3MdoBNjOk",
+            "desc": "Step-by-step project — DHT11 sensor + NodeMCU + ThingSpeak dashboard showing live temperature data."
+        }
+    ],
+    "resources": [
+        {
+            "title": "ThingSpeak — Free IoT Cloud Dashboard",
+            "url": "https://thingspeak.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "Blynk IoT Platform",
+            "url": "https://blynk.io",
+            "icon": "🔗"
+        },
+        {
+            "title": "Wokwi — Simulate NodeMCU & IoT Online",
+            "url": "https://wokwi.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "MQTT Explorer — Visual MQTT Debugger",
+            "url": "https://mqtt-explorer.com",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "IoT Weather Monitor — DHT11 + NodeMCU + ThingSpeak Live Dashboard",
+        "parts": [
+            "NodeMCU ESP8266 board",
+            "DHT11 Temperature & Humidity Sensor",
+            "Breadboard",
+            "Jumper wires",
+            "USB cable + laptop with Arduino IDE",
+            "Wi-Fi network credentials",
+            "ThingSpeak account (free at thingspeak.com)"
+        ],
+        "steps": [
+            "Wire DHT11: VCC → 3.3V, GND → GND, DATA → D4 (GPIO2) on NodeMCU",
+            "Install ESP8266 board package in Arduino IDE (Board Manager → ESP8266)",
+            "Install DHT sensor library via Arduino Library Manager",
+            "Create a free ThingSpeak account and create a new Channel with 2 fields (Temperature, Humidity)",
+            "Copy your ThingSpeak Write API Key into the code",
+            "Enter your Wi-Fi SSID and password in the code",
+            "Upload the code — NodeMCU connects to Wi-Fi and reads DHT11 every 15 seconds",
+            "Open ThingSpeak dashboard — watch live temperature and humidity graphs update in real time!",
+            "Challenge: Add an LED that turns ON when temperature exceeds 30°C (using ThingSpeak + webhook or local threshold)"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does IoT stand for?",
+            "options": [
+                "Internet of Technology",
+                "Internet of Things",
+                "Integrated Online Tools",
+                "Input Output Terminal"
+            ],
+            "answer": 1,
+            "explanation": "IoT = Internet of Things! It means connecting everyday physical objects — sensors, appliances, vehicles — to the internet so they can collect and share data."
+        },
+        {
+            "q": "What is the correct order of an IoT pipeline?",
+            "options": [
+                "Cloud → Sensor → Actuator → Internet",
+                "Actuator → Internet → Sensor → Cloud",
+                "Sensor → Microcontroller → Internet → Cloud → Dashboard → Actuator",
+                "Dashboard → Sensor → Wi-Fi → Relay"
+            ],
+            "answer": 2,
+            "explanation": "IoT pipeline: Sensor collects data → Microcontroller processes it → Sends over Internet → Cloud stores it → Dashboard shows it → Actuator acts on it!"
+        },
+        {
+            "q": "What makes NodeMCU ESP8266 special compared to a regular Arduino UNO?",
+            "options": [
+                "It has more analog pins",
+                "It is larger and more powerful",
+                "It has built-in Wi-Fi, allowing direct internet connectivity",
+                "It can run on solar power only"
+            ],
+            "answer": 2,
+            "explanation": "NodeMCU ESP8266 has built-in Wi-Fi! A regular Arduino UNO cannot connect to the internet on its own. NodeMCU = Arduino + Wi-Fi in one board!"
+        },
+        {
+            "q": "What does the DHT11 sensor measure?",
+            "options": [
+                "Distance and pressure",
+                "Light intensity and CO2",
+                "Temperature and Humidity",
+                "Sound and vibration"
+            ],
+            "answer": 2,
+            "explanation": "DHT11 = Temperature + Humidity sensor! One tiny sensor gives you both readings. Great for weather stations and smart home projects!"
+        },
+        {
+            "q": "In the IoT pipeline, what is an ACTUATOR?",
+            "options": [
+                "A device that collects data from the environment",
+                "A cloud platform that stores data",
+                "An output device that performs a physical action based on commands",
+                "A protocol for sending messages"
+            ],
+            "answer": 2,
+            "explanation": "Actuator = the muscle of IoT! It ACTS on instructions — like a relay switching a fan ON, a motor moving a door, or an LED turning on when it's dark."
+        },
+        {
+            "q": "What is MQTT?",
+            "options": [
+                "A type of sensor for measuring temperature",
+                "A lightweight publish-subscribe messaging protocol used in IoT",
+                "A cloud storage service",
+                "A programming language for microcontrollers"
+            ],
+            "answer": 1,
+            "explanation": "MQTT = lightweight IoT messaging protocol! Devices PUBLISH data to a broker, and other devices SUBSCRIBE to receive it — like a postal system for IoT!"
+        },
+        {
+            "q": "In MQTT, what is a BROKER?",
+            "options": [
+                "The sensor that collects data",
+                "The actuator that performs actions",
+                "A middle server that receives messages from publishers and sends them to subscribers",
+                "The Wi-Fi router"
+            ],
+            "answer": 2,
+            "explanation": "MQTT Broker = the post office! Publishers send messages TO the broker. Subscribers receive messages FROM the broker. It manages all communication!"
+        },
+        {
+            "q": "Which of these is a free IoT cloud dashboard platform?",
+            "options": [
+                "Arduino IDE",
+                "Notepad++",
+                "ThingSpeak",
+                "VLC Media Player"
+            ],
+            "answer": 2,
+            "explanation": "ThingSpeak is a free IoT cloud platform by MathWorks! You can send sensor data to it and visualize live graphs — perfect for beginners."
+        },
+        {
+            "q": "What does a RELAY MODULE do in an IoT system?",
+            "options": [
+                "Measures temperature",
+                "Boosts Wi-Fi signal",
+                "Acts as a switch to turn high-voltage appliances ON or OFF using low-voltage signals",
+                "Stores data in the cloud"
+            ],
+            "answer": 2,
+            "explanation": "Relay = electrically controlled switch! The NodeMCU (3.3V logic) sends a signal to the relay, which then switches a 220V appliance like a fan or light ON/OFF safely."
+        },
+        {
+            "q": "What does it mean when we say IoT devices communicate over IP?",
+            "options": [
+                "They use infrared pulses to communicate",
+                "They are assigned an Internet Protocol address and send data over the internet",
+                "They only communicate via Bluetooth",
+                "They print data to a local printer"
+            ],
+            "answer": 1,
+            "explanation": "IP = Internet Protocol. Every IoT device on the internet has an IP address — like a home address — so data packets know where to go!"
+        },
+        {
+            "q": "What is a SMART HOME in the context of IoT?",
+            "options": [
+                "A house built with smart materials",
+                "A home where devices like lights, fans, locks, and cameras are connected and controlled via internet",
+                "A school with computers in every room",
+                "A home with solar panels"
+            ],
+            "answer": 1,
+            "explanation": "Smart Home = IoT at home! Your lights, AC, security camera, and fridge are all connected — you can monitor and control them from your phone anywhere!"
+        },
+        {
+            "q": "Which of these is a real-world IoT application in agriculture?",
+            "options": [
+                "Using GPS to navigate roads",
+                "Streaming movies on a farm",
+                "Soil moisture sensors automatically triggering irrigation when soil is dry",
+                "Printing crop reports on paper"
+            ],
+            "answer": 2,
+            "explanation": "Smart Agriculture IoT: soil sensors detect dryness → send data to cloud → cloud triggers water pump → crops get watered automatically. No human needed!"
+        },
+        {
+            "q": "What is the role of Wi-Fi in an IoT system?",
+            "options": [
+                "To power the sensors",
+                "To provide the communication link between the device and the internet",
+                "To increase sensor accuracy",
+                "To store data locally"
+            ],
+            "answer": 1,
+            "explanation": "Wi-Fi is the bridge! It connects your NodeMCU (or any IoT device) to the internet so it can send sensor data to the cloud and receive commands back."
+        },
+        {
+            "q": "What happens in IoT when a sensor reading crosses a set THRESHOLD?",
+            "options": [
+                "The sensor stops working",
+                "The data is deleted from the cloud",
+                "An automated action is triggered — like sending an alert or turning on a device",
+                "The Wi-Fi disconnects"
+            ],
+            "answer": 2,
+            "explanation": "Threshold logic is key in IoT! Example: if temperature > 35°C → send alert + turn on fan automatically. This is how smart systems make decisions!"
+        },
+        {
+            "q": "What is the biggest advantage of a FULL IoT system over a standalone Arduino project?",
+            "options": [
+                "It uses less electricity",
+                "It works without any sensors",
+                "It can be monitored and controlled remotely from anywhere via the internet",
+                "It does not need any programming"
+            ],
+            "answer": 2,
+            "explanation": "Full IoT = remote everything! Unlike a standalone Arduino that only works locally, an IoT system lets you monitor sensor data and control devices from anywhere in the world!"
+        }
+    ]
+}

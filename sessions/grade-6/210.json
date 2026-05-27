@@ -1,0 +1,303 @@
+{
+  "id": "session-210",
+  "number": 210,
+  "title": "Innovation Fair",
+  "subtitle": "Live Demos, Poster Gallery & Community Tech Showcase",
+  "date": "Session 210",
+  "duration": "45 Minutes",
+  "phase": "Project Exhibition",
+  "color": "#9C27B0",
+  "icon": "🏆",
+  "tags": [
+    "Innovation",
+    "Technology",
+    "Exhibition",
+    "Presentation",
+    "STEM"
+  ],
+  "overview": "Students will present their completed projects through live demonstrations, poster presentations, and interactive exhibits. Visitors, teachers, and fellow students can explore projects, ask questions, and vote for their favorite innovations.",
+  "grades": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-210/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos of project displays, student presentations, judges, and exhibition visitors.",
+    "gallery": [
+      {
+        "file": "data/innovation-fair.jpg",
+        "caption": "Welcome to the Innovation Fair",
+        "category": "Event"
+      },
+      {
+        "file": "data/project-demo.jpg",
+        "caption": "Students Presenting Live Project Demonstrations",
+        "category": "Presentation"
+      },
+      {
+        "file": "data/poster-gallery.jpg",
+        "caption": "Technology Poster Gallery",
+        "category": "Exhibition"
+      },
+      {
+        "file": "data/community-showcase.jpg",
+        "caption": "Community Members Exploring Projects",
+        "category": "Exhibition"
+      },
+      {
+        "file": "data/project-voting.jpg",
+        "caption": "Visitors Voting for Their Favorite Project",
+        "category": "Activity"
+      },
+      {
+        "file": "data/award-ceremony.jpg",
+        "caption": "Celebrating Student Achievements",
+        "category": "Recognition"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Project Presentation Skills",
+    "Explaining Technical Ideas Clearly",
+    "Creating Attractive Project Posters",
+    "Live Demonstration Techniques",
+    "Answering Audience Questions",
+    "Community Technology Showcase",
+    "Innovation and Creativity",
+    "Peer Learning and Feedback",
+    "Project Evaluation Criteria",
+    "Voting and Judging Process",
+    "Celebrating Achievements",
+    "Reflection on Learning Journey"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Science Fair Project Presentation Tips",
+      "videoId": "L7YwS6J8M4Q",
+      "desc": "Learn how to confidently present your project."
+    },
+    {
+      "title": "How to Create an Effective Poster Presentation",
+      "videoId": "s8kR4sXhP0I",
+      "desc": "Tips for designing engaging project posters."
+    },
+    {
+      "title": "Public Speaking for Students",
+      "videoId": "M6JdY4T2r6M",
+      "desc": "Build confidence when presenting to an audience."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Canva Poster Templates",
+      "url": "https://www.canva.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Slides",
+      "url": "https://slides.google.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "STEM Project Presentation Guide",
+      "url": "https://www.sciencebuddies.org",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Innovation Fair Showcase",
+    "parts": [
+      "Student Projects",
+      "Project Posters",
+      "Display Tables",
+      "Voting Sheets",
+      "Certificates",
+      "Presentation Area"
+    ],
+    "steps": [
+      "Set up project display stations",
+      "Arrange posters and demonstration materials",
+      "Prepare a 2-minute project introduction",
+      "Welcome visitors to the showcase",
+      "Demonstrate project functionality",
+      "Answer questions from judges and visitors",
+      "Collect feedback and suggestions",
+      "Allow visitors to vote for favorite projects",
+      "Count votes and announce results",
+      "Celebrate participation and achievements"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the purpose of an Innovation Fair?",
+      "options": [
+        "To hide projects",
+        "To showcase and present projects",
+        "To take exams",
+        "To install software"
+      ],
+      "answer": 1,
+      "explanation": "Innovation fairs allow students to present and celebrate their work."
+    },
+    {
+      "q": "What should students prepare before presenting?",
+      "options": [
+        "A project explanation",
+        "A video game",
+        "A movie",
+        "Nothing"
+      ],
+      "answer": 0,
+      "explanation": "Students should be ready to explain their project clearly."
+    },
+    {
+      "q": "Why are project posters useful?",
+      "options": [
+        "They decorate the room only",
+        "They help explain project details visually",
+        "They replace the project",
+        "They are not important"
+      ],
+      "answer": 1,
+      "explanation": "Posters communicate key information quickly and effectively."
+    },
+    {
+      "q": "What is a live demo?",
+      "options": [
+        "Showing a project in action",
+        "Watching a movie",
+        "Reading a book",
+        "Taking attendance"
+      ],
+      "answer": 0,
+      "explanation": "A live demo allows visitors to see the project working."
+    },
+    {
+      "q": "What skill is important when answering questions?",
+      "options": [
+        "Confidence",
+        "Silence",
+        "Guessing",
+        "Ignoring visitors"
+      ],
+      "answer": 0,
+      "explanation": "Confidence and clear communication help explain ideas effectively."
+    },
+    {
+      "q": "Who can explore the technology showcase?",
+      "options": [
+        "Only teachers",
+        "Only judges",
+        "Students, teachers, and community members",
+        "Only project creators"
+      ],
+      "answer": 2,
+      "explanation": "Innovation fairs encourage community participation."
+    },
+    {
+      "q": "Why is visitor feedback valuable?",
+      "options": [
+        "It helps improve projects",
+        "It slows progress",
+        "It deletes data",
+        "It reduces creativity"
+      ],
+      "answer": 0,
+      "explanation": "Feedback provides useful suggestions for improvement."
+    },
+    {
+      "q": "What should a good project presentation include?",
+      "options": [
+        "Clear explanation",
+        "Project purpose",
+        "Demonstration",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "A complete presentation includes all these elements."
+    },
+    {
+      "q": "What does innovation mean?",
+      "options": [
+        "Copying ideas",
+        "Creating new or improved solutions",
+        "Avoiding challenges",
+        "Deleting projects"
+      ],
+      "answer": 1,
+      "explanation": "Innovation involves creative problem-solving and improvement."
+    },
+    {
+      "q": "Why are voting activities included?",
+      "options": [
+        "To encourage participation",
+        "To stop presentations",
+        "To remove projects",
+        "To reduce teamwork"
+      ],
+      "answer": 0,
+      "explanation": "Voting makes the event interactive and engaging."
+    },
+    {
+      "q": "What is an important quality of a presenter?",
+      "options": [
+        "Communication",
+        "Confusion",
+        "Silence",
+        "Speed"
+      ],
+      "answer": 0,
+      "explanation": "Good communication helps audiences understand the project."
+    },
+    {
+      "q": "Why should students practice before presenting?",
+      "options": [
+        "To improve confidence",
+        "To avoid learning",
+        "To shorten projects",
+        "To skip explanations"
+      ],
+      "answer": 0,
+      "explanation": "Practice helps students present smoothly and confidently."
+    },
+    {
+      "q": "What is the role of judges?",
+      "options": [
+        "Evaluate projects fairly",
+        "Build projects",
+        "Delete projects",
+        "Install software"
+      ],
+      "answer": 0,
+      "explanation": "Judges assess projects based on specific criteria."
+    },
+    {
+      "q": "What can students learn from other projects?",
+      "options": [
+        "New ideas and techniques",
+        "Nothing",
+        "Only mistakes",
+        "Only names"
+      ],
+      "answer": 0,
+      "explanation": "Exploring other projects promotes learning and inspiration."
+    },
+    {
+      "q": "What is the main goal of today's Innovation Fair?",
+      "options": [
+        "Celebrate learning, creativity, and innovation",
+        "Take a written exam",
+        "Install applications",
+        "Watch videos"
+      ],
+      "answer": 0,
+      "explanation": "The fair showcases student achievements and encourages innovation."
+    }
+  ]
+}

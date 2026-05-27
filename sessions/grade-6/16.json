@@ -1,0 +1,255 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-198/",
+    "slides_folder": "sessions/session-198/slides/",
+    "images_folder": "sessions/session-198/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-198",
+  "number": 198,
+  "title": "Spreadsheet Audit",
+  "subtitle": "Data Validation and Error Checking",
+  "date": "Session 198",
+  "duration": "45 Minutes",
+  "phase": "Spreadsheet Skills",
+  "color": "#217346",
+  "icon": "📊",
+  "tags": [
+    "Spreadsheet",
+    "Excel",
+    "Google Sheets",
+    "Data Validation",
+    "Error Checking",
+    "Audit"
+  ],
+  "overview": "Students learn how to improve spreadsheet accuracy using data validation rules and error-checking tools. They discover how to prevent incorrect entries, identify mistakes, and ensure data quality in spreadsheets used for business, education, and daily life.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-198/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of Excel data validation, error checking examples, spreadsheets, and student activities.",
+    "gallery": [
+      {
+        "file": "data/excel-sheet.jpg",
+        "caption": "Spreadsheet Data Management",
+        "category": "Concept"
+      },
+      {
+        "file": "data/data-validation.png",
+        "caption": "Applying Data Validation Rules",
+        "category": "Features"
+      },
+      {
+        "file": "data/dropdown-list.png",
+        "caption": "Creating Dropdown Lists",
+        "category": "Features"
+      },
+      {
+        "file": "data/error-checking.png",
+        "caption": "Spreadsheet Error Checking Tools",
+        "category": "Features"
+      },
+      {
+        "file": "data/invalid-data.png",
+        "caption": "Detecting Incorrect Data Entries",
+        "category": "Audit"
+      },
+      {
+        "file": "data/student-excel-lab.jpg",
+        "caption": "Students Practicing Spreadsheet Validation",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Introduction to Spreadsheet Auditing",
+    "Why Data Accuracy Matters",
+    "Common Spreadsheet Errors",
+    "What is Data Validation?",
+    "Restricting User Input",
+    "Creating Dropdown Lists",
+    "Number Range Validation",
+    "Date Validation Rules",
+    "Input Messages",
+    "Error Alerts",
+    "Formula Error Checking",
+    "Finding Missing Data",
+    "Data Consistency Checks",
+    "Real-World Spreadsheet Audits"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Excel Data Validation Tutorial",
+      "videoId": "4W4LvJnNegA",
+      "desc": "Learn how to apply data validation rules in Excel."
+    },
+    {
+      "title": "Excel Error Checking Features",
+      "videoId": "h4f0mJf6S9Y",
+      "desc": "Identify and fix common spreadsheet errors."
+    },
+    {
+      "title": "Excel for Beginners",
+      "videoId": "Vl0H-qTclOg",
+      "desc": "Basic spreadsheet skills and data management."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Microsoft Excel Training",
+      "url": "https://support.microsoft.com/excel",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Sheets Help",
+      "url": "https://support.google.com/docs",
+      "icon": "🔗"
+    },
+    {
+      "title": "Spreadsheet Practice Files",
+      "url": "https://www.gcflearnfree.org/excel",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create a Student Data Entry Form",
+    "parts": [
+      "Computer",
+      "Microsoft Excel or Google Sheets",
+      "Practice Spreadsheet File"
+    ],
+    "steps": [
+      "Open a new spreadsheet",
+      "Create columns for Name, Age, Grade, and Attendance",
+      "Apply data validation to Age (5-18 years)",
+      "Create a dropdown list for Grade selection",
+      "Add input messages for users",
+      "Configure error alerts for invalid entries",
+      "Enter sample data",
+      "Intentionally enter incorrect values",
+      "Observe validation messages",
+      "Use error checking tools to identify issues",
+      "Correct the errors and verify data accuracy"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the purpose of data validation?",
+      "options": [
+        "Make spreadsheets colorful",
+        "Restrict incorrect data entry",
+        "Delete files",
+        "Increase internet speed"
+      ],
+      "answer": 1,
+      "explanation": "Data validation helps prevent users from entering invalid data."
+    },
+    {
+      "q": "Which feature allows users to choose from predefined options?",
+      "options": [
+        "Chart",
+        "Formula",
+        "Dropdown List",
+        "Pivot Table"
+      ],
+      "answer": 2,
+      "explanation": "Dropdown lists ensure consistent data entry."
+    },
+    {
+      "q": "Why is spreadsheet auditing important?",
+      "options": [
+        "To improve data accuracy",
+        "To change fonts",
+        "To print faster",
+        "To create games"
+      ],
+      "answer": 0,
+      "explanation": "Auditing helps identify and correct data errors."
+    },
+    {
+      "q": "What happens when invalid data is entered into a validated cell?",
+      "options": [
+        "Nothing",
+        "An error alert may appear",
+        "The spreadsheet closes",
+        "The computer shuts down"
+      ],
+      "answer": 1,
+      "explanation": "Validation rules can display an error message."
+    },
+    {
+      "q": "Which type of validation can limit ages between 5 and 18?",
+      "options": [
+        "Text Validation",
+        "Number Range Validation",
+        "Chart Validation",
+        "Color Validation"
+      ],
+      "answer": 1,
+      "explanation": "Number validation restricts values to a specific range."
+    },
+    {
+      "q": "What is an input message?",
+      "options": [
+        "A game notification",
+        "A help message shown before entering data",
+        "An email",
+        "A chart title"
+      ],
+      "answer": 1,
+      "explanation": "Input messages guide users when entering data."
+    },
+    {
+      "q": "Which application is commonly used for spreadsheets?",
+      "options": [
+        "Paint",
+        "Excel",
+        "Calculator",
+        "Media Player"
+      ],
+      "answer": 1,
+      "explanation": "Microsoft Excel is a popular spreadsheet application."
+    },
+    {
+      "q": "What is a common spreadsheet error?",
+      "options": [
+        "Incorrect formula",
+        "Correct calculation",
+        "Saved file",
+        "Formatted cell"
+      ],
+      "answer": 0,
+      "explanation": "Formula mistakes can produce incorrect results."
+    },
+    {
+      "q": "What does error checking help identify?",
+      "options": [
+        "Music files",
+        "Spreadsheet mistakes",
+        "Internet problems",
+        "Printer settings"
+      ],
+      "answer": 1,
+      "explanation": "Error checking helps locate and fix spreadsheet issues."
+    },
+    {
+      "q": "Which skill is developed through spreadsheet auditing?",
+      "options": [
+        "Data Accuracy",
+        "Drawing",
+        "Video Editing",
+        "Gaming"
+      ],
+      "answer": 0,
+      "explanation": "Spreadsheet auditing improves data quality and accuracy."
+    }
+  ]
+}

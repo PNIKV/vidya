@@ -1,0 +1,246 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-187/",
+    "slides_folder": "sessions/session-187/slides/",
+    "images_folder": "sessions/session-187/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-187",
+  "number": 187,
+  "title": "Introduction to Version Control",
+  "subtitle": "Track Changes, Save History, Work Smarter!",
+  "date": "Session 187",
+  "duration": "45 Minutes",
+  "phase": "Software Development Fundamentals",
+  "color": "#F97316",
+  "icon": "🗂️",
+  "tags": [
+    "Git",
+    "Version Control",
+    "Software Development",
+    "Collaboration"
+  ],
+  "overview": "Students learn the concept of Version Control, understand why developers use Git, and explore how save history helps track changes, recover old versions, and collaborate efficiently. A simple Git GUI demonstration introduces commits, repositories, and version history.",
+  "grades": [
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "slides": {
+    "pdf": "sessions/session-187/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of Git GUI software, commit history, repositories, and student activities.",
+    "gallery": [
+      {
+        "file": "data/git-logo.png",
+        "caption": "Git — Popular Version Control System",
+        "category": "Concept"
+      },
+      {
+        "file": "data/git-history.png",
+        "caption": "Viewing project history using Git",
+        "category": "Concept"
+      },
+      {
+        "file": "data/git-commit.png",
+        "caption": "Creating a commit to save changes",
+        "category": "Activity"
+      },
+      {
+        "file": "data/git-gui.png",
+        "caption": "Simple Git GUI interface demonstration",
+        "category": "Software"
+      },
+      {
+        "file": "data/repository.png",
+        "caption": "Project repository structure",
+        "category": "Concept"
+      },
+      {
+        "file": "data/team-collaboration.jpg",
+        "caption": "Developers collaborating using Version Control",
+        "category": "Real World"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Version Control?",
+    "Why developers need save history",
+    "Tracking changes in files",
+    "Repository (Repo) concept",
+    "Commit = Save Point",
+    "Viewing project history",
+    "Restoring older versions",
+    "Benefits of Git",
+    "Introduction to Git GUI tools",
+    "Collaboration and teamwork using Version Control"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Git and GitHub for Beginners",
+      "videoId": "RGOj5yH7evk",
+      "desc": "Simple introduction to Git and version control."
+    },
+    {
+      "title": "What is Version Control?",
+      "videoId": "2sjqTHE0zok",
+      "desc": "Understanding save history and project tracking."
+    },
+    {
+      "title": "Git GUI Tutorial",
+      "videoId": "HVsySz-h9r4",
+      "desc": "Using a graphical interface for Git."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Git Official Website",
+      "url": "https://git-scm.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "GitHub",
+      "url": "https://github.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "GitHub Desktop",
+      "url": "https://desktop.github.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Save History Demonstration",
+    "parts": [
+      "Computer",
+      "GitHub Desktop or Git GUI",
+      "Sample Text File"
+    ],
+    "steps": [
+      "Create a text file named notes.txt",
+      "Write 'Version 1' and save",
+      "Create first commit named 'Initial Version'",
+      "Edit the file and add more content",
+      "Create second commit named 'Updated Notes'",
+      "View commit history in Git GUI",
+      "Restore the first version and compare changes",
+      "Discuss benefits of save history"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is Version Control?",
+      "options": [
+        "A type of operating system",
+        "A method of tracking file changes over time",
+        "A programming language",
+        "A database"
+      ],
+      "answer": 1,
+      "explanation": "Version Control keeps track of changes made to files and projects."
+    },
+    {
+      "q": "What is Git?",
+      "options": [
+        "A game",
+        "A web browser",
+        "A Version Control System",
+        "A spreadsheet tool"
+      ],
+      "answer": 2,
+      "explanation": "Git is one of the most widely used Version Control Systems."
+    },
+    {
+      "q": "What is a Commit in Git?",
+      "options": [
+        "Delete a file",
+        "Install software",
+        "A saved snapshot of changes",
+        "Create a folder"
+      ],
+      "answer": 2,
+      "explanation": "A commit acts like a save point in project history."
+    },
+    {
+      "q": "What is a Repository?",
+      "options": [
+        "A hardware device",
+        "A project folder tracked by Git",
+        "A printer",
+        "A database server"
+      ],
+      "answer": 1,
+      "explanation": "A repository stores project files and version history."
+    },
+    {
+      "q": "Why is save history useful?",
+      "options": [
+        "It makes files larger",
+        "It allows recovery of older versions",
+        "It deletes mistakes automatically",
+        "It blocks editing"
+      ],
+      "answer": 1,
+      "explanation": "Developers can return to earlier versions whenever needed."
+    },
+    {
+      "q": "Which tool helps visualize Git without commands?",
+      "options": [
+        "Calculator",
+        "Git GUI",
+        "Paint",
+        "Notepad"
+      ],
+      "answer": 1,
+      "explanation": "Git GUI tools provide graphical interfaces for Git operations."
+    },
+    {
+      "q": "Git helps teams by:",
+      "options": [
+        "Preventing collaboration",
+        "Tracking everyone's changes",
+        "Deleting project history",
+        "Replacing computers"
+      ],
+      "answer": 1,
+      "explanation": "Git allows multiple developers to work together efficiently."
+    },
+    {
+      "q": "What can you do using Git history?",
+      "options": [
+        "View previous versions",
+        "Print documents only",
+        "Format hard drives",
+        "Create hardware circuits"
+      ],
+      "answer": 0,
+      "explanation": "Git stores complete change history."
+    },
+    {
+      "q": "A commit message should:",
+      "options": [
+        "Describe the changes made",
+        "Contain random text",
+        "Be left blank",
+        "Only contain numbers"
+      ],
+      "answer": 0,
+      "explanation": "Good commit messages help understand project history."
+    },
+    {
+      "q": "Which of the following is a real-world example of Version Control?",
+      "options": [
+        "Keeping multiple drafts of a document",
+        "Turning off a computer",
+        "Printing a page",
+        "Using a calculator"
+      ],
+      "answer": 0,
+      "explanation": "Version Control works like keeping organized drafts with history."
+    }
+  ]
+}

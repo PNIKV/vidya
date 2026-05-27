@@ -1,0 +1,176 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-237/",
+    "slides_folder": "sessions/session-237/slides/",
+    "images_folder": "sessions/session-237/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-237",
+  "number": 237,
+  "title": "Intellectual Property: Original vs. Plagiarized Work",
+  "subtitle": "Protect Your Ideas—Understanding Plagiarism, Copyright, and Fair Use!",
+  "date": "Session 237",
+  "duration": "1 Hours",
+  "phase": "Foundation",
+  "color": "#F44336",
+  "icon": "⚖️",
+  "tags": [
+    "Digital Citizenship",
+    "Ethics",
+    "Intellectual Property",
+    "Academic Integrity"
+  ],
+  "overview": "In this crucial ethical session, students explore the boundaries of creation and ownership. By analyzing side-by-side text, code, and design comparisons, they discover what constitutes direct plagiarism, patchwriting, and copyright infringement. Students will master citation mechanics, open-source licensing rules, and strategies to build upon existing work legally and respectfully.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-237/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the live session — side-by-side text analysis on the screen, student citation worksheets, or group ethics breakdown charts.",
+    "gallery": [
+      {
+        "file": "data/ip-types.jpg",
+        "_placeholder": "ADD: Infographic chart outlining the 4 main types of Intellectual Property: Patents, Copyrights, Trademarks, and Trade Secrets",
+        "caption": "The IP Quadrant — Understanding the legal tools that safeguard human ingenuity.",
+        "category": "Concept"
+      },
+      {
+        "file": "data/plagiarism-spectrum.png",
+        "_placeholder": "ADD: Diagram detailing the spectrum of plagiarism from direct copy-pasting to patchwriting without attribution",
+        "caption": "The Plagiarism Spectrum — Recognizing subtle forms of copying like patchwriting.",
+        "category": "Components"
+      },
+      {
+        "file": "data/attribution-workshop.jpg",
+        "_placeholder": "ADD: Photo of students comparing original reference materials to cited research papers during a live lab audit",
+        "caption": "The Citation Audit — Students identifying missing attributions in dummy reference reports.",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Intellectual Property (IP)? — The legal concept that treats original expressions of human intellect as property protected by law",
+    "The Plagiarism Trap — Defining plagiarism as presenting someone else's work, thoughts, or expressions as your own original creation",
+    "Types of Plagiarism — Breaking down complete copying, source-switching, and 'patchwriting' (patching stolen phrases with synonyms)",
+    "Copyright vs. Fair Use — Learning when you can use limited pieces of copyrighted material for education, critique, or news reporting without a license",
+    "The Creative Commons System — Navigating open-source licenses (CC-BY, CC-NC, CC-ND) that tell creators exactly how they can remix work legally",
+    "Code and Software Piracy — Understanding that copying open-source or proprietary software code frameworks without acknowledging the license is illegal",
+    "The Citation Blueprint — Creating precise references and footnotes to trace work back to its original creator, raising academic credibility"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Understanding Intellectual Property and Copyright Basics",
+      "videoId": "ip-copyright-explained",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "A student-friendly visual guide clarifying the core real-world differences between patents, trademarks, and copyrights."
+    },
+    {
+      "title": "The Fine Line Between Referencing and Plagiarism",
+      "videoId": "plagiarism-vs-paraphrasing",
+      "_note": "Replace videoId with actual YouTube video ID from URL",
+      "desc": "An interactive look at how patchwriting happens accidentally and how proper paraphrasing protects your integrity."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Creative Commons Official License Guide",
+      "url": "https://creativecommons.org/about/cclicenses/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Purdue OWL — Comprehensive Research Citation Guide",
+      "url": "https://owl.purdue.edu/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "The Side-by-Side Originality Forensic Audit Lab",
+    "parts": [
+      "The Audit Dossier (Contains pairs of matching paragraphs: Source Document vs. Anonymous Student Submission)",
+      "Highlighter Pack (Green for original restructuring, Red for copied/unattributed structures)",
+      "Citation Correction Handbook Worksheet"
+    ],
+    "steps": [
+      "The Investigator Assembly: Form small evaluation groups and hand out matching Source and Target document worksheets.",
+      "The Side-by-Side Analysis: Students scan line-by-line, marking exact phrase matches or suspect synonym switches (patchwriting) in bright red.",
+      "The Citation Check: Teams inspect if the target text contains proper in-text citations or bibliography references pointing to the original paper.",
+      "The Paraphrasing Redesign: For sections marked in red, students work together to rewrite the text completely in their own voice, using distinct sentence structures and inserting accurate citations.",
+      "The Forensic Report: Groups summarize their findings, scoring the sample essay and sharing how citation structures differentiate an analytical paper from a plagiarized one."
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Which of the following scenarios acts as the clearest definition of plagiarism?",
+      "options": [
+        "Buying a book from a local store and reading the contents out loud to your family",
+        "Taking another individual's ideas, expressions, or written work and representing them as your own creation without giving clear credit",
+        "Writing an entirely original story that shares a generic theme with a classic movie",
+        "Translating your own original research work into a secondary spoken language"
+      ],
+      "answer": 1,
+      "explanation": "Presentation Fraud! Plagiarism is an ethical breach involving deception—it occurs when you steal someone else's intellectual outputs and deliberately let readers believe it is your own work."
+    },
+    {
+      "q": "What is 'Patchwriting'?",
+      "options": [
+        "Writing a tiny software patch to fix a bug inside an application program",
+        "Copying a block of text from a website but modifying a few words here and there with basic synonyms while keeping the identical structure without giving credit",
+        "Stitching together fabric pieces to make physical laptop covers",
+        "Publishing an article across multiple print newspapers simultaneously"
+      ],
+      "answer": 1,
+      "explanation": "The Synonym Mask! Patchwriting is a subtle, frequent form of plagiarism. Simply swapping a handful of words while tracking the exact sentence blueprint and thoughts of the original author without a citation is still a theft of layout structures."
+    },
+    {
+      "q": "What legal protections does a 'Copyright' provide to a creator?",
+      "options": [
+        "It protects a unique company brand logo or sound jingle used to sell physical commercial goods",
+        "It grants exclusive legal ownership over original creative works (such as books, music, code, and artwork) from the moment they are fixed in tangible form",
+        "It guarantees that a company will make a profit off its digital products",
+        "It acts as a firewall that stops computer systems from getting hardware viruses"
+      ],
+      "answer": 1,
+      "explanation": "Creative Asset Protections! Copyright gives creators legal ownership rights over physical or digital creative expressions. This prevents unauthorized replication, modification, or distribution of their property."
+    },
+    {
+      "q": "What does the 'Fair Use' doctrine allow students and researchers to do legally?",
+      "options": [
+        "Copy an entire paid textbook and upload it to a public forum channel for anyone to download",
+        "Use brief, limited excerpts of copyrighted materials for specific purposes like criticism, education, parody, or news reporting without needing explicit permission",
+        "Sell modified versions of an artist's song on commercial music applications",
+        "Use any image found on the web without adding any source notes"
+      ],
+      "answer": 1,
+      "explanation": "The Educational Exception! Fair Use balances copyright restrictions against public benefit. It allows people to quote small portions of protected files safely for educational criticism or analytical reviews, provided they attribute the source."
+    },
+    {
+      "q": "If you copy an open-source block of code from a community board for your robotics project, what must you do to ensure your work remains ethical?",
+      "options": [
+        "Change the name of all internal functions so no one can find the source layout",
+        "Check and respect the specified open-source license instructions and add a code comment acknowledging the original author and repository link",
+        "Keep your project completely secret so no one can read your code sheets",
+        "Sell the system immediately before checking the project rules"
+      ],
+      "answer": 1,
+      "explanation": "Open-Source Etiquette! Open-source does not equal 'anonymous or free of rules'. Most open licenses require you to maintain standard copyright headers and explicitly declare the original author within your comment structures."
+    },
+    {
+      "q": "What is the primary value of building structured research bibliographies and citations inside your work?",
+      "options": [
+        "It makes your document file heavier so it takes up more storage bytes",
+        "It proves your research footprint, prevents plagiarism, and allows readers to trace ideas back to reliable root sources to confirm facts",
+        "It blocks other users from printing your file pages onto paper tracks",
+        "It updates your text font characteristics into modern design standards automatically"
+      ],
+      "answer": 1,
+      "explanation": "Traceable Credibility! Citations anchor your arguments in proven facts. Giving credit where it is due shows academic honesty and lets others explore the historical reference trail underpinning your conclusions."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-224/",
+    "slides_folder": "sessions/session-224/slides/",
+    "images_folder": "sessions/session-224/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+  },
+  "id": "session-224",
+  "number": 224,
+  "title": "Antivirus Strategies",
+  "subtitle": "Demo antivirus scan; update habits",
+  "date": "Session 224",
+  "duration": "45 Minutes",
+  "phase": "Cyber Safety",
+  "color": "#2ECC71",
+  "icon": "\ud83d\udee1\ufe0f",
+  "tags": [
+    "Cyber Security",
+    "Antivirus",
+    "Safe Browsing",
+    "Digital Safety"
+  ],
+  "overview": "Students learn what antivirus software is, how antivirus scans work, and safe habits to protect computers from viruses and malware.",
+  "grades": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "slides": {
+    "pdf": "sessions/session-224/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from antivirus demo session.",
+    "gallery": [
+      {
+        "file": "data/antivirus-scan.jpg",
+        "caption": "Running an antivirus scan",
+        "category": "Concept"
+      },
+      {
+        "file": "data/software-update.jpg",
+        "caption": "Keeping antivirus updated",
+        "category": "Cyber Safety"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Antivirus Software?",
+    "Types of Computer Threats \u2014 Virus, Malware, Spyware",
+    "How Antivirus Scan Works",
+    "Why Software Updates Matter",
+    "Safe Download Habits",
+    "Strong Password Practices",
+    "Avoiding Suspicious Links and Emails"
+  ],
+  "activity": {
+    "title": "Demo Antivirus Scan",
+    "parts": [
+      "Computer or Laptop",
+      "Antivirus Software",
+      "Internet Connection"
+    ],
+    "steps": [
+      "Open antivirus software",
+      "Check for latest updates",
+      "Run quick scan",
+      "View scan report",
+      "Discuss safe computer habits"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "Why should antivirus software be updated regularly?",
+      "options": [
+        "To change computer color",
+        "To detect new threats",
+        "To make screen brighter",
+        "To increase speaker volume"
+      ],
+      "answer": 1
+    }
+  ]
+}

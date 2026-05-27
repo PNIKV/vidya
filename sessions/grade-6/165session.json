@@ -1,0 +1,255 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-200/",
+    "slides_folder": "sessions/session-200/slides/",
+    "images_folder": "sessions/session-200/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-200",
+  "number": 200,
+  "title": "Introduction to Databases",
+  "subtitle": "Understanding Tables, Records and Primary Keys",
+  "date": "Session 200",
+  "duration": "45 Minutes",
+  "phase": "Database Fundamentals",
+  "color": "#3366CC",
+  "icon": "🗄️",
+  "tags": [
+    "Database",
+    "Tables",
+    "Records",
+    "Primary Keys",
+    "Data Management",
+    "ICT"
+  ],
+  "overview": "Students are introduced to the basic concepts of databases. They learn how information is organized using tables, records, and fields, and understand the importance of primary keys for uniquely identifying data. Real-world examples such as school records and library systems help make database concepts easy to understand.",
+  "grades": [
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "slides": {
+    "pdf": "sessions/session-200/slides.pdf"
+  },
+  "images": {
+    "_note": "Add screenshots of database tables, student record systems, library databases, and classroom activities.",
+    "gallery": [
+      {
+        "file": "data/database-overview.jpg",
+        "caption": "Introduction to Database Systems",
+        "category": "Concept"
+      },
+      {
+        "file": "data/database-table.png",
+        "caption": "A Database Table Example",
+        "category": "Concept"
+      },
+      {
+        "file": "data/student-records.png",
+        "caption": "Student Records Stored in a Table",
+        "category": "Example"
+      },
+      {
+        "file": "data/primary-key.png",
+        "caption": "Understanding Primary Keys",
+        "category": "Concept"
+      },
+      {
+        "file": "data/library-database.jpg",
+        "caption": "Library Database Example",
+        "category": "Application"
+      },
+      {
+        "file": "data/student-database-activity.jpg",
+        "caption": "Students Creating Database Tables",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a Database?",
+    "Why Databases are Important",
+    "Data vs Information",
+    "Database Tables",
+    "Rows and Columns",
+    "Fields and Records",
+    "Primary Keys",
+    "Unique Identification",
+    "Student Database Example",
+    "Library Management Example",
+    "Advantages of Databases",
+    "Data Organization",
+    "Searching and Retrieving Data",
+    "Introduction to Database Software"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Database Basics for Beginners",
+      "videoId": "HXV3zeQKqGY",
+      "desc": "Learn the fundamental concepts of databases and data management."
+    },
+    {
+      "title": "Tables, Records and Fields Explained",
+      "videoId": "ztHopE5Wnpc",
+      "desc": "Understanding how data is organized in databases."
+    },
+    {
+      "title": "Introduction to Databases",
+      "videoId": "wR0jg0eQsZA",
+      "desc": "Simple explanation of database concepts for beginners."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Database Concepts Tutorial",
+      "url": "https://www.gcflearnfree.org/access2016/database-basics",
+      "icon": "🔗"
+    },
+    {
+      "title": "W3Schools SQL Introduction",
+      "url": "https://www.w3schools.com/sql/sql_intro.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "SQLite Introduction",
+      "url": "https://www.sqlite.org/index.html",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Create a Student Database Table",
+    "parts": [
+      "Notebook",
+      "Pencil",
+      "Computer",
+      "Spreadsheet Software (Optional)"
+    ],
+    "steps": [
+      "Discuss what information schools store about students",
+      "Create a table with columns: Roll Number, Name, Class, Age",
+      "Add sample student records",
+      "Identify rows and columns",
+      "Mark Roll Number as the Primary Key",
+      "Discuss why two students should not have the same Roll Number",
+      "Add additional records",
+      "Practice finding specific student information",
+      "Compare a database table with a spreadsheet",
+      "Discuss real-world database applications"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a database?",
+      "options": [
+        "A game",
+        "An organized collection of data",
+        "A computer virus",
+        "A web browser"
+      ],
+      "answer": 1,
+      "explanation": "A database stores and organizes data for easy access and management."
+    },
+    {
+      "q": "What is a table in a database?",
+      "options": [
+        "A piece of furniture",
+        "A collection of related data organized in rows and columns",
+        "A printer",
+        "A network cable"
+      ],
+      "answer": 1,
+      "explanation": "Tables organize information into rows and columns."
+    },
+    {
+      "q": "A row in a database table is called a:",
+      "options": [
+        "Field",
+        "Record",
+        "Column",
+        "Cell"
+      ],
+      "answer": 1,
+      "explanation": "Each row represents a complete record."
+    },
+    {
+      "q": "A column in a database table is called a:",
+      "options": [
+        "Field",
+        "Record",
+        "Table",
+        "Database"
+      ],
+      "answer": 0,
+      "explanation": "Columns are known as fields and store specific types of information."
+    },
+    {
+      "q": "What is a Primary Key?",
+      "options": [
+        "A keyboard key",
+        "A unique value used to identify each record",
+        "A password",
+        "A folder"
+      ],
+      "answer": 1,
+      "explanation": "A primary key uniquely identifies each record in a table."
+    },
+    {
+      "q": "Which of the following can be a Primary Key in a student table?",
+      "options": [
+        "Student Name",
+        "Favorite Color",
+        "Roll Number",
+        "Class Name"
+      ],
+      "answer": 2,
+      "explanation": "Roll Numbers are unique and suitable as primary keys."
+    },
+    {
+      "q": "Why should a Primary Key be unique?",
+      "options": [
+        "To make the table colorful",
+        "To identify records without confusion",
+        "To increase internet speed",
+        "To save electricity"
+      ],
+      "answer": 1,
+      "explanation": "Unique values help identify records accurately."
+    },
+    {
+      "q": "Which place commonly uses databases?",
+      "options": [
+        "Libraries",
+        "Schools",
+        "Hospitals",
+        "All of the Above"
+      ],
+      "answer": 3,
+      "explanation": "Databases are widely used in many organizations."
+    },
+    {
+      "q": "What information does a student record contain?",
+      "options": [
+        "Only the name",
+        "Only the age",
+        "Multiple fields such as name, class, and age",
+        "Only the roll number"
+      ],
+      "answer": 2,
+      "explanation": "A record contains values for several fields."
+    },
+    {
+      "q": "What is the main benefit of databases?",
+      "options": [
+        "Organized data storage and retrieval",
+        "Playing videos",
+        "Drawing pictures",
+        "Typing practice"
+      ],
+      "answer": 0,
+      "explanation": "Databases help store, manage, and retrieve information efficiently."
+    }
+  ]
+}
