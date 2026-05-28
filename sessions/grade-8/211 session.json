@@ -1,0 +1,319 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-211/",
+    "slides_folder": "sessions/session-211/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-211/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-241",
+  "number": 241,
+  "title": "Python GUI Concepts",
+  "subtitle": "Build Windows, Buttons & Beautiful Interfaces!",
+  "date": "Session 241",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#3776AB",
+  "icon": "🖥️",
+  "tags": [
+    "Python",
+    "GUI",
+    "Tkinter",
+    "Programming",
+    "Interface Design"
+  ],
+  "overview": "In this session, students explore Graphical User Interface (GUI) programming using Python's Tkinter library. They learn how to create windows, add widgets like buttons, labels, and text boxes, and handle user events — turning their code into real, clickable applications!",
+  "grades": [
+    6,
+    7,
+    8
+  ],
+  "slides": {
+    "pdf": "sessions/session-241/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — screenshots of student GUIs, whiteboard diagrams, activity shots.",
+    "gallery": [
+      {
+        "file": "data/tkinter-window.png",
+        "_placeholder": "ADD: Screenshot of a basic Tkinter window created in class",
+        "caption": "Your first Tkinter window — Hello World on screen!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/tkinter-widgets.png",
+        "_placeholder": "ADD: Screenshot showing various widgets — buttons, labels, entry fields",
+        "caption": "Widgets are the building blocks of any GUI",
+        "category": "Concept"
+      },
+      {
+        "file": "data/tkinter-button-click.gif",
+        "_placeholder": "ADD: GIF or photo of button click event in action",
+        "caption": "Button Click → Function runs! Event-driven programming",
+        "category": "Lab"
+      },
+      {
+        "file": "data/tkinter-layout.png",
+        "_placeholder": "ADD: Diagram or screenshot showing pack/grid/place layout managers",
+        "caption": "Layout Managers: pack(), grid(), place() — position your widgets!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/tkinter-calculator.png",
+        "_placeholder": "ADD: Screenshot of student-built calculator GUI",
+        "caption": "Students built their own calculator using Tkinter!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/tkinter-color-picker.png",
+        "_placeholder": "ADD: Photo or screenshot of color-changing background activity",
+        "caption": "Change background color with a button — fun with events!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is a GUI? — Graphical User Interface vs Command Line Interface (CLI)",
+    "Tkinter — Python's built-in GUI library, no installation needed!",
+    "Window — The main container (Tk() creates the root window)",
+    "Widgets — Building blocks: Label, Button, Entry, Text, Frame, Canvas",
+    "Layout Managers — pack() lines up widgets, grid() places in rows & columns, place() uses exact coordinates",
+    "Events & Callbacks — When button is clicked, a function is called (command= parameter)",
+    "StringVar / IntVar — Special variables that auto-update the GUI when changed",
+    "mainloop() — The heartbeat! Keeps the window alive and listening for events"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Python Tkinter Full Course for Beginners",
+      "videoId": "YXPyB4XeYLA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A comprehensive beginner-friendly introduction to building GUI apps with Python Tkinter — covers windows, widgets, layouts, and events."
+    },
+    {
+      "title": "Tkinter Tutorial — Creating GUI Apps in Python",
+      "videoId": "ibf5cx221hk",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Step-by-step walkthrough of Tkinter basics: creating windows, adding buttons and labels, and handling click events."
+    },
+    {
+      "title": "Build a Calculator with Python Tkinter",
+      "videoId": "8cb2_YNK4Ts",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Fun project tutorial — build a fully working calculator GUI using Python and Tkinter from scratch."
+    },
+    {
+      "title": "Python GUI Layout Managers Explained",
+      "videoId": "TuLxsvK4svQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand pack(), grid(), and place() layout managers with clear visual demos."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Official Tkinter Documentation",
+      "url": "https://docs.python.org/3/library/tkinter.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "TkDocs — Modern Tkinter Guide",
+      "url": "https://tkdocs.com/tutorial/index.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "Replit — Code Python Online (No Install)",
+      "url": "https://replit.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Turtle for Visual Coding Practice",
+      "url": "https://docs.python.org/3/library/turtle.html",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Color Changer GUI App",
+    "parts": [
+      "Computer with Python 3 installed",
+      "IDLE or VS Code editor",
+      "Tkinter (built into Python — no extra install!)",
+      "Creativity!"
+    ],
+    "steps": [
+      "Import tkinter: `import tkinter as tk`",
+      "Create the root window: `root = tk.Tk()` and set title",
+      "Add a Label widget with a welcome message",
+      "Add 3 Buttons: Red, Blue, Green",
+      "Write a function `change_color(color)` that sets window background",
+      "Link each button to the function using `command=`",
+      "Run mainloop() and click buttons to change the background color!",
+      "Challenge: Add an Entry box where the user types a color name and presses a button to apply it"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does GUI stand for?",
+      "options": [
+        "General User Input",
+        "Graphical User Interface",
+        "Global Utility Index",
+        "Generated Uniform Interface"
+      ],
+      "answer": 1,
+      "explanation": "GUI = Graphical User Interface! It's the visual part of a program — windows, buttons, icons — that users interact with instead of typing commands."
+    },
+    {
+      "q": "Which Python library is used to build GUI applications without installing anything extra?",
+      "options": [
+        "PyQt5",
+        "Kivy",
+        "Tkinter",
+        "Flask"
+      ],
+      "answer": 2,
+      "explanation": "Tkinter comes built into Python! No pip install needed. Just `import tkinter` and you're ready to build windows."
+    },
+    {
+      "q": "What does `root = tk.Tk()` do?",
+      "options": [
+        "Imports the tkinter library",
+        "Creates the main application window",
+        "Runs a loop that checks for clicks",
+        "Creates a button widget"
+      ],
+      "answer": 1,
+      "explanation": "`tk.Tk()` creates the ROOT window — the main container of your app. Every widget lives inside this window."
+    },
+    {
+      "q": "Which line MUST be at the END of every Tkinter program to keep the window open?",
+      "options": [
+        "root.close()",
+        "root.start()",
+        "root.run()",
+        "root.mainloop()"
+      ],
+      "answer": 3,
+      "explanation": "`root.mainloop()` is the heartbeat of your app! It keeps the window open and continuously listens for user events like clicks and keypresses."
+    },
+    {
+      "q": "What is a Widget in Tkinter?",
+      "options": [
+        "A Python file",
+        "A type of variable",
+        "A building block of GUI like Button, Label, Entry",
+        "A color code"
+      ],
+      "answer": 2,
+      "explanation": "Widgets are the building blocks of a GUI! Label (shows text), Button (clickable), Entry (type text), Canvas (draw things) — all are widgets."
+    },
+    {
+      "q": "Which widget would you use to display a text message on the screen?",
+      "options": [
+        "Button",
+        "Label",
+        "Entry",
+        "Frame"
+      ],
+      "answer": 1,
+      "explanation": "Label widget displays text or images on the screen. Example: `tk.Label(root, text='Hello World!')`"
+    },
+    {
+      "q": "Which widget allows the USER to TYPE text into the GUI?",
+      "options": [
+        "Label",
+        "Text",
+        "Entry",
+        "Button"
+      ],
+      "answer": 2,
+      "explanation": "Entry widget creates a single-line text input box. Use `.get()` to read what the user typed!"
+    },
+    {
+      "q": "How do you connect a Button to a function in Tkinter?",
+      "options": [
+        "button.connect(my_function)",
+        "button.onClick = my_function",
+        "tk.Button(root, command=my_function)",
+        "button.run(my_function)"
+      ],
+      "answer": 2,
+      "explanation": "Use the `command=` parameter! `tk.Button(root, text='Click Me', command=my_function)` — when clicked, my_function() runs automatically."
+    },
+    {
+      "q": "What is the difference between CLI and GUI?",
+      "options": [
+        "CLI uses colors, GUI uses text only",
+        "CLI is text-based commands, GUI is visual with windows and buttons",
+        "CLI is faster to build, GUI is slower",
+        "There is no difference"
+      ],
+      "answer": 1,
+      "explanation": "CLI (Command Line Interface) = type commands in terminal. GUI (Graphical User Interface) = click buttons, see windows. Both are ways to interact with a program!"
+    },
+    {
+      "q": "Which layout manager places widgets in a TABLE format (rows and columns)?",
+      "options": [
+        "pack()",
+        "place()",
+        "grid()",
+        "align()"
+      ],
+      "answer": 2,
+      "explanation": "`grid()` organizes widgets in rows and columns — perfect for forms and calculators! Use `row=` and `column=` to position each widget."
+    },
+    {
+      "q": "What does `pack()` do to a widget?",
+      "options": [
+        "Removes the widget from the window",
+        "Automatically places the widget and stacks them top to bottom",
+        "Positions widget at exact pixel coordinates",
+        "Resizes the widget to fill the window"
+      ],
+      "answer": 1,
+      "explanation": "`pack()` is the simplest layout — it stacks widgets one after another (top to bottom by default). Great for simple layouts!"
+    },
+    {
+      "q": "What is `StringVar()` used for in Tkinter?",
+      "options": [
+        "To store a list of widgets",
+        "A special variable that automatically updates the GUI when its value changes",
+        "To set the window size",
+        "To create animated text"
+      ],
+      "answer": 1,
+      "explanation": "StringVar() is a Tkinter-aware variable! When you call `.set('new value')`, any widget linked to it (via `textvariable=`) instantly updates on screen."
+    },
+    {
+      "q": "In the Color Changer activity, what parameter in `root.config()` changes the background color?",
+      "options": [
+        "background=",
+        "color=",
+        "bg=",
+        "fill="
+      ],
+      "answer": 2,
+      "explanation": "`root.config(bg='red')` changes the window background color! `bg` is short for background. You can use color names like 'red', 'blue' or hex codes like '#FF5733'."
+    },
+    {
+      "q": "What does `widget.get()` do in Tkinter?",
+      "options": [
+        "Deletes the widget",
+        "Reads and returns the current value/text from the widget",
+        "Shows the widget on screen",
+        "Changes the widget color"
+      ],
+      "answer": 1,
+      "explanation": "`.get()` reads the current value! For Entry: `entry.get()` returns what the user typed. Very useful for forms and input fields."
+    },
+    {
+      "q": "You want to place a button at EXACT pixel position (100, 200) in the window. Which layout manager should you use?",
+      "options": [
+        "pack()",
+        "grid()",
+        "place()",
+        "position()"
+      ],
+      "answer": 2,
+      "explanation": "`place()` lets you set exact coordinates! `button.place(x=100, y=200)` puts the button exactly at pixel (100, 200). Precise but tricky for resizable windows."
+    }
+  ]
+}

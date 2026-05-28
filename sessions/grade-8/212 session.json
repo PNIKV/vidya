@@ -1,0 +1,323 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-242/",
+    "slides_folder": "sessions/session-242/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-242/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-242",
+  "number": 242,
+  "title": "Libraries + Error Debugging",
+  "subtitle": "Use Superpowers & Fix Bugs Like a Pro!",
+  "date": "Session 242",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#E34F26",
+  "icon": "🐛",
+  "tags": [
+    "Python",
+    "Libraries",
+    "Debugging",
+    "Error Handling",
+    "STEM"
+  ],
+  "overview": "In this session, students discover how Python libraries supercharge their programs — from math to graphics to data. They also learn the art of debugging: reading error messages, understanding common error types, and fixing bugs step by step. No more fear of the red text!",
+  "grades": [
+    6,
+    7,
+    8
+  ],
+  "slides": {
+    "pdf": "sessions/session-242/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — error screenshots, whiteboard bug-hunt diagrams, library demos, activity shots.",
+    "gallery": [
+      {
+        "file": "data/python-import.png",
+        "_placeholder": "ADD: Screenshot of import statement and library usage in code",
+        "caption": "import math — one line unlocks superpowers!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/pip-install.png",
+        "_placeholder": "ADD: Screenshot of pip install command in terminal",
+        "caption": "pip install — your package delivery system",
+        "category": "Concept"
+      },
+      {
+        "file": "data/syntax-error.png",
+        "_placeholder": "ADD: Screenshot of a SyntaxError in Python IDLE or VS Code",
+        "caption": "SyntaxError — Python doesn't understand you yet!",
+        "category": "Debugging"
+      },
+      {
+        "file": "data/traceback.png",
+        "_placeholder": "ADD: Screenshot of a Traceback message with arrow pointing to error line",
+        "caption": "Traceback is your MAP to find the bug!",
+        "category": "Debugging"
+      },
+      {
+        "file": "data/try-except.png",
+        "_placeholder": "ADD: Screenshot of try/except block handling a ZeroDivisionError",
+        "caption": "try/except — catch errors before they crash your program",
+        "category": "Concept"
+      },
+      {
+        "file": "data/debug-activity.jpg",
+        "_placeholder": "ADD: Photo of students finding bugs in printed code sheets",
+        "caption": "Bug Hunt! Students racing to find and fix errors",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Library — A collection of pre-written code you can reuse (like a toolbox!)",
+    "import — The keyword that loads a library into your program",
+    "pip install — The command to download and install third-party libraries",
+    "Standard Library — Libraries that come WITH Python: math, random, datetime, os",
+    "Third-Party Libraries — Libraries you install: numpy, pandas, matplotlib, requests",
+    "SyntaxError — Python can't read your code (wrong spelling/punctuation)",
+    "NameError — You used a variable or function that doesn't exist yet",
+    "TypeError — You mixed up data types (e.g. adding a number to a string)",
+    "IndexError — You asked for a list item at a position that doesn't exist",
+    "ZeroDivisionError — You tried to divide a number by zero",
+    "Traceback — The error report that tells you WHICH LINE caused the crash",
+    "try / except — Wrap risky code to catch errors gracefully instead of crashing"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Python Libraries Explained for Beginners",
+      "videoId": "28f3etQmR_8",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "What are Python libraries, how to import them, and the difference between built-in and third-party packages explained simply."
+    },
+    {
+      "title": "Python pip Tutorial — Install Any Package",
+      "videoId": "U2ZN104hIcc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to use pip to install, uninstall, and manage Python packages from PyPI — the Python Package Index."
+    },
+    {
+      "title": "Python Debugging — How to Fix Errors",
+      "videoId": "KZVEBpKBLcE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A beginner-friendly guide to reading Python error messages, understanding tracebacks, and squashing common bugs."
+    },
+    {
+      "title": "Try Except in Python — Error Handling",
+      "videoId": "NIWwJbo-9_8",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to use try/except blocks to handle errors gracefully so your program never crashes unexpectedly."
+    }
+  ],
+  "resources": [
+    {
+      "title": "PyPI — Python Package Index (Browse all libraries)",
+      "url": "https://pypi.org",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Standard Library Docs",
+      "url": "https://docs.python.org/3/library/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Tutor — Visualize Code Execution",
+      "url": "https://pythontutor.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Replit — Run Python Online (No Install)",
+      "url": "https://replit.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Bug Hunt + Library Explorer",
+    "parts": [
+      "Computer with Python 3 installed",
+      "IDLE or VS Code editor",
+      "Printed or on-screen buggy code sheets",
+      "Python standard libraries: math, random, datetime"
+    ],
+    "steps": [
+      "Part 1 — Library Explorer: `import math` and use math.sqrt(), math.pi, math.factorial()",
+      "Try `import random` — use random.randint(1, 10) to make a dice roller",
+      "Try `import datetime` — print today's date with datetime.date.today()",
+      "Part 2 — Bug Hunt: Open the buggy code sheet with 5 hidden errors",
+      "Read each Traceback message carefully — find the line number and error type",
+      "Fix each bug one by one: SyntaxError → NameError → TypeError → IndexError → ZeroDivisionError",
+      "Part 3 — Wrap a risky line in try/except and print a friendly error message instead of crashing",
+      "Challenge: Install an external library with pip (e.g. `pip install cowsay`) and use it!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a Python Library?",
+      "options": [
+        "A place where you borrow physical books",
+        "A collection of pre-written code you can import and reuse in your program",
+        "A type of Python error",
+        "A special kind of loop"
+      ],
+      "answer": 1,
+      "explanation": "A library is a ready-made toolbox of code! Instead of writing everything from scratch, you import a library and use its functions instantly."
+    },
+    {
+      "q": "Which keyword is used to load a library into your Python program?",
+      "options": [
+        "include",
+        "require",
+        "import",
+        "load"
+      ],
+      "answer": 2,
+      "explanation": "`import` is the magic word! `import math` loads the math library. `import random` loads the random library. One line = superpowers!"
+    },
+    {
+      "q": "What does `pip install numpy` do?",
+      "options": [
+        "Runs the numpy program",
+        "Downloads and installs the numpy library from the internet",
+        "Creates a new Python file",
+        "Uninstalls numpy"
+      ],
+      "answer": 1,
+      "explanation": "`pip` is Python's package manager — like an app store for libraries! `pip install` downloads and installs any library from PyPI (Python Package Index)."
+    },
+    {
+      "q": "Which of these is a STANDARD library — it comes built-in with Python?",
+      "options": [
+        "numpy",
+        "pandas",
+        "matplotlib",
+        "math"
+      ],
+      "answer": 3,
+      "explanation": "`math` is part of Python's Standard Library — no installation needed! numpy, pandas, and matplotlib are third-party libraries you must install with pip."
+    },
+    {
+      "q": "What type of error does this code cause? `print('Hello' + 5)`",
+      "options": [
+        "SyntaxError",
+        "NameError",
+        "TypeError",
+        "IndexError"
+      ],
+      "answer": 2,
+      "explanation": "TypeError! You can't add a string ('Hello') and an integer (5) directly. Python doesn't know how to mix them. Fix: `print('Hello' + str(5))`"
+    },
+    {
+      "q": "What does a SyntaxError mean?",
+      "options": [
+        "Your variable name doesn't exist",
+        "You divided by zero",
+        "Python cannot understand your code due to wrong spelling or punctuation",
+        "You accessed a list item that doesn't exist"
+      ],
+      "answer": 2,
+      "explanation": "SyntaxError = Python can't read your code! Common causes: missing colon after if/for, unclosed bracket, or misspelled keyword. Like a grammar mistake in a sentence."
+    },
+    {
+      "q": "You write `print(score)` but never created the variable `score`. What error occurs?",
+      "options": [
+        "TypeError",
+        "NameError",
+        "SyntaxError",
+        "ValueError"
+      ],
+      "answer": 1,
+      "explanation": "NameError! Python says: 'I don't know what score is — you never told me!' Always define your variables before using them."
+    },
+    {
+      "q": "What is a Traceback?",
+      "options": [
+        "A way to go back in time in your code",
+        "Python's error report showing which line caused the crash and why",
+        "A type of loop that runs backwards",
+        "A command to undo the last action"
+      ],
+      "answer": 1,
+      "explanation": "Traceback is your BUG MAP! It shows the file name, line number, and error type. Always read the LAST line first — that's the actual error message."
+    },
+    {
+      "q": "What error occurs when you run `my_list = [1, 2, 3]` and then `print(my_list[10])`?",
+      "options": [
+        "TypeError",
+        "NameError",
+        "IndexError",
+        "ValueError"
+      ],
+      "answer": 2,
+      "explanation": "IndexError! The list only has items at positions 0, 1, 2. Asking for position 10 is like asking for page 500 in a 3-page book — it doesn't exist!"
+    },
+    {
+      "q": "What does `10 / 0` cause in Python?",
+      "options": [
+        "It returns infinity",
+        "It returns 0",
+        "ZeroDivisionError",
+        "SyntaxError"
+      ],
+      "answer": 2,
+      "explanation": "ZeroDivisionError! Dividing by zero is mathematically impossible. Python raises this error to stop the program instead of giving a wrong answer."
+    },
+    {
+      "q": "What does the `try` block do in a try/except statement?",
+      "options": [
+        "It always skips the code inside",
+        "It contains the risky code that might cause an error",
+        "It prints the error message",
+        "It restarts the program"
+      ],
+      "answer": 1,
+      "explanation": "The `try` block wraps the risky code. Python ATTEMPTS to run it. If an error happens, it jumps to the `except` block instead of crashing!"
+    },
+    {
+      "q": "What does the `except` block do?",
+      "options": [
+        "Runs only when there is NO error",
+        "Runs when an error occurs in the try block, preventing a crash",
+        "Deletes the error from memory",
+        "Re-runs the try block"
+      ],
+      "answer": 1,
+      "explanation": "`except` catches the error! Instead of crashing, your program runs the except block. You can print a friendly message like 'Oops! Please enter a valid number.'"
+    },
+    {
+      "q": "Which library would you use to generate a RANDOM number in Python?",
+      "options": [
+        "math",
+        "datetime",
+        "os",
+        "random"
+      ],
+      "answer": 3,
+      "explanation": "`random` library! Use `random.randint(1, 6)` to simulate a dice roll. It's part of Python's standard library — just `import random`!"
+    },
+    {
+      "q": "What does `import math` followed by `math.sqrt(16)` return?",
+      "options": [
+        "4",
+        "8",
+        "2",
+        "16"
+      ],
+      "answer": 0,
+      "explanation": "`math.sqrt(16)` returns 4.0! Square root of 16 is 4. The math library has tons of useful functions: sqrt, pow, pi, factorial, floor, ceil and more."
+    },
+    {
+      "q": "A student's code crashes with this message: `ZeroDivisionError: division by zero` on line 7. What should they check FIRST?",
+      "options": [
+        "Line 1 for a syntax mistake",
+        "Line 7 where a variable is being divided — check if the denominator can be zero",
+        "Whether Python is installed correctly",
+        "The import statements at the top"
+      ],
+      "answer": 1,
+      "explanation": "Always go to the line number in the Traceback first! Line 7 has a division — check if the variable being divided by could ever equal zero, and add a check or try/except."
+    }
+  ]
+}

@@ -1,0 +1,322 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-243/",
+    "slides_folder": "sessions/session-243/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-243/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-243",
+  "number": 243,
+  "title": "Compilers vs Interpreters",
+  "subtitle": "How Computers Understand Your Code!",
+  "date": "Session 243",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#6A0DAD",
+  "icon": "⚙️",
+  "tags": [
+    "Computer Science",
+    "Compilers",
+    "Interpreters",
+    "Programming Languages",
+    "How Computers Work"
+  ],
+  "overview": "Ever wondered how a computer actually understands the code you write? In this session, students explore the journey from human-readable code to machine instructions — learning the difference between compilers and interpreters, why some languages use one over the other, and what really happens behind the scenes when you press RUN.",
+  "grades": [
+    6,
+    7,
+    8
+  ],
+  "slides": {
+    "pdf": "sessions/session-243/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — diagrams of compile vs interpret flow, whiteboard sketches, activity shots.",
+    "gallery": [
+      {
+        "file": "data/source-to-machine.png",
+        "_placeholder": "ADD: Diagram showing source code → compiler/interpreter → machine code",
+        "caption": "From human code to machine instructions — the translation journey",
+        "category": "Concept"
+      },
+      {
+        "file": "data/compiler-flow.png",
+        "_placeholder": "ADD: Flowchart of how a compiler works: scan → parse → optimize → output .exe",
+        "caption": "Compiler: reads ALL the code first, then translates everything at once",
+        "category": "Concept"
+      },
+      {
+        "file": "data/interpreter-flow.png",
+        "_placeholder": "ADD: Flowchart of how an interpreter works: read line → execute line → repeat",
+        "caption": "Interpreter: reads and runs one line at a time — like reading aloud!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/compiled-languages.png",
+        "_placeholder": "ADD: Logos or examples of compiled languages — C, C++, Rust, Go",
+        "caption": "Compiled languages: C, C++, Rust, Go — fast and powerful",
+        "category": "Concept"
+      },
+      {
+        "file": "data/interpreted-languages.png",
+        "_placeholder": "ADD: Logos or examples of interpreted languages — Python, JavaScript, Ruby",
+        "caption": "Interpreted languages: Python, JavaScript, Ruby — flexible and beginner-friendly",
+        "category": "Concept"
+      },
+      {
+        "file": "data/jit-compilation.png",
+        "_placeholder": "ADD: Diagram of JIT compilation used in Java / modern JavaScript engines",
+        "caption": "JIT — Just-In-Time compilation: the best of both worlds!",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Source Code — The human-readable code you write (Python, C++, Java)",
+    "Machine Code — Binary instructions (0s and 1s) that the CPU actually executes",
+    "Compiler — Translates the ENTIRE source code into machine code BEFORE running",
+    "Interpreter — Translates and executes source code ONE LINE AT A TIME while running",
+    "Compiled Languages — C, C++, Rust, Go: fast execution, must compile before running",
+    "Interpreted Languages — Python, JavaScript, Ruby: flexible, runs directly, easier to debug",
+    "Compilation Steps — Lexing → Parsing → Semantic Analysis → Optimization → Code Generation",
+    "JIT (Just-In-Time) Compilation — Hybrid approach: compiles code at runtime (used in Java, modern JS engines)",
+    "Executable File — The .exe or binary output produced by a compiler",
+    "Runtime Error vs Compile-Time Error — Compiler catches errors before running; interpreter finds them as it goes",
+    "Bytecode — An intermediate step used by Java and Python (compiled to bytecode, then interpreted by a VM)",
+    "Virtual Machine (VM) — Software that runs bytecode: JVM for Java, CPython for Python"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Compilers vs Interpreters Explained",
+      "videoId": "e4ax90XmUBc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear, animated explanation of how compilers and interpreters differ — with real-world language examples and step-by-step translation flow."
+    },
+    {
+      "title": "How Does a Compiler Work?",
+      "videoId": "QXjU9qTsYCc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Deep dive into what happens inside a compiler: lexing, parsing, optimization, and generating machine code from source."
+    },
+    {
+      "title": "How Python Runs Your Code Internally",
+      "videoId": "mJExsIp4yO8",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "See how Python interprets your code under the hood — source to bytecode to the CPython virtual machine."
+    },
+    {
+      "title": "What is JIT Compilation?",
+      "videoId": "d7KHAVaX_Rs",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand Just-In-Time compilation — how Java and modern JavaScript engines get the speed of compiled code with the flexibility of interpretation."
+    }
+  ],
+  "resources": [
+    {
+      "title": "How Compilers Work — CS50 Notes",
+      "url": "https://cs50.harvard.edu/x/notes/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Bytecode Explorer",
+      "url": "https://www.bytecodealliance.org/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Compiler Explorer — See Your Code as Machine Code",
+      "url": "https://godbolt.org",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Tutor — Visualize Code Execution Step by Step",
+      "url": "https://pythontutor.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Human Compiler vs Human Interpreter Role Play",
+    "parts": [
+      "Printed code instruction sheets (simple pseudocode programs)",
+      "Pencil and paper",
+      "Timer / stopwatch",
+      "Whiteboard or flip chart"
+    ],
+    "steps": [
+      "Round 1 — Human Interpreter: Students receive a 10-line pseudocode program and execute it ONE LINE AT A TIME, writing output as they go",
+      "Round 2 — Human Compiler: Students READ the entire program first, check for errors, then produce the full output in one go",
+      "Discuss: Which felt faster? Which caught errors earlier?",
+      "Demo: Open Compiler Explorer (godbolt.org) — type a simple C function and watch the live machine code output",
+      "Demo: Run the same logic in Python — observe how it runs line by line (add a deliberate error on line 5 and see where it stops)",
+      "Compare: The C code needed compiling first; Python ran immediately but crashed mid-way",
+      "Challenge: Write a simple addition program in both Python and pseudocode-C — trace through each execution model"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is Source Code?",
+      "options": [
+        "The binary 0s and 1s that a CPU runs",
+        "The human-readable code written by a programmer",
+        "The output printed by a program",
+        "A special type of compiler"
+      ],
+      "answer": 1,
+      "explanation": "Source code is what YOU write — readable text in Python, C++, Java, etc. The computer cannot run it directly; it must first be translated into machine code."
+    },
+    {
+      "q": "What does a Compiler do?",
+      "options": [
+        "Runs your code one line at a time",
+        "Translates the entire source code into machine code before the program runs",
+        "Finds and fixes bugs automatically",
+        "Downloads libraries from the internet"
+      ],
+      "answer": 1,
+      "explanation": "A compiler reads ALL your code first, translates the whole thing into machine code, and produces an executable file. Only then does the program run — like translating a whole book before reading it!"
+    },
+    {
+      "q": "What does an Interpreter do?",
+      "options": [
+        "Compiles all code into a .exe file",
+        "Translates and executes code one line at a time while the program is running",
+        "Checks only for syntax errors",
+        "Converts machine code back into source code"
+      ],
+      "answer": 1,
+      "explanation": "An interpreter reads one line, executes it, reads the next line, executes it — like a live translator reading aloud sentence by sentence. Python works this way!"
+    },
+    {
+      "q": "Which of the following is a COMPILED language?",
+      "options": [
+        "Python",
+        "JavaScript",
+        "Ruby",
+        "C++"
+      ],
+      "answer": 3,
+      "explanation": "C++ is a compiled language! You write code → run the compiler → get a fast .exe file. Python, JavaScript, and Ruby are interpreted languages."
+    },
+    {
+      "q": "Which of the following is an INTERPRETED language?",
+      "options": [
+        "C",
+        "Rust",
+        "Python",
+        "Go"
+      ],
+      "answer": 2,
+      "explanation": "Python is interpreted! When you press Run, Python reads and executes your code line by line without compiling it into a separate file first."
+    },
+    {
+      "q": "What is Machine Code?",
+      "options": [
+        "Python code written very fast",
+        "The programming language used by robots",
+        "Binary instructions (0s and 1s) that the CPU directly understands and executes",
+        "Code written inside a virtual machine"
+      ],
+      "answer": 2,
+      "explanation": "Machine code is the lowest level — pure binary (0s and 1s) that the CPU hardware can execute directly. All high-level code must eventually become machine code!"
+    },
+    {
+      "q": "A compiled program finds most errors:",
+      "options": [
+        "While the user is typing",
+        "Only after the program finishes running",
+        "Before the program runs, during the compilation step",
+        "Never — compiled programs have no errors"
+      ],
+      "answer": 2,
+      "explanation": "Compilers check the ENTIRE code before running. If there's an error on line 200, you'll know before running a single line — saving time and preventing runtime surprises!"
+    },
+    {
+      "q": "An interpreted program hits an error on line 8. What happens to lines 1–7?",
+      "options": [
+        "They are all skipped",
+        "They have already been executed successfully",
+        "They are re-run after the error is fixed",
+        "They are compiled into machine code"
+      ],
+      "answer": 1,
+      "explanation": "The interpreter already ran lines 1–7 before reaching the error on line 8. This is a key difference from a compiler, which would catch the error before running ANY line."
+    },
+    {
+      "q": "What is a .exe file?",
+      "options": [
+        "A Python script file",
+        "An executable file produced by a compiler containing machine code",
+        "A file that stores error messages",
+        "A type of virtual machine"
+      ],
+      "answer": 1,
+      "explanation": "A .exe (executable) is the OUTPUT of a compiler! It contains machine code ready for the CPU to run directly — no source code or compiler needed at runtime."
+    },
+    {
+      "q": "What is JIT (Just-In-Time) Compilation?",
+      "options": [
+        "Compiling code exactly at midnight",
+        "A hybrid approach that compiles code at runtime for faster execution",
+        "A way to interpret code backwards",
+        "A method to compress source code"
+      ],
+      "answer": 1,
+      "explanation": "JIT compiles code WHILE it is running — getting the speed of compiled code with the flexibility of interpretation. Java and modern JavaScript engines (like V8) use JIT!"
+    },
+    {
+      "q": "Java uses a special intermediate step. After compiling, Java produces:",
+      "options": [
+        "A .exe file for direct CPU execution",
+        "Bytecode that runs on the Java Virtual Machine (JVM)",
+        "Pure Python code",
+        "Assembly language"
+      ],
+      "answer": 1,
+      "explanation": "Java compiles to BYTECODE — a middle ground between source code and machine code. The JVM (Java Virtual Machine) then interprets/JIT-compiles that bytecode. This is why Java runs on any device!"
+    },
+    {
+      "q": "Which best describes the SPEED difference between compiled and interpreted programs?",
+      "options": [
+        "Interpreted programs are always faster",
+        "Compiled programs generally run faster because translation is done before execution",
+        "They always run at exactly the same speed",
+        "Speed depends only on the computer's RAM"
+      ],
+      "answer": 1,
+      "explanation": "Compiled programs are generally faster at runtime — the hard translation work is already done! Interpreted programs translate on-the-fly, adding overhead. That's why C++ games run faster than Python scripts."
+    },
+    {
+      "q": "Which is easier to DEBUG and test quickly — compiled or interpreted?",
+      "options": [
+        "Compiled — because it checks everything upfront",
+        "Interpreted — because you can run code immediately without a compile step",
+        "They are equally easy to debug",
+        "Neither can be debugged"
+      ],
+      "answer": 1,
+      "explanation": "Interpreted languages like Python are faster to test! No compile step means you can write one line and run it instantly. Great for learning, prototyping, and quick experiments."
+    },
+    {
+      "q": "What is a Virtual Machine (VM) in the context of programming languages?",
+      "options": [
+        "A physical computer inside another computer",
+        "Software that executes bytecode, making programs portable across different hardware",
+        "A virus protection tool",
+        "A compiler for machine code"
+      ],
+      "answer": 1,
+      "explanation": "A Virtual Machine (like JVM or CPython) is software that runs bytecode. Because the VM handles hardware differences, the same bytecode runs on Windows, Mac, and Linux — write once, run anywhere!"
+    },
+    {
+      "q": "You write a program in C++ with an error on line 50. You try to run it. What happens FIRST?",
+      "options": [
+        "Lines 1–49 execute, then the program crashes at line 50",
+        "The compiler reads all 50 lines, finds the error, and shows a compile-time error before running anything",
+        "The program runs and the error is silently ignored",
+        "The interpreter runs the program line by line until line 50"
+      ],
+      "answer": 1,
+      "explanation": "C++ is compiled! The compiler scans ALL the code first. It finds the error on line 50 and refuses to produce an executable — nothing runs until the code is error-free."
+    }
+  ]
+}

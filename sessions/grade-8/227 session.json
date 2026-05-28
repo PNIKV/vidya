@@ -1,0 +1,327 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-227/",
+    "slides_folder": "sessions/session-227/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-227/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-227",
+  "number": 227,
+  "title": "Deep Learning Basics",
+  "subtitle": "How Neural Networks See, Hear, and Think!",
+  "date": "Session 227",
+  "duration": "1 Hour",
+  "phase": "Advanced",
+  "color": "#4527A0",
+  "icon": "🧠",
+  "tags": [
+    "AI",
+    "Deep Learning",
+    "Neural Networks",
+    "Machine Learning",
+    "Computer Vision"
+  ],
+  "overview": "Deep Learning is the engine behind face recognition, voice assistants, self-driving cars, and generative AI. In this session, students explore how artificial neural networks are inspired by the human brain, how layers of neurons learn to recognise patterns, and how deep learning differs from traditional programming. Through visual demonstrations and hands-on experiments with Teachable Machine, students train their own neural network — no code required — and experience the magic of machine learning firsthand.",
+  "grades": [
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-227/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — neural network diagrams, Teachable Machine screenshots, activation function graphs, student training demos.",
+    "gallery": [
+      {
+        "file": "data/neural-network-diagram.png",
+        "_placeholder": "ADD: Diagram of a neural network with input layer, hidden layers, and output layer labelled",
+        "caption": "Neural Network: input → hidden layers → output — each layer learns more complex features",
+        "category": "Concept"
+      },
+      {
+        "file": "data/neuron-diagram.png",
+        "_placeholder": "ADD: Diagram comparing a biological neuron to an artificial neuron (inputs, weights, activation)",
+        "caption": "Biological neuron vs artificial neuron — inspired by the human brain!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/deep-vs-shallow.png",
+        "_placeholder": "ADD: Comparison diagram of a shallow network (1 hidden layer) vs deep network (many hidden layers)",
+        "caption": "Deep = many hidden layers — more layers learn more abstract features",
+        "category": "Concept"
+      },
+      {
+        "file": "data/teachable-machine.png",
+        "_placeholder": "ADD: Screenshot of Google Teachable Machine training interface with webcam classes",
+        "caption": "Google Teachable Machine — train your own image classifier in minutes, no code needed!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/training-loss-curve.png",
+        "_placeholder": "ADD: Graph showing training loss decreasing over epochs as the model learns",
+        "caption": "Training curve: loss decreases over epochs — the model is getting smarter!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/cnn-feature-maps.png",
+        "_placeholder": "ADD: Visual showing how CNN layers detect edges → shapes → objects progressively",
+        "caption": "CNNs build understanding layer by layer: edges → shapes → faces → people",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Neural Network — A computational model loosely inspired by the brain, made of layers of interconnected artificial neurons that process data",
+    "Artificial Neuron — A mathematical function that takes multiple inputs, multiplies each by a weight, sums them, and applies an activation function",
+    "Weight — A number that determines how strongly one neuron influences another; weights are adjusted during training to improve accuracy",
+    "Activation Function — A mathematical function (ReLU, Sigmoid, Softmax) applied to the neuron's output to add non-linearity and decide if it 'fires'",
+    "Layers — Input Layer (receives raw data), Hidden Layers (extract features), Output Layer (produces the prediction or classification)",
+    "Deep Learning — Machine learning using neural networks with many hidden layers (deep = many layers); learns hierarchical features automatically",
+    "Training — The process of feeding labelled data through the network, comparing outputs to correct answers, and adjusting weights to reduce errors",
+    "Loss Function — A measure of how wrong the model's predictions are; training aims to minimise the loss (e.g. cross-entropy for classification)",
+    "Backpropagation — The algorithm that calculates how much each weight contributed to the error and adjusts them accordingly",
+    "Gradient Descent — The optimisation technique that iteratively adjusts weights in the direction that reduces the loss function",
+    "Epoch — One complete pass of the entire training dataset through the neural network; models typically train for many epochs",
+    "Convolutional Neural Network (CNN) — A specialised deep learning architecture for images; detects edges → shapes → objects layer by layer",
+    "Overfitting — When a model learns the training data too well (including noise) and performs poorly on new unseen data",
+    "Transfer Learning — Reusing a pre-trained model (trained on millions of images) and fine-tuning it for a new specific task — fast and efficient"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Neural Networks Explained — How Deep Learning Works",
+      "videoId": "aircAruvnKk",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "3Blue1Brown's iconic visual explainer — how neural networks are structured, what weights and biases do, and how backpropagation trains the network to recognise handwritten digits."
+    },
+    {
+      "title": "Deep Learning in 5 Minutes — Beginner Explained",
+      "videoId": "6M5VXKLf4D4",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A fast, accessible overview of deep learning — what makes it different from traditional ML, why deep networks outperform shallow ones, and real-world applications."
+    },
+    {
+      "title": "How Convolutional Neural Networks Work",
+      "videoId": "JboZfxUjLSk",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Visual walkthrough of CNN architecture — convolutional layers, pooling, feature maps, and how CNNs progressively detect edges, shapes, and objects in images."
+    },
+    {
+      "title": "Google Teachable Machine — Train Your Own AI",
+      "videoId": "T2qQGqZxkD0",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Full tutorial on Google Teachable Machine — how to create image classes, collect training data with a webcam, train the model in the browser, and test your classifier in real time."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google Teachable Machine — Train AI in Browser",
+      "url": "https://teachablemachine.withgoogle.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "3Blue1Brown — Neural Networks Visual Series",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi",
+      "icon": "🔗"
+    },
+    {
+      "title": "ML for Kids — Train AI with Games and Stories",
+      "url": "https://machinelearningforkids.co.uk",
+      "icon": "🔗"
+    },
+    {
+      "title": "TensorFlow Playground — Visualise Neural Networks",
+      "url": "https://playground.tensorflow.org",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Train Your Own Neural Network — Teachable Machine Challenge",
+    "parts": [
+      "Computer or tablet with webcam and internet access",
+      "Google Teachable Machine (teachablemachine.withgoogle.com)",
+      "TensorFlow Playground (playground.tensorflow.org)",
+      "Activity worksheet for recording results",
+      "Various objects or hand poses for image classification"
+    ],
+    "steps": [
+      "Part 1 — Brain vs Computer: Discuss how the human brain recognises a cat — edges, fur, ears, whiskers — built up layer by layer. Show how a CNN does the same thing digitally. Draw a 3-layer neural network on the whiteboard together",
+      "Part 2 — TensorFlow Playground: Open playground.tensorflow.org. Students experiment with: changing the number of hidden layers, changing the number of neurons per layer, and observing how the decision boundary changes. Discuss: what does 'deeper' do to the model?",
+      "Part 3 — Teachable Machine Setup: Go to teachablemachine.withgoogle.com. Create a new Image Project. Define 3 classes (e.g. Thumbs Up, Thumbs Down, Open Hand — or Rock, Paper, Scissors)",
+      "Part 4 — Collect Training Data: For each class, hold up the gesture in front of the webcam and collect at least 50 images per class. Discuss: why do more varied examples (different lighting, angles) make a better model?",
+      "Part 5 — Train the Model: Click Train Model. Watch the training progress — loss decreasing, accuracy increasing over epochs. Discuss: what does the loss curve tell us about learning?",
+      "Part 6 — Test and Evaluate: Use the live Preview to test the model. Try edge cases — unusual lighting, partial gestures. Record accuracy. Discuss: where does it fail and why?",
+      "Part 7 — Overfitting Demo: Train a model with only 5 images per class and compare accuracy to the 50-image model. Discuss overfitting — the model memorises instead of generalising",
+      "Part 8 — Transfer Learning Discussion: Explain that Teachable Machine uses MobileNet (a pre-trained CNN trained on millions of images) and only fine-tunes the last layer on your data. This is why 50 photos is enough — transfer learning!",
+      "Challenge: Create a practical classifier — e.g. 'Mask / No Mask', 'Open Book / Closed Book', or 'Correct Posture / Slouching'. Train it, test it on classmates, and present accuracy results to the class"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a Neural Network in AI?",
+      "options": [
+        "A physical network of brain cells inside a computer chip",
+        "A computational model made of layers of interconnected artificial neurons that learn to recognise patterns from data",
+        "A type of firewall that protects AI systems from attacks",
+        "A network of computers connected to share training data"
+      ],
+      "answer": 1,
+      "explanation": "Neural networks are inspired by — but not identical to — the human brain! They are mathematical models with layers of connected nodes (neurons) that process inputs, apply weights, and pass results forward until a prediction is made at the output layer."
+    },
+    {
+      "q": "What is a Weight in a neural network?",
+      "options": [
+        "The size of the dataset used for training",
+        "A number assigned to each connection between neurons that determines how strongly one neuron influences the next",
+        "The number of layers in the network",
+        "The speed at which the network processes data"
+      ],
+      "answer": 1,
+      "explanation": "Weights are the learnable parameters! Each connection between neurons has a weight. A high weight = strong influence; near-zero weight = almost no influence. During training, weights are repeatedly adjusted to make the network's predictions more accurate."
+    },
+    {
+      "q": "What does 'Deep' mean in Deep Learning?",
+      "options": [
+        "The AI has a very deep understanding of human emotions",
+        "The neural network has many hidden layers — more layers allow the network to learn progressively more complex and abstract features",
+        "The training data is stored in a deep database",
+        "The network processes data more slowly and carefully"
+      ],
+      "answer": 1,
+      "explanation": "Deep = many hidden layers! A shallow network might have 1–2 hidden layers. A deep network has tens or hundreds. Each layer learns increasingly abstract features — early layers detect edges, middle layers detect shapes, deep layers detect objects or faces."
+    },
+    {
+      "q": "What is an Activation Function?",
+      "options": [
+        "The function that starts the training process",
+        "A mathematical function applied to a neuron's output that introduces non-linearity, deciding whether and how strongly the neuron 'fires'",
+        "The function that loads training data into the network",
+        "A function that measures the accuracy of the model"
+      ],
+      "answer": 1,
+      "explanation": "Without activation functions, no matter how many layers you stack, the whole network would just be a linear equation — useless for complex patterns. ReLU (max(0,x)) is the most popular: it passes positive values through and zeros out negatives, adding the non-linearity needed to learn complex features."
+    },
+    {
+      "q": "What is Training a neural network?",
+      "options": [
+        "Physically connecting neurons together with wires",
+        "Feeding labelled data through the network, comparing its predictions to the correct answers, and repeatedly adjusting weights to reduce errors",
+        "Writing the code that defines the network architecture",
+        "Testing the finished model on new data"
+      ],
+      "answer": 1,
+      "explanation": "Training is learning! The network sees thousands of labelled examples (e.g. photos labelled 'cat' or 'dog'), makes predictions, measures how wrong it was (loss), and uses backpropagation to adjust weights. After many passes (epochs), the network improves its predictions."
+    },
+    {
+      "q": "What is a Loss Function?",
+      "options": [
+        "A function that removes unnecessary layers from the network",
+        "A mathematical measure of how wrong the model's predictions are — training aims to minimise this value",
+        "The memory lost when training data is deleted",
+        "A function that calculates how many neurons are inactive"
+      ],
+      "answer": 1,
+      "explanation": "Loss = how bad the model is right now! If the model predicts 'dog' with 95% confidence but it's actually a cat, the loss is high. If it correctly predicts 'cat' with 98% confidence, the loss is low. The entire training process is an effort to push the loss as close to zero as possible."
+    },
+    {
+      "q": "What is Backpropagation?",
+      "options": [
+        "Running the network backwards to generate training data",
+        "The algorithm that calculates how much each weight contributed to the prediction error and adjusts all weights accordingly to reduce the loss",
+        "A technique for backing up the trained model to cloud storage",
+        "Propagating data backwards through the input layer"
+      ],
+      "answer": 1,
+      "explanation": "Backpropagation is the learning algorithm! After a forward pass produces an error, backprop works backwards through the network — calculating the gradient of the loss with respect to each weight. Weights that contributed more to the error get adjusted more. This is how the network learns."
+    },
+    {
+      "q": "What is an Epoch in neural network training?",
+      "options": [
+        "A single neuron's prediction on one data sample",
+        "One complete pass of the entire training dataset through the neural network",
+        "A measurement of the network's accuracy on test data",
+        "The time it takes to train one layer of the network"
+      ],
+      "answer": 1,
+      "explanation": "One epoch = the network has seen every training example once! Most models train for many epochs (10, 50, 100+). With each epoch, the weights are refined and accuracy improves — you can watch the loss curve drop and accuracy rise on the training graph."
+    },
+    {
+      "q": "What is a Convolutional Neural Network (CNN) specialised for?",
+      "options": [
+        "Processing time-series data like stock prices",
+        "Generating text responses like a chatbot",
+        "Analysing and classifying images by detecting edges, shapes, and objects layer by layer",
+        "Translating languages"
+      ],
+      "answer": 2,
+      "explanation": "CNNs are the kings of computer vision! Convolutional layers slide small filters across the image to detect local features — first edges, then corners and curves, then shapes, then complex objects. This hierarchical feature detection makes CNNs incredibly powerful for image classification and object detection."
+    },
+    {
+      "q": "What is Overfitting in deep learning?",
+      "options": [
+        "Adding too many training examples to the dataset",
+        "When the model learns the training data too well — including its noise and quirks — and performs poorly on new unseen data",
+        "When the network has too many layers to process efficiently",
+        "When the learning rate is set too high"
+      ],
+      "answer": 1,
+      "explanation": "Overfitting = memorising instead of generalising! An overfitted model scores 99% on training data but only 60% on new data. It learned the specific examples rather than the underlying pattern. Solutions: more training data, dropout layers, data augmentation, or simplifying the model."
+    },
+    {
+      "q": "What is Transfer Learning, and why is it powerful?",
+      "options": [
+        "Transferring a trained model from one computer to another",
+        "Reusing a large pre-trained model (trained on millions of examples) and fine-tuning it for a new specific task — saving enormous amounts of time and data",
+        "Transferring knowledge from one student to another using AI",
+        "A method of moving training data between cloud servers"
+      ],
+      "answer": 1,
+      "explanation": "Transfer learning is a superpower! Training a deep network from scratch requires millions of images and days of GPU time. With transfer learning, you start with a model already trained on millions of images (like MobileNet or ResNet) and just fine-tune it on your small dataset. Teachable Machine uses exactly this approach!"
+    },
+    {
+      "q": "In Google Teachable Machine, why do more varied training images (different lighting, angles, backgrounds) produce a better model?",
+      "options": [
+        "More variety increases the file size which gives the AI more to process",
+        "Varied examples teach the model to recognise the CLASS (the gesture itself) rather than memorising irrelevant details like background colour or lighting, making it generalise better",
+        "The AI rewards users who collect more creative images",
+        "Variety reduces the number of epochs needed for training"
+      ],
+      "answer": 1,
+      "explanation": "Diversity = generalisation! If all your 'Thumbs Up' photos have the same bright background, the model might learn 'bright background' instead of 'thumbs up'. Varied lighting, angles, distances, and backgrounds force the model to focus on the actual gesture — making it robust to real-world variation."
+    },
+    {
+      "q": "What is Gradient Descent?",
+      "options": [
+        "The process of reducing the number of layers in a network",
+        "An optimisation algorithm that iteratively adjusts weights in the direction that reduces the loss function — like rolling downhill to find the lowest point",
+        "A method of visualising how data flows through the network",
+        "The descent of accuracy as training progresses"
+      ],
+      "answer": 1,
+      "explanation": "Gradient Descent finds the minimum loss! Imagine a hilly landscape where each point is a set of weights and the height is the loss. Gradient descent rolls downhill — adjusting weights in the direction that reduces loss most steeply. After many steps, it reaches the valley (minimum loss = best accuracy)."
+    },
+    {
+      "q": "What are the three types of layers in a basic neural network?",
+      "options": [
+        "Fast layer, medium layer, slow layer",
+        "Input layer (receives raw data), hidden layers (extract features), output layer (produces the final prediction)",
+        "Training layer, testing layer, validation layer",
+        "Convolutional layer, pooling layer, dropout layer"
+      ],
+      "answer": 1,
+      "explanation": "Three essential layers! Input layer = receives the raw data (pixels, numbers, words). Hidden layers = process and transform data, learning features at increasing levels of abstraction. Output layer = produces the final result — a class label, a number, or a probability distribution."
+    },
+    {
+      "q": "A student trains a Teachable Machine model with only 5 photos per class and finds it works perfectly on their specific training examples but fails on slightly different real-world cases. What has happened?",
+      "options": [
+        "The model needs more epochs to train fully",
+        "The model has overfitted — it memorised the 5 specific examples rather than learning the general pattern of each class",
+        "The webcam resolution is too low for accurate classification",
+        "Transfer learning did not activate because the dataset was too small"
+      ],
+      "answer": 1,
+      "explanation": "Classic overfitting! With only 5 examples, the model memorised those exact photos instead of learning the general pattern. Solution: collect 50+ varied examples per class. More data, more variety = better generalisation to unseen real-world examples. This is why big datasets matter in deep learning."
+    }
+  ]
+}

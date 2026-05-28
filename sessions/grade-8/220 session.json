@@ -1,0 +1,326 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-250/",
+    "slides_folder": "sessions/session-250/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-250/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-250",
+  "number": 250,
+  "title": "Loops & Logic",
+  "subtitle": "Think Logically, Loop Smartly, Solve Anything!",
+  "date": "Session 250",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#27AE60",
+  "icon": "🔁",
+  "tags": [
+    "Python",
+    "Loops",
+    "Logic",
+    "Boolean",
+    "Problem Solving",
+    "Computer Science"
+  ],
+  "overview": "Loops and logic are the heartbeat of every program. In this session, students deepen their understanding of how computers make decisions using Boolean logic and truth tables, and how loops are used to solve real problems efficiently. Through hands-on challenges — from FizzBuzz to pattern printing to mini games — students build the logical thinking skills that underpin all of programming.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-250/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — truth table diagrams, flowcharts, student code screenshots, FizzBuzz output, pattern prints.",
+    "gallery": [
+      {
+        "file": "data/truth-table.png",
+        "_placeholder": "ADD: Diagram of AND, OR, NOT truth tables with T/F values",
+        "caption": "Truth Tables — the foundation of all logical decisions in computing",
+        "category": "Concept"
+      },
+      {
+        "file": "data/fizzbuzz-output.png",
+        "_placeholder": "ADD: Screenshot of FizzBuzz program output in Python shell",
+        "caption": "FizzBuzz — the classic logic + loop challenge every programmer knows!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/loop-flowchart.png",
+        "_placeholder": "ADD: Flowchart showing loop condition check → body → repeat → exit",
+        "caption": "Every loop follows the same flow: check → run → repeat → stop",
+        "category": "Concept"
+      },
+      {
+        "file": "data/star-pattern.png",
+        "_placeholder": "ADD: Screenshot of nested loop printing a triangle or pyramid star pattern",
+        "caption": "Nested loops create beautiful patterns — rows and columns of stars!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/number-guessing-game.png",
+        "_placeholder": "ADD: Screenshot of number guessing game running in Python shell",
+        "caption": "Number Guessing Game — while loop keeps asking until the player wins!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/logic-activity.jpg",
+        "_placeholder": "ADD: Photo of students doing the logic gate card activity or human loop role-play",
+        "caption": "Students acting out logic gates — AND, OR, NOT with cards!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Boolean Logic — All decisions in computing reduce to True or False; named after mathematician George Boole",
+    "AND Gate — Output is True ONLY when BOTH inputs are True; like needing both a key AND a PIN to open a safe",
+    "OR Gate — Output is True when AT LEAST ONE input is True; like a door that opens with card OR fingerprint",
+    "NOT Gate — Flips the input: NOT True = False, NOT False = True; like an inverter switch",
+    "Truth Table — A table listing every possible input combination and the resulting output for a logic operation",
+    "Compound Conditions — Combining multiple conditions using and, or, not: `if age >= 13 and age < 18`",
+    "Short-Circuit Evaluation — Python stops evaluating `and` as soon as one part is False, and `or` as soon as one part is True",
+    "for Loop with range() — Repeating code a fixed number of times; range(start, stop, step) controls the sequence",
+    "while Loop with Flag — Using a boolean variable (flag) as the loop condition: `running = True` … `running = False` to exit",
+    "Loop Counter Pattern — Accumulating a result inside a loop: sum, count, product, maximum, minimum",
+    "FizzBuzz — Classic problem: print numbers 1–100, replacing multiples of 3 with Fizz, 5 with Buzz, and 15 with FizzBuzz",
+    "Modulo Operator (%) — Returns the remainder of division: `10 % 3 = 1`, `15 % 5 = 0`; essential for even/odd and FizzBuzz checks",
+    "Nested Loop Logic — Outer loop controls rows, inner loop controls columns — used for patterns, grids, and tables",
+    "Loop Invariant — A condition that stays true before and after every loop iteration; key concept in logical reasoning about loops"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Boolean Logic and Logic Gates Explained",
+      "videoId": "gI-qXk7XojA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear visual explanation of Boolean logic — AND, OR, NOT gates, truth tables, and how computers use these principles to make all their decisions."
+    },
+    {
+      "title": "Python Loops — for, while, break, continue",
+      "videoId": "94UHCEmprCY",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Complete guide to Python loops — for loops with range, while loops with conditions, break and continue, and practical examples including accumulators and counters."
+    },
+    {
+      "title": "FizzBuzz in Python — Classic Coding Challenge Explained",
+      "videoId": "D0Fu8lMHGXo",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Solve the famous FizzBuzz problem in Python step by step — understand the modulo operator, how to layer conditions with elif, and why this problem is used in coding interviews."
+    },
+    {
+      "title": "Python Pattern Printing with Nested Loops",
+      "videoId": "R5GGRhqVSvE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Print stars, numbers, and pyramid patterns using nested for loops in Python — understand how outer and inner loops work together to control rows and columns."
+    }
+  ],
+  "resources": [
+    {
+      "title": "W3Schools — Python While Loops",
+      "url": "https://www.w3schools.com/python/python_while_loops.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "Boolean Logic Interactive — CS Unplugged",
+      "url": "https://csunplugged.org/en/topics/binary-numbers/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Tutor — Visualise Loop Execution Live",
+      "url": "https://pythontutor.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Replit — Code and Run Python Online",
+      "url": "https://replit.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Logic Gate Cards + FizzBuzz + Pattern Challenge",
+    "parts": [
+      "Computer with Python 3 installed",
+      "IDLE or VS Code editor",
+      "Index cards labelled TRUE and FALSE (for logic gate activity)",
+      "Printed FizzBuzz and pattern challenge sheets"
+    ],
+    "steps": [
+      "Part 1 — Human Logic Gates: In pairs, students hold TRUE or FALSE cards. Teacher calls an operation (AND / OR / NOT). Students work out the output and hold up the result card. Work through all combinations in the truth table",
+      "Part 2 — Compound Conditions: Write Python expressions using and, or, not and predict the output before running: `True and False`, `not True or False`, `(5 > 3) and (10 < 20)`",
+      "Part 3 — Modulo Practice: Explore the % operator — print results of 10%3, 15%5, 7%2, 100%10. Discuss: when does % return 0? How can we use this to check for multiples?",
+      "Part 4 — FizzBuzz Challenge: Write a for loop from 1 to 100. If the number is divisible by both 3 and 5, print FizzBuzz. If by 3 only, print Fizz. If by 5 only, print Buzz. Otherwise print the number. Hint: check the combined condition FIRST",
+      "Part 5 — Accumulator Loop: Use a for loop to calculate the sum of all even numbers from 1 to 50. Then find the largest number in a list without using max()",
+      "Part 6 — Pattern Printing: Use nested for loops to print a right-angled triangle of stars (row 1 has 1 star, row 2 has 2 stars … row 5 has 5 stars). Then try an inverted triangle",
+      "Part 7 — Number Guessing Game: Use random.randint() to pick a secret number 1–20. Use a while loop to keep asking the player to guess. Print 'Too high!', 'Too low!', or 'Correct!' and count how many guesses it took",
+      "Challenge: Extend the guessing game — limit the player to 5 attempts using a counter variable. If they run out, reveal the number and print 'Game Over!'"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is Boolean Logic named after?",
+      "options": [
+        "A programming language called Bool",
+        "The mathematician George Boole who developed the algebra of logic in the 1800s",
+        "A type of computer circuit invented in Silicon Valley",
+        "The Boolean Sea where early computers were built"
+      ],
+      "answer": 1,
+      "explanation": "Boolean Logic is named after George Boole, a 19th-century mathematician who created an algebra using only True and False. His work became the foundation of all digital circuits and computer logic!"
+    },
+    {
+      "q": "What is the output of `True AND False`?",
+      "options": [
+        "True",
+        "False",
+        "True and False together",
+        "Error"
+      ],
+      "answer": 1,
+      "explanation": "AND requires BOTH inputs to be True. True AND False → False. Think of it as needing both a key AND a PIN — if either is missing, the safe stays locked. In Python: `True and False` → `False`."
+    },
+    {
+      "q": "What is the output of `False OR True`?",
+      "options": [
+        "False",
+        "True",
+        "Neither",
+        "Error"
+      ],
+      "answer": 1,
+      "explanation": "OR only needs ONE input to be True. False OR True → True. Think of it as a door that opens with a card OR a fingerprint — either one is enough. In Python: `False or True` → `True`."
+    },
+    {
+      "q": "What does the NOT operator do?",
+      "options": [
+        "Adds a condition to an if statement",
+        "Flips the Boolean value: NOT True becomes False, and NOT False becomes True",
+        "Checks if two values are not equal",
+        "Stops a loop from running"
+      ],
+      "answer": 1,
+      "explanation": "NOT is an inverter! `not True` → `False`, `not False` → `True`. It flips the value like a light switch — whatever it was, it becomes the opposite. In Python: `not (5 > 3)` → `not True` → `False`."
+    },
+    {
+      "q": "What does the Modulo operator (%) do?",
+      "options": [
+        "Multiplies two numbers together",
+        "Divides two numbers and returns the quotient",
+        "Divides two numbers and returns the REMAINDER",
+        "Rounds a number to the nearest integer"
+      ],
+      "answer": 2,
+      "explanation": "% returns the remainder after division! `10 % 3 = 1` (10 ÷ 3 = 3 remainder 1). `15 % 5 = 0` (divides perfectly, no remainder). When `n % x == 0`, n is exactly divisible by x — the key to FizzBuzz!"
+    },
+    {
+      "q": "In FizzBuzz, why must you check `n % 15 == 0` (or `n % 3 == 0 and n % 5 == 0`) FIRST?",
+      "options": [
+        "Because 15 is the largest number",
+        "Because Python always checks the last condition",
+        "If you check n % 3 first, multiples of 15 will print Fizz and never reach the FizzBuzz condition",
+        "The order of conditions does not matter in Python"
+      ],
+      "answer": 2,
+      "explanation": "Order matters with elif! If `n % 3 == 0` is checked first, the number 15 satisfies it and prints Fizz — it never reaches the FizzBuzz check. Always test the most specific condition (divisible by BOTH 3 and 5) first!"
+    },
+    {
+      "q": "What does `range(1, 10, 2)` produce?",
+      "options": [
+        "1, 2, 3, 4, 5, 6, 7, 8, 9",
+        "1, 3, 5, 7, 9",
+        "2, 4, 6, 8, 10",
+        "1, 10, 2"
+      ],
+      "answer": 1,
+      "explanation": "`range(start, stop, step)` → start at 1, stop before 10, step by 2 = 1, 3, 5, 7, 9. The third argument is the step size! `range(0, 11, 2)` gives even numbers 0–10. `range(10, 0, -1)` counts backwards!"
+    },
+    {
+      "q": "What is an Accumulator Pattern in a loop?",
+      "options": [
+        "A loop that runs faster and faster each iteration",
+        "Using a variable that starts at 0 and collects (accumulates) a running total inside the loop",
+        "A pattern that prints accumulating rows of stars",
+        "A loop that accumulates error messages"
+      ],
+      "answer": 1,
+      "explanation": "The accumulator pattern is one of the most useful in programming! Start with `total = 0`, then inside the loop: `total += number`. After the loop, total holds the sum of everything. Use it for sums, products, counts, and averages."
+    },
+    {
+      "q": "What is a Loop Flag?",
+      "options": [
+        "A flag printed inside the loop output",
+        "A boolean variable used as the while loop condition, set to False when you want the loop to stop",
+        "An error that stops the loop unexpectedly",
+        "A special keyword that marks the end of a loop"
+      ],
+      "answer": 1,
+      "explanation": "A flag variable controls a while loop cleanly! `running = True` … `while running:` … `if condition: running = False`. When the flag flips to False, the loop exits naturally. Great for menus and games where you don't know the iteration count in advance."
+    },
+    {
+      "q": "What is Short-Circuit Evaluation in Python logic?",
+      "options": [
+        "When a loop runs too fast and skips iterations",
+        "Python stops evaluating an `and` expression as soon as one part is False, or an `or` expression as soon as one part is True",
+        "When the program short-circuits and crashes",
+        "A method to reduce the number of loop iterations"
+      ],
+      "answer": 1,
+      "explanation": "Python is efficient! For `A and B`: if A is False, B is never checked — the result is already False. For `A or B`: if A is True, B is never checked — the result is already True. This saves time and prevents errors like checking index before accessing a list."
+    },
+    {
+      "q": "In a nested loop that prints a 5-row star triangle, how many total stars are printed?",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "25"
+      ],
+      "answer": 2,
+      "explanation": "Row 1: 1 star, Row 2: 2 stars, Row 3: 3 stars, Row 4: 4 stars, Row 5: 5 stars → total = 1+2+3+4+5 = 15 stars. This is also the formula n×(n+1)/2, where n=5 → 5×6/2 = 15!"
+    },
+    {
+      "q": "What is the output of this code?\n`for i in range(1, 6):`\n`    if i % 2 == 0:`\n`        print(i)`",
+      "options": [
+        "1 3 5",
+        "2 4",
+        "1 2 3 4 5",
+        "0 2 4"
+      ],
+      "answer": 1,
+      "explanation": "range(1,6) gives 1,2,3,4,5. `i % 2 == 0` checks for even numbers — those with no remainder when divided by 2. Only 2 and 4 are even in that range, so only 2 and 4 are printed."
+    },
+    {
+      "q": "A while loop runs forever and freezes the program. What is the most likely cause?",
+      "options": [
+        "The loop body has too many print statements",
+        "The loop condition never becomes False because the variable controlling it is never updated inside the loop",
+        "Python cannot handle while loops longer than 100 iterations",
+        "The indentation of the loop body is wrong"
+      ],
+      "answer": 1,
+      "explanation": "An infinite loop happens when the exit condition can never be reached! If `while count < 10:` but you forgot to write `count += 1` inside the loop, count stays at 0 forever. Always make sure something inside the loop moves you toward the exit condition!"
+    },
+    {
+      "q": "In a number guessing game using a while loop, what is the best way to limit the player to 5 attempts?",
+      "options": [
+        "Use a for loop with range(5) instead of a while loop",
+        "Add a counter variable that increments each guess, and add `and counter < 5` to the while condition",
+        "Use break after every guess",
+        "Restart the program after 5 seconds using a timer"
+      ],
+      "answer": 1,
+      "explanation": "Both approaches work! A counter with `while guess != secret and attempts < 5:` lets the loop exit for either reason — correct guess or 5 attempts used. After the loop, check which condition ended it to print the right message."
+    },
+    {
+      "q": "What is the key difference between using `and` and `or` when combining conditions?",
+      "options": [
+        "and is used for numbers, or is used for strings",
+        "and requires ALL conditions to be True; or requires only ONE condition to be True",
+        "and is faster than or in Python",
+        "There is no practical difference between and and or"
+      ],
+      "answer": 1,
+      "explanation": "`and` = strictest gate — ALL must be True. `or` = most lenient gate — ANY one True is enough. Example: a theme park ride requires `height >= 120 and age >= 10` (both). A free-entry day is `is_student or is_senior` (either one qualifies)."
+    }
+  ]
+}

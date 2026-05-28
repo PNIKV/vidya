@@ -1,0 +1,325 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-255/",
+    "slides_folder": "sessions/session-255/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-255/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-255",
+  "number": 255,
+  "title": "Antivirus & Protection",
+  "subtitle": "Your Digital Immune System — How to Stay Safe Online!",
+  "date": "Session 255",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#2E7D32",
+  "icon": "🛡️",
+  "tags": [
+    "Cybersecurity",
+    "Antivirus",
+    "Firewall",
+    "Digital Safety",
+    "Protection",
+    "Computer Science"
+  ],
+  "overview": "Knowing that malware exists is only half the battle — the other half is knowing how to stop it. In this session, students explore the full toolkit of digital protection: how antivirus software works, what firewalls do, why software updates matter, how strong passwords and 2FA defend accounts, and how safe browsing habits form the most powerful line of defence. Students leave with practical, actionable skills to protect themselves, their families, and their devices.",
+  "grades": [
+    6,
+    7,
+    8
+  ],
+  "slides": {
+    "pdf": "sessions/session-255/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — antivirus UI screenshots, firewall diagram, password strength examples, 2FA demonstration.",
+    "gallery": [
+      {
+        "file": "data/antivirus-layers.png",
+        "_placeholder": "ADD: Diagram showing layers of digital protection — antivirus, firewall, updates, passwords, 2FA, safe browsing",
+        "caption": "Defence in Depth — multiple layers of protection work together like armour",
+        "category": "Concept"
+      },
+      {
+        "file": "data/antivirus-scan-ui.png",
+        "_placeholder": "ADD: Screenshot of a real antivirus dashboard (Windows Defender, Avast, or similar) with scan options",
+        "caption": "Antivirus dashboard — quick scan, full scan, real-time protection settings",
+        "category": "Concept"
+      },
+      {
+        "file": "data/firewall-diagram.png",
+        "_placeholder": "ADD: Diagram showing firewall blocking incoming threats while allowing safe traffic",
+        "caption": "Firewall — a gatekeeper that filters incoming and outgoing network traffic",
+        "category": "Concept"
+      },
+      {
+        "file": "data/password-strength.png",
+        "_placeholder": "ADD: Chart comparing weak vs medium vs strong passwords with strength meter",
+        "caption": "Password strength: length + randomness + symbols = much harder to crack",
+        "category": "Concept"
+      },
+      {
+        "file": "data/2fa-demo.png",
+        "_placeholder": "ADD: Screenshot or diagram showing 2FA flow — password + OTP on phone",
+        "caption": "Two-Factor Authentication: even if your password is stolen, 2FA stops the attacker",
+        "category": "Concept"
+      },
+      {
+        "file": "data/safe-browsing-tips.png",
+        "_placeholder": "ADD: Visual checklist of safe browsing habits — HTTPS, padlock, avoid suspicious links",
+        "caption": "Safe browsing checklist — habits that block most online threats before they start",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Antivirus Software — Detects, quarantines, and removes malware using signature databases and behavioural analysis",
+    "Signature Detection — Comparing file code against a database of known malware patterns; fast but cannot catch brand-new (zero-day) threats",
+    "Heuristic Analysis — Looking for suspicious behaviour patterns rather than known signatures; can detect new threats not yet in the database",
+    "Real-Time Protection — Antivirus actively monitors file activity, downloads, and processes as they happen rather than only during scheduled scans",
+    "Quarantine — Isolating a suspected malicious file in a restricted area so it cannot run or spread while awaiting review or deletion",
+    "Firewall — A security system (hardware or software) that monitors and filters network traffic based on rules, blocking unauthorised access",
+    "Software Updates & Patches — Updates close known security vulnerabilities that attackers exploit; unpatched software is an open door",
+    "Strong Password — Long (12+ characters), random mix of uppercase, lowercase, numbers, and symbols; unique for every account",
+    "Password Manager — Software that generates and securely stores unique strong passwords for every account (e.g. Bitwarden, 1Password)",
+    "Two-Factor Authentication (2FA) — A second verification step beyond the password: SMS code, authenticator app, or biometric",
+    "HTTPS — HyperText Transfer Protocol Secure; encrypted connection between browser and website (look for the padlock icon)",
+    "Phishing Awareness — Recognising fake emails, websites, and messages designed to steal credentials; the human layer of defence"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "How Antivirus Software Works — Explained",
+      "videoId": "lMWqMXFgKQo",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Inside antivirus software — signature detection, heuristic analysis, real-time protection, quarantine, and why keeping your antivirus updated is as important as the software itself."
+    },
+    {
+      "title": "What is a Firewall and How Does it Work?",
+      "videoId": "kDEX1HXybrU",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear explainer on firewalls — what they are, how packet filtering and stateful inspection work, the difference between hardware and software firewalls, and why every device needs one."
+    },
+    {
+      "title": "Two-Factor Authentication Explained — Why You Need It",
+      "videoId": "0mvCeNsTa1g",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand why passwords alone are not enough, how 2FA adds a critical second layer of security, and how to enable it on the accounts that matter most."
+    },
+    {
+      "title": "How to Create Strong Passwords and Stay Secure",
+      "videoId": "aEmXQqtAu5o",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Why most passwords are dangerously weak, how attackers crack them using brute force and dictionary attacks, and practical strategies for creating and managing strong unique passwords."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Have I Been Pwned — Check If Your Email Was Compromised",
+      "url": "https://haveibeenpwned.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Bitwarden — Free Open-Source Password Manager",
+      "url": "https://bitwarden.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Safety Centre — Protect Your Account",
+      "url": "https://safety.google",
+      "icon": "🔗"
+    },
+    {
+      "title": "NCSC — Cyber Aware Tips for Staying Safe Online",
+      "url": "https://www.ncsc.gov.uk/cyberaware/home",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Personal Cyber Security Audit + Protection Setup",
+    "parts": [
+      "Computer or tablet with internet access",
+      "Personal Cyber Security Audit Worksheet (printed or digital)",
+      "Access to haveibeenpwned.com",
+      "Access to a free password strength checker (e.g. passwordmonster.com)",
+      "Whiteboard for class discussion"
+    ],
+    "steps": [
+      "Part 1 — Defence Layers Map: Students draw a castle diagram with 6 protective walls — labelling each layer: Antivirus, Firewall, Software Updates, Strong Passwords, 2FA, and Safe Browsing. Discuss what each layer protects against",
+      "Part 2 — Antivirus Exploration: Open Windows Defender (or installed antivirus) on the classroom computer. Identify: real-time protection status, last scan date, virus definition update date. Discuss: what would happen if definitions were 6 months old?",
+      "Part 3 — Password Strength Test: Students test 5 sample passwords ('password123', 'P@ssw0rd', 'correct-horse-battery-staple', 'a8#Kx2!mQr', 'ilovecricket2024') on passwordmonster.com. Rank them by strength and discuss why length beats complexity alone",
+      "Part 4 — Pwned Check: Students type their school email (or a sample email) into haveibeenpwned.com to check if it appears in known data breaches. Discuss what to do if a breach is found",
+      "Part 5 — 2FA Setup Demo: Teacher demonstrates enabling 2FA on a Google account using Google Authenticator. Students identify which of their own accounts offer 2FA and list the top 3 they would enable first",
+      "Part 6 — Safe Browsing Quiz: Show students 6 website URLs and email snippets. They must identify which ones are safe and which are phishing attempts — checking for HTTPS, correct domain spelling, urgent language, and suspicious sender addresses",
+      "Part 7 — Personal Security Action Plan: Each student writes a 5-point personal cybersecurity improvement plan — specific actions they will take this week (e.g. 'Enable 2FA on Gmail', 'Change my Instagram password to 16+ characters', 'Update my phone OS')",
+      "Challenge: Students research and present on one real-world data breach (e.g. Adobe 2013, Yahoo 2016, LinkedIn 2021) — how many accounts affected, what data was stolen, and what users should have done differently"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is the primary purpose of Antivirus software?",
+      "options": [
+        "To speed up your computer by removing old files",
+        "To detect, quarantine, and remove malware from a device",
+        "To block all incoming internet traffic",
+        "To back up your files automatically"
+      ],
+      "answer": 1,
+      "explanation": "Antivirus software is your digital immune system! It scans files, monitors processes, and checks downloads for known and suspicious malware. When a threat is found, it quarantines or deletes it before damage is done."
+    },
+    {
+      "q": "What is Signature Detection in antivirus software?",
+      "options": [
+        "The antivirus asking you to digitally sign detected threats",
+        "Comparing files against a database of known malware code patterns — if a match is found, the file is flagged as malicious",
+        "Monitoring program behaviour for suspicious activity",
+        "Verifying the digital signature on legitimate software downloads"
+      ],
+      "answer": 1,
+      "explanation": "Signature detection is like a fingerprint database! Every known malware has a unique code pattern (signature). The antivirus scans files and compares them to millions of known signatures. Instant match = instant quarantine. This is why updating definitions daily matters — new malware = new signatures needed."
+    },
+    {
+      "q": "What is Heuristic Analysis, and why is it important?",
+      "options": [
+        "A method of detecting malware by scanning only compressed files",
+        "Analysing code or behaviour for suspicious patterns to detect NEW threats that don't yet have a signature in the database",
+        "A technique for recovering quarantined files",
+        "Scanning only files downloaded from the internet"
+      ],
+      "answer": 1,
+      "explanation": "Heuristic analysis fights unknown threats! It looks for suspicious patterns — like code that tries to hide itself, replicate, or access sensitive system areas — even if the malware is brand new and has no signature yet. Essential for catching zero-day threats."
+    },
+    {
+      "q": "What is Real-Time Protection in an antivirus program?",
+      "options": [
+        "A scan that runs exactly at midnight every day",
+        "Continuous monitoring of file activity, downloads, and processes as they happen — blocking threats instantly rather than waiting for a scheduled scan",
+        "Protection that only activates when you are browsing the internet",
+        "A live connection to the antivirus company's server"
+      ],
+      "answer": 1,
+      "explanation": "Real-time protection is always on! Unlike scheduled scans that check files periodically, real-time protection watches every file that is opened, downloaded, or executed. If a threat is detected the moment a malicious file tries to run — it's blocked instantly."
+    },
+    {
+      "q": "What does it mean when antivirus software 'Quarantines' a file?",
+      "options": [
+        "It permanently deletes the file from the hard drive",
+        "It isolates the suspected file in a restricted area where it cannot run or spread, until the user decides to delete or restore it",
+        "It sends the file to the antivirus company for analysis",
+        "It encrypts the file to prevent it from spreading"
+      ],
+      "answer": 1,
+      "explanation": "Quarantine is a safe holding area! The file is moved somewhere it cannot execute or infect other files. This is safer than immediate deletion — sometimes legitimate files get flagged as false positives, and quarantine lets you restore them if needed."
+    },
+    {
+      "q": "What does a Firewall do?",
+      "options": [
+        "It scans files for viruses and removes them",
+        "It monitors and filters incoming and outgoing network traffic based on security rules, blocking unauthorised access",
+        "It backs up files to prevent data loss",
+        "It encrypts all files stored on the hard drive"
+      ],
+      "answer": 1,
+      "explanation": "A firewall is a network gatekeeper! Think of it as a security guard at a building entrance — it checks every packet of data trying to enter or leave, allows legitimate traffic, and blocks suspicious or unauthorised connections. Works alongside antivirus — different threats, different tools."
+    },
+    {
+      "q": "What is the difference between a Software Firewall and a Hardware Firewall?",
+      "options": [
+        "Software firewalls are free; hardware firewalls always cost money",
+        "A software firewall runs as a program on a single device; a hardware firewall is a physical device protecting an entire network",
+        "Hardware firewalls block viruses; software firewalls block hackers",
+        "There is no difference — they do exactly the same job"
+      ],
+      "answer": 1,
+      "explanation": "Both protect, but at different levels! Software firewall (like Windows Firewall) protects the individual device it runs on. Hardware firewall (like a router with built-in firewall) sits between the internet and ALL devices on the network, protecting everything at once — used in offices and schools."
+    },
+    {
+      "q": "Why are Software Updates and Security Patches critically important for protection?",
+      "options": [
+        "Updates add new features like emojis and themes",
+        "Updates patch known security vulnerabilities in software — unpatched systems are actively targeted by malware and hackers",
+        "Updates are only important for gaming performance",
+        "Updates train the antivirus database with new signatures"
+      ],
+      "answer": 1,
+      "explanation": "Unpatched = open door! WannaCry ransomware exploited a Windows vulnerability that had already been patched — but millions hadn't updated. Attackers scan for unpatched systems. Updates close the holes before attackers can use them. Enable automatic updates wherever possible!"
+    },
+    {
+      "q": "Which password is the STRONGEST?",
+      "options": [
+        "Password123",
+        "p@55w0rd",
+        "correct-horse-battery-staple-river",
+        "Qw3rty!"
+      ],
+      "answer": 2,
+      "explanation": "Length beats complexity! 'correct-horse-battery-staple-river' has 35 characters — even using only lowercase letters and hyphens, it would take centuries to brute-force. Short passwords with symbols like 'Qw3rty!' are cracked in seconds. Long passphrases are both strong AND memorable!"
+    },
+    {
+      "q": "What is a Password Manager and why should everyone use one?",
+      "options": [
+        "A notebook where you write down all your passwords",
+        "Software that generates and securely stores unique strong passwords for every account, so you only need to remember one master password",
+        "A person who manages passwords for a company",
+        "A browser feature that saves passwords in plain text"
+      ],
+      "answer": 1,
+      "explanation": "Password managers solve the human problem! Most people reuse weak passwords because strong unique ones are hard to remember. A password manager generates random 20-character passwords for every site and stores them encrypted. You only need to remember one strong master password."
+    },
+    {
+      "q": "What is Two-Factor Authentication (2FA)?",
+      "options": [
+        "Using two different passwords for the same account",
+        "A second verification step beyond the password — such as a code sent to your phone or a biometric scan — that stops attackers even if they have your password",
+        "Logging in from two different devices simultaneously",
+        "A method of encrypting data twice for extra security"
+      ],
+      "answer": 1,
+      "explanation": "2FA = two locks on the door! Even if an attacker steals your password, they still can't get in without the second factor (your phone, fingerprint, or authenticator app). Enabling 2FA on email and bank accounts is one of the single most effective security steps you can take."
+    },
+    {
+      "q": "What does the padlock icon and HTTPS in a browser address bar tell you?",
+      "options": [
+        "The website is owned by a trusted government organisation",
+        "The connection between your browser and the website is encrypted — data sent and received cannot be read by third parties on the same network",
+        "The website has passed an antivirus scan",
+        "The website is safe to download files from"
+      ],
+      "answer": 1,
+      "explanation": "HTTPS = encrypted connection! It means your data is scrambled in transit — someone intercepting your WiFi traffic cannot read your passwords or personal information. Always look for HTTPS before entering any sensitive data. HTTP without the S = no encryption = visible to attackers on the same network."
+    },
+    {
+      "q": "What is a Zero-Day vulnerability, and why can't antivirus always protect against it?",
+      "options": [
+        "A vulnerability that has existed for zero days — meaning it is newly patched",
+        "A security flaw that is unknown to the software developer and has no patch yet — attackers exploit it before defenders even know it exists",
+        "A virus that activates at midnight (zero hour)",
+        "A type of firewall rule with zero exceptions"
+      ],
+      "answer": 1,
+      "explanation": "Zero-day = unknown to defenders! The name means the developer has had 'zero days' to fix it. Signature-based antivirus cannot detect zero-day malware because there's no signature yet. Heuristic analysis and behaviour monitoring are the best defences against zero-day attacks."
+    },
+    {
+      "q": "A student receives an email claiming their bank account has been locked and they must click a link immediately to verify their details. What should they do?",
+      "options": [
+        "Click the link immediately — it sounds urgent and important",
+        "Reply to the email asking for more information",
+        "Recognise it as a likely phishing attack — do NOT click the link. Go directly to the bank's official website by typing the URL manually, or call the bank",
+        "Forward the email to all their friends as a warning"
+      ],
+      "answer": 2,
+      "explanation": "Classic phishing! Urgency, fear, and a link are the three red flags. Real banks NEVER ask for credentials via email links. Always go to the official website by typing the URL yourself. Clicking the link could take you to a fake login page that steals your credentials, or install malware."
+    },
+    {
+      "q": "What is the MOST effective combination of protections for a personal computer?",
+      "options": [
+        "Antivirus only — it catches everything",
+        "Firewall only — it blocks all threats at the network level",
+        "Defence in depth: antivirus + firewall + automatic updates + strong unique passwords + 2FA + safe browsing habits — multiple layers working together",
+        "Turning off WiFi when not in use — no internet means no threats"
+      ],
+      "answer": 2,
+      "explanation": "No single tool is perfect! Defence in depth means using multiple overlapping layers — antivirus catches malware, firewall blocks network attacks, updates close vulnerabilities, strong passwords protect accounts, 2FA stops stolen password use, and safe browsing avoids threats altogether. Together they cover each other's blind spots."
+    }
+  ]
+}

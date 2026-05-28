@@ -1,0 +1,329 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-246/",
+    "slides_folder": "sessions/session-246/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-246/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-246",
+  "number": 246,
+  "title": "Advanced RFID Security",
+  "subtitle": "Tap, Scan, Secure — Build Your Own Access Control System!",
+  "date": "Session 246",
+  "duration": "1 Hour",
+  "phase": "Advanced",
+  "color": "#C0392B",
+  "icon": "🔐",
+  "tags": [
+    "RFID",
+    "Arduino",
+    "Security",
+    "Access Control",
+    "IoT",
+    "STEM"
+  ],
+  "overview": "Metro cards, office key fobs, library cards, passport chips — RFID is everywhere in modern security systems. In this session, students go beyond basic RFID scanning and build an advanced access control system using Arduino and the MFRC522 RFID module. They implement multi-card whitelists, grant or deny access with LEDs and a buzzer, log entry attempts on an LCD, and explore real-world security concepts like UID spoofing and encryption.",
+  "grades": [
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-246/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — RFID reader wiring, card scanning demos, LCD output, student builds.",
+    "gallery": [
+      {
+        "file": "data/mfrc522-module.jpg",
+        "_placeholder": "ADD: Photo of MFRC522 RFID reader module and RFID card/key fob",
+        "caption": "MFRC522 RFID module — reads card UIDs wirelessly using radio waves",
+        "category": "Components"
+      },
+      {
+        "file": "data/rfid-circuit.jpg",
+        "_placeholder": "ADD: Full circuit photo — Arduino + MFRC522 + LEDs + Buzzer + LCD wired together",
+        "caption": "The complete RFID access control circuit built by students",
+        "category": "Lab"
+      },
+      {
+        "file": "data/rfid-spi-wiring.png",
+        "_placeholder": "ADD: Wiring diagram showing SPI connections — MOSI, MISO, SCK, SDA, RST pins",
+        "caption": "SPI wiring: MOSI, MISO, SCK, SDA, RST — five pins to connect RFID to Arduino",
+        "category": "Concept"
+      },
+      {
+        "file": "data/uid-serial-monitor.png",
+        "_placeholder": "ADD: Screenshot of Serial Monitor showing UID being read from card",
+        "caption": "Every RFID card has a unique UID — like a fingerprint for your card",
+        "category": "Concept"
+      },
+      {
+        "file": "data/access-granted-denied.jpg",
+        "_placeholder": "ADD: Photo of green LED (access granted) and red LED (access denied) in action",
+        "caption": "Green = Access Granted ✅ | Red = Access Denied 🚫",
+        "category": "Lab"
+      },
+      {
+        "file": "data/rfid-real-world.jpg",
+        "_placeholder": "ADD: Photo collage of real-world RFID — metro card, office fob, library card, passport",
+        "caption": "RFID is everywhere — metro, office, library, passports, contactless payments!",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "RFID — Radio Frequency Identification: uses radio waves to read data from tags and cards wirelessly",
+    "MFRC522 — The Arduino RFID reader module that operates at 13.56 MHz frequency",
+    "UID (Unique Identifier) — A unique code embedded in every RFID card/tag, like a fingerprint (e.g. A3 4F 2B 91)",
+    "SPI Protocol — Serial Peripheral Interface: the 5-wire communication used by MFRC522 (MOSI, MISO, SCK, SDA, RST)",
+    "Whitelist — A list of approved UIDs stored in the Arduino code; only matching UIDs get access",
+    "Access Control Logic — Read UID → compare to whitelist → grant or deny → trigger LED + buzzer + LCD",
+    "Active vs Passive RFID Tags — Passive tags have no battery (powered by the reader's field); active tags have their own power",
+    "13.56 MHz vs 125 kHz — Two common RFID frequencies; MFRC522 uses 13.56 MHz (NFC-compatible, higher security)",
+    "UID Spoofing — A security vulnerability where attackers clone a card's UID to gain unauthorised access",
+    "Sector Authentication — Advanced MIFARE cards have 16 sectors with password protection beyond just the UID",
+    "Multi-Card Whitelist — Storing multiple approved UIDs in an array and checking each one with a loop",
+    "Entry Logging — Displaying the scan time, UID, and access result on the LCD or Serial Monitor for audit trails"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino RFID RC522 Tutorial — Read Cards and Tags",
+      "videoId": "qmgmqfMpJfU",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Complete beginner tutorial — wire the MFRC522, install the RFID library, and read UIDs from cards and key fobs in the Serial Monitor."
+    },
+    {
+      "title": "RFID Access Control System with Arduino",
+      "videoId": "evLpX3kFmuc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Build a full access control system with Arduino, RFID reader, green and red LEDs, buzzer, and whitelist logic — grant or deny access with each scan."
+    },
+    {
+      "title": "How RFID Works — Radio Frequency Identification Explained",
+      "videoId": "ePOdAhYfCss",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Animated explainer of how RFID technology works — radio waves, passive vs active tags, frequencies, and real-world applications."
+    },
+    {
+      "title": "RFID Security Vulnerabilities and Card Cloning",
+      "videoId": "FaWQbEkGLmI",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand the security limitations of basic RFID systems — UID cloning, skimming attacks, and how modern systems use encryption to stay secure."
+    }
+  ],
+  "resources": [
+    {
+      "title": "MFRC522 RFID Library — GitHub",
+      "url": "https://github.com/miguelbalboa/rfid",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino SPI Reference",
+      "url": "https://www.arduino.cc/en/reference/SPI",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi — Simulate Arduino RFID Online",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "How RFID Works — HowStuffWorks",
+      "url": "https://electronics.howstuffworks.com/gadgets/high-tech-gadgets/rfid.htm",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Multi-Card RFID Access Control System",
+    "parts": [
+      "Arduino UNO",
+      "MFRC522 RFID reader module",
+      "RFID cards and key fobs (at least 2 per group)",
+      "Green LED + 220Ω resistor",
+      "Red LED + 220Ω resistor",
+      "Active buzzer",
+      "16x2 LCD with I2C backpack",
+      "Breadboard and jumper wires",
+      "Arduino IDE with MFRC522 and LiquidCrystal_I2C libraries"
+    ],
+    "steps": [
+      "Step 1 — Wire the MFRC522: Connect SDA → pin 10, SCK → pin 13, MOSI → pin 11, MISO → pin 12, RST → pin 9, 3.3V and GND",
+      "Step 2 — Read UIDs: Upload the DumpInfo example sketch, open Serial Monitor, and scan each card to record its unique UID",
+      "Step 3 — Build the Whitelist: Store 2–3 approved UIDs in a byte array in the code. Label them (e.g. 'Admin Card', 'Student Card')",
+      "Step 4 — Access Logic: Write a function that compares the scanned UID against the whitelist and returns true (match) or false (no match)",
+      "Step 5 — Visual Feedback: On match → green LED on + short beep + LCD shows 'ACCESS GRANTED'. No match → red LED on + long beep + LCD shows 'ACCESS DENIED'",
+      "Step 6 — Add Names: Map each UID to a name and display 'Welcome, Riya!' or 'Unknown Card!' on the LCD",
+      "Step 7 — Simulate an Intruder: Try scanning an unregistered card and confirm the denial system works correctly",
+      "Challenge: Add a counter that locks the system for 10 seconds after 3 failed attempts — just like a real security system!"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does RFID stand for?",
+      "options": [
+        "Remote Frequency Input Device",
+        "Radio Frequency Identification",
+        "Rapid File Integration Data",
+        "Robotic Field Interface Design"
+      ],
+      "answer": 1,
+      "explanation": "RFID = Radio Frequency Identification! It uses radio waves to wirelessly read data stored in tags or cards — no physical contact needed. Metro cards, office fobs, and library cards all use RFID."
+    },
+    {
+      "q": "What is the name of the RFID reader module commonly used with Arduino?",
+      "options": [
+        "DS3231",
+        "HC-SR04",
+        "MFRC522",
+        "L298N"
+      ],
+      "answer": 2,
+      "explanation": "MFRC522 is the popular Arduino RFID module! It operates at 13.56 MHz and can read MIFARE cards and key fobs. It communicates with Arduino via the SPI protocol."
+    },
+    {
+      "q": "What is a UID in the context of RFID?",
+      "options": [
+        "The power level of the RFID signal",
+        "A Unique Identifier — a fixed code embedded in every RFID card that distinguishes it from all others",
+        "The programming language used by the RFID chip",
+        "The distance at which an RFID card can be read"
+      ],
+      "answer": 1,
+      "explanation": "UID = Unique Identifier! Every RFID card has a unique UID (e.g. A3 4F 2B 91) — like a fingerprint. Your system reads this UID and checks it against the approved list to grant or deny access."
+    },
+    {
+      "q": "Which communication protocol does the MFRC522 use to talk to the Arduino?",
+      "options": [
+        "I2C (SDA + SCL)",
+        "UART (TX + RX)",
+        "SPI (MOSI, MISO, SCK, SDA, RST)",
+        "Bluetooth"
+      ],
+      "answer": 2,
+      "explanation": "MFRC522 uses SPI — Serial Peripheral Interface! It needs 5 connections to Arduino: MOSI, MISO, SCK, SDA (SS), and RST. SPI is fast and reliable for short-distance communication between chips."
+    },
+    {
+      "q": "In an RFID access control system, what is a Whitelist?",
+      "options": [
+        "A list of blocked or banned cards",
+        "A list of approved UIDs that are allowed to gain access",
+        "A log of all failed access attempts",
+        "A list of RFID frequencies"
+      ],
+      "answer": 1,
+      "explanation": "The whitelist contains the UIDs of approved cards. When a card is scanned, its UID is compared to the whitelist. Match = access granted. No match = access denied. Only cards on the list get through!"
+    },
+    {
+      "q": "What frequency does the MFRC522 module operate at?",
+      "options": [
+        "125 kHz",
+        "2.4 GHz",
+        "13.56 MHz",
+        "433 MHz"
+      ],
+      "answer": 2,
+      "explanation": "MFRC522 operates at 13.56 MHz — the same frequency as NFC (Near Field Communication) used in contactless payments! This is different from older 125 kHz systems which have weaker security."
+    },
+    {
+      "q": "What is a Passive RFID tag?",
+      "options": [
+        "An RFID tag with a built-in battery that broadcasts continuously",
+        "An RFID tag with no battery that gets its power from the reader's radio field",
+        "An RFID tag that only works in passive (standby) mode",
+        "An RFID tag that cannot be read wirelessly"
+      ],
+      "answer": 1,
+      "explanation": "Passive tags have NO battery! They harvest energy from the radio waves emitted by the reader. When you tap a metro card, the reader powers the card's chip wirelessly. Simple, cheap, and lasts forever!"
+    },
+    {
+      "q": "What is UID Spoofing?",
+      "options": [
+        "Printing fake UIDs on a card's surface",
+        "Cloning a card's UID onto another card or device to trick the system into granting access",
+        "Changing a card's UID remotely via Bluetooth",
+        "Blocking an RFID reader with a signal jammer"
+      ],
+      "answer": 1,
+      "explanation": "UID Spoofing is a security attack! An attacker reads a valid card's UID using a hidden reader, clones it onto a blank card, and uses it to bypass a UID-only access system. This is why advanced systems use sector passwords too!"
+    },
+    {
+      "q": "In the access control code, why do we store multiple UIDs in an ARRAY?",
+      "options": [
+        "Arrays make the RFID reader scan faster",
+        "So we can loop through all approved UIDs and check each one against the scanned card efficiently",
+        "Arrays are required by the MFRC522 library",
+        "To encrypt the UIDs automatically"
+      ],
+      "answer": 1,
+      "explanation": "An array lets us store many approved UIDs and check them all with a single for-loop. Without an array, we'd need a separate if-statement for every card — messy and hard to update. Arrays make the whitelist scalable!"
+    },
+    {
+      "q": "What does the system do when an UNREGISTERED card is scanned?",
+      "options": [
+        "Automatically adds the card to the whitelist",
+        "Ignores the scan completely",
+        "Triggers the red LED and buzzer and displays ACCESS DENIED on the LCD",
+        "Resets the Arduino"
+      ],
+      "answer": 2,
+      "explanation": "Unregistered card = denied! The system lights the red LED, sounds a long beep on the buzzer, and displays 'ACCESS DENIED' on the LCD. The entry attempt can also be logged with the card's UID for security auditing."
+    },
+    {
+      "q": "What is Sector Authentication on a MIFARE RFID card?",
+      "options": [
+        "A way to increase the reading range of the card",
+        "Password protection on specific memory sectors of the card, adding security beyond just the UID",
+        "A method of transmitting data wirelessly using sectors",
+        "Dividing the RFID signal into multiple frequencies"
+      ],
+      "answer": 1,
+      "explanation": "MIFARE cards have 16 memory sectors, each protected by a password (Key A and Key B). Reading or writing to a sector requires authentication. This means even if an attacker clones the UID, they can't access the card's stored data!"
+    },
+    {
+      "q": "Which Arduino pin is connected to the MFRC522's RST pin, and what does RST do?",
+      "options": [
+        "Pin 13 — it sends the clock signal",
+        "Pin 11 — it sends data to the module",
+        "Pin 9 — it resets the MFRC522 module, used to initialise and wake it up",
+        "Pin 12 — it receives data from the module"
+      ],
+      "answer": 2,
+      "explanation": "RST (Reset) is typically connected to pin 9. Pulling RST LOW resets the MFRC522 chip. The library uses this during setup to initialise the module. Without a proper RST connection, the module won't respond!"
+    },
+    {
+      "q": "What is an Entry Log in a security system?",
+      "options": [
+        "A wooden log used to block a door",
+        "A record of every access attempt — showing the UID, time, and whether access was granted or denied",
+        "A list of errors in the Arduino code",
+        "The buzzer sound pattern for granted access"
+      ],
+      "answer": 1,
+      "explanation": "Entry logging creates an audit trail! Every scan is recorded — who tapped (UID/name), when, and the result. Real security systems log this to a database or SD card so admins can review who entered and when."
+    },
+    {
+      "q": "A student adds a lockout feature — after 3 failed scans the system locks for 10 seconds. What programming concepts are needed?",
+      "options": [
+        "Only a buzzer and LED",
+        "A counter variable to track failed attempts, a conditional to check if count reaches 3, and delay() or millis() for the lockout timer",
+        "A second Arduino and RFID module",
+        "The I2C protocol and an RTC module only"
+      ],
+      "answer": 1,
+      "explanation": "Great challenge! You need: a counter variable (int failCount = 0), an if-check (if failCount >= 3), and a timer (delay(10000) for 10 seconds). Then reset the counter. This mirrors real-world systems like ATM PIN lockouts!"
+    },
+    {
+      "q": "How is an RFID-based access system different from a PIN-based system in terms of security?",
+      "options": [
+        "RFID is always more secure than PIN",
+        "PIN is always more secure than RFID",
+        "Each has trade-offs — RFID cards can be lost or cloned; PINs can be forgotten or shoulder-surfed. Best security combines both (card + PIN = two-factor authentication)",
+        "They are identical in security level"
+      ],
+      "answer": 2,
+      "explanation": "No single method is perfect! RFID cards can be lost, stolen, or cloned. PINs can be forgotten or spied on. The most secure systems use two-factor authentication (2FA) — you need BOTH the card AND the PIN. Banks and high-security doors use this!"
+    }
+  ]
+}

@@ -1,0 +1,321 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-245/",
+    "slides_folder": "sessions/session-245/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-245/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-245",
+  "number": 245,
+  "title": "Datatypes and Variables",
+  "subtitle": "Name It, Store It, Use It!",
+  "date": "Session 245",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#2ECC71",
+  "icon": "📦",
+  "tags": [
+    "Python",
+    "Variables",
+    "Datatypes",
+    "Programming Basics",
+    "Computer Science"
+  ],
+  "overview": "Every program needs to remember things — a player's score, a user's name, today's temperature. In this session, students learn how variables work as labelled storage boxes in memory, and explore Python's core datatypes: integers, floats, strings, and booleans. By the end, they can store, change, and use data confidently in their own programs.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-245/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — whiteboard variable box diagrams, student code screenshots, activity shots.",
+    "gallery": [
+      {
+        "file": "data/variable-box.png",
+        "_placeholder": "ADD: Whiteboard diagram of a variable as a labelled box containing a value",
+        "caption": "A variable is like a labelled box — name on the outside, value on the inside!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/datatypes-chart.png",
+        "_placeholder": "ADD: Chart showing int, float, str, bool with examples of each",
+        "caption": "The four core Python datatypes — every value belongs to one!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/python-assignment.png",
+        "_placeholder": "ADD: Screenshot of variable assignment in Python IDLE or VS Code",
+        "caption": "age = 12 — the = sign stores the value into the variable",
+        "category": "Concept"
+      },
+      {
+        "file": "data/type-function.png",
+        "_placeholder": "ADD: Screenshot of type() function output in Python shell",
+        "caption": "type() tells you exactly what datatype a value is",
+        "category": "Concept"
+      },
+      {
+        "file": "data/string-operations.png",
+        "_placeholder": "ADD: Screenshot showing string concatenation and f-strings in Python",
+        "caption": "Strings can be joined, sliced, and formatted — so many tricks!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/variable-activity.jpg",
+        "_placeholder": "ADD: Photo of students doing the human variable role-play activity",
+        "caption": "Students acting as variables — holding values and swapping them!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Variable — A named storage location in memory that holds a value (like a labelled box)",
+    "Assignment Operator (=) — Stores a value into a variable: `age = 12` puts 12 into the box called age",
+    "int (Integer) — Whole numbers, positive or negative: 5, -3, 100, 0",
+    "float (Floating Point) — Decimal numbers: 3.14, -0.5, 9.8, 100.0",
+    "str (String) — Text enclosed in quotes: 'Hello', \"Python\", '42' (the number 42 as text!)",
+    "bool (Boolean) — Only two possible values: True or False (capital T and F in Python!)",
+    "type() — Built-in function that returns the datatype of any value or variable",
+    "Dynamic Typing — Python figures out the datatype automatically; no need to declare it like C or Java",
+    "Variable Naming Rules — Must start with a letter or underscore, no spaces, case-sensitive (age ≠ Age)",
+    "Type Conversion — int(), float(), str() convert between datatypes: int('5') → 5",
+    "String Concatenation — Joining strings with +: 'Hello' + ' ' + 'World' → 'Hello World'",
+    "f-String — A modern way to embed variables inside strings: f'My name is {name} and I am {age} years old'"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Python Variables and Datatypes for Beginners",
+      "videoId": "cQT33yu9pY8",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear beginner-friendly introduction to variables, assignment, and the four core Python datatypes with live coding examples."
+    },
+    {
+      "title": "Python Strings — Everything You Need to Know",
+      "videoId": "k9TUPpGqYTo",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Deep dive into Python strings — creation, concatenation, slicing, methods, and f-strings explained with fun examples."
+    },
+    {
+      "title": "Python type() Function and Type Conversion",
+      "videoId": "p3a2e5zwfNg",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to use type() to check datatypes and int(), float(), str() to convert between them — essential for user input handling."
+    },
+    {
+      "title": "Boolean Values and Conditions in Python",
+      "videoId": "9OK32jb_TdI",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand True and False, how booleans are used in if-statements, and the comparison operators that produce boolean results."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Python Official Docs — Built-in Types",
+      "url": "https://docs.python.org/3/library/stdtypes.html",
+      "icon": "🔗"
+    },
+    {
+      "title": "W3Schools — Python Variables",
+      "url": "https://www.w3schools.com/python/python_variables.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Tutor — Visualise Variables in Memory",
+      "url": "https://pythontutor.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Replit — Code Python Online (No Install)",
+      "url": "https://replit.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Human Variables + Python Datatype Detective",
+    "parts": [
+      "Computer with Python 3 installed",
+      "IDLE or VS Code editor",
+      "Index cards or sticky notes (for human variable role-play)",
+      "Marker pens"
+    ],
+    "steps": [
+      "Part 1 — Human Variables: Each student gets a sticky note as their 'variable name'. Teacher calls out values — students write the value inside and hold it up. Teacher reassigns values to show variables can change!",
+      "Part 2 — Datatype Sort: Teacher shows 10 values on the board (42, 3.14, 'Riya', True, -7, 'hello', 0.0, False, 100, 'Python'). Students categorise each as int, float, str, or bool",
+      "Part 3 — Python Shell Exploration: Open Python and type each variable assignment. Use type() to verify the datatype of each one",
+      "Try type conversion: What happens when you do int('hello')? What about int('5')? Discuss ValueError",
+      "Part 4 — Student Profile Program: Write a small program that stores name, age, height, and favourite subject in variables, then prints a sentence using an f-string",
+      "Challenge: Ask for user input with input(), store it in a variable, convert to the right datatype, and use it in a calculation (e.g. birth year = 2025 - int(input('Enter your age: ')))"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a Variable in programming?",
+      "options": [
+        "A fixed value that never changes",
+        "A named storage location in memory that holds a value",
+        "A type of error in Python",
+        "A special kind of loop"
+      ],
+      "answer": 1,
+      "explanation": "A variable is like a labelled box! The name is on the outside (e.g. 'score'), and the value is stored inside (e.g. 10). You can open the box, read the value, or replace it anytime."
+    },
+    {
+      "q": "What does the = sign do in Python? `age = 12`",
+      "options": [
+        "Checks if age is equal to 12",
+        "Stores the value 12 into the variable named age",
+        "Adds 12 to the existing value of age",
+        "Prints 12 on the screen"
+      ],
+      "answer": 1,
+      "explanation": "In Python, = is the ASSIGNMENT operator — it stores a value into a variable. To CHECK equality, we use == (double equals). So `age = 12` stores 12, while `age == 12` asks 'is age equal to 12?'"
+    },
+    {
+      "q": "Which datatype would you use to store someone's name?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "answer": 2,
+      "explanation": "str (String)! A name is text, so it goes in quotes: `name = 'Riya'`. Strings store any sequence of characters — letters, numbers, spaces, and symbols enclosed in quotes."
+    },
+    {
+      "q": "What datatype is the value 3.14?",
+      "options": [
+        "int",
+        "float",
+        "str",
+        "bool"
+      ],
+      "answer": 1,
+      "explanation": "3.14 is a float — a floating-point number with a decimal point. Integers are whole numbers (3), floats have decimals (3.14). Python treats them differently in calculations!"
+    },
+    {
+      "q": "What are the only two possible values of a bool (Boolean) datatype?",
+      "options": [
+        "0 and 1",
+        "yes and no",
+        "True and False",
+        "on and off"
+      ],
+      "answer": 2,
+      "explanation": "Boolean = True or False. That's it! In Python, both must start with a CAPITAL letter (True, False). Booleans are the result of comparisons like `5 > 3` → True, and power if-statements."
+    },
+    {
+      "q": "What does the type() function do?",
+      "options": [
+        "Converts a value to a different datatype",
+        "Prints text on the screen",
+        "Returns the datatype of a value or variable",
+        "Counts the number of characters in a string"
+      ],
+      "answer": 2,
+      "explanation": "`type(42)` returns `<class 'int'>`, `type('hello')` returns `<class 'str'>`. It's your datatype detective tool — always useful when debugging or checking what Python thinks a value is!"
+    },
+    {
+      "q": "What is the datatype of `'42'` (42 written inside quotes)?",
+      "options": [
+        "int — because it is the number 42",
+        "float — because it has digits",
+        "str — because it is inside quotes",
+        "bool — because it represents a count"
+      ],
+      "answer": 2,
+      "explanation": "Quotes make it a string! `'42'` is str, not int. You cannot do maths with it directly. `'42' + '8'` gives `'428'` (concatenation), NOT 50. Use int('42') to convert it to a number."
+    },
+    {
+      "q": "Which variable name is VALID in Python?",
+      "options": [
+        "2fast",
+        "my score",
+        "for",
+        "player_name"
+      ],
+      "answer": 3,
+      "explanation": "`player_name` is valid! Rules: must start with a letter or underscore, no spaces (use _ instead), and cannot be a reserved keyword like `for`, `if`, `while`. `2fast` starts with a number — not allowed!"
+    },
+    {
+      "q": "What does `int('25')` do?",
+      "options": [
+        "Causes a TypeError",
+        "Converts the string '25' into the integer 25",
+        "Checks if '25' is a number",
+        "Prints 25 on the screen"
+      ],
+      "answer": 1,
+      "explanation": "Type conversion! `int('25')` converts the string '25' into the integer 25 so you can do maths with it. This is essential when using `input()` — which always returns a string — and you need a number."
+    },
+    {
+      "q": "What is the result of `'Hello' + ' ' + 'World'`?",
+      "options": [
+        "An error — you cannot add strings",
+        "'HelloWorld'",
+        "'Hello World'",
+        "Hello + World"
+      ],
+      "answer": 2,
+      "explanation": "String concatenation! The + operator joins strings together. 'Hello' + ' ' + 'World' → 'Hello World'. The middle ' ' adds the space. Without it you'd get 'HelloWorld'!"
+    },
+    {
+      "q": "What will `type(True)` return in Python?",
+      "options": [
+        "<class 'str'>",
+        "<class 'int'>",
+        "<class 'bool'>",
+        "<class 'float'>"
+      ],
+      "answer": 2,
+      "explanation": "`type(True)` returns `<class 'bool'>`. True and False are Python's boolean values. Interestingly, booleans are a subtype of int in Python — True equals 1 and False equals 0 in calculations!"
+    },
+    {
+      "q": "What is an f-string in Python?",
+      "options": [
+        "A string that only contains float numbers",
+        "A formatted string that lets you embed variable values directly inside it using curly braces {}",
+        "A fast way to delete a string",
+        "A string stored in a file"
+      ],
+      "answer": 1,
+      "explanation": "f-strings are awesome! Write f before the quote and put variable names in {}: `f'My name is {name} and I am {age} years old'` — Python fills in the values automatically. Much cleaner than concatenation!"
+    },
+    {
+      "q": "A student writes `score = score + 10`. What does this line do?",
+      "options": [
+        "Causes an error because you cannot use a variable on both sides",
+        "Takes the current value of score, adds 10, and stores the result back into score",
+        "Creates two separate variables",
+        "Checks if score equals score + 10"
+      ],
+      "answer": 1,
+      "explanation": "Python evaluates the RIGHT side first: it reads the current value of score, adds 10, then stores the new total back into score. If score was 5, it becomes 15. This is how scores and counters update!"
+    },
+    {
+      "q": "What does Dynamic Typing mean in Python?",
+      "options": [
+        "You must declare the datatype before using a variable",
+        "Python automatically figures out the datatype based on the value you assign",
+        "Variables can only hold one datatype forever",
+        "Python types your code automatically"
+      ],
+      "answer": 1,
+      "explanation": "Python is dynamically typed — you just write `x = 5` and Python knows it's an int. No need to write `int x = 5` like in Java or C. You can even reassign a different type later: `x = 'hello'` makes x a str!"
+    },
+    {
+      "q": "What happens when you run `int('hello')`?",
+      "options": [
+        "It returns 0",
+        "It converts 'hello' to its ASCII value",
+        "It raises a ValueError because 'hello' cannot be converted to an integer",
+        "It returns the length of the string"
+      ],
+      "answer": 2,
+      "explanation": "ValueError! Python cannot convert the word 'hello' into a number — it makes no sense mathematically. But `int('42')` works because '42' looks like a number. Always validate user input before converting!"
+    }
+  ]
+}

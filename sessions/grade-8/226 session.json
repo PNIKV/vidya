@@ -1,0 +1,330 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-226/",
+    "slides_folder": "sessions/session-226/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-226/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-226",
+  "number": 226,
+  "title": "Remote Distance Monitor",
+  "subtitle": "Measure Distance Wirelessly and Watch It Live on Your Phone!",
+  "date": "Session 226",
+  "duration": "1 Hour",
+  "phase": "Advanced",
+  "color": "#00897B",
+  "icon": "📡",
+  "tags": [
+    "ESP8266",
+    "Ultrasonic Sensor",
+    "HC-SR04",
+    "IoT",
+    "WiFi",
+    "STEM"
+  ],
+  "overview": "What if you could monitor the distance to an object from anywhere in the world using your phone? In this session, students combine the HC-SR04 ultrasonic distance sensor with an ESP8266 and either a local web server or the Blynk IoT platform to build a real-time remote distance monitor. The live distance reading is streamed to a browser or smartphone dashboard — perfect as a proximity alarm, tank level monitor, or smart parking sensor.",
+  "grades": [
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-226/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — HC-SR04 wiring, Serial Monitor readings, browser dashboard, Blynk app screenshot, full circuit build.",
+    "gallery": [
+      {
+        "file": "data/hcsr04-sensor.jpg",
+        "_placeholder": "ADD: Photo of HC-SR04 ultrasonic sensor with TRIG and ECHO pin labels",
+        "caption": "HC-SR04 ultrasonic sensor — measures distance 2cm to 400cm using sound waves",
+        "category": "Components"
+      },
+      {
+        "file": "data/ultrasonic-how-it-works.png",
+        "_placeholder": "ADD: Diagram showing ultrasonic pulse sent from TRIG, reflected off object, received at ECHO",
+        "caption": "Sound pulse travels out, bounces back — time of flight reveals the distance",
+        "category": "Concept"
+      },
+      {
+        "file": "data/distance-circuit.jpg",
+        "_placeholder": "ADD: Full circuit photo — ESP8266 + HC-SR04 wired on breadboard",
+        "caption": "ESP8266 + HC-SR04 circuit — compact and ready for remote monitoring",
+        "category": "Lab"
+      },
+      {
+        "file": "data/distance-serial-monitor.png",
+        "_placeholder": "ADD: Screenshot of Serial Monitor printing live distance readings every second",
+        "caption": "Serial Monitor showing live distance: 23 cm, 22 cm, 19 cm — object approaching!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/distance-browser-dashboard.png",
+        "_placeholder": "ADD: Screenshot of browser showing live distance value served by ESP8266 web server",
+        "caption": "Live distance streamed to a browser — refresh for the latest reading",
+        "category": "Lab"
+      },
+      {
+        "file": "data/blynk-distance-gauge.png",
+        "_placeholder": "ADD: Screenshot of Blynk app showing a Gauge or Value Display widget with live distance",
+        "caption": "Blynk app dashboard showing distance in real time — from anywhere in the world!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "HC-SR04 — An ultrasonic distance sensor that measures distance from 2 cm to 400 cm using sound pulses",
+    "TRIG Pin — The trigger pin: a 10-microsecond HIGH pulse on TRIG sends an ultrasonic burst of 8 pulses at 40 kHz",
+    "ECHO Pin — The echo pin: goes HIGH when the ultrasonic burst is sent and LOW when the reflection is received; the duration = time of flight",
+    "Time of Flight — The time taken for the ultrasonic pulse to travel to the object and return; used to calculate distance",
+    "Distance Formula — Distance (cm) = (pulse duration in microseconds) / 58.2 OR Duration × speed of sound / 2",
+    "pulseIn() — Arduino function that measures the duration (in microseconds) of a HIGH or LOW pulse on a pin; used to read ECHO",
+    "Speed of Sound — Approximately 340 m/s (or 0.034 cm/µs) at room temperature; the constant in the distance calculation",
+    "Voltage Divider — HC-SR04 ECHO pin outputs 5V but ESP8266 is 3.3V — a voltage divider (1kΩ and 2kΩ resistors) protects the ESP8266",
+    "Real-Time Streaming — Sending sensor data continuously to a browser or app so it updates live without manual refresh",
+    "Proximity Alert — Triggering an action (buzzer, LED, notification) when measured distance falls below a threshold",
+    "Blynk Gauge Widget — A circular meter widget in the Blynk app that displays a numeric value within a min/max range — ideal for distance",
+    "Use Cases — Tank level monitoring, smart parking sensors, blind-spot detection, intruder alert systems, conveyor belt object detection"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "HC-SR04 Ultrasonic Sensor with Arduino — Full Tutorial",
+      "videoId": "ZejQSD-VpRc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Step-by-step guide to connecting the HC-SR04 ultrasonic sensor, understanding the TRIG/ECHO timing, writing the distance formula, and reading live values in the Serial Monitor."
+    },
+    {
+      "title": "ESP8266 + HC-SR04 Distance Sensor — WiFi Web Server",
+      "videoId": "YeD9F9gkqoM",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Connect HC-SR04 to ESP8266 NodeMCU, read distance, and serve the live value as a web page accessible from any browser on the same network."
+    },
+    {
+      "title": "Blynk IoT — Send Sensor Data to Phone App",
+      "videoId": "xFqNvHFNPZ0",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Use Blynk.virtualWrite() to push live sensor readings from ESP8266 to a Blynk app dashboard — display distance on a Gauge widget updated in real time."
+    },
+    {
+      "title": "How Ultrasonic Sensors Work — Explained",
+      "videoId": "6F1B_N6LuKw",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear animated explanation of how ultrasonic distance sensors work — sound pulse, time of flight, the speed of sound, and the distance formula — perfect for understanding the physics."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino pulseIn() Function Reference",
+      "url": "https://www.arduino.cc/reference/en/language/functions/advanced-io/pulsein/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Random Nerd Tutorials — HC-SR04 with ESP8266",
+      "url": "https://randomnerdtutorials.com/esp8266-nodemcu-hc-sr04-ultrasonic-arduino/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi — Simulate HC-SR04 + ESP8266 Online",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Blynk Official Documentation",
+      "url": "https://docs.blynk.io",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Remote Distance Monitor — Sensor to Web/App",
+    "parts": [
+      "ESP8266 NodeMCU board",
+      "HC-SR04 ultrasonic sensor",
+      "1kΩ and 2kΩ resistors (for voltage divider on ECHO pin)",
+      "Breadboard and jumper wires",
+      "Micro-USB cable",
+      "Laptop with Arduino IDE",
+      "ESP8266WiFi and Blynk libraries installed",
+      "Active WiFi network with internet access",
+      "Smartphone with Blynk app (for extended challenge)"
+    ],
+    "steps": [
+      "Step 1 — HC-SR04 Wiring: Connect VCC → 5V (or Vin on NodeMCU), GND → GND, TRIG → D5 (GPIO14), ECHO → voltage divider middle point → D6 (GPIO12). Build voltage divider: ECHO pin → 1kΩ → D6, and 2kΩ from D6 to GND. This steps 5V down to ~3.3V",
+      "Step 2 — Distance Sketch: Write a basic sketch — define TRIG_PIN and ECHO_PIN. In loop(): send a 10µs HIGH pulse on TRIG, use pulseIn(ECHO_PIN, HIGH) to measure pulse duration, calculate distance = duration / 58.2. Print to Serial Monitor every 500ms",
+      "Step 3 — Serial Monitor Test: Upload and open Serial Monitor at 115200 baud. Move your hand closer and farther from the sensor — watch the distance values change live. Verify accuracy with a ruler",
+      "Step 4 — Add Proximity Alert: Add a buzzer on pin D7. If distance < 10 cm, activate buzzer and print 'ALERT: Object too close!'. If distance > 10 cm, buzzer off",
+      "Step 5 — Add WiFi: Include ESP8266WiFi.h, connect to WiFi, print the IP address. Create a WiFiServer on port 80",
+      "Step 6 — Web Dashboard: On each browser request, build an HTML response with the current distance value, a colour-coded bar (green > 50cm, yellow 20–50cm, red < 20cm), and a meta refresh every 2 seconds. Test in browser",
+      "Step 7 — Blynk Integration: Replace or add to the web server — use Blynk.virtualWrite(V0, distance) inside a BlynkTimer every 1 second. Add a Gauge widget in the Blynk app on V0, range 0–400 cm. Watch the gauge update live",
+      "Step 8 — Go Remote: Switch phone to mobile data and confirm the Blynk gauge still updates. You are now monitoring distance from anywhere!",
+      "Challenge: Add a Blynk notification — use Blynk.logEvent('proximity_alert') to send a push notification to your phone when distance drops below 10 cm. Also add a graph widget to visualise distance over time"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does the HC-SR04 sensor measure?",
+      "options": [
+        "Temperature and humidity",
+        "Distance to an object using ultrasonic sound pulses",
+        "Light intensity",
+        "Magnetic field strength"
+      ],
+      "answer": 1,
+      "explanation": "HC-SR04 is an ultrasonic distance sensor! It emits a high-frequency sound pulse (40 kHz), waits for the echo to return from an object, and measures the time taken — converting it to a distance reading from 2 cm to 400 cm."
+    },
+    {
+      "q": "What is the function of the TRIG pin on the HC-SR04?",
+      "options": [
+        "It receives the reflected ultrasonic pulse",
+        "It triggers the sensor to send an ultrasonic burst by receiving a 10-microsecond HIGH pulse",
+        "It outputs the calculated distance in centimetres",
+        "It provides power to the sensor"
+      ],
+      "answer": 1,
+      "explanation": "TRIG = trigger! Send a 10µs HIGH pulse to the TRIG pin and the sensor fires a burst of 8 ultrasonic pulses at 40 kHz. Think of it like pressing the shutter button on a camera — TRIG starts the measurement cycle."
+    },
+    {
+      "q": "What does the ECHO pin do?",
+      "options": [
+        "It sends the ultrasonic pulse outward",
+        "It goes HIGH when the ultrasonic burst is sent and returns LOW when the reflection is received — the duration of this HIGH pulse represents the time of flight",
+        "It outputs a digital HIGH if an object is detected within range",
+        "It controls the frequency of the ultrasonic pulses"
+      ],
+      "answer": 1,
+      "explanation": "ECHO measures the round-trip time! It goes HIGH the moment the burst is sent and drops LOW when the echo returns. The duration of this HIGH pulse (measured in microseconds) is the time the sound took to travel to the object and back."
+    },
+    {
+      "q": "What Arduino function is used to measure the duration of the ECHO pin's HIGH pulse?",
+      "options": [
+        "analogRead()",
+        "digitalRead()",
+        "pulseIn(ECHO_PIN, HIGH)",
+        "millis()"
+      ],
+      "answer": 2,
+      "explanation": "`pulseIn(pin, HIGH)` waits for the pin to go HIGH, starts timing, then stops when it goes LOW — returning the duration in microseconds. It's the perfect tool for reading the HC-SR04 ECHO pin's time-of-flight measurement."
+    },
+    {
+      "q": "Using the distance formula, if `pulseIn()` returns 1164 microseconds, what is the distance to the object?",
+      "options": [
+        "1164 cm",
+        "20 cm",
+        "582 cm",
+        "10 cm"
+      ],
+      "answer": 1,
+      "explanation": "Distance = duration / 58.2 → 1164 / 58.2 ≈ 20 cm! The formula divides by 58.2 because sound travels at ~0.034 cm/µs, and the pulse travels the distance TWICE (out and back). Dividing by 58.2 gives the one-way distance in centimetres."
+    },
+    {
+      "q": "Why must a voltage divider be used on the HC-SR04 ECHO pin when connecting to ESP8266?",
+      "options": [
+        "To increase the signal strength for longer range",
+        "The HC-SR04 ECHO pin outputs 5V but the ESP8266 GPIO pins are only 3.3V tolerant — 5V would damage the chip",
+        "To slow down the signal so the ESP8266 can process it",
+        "The voltage divider is only needed for the TRIG pin, not ECHO"
+      ],
+      "answer": 1,
+      "explanation": "Critical safety step! The HC-SR04 runs on 5V and its ECHO pin outputs 5V logic. The ESP8266 GPIO pins are NOT 5V tolerant — connecting 5V directly can permanently damage the chip. A simple 1kΩ / 2kΩ voltage divider steps 5V down to ~3.3V safely."
+    },
+    {
+      "q": "What is Time of Flight in the context of the HC-SR04?",
+      "options": [
+        "The time it takes to upload the sketch to the ESP8266",
+        "The total time for the ultrasonic pulse to travel from the sensor to the object and back again",
+        "The flight time of a drone using ultrasonic navigation",
+        "The time between two consecutive distance readings"
+      ],
+      "answer": 1,
+      "explanation": "Time of Flight = round-trip travel time of the sound pulse! Sound leaves the TRIG side, bounces off the object, and returns to the ECHO side. Dividing this time by 2 gives the one-way travel time. Multiply by the speed of sound (0.034 cm/µs) to get the distance."
+    },
+    {
+      "q": "What is the approximate range of the HC-SR04 ultrasonic sensor?",
+      "options": [
+        "0 to 10 cm",
+        "2 cm to 400 cm",
+        "1 m to 100 m",
+        "0.1 mm to 50 cm"
+      ],
+      "answer": 1,
+      "explanation": "HC-SR04 measures from 2 cm to 400 cm (4 metres)! Readings below 2 cm are unreliable because the sensor can't distinguish the outgoing pulse from the echo at very close range. Beyond 400 cm, the echo is too weak to detect reliably."
+    },
+    {
+      "q": "In the remote distance monitor project, how does `Blynk.virtualWrite(V0, distance)` work?",
+      "options": [
+        "It writes the distance value to the physical pin V0 on the ESP8266",
+        "It sends the current distance value from the ESP8266 to the Blynk cloud, which updates any widgets linked to virtual pin V0 in the app",
+        "It saves the distance value to EEPROM on the ESP8266",
+        "It writes the distance to the Serial Monitor"
+      ],
+      "answer": 1,
+      "explanation": "`Blynk.virtualWrite()` pushes data FROM hardware TO the app! Calling `Blynk.virtualWrite(V0, distance)` inside a timer sends the latest distance reading to the Blynk cloud server, which instantly updates any Gauge, Value Display, or Graph widget linked to V0 in the app."
+    },
+    {
+      "q": "What is a Proximity Alert in this project?",
+      "options": [
+        "A WiFi signal that warns when the ESP8266 is too far from the router",
+        "An action triggered when the measured distance falls below a set threshold — such as sounding a buzzer or sending a phone notification",
+        "An alert sent when the sensor reading exceeds 400 cm",
+        "A compiler warning about the pulseIn() function"
+      ],
+      "answer": 1,
+      "explanation": "Proximity Alert = distance threshold trigger! If `distance < 10` → buzzer on, LED flashes, or Blynk notification sent. This is exactly how real-world systems work: parking sensors beep faster as you get closer, security systems alert when someone enters a zone."
+    },
+    {
+      "q": "What real-world device uses the same ultrasonic time-of-flight principle as the HC-SR04?",
+      "options": [
+        "A microwave oven",
+        "Parking sensors in cars that beep as you reverse toward an obstacle",
+        "A WiFi router measuring signal strength",
+        "A smoke detector"
+      ],
+      "answer": 1,
+      "explanation": "Car parking sensors! They use ultrasonic transducers on the bumper to measure distance to obstacles and beep faster as you get closer. Medical ultrasound, industrial level sensors, and some robot navigation systems all use the same time-of-flight sonic principle."
+    },
+    {
+      "q": "Why is it useful to add a meta refresh tag to the ESP8266 web dashboard for the distance monitor?",
+      "options": [
+        "It resets the ESP8266 automatically if the distance reading fails",
+        "It makes the browser automatically reload the page every few seconds, displaying the latest distance reading without the user pressing refresh",
+        "It speeds up the WiFi connection between the browser and the ESP8266",
+        "It is required for the Blynk library to function correctly"
+      ],
+      "answer": 1,
+      "explanation": "Auto-refresh keeps the data live! Without it, the browser shows a static reading from when the page was last loaded. `<meta http-equiv='refresh' content='2'>` reloads every 2 seconds — giving a near-real-time display of the changing distance values."
+    },
+    {
+      "q": "A student's HC-SR04 consistently returns a distance of 0 cm or very large random numbers. What should they check first?",
+      "options": [
+        "The WiFi SSID and password",
+        "The TRIG and ECHO pin numbers in the code match the actual wiring, the sensor has 5V power, and the ECHO voltage divider is correctly assembled",
+        "The Blynk auth token",
+        "The Serial Monitor baud rate"
+      ],
+      "answer": 1,
+      "explanation": "Bad readings = wiring first! Check: TRIG and ECHO pins in code match physical connections, sensor VCC is on 5V (not 3.3V — it needs 5V to work reliably), GND is connected, and the voltage divider is correctly assembled with 1kΩ and 2kΩ resistors in the right order."
+    },
+    {
+      "q": "What are three real-world applications that use remote distance monitoring on the same principle as this project?",
+      "options": [
+        "Keyboard, mouse, and monitor",
+        "Water tank level monitoring, smart parking space availability sensors, and intruder detection alarm systems",
+        "WiFi router, Bluetooth speaker, and USB hub",
+        "Calculator, printer, and scanner"
+      ],
+      "answer": 1,
+      "explanation": "Remote distance monitoring has huge real-world value! A water tank sensor monitors fill level and alerts when low. Smart parking systems detect if a bay is occupied. Security systems trigger alerts when someone enters a restricted zone. Industrial conveyors detect object positions. All use the same time-of-flight principle!"
+    },
+    {
+      "q": "What advantage does using Blynk for remote monitoring have over the local web server approach?",
+      "options": [
+        "Blynk provides more accurate distance readings from the sensor",
+        "Blynk allows monitoring from anywhere with internet access, not just the same local WiFi network — and provides a purpose-built mobile dashboard with gauges and graphs",
+        "Blynk eliminates the need for a voltage divider on the ECHO pin",
+        "Blynk automatically calibrates the HC-SR04 sensor"
+      ],
+      "answer": 1,
+      "explanation": "Blynk = global access + rich dashboard! The local web server only works when phone and ESP8266 are on the same WiFi. With Blynk, your phone can be anywhere — distance data is routed through the cloud. Plus, Gauge and Graph widgets give a professional monitoring dashboard out of the box."
+    }
+  ]
+}

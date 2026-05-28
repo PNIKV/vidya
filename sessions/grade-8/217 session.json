@@ -1,0 +1,323 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-247/",
+    "slides_folder": "sessions/session-247/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-247/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-247",
+  "number": 247,
+  "title": "Intro to Generative AI",
+  "subtitle": "Machines That Create — Text, Images, Music and More!",
+  "date": "Session 247",
+  "duration": "1 Hour",
+  "phase": "Advanced",
+  "color": "#8E44AD",
+  "icon": "🤖",
+  "tags": [
+    "AI",
+    "Machine Learning",
+    "Generative AI",
+    "LLM",
+    "Neural Networks",
+    "ChatGPT"
+  ],
+  "overview": "From ChatGPT writing essays to DALL·E painting pictures to Suno composing songs — Generative AI is reshaping the world at breathtaking speed. In this session, students peel back the curtain on how generative AI actually works: what it means to 'generate', how large language models predict the next word, what training data is, and why these systems can be brilliant yet sometimes wrong. Students also explore the ethics, opportunities, and responsibilities that come with this powerful technology.",
+  "grades": [
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-247/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — AI-generated image examples, LLM diagrams, student prompt experiments, whiteboard sketches.",
+    "gallery": [
+      {
+        "file": "data/genai-overview.png",
+        "_placeholder": "ADD: Diagram showing the three types of Generative AI output — text, image, audio",
+        "caption": "Generative AI can produce text, images, audio, video and code!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/llm-next-word.png",
+        "_placeholder": "ADD: Diagram showing LLM predicting the next word in a sentence with probability scores",
+        "caption": "LLMs predict the most likely next word — billions of times per response",
+        "category": "Concept"
+      },
+      {
+        "file": "data/training-data.png",
+        "_placeholder": "ADD: Illustration of vast training data sources — books, websites, code, articles",
+        "caption": "Training data: the internet, books, and code that LLMs learn from",
+        "category": "Concept"
+      },
+      {
+        "file": "data/transformer-architecture.png",
+        "_placeholder": "ADD: Simplified diagram of Transformer architecture — attention mechanism overview",
+        "caption": "The Transformer — the neural network architecture behind all modern LLMs",
+        "category": "Concept"
+      },
+      {
+        "file": "data/hallucination-example.png",
+        "_placeholder": "ADD: Screenshot of an AI confidently giving a wrong or made-up answer",
+        "caption": "AI Hallucination — when the model generates confident but incorrect information",
+        "category": "Concept"
+      },
+      {
+        "file": "data/prompt-engineering.png",
+        "_placeholder": "ADD: Side-by-side of a weak prompt vs a strong detailed prompt and their outputs",
+        "caption": "Better prompts = better outputs — prompt engineering is a real skill!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Generative AI — AI systems that create new content (text, images, audio, video, code) rather than just classifying or predicting",
+    "Large Language Model (LLM) — A neural network trained on massive text data that generates human-like text (e.g. GPT-4, Gemini, Claude)",
+    "Training Data — The enormous dataset of text, images, or audio an AI model learns patterns from during training",
+    "Parameters — The billions of adjustable numbers inside an LLM that encode learned knowledge (GPT-4 has ~1.7 trillion parameters)",
+    "Next-Token Prediction — How LLMs work: given the previous words, predict the most probable next word/token, repeat billions of times",
+    "Transformer Architecture — The neural network design (introduced in 2017) that powers all modern LLMs using attention mechanisms",
+    "Prompt — The input you give to a generative AI model; better prompts produce better, more relevant outputs",
+    "Prompt Engineering — The skill of crafting effective, detailed prompts to get the best results from an AI model",
+    "Hallucination — When an AI generates confident-sounding but factually incorrect or entirely made-up information",
+    "Diffusion Model — The technology behind AI image generators (DALL·E, Stable Diffusion) that starts with noise and refines it into an image",
+    "Bias in AI — Unfair or skewed outputs caused by patterns in biased training data reflecting real-world inequalities",
+    "Ethical Use of AI — Responsible AI use: avoiding plagiarism, not spreading misinformation, respecting copyright, and understanding AI limitations"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is Generative AI? Explained Simply",
+      "videoId": "G2fqAlgmoPo",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear, beginner-friendly explanation of what generative AI is, how it differs from traditional AI, and the major types — text, image, audio, and video generators."
+    },
+    {
+      "title": "How Large Language Models Work",
+      "videoId": "5sLYAQS9sWQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Deep dive into how LLMs like ChatGPT are trained on massive datasets and generate responses using next-token prediction and the Transformer architecture."
+    },
+    {
+      "title": "How AI Image Generators Work — Diffusion Models Explained",
+      "videoId": "1CIpzeNxIhU",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand how DALL·E, Midjourney, and Stable Diffusion turn text prompts into images using diffusion — starting with noise and gradually refining it into a picture."
+    },
+    {
+      "title": "AI Hallucinations and Why They Happen",
+      "videoId": "cfqtFvWOfg0",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Why do AI chatbots confidently make things up? Explore what hallucinations are, why LLMs produce them, and how to critically evaluate AI-generated information."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Google — Introduction to Generative AI (Free Course)",
+      "url": "https://www.cloudskillsboost.google/course_templates/536",
+      "icon": "🔗"
+    },
+    {
+      "title": "Elements of AI — Free Online AI Course",
+      "url": "https://www.elementsofai.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Teachable Machine by Google — Train Your Own AI",
+      "url": "https://teachablemachine.withgoogle.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "ChatGPT — Try a Live LLM",
+      "url": "https://chat.openai.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Prompt Engineering Challenge + AI Fact-Check Lab",
+    "parts": [
+      "Computer or tablet with internet access",
+      "Access to ChatGPT, Gemini, or any LLM (free tier)",
+      "Access to an AI image generator (DALL·E, Canva AI, or Adobe Firefly)",
+      "Activity worksheet — prompt challenge cards",
+      "Pencil and paper for notes"
+    ],
+    "steps": [
+      "Part 1 — Weak vs Strong Prompts: Give students a weak prompt ('Write a story') and a strong prompt ('Write a 100-word adventure story about a 12-year-old girl in Mumbai who discovers her grandmother's old robot'). Compare the outputs — which is better and why?",
+      "Part 2 — Prompt Engineering Challenge: Each student gets a challenge card (write a poem, explain photosynthesis to a 6-year-old, create a quiz, summarise a topic). They must craft the best possible prompt and share results with the class",
+      "Part 3 — Image Generation: Use an AI image tool to generate an image from a text prompt. Experiment with adding style words (watercolour, photorealistic, cartoon). Discuss how diffusion models work",
+      "Part 4 — Hallucination Hunt: Ask the AI a question with a false premise or a very specific factual question. Record the answer. Then verify it using a reliable source. Did the AI get it right or hallucinate?",
+      "Part 5 — Ethics Discussion: As a class, discuss — Is using AI to write your homework OK? Who owns AI-generated art? What happens if AI is trained on biased data?",
+      "Challenge: Write a system prompt that turns the AI into a helpful tutor for a specific subject — then test it with 3 questions and evaluate how well it performs"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What makes Generative AI different from traditional AI?",
+      "options": [
+        "Generative AI only works on smartphones",
+        "Generative AI creates new content like text, images, and audio, while traditional AI mainly classifies or predicts from existing data",
+        "Traditional AI is faster than Generative AI",
+        "Generative AI requires no training data"
+      ],
+      "answer": 1,
+      "explanation": "Traditional AI classifies or predicts — 'Is this email spam?' or 'What number is in this image?'. Generative AI CREATES — a new essay, a new image, a new song. It generates content that didn't exist before!"
+    },
+    {
+      "q": "What does LLM stand for?",
+      "options": [
+        "Logical Language Mechanism",
+        "Large Learning Module",
+        "Large Language Model",
+        "Linear Logic Machine"
+      ],
+      "answer": 2,
+      "explanation": "LLM = Large Language Model! These are massive neural networks trained on enormous amounts of text. Examples include GPT-4 (OpenAI), Gemini (Google), Claude (Anthropic), and Llama (Meta)."
+    },
+    {
+      "q": "How does an LLM generate its response — what is its core mechanism?",
+      "options": [
+        "It searches the internet for the best matching answer",
+        "It looks up answers in a pre-stored database",
+        "It predicts the most probable next word (token) over and over until the response is complete",
+        "It copies text from its training data and pastes it together"
+      ],
+      "answer": 2,
+      "explanation": "Next-token prediction! Given all the words so far, the LLM predicts the single most likely next word, adds it, then predicts the next one again — billions of times. The result feels natural because the training taught it what words tend to follow others."
+    },
+    {
+      "q": "What is Training Data in the context of AI?",
+      "options": [
+        "The exercises students do to learn about AI",
+        "The hardware used to run AI models",
+        "The massive collection of text, images, or other content that an AI model learns patterns from during training",
+        "The test questions given to an AI to check its performance"
+      ],
+      "answer": 2,
+      "explanation": "Training data is the AI's school! LLMs are trained on hundreds of billions of words from the internet, books, Wikipedia, code, and more. The model learns the patterns in this data and uses them to generate new content."
+    },
+    {
+      "q": "What is a Parameter in an LLM?",
+      "options": [
+        "A type of prompt given to the AI",
+        "One of billions of adjustable numbers inside the model that store learned knowledge from training",
+        "The maximum word limit for an AI response",
+        "A safety filter that blocks harmful content"
+      ],
+      "answer": 1,
+      "explanation": "Parameters are the AI's 'memory'! During training, these billions of numbers are gradually adjusted to encode patterns from the training data. GPT-4 is estimated to have around 1.7 trillion parameters — that's how much it can 'remember'!"
+    },
+    {
+      "q": "Which neural network architecture made modern LLMs possible, introduced in the 2017 paper 'Attention Is All You Need'?",
+      "options": [
+        "Convolutional Neural Network (CNN)",
+        "Recurrent Neural Network (RNN)",
+        "Transformer",
+        "Generative Adversarial Network (GAN)"
+      ],
+      "answer": 2,
+      "explanation": "The Transformer! Introduced by Google researchers in 2017, it uses 'attention mechanisms' to understand relationships between words across long distances in text. GPT, Claude, Gemini — they all use Transformer architecture."
+    },
+    {
+      "q": "What is a Prompt when using a Generative AI tool?",
+      "options": [
+        "A type of error message from the AI",
+        "The training data fed into the model",
+        "The input instruction or question you give to the AI to get a response",
+        "The output generated by the AI"
+      ],
+      "answer": 2,
+      "explanation": "A prompt is your instruction to the AI! 'Write a poem about monsoon in Mumbai' is a prompt. The quality of your prompt directly affects the quality of the output — which is why prompt engineering is such a valuable skill."
+    },
+    {
+      "q": "What is Prompt Engineering?",
+      "options": [
+        "Building the hardware that runs AI models",
+        "The skill of crafting clear, detailed, and effective prompts to get the best possible results from an AI",
+        "Programming the AI model from scratch",
+        "Engineering a robot that responds to voice prompts"
+      ],
+      "answer": 1,
+      "explanation": "Prompt engineering is the art of talking to AI effectively! Specifying the audience ('explain to a 10-year-old'), format ('in bullet points'), tone ('professional'), and context ('you are a science teacher') all dramatically improve AI outputs."
+    },
+    {
+      "q": "What is an AI Hallucination?",
+      "options": [
+        "When an AI generates colourful or artistic images",
+        "When an AI confidently generates false, made-up, or inaccurate information as if it were true",
+        "When the AI's response is too long",
+        "When the AI refuses to answer a question"
+      ],
+      "answer": 1,
+      "explanation": "Hallucination is a critical AI limitation! LLMs sometimes generate plausible-sounding but completely made-up facts — fake book titles, wrong dates, non-existent people. Always verify important AI-generated information with reliable sources!"
+    },
+    {
+      "q": "Why do LLMs hallucinate?",
+      "options": [
+        "Because they are connected to unreliable websites",
+        "Because they are designed to always give an answer even when uncertain, completing patterns even when the correct answer was not in the training data",
+        "Because their training data was too small",
+        "Because they don't have enough processing power"
+      ],
+      "answer": 1,
+      "explanation": "LLMs are pattern-completion machines — they always try to produce a plausible next token. When they don't 'know' something, they fill in the gap with what statistically seems likely rather than saying 'I don't know'. This produces confident but wrong answers."
+    },
+    {
+      "q": "How do AI image generators like DALL·E create images from text prompts?",
+      "options": [
+        "They search Google Images and combine existing photos",
+        "They use a Diffusion Model — starting from random noise and gradually refining it into a matching image",
+        "They draw pixel by pixel using if-else rules",
+        "They find the closest image in their training data and send it back"
+      ],
+      "answer": 1,
+      "explanation": "Diffusion Models! They start with a completely noisy image (random pixels) and gradually 'denoise' it step by step, guided by the text prompt, until a clear image emerges. Each step makes the image more aligned with your description."
+    },
+    {
+      "q": "What is Bias in AI, and where does it come from?",
+      "options": [
+        "A bug in the AI's programming code",
+        "When the AI charges more for some users",
+        "Unfair or skewed outputs caused by patterns of inequality or prejudice present in the training data",
+        "When the AI takes longer to respond to some questions"
+      ],
+      "answer": 2,
+      "explanation": "AI learns from human-created data — and human data reflects human biases. If training data has more examples of doctors being male, the AI may generate male doctors more often. Bias in → Bias out. Fixing bias requires diverse, representative data and careful evaluation."
+    },
+    {
+      "q": "Which of these is an example of a Large Language Model?",
+      "options": [
+        "Google Maps",
+        "Microsoft Excel",
+        "ChatGPT (GPT-4)",
+        "Spotify"
+      ],
+      "answer": 2,
+      "explanation": "ChatGPT uses GPT-4 — a Large Language Model made by OpenAI. Other LLMs include Google's Gemini, Anthropic's Claude, and Meta's Llama. These are all trained on massive text datasets to understand and generate human language."
+    },
+    {
+      "q": "A student uses ChatGPT to write their entire science assignment and submits it as their own work. What is the key ethical concern?",
+      "options": [
+        "The assignment might be too long",
+        "ChatGPT uses too much electricity",
+        "It is academic dishonesty — the student is presenting AI-generated work as their own, not developing their own understanding",
+        "There is no concern — AI tools are always allowed"
+      ],
+      "answer": 2,
+      "explanation": "Using AI to do your work without disclosure is dishonest — it bypasses the learning process and misrepresents your own ability. Ethical AI use means using it as a tool to help you learn and improve, not to replace your own thinking."
+    },
+    {
+      "q": "What is the best way to handle information generated by an AI like ChatGPT?",
+      "options": [
+        "Always trust it completely — AI is never wrong",
+        "Never use AI-generated information under any circumstances",
+        "Treat it as a useful starting point but verify important facts using reliable and authoritative sources",
+        "Only use it for creative writing, never for factual topics"
+      ],
+      "answer": 2,
+      "explanation": "Critical thinking is essential with AI! Use AI to explore, brainstorm, and draft — but verify facts, check sources, and apply your own judgement. AI is a powerful tool, not an infallible oracle. The human stays in the loop!"
+    }
+  ]
+}

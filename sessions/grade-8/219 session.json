@@ -1,0 +1,329 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-249/",
+    "slides_folder": "sessions/session-249/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-249/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-249",
+  "number": 249,
+  "title": "ESP8266 WiFi Connect",
+  "subtitle": "Give Your Circuit an Internet Connection!",
+  "date": "Session 249",
+  "duration": "1 Hour",
+  "phase": "Advanced",
+  "color": "#1A73E8",
+  "icon": "📶",
+  "tags": [
+    "ESP8266",
+    "WiFi",
+    "IoT",
+    "Arduino",
+    "Networking",
+    "STEM"
+  ],
+  "overview": "What if your circuit could talk to the internet? In this session, students meet the ESP8266 — a tiny, powerful WiFi-enabled microcontroller that costs less than a cup of chai but can connect to any WiFi network and send or receive data from the web. Students learn how to connect the ESP8266 to WiFi, host a simple web server, and control an LED from any browser on the same network — their first real IoT (Internet of Things) project!",
+  "grades": [
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-249/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — ESP8266 board, wiring diagrams, Serial Monitor output, browser LED control demo.",
+    "gallery": [
+      {
+        "file": "data/esp8266-nodemcu.jpg",
+        "_placeholder": "ADD: Photo of ESP8266 NodeMCU board with pin labels",
+        "caption": "ESP8266 NodeMCU — WiFi + microcontroller in one tiny board!",
+        "category": "Components"
+      },
+      {
+        "file": "data/esp8266-vs-arduino.png",
+        "_placeholder": "ADD: Side-by-side comparison diagram of ESP8266 and Arduino UNO specs",
+        "caption": "ESP8266 vs Arduino UNO — the ESP8266 has built-in WiFi!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/esp8266-wifi-connect.png",
+        "_placeholder": "ADD: Screenshot of Serial Monitor showing WiFi connection and IP address assigned",
+        "caption": "Connected! Serial Monitor shows the IP address — copy it into your browser",
+        "category": "Lab"
+      },
+      {
+        "file": "data/web-server-browser.png",
+        "_placeholder": "ADD: Screenshot of browser showing ESP8266 web page with ON/OFF buttons",
+        "caption": "A web page served by your ESP8266 — control LED from any browser!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/iot-diagram.png",
+        "_placeholder": "ADD: Diagram showing ESP8266 → WiFi Router → Internet → Cloud/Browser flow",
+        "caption": "IoT flow: ESP8266 connects to WiFi → serves data to browser or cloud",
+        "category": "Concept"
+      },
+      {
+        "file": "data/esp8266-led-circuit.jpg",
+        "_placeholder": "ADD: Photo of ESP8266 with LED and resistor on breadboard",
+        "caption": "Simple LED circuit on ESP8266 — controlled wirelessly from a browser!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "ESP8266 — A low-cost WiFi microcontroller chip; the NodeMCU development board makes it breadboard-friendly",
+    "NodeMCU — A popular ESP8266 development board with USB port, onboard LED, and easy pin access",
+    "IoT (Internet of Things) — Physical devices connected to the internet to send, receive, or act on data",
+    "WiFi Library — `#include <ESP8266WiFi.h>` gives the ESP8266 all the tools needed to connect to a network",
+    "SSID and Password — The network name (SSID) and password needed to join a WiFi network",
+    "IP Address — A unique address assigned to the ESP8266 on the local network (e.g. 192.168.1.105); used to open the web page in a browser",
+    "Web Server — A program running on the ESP8266 that listens for browser requests and sends back HTML responses",
+    "HTTP Request — When you type the IP address into a browser, it sends an HTTP GET request to the ESP8266",
+    "HTTP Response — The ESP8266 replies with HTML code that the browser renders as a web page",
+    "GPIO Pins — General Purpose Input/Output pins on the ESP8266 used to control LEDs, sensors, relays (note: ESP8266 uses 3.3V logic, NOT 5V!)",
+    "Serial Monitor — Used during development to print the assigned IP address and debug connection status",
+    "Station Mode vs AP Mode — Station Mode connects to an existing WiFi; Access Point (AP) Mode creates its own hotspot network"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "ESP8266 NodeMCU Getting Started — Arduino IDE Setup",
+      "videoId": "G6CqvhXpBKM",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Set up the Arduino IDE for ESP8266 NodeMCU — install the board package, select the right port, and upload your first blink sketch to confirm everything works."
+    },
+    {
+      "title": "ESP8266 Connect to WiFi — Step by Step",
+      "videoId": "fNmU7xXCJnE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to connect the ESP8266 to a WiFi network using ESP8266WiFi.h, read the assigned IP address from Serial Monitor, and verify the connection."
+    },
+    {
+      "title": "ESP8266 Web Server — Control LED from Browser",
+      "videoId": "m2fEXhl9OQM",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Build a simple ESP8266 web server that serves an HTML page with ON and OFF buttons to control an LED wirelessly from any browser on the same network."
+    },
+    {
+      "title": "What is IoT? — Internet of Things Explained for Beginners",
+      "videoId": "LlhmzVL5bm8",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear beginner-friendly explanation of the Internet of Things — what it is, how everyday objects connect to the internet, and real-world IoT applications."
+    }
+  ],
+  "resources": [
+    {
+      "title": "ESP8266 Arduino Core — Official Documentation",
+      "url": "https://arduino-esp8266.readthedocs.io/en/latest/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Random Nerd Tutorials — ESP8266 Projects",
+      "url": "https://randomnerdtutorials.com/projects-esp8266/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi — Simulate ESP8266 Online (Free)",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "ESP8266 Arduino Core — GitHub",
+      "url": "https://github.com/esp8266/Arduino",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Connect ESP8266 to WiFi and Control an LED from a Browser",
+    "parts": [
+      "ESP8266 NodeMCU board",
+      "Micro-USB cable",
+      "Breadboard",
+      "LED (any colour)",
+      "330Ω resistor",
+      "Jumper wires",
+      "Laptop with Arduino IDE installed",
+      "ESP8266 board package installed in Arduino IDE",
+      "Active WiFi network (mobile hotspot works too)"
+    ],
+    "steps": [
+      "Step 1 — Arduino IDE Setup: In File → Preferences, add the ESP8266 board URL: http://arduino.esp8266.com/stable/package_esp8266com_index.json. Then install 'esp8266 by ESP8266 Community' via Tools → Board Manager",
+      "Step 2 — Board Selection: Select Tools → Board → NodeMCU 1.0 (ESP-12E Module) and the correct COM port. Set Upload Speed to 115200",
+      "Step 3 — Blink Test: Upload the basic Blink sketch to the built-in LED (pin LED_BUILTIN) to confirm the board and IDE are working correctly",
+      "Step 4 — WiFi Connect: Write a sketch using `#include <ESP8266WiFi.h>`. Set your SSID and password. Use `WiFi.begin(ssid, password)` and loop with a delay until `WiFi.status() == WL_CONNECTED`. Print the IP address with `Serial.println(WiFi.localIP())`",
+      "Step 5 — LED Circuit: Connect LED positive leg → 330Ω resistor → GPIO pin D2. Connect LED negative leg to GND. Confirm it lights up with a simple digitalWrite HIGH/LOW test",
+      "Step 6 — Web Server: Create a `WiFiServer server(80)` on port 80. In the loop, check for incoming clients, parse the HTTP request URL for '/LED_ON' or '/LED_OFF', control the LED accordingly, and send back an HTML page with ON and OFF buttons",
+      "Step 7 — Browser Test: Open Serial Monitor at 115200 baud to copy the IP address. Type it into any browser on the same WiFi network. Click ON — LED lights up. Click OFF — LED turns off. You have built your first IoT device!",
+      "Challenge: Add a second LED on a different pin with two more buttons on the web page. Also display the current state of each LED (ON/OFF) on the page so it updates after every click"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What makes the ESP8266 different from a standard Arduino UNO?",
+      "options": [
+        "The ESP8266 is larger and has more pins",
+        "The ESP8266 has built-in WiFi capability, allowing it to connect to the internet without any extra shield",
+        "The ESP8266 runs on 12V power",
+        "The ESP8266 can only be programmed in Python"
+      ],
+      "answer": 1,
+      "explanation": "The ESP8266 has WiFi built right in! An Arduino UNO needs a separate WiFi shield to go online. The ESP8266 combines a microcontroller AND a WiFi radio in one tiny, cheap chip — perfect for IoT projects."
+    },
+    {
+      "q": "What is the NodeMCU?",
+      "options": [
+        "A type of WiFi router",
+        "A programming language for IoT devices",
+        "A popular development board built around the ESP8266 chip with a USB port and easy-access pins",
+        "A cloud platform for IoT data storage"
+      ],
+      "answer": 2,
+      "explanation": "NodeMCU is a development board that makes the ESP8266 chip easy to use! It adds a USB-to-Serial converter (so you can program it with a micro-USB cable), a voltage regulator, and breadboard-friendly pins."
+    },
+    {
+      "q": "What does IoT stand for?",
+      "options": [
+        "Input of Technology",
+        "Internet of Things",
+        "Interface of Transistors",
+        "Index of Tools"
+      ],
+      "answer": 1,
+      "explanation": "IoT = Internet of Things! It refers to everyday physical objects — lights, door locks, thermostats, machines — connected to the internet so they can send data, receive commands, and be controlled remotely."
+    },
+    {
+      "q": "Which library must you include to connect the ESP8266 to WiFi?",
+      "options": [
+        "#include <WiFi.h>",
+        "#include <ESP8266WiFi.h>",
+        "#include <Ethernet.h>",
+        "#include <Wireless.h>"
+      ],
+      "answer": 1,
+      "explanation": "`#include <ESP8266WiFi.h>` is the key library! It gives you functions like `WiFi.begin()`, `WiFi.status()`, and `WiFi.localIP()` to connect to a network and find out your assigned IP address."
+    },
+    {
+      "q": "What is an SSID?",
+      "options": [
+        "A unique ID assigned to the ESP8266 chip at the factory",
+        "The name of a WiFi network that devices scan for and connect to",
+        "A type of sensor used with the ESP8266",
+        "The IP address of a web server"
+      ],
+      "answer": 1,
+      "explanation": "SSID = Service Set Identifier — the name of a WiFi network! When you look at available WiFi networks on your phone, those names are SSIDs. You provide the SSID and password in your code so the ESP8266 knows which network to join."
+    },
+    {
+      "q": "After successfully connecting to WiFi, how do you find the ESP8266's IP address in code?",
+      "options": [
+        "WiFi.getAddress()",
+        "WiFi.localIP()",
+        "WiFi.myIP()",
+        "Serial.IP()"
+      ],
+      "answer": 1,
+      "explanation": "`WiFi.localIP()` returns the IP address assigned to the ESP8266 by the router! Print it to Serial Monitor: `Serial.println(WiFi.localIP())` — then type that address into any browser on the same network to open the web page."
+    },
+    {
+      "q": "What is an IP Address in the context of this project?",
+      "options": [
+        "A password that protects the ESP8266 web page",
+        "A unique address assigned to the ESP8266 on the local network, used to open its web page in a browser",
+        "The baud rate setting for the Serial Monitor",
+        "The number of GPIO pins available on the ESP8266"
+      ],
+      "answer": 1,
+      "explanation": "The IP address (e.g. 192.168.1.105) is the ESP8266's address on your local network. Type it into a browser like a website URL and your browser connects directly to the web server running on the ESP8266!"
+    },
+    {
+      "q": "What is a Web Server in this ESP8266 project?",
+      "options": [
+        "A large computer in a data centre that hosts websites",
+        "A program running ON the ESP8266 that listens for browser requests and responds with HTML web pages",
+        "The WiFi router that provides internet access",
+        "The Arduino IDE that uploads code to the board"
+      ],
+      "answer": 1,
+      "explanation": "The ESP8266 IS the web server! It runs a tiny program that listens on port 80 for HTTP requests from browsers. When your browser opens the IP address, the ESP8266 replies with an HTML page — all from a chip smaller than a coin!"
+    },
+    {
+      "q": "What happens when you type the ESP8266's IP address into a browser?",
+      "options": [
+        "The Arduino IDE opens automatically",
+        "The browser sends an HTTP GET request to the ESP8266, which replies with an HTML web page",
+        "The ESP8266 restarts automatically",
+        "The LED turns on automatically without any button"
+      ],
+      "answer": 1,
+      "explanation": "Typing the IP in a browser sends an HTTP GET request — just like visiting any website! The ESP8266 receives this request, processes it, and sends back HTML code. The browser renders that HTML as a visible web page with buttons."
+    },
+    {
+      "q": "What is a critical voltage rule to remember when using ESP8266 GPIO pins?",
+      "options": [
+        "The ESP8266 runs on 12V, so all components must be 12V rated",
+        "The ESP8266 GPIO pins operate at 3.3V logic, NOT 5V — applying 5V signals can permanently damage the chip",
+        "The ESP8266 requires exactly 9V from the power supply",
+        "There is no voltage difference — ESP8266 and Arduino UNO GPIO pins are identical"
+      ],
+      "answer": 1,
+      "explanation": "CRITICAL safety point! ESP8266 GPIO pins are 3.3V logic — applying 5V signals directly can permanently damage the chip. Always use 3.3V-compatible components or a logic level converter when interfacing with 5V devices."
+    },
+    {
+      "q": "What is the difference between Station Mode and Access Point (AP) Mode on the ESP8266?",
+      "options": [
+        "Station Mode is faster; AP Mode is slower",
+        "Station Mode connects the ESP8266 to an existing WiFi network; AP Mode makes the ESP8266 create its own WiFi hotspot",
+        "Station Mode uses Bluetooth; AP Mode uses WiFi",
+        "There is no difference — both modes do the same thing"
+      ],
+      "answer": 1,
+      "explanation": "Station Mode = ESP8266 joins your existing WiFi (like your phone joins a router). AP Mode = ESP8266 creates its own WiFi hotspot that other devices can connect to directly — useful when no router is available in the field!"
+    },
+    {
+      "q": "In the web server code, what does `WiFiServer server(80)` mean?",
+      "options": [
+        "The ESP8266 will connect to 80 different WiFi networks",
+        "Creates a web server that listens for incoming connections on port 80 — the standard HTTP port used by browsers",
+        "Limits the web page response to 80 characters",
+        "Sets the WiFi signal transmission power to 80%"
+      ],
+      "answer": 1,
+      "explanation": "Port 80 is the standard port for HTTP web traffic! When your browser visits a URL without a port number, it automatically uses port 80. `WiFiServer server(80)` tells the ESP8266 to listen on that port for incoming browser requests."
+    },
+    {
+      "q": "Why do we use `while (WiFi.status() != WL_CONNECTED)` with a delay in the setup function?",
+      "options": [
+        "To reset the ESP8266 every second until reboot",
+        "To wait and keep checking until the ESP8266 successfully connects to the WiFi network before running the rest of setup",
+        "To repeatedly broadcast the WiFi password",
+        "To scan for all available networks in the area"
+      ],
+      "answer": 1,
+      "explanation": "WiFi connection takes a few seconds! This loop keeps checking the status every 500ms and waits until WL_CONNECTED is reached. Without this wait, the rest of the code runs before WiFi is ready — causing connection failures and crashes."
+    },
+    {
+      "q": "A student's ESP8266 connects to WiFi successfully but the browser shows 'This site can't be reached'. What is the most likely cause?",
+      "options": [
+        "The LED resistor value is wrong",
+        "The browser and ESP8266 are on different WiFi networks, or the student typed the wrong IP address from Serial Monitor",
+        "The Serial Monitor baud rate is set incorrectly",
+        "The ESP8266 needs to be manually restarted after every HTTP request"
+      ],
+      "answer": 1,
+      "explanation": "For the browser to reach the ESP8266, BOTH must be on the SAME local WiFi network. If your laptop is on school WiFi but the ESP8266 is on a different hotspot, they cannot see each other. Also verify the exact IP address printed in Serial Monitor!"
+    },
+    {
+      "q": "Which real-world products work on the same principle as this ESP8266 browser-controlled LED project?",
+      "options": [
+        "A USB keyboard and wired mouse",
+        "A basic scientific calculator",
+        "Smart home devices like WiFi bulbs, smart plugs, and app-controlled fans that switch on/off from a phone",
+        "A Bluetooth speaker that pairs with a phone"
+      ],
+      "answer": 2,
+      "explanation": "Smart bulbs, smart plugs, WiFi fans, and connected switches all work exactly like your project — a WiFi microcontroller receives a command from a browser or app and controls a physical device. You just built a miniature smart home device!"
+    }
+  ]
+}

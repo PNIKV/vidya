@@ -1,0 +1,325 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-248/",
+    "slides_folder": "sessions/session-248/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-248/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-248",
+  "number": 248,
+  "title": "Control Structures",
+  "subtitle": "Make Decisions, Repeat Actions, Control the Flow!",
+  "date": "Session 248",
+  "duration": "1 Hour",
+  "phase": "Foundation",
+  "color": "#E67E22",
+  "icon": "🔀",
+  "tags": [
+    "Python",
+    "Control Structures",
+    "Loops",
+    "Conditionals",
+    "Programming Basics",
+    "Computer Science"
+  ],
+  "overview": "Every program needs to make decisions and repeat actions — that's what control structures are for. In this session, students learn how to use if/elif/else to branch their code based on conditions, and for/while loops to repeat blocks of code efficiently. By mastering control structures, students move from writing simple scripts to building programs that think, decide, and act dynamically.",
+  "grades": [
+    5,
+    6,
+    7
+  ],
+  "slides": {
+    "pdf": "sessions/session-248/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — flowchart diagrams, whiteboard decision trees, student code screenshots, activity photos.",
+    "gallery": [
+      {
+        "file": "data/flowchart-if-else.png",
+        "_placeholder": "ADD: Flowchart diagram showing if/else decision branching with yes/no paths",
+        "caption": "if/else is a fork in the road — code takes one path or the other",
+        "category": "Concept"
+      },
+      {
+        "file": "data/if-elif-else-code.png",
+        "_placeholder": "ADD: Screenshot of if/elif/else code with grade classification example",
+        "caption": "if/elif/else — check multiple conditions in order, one at a time",
+        "category": "Concept"
+      },
+      {
+        "file": "data/for-loop-diagram.png",
+        "_placeholder": "ADD: Diagram showing a for loop iterating over a list with each step labelled",
+        "caption": "for loop — repeat for each item in a sequence, then stop automatically",
+        "category": "Concept"
+      },
+      {
+        "file": "data/while-loop-diagram.png",
+        "_placeholder": "ADD: Diagram showing a while loop with condition check and loop body",
+        "caption": "while loop — keep repeating AS LONG AS the condition is True",
+        "category": "Concept"
+      },
+      {
+        "file": "data/nested-loop.png",
+        "_placeholder": "ADD: Screenshot of nested loops printing a multiplication table or pattern",
+        "caption": "Nested loops — a loop inside a loop, for grids and patterns!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/control-activity.jpg",
+        "_placeholder": "ADD: Photo of students doing the human robot activity following if/loop instructions",
+        "caption": "Students acting as human robots — following control structure commands!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Control Structure — Code that controls the ORDER and CONDITIONS under which other code runs",
+    "if Statement — Runs a block of code ONLY IF a condition is True",
+    "else Statement — Runs a block of code when the if condition is False (the fallback path)",
+    "elif Statement — Checks another condition if the previous if/elif was False (short for 'else if')",
+    "Comparison Operators — == (equal), != (not equal), > (greater), < (less), >= (greater or equal), <= (less or equal)",
+    "Logical Operators — and (both must be True), or (at least one True), not (flips True to False)",
+    "for Loop — Repeats a block of code for each item in a sequence (list, range, string)",
+    "range() — Generates a sequence of numbers: range(5) → 0,1,2,3,4 | range(1,6) → 1,2,3,4,5",
+    "while Loop — Repeats a block of code AS LONG AS a condition remains True",
+    "Infinite Loop — A while loop whose condition never becomes False — the program gets stuck! (use Ctrl+C to stop)",
+    "break — Immediately exits a loop even if the condition is still True",
+    "continue — Skips the rest of the current loop iteration and jumps to the next one",
+    "Nested Loop — A loop placed inside another loop, useful for grids, tables, and patterns",
+    "Indentation — Python uses spaces (4) to define which code belongs inside an if/loop block — CRITICAL!"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Python if, elif, else — Conditionals Explained",
+      "videoId": "f4KOjWS_KZs",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Master Python conditional statements — if, elif, and else — with clear examples, comparison operators, and logical operators (and, or, not)."
+    },
+    {
+      "title": "Python for Loops — Complete Tutorial",
+      "videoId": "94UHCEmprCY",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Everything about Python for loops — iterating over lists, strings, and ranges, using enumerate, and understanding how for loops work under the hood."
+    },
+    {
+      "title": "Python while Loops — Tutorial for Beginners",
+      "videoId": "6iF8Xb7Z3wQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn Python while loops — how they differ from for loops, when to use them, handling infinite loops, and using break and continue."
+    },
+    {
+      "title": "Python Nested Loops and Patterns",
+      "videoId": "R5GGRhqVSvE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand nested loops in Python — loops inside loops — with fun star pattern and multiplication table examples to solidify the concept."
+    }
+  ],
+  "resources": [
+    {
+      "title": "W3Schools — Python Conditions and If Statements",
+      "url": "https://www.w3schools.com/python/python_conditions.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "W3Schools — Python For Loops",
+      "url": "https://www.w3schools.com/python/python_for_loops.asp",
+      "icon": "🔗"
+    },
+    {
+      "title": "Python Tutor — Visualise Loop Execution Step by Step",
+      "url": "https://pythontutor.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Replit — Code Python Online (No Install)",
+      "url": "https://replit.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Human Robot + Control Structure Coding Challenges",
+    "parts": [
+      "Computer with Python 3 installed",
+      "IDLE or VS Code editor",
+      "Open floor space for the Human Robot activity",
+      "Printed challenge cards (one per student or pair)"
+    ],
+    "steps": [
+      "Part 1 — Human Robot: Teacher gives verbal if/else and loop instructions. Students physically follow them: 'If you are wearing blue, take 2 steps forward, else clap twice' and 'Repeat 5 times: jump once'. Discuss how this maps to code",
+      "Part 2 — if/elif/else Practice: Write a grade classifier — input a score (0-100), print 'A' (90+), 'B' (75-89), 'C' (60-74), 'D' (45-59), or 'Fail' (below 45)",
+      "Part 3 — for Loop Practice: Use a for loop with range() to print the 7 times table. Then loop over a list of student names and print 'Hello, [name]!'",
+      "Part 4 — while Loop Practice: Write a number guessing game — generate a random number 1-10, use a while loop to keep asking the user to guess until they get it right",
+      "Part 5 — break and continue: Loop through numbers 1-20, use continue to skip even numbers, use break to stop if the number exceeds 15",
+      "Part 6 — Nested Loop Pattern: Use two nested for loops to print a 5x5 star pattern (* * * * *) on the screen",
+      "Challenge: Combine everything — write a simple ATM simulator that uses a while loop for the menu, if/elif for menu choices (Check Balance, Deposit, Withdraw, Exit), and validates that withdrawal doesn't exceed balance"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is a Control Structure in programming?",
+      "options": [
+        "A special type of variable",
+        "Code that controls the order and conditions under which other code runs",
+        "A Python library for building menus",
+        "A type of error that stops the program"
+      ],
+      "answer": 1,
+      "explanation": "Control structures direct the FLOW of a program! Instead of running every line top to bottom, they let code branch (if/else) or repeat (loops) based on conditions — making programs smart and dynamic."
+    },
+    {
+      "q": "What does the `if` statement do?",
+      "options": [
+        "Repeats a block of code a set number of times",
+        "Runs a block of code ONLY IF the given condition is True",
+        "Defines a new function",
+        "Imports a library"
+      ],
+      "answer": 1,
+      "explanation": "`if` is a decision maker! `if score >= 90: print('A')` — only prints 'A' IF score is 90 or more. If the condition is False, Python skips the indented block entirely."
+    },
+    {
+      "q": "When does the `else` block run?",
+      "options": [
+        "Always, regardless of the if condition",
+        "Only when the if condition is True",
+        "When the if condition is False",
+        "Only when there is an error"
+      ],
+      "answer": 2,
+      "explanation": "`else` is the fallback! If the `if` condition is False, Python runs the `else` block instead. It's the 'otherwise' path — like 'If it rains, take umbrella, ELSE wear sunglasses.'"
+    },
+    {
+      "q": "What does `elif` mean, and when is it used?",
+      "options": [
+        "It means 'end loop if' and exits a loop",
+        "It means 'else if' and checks another condition when the previous if/elif was False",
+        "It means 'equal if' and compares two values",
+        "It is another name for the else statement"
+      ],
+      "answer": 1,
+      "explanation": "`elif` = else if! It lets you check multiple conditions in order. Python checks each condition top to bottom and runs the FIRST block whose condition is True, skipping all the rest."
+    },
+    {
+      "q": "What is the output of this code?\n`x = 15`\n`if x > 20:`\n`    print('Big')`\n`elif x > 10:`\n`    print('Medium')`\n`else:`\n`    print('Small')`",
+      "options": [
+        "Big",
+        "Medium",
+        "Small",
+        "Big Medium"
+      ],
+      "answer": 1,
+      "explanation": "x = 15. Is 15 > 20? No. Is 15 > 10? YES! So Python prints 'Medium' and skips the else. Once a condition is True, Python runs that block and ignores all remaining elif/else blocks."
+    },
+    {
+      "q": "What do Comparison Operators like ==, >, < do in Python?",
+      "options": [
+        "They assign values to variables",
+        "They perform maths operations like addition and subtraction",
+        "They compare two values and return True or False",
+        "They import modules"
+      ],
+      "answer": 2,
+      "explanation": "Comparison operators produce a Boolean result! `5 > 3` → True, `10 == 20` → False, `7 != 7` → False. They are the building blocks of all if/elif conditions."
+    },
+    {
+      "q": "What does `and` do in a condition like `if age >= 13 and age <= 17`?",
+      "options": [
+        "The condition is True if EITHER part is True",
+        "The condition is True only if BOTH parts are True",
+        "It adds the two ages together",
+        "It checks if age is between 13 and 17 separately"
+      ],
+      "answer": 1,
+      "explanation": "`and` requires BOTH conditions to be True. `age >= 13 and age <= 17` is True only if age is at least 13 AND no more than 17 — so ages 13, 14, 15, 16, 17 pass. 12 or 18 would fail."
+    },
+    {
+      "q": "What does `for i in range(5):` do?",
+      "options": [
+        "Repeats the loop body 5 times, with i taking values 0, 1, 2, 3, 4",
+        "Repeats the loop body 5 times, with i taking values 1, 2, 3, 4, 5",
+        "Checks if i is less than 5",
+        "Creates a list of 5 random numbers"
+      ],
+      "answer": 0,
+      "explanation": "`range(5)` generates 0, 1, 2, 3, 4 — five numbers starting from 0! So the loop runs 5 times. If you want 1 to 5, use `range(1, 6)`. Remember: range() always starts at 0 unless told otherwise."
+    },
+    {
+      "q": "What is the key difference between a `for` loop and a `while` loop?",
+      "options": [
+        "for loops are faster than while loops",
+        "for loops repeat for each item in a known sequence; while loops repeat as long as a condition is True",
+        "while loops can only count numbers; for loops can iterate over lists",
+        "There is no difference — they do exactly the same thing"
+      ],
+      "answer": 1,
+      "explanation": "for = known repetitions (loop over this list / run exactly N times). while = condition-based repetitions (keep going UNTIL this becomes False). Use for when you know the count; use while when you don't!"
+    },
+    {
+      "q": "What is an Infinite Loop and why is it dangerous?",
+      "options": [
+        "A loop that runs exactly once",
+        "A loop that skips every other iteration",
+        "A while loop whose condition never becomes False, causing the program to run forever and freeze",
+        "A for loop that goes backwards"
+      ],
+      "answer": 2,
+      "explanation": "Infinite loop = stuck program! If `while True:` has no break, or the condition never changes, the loop never stops. The program freezes and uses 100% CPU. Always make sure your while loop condition can eventually become False!"
+    },
+    {
+      "q": "What does the `break` statement do inside a loop?",
+      "options": [
+        "Pauses the loop for 1 second",
+        "Skips the current iteration and moves to the next one",
+        "Immediately exits the loop, even if the condition is still True",
+        "Restarts the loop from the beginning"
+      ],
+      "answer": 2,
+      "explanation": "`break` is an emergency exit! The moment Python hits `break`, it jumps OUT of the loop completely — no more iterations. Very useful in while loops to exit when a goal is reached (e.g. correct password entered)."
+    },
+    {
+      "q": "What does the `continue` statement do inside a loop?",
+      "options": [
+        "Exits the loop immediately",
+        "Skips the REST of the current iteration and jumps to the next one",
+        "Continues to the next program after the loop",
+        "Adds one more iteration to the loop"
+      ],
+      "answer": 1,
+      "explanation": "`continue` skips the rest of the CURRENT iteration only, then the loop carries on. Example: looping 1–10 with `if i % 2 == 0: continue` skips even numbers but keeps looping — printing only odd numbers."
+    },
+    {
+      "q": "What is a Nested Loop?",
+      "options": [
+        "A loop that runs inside a conditional if statement",
+        "A loop placed inside another loop",
+        "A loop that repeats fewer times than expected",
+        "Two loops that run at the same time"
+      ],
+      "answer": 1,
+      "explanation": "Nested loops = loop inside a loop! For every ONE iteration of the outer loop, the inner loop completes ALL its iterations. Great for printing grids, tables, and patterns. A 5×5 star grid needs two loops of range(5)."
+    },
+    {
+      "q": "Why is INDENTATION critically important in Python control structures?",
+      "options": [
+        "It makes the code look prettier",
+        "Python uses indentation (4 spaces) to define which lines of code belong inside an if block or loop — wrong indentation causes errors or wrong behaviour",
+        "It helps the compiler run faster",
+        "It is optional — Python ignores spaces"
+      ],
+      "answer": 1,
+      "explanation": "Python uses INDENTATION instead of curly braces {}! The 4 spaces before a line tell Python it belongs inside the if/loop above it. Missing or wrong indentation causes IndentationError or makes code run in the wrong place — a very common beginner mistake!"
+    },
+    {
+      "q": "A student wants to print numbers 1 to 10 but skip number 7. Which combination should they use?",
+      "options": [
+        "for loop with break when i == 7",
+        "for loop with range(1, 11) and continue when i == 7",
+        "while loop with i starting at 7",
+        "An if/else statement without any loop"
+      ],
+      "answer": 1,
+      "explanation": "`for i in range(1, 11):` loops 1 to 10. Add `if i == 7: continue` to skip 7 — continue jumps to the next number without printing 7. break would stop the whole loop at 7, printing only 1–6."
+    }
+  ]
+}

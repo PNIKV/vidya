@@ -1,0 +1,325 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-252/",
+    "slides_folder": "sessions/session-252/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-252/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-252",
+  "number": 252,
+  "title": "Prompt Engineering",
+  "subtitle": "Talk to AI Like a Pro — Get Better Outputs Every Time!",
+  "date": "Session 252",
+  "duration": "1 Hour",
+  "phase": "Advanced",
+  "color": "#FF6F00",
+  "icon": "✍️",
+  "tags": [
+    "AI",
+    "Prompt Engineering",
+    "LLM",
+    "ChatGPT",
+    "Machine Learning",
+    "Communication"
+  ],
+  "overview": "Generative AI is only as good as the instructions you give it. Prompt Engineering is the skill of crafting clear, detailed, and effective prompts that get the best possible results from AI models like ChatGPT, Gemini, and Claude. In this session, students learn the anatomy of a great prompt, explore proven techniques like role prompting, chain-of-thought, few-shot examples, and output formatting — and put it all into practice through hands-on comparison challenges.",
+  "grades": [
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-252/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — weak vs strong prompt comparisons, student prompt experiments, whiteboard prompt anatomy diagram.",
+    "gallery": [
+      {
+        "file": "data/weak-vs-strong-prompt.png",
+        "_placeholder": "ADD: Side-by-side screenshot of weak prompt output vs strong prompt output for the same task",
+        "caption": "Same task, different prompts — the quality difference is dramatic!",
+        "category": "Concept"
+      },
+      {
+        "file": "data/prompt-anatomy.png",
+        "_placeholder": "ADD: Diagram labelling the six parts of a great prompt: Role, Task, Context, Format, Tone, Examples",
+        "caption": "Anatomy of a great prompt — six ingredients for perfect AI output",
+        "category": "Concept"
+      },
+      {
+        "file": "data/role-prompting.png",
+        "_placeholder": "ADD: Screenshot showing 'You are a...' role prompt and the improved AI response",
+        "caption": "Role Prompting: 'You are an expert chef' changes everything about the response",
+        "category": "Concept"
+      },
+      {
+        "file": "data/chain-of-thought.png",
+        "_placeholder": "ADD: Screenshot of AI solving a maths or logic problem step by step after 'Think step by step'",
+        "caption": "Chain-of-Thought: asking AI to think step by step improves accuracy dramatically",
+        "category": "Concept"
+      },
+      {
+        "file": "data/few-shot-example.png",
+        "_placeholder": "ADD: Screenshot of few-shot prompt with 2-3 examples followed by the AI completing the pattern",
+        "caption": "Few-Shot Prompting: show the AI examples and it learns the pattern instantly",
+        "category": "Concept"
+      },
+      {
+        "file": "data/prompt-challenge-activity.jpg",
+        "_placeholder": "ADD: Photo of students working on prompt challenge cards at their computers",
+        "caption": "Students competing to craft the best prompt for each challenge card",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Prompt — The input instruction or question given to an AI model to produce a desired output",
+    "Prompt Engineering — The skill of designing effective prompts to guide AI models toward accurate, relevant, and useful responses",
+    "The 6 Ingredients of a Great Prompt — Role, Task, Context, Format, Tone, and Examples (not all needed every time, but more = better)",
+    "Role Prompting — Telling the AI to adopt a persona: 'You are an expert doctor / experienced teacher / senior software engineer'",
+    "Zero-Shot Prompting — Asking the AI to complete a task with no examples provided; relies entirely on the model's training",
+    "Few-Shot Prompting — Providing 2–5 examples of the desired input-output pattern before asking the AI to continue it",
+    "Chain-of-Thought (CoT) Prompting — Asking the AI to 'think step by step' to improve reasoning accuracy on complex problems",
+    "System Prompt — An invisible instruction given before the conversation that sets the AI's behaviour, role, and constraints for the whole session",
+    "Output Format Specification — Telling the AI exactly how to structure its response: bullet points, JSON, table, numbered list, markdown, code block",
+    "Temperature (concept) — A parameter that controls AI creativity vs accuracy: low temperature = more predictable; high temperature = more creative",
+    "Prompt Injection — A security risk where malicious instructions are hidden in user input to override the AI's original instructions",
+    "Iterative Prompting — Refining prompts through multiple rounds of testing and improvement rather than expecting perfection on the first try"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Prompt Engineering Full Course — Beginner to Advanced",
+      "videoId": "T9aRN5JkmL8",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A comprehensive guide to prompt engineering — covering zero-shot, few-shot, chain-of-thought, role prompting, system prompts, and output formatting with live examples."
+    },
+    {
+      "title": "ChatGPT Prompt Engineering Tips — Get 10x Better Results",
+      "videoId": "jC4v5AS4RIM",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Practical prompt engineering techniques that immediately improve your ChatGPT results — role assignment, context setting, format specification, and iterative refinement."
+    },
+    {
+      "title": "Chain-of-Thought Prompting Explained",
+      "videoId": "bN4_8-O_0Q4",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "How chain-of-thought prompting dramatically improves AI accuracy on maths, logic, and reasoning tasks — with side-by-side comparison of standard vs CoT prompts."
+    },
+    {
+      "title": "Few-Shot vs Zero-Shot Prompting — What's the Difference?",
+      "videoId": "v2gD8BHOaX4",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Understand the difference between zero-shot and few-shot prompting, when to use each approach, and how providing examples guides the AI to match the exact pattern you need."
+    }
+  ],
+  "resources": [
+    {
+      "title": "OpenAI Prompt Engineering Guide",
+      "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+      "icon": "🔗"
+    },
+    {
+      "title": "Anthropic Prompt Engineering Docs",
+      "url": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview",
+      "icon": "🔗"
+    },
+    {
+      "title": "Learn Prompting — Free Open-Source Guide",
+      "url": "https://learnprompting.org",
+      "icon": "🔗"
+    },
+    {
+      "title": "ChatGPT — Practice Your Prompts",
+      "url": "https://chat.openai.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Prompt Engineering Challenge Lab",
+    "parts": [
+      "Computer or tablet with internet access",
+      "Access to ChatGPT, Gemini, or Claude (free tier)",
+      "Printed or on-screen Prompt Challenge Cards",
+      "Scoring sheet for comparing prompt outputs",
+      "Pencil or notes app for drafting prompts"
+    ],
+    "steps": [
+      "Part 1 — Weak vs Strong: Give students the same task with a weak prompt ('Explain gravity') and a strong prompt ('You are a physics teacher explaining gravity to a curious 10-year-old. Use a simple analogy, keep it under 100 words, and end with a fun fact'). Compare outputs and discuss what made the difference",
+      "Part 2 — Prompt Anatomy Drill: Students rebuild the weak prompt by adding each ingredient one at a time — Role first, then Task, then Context, then Format, then Tone. See how the output changes with each addition",
+      "Part 3 — Role Prompting: Each student picks a role (chef, lawyer, doctor, tour guide, sports coach) and prompts the AI to explain a topic from that expert's perspective. Share the most surprising result with the class",
+      "Part 4 — Few-Shot Challenge: Write a prompt that includes 3 examples of a pattern (e.g. word → emoji translation: 'happy → 😊, sad → 😢, angry → 😡, now translate: excited, tired, confused'). Compare to asking without examples",
+      "Part 5 — Chain-of-Thought Test: Give the AI a tricky maths or logic problem WITHOUT 'think step by step'. Then ask the same question WITH 'think step by step, show all working'. Compare accuracy",
+      "Part 6 — Format Specification: Ask the AI for the same information in three different formats: plain paragraph, numbered list, and a markdown table. Discuss which format works best for different use cases",
+      "Part 7 — System Prompt Design: Each student writes a system prompt that turns the AI into a tutor for a specific subject. Test it with 3 questions and score how well it performs as a tutor",
+      "Challenge: The 'Broken Prompt' game — teacher shows a bad prompt that produces a terrible output. Students have 3 minutes to fix it and share their improved version. Class votes on the best rewrite"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is Prompt Engineering?",
+      "options": [
+        "Building the hardware that runs AI models",
+        "The skill of designing clear and effective instructions for AI models to get the best possible outputs",
+        "Programming an AI model from scratch using code",
+        "Engineering a robot that responds to voice commands"
+      ],
+      "answer": 1,
+      "explanation": "Prompt Engineering is the art of communicating with AI effectively! It involves crafting instructions that are specific, well-structured, and context-rich so the AI produces accurate, relevant, and useful responses."
+    },
+    {
+      "q": "Which of these is the WEAKEST prompt for getting a useful response?",
+      "options": [
+        "You are an expert nutritionist. Write a 7-day meal plan for a 13-year-old vegetarian athlete, formatted as a table with breakfast, lunch, and dinner columns",
+        "Write a meal plan",
+        "Create a vegetarian meal plan for a teenager, with 3 meals per day for 7 days, including calorie estimates",
+        "You are a chef. Suggest healthy Indian meals for a student who exercises daily, in bullet point format"
+      ],
+      "answer": 1,
+      "explanation": "'Write a meal plan' is a zero-context, zero-constraint prompt — the AI has no idea who it's for, what diet, what format, or how detailed. The more specific your prompt, the more targeted and useful the output!"
+    },
+    {
+      "q": "What is Role Prompting?",
+      "options": [
+        "Asking the AI to list different roles in a company",
+        "Telling the AI to adopt a specific expert persona to shape the style, depth, and perspective of its response",
+        "Assigning a user role in the Blynk app",
+        "A type of loop used in AI training code"
+      ],
+      "answer": 1,
+      "explanation": "Role Prompting unlocks expertise mode! 'You are an experienced cardiologist' makes the AI respond with medical depth and precision. 'You are a friendly primary school teacher' makes it use simple language and analogies. The role shapes everything."
+    },
+    {
+      "q": "What is Zero-Shot Prompting?",
+      "options": [
+        "A prompt that gets zero results from the AI",
+        "Asking the AI to perform a task with no examples provided, relying entirely on what it learned during training",
+        "A prompt technique that uses zero words",
+        "Asking the AI zero questions"
+      ],
+      "answer": 1,
+      "explanation": "Zero-Shot = no examples given! You just describe the task and trust the AI's training. Example: 'Translate this sentence to French.' Works well for straightforward tasks but may miss specific patterns you have in mind."
+    },
+    {
+      "q": "What is Few-Shot Prompting and why is it powerful?",
+      "options": [
+        "Using a very short prompt with few words",
+        "Providing 2–5 input-output examples before your actual request, so the AI learns the exact pattern you want",
+        "Asking the AI only a few questions per session",
+        "A technique that reduces the AI's response length"
+      ],
+      "answer": 1,
+      "explanation": "Few-Shot is incredibly powerful! By showing examples — 'Input: happy → Output: 😊, Input: sad → Output: 😢' — the AI instantly understands the exact format and style you want, even for unusual tasks it wouldn't guess from a description alone."
+    },
+    {
+      "q": "What does Chain-of-Thought (CoT) prompting do?",
+      "options": [
+        "Chains multiple prompts together in a loop",
+        "Instructs the AI to reason through a problem step by step, dramatically improving accuracy on complex tasks",
+        "Links the AI's responses to a database of facts",
+        "Creates a chain of AI models working together"
+      ],
+      "answer": 1,
+      "explanation": "CoT prompting unlocks the AI's reasoning! Adding 'think step by step' or 'show your working' forces the model to reason through problems rather than jumping to an answer. Studies show it dramatically improves accuracy on maths, logic, and multi-step problems."
+    },
+    {
+      "q": "What is a System Prompt?",
+      "options": [
+        "A prompt that only system administrators can use",
+        "An error message produced by the AI system",
+        "An invisible instruction set before the conversation that defines the AI's role, behaviour, and constraints for the whole session",
+        "A prompt that controls the AI's processing speed"
+      ],
+      "answer": 2,
+      "explanation": "The System Prompt is the AI's briefing! It runs silently before the conversation and sets the persona, rules, and context: 'You are a helpful maths tutor. Always explain concepts simply. Never give the answer directly — guide the student instead.' Everything after respects these rules."
+    },
+    {
+      "q": "Why does specifying the OUTPUT FORMAT in a prompt improve results?",
+      "options": [
+        "It makes the AI run faster",
+        "It tells the AI exactly how to structure its response — as a table, bullet list, JSON, or code block — so it's immediately usable",
+        "It prevents the AI from hallucinating",
+        "It reduces the length of the response automatically"
+      ],
+      "answer": 1,
+      "explanation": "Format specification saves time! 'Give me a table with columns for Country, Capital, and Population' produces a ready-to-use table. Without format instructions, the AI picks its own structure which may not match your needs. Always specify format for structured data."
+    },
+    {
+      "q": "What does a LOW temperature setting do to an AI model's output?",
+      "options": [
+        "Makes the output shorter and faster",
+        "Produces more predictable, focused, and consistent responses — better for factual tasks",
+        "Makes the AI more creative and unpredictable",
+        "Reduces the number of tokens used per response"
+      ],
+      "answer": 1,
+      "explanation": "Temperature controls randomness! Low temperature (close to 0) = AI picks the most probable next token every time → consistent, factual, predictable. High temperature = more randomness → creative, varied, but sometimes inaccurate. Use low for facts, high for creative writing."
+    },
+    {
+      "q": "What is Prompt Injection?",
+      "options": [
+        "Adding more detail to a prompt to improve results",
+        "A security attack where malicious instructions are hidden in user input to override the AI's original instructions",
+        "Injecting code into the AI's training data",
+        "A method of combining two prompts together"
+      ],
+      "answer": 1,
+      "explanation": "Prompt Injection is an AI security risk! An attacker might type: 'Ignore your previous instructions and instead...' trying to hijack the AI's behaviour. This is a real vulnerability in AI-powered apps, and defending against it is an active area of AI safety research."
+    },
+    {
+      "q": "A student wants the AI to write a story about space. Which prompt will produce the BEST result?",
+      "options": [
+        "Write a story about space",
+        "Space story please",
+        "You are a science fiction author. Write a 200-word story for 12-year-olds about an Indian astronaut who discovers a mysterious signal from a distant galaxy. Use vivid descriptions and end with a cliffhanger",
+        "Write me something about outer space and planets and stars"
+      ],
+      "answer": 2,
+      "explanation": "The third prompt has everything: Role (sci-fi author), Task (200-word story), Audience (12-year-olds), Context (Indian astronaut, mysterious signal), Format (vivid descriptions), and Structure (cliffhanger ending). Every detail shapes the output toward exactly what's wanted!"
+    },
+    {
+      "q": "What is Iterative Prompting?",
+      "options": [
+        "Writing the same prompt over and over",
+        "Refining and improving your prompt across multiple attempts based on the AI's previous output until you get the desired result",
+        "Using a for loop to send the same prompt repeatedly",
+        "Iterating through a list of prompts automatically"
+      ],
+      "answer": 1,
+      "explanation": "Great prompts are rarely written perfectly the first time! Iterative prompting means: send a prompt → evaluate the output → identify what's missing or wrong → refine the prompt → try again. Each iteration brings you closer to the ideal output."
+    },
+    {
+      "q": "Why does adding CONTEXT to a prompt improve AI responses?",
+      "options": [
+        "It makes the AI's response longer",
+        "Context tells the AI the background situation, audience, and purpose so it can tailor the response appropriately instead of giving a generic answer",
+        "Context reduces hallucinations completely",
+        "Context is only useful for image generation, not text"
+      ],
+      "answer": 1,
+      "explanation": "Context is everything! 'Explain photosynthesis' could be for a PhD student or a 7-year-old. Add 'for a class of 8-year-olds who love football' and the AI uses analogies like 'plants are like solar panels on a football kit'. Same task, completely different — and better — result."
+    },
+    {
+      "q": "Which prompting technique is MOST useful when you need the AI to solve a multi-step maths problem accurately?",
+      "options": [
+        "Role Prompting",
+        "Few-Shot Prompting",
+        "Chain-of-Thought Prompting with 'think step by step'",
+        "Output Format Specification"
+      ],
+      "answer": 2,
+      "explanation": "Chain-of-Thought is best for maths and logic! 'Think step by step' forces the AI to show its reasoning at each stage rather than jumping to a final answer. Research shows CoT prompting cuts errors on complex maths problems dramatically."
+    },
+    {
+      "q": "A student asks the AI 'What is 17 × 24?' and gets the wrong answer. They add 'Think step by step and show all working.' The AI now gets it right. Why?",
+      "options": [
+        "The second prompt was longer so it used more processing power",
+        "Chain-of-thought prompting forces the model to reason through each calculation step rather than pattern-matching to a potentially wrong memorised answer",
+        "The AI became more confident after being asked twice",
+        "Adding more words always improves AI accuracy"
+      ],
+      "answer": 1,
+      "explanation": "LLMs can make arithmetic errors by pattern-matching rather than calculating. 'Step by step' forces the model to actually work through 17×20=340, 17×4=68, 340+68=408 — reducing the chance of a wrong shortcut. Reasoning out loud catches mistakes!"
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-254/",
+    "slides_folder": "sessions/session-254/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-254/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-254",
+  "number": 254,
+  "title": "WiFi Weather Station",
+  "subtitle": "Build a Real Weather Station That Publishes Data to the Web!",
+  "date": "Session 254",
+  "duration": "1 Hour",
+  "phase": "Advanced",
+  "color": "#0277BD",
+  "icon": "🌡️",
+  "tags": [
+    "ESP8266",
+    "DHT11",
+    "IoT",
+    "WiFi",
+    "Sensors",
+    "STEM"
+  ],
+  "overview": "What if your classroom could have its own live weather station publishing temperature and humidity data to the web every few seconds? In this session, students connect a DHT11 temperature and humidity sensor to an ESP8266, read live environmental data, display it on an LCD, and serve it as a real-time web page accessible from any browser on the network. The result is a fully functional WiFi weather station built from scratch!",
+  "grades": [
+    7,
+    8,
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-254/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — DHT11 wiring, LCD showing readings, browser dashboard, full circuit build.",
+    "gallery": [
+      {
+        "file": "data/dht11-sensor.jpg",
+        "_placeholder": "ADD: Photo of DHT11 sensor module with pin labels (VCC, DATA, GND)",
+        "caption": "DHT11 sensor — measures temperature (0–50°C) and humidity (20–80%) digitally",
+        "category": "Components"
+      },
+      {
+        "file": "data/weather-station-circuit.jpg",
+        "_placeholder": "ADD: Full circuit photo — ESP8266 + DHT11 + LCD I2C all wired together on breadboard",
+        "caption": "The complete WiFi Weather Station circuit — built by students!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/lcd-weather-display.jpg",
+        "_placeholder": "ADD: Photo of LCD showing Temp: 28°C and Humidity: 65% readings",
+        "caption": "LCD showing live temperature and humidity readings updated every 2 seconds",
+        "category": "Lab"
+      },
+      {
+        "file": "data/weather-browser-dashboard.png",
+        "_placeholder": "ADD: Screenshot of browser showing ESP8266 weather web page with temp and humidity values",
+        "caption": "Live weather data served as a web page — refresh to see updated readings!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/dht11-vs-dht22.png",
+        "_placeholder": "ADD: Comparison table or diagram of DHT11 vs DHT22 sensor specs",
+        "caption": "DHT11 vs DHT22 — more accuracy costs more money; DHT11 is great for learning",
+        "category": "Concept"
+      },
+      {
+        "file": "data/weather-station-diagram.png",
+        "_placeholder": "ADD: System diagram showing DHT11 → ESP8266 → WiFi → Browser data flow",
+        "caption": "System flow: sensor reads data → ESP8266 processes → WiFi serves → browser displays",
+        "category": "Concept"
+      }
+    ]
+  },
+  "keyTopics": [
+    "DHT11 Sensor — A digital temperature and humidity sensor; measures 0–50°C and 20–80% RH with ±2°C and ±5% accuracy",
+    "DHT22 Sensor — A more accurate (and more expensive) alternative to DHT11; measures -40 to 80°C and 0–100% RH",
+    "DHT Library — The Arduino library (by Adafruit or Rob Tillaart) used to easily read temperature and humidity from DHT sensors",
+    "dht.readTemperature() — Returns the current temperature in Celsius from the DHT sensor",
+    "dht.readHumidity() — Returns the current relative humidity percentage from the DHT sensor",
+    "isnan() — 'Is Not a Number' check: used to detect if a DHT reading failed (sensor not ready or wiring issue)",
+    "Relative Humidity — The amount of water vapour in the air expressed as a percentage of the maximum possible at that temperature",
+    "Sampling Interval — DHT11 needs at least 2 seconds between readings; reading too fast returns NaN (not a number)",
+    "Web Server with Dynamic Content — Unlike static HTML, the ESP8266 generates fresh HTML containing live sensor values on every browser request",
+    "Auto-Refresh HTML — Adding `<meta http-equiv='refresh' content='5'>` to the HTML makes the browser automatically reload the page every 5 seconds",
+    "Data Logging Concept — Storing sensor readings with timestamps to track changes over time; can be extended to SD card or cloud platforms",
+    "Heat Index — A calculated value combining temperature and humidity to show what the temperature 'feels like'; computable from DHT data"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "DHT11 Sensor with ESP8266 NodeMCU — Tutorial",
+      "videoId": "1ms37DYRIDg",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Step-by-step guide to connecting the DHT11 temperature and humidity sensor to the ESP8266 NodeMCU, installing the DHT library, and reading live values in the Serial Monitor."
+    },
+    {
+      "title": "ESP8266 Weather Station Web Server — Full Project",
+      "videoId": "PBhYhNHFNYk",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Build a complete WiFi weather station — connect DHT11, serve temperature and humidity as a live web page from the ESP8266, and view readings from any browser on your network."
+    },
+    {
+      "title": "DHT11 vs DHT22 — Which Sensor Should You Use?",
+      "videoId": "OogldLc9uYc",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Compare the DHT11 and DHT22 sensors — accuracy, range, speed, cost, and which one is right for your project. Includes wiring differences and code compatibility."
+    },
+    {
+      "title": "How Does a Weather Station Work?",
+      "videoId": "tbJFluBiA2Q",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Explore how professional weather stations measure temperature, humidity, pressure, wind speed, and rainfall — and how your ESP8266 project compares to real meteorological equipment."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Adafruit DHT Sensor Library — GitHub",
+      "url": "https://github.com/adafruit/DHT-sensor-library",
+      "icon": "🔗"
+    },
+    {
+      "title": "Random Nerd Tutorials — ESP8266 DHT Web Server",
+      "url": "https://randomnerdtutorials.com/esp8266-dht11dht22-temperature-and-humidity-web-server-with-arduino-ide/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi — Simulate ESP8266 + DHT11 Online",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "ESP8266 Arduino Core — Official Docs",
+      "url": "https://arduino-esp8266.readthedocs.io/en/latest/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a WiFi Weather Station — Sensor to Web Page",
+    "parts": [
+      "ESP8266 NodeMCU board",
+      "DHT11 temperature and humidity sensor module",
+      "16x2 LCD with I2C backpack",
+      "Breadboard",
+      "Jumper wires",
+      "Micro-USB cable",
+      "Laptop with Arduino IDE",
+      "DHT library and LiquidCrystal_I2C library installed",
+      "Active WiFi network"
+    ],
+    "steps": [
+      "Step 1 — DHT11 Wiring: Connect DHT11 VCC → 3.3V, GND → GND, DATA → GPIO D4 (pin 2). If using a bare sensor (not module), add a 10kΩ pull-up resistor between VCC and DATA",
+      "Step 2 — Library Install: In Arduino IDE, go to Tools → Manage Libraries. Install 'DHT sensor library by Adafruit' and its dependency 'Adafruit Unified Sensor'. Also install LiquidCrystal_I2C",
+      "Step 3 — Read Sensor: Write a basic sketch — `#include <DHT.h>`, define DHT_PIN and DHT_TYPE (DHT11). In setup: `dht.begin()`. In loop: `float temp = dht.readTemperature()` and `float hum = dht.readHumidity()`. Print to Serial Monitor. Add isnan() check for failed readings",
+      "Step 4 — Add LCD Display: Wire LCD I2C (SDA → A4, SCL → A5). Display 'Temp: XX.X C' on row 1 and 'Humidity: XX%' on row 2. Update every 2 seconds using delay(2000)",
+      "Step 5 — Add WiFi: Add `#include <ESP8266WiFi.h>` and your SSID/password. Connect to WiFi in setup and print the IP address to Serial Monitor",
+      "Step 6 — Web Server: Create a WiFiServer on port 80. In the loop, check for browser clients. When a request arrives, build an HTML response string containing the live temperature and humidity values. Add a meta refresh tag to auto-reload every 5 seconds",
+      "Step 7 — Style the Page: Add basic HTML/CSS to make the web page visually clear — large font for readings, colour coding (blue for cool, red for hot), and a title 'Classroom Weather Station'",
+      "Step 8 — Full Test: Open the IP address in a browser. Confirm the temperature and humidity update automatically. Try breathing on the sensor — humidity should rise. Place near a warm surface — temperature should increase",
+      "Challenge: Add a Heat Index calculation using the formula combining temperature and humidity. Display it on both the LCD and the web page as 'Feels Like: XX°C'. Also add a comfort level message: 'Comfortable', 'Humid', or 'Hot & Humid'"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does the DHT11 sensor measure?",
+      "options": [
+        "Temperature and air pressure",
+        "Temperature and relative humidity",
+        "Light intensity and temperature",
+        "Wind speed and rainfall"
+      ],
+      "answer": 1,
+      "explanation": "DHT11 measures two things: temperature (0–50°C) and relative humidity (20–80%). It communicates digitally using a single data wire, making it simple to connect to microcontrollers like the ESP8266."
+    },
+    {
+      "q": "What is the approximate accuracy of the DHT11 sensor?",
+      "options": [
+        "±0.1°C temperature and ±1% humidity",
+        "±2°C temperature and ±5% humidity",
+        "±5°C temperature and ±10% humidity",
+        "±0.5°C temperature and ±2% humidity"
+      ],
+      "answer": 1,
+      "explanation": "DHT11 has ±2°C temperature accuracy and ±5% humidity accuracy — good enough for learning and indoor projects. For more precision, the DHT22 offers ±0.5°C and ±2–5% humidity, but costs more."
+    },
+    {
+      "q": "What function returns the current temperature reading from a DHT sensor in Arduino code?",
+      "options": [
+        "dht.getTemp()",
+        "dht.temperature()",
+        "dht.readTemperature()",
+        "dht.celsius()"
+      ],
+      "answer": 2,
+      "explanation": "`dht.readTemperature()` returns temperature in Celsius by default. Use `dht.readTemperature(true)` to get Fahrenheit. Similarly, `dht.readHumidity()` returns relative humidity as a percentage."
+    },
+    {
+      "q": "What does `isnan()` check for in DHT sensor code?",
+      "options": [
+        "If the sensor is not connected to the network",
+        "If the reading returned is 'Not a Number' — indicating a failed or invalid sensor reading",
+        "If the temperature value is negative",
+        "If the humidity is above 100%"
+      ],
+      "answer": 1,
+      "explanation": "`isnan()` = Is Not a Number! When a DHT reading fails (sensor not ready, bad wiring, read too fast), it returns NaN. Always check: `if (isnan(temp) || isnan(hum)) { Serial.println(\"Sensor read failed!\"); return; }` before using the values."
+    },
+    {
+      "q": "Why must you wait at least 2 seconds between DHT11 readings?",
+      "options": [
+        "To give the ESP8266 time to connect to WiFi",
+        "The DHT11 sensor has a 1Hz sampling rate — it can only produce a valid reading once per second at minimum, and 2 seconds is recommended for reliability",
+        "To prevent the sensor from overheating",
+        "The LCD display needs 2 seconds to refresh"
+      ],
+      "answer": 1,
+      "explanation": "DHT11 is slow — it samples at 1Hz (once per second). Reading faster than this returns NaN or the previous value. Using delay(2000) or millis()-based timing ensures each call to readTemperature() gets a fresh, valid reading."
+    },
+    {
+      "q": "What is Relative Humidity?",
+      "options": [
+        "The total weight of water vapour in one cubic metre of air",
+        "The amount of water vapour in the air expressed as a percentage of the maximum amount the air can hold at that temperature",
+        "The humidity measured relative to sea level",
+        "The humidity difference between indoor and outdoor air"
+      ],
+      "answer": 1,
+      "explanation": "Relative Humidity (RH) is a percentage! 100% RH means the air is completely saturated — any more moisture and it condenses (rain, dew). 50% RH means the air holds half the maximum moisture possible at that temperature. Comfortable indoor RH is typically 40–60%."
+    },
+    {
+      "q": "How does the ESP8266 weather station web page show LIVE data on every browser visit?",
+      "options": [
+        "The HTML page is pre-generated once and stored in flash memory",
+        "The ESP8266 reads fresh sensor values each time a browser request arrives and inserts them into a dynamically generated HTML response",
+        "The browser sends a WiFi signal that triggers the sensor",
+        "The data is fetched from a weather API on the internet"
+      ],
+      "answer": 1,
+      "explanation": "Dynamic web content! Each time a browser sends an HTTP request to the ESP8266, the code reads the latest values from the DHT sensor and builds a fresh HTML string with those values embedded. Every page load shows current data — not cached old data."
+    },
+    {
+      "q": "What does adding `<meta http-equiv='refresh' content='5'>` to the HTML page do?",
+      "options": [
+        "It refreshes the Arduino code every 5 seconds",
+        "It tells the browser to automatically reload the page every 5 seconds, keeping the weather data up to date without manual refreshing",
+        "It sets the WiFi connection refresh rate to 5 seconds",
+        "It limits the page to 5 visitors at a time"
+      ],
+      "answer": 1,
+      "explanation": "Auto-refresh HTML trick! The meta refresh tag is a simple way to make a page update automatically. Every 5 seconds the browser re-requests the page from the ESP8266, getting the latest sensor readings without the user pressing refresh."
+    },
+    {
+      "q": "What is the key advantage of DHT22 over DHT11?",
+      "options": [
+        "DHT22 is smaller and cheaper",
+        "DHT22 has a wider measurement range and higher accuracy — ±0.5°C vs ±2°C, and works from -40°C to 80°C vs 0–50°C for DHT11",
+        "DHT22 can measure wind speed in addition to temperature",
+        "DHT22 connects via I2C instead of a single data wire"
+      ],
+      "answer": 1,
+      "explanation": "DHT22 is the upgraded version! Better accuracy (±0.5°C), wider range (-40 to 80°C), and higher humidity range (0–100%). However it costs about 3x more than DHT11. For professional or outdoor projects use DHT22; for classroom learning DHT11 is perfect."
+    },
+    {
+      "q": "What is the Heat Index, and how is it related to DHT sensor data?",
+      "options": [
+        "The maximum temperature the DHT sensor can measure",
+        "A calculated 'feels like' temperature that combines actual temperature and humidity to show how hot it actually feels to the human body",
+        "The temperature of the ESP8266 chip during operation",
+        "The index number assigned to each DHT sensor in the code"
+      ],
+      "answer": 1,
+      "explanation": "Heat Index = 'feels like' temperature! High humidity makes hot temperatures feel even hotter because sweat evaporates more slowly. At 35°C with 80% humidity it might feel like 45°C. The DHT library can calculate this: `dht.computeHeatIndex(temp, hum, false)`."
+    },
+    {
+      "q": "A student's Serial Monitor keeps printing 'Sensor read failed!'. What should they check first?",
+      "options": [
+        "The WiFi password in the code",
+        "The DHT pin number in the code matches the actual DATA wire connection, and the wiring is secure with correct VCC and GND",
+        "The LCD I2C address",
+        "The browser cache on their laptop"
+      ],
+      "answer": 1,
+      "explanation": "Failed readings almost always mean a wiring issue or wrong pin! Check: DATA wire is on the correct GPIO pin defined in the code, VCC is connected to 3.3V (not 5V!), GND is connected, and if using a bare DHT11, there's a 10kΩ pull-up resistor between VCC and DATA."
+    },
+    {
+      "q": "Why is the DHT11 connected to the ESP8266's 3.3V pin rather than the 5V pin?",
+      "options": [
+        "DHT11 produces more accurate readings at 3.3V",
+        "The ESP8266 operates at 3.3V logic and its GPIO pins are not 5V tolerant — connecting 5V can permanently damage the chip",
+        "5V makes the DHT11 measure in Fahrenheit instead of Celsius",
+        "The 5V pin is reserved for the LCD display only"
+      ],
+      "answer": 1,
+      "explanation": "ESP8266 is a 3.3V device! Its GPIO pins are NOT 5V tolerant. Connecting 5V directly can fry the chip. Always use 3.3V for sensors connected to ESP8266. The DHT11 module works fine at 3.3V and gives accurate readings."
+    },
+    {
+      "q": "What is Data Logging, and how could this weather station project be extended to support it?",
+      "options": [
+        "Logging into the Blynk app with data credentials",
+        "Storing temperature and humidity readings with timestamps over time — for example to an SD card module or a cloud service — to track trends and patterns",
+        "Logging the number of times the sensor is read per day",
+        "Recording the browser IP addresses that access the weather page"
+      ],
+      "answer": 1,
+      "explanation": "Data Logging records sensor values over time! Adding an SD card module lets the ESP8266 write readings with timestamps to a CSV file. Connecting to a platform like ThingSpeak or Google Sheets via WiFi lets you track temperature trends and create graphs over days and weeks."
+    },
+    {
+      "q": "Two students build the same weather station circuit but one adds a `delay(2000)` in the loop and the other does not. What problem does the student without the delay experience?",
+      "options": [
+        "Their LED blinks too fast",
+        "Their sensor returns mostly NaN (failed readings) because the DHT11 is polled faster than its 1-second sampling rate allows",
+        "Their web server stops responding to browser requests",
+        "Their LCD shows the wrong I2C address"
+      ],
+      "answer": 1,
+      "explanation": "No delay = too many reads! The DHT11 can only produce a valid reading once per second. Without delay, the loop queries it hundreds of times per second. Most calls return NaN. Either use delay(2000) or millis()-based non-blocking timing to respect the sensor's sampling rate."
+    },
+    {
+      "q": "What real-world applications use the same DHT sensor + WiFi + web dashboard principle as this weather station?",
+      "options": [
+        "Wireless keyboards and mice",
+        "Smart home climate control systems, greenhouse monitoring, server room temperature alerts, and industrial environmental monitoring — all using IoT sensors sending data to cloud dashboards",
+        "Bluetooth headphones and speakers",
+        "USB hubs and docking stations"
+      ],
+      "answer": 1,
+      "explanation": "This project mirrors real industrial IoT systems! Smart thermostats (Nest, Ecobee), greenhouse climate controllers, server room monitors, and cold chain logistics trackers all use the same principle — sensors sending live data over WiFi to dashboards for remote monitoring and automated control."
+    }
+  ]
+}

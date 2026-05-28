@@ -1,0 +1,328 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-244/",
+    "slides_folder": "sessions/session-244/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-244/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-244",
+  "number": 244,
+  "title": "Smart Classroom Bell",
+  "subtitle": "Build a Bell That Rings Itself — With Arduino!",
+  "date": "Session 244",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#FF8C00",
+  "icon": "🔔",
+  "tags": [
+    "Arduino",
+    "IoT",
+    "Buzzer",
+    "RTC Module",
+    "Automation",
+    "STEM"
+  ],
+  "overview": "Why ring a bell manually when your Arduino can do it for you? In this session, students design and build a Smart Classroom Bell system using an Arduino, a buzzer, an RTC (Real-Time Clock) module, and an LCD display. They program the bell to ring automatically at set times — just like a real school bell — combining electronics, coding, and real-world problem solving.",
+  "grades": [
+    6,
+    7,
+    8
+  ],
+  "slides": {
+    "pdf": "sessions/session-244/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — wiring photos, buzzer close-ups, LCD display output, student builds.",
+    "gallery": [
+      {
+        "file": "data/arduino-buzzer.jpg",
+        "_placeholder": "ADD: Photo of buzzer connected to Arduino on breadboard",
+        "caption": "Buzzer connected to Arduino — BEEP BEEP BEEP!",
+        "category": "Components"
+      },
+      {
+        "file": "data/rtc-module.jpg",
+        "_placeholder": "ADD: Photo of DS1307 or DS3231 RTC module",
+        "caption": "RTC Module — keeps track of the real time even when power is off",
+        "category": "Components"
+      },
+      {
+        "file": "data/lcd-display.jpg",
+        "_placeholder": "ADD: Photo of 16x2 LCD display showing time",
+        "caption": "LCD Display showing current time — 08:30 AM → RING!",
+        "category": "Components"
+      },
+      {
+        "file": "data/smart-bell-circuit.jpg",
+        "_placeholder": "ADD: Full circuit photo — Arduino + RTC + Buzzer + LCD all wired together",
+        "caption": "The complete Smart Bell circuit — students built this!",
+        "category": "Lab"
+      },
+      {
+        "file": "data/i2c-wiring.png",
+        "_placeholder": "ADD: Diagram showing I2C wiring (SDA, SCL) between Arduino and RTC/LCD",
+        "caption": "I2C Communication — SDA and SCL carry data between modules",
+        "category": "Concept"
+      },
+      {
+        "file": "data/smart-bell-demo.gif",
+        "_placeholder": "ADD: GIF or photo of the bell triggering at set time — buzzer going off",
+        "caption": "Bell rings at exactly 8:30 AM — automated and precise!",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Buzzer — A small component that produces sound when current flows through it (active vs passive buzzer)",
+    "Active Buzzer — Makes sound on its own when powered (just connect to digital pin + GND)",
+    "Passive Buzzer — Needs a frequency signal to produce different tones (use tone() function)",
+    "RTC Module — Real-Time Clock chip (DS1307 / DS3231) that keeps accurate date and time independently",
+    "Why RTC? — Arduino's internal millis() resets on power-off; RTC keeps time even with battery backup",
+    "I2C Protocol — A two-wire communication system (SDA + SCL) used by RTC and LCD modules",
+    "16x2 LCD Display — Shows 16 characters across 2 rows; used to display current time and bell status",
+    "RTClib Library — Arduino library to easily read hours, minutes, seconds from RTC module",
+    "LiquidCrystal_I2C Library — Controls the LCD display over I2C with simple commands",
+    "Conditional Logic — if (hour == 8 && minute == 30) → ring the bell!",
+    "Automation — The system runs 24/7 without human input, checking the time and acting on schedule",
+    "Bell Schedule Array — Store multiple bell times in an array and loop through them to check matches"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Arduino Buzzer Tutorial — Tones and Sounds",
+      "videoId": "AQnCOCIjJHE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Learn how to connect and program both active and passive buzzers with Arduino — make beeps, melodies, and alarm sounds."
+    },
+    {
+      "title": "Arduino RTC Module DS3231 Tutorial",
+      "videoId": "qS8GFnKMFJE",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "How to connect the DS3231 RTC module, set the time, and read hours and minutes in your Arduino sketch using RTClib."
+    },
+    {
+      "title": "16x2 LCD with I2C — Arduino Tutorial",
+      "videoId": "dZZynJLmTn8",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Connect and program a 16x2 LCD display using I2C — display text, numbers, and scrolling messages with just 2 wires."
+    },
+    {
+      "title": "Build an Automatic Bell System with Arduino",
+      "videoId": "UtHMoGDzHyA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Full project walkthrough — wire up a school bell system with Arduino, RTC module, buzzer, and LCD that rings on schedule automatically."
+    }
+  ],
+  "resources": [
+    {
+      "title": "RTClib Library — Arduino Reference",
+      "url": "https://github.com/adafruit/RTClib",
+      "icon": "🔗"
+    },
+    {
+      "title": "LiquidCrystal_I2C Library",
+      "url": "https://github.com/johnrickman/LiquidCrystal_I2C",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi — Simulate Arduino Online (Free)",
+      "url": "https://wokwi.com",
+      "icon": "🔗"
+    },
+    {
+      "title": "Arduino tone() Function Reference",
+      "url": "https://www.arduino.cc/reference/en/language/functions/advanced-io/tone/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Smart Classroom Bell",
+    "parts": [
+      "Arduino UNO",
+      "Breadboard",
+      "Active Buzzer (or Passive Buzzer)",
+      "DS1307 or DS3231 RTC Module",
+      "16x2 LCD Display with I2C backpack",
+      "Jumper wires",
+      "USB cable + laptop",
+      "Arduino IDE with RTClib and LiquidCrystal_I2C libraries installed"
+    ],
+    "steps": [
+      "Step 1 — Buzzer Test: Connect buzzer positive to pin 8, negative to GND. Upload code to beep for 1 second every 3 seconds",
+      "Step 2 — RTC Setup: Wire RTC module via I2C (SDA → A4, SCL → A5, VCC → 5V, GND → GND). Install RTClib and read current time in Serial Monitor",
+      "Step 3 — Set the Time: Upload the set-time sketch once to sync RTC with your computer's clock",
+      "Step 4 — LCD Setup: Wire LCD I2C module (SDA → A4, SCL → A5 — shares I2C bus with RTC). Display 'Smart Bell' on row 1 and current time on row 2",
+      "Step 5 — Bell Logic: Write an if-condition that checks if the current hour and minute match a bell time, then buzz for 3 seconds",
+      "Step 6 — Bell Schedule: Create an array of bell times (e.g. 8:30, 10:15, 12:00, 2:45) and loop through to check each one",
+      "Step 7 — Full Test: Set the RTC to 1 minute before a bell time and watch the system ring automatically!",
+      "Challenge: Add a second buzzer pattern for start-of-class vs end-of-class (different tone or duration)"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does a Buzzer do in an electronic circuit?",
+      "options": [
+        "Stores electrical energy",
+        "Converts electrical energy into sound",
+        "Measures temperature",
+        "Controls motor speed"
+      ],
+      "answer": 1,
+      "explanation": "A buzzer converts electricity into sound! When current flows through it, it vibrates and produces a beeping or buzzing noise — perfect for alarms and alerts."
+    },
+    {
+      "q": "What is the difference between an Active and a Passive buzzer?",
+      "options": [
+        "Active buzzers are louder; passive ones are quieter",
+        "Active buzzers make sound when simply powered; passive buzzers need a frequency signal to produce tones",
+        "Active buzzers require AC power; passive ones use DC",
+        "There is no difference — they are the same component"
+      ],
+      "answer": 1,
+      "explanation": "Active buzzer = just connect power and it beeps. Passive buzzer = needs a PWM frequency signal (use Arduino's tone() function) to produce different pitches and melodies!"
+    },
+    {
+      "q": "What does RTC stand for?",
+      "options": [
+        "Remote Terminal Controller",
+        "Resistor Timing Circuit",
+        "Real-Time Clock",
+        "Rapid Transfer Component"
+      ],
+      "answer": 2,
+      "explanation": "RTC = Real-Time Clock! It's a dedicated chip that tracks the current date and time accurately — even when the Arduino is powered off, thanks to a small backup battery."
+    },
+    {
+      "q": "Why can't we just use Arduino's millis() function to keep time instead of an RTC module?",
+      "options": [
+        "millis() is too fast for time-keeping",
+        "millis() resets to zero every time the Arduino is powered off or restarted",
+        "millis() only counts seconds, not minutes",
+        "millis() requires an internet connection"
+      ],
+      "answer": 1,
+      "explanation": "millis() counts milliseconds since the Arduino started — but resets on every power-off. The RTC module has its own battery backup and keeps running 24/7, so it always knows the real time!"
+    },
+    {
+      "q": "What is the I2C communication protocol?",
+      "options": [
+        "A wireless Bluetooth connection",
+        "A two-wire serial communication system (SDA + SCL) used to connect multiple modules to Arduino",
+        "A type of power supply method",
+        "A programming language for sensors"
+      ],
+      "answer": 1,
+      "explanation": "I2C uses just TWO wires — SDA (data) and SCL (clock) — to connect multiple devices like the RTC module and LCD to the Arduino simultaneously. Very efficient!"
+    },
+    {
+      "q": "On an Arduino UNO, which pins are used for I2C communication?",
+      "options": [
+        "Pin 2 and Pin 3",
+        "Pin 9 and Pin 10",
+        "A4 (SDA) and A5 (SCL)",
+        "Pin 13 and GND"
+      ],
+      "answer": 2,
+      "explanation": "On Arduino UNO, I2C uses analog pins A4 (SDA — data) and A5 (SCL — clock). Both the RTC module and LCD I2C backpack share these same two pins on the same bus!"
+    },
+    {
+      "q": "What does a 16x2 LCD display mean?",
+      "options": [
+        "16 pixels wide and 2 pixels tall",
+        "16 characters per row and 2 rows of text",
+        "16 colors and 2 brightness levels",
+        "16 MHz speed and 2 volt power"
+      ],
+      "answer": 1,
+      "explanation": "16x2 LCD = 16 characters across, 2 rows. Row 1 can show 'Smart Bell' and Row 2 can show '08:30 AM RING!' — great for displaying time and status messages."
+    },
+    {
+      "q": "Which Arduino library is used to read date and time from an RTC module?",
+      "options": [
+        "LiquidCrystal_I2C",
+        "Servo",
+        "RTClib",
+        "Wire"
+      ],
+      "answer": 2,
+      "explanation": "RTClib (by Adafruit) makes reading RTC data super easy! Use `RTC.now()` to get a DateTime object, then access `.hour()`, `.minute()`, `.second()` to get the current time."
+    },
+    {
+      "q": "In Arduino code, which function makes a passive buzzer produce a tone?",
+      "options": [
+        "buzz(pin, frequency)",
+        "sound(frequency, duration)",
+        "tone(pin, frequency, duration)",
+        "beep(pin, duration)"
+      ],
+      "answer": 2,
+      "explanation": "`tone(pin, frequency, duration)` sends a PWM signal to the passive buzzer at the given frequency (Hz) for the given duration (ms). For example, `tone(8, 1000, 500)` beeps at 1kHz for 0.5 seconds."
+    },
+    {
+      "q": "What does this code do? `if (now.hour() == 8 && now.minute() == 30)`",
+      "options": [
+        "Sets the RTC time to 8:30",
+        "Checks whether the current time is exactly 8 hours and 30 minutes",
+        "Delays the program for 8 minutes and 30 seconds",
+        "Turns off the display at 8:30"
+      ],
+      "answer": 1,
+      "explanation": "This is the bell-trigger condition! It checks if the current hour is 8 AND the minute is 30. If both are true at the same time, it runs the code inside — ringing the bell at exactly 8:30!"
+    },
+    {
+      "q": "Why do we store bell times in an ARRAY in the smart bell program?",
+      "options": [
+        "Arrays make the buzzer louder",
+        "So we can easily store and loop through multiple bell times without writing separate if-statements for each one",
+        "Arrays are required for all Arduino programs",
+        "To save power on the Arduino"
+      ],
+      "answer": 1,
+      "explanation": "Instead of writing 10 separate if-statements for 10 bell times, we store them all in an array and use a for-loop to check each one. Cleaner, shorter, and easy to update the schedule!"
+    },
+    {
+      "q": "The smart bell circuit has both an RTC module and an LCD connected via I2C. How many wires do they share with the Arduino?",
+      "options": [
+        "4 wires each — 8 total",
+        "They cannot share wires",
+        "2 wires total — both devices share the same SDA and SCL lines",
+        "1 wire each — 2 total"
+      ],
+      "answer": 2,
+      "explanation": "That's the beauty of I2C! Multiple devices share the SAME SDA and SCL lines. Each device has a unique address, so Arduino talks to each one separately over the same 2 wires. No extra pins needed!"
+    },
+    {
+      "q": "What is Automation in the context of the Smart Bell project?",
+      "options": [
+        "Writing code very quickly",
+        "The system performing a task (ringing the bell) on its own, on schedule, without any human pressing a button",
+        "Automatically fixing bugs in the code",
+        "Connecting Arduino to the internet"
+      ],
+      "answer": 1,
+      "explanation": "Automation = the system acts on its own! Once programmed, the Smart Bell checks the time every second and rings at the right moment — no teacher needs to press anything. That's smart engineering!"
+    },
+    {
+      "q": "Which component in the Smart Bell project provides BACKUP POWER so time is not lost when Arduino is turned off?",
+      "options": [
+        "The capacitor on the breadboard",
+        "The Arduino's 5V pin",
+        "The small coin cell battery on the RTC module",
+        "The USB cable"
+      ],
+      "answer": 2,
+      "explanation": "The RTC module has a small coin cell battery (like CR2032) on board. Even when the Arduino is unplugged, the RTC chip keeps ticking — so the time is always accurate when you turn back on!"
+    },
+    {
+      "q": "What real-world system works on the same principle as the Smart Classroom Bell?",
+      "options": [
+        "A hand-cranked fan",
+        "A manual light switch",
+        "Scheduled alarms in a factory, hospital, or airport that trigger automatically at set times",
+        "A battery-powered torch"
+      ],
+      "answer": 2,
+      "explanation": "Factory shift sirens, hospital shift bells, airport boarding announcements, and railway departure signals all work on the same idea — a timer checks the clock and triggers an action automatically!"
+    }
+  ]
+}

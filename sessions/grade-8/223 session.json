@@ -1,0 +1,324 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-253/",
+    "slides_folder": "sessions/session-253/slides/   ← Put PPT slide images here (JPG/PNG)",
+    "images_folder": "sessions/session-253/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+  },
+  "id": "session-253",
+  "number": 253,
+  "title": "Cybersecurity: Malware",
+  "subtitle": "Know Your Enemy — Viruses, Trojans, Ransomware & More!",
+  "date": "Session 253",
+  "duration": "1 Hour",
+  "phase": "Intermediate",
+  "color": "#B71C1C",
+  "icon": "🦠",
+  "tags": [
+    "Cybersecurity",
+    "Malware",
+    "Virus",
+    "Ransomware",
+    "Digital Safety",
+    "Computer Science"
+  ],
+  "overview": "Every day, thousands of cyberattacks happen around the world — targeting schools, hospitals, banks, and individuals. In this session, students learn about the different types of malware: what they are, how they spread, what damage they cause, and most importantly how to defend against them. From classic computer viruses to modern ransomware, students become cyber-aware citizens who can protect themselves and others in the digital world.",
+  "grades": [
+    6,
+    7,
+    8
+  ],
+  "slides": {
+    "pdf": "sessions/session-253/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos from the actual session — malware type diagrams, ransomware screenshots, infection flowcharts, defence checklist.",
+    "gallery": [
+      {
+        "file": "data/malware-types.png",
+        "_placeholder": "ADD: Diagram showing the malware family tree — virus, worm, trojan, ransomware, spyware, adware, rootkit",
+        "caption": "The Malware Family — different types, different methods, same goal: cause harm",
+        "category": "Concept"
+      },
+      {
+        "file": "data/virus-spread.png",
+        "_placeholder": "ADD: Flowchart showing how a computer virus spreads from infected file to other files/devices",
+        "caption": "How a virus spreads: attach → execute → replicate → infect more files",
+        "category": "Concept"
+      },
+      {
+        "file": "data/ransomware-screen.png",
+        "_placeholder": "ADD: Screenshot of a famous ransomware lock screen (WannaCry or similar — educational use)",
+        "caption": "Ransomware locks your files and demands payment — real attacks hit hospitals and schools",
+        "category": "Concept"
+      },
+      {
+        "file": "data/trojan-horse.png",
+        "_placeholder": "ADD: Illustration comparing a Trojan Horse program to the Greek myth wooden horse",
+        "caption": "Trojan Horse — looks like a safe app, hides malicious code inside",
+        "category": "Concept"
+      },
+      {
+        "file": "data/antivirus-scan.png",
+        "_placeholder": "ADD: Screenshot of antivirus software detecting and quarantining a threat",
+        "caption": "Antivirus software scans files and quarantines detected threats",
+        "category": "Concept"
+      },
+      {
+        "file": "data/cyber-defence-checklist.png",
+        "_placeholder": "ADD: Visual checklist of malware defence habits — update, scan, backup, avoid suspicious links",
+        "caption": "Your Malware Defence Checklist — 5 habits that keep you safe",
+        "category": "Lab"
+      }
+    ]
+  },
+  "keyTopics": [
+    "Malware — Malicious Software: any program designed to disrupt, damage, or gain unauthorised access to a computer system",
+    "Virus — Malware that attaches itself to a legitimate file and replicates when that file is executed, spreading to other files and systems",
+    "Worm — Self-replicating malware that spreads across networks automatically WITHOUT needing a host file or user action",
+    "Trojan Horse — Malware disguised as a legitimate and useful program; tricks the user into installing it willingly",
+    "Ransomware — Encrypts the victim's files and demands a ransom payment (usually cryptocurrency) to restore access",
+    "Spyware — Secretly monitors user activity, captures keystrokes, passwords, and browsing history, and sends data to attackers",
+    "Adware — Displays unwanted advertisements, often bundled with free software; can slow down devices and redirect browsers",
+    "Rootkit — Malware that hides deep in the operating system, granting attackers persistent admin-level access while remaining invisible",
+    "Botnet — A network of infected computers (bots) controlled remotely by an attacker to launch coordinated attacks like DDoS",
+    "Attack Vector — The method used to deliver malware: email attachments, malicious downloads, infected USB drives, phishing links",
+    "Antivirus / Anti-malware — Software that detects, quarantines, and removes known malware using signature databases and behavioural analysis",
+    "Defence in Depth — A layered security strategy: update software + use antivirus + use firewall + backup data + educate users"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Types of Malware Explained — Virus, Worm, Trojan, Ransomware",
+      "videoId": "n8mbzU0X2nQ",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "A clear breakdown of all major malware types — what each one does, how it spreads, and real-world examples of attacks, explained for beginners."
+    },
+    {
+      "title": "How Ransomware Works — WannaCry Explained",
+      "videoId": "88jkB1V6N9w",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "The story of WannaCry — the 2017 ransomware attack that hit 200,000 computers across 150 countries, including the NHS, and how it exploited a Windows vulnerability."
+    },
+    {
+      "title": "How Antivirus Software Works",
+      "videoId": "lMWqMXFgKQo",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Inside antivirus software — how it uses signature detection, heuristic analysis, and behavioural monitoring to identify and stop malware before it causes damage."
+    },
+    {
+      "title": "Cybersecurity for Beginners — Stay Safe Online",
+      "videoId": "inWWhr5tnEA",
+      "_note": "Replace videoId with actual YouTube video ID from the URL",
+      "desc": "Essential cybersecurity basics for everyday users — recognising threats, safe browsing habits, password security, software updates, and what to do if you get infected."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Malwarebytes — What Is Malware? (Beginner Guide)",
+      "url": "https://www.malwarebytes.com/malware",
+      "icon": "🔗"
+    },
+    {
+      "title": "CISA — Stop Ransomware Resource Hub",
+      "url": "https://www.cisa.gov/stopransomware",
+      "icon": "🔗"
+    },
+    {
+      "title": "Google Safety Centre — Stay Safe Online",
+      "url": "https://safety.google",
+      "icon": "🔗"
+    },
+    {
+      "title": "Have I Been Pwned — Check If Your Email Was Compromised",
+      "url": "https://haveibeenpwned.com",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Malware Identification Card Game + Defence Strategy Planning",
+    "parts": [
+      "Printed Malware Scenario Cards (one per group of 3–4 students)",
+      "Malware Type Reference Sheet (virus, worm, trojan, ransomware, spyware, adware, rootkit)",
+      "Defence Planning Worksheet",
+      "Computer or tablet (for research and verification)",
+      "Whiteboard or flip chart for class discussion"
+    ],
+    "steps": [
+      "Part 1 — Malware Identification Game: Each group receives 6 scenario cards describing a cyber incident. Students identify the malware type, the attack vector used, and the damage caused. Groups compete to correctly identify all 6 first",
+      "Part 2 — Real Attack Case Study: Discuss the WannaCry ransomware attack (2017) — how it spread through a Windows vulnerability, why the NHS was affected, and what the global cost was. Students answer: what could have prevented it?",
+      "Part 3 — Attack Vector Mapping: Students list 5 ways malware can enter a computer (email attachment, USB drive, malicious website, fake app, infected ad). For each, identify one thing a user can do to block that vector",
+      "Part 4 — Defence Strategy: Each group designs a 'Cybersecurity Policy' for a fictional school computer lab — at least 6 rules covering software updates, antivirus, backups, USB policy, download policy, and user training",
+      "Part 5 — Trojan Detection Challenge: Students examine 5 fake 'app descriptions' and identify which ones are likely Trojan horses based on suspicious permissions, promises, or sources",
+      "Part 6 — Class Debate: 'Should victims pay ransomware demands?' Students argue for and against, considering ethics, financial pressure, and whether paying encourages more attacks",
+      "Challenge: Students research one real-world malware attack (e.g. Stuxnet, Petya, ILOVEYOU, Zeus, Mirai) and present: What type of malware? Who was targeted? How did it spread? What was the impact? How was it stopped?"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What does the term Malware mean?",
+      "options": [
+        "Malfunctioning hardware",
+        "Malicious Software — any program designed to disrupt, damage, or gain unauthorised access to a system",
+        "A type of computer virus found only on Macs",
+        "Software that runs slowly due to a bug"
+      ],
+      "answer": 1,
+      "explanation": "Malware = Malicious Software! It's an umbrella term covering all types of harmful programs — viruses, worms, trojans, ransomware, spyware, and more. The intent to cause harm is what defines something as malware."
+    },
+    {
+      "q": "What makes a Computer Virus different from other malware?",
+      "options": [
+        "A virus can only infect smartphones, not computers",
+        "A virus attaches itself to a legitimate file and replicates when that file is executed, spreading to other files",
+        "A virus always demands a ransom payment",
+        "A virus only affects antivirus software"
+      ],
+      "answer": 1,
+      "explanation": "Like a biological virus, a computer virus needs a HOST — it attaches to a legitimate file. When that file runs, the virus executes and copies itself into other files. It needs user action (running the infected file) to spread."
+    },
+    {
+      "q": "How is a Worm different from a Virus?",
+      "options": [
+        "Worms are more dangerous than viruses",
+        "A worm spreads across networks automatically without needing a host file or any user action",
+        "Worms only target mobile phones",
+        "A worm always encrypts files like ransomware"
+      ],
+      "answer": 1,
+      "explanation": "Worms are self-sufficient! Unlike viruses, they don't need a host file. They exploit network vulnerabilities to copy themselves from device to device automatically — no user clicks required. WannaCry used a worm mechanism to spread across networks at terrifying speed."
+    },
+    {
+      "q": "Why is it called a Trojan Horse in cybersecurity?",
+      "options": [
+        "It was invented in Troy, Greece",
+        "Like the Greek myth, it disguises itself as something useful or safe to trick the user into letting it inside their system",
+        "It attacks using a horse-shaped robot",
+        "It was the first malware ever created in the 1960s"
+      ],
+      "answer": 1,
+      "explanation": "Perfect analogy from Greek mythology! The Greeks hid soldiers inside a wooden horse gifted to Troy. Similarly, a Trojan Horse program hides malicious code inside something that looks legitimate — a free game, a useful app, or a fake update."
+    },
+    {
+      "q": "What does Ransomware do to a victim's computer?",
+      "options": [
+        "Steals passwords and sends them to the attacker",
+        "Displays unwanted advertisements on the screen",
+        "Encrypts the victim's files and demands payment — usually cryptocurrency — to restore access",
+        "Slows down the computer by running in the background"
+      ],
+      "answer": 2,
+      "explanation": "Ransomware holds your data hostage! It encrypts files so you can't open them, then displays a ransom note demanding payment (often Bitcoin) for the decryption key. Hospitals, schools, and businesses have paid millions — sometimes still not recovering their data."
+    },
+    {
+      "q": "What is Spyware designed to do?",
+      "options": [
+        "Display pop-up advertisements",
+        "Encrypt files and demand payment",
+        "Secretly monitor user activity, capturing keystrokes, passwords, and browsing history without the user's knowledge",
+        "Spread copies of itself to other computers on the network"
+      ],
+      "answer": 2,
+      "explanation": "Spyware spies on you silently! Keyloggers (a type of spyware) record every key you press — capturing passwords, credit card numbers, and private messages. The data is quietly sent to attackers. You may not know it's there for months."
+    },
+    {
+      "q": "What is a Botnet?",
+      "options": [
+        "A network of antivirus programs working together",
+        "A collection of internet robots used for customer service",
+        "A network of infected computers controlled remotely by an attacker, used to launch coordinated attacks",
+        "A type of firewall that blocks bots"
+      ],
+      "answer": 2,
+      "explanation": "A Botnet is an army of zombie computers! Each infected device (a 'bot') is controlled remotely by an attacker (the 'bot herder'). Botnets are used to send millions of spam emails, launch DDoS attacks, or mine cryptocurrency — all using the victims' computing power."
+    },
+    {
+      "q": "What is a DDoS attack, often carried out using a Botnet?",
+      "options": [
+        "Data Deletion of Systems — erasing files from a server",
+        "Distributed Denial of Service — flooding a server with traffic from thousands of infected machines until it crashes and becomes unavailable",
+        "Direct Download of Software — stealing data from a company server",
+        "Digital Defence of Systems — a cybersecurity protection technique"
+      ],
+      "answer": 1,
+      "explanation": "DDoS = Distributed Denial of Service! Attackers command thousands of botnet machines to simultaneously flood a target website or server with requests. The server gets overwhelmed and crashes — making the service unavailable to real users. Banks and gaming platforms are common targets."
+    },
+    {
+      "q": "Which of these is an Attack Vector — a way malware enters a device?",
+      "options": [
+        "Installing an official app from the Google Play Store",
+        "Opening an email attachment from an unknown sender that contains a disguised executable file",
+        "Connecting to a trusted WiFi network at home",
+        "Shutting down the computer properly"
+      ],
+      "answer": 1,
+      "explanation": "Email attachments are one of the most common attack vectors! A malicious file disguised as a PDF, invoice, or document can execute malware when opened. Other vectors include infected USB drives, malicious websites, fake software updates, and phishing links."
+    },
+    {
+      "q": "What is a Rootkit?",
+      "options": [
+        "A tool used by developers to access the root folder of a project",
+        "Malware that hides deep in the operating system, granting attackers persistent admin-level access while remaining invisible to the user",
+        "A kit for repairing corrupted system files",
+        "A type of antivirus that scans the root directory"
+      ],
+      "answer": 1,
+      "explanation": "Rootkits are the masters of stealth! They embed themselves at the OS level, hiding their presence from antivirus tools and even the task manager. Attackers use rootkits to maintain long-term, hidden access to a system — sometimes going undetected for years."
+    },
+    {
+      "q": "How does Antivirus software detect known malware?",
+      "options": [
+        "It physically removes the hard drive and scans it with a laser",
+        "It uses a signature database — comparing files on the device against known patterns of malware code",
+        "It connects to the internet and asks a human expert",
+        "It only detects malware if the user reports it manually"
+      ],
+      "answer": 1,
+      "explanation": "Signature detection is like a fingerprint database! Every known malware has a unique code pattern (signature). Antivirus software scans files and compares them to millions of known signatures. If a match is found — quarantine! Regular updates keep the database current for new threats."
+    },
+    {
+      "q": "Why should you NEVER plug in a found USB drive of unknown origin?",
+      "options": [
+        "USB drives from unknown sources may not be compatible with your computer",
+        "Attackers deliberately leave infected USB drives in public places — plugging one in can automatically execute malware and infect your computer",
+        "USB drives slow down computers permanently",
+        "Plugging in a USB drive voids your computer warranty"
+      ],
+      "answer": 1,
+      "explanation": "The 'lost USB' trick is a real social engineering attack! Attackers leave infected USB drives in car parks, offices, and school halls knowing curious people will plug them in. Auto-run features can execute malware the moment the drive is connected. Never plug in unknown USB drives!"
+    },
+    {
+      "q": "What is the MOST important reason to keep your operating system and software updated?",
+      "options": [
+        "Updates add new emojis and themes",
+        "Updates patch security vulnerabilities that malware like worms and trojans actively exploit to infect systems",
+        "Updates make your computer run faster permanently",
+        "Updates are only necessary for gaming software"
+      ],
+      "answer": 1,
+      "explanation": "Security patches are critical! WannaCry ransomware exploited a Windows vulnerability that Microsoft had already patched — but millions of users hadn't updated. Attackers constantly hunt for unpatched systems. Keeping software updated closes the doors they use to get in."
+    },
+    {
+      "q": "What is the 3-2-1 Backup Rule — an essential defence against ransomware?",
+      "options": [
+        "Back up 3 times a day, 2 folders, 1 drive",
+        "Keep 3 copies of your data, on 2 different types of storage media, with 1 copy stored offsite or in the cloud",
+        "Use 3 passwords, 2 antiviruses, and 1 firewall",
+        "Scan your system 3 times, delete 2 threats, and report 1 to authorities"
+      ],
+      "answer": 1,
+      "explanation": "The 3-2-1 rule is the gold standard backup strategy! 3 copies of data, 2 on different media (e.g. hard drive + USB), 1 offsite or in the cloud. If ransomware encrypts your files, you restore from the clean backup — no need to pay the ransom!"
+    },
+    {
+      "q": "Should a ransomware victim always pay the ransom demanded by attackers?",
+      "options": [
+        "Yes — paying is the fastest way to recover files",
+        "No — paying does not guarantee file recovery, funds criminal activity, and encourages more attacks on others",
+        "Yes — law enforcement always recommends paying",
+        "Only pay if the ransom is under ₹10,000"
+      ],
+      "answer": 1,
+      "explanation": "Most cybersecurity experts and law enforcement advise against paying! There is no guarantee attackers will provide the decryption key. Paying funds criminal organisations and signals that attacks are profitable — encouraging more. The best defence is prevention and backups."
+    }
+  ]
+}
