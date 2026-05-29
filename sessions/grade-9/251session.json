@@ -129,6 +129,11 @@
             "title": "Inverse Kinematics Interactive Demo",
             "url": "https://www.cs.cmu.edu/~quake/robust.html",
             "icon": "🔗"
+        },
+        {
+            "title": "servo with Ultrasonic",
+            "url": "https://wokwi.com/projects/465270628959197185",
+            "icon": "🔗"
         }
     ],
     "activity": {
