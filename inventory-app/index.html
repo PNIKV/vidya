@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Tinkering Lab Inventory — Vidya STEM</title>
+  <meta name="description" content="Lab inventory audit system for Vidya STEM Tinkering Lab. Role-based access for Admins and Trainers.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ══════════════════════════════════════
+       VIEW: LOGIN
+  ═══════════════════════════════════════ -->
+  <section id="login-view" class="view active">
+    <div class="login-wrap">
+      <div class="login-brand">
+        <div class="brand-logo"><i class="fa-solid fa-boxes-stacked"></i></div>
+        <h1>Tinkering Lab</h1>
+        <p class="brand-sub">Vidya STEM Inventory System</p>
+      </div>
+      <form id="login-form" class="glass-card login-card" autocomplete="off">
+        <h2 class="form-title">Sign In</h2>
+        <p id="login-error" class="error-msg" style="display:none"></p>
+        <div class="input-group">
+          <i class="fa-solid fa-user"></i>
+          <input type="text"     id="username" placeholder="Username"  autocomplete="off"  required>
+        </div>
+        <div class="input-group">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="password" placeholder="Password"  autocomplete="off"  required>
+        </div>
+        <button type="submit" class="btn-primary" id="login-btn">
+          <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+        </button>
+      </form>
+      <p class="login-hint">Access restricted to authorised lab personnel only.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       VIEW: DASHBOARD
+  ═══════════════════════════════════════ -->
+  <section id="dashboard-view" class="view">
+    <header class="top-header">
+      <div class="header-user">
+        <p id="greeting" class="greeting">Hello</p>
+        <span id="role-badge" class="badge">ROLE</span>
+      </div>
+      <div class="header-actions">
+        <!-- Settings (admin only) -->
+        <button class="icon-btn admin-only" id="settings-nav-btn" onclick="app.showSettings()" title="Settings">
+          <i class="fa-solid fa-gear"></i>
+        </button>
+        <button class="icon-btn" id="logout-btn" title="Logout">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Admin quick-actions -->
+    <div id="admin-controls" class="admin-controls admin-only">
+      <p class="section-label">Admin Controls</p>
+      <div class="admin-btn-row">
+        <button class="admin-pill" onclick="app.showSOP()">
+          <i class="fa-solid fa-book-open"></i> SOP Guide
+        </button>
+        <button class="admin-pill" onclick="app.showHistory()">
+          <i class="fa-solid fa-clock-rotate-left"></i> Audit History
+        </button>
+        <button class="admin-pill" onclick="app.showSettings()">
+          <i class="fa-solid fa-paper-plane"></i> Telegram
+        </button>
+      </div>
+    </div>
+
+    <!-- Lab selection grid -->
+    <p class="section-label">Select Lab to Audit</p>
+    <div id="lab-cards-grid" class="lab-grid">
+      <!-- injected by app.js -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       VIEW: ENTRY TYPE SELECTION
+  ═══════════════════════════════════════ -->
+  <section id="entry-selection-view" class="view">
+    <header class="compact-header">
+      <button class="icon-btn" onclick="app.showDashboard()"><i class="fa-solid fa-chevron-left"></i></button>
+      <h2 id="entry-lab-name">Select Lab</h2>
+      <div></div>
+    </header>
+
+    <p class="section-label" style="margin-top:8px">Choose Entry Method</p>
+    <div class="entry-type-grid">
+
+      <div class="entry-card bulk-card" onclick="app.startBulkAudit()">
+        <div class="entry-icon"><i class="fa-solid fa-table-list"></i></div>
+        <h3>Bulk Entry</h3>
+        <p>Enter counts for all items in a single table. Fast and efficient for routine checks.</p>
+        <div class="entry-tags">
+          <span class="etag">📊 Excel ready</span>
+          <span class="etag">🖼️ Image ready</span>
+        </div>
+      </div>
+
+      <div class="entry-card indiv-card" onclick="app.startIndividualAudit()">
+        <div class="entry-icon"><i class="fa-solid fa-list-check"></i></div>
+        <h3>Individual Entry</h3>
+        <p>Item-by-item status check with Well / Broken / Missing options.</p>
+        <div class="entry-tags">
+          <span class="etag">📊 Excel ready</span>
+          <span class="etag">🖼️ Image ready</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       VIEW: BULK AUDIT
+  ═══════════════════════════════════════ -->
+  <section id="bulk-audit-view" class="view">
+    <header class="compact-header">
+      <button class="icon-btn" onclick="app.showEntrySelection(app.currentLabId)"><i class="fa-solid fa-chevron-left"></i></button>
+      <h2 id="bulk-audit-title">Bulk Audit</h2>
+      <div></div>
+    </header>
+
+    <p class="hint-text"><i class="fa-solid fa-circle-info"></i> Adjust counts below. Broken/Missing default to 0.</p>
+
+    <div class="bulk-scroll-wrap">
+      <table class="bulk-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Present</th>
+            <th class="col-brk">Broken</th>
+            <th class="col-miss">Missing</th>
+          </tr>
+        </thead>
+        <tbody id="bulk-table-body"></tbody>
+      </table>
+    </div>
+
+    <div class="sticky-actions">
+      <button class="btn-primary" onclick="app.submitBulkAudit()">
+        <i class="fa-solid fa-paper-plane"></i> Submit &amp; Download Report
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       VIEW: INDIVIDUAL AUDIT
+  ═══════════════════════════════════════ -->
+  <section id="indiv-audit-view" class="view">
+    <header class="compact-header">
+      <button class="icon-btn" onclick="app.showEntrySelection(app.currentLabId)"><i class="fa-solid fa-chevron-left"></i></button>
+      <h2 id="indiv-audit-title">Individual Audit</h2>
+      <div class="progress-pill">
+        <span id="audit-progress">0</span>/<span id="audit-total">0</span>
+      </div>
+    </header>
+
+    <div id="indiv-audit-container" class="audit-scroll-wrap">
+      <!-- audit item cards injected here -->
+    </div>
+
+    <div class="sticky-actions">
+      <button class="btn-primary" id="submit-indiv-btn" onclick="app.submitIndividualAudit()" disabled>
+        <i class="fa-solid fa-paper-plane"></i> Submit &amp; Download Report
+      </button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       VIEW: SOP FRAMEWORK (admin only)
+  ═══════════════════════════════════════ -->
+  <section id="sop-view" class="view">
+    <header class="compact-header">
+      <button class="icon-btn" onclick="app.showDashboard()"><i class="fa-solid fa-chevron-left"></i></button>
+      <h2>SOP Framework</h2>
+      <div></div>
+    </header>
+    <div class="content-scroll">
+      <div class="sop-content">
+
+        <div class="sop-block">
+          <h3><i class="fa-solid fa-flask" style="color:#34d399"></i> Basic Electronics Lab</h3>
+          <p>All breadboards and Arduino modules must be cleared of components after each session. Trainers conduct a visual check at the end of every class and record status via Individual Entry.</p>
+        </div>
+
+        <div class="sop-block">
+          <h3><i class="fa-solid fa-microchip" style="color:#f472b6"></i> Advanced Prototyping Lab</h3>
+          <p>3D printers and benchtop instruments require a signed logbook entry before use. Never leave running machines unattended. LiPo batteries must be stored in fireproof bags after every session.</p>
+        </div>
+
+        <div class="sop-block">
+          <h3><i class="fa-solid fa-rotate-left" style="color:#60a5fa"></i> Check-out / Check-in</h3>
+          <p>Trainers must log exact quantities given to students using <strong>Individual Entry</strong> for sensitive or high-value items. For generic consumables, <strong>Bulk Entry</strong> is permitted.</p>
+        </div>
+
+        <div class="sop-block">
+          <h3><i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b"></i> Damaged &amp; Missing Goods</h3>
+          <p>Items marked <em>Broken</em> must be physically segregated and tagged. Items marked <em>Missing</em> trigger an immediate lab search. All anomalies are auto-reported via Telegram to the Admin.</p>
+        </div>
+
+        <div class="sop-block">
+          <h3><i class="fa-solid fa-file-export" style="color:#a78bfa"></i> Export &amp; Records</h3>
+          <p>Each completed audit generates a downloadable report in your chosen format — <strong>Excel (.csv)</strong> for digital filing or <strong>Image (.png)</strong> for WhatsApp/print sharing. Audit history is retained locally.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       VIEW: AUDIT HISTORY (admin only)
+  ═══════════════════════════════════════ -->
+  <section id="history-view" class="view">
+    <header class="compact-header">
+      <button class="icon-btn" onclick="app.showDashboard()"><i class="fa-solid fa-chevron-left"></i></button>
+      <h2>Audit History</h2>
+      <div></div>
+    </header>
+    <p class="hint-text">Download each user's complete work history in your preferred format.</p>
+    <div id="history-users-list" class="history-list">
+      <!-- injected by app.js -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       VIEW: SETTINGS (admin only)
+  ═══════════════════════════════════════ -->
+  <section id="settings-view" class="view">
+    <header class="compact-header">
+      <button class="icon-btn" onclick="app.showDashboard()"><i class="fa-solid fa-chevron-left"></i></button>
+      <h2>Settings</h2>
+      <div></div>
+    </header>
+    <div class="content-scroll">
+
+      <div class="settings-section glass-card">
+        <h3 class="settings-title"><i class="fa-brands fa-telegram" style="color:#29b6f6"></i> Telegram Bot</h3>
+        <p class="settings-desc">Audit reports are automatically sent to your Telegram channel/group after each submission.</p>
+
+        <div class="input-group">
+          <i class="fa-solid fa-key"></i>
+          <input type="text" id="tg-token" placeholder="Bot Token (from @BotFather)" autocomplete="off">
+        </div>
+        <div class="input-group">
+          <i class="fa-solid fa-hashtag"></i>
+          <input type="text" id="tg-chat"  placeholder="Chat ID (e.g. -100xxxxxxxxx)" autocomplete="off">
+        </div>
+
+        <p id="settings-status" class="settings-status"></p>
+
+        <div class="settings-btn-row">
+          <button class="btn-secondary" id="tg-test-btn" onclick="app.testTelegram()">
+            <i class="fa-solid fa-vial"></i> Send Test Message
+          </button>
+          <button class="btn-primary" onclick="app.saveSettings()">
+            <i class="fa-solid fa-floppy-disk"></i> Save Settings
+          </button>
+        </div>
+      </div>
+
+      <div class="settings-section glass-card" style="margin-top:16px">
+        <h3 class="settings-title"><i class="fa-solid fa-circle-info" style="color:#60a5fa"></i> About</h3>
+        <div class="about-row"><span>System</span><strong>Vidya STEM Lab Inventory</strong></div>
+        <div class="about-row"><span>Version</span><strong>2.0.0</strong></div>
+        <div class="about-row"><span>Labs</span><strong>4 (role-filtered)</strong></div>
+        <div class="about-row"><span>Storage</span><strong>Browser LocalStorage</strong></div>
+        <div class="about-row"><span>Export</span><strong>Excel (.csv) &amp; Image (.png)</strong></div>
+      </div>
+
+    </div>
+  </section>
+
+</div><!-- /#app -->
+
+<!-- ══════════════════════════════════════
+     SCRIPTS  (load order matters)
+═══════════════════════════════════════ -->
+<script src="data/labs.js"></script>
+<script src="js/telegram.js"></script>
+<script src="js/export.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
