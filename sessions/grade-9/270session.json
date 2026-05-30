@@ -1,0 +1,213 @@
+{
+    "_meta": {
+        "version": "1.0",
+        "purpose": "Startup pitch + final showcase session for student projects",
+        "notes": "Capstone session focused on communication, entrepreneurship mindset, and presentation of working prototypes or ideas"
+    },
+    "_instructions": {
+        "folder_structure": "sessions/session-16/",
+        "slides_folder": "sessions/session-16/slides/",
+        "images_folder": "sessions/session-16/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-16",
+    "number": 16,
+    "title": "Startup Pitch + Showcase",
+    "subtitle": "turn ideas into impact and present like founders",
+    "date": "Session 16",
+    "duration": "1 Hour",
+    "phase": "Entrepreneurship Showcase",
+    "level": "Beginner",
+    "color": "#E91E63",
+    "icon": "🚀",
+    "tags": [
+        "Startup",
+        "Pitching",
+        "Entrepreneurship",
+        "Presentation",
+        "Innovation"
+    ],
+    "overview": "This final session is a startup pitch and project showcase where students present their ideas or prototypes like real entrepreneurs. They explain the problem, solution, and impact of their projects while practicing confidence, communication, and storytelling.",
+    "grades": [
+        9
+    ],
+    "learningOutcomes": [
+        "Present a startup idea clearly and confidently",
+        "Explain problem, solution, and value proposition",
+        "Demonstrate teamwork and project outcomes",
+        "Understand basics of entrepreneurship pitching",
+        "Develop storytelling and communication skills"
+    ],
+    "slides": {
+        "pdf": "sessions/session-16/slides.pdf",
+        "flow": [
+            "What is a Startup Pitch?",
+            "Structure of a good pitch",
+            "Problem → Solution → Impact model",
+            "Introducing your team",
+            "Demo or prototype walkthrough",
+            "Handling questions (Q&A)",
+            "Judging criteria overview",
+            "Showcase celebration"
+        ]
+    },
+    "images": {
+        "_note": "Add images of pitch events, student presentations, startup posters, and demo setups.",
+        "gallery": [
+            {
+                "file": "data/student-pitch-stage.jpg",
+                "caption": "Students presenting startup ideas on stage",
+                "category": "Pitching"
+            },
+            {
+                "file": "data/startup-poster.jpg",
+                "caption": "Startup idea posters and visuals",
+                "category": "Ideation"
+            },
+            {
+                "file": "data/demo-table-setup.jpg",
+                "caption": "Live demo stations for prototypes",
+                "category": "Demo"
+            },
+            {
+                "file": "data/team-presentation.jpg",
+                "caption": "Team presenting their project together",
+                "category": "Collaboration"
+            },
+            {
+                "file": "data/judges-feedback.jpg",
+                "caption": "Feedback from mentors and judges",
+                "category": "Evaluation"
+            },
+            {
+                "file": "data/showcase-celebration.jpg",
+                "caption": "Final celebration after presentations",
+                "category": "Celebration"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is a startup pitch?",
+        "Problem identification",
+        "Solution design",
+        "Value proposition",
+        "Target audience",
+        "Basic business thinking",
+        "Product demo or prototype",
+        "Q&A handling skills"
+    ],
+    "pitchStructure": [
+        "Hook: Grab attention in 10 seconds",
+        "Problem: What real issue are you solving?",
+        "Solution: How does your idea solve it?",
+        "Product Demo: Show your project",
+        "Impact: Why does it matter?",
+        "Team: Who built it?",
+        "Closing: Strong final statement"
+    ],
+    "judgingCriteria": [
+        {
+            "criteria": "Clarity of Idea",
+            "description": "How clearly the problem and solution are explained"
+        },
+        {
+            "criteria": "Creativity",
+            "description": "Originality and innovation of the idea"
+        },
+        {
+            "criteria": "Execution",
+            "description": "How well the prototype or concept is built"
+        },
+        {
+            "criteria": "Presentation Skills",
+            "description": "Confidence, communication, and storytelling"
+        },
+        {
+            "criteria": "Teamwork",
+            "description": "Collaboration and role distribution"
+        }
+    ],
+    "activity": {
+        "title": "Live Startup Pitch Showcase",
+        "objective": "Present student projects like real startup founders",
+        "steps": [
+            "Each team prepares a 3–5 minute pitch",
+            "Introduce team and problem statement",
+            "Explain solution and demonstrate project",
+            "Present impact and future improvements",
+            "Answer questions from audience/judges",
+            "Receive feedback and scores",
+            "Celebrate completion of program"
+        ],
+        "output": "Final startup pitch presentation + project showcase"
+    },
+    "assessment": {
+        "rubric": {
+            "levels": [
+                "Beginner",
+                "Good",
+                "Excellent"
+            ],
+            "criteria": [
+                "Problem understanding",
+                "Solution clarity",
+                "Innovation",
+                "Presentation confidence",
+                "Team coordination"
+            ]
+        },
+        "quiz": [
+            {
+                "q": "What is the main goal of a startup pitch?",
+                "options": [
+                    "To explain an idea clearly and attract interest",
+                    "To write long code",
+                    "To avoid presenting",
+                    "To memorize slides"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What should a good pitch start with?",
+                "options": [
+                    "A strong hook or introduction",
+                    "Random facts",
+                    "Code explanation",
+                    "Silent pause"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What is most important in a pitch?",
+                "options": [
+                    "Clear communication of problem and solution",
+                    "Speaking very fast",
+                    "Using complex jargon",
+                    "Skipping demo"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What does a demo show?",
+                "options": [
+                    "How the product works",
+                    "Only the logo",
+                    "Team attendance",
+                    "Unrelated content"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "Why is teamwork important in a pitch?",
+                "options": [
+                    "It shows collaboration and shared responsibility",
+                    "It makes it longer",
+                    "It replaces the idea",
+                    "It avoids speaking"
+                ],
+                "answer": 0
+            }
+        ]
+    }
+}

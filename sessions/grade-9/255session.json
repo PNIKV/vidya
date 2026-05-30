@@ -1,0 +1,257 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-3/",
+        "slides_folder": "sessions/session-3/slides/",
+        "images_folder": "sessions/session-3/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-3",
+    "number": 3,
+    "title": "Network Basics",
+    "subtitle": "connecting the digital world!",
+    "date": "Session 03",
+    "duration": "1 Hour",
+    "phase": "Technology",
+    "color": "#2196F3",
+    "icon": "🌐",
+    "tags": [
+        "Networking",
+        "Internet",
+        "Technology",
+        "Communication"
+    ],
+    "overview": "This session introduces students to the basics of computer networks, how devices communicate, and how the internet works. Students explore concepts like LAN, WAN, routers, Wi-Fi, IP addresses, and data transfer through fun activities and real-world examples.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-3/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from networking demos, router setup activities, cable identification, and internet communication examples.",
+        "gallery": [
+            {
+                "file": "data/network-map.jpg",
+                "_placeholder": "ADD: Photo of network diagram or classroom activity",
+                "caption": "Networks connect devices to share information",
+                "category": "Concept"
+            },
+            {
+                "file": "data/router.jpg",
+                "_placeholder": "ADD: Photo of Wi-Fi router",
+                "caption": "Routers help devices communicate with the internet",
+                "category": "Hardware"
+            },
+            {
+                "file": "data/lan-activity.jpg",
+                "_placeholder": "ADD: Students building a small network",
+                "caption": "LAN connects devices in a small area",
+                "category": "Activity"
+            },
+            {
+                "file": "data/internet-cloud.jpg",
+                "_placeholder": "ADD: Internet/cloud communication illustration",
+                "caption": "The internet is a giant network of networks",
+                "category": "Internet"
+            },
+            {
+                "file": "data/network-cables.jpg",
+                "_placeholder": "ADD: Ethernet cable and connector photo",
+                "caption": "Ethernet cables transfer data between devices",
+                "category": "Components"
+            },
+            {
+                "file": "data/wifi-signal.jpg",
+                "_placeholder": "ADD: Wi-Fi signal demo photo",
+                "caption": "Wi-Fi enables wireless communication",
+                "category": "Wireless"
+            },
+            {
+                "file": "data/server-client.jpg",
+                "_placeholder": "ADD: Server-client communication illustration",
+                "caption": "Servers provide data and services to client devices",
+                "category": "Communication"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is a Network? — Devices connected to share data",
+        "LAN (Local Area Network) — Small networks like schools or homes",
+        "WAN (Wide Area Network) — Large networks across cities and countries",
+        "Internet — A global network connecting billions of devices",
+        "Router — Directs data traffic between devices",
+        "Wi-Fi — Wireless communication technology",
+        "IP Address — Unique identity of a device on a network",
+        "Server & Client — Devices that provide and receive information"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is a Computer Network?",
+            "videoId": "qiQR5rTSshw",
+            "_note": "Replace videoId with actual YouTube video ID",
+            "desc": "Simple explanation of computer networks for beginners."
+        },
+        {
+            "title": "How the Internet Works",
+            "videoId": "7_LPdttKXPc",
+            "desc": "Learn how data travels across the internet."
+        },
+        {
+            "title": "LAN vs WAN Explained",
+            "videoId": "e0KxjYKV8sY",
+            "desc": "Understanding different types of networks."
+        },
+        {
+            "title": "What is Wi-Fi?",
+            "videoId": "ZhEf7e4kopM",
+            "desc": "How wireless communication works in daily life."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Cisco Networking Basics",
+            "url": "https://www.netacad.com/courses/networking/networking-basics",
+            "icon": "🔗"
+        },
+        {
+            "title": "How Stuff Works - Internet",
+            "url": "https://computer.howstuffworks.com/internet/basics/internet.htm",
+            "icon": "🔗"
+        },
+        {
+            "title": "Internet Speed Test",
+            "url": "https://www.speedtest.net/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Build a Human Network",
+        "parts": [
+            "String or rope",
+            "Name tags",
+            "Paper message cards",
+            "Markers"
+        ],
+        "steps": [
+            "Assign students as computers, routers, and servers",
+            "Connect students using string to represent network cables",
+            "Pass paper messages between devices",
+            "Demonstrate how routers direct traffic",
+            "Show what happens when a connection breaks",
+            "Discuss how the internet connects the world"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is a computer network?",
+            "options": [
+                "A type of game",
+                "Devices connected to share information",
+                "A battery system",
+                "A robot"
+            ],
+            "answer": 1,
+            "explanation": "A network connects devices so they can communicate and share data."
+        },
+        {
+            "q": "What does LAN stand for?",
+            "options": [
+                "Large Area Network",
+                "Local Area Network",
+                "Light Access Node",
+                "Long Area Node"
+            ],
+            "answer": 1,
+            "explanation": "LAN means Local Area Network — used in homes, schools, and offices."
+        },
+        {
+            "q": "What does WAN stand for?",
+            "options": [
+                "Wide Area Network",
+                "Wireless Access Node",
+                "World Application Network",
+                "Web Area Network"
+            ],
+            "answer": 0,
+            "explanation": "WAN connects devices across large distances like cities or countries."
+        },
+        {
+            "q": "What device connects your home network to the internet?",
+            "options": [
+                "Speaker",
+                "Printer",
+                "Router",
+                "Monitor"
+            ],
+            "answer": 2,
+            "explanation": "Routers manage and direct internet traffic between devices."
+        },
+        {
+            "q": "What is Wi-Fi?",
+            "options": [
+                "A wired connection only",
+                "Wireless internet communication",
+                "A battery type",
+                "A mobile app"
+            ],
+            "answer": 1,
+            "explanation": "Wi-Fi allows devices to connect wirelessly to a network."
+        },
+        {
+            "q": "What is the internet?",
+            "options": [
+                "A single computer",
+                "A global network of connected devices",
+                "A gaming console",
+                "A type of cable"
+            ],
+            "answer": 1,
+            "explanation": "The internet is a worldwide system of interconnected networks."
+        },
+        {
+            "q": "What is an IP address?",
+            "options": [
+                "A music file",
+                "A unique identity for a device on a network",
+                "A Wi-Fi password",
+                "A website logo"
+            ],
+            "answer": 1,
+            "explanation": "Every device on a network has a unique IP address."
+        },
+        {
+            "q": "What does a server do?",
+            "options": [
+                "Provides data and services",
+                "Only plays videos",
+                "Acts like a battery",
+                "Disconnects devices"
+            ],
+            "answer": 0,
+            "explanation": "Servers provide information and services to other devices called clients."
+        },
+        {
+            "q": "Which of these is an example of a LAN?",
+            "options": [
+                "School computer lab",
+                "Entire internet",
+                "Satellite system",
+                "International network"
+            ],
+            "answer": 0,
+            "explanation": "A school computer lab is a small local network."
+        },
+        {
+            "q": "Why are networks important?",
+            "options": [
+                "They help devices communicate and share information",
+                "They stop communication",
+                "They only store games",
+                "They replace electricity"
+            ],
+            "answer": 0,
+            "explanation": "Networks allow devices to exchange information quickly and efficiently."
+        }
+    ]
+}

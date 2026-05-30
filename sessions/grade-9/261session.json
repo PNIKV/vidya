@@ -1,0 +1,258 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-9/",
+        "slides_folder": "sessions/session-9/slides/",
+        "images_folder": "sessions/session-9/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-9",
+    "number": 9,
+    "title": "Community Project: TEST",
+    "subtitle": "think, evaluate, solve, transform!",
+    "date": "Session 09",
+    "duration": "1 Hour",
+    "phase": "Project & Evaluation",
+    "color": "#E91E63",
+    "icon": "🧪",
+    "tags": [
+        "Community Project",
+        "Testing",
+        "Innovation",
+        "Evaluation"
+    ],
+    "overview": "This session focuses on testing and improving community project ideas using the TEST framework — Think, Evaluate, Solve, Transform. Students learn how to analyze solutions, gather feedback, improve ideas, and measure impact while working collaboratively on real-world community challenges.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-9/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos of project testing activities, surveys, presentations, teamwork, and prototype demonstrations.",
+        "gallery": [
+            {
+                "file": "data/project-testing.jpg",
+                "_placeholder": "ADD: Students testing project prototype",
+                "caption": "Testing helps improve ideas before final implementation",
+                "category": "Testing"
+            },
+            {
+                "file": "data/community-feedback.jpg",
+                "_placeholder": "ADD: Students collecting feedback",
+                "caption": "Feedback helps projects become more useful",
+                "category": "Evaluation"
+            },
+            {
+                "file": "data/team-analysis.jpg",
+                "_placeholder": "ADD: Team discussion and analysis activity",
+                "caption": "Critical thinking improves project outcomes",
+                "category": "Teamwork"
+            },
+            {
+                "file": "data/problem-solving-session.jpg",
+                "_placeholder": "ADD: Problem-solving brainstorming activity",
+                "caption": "Students solving challenges together",
+                "category": "Innovation"
+            },
+            {
+                "file": "data/project-presentation.jpg",
+                "_placeholder": "ADD: Community project presentation photo",
+                "caption": "Presenting solutions builds confidence and leadership",
+                "category": "Presentation"
+            },
+            {
+                "file": "data/prototype-demo.jpg",
+                "_placeholder": "ADD: Prototype or model demonstration",
+                "caption": "Prototypes help test ideas quickly",
+                "category": "Prototype"
+            },
+            {
+                "file": "data/community-impact.jpg",
+                "_placeholder": "ADD: Community improvement or impact image",
+                "caption": "Small solutions can create meaningful community impact",
+                "category": "Impact"
+            }
+        ]
+    },
+    "keyTopics": [
+        "T — Think: Understand the problem deeply",
+        "E — Evaluate: Analyze solutions and gather feedback",
+        "S — Solve: Improve ideas and create better solutions",
+        "T — Transform: Create positive community impact",
+        "Prototype Testing — Trying ideas before final launch",
+        "Feedback Collection — Listening to users and communities",
+        "Problem Analysis — Identifying strengths and weaknesses",
+        "Continuous Improvement — Learning and improving over time"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Why Testing Ideas is Important",
+            "videoId": "9M4XKi25I2M",
+            "_note": "Replace videoId with actual YouTube video ID",
+            "desc": "Understanding why testing and feedback improve projects."
+        },
+        {
+            "title": "Design Thinking and Prototyping",
+            "videoId": "a7sEoEvT8l8",
+            "desc": "Learn how prototypes help solve problems creatively."
+        },
+        {
+            "title": "How Feedback Improves Innovation",
+            "videoId": "H14bBuluwB8",
+            "desc": "The importance of feedback in successful projects."
+        },
+        {
+            "title": "Young Changemakers Solving Problems",
+            "videoId": "nKIu9yen5nc",
+            "desc": "Examples of students creating positive community impact."
+        }
+    ],
+    "resources": [
+        {
+            "title": "IDEO Design Thinking",
+            "url": "https://designthinking.ideo.com/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Canva Presentation Templates",
+            "url": "https://www.canva.com/presentations/templates/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Google Forms for Feedback",
+            "url": "https://forms.google.com/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Test and Improve a Community Solution",
+        "parts": [
+            "Notebook",
+            "Markers",
+            "Prototype or sketch",
+            "Feedback forms",
+            "Team members"
+        ],
+        "steps": [
+            "Choose a community solution idea",
+            "Create a simple prototype or presentation",
+            "Share the idea with classmates or teachers",
+            "Collect feedback and suggestions",
+            "Identify improvements and update the solution",
+            "Present the improved final version to the class"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does the first 'T' in TEST stand for?",
+            "options": [
+                "Think",
+                "Transfer",
+                "Teach",
+                "Type"
+            ],
+            "answer": 0,
+            "explanation": "Think means understanding the problem clearly before creating solutions."
+        },
+        {
+            "q": "Why is testing important in projects?",
+            "options": [
+                "It helps improve ideas and find mistakes",
+                "It wastes time",
+                "It avoids teamwork",
+                "It removes creativity"
+            ],
+            "answer": 0,
+            "explanation": "Testing helps identify problems and improve solutions before final use."
+        },
+        {
+            "q": "What does feedback help students do?",
+            "options": [
+                "Improve projects and ideas",
+                "Ignore users",
+                "Avoid changes",
+                "Stop learning"
+            ],
+            "answer": 0,
+            "explanation": "Feedback provides useful suggestions for improvement."
+        },
+        {
+            "q": "What is a prototype?",
+            "options": [
+                "A first version or model of an idea",
+                "A finished product only",
+                "A school exam",
+                "A type of website"
+            ],
+            "answer": 0,
+            "explanation": "A prototype is an early version used for testing and improvement."
+        },
+        {
+            "q": "What does the 'E' in TEST stand for?",
+            "options": [
+                "Evaluate",
+                "Erase",
+                "Explore",
+                "Execute"
+            ],
+            "answer": 0,
+            "explanation": "Evaluate means analyzing ideas and gathering feedback."
+        },
+        {
+            "q": "Why should teams collect community feedback?",
+            "options": [
+                "To understand user needs better",
+                "To avoid communication",
+                "To stop improvement",
+                "To ignore problems"
+            ],
+            "answer": 0,
+            "explanation": "Feedback helps ensure solutions are useful and meaningful."
+        },
+        {
+            "q": "What does the 'S' in TEST stand for?",
+            "options": [
+                "Study",
+                "Solve",
+                "Search",
+                "Simplify"
+            ],
+            "answer": 1,
+            "explanation": "Solve means improving and implementing better solutions."
+        },
+        {
+            "q": "What does the final 'T' in TEST stand for?",
+            "options": [
+                "Train",
+                "Transform",
+                "Talk",
+                "Track"
+            ],
+            "answer": 1,
+            "explanation": "Transform means creating positive impact through improved solutions."
+        },
+        {
+            "q": "Which skill is important during project testing?",
+            "options": [
+                "Critical thinking",
+                "Communication",
+                "Problem-solving",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Successful projects require communication, analysis, and teamwork."
+        },
+        {
+            "q": "What is the goal of a community project?",
+            "options": [
+                "Create positive change and solve real problems",
+                "Avoid teamwork",
+                "Only win competitions",
+                "Ignore community needs"
+            ],
+            "answer": 0,
+            "explanation": "Community projects aim to improve lives and solve meaningful challenges."
+        }
+    ]
+}

@@ -1,0 +1,258 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-5/",
+        "slides_folder": "sessions/session-5/slides/",
+        "images_folder": "sessions/session-5/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-5",
+    "number": 5,
+    "title": "AI vs Non-AI Debate",
+    "subtitle": "humans, machines & the future!",
+    "date": "Session 05",
+    "duration": "1 Hour",
+    "phase": "Critical Thinking",
+    "color": "#673AB7",
+    "icon": "🤖",
+    "tags": [
+        "Artificial Intelligence",
+        "Debate",
+        "Technology",
+        "Critical Thinking"
+    ],
+    "overview": "This session introduces students to Artificial Intelligence (AI), how it differs from traditional non-AI systems, and the impact of AI on society. Through debates and activities, students explore the benefits, challenges, ethics, and future possibilities of AI technologies.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-5/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from classroom debates, AI demonstrations, teamwork activities, and technology discussions.",
+        "gallery": [
+            {
+                "file": "data/ai-robot.jpg",
+                "_placeholder": "ADD: AI robot or smart assistant image",
+                "caption": "Artificial Intelligence enables machines to learn and make decisions",
+                "category": "AI"
+            },
+            {
+                "file": "data/classroom-debate.jpg",
+                "_placeholder": "ADD: Students participating in debate",
+                "caption": "Students discussing the future of AI and humans",
+                "category": "Debate"
+            },
+            {
+                "file": "data/smartphone-ai.jpg",
+                "_placeholder": "ADD: Smartphone AI assistant example",
+                "caption": "AI is already part of our daily lives",
+                "category": "Technology"
+            },
+            {
+                "file": "data/human-vs-machine.jpg",
+                "_placeholder": "ADD: Human vs machine illustration",
+                "caption": "Comparing human intelligence and machine intelligence",
+                "category": "Concept"
+            },
+            {
+                "file": "data/ai-healthcare.jpg",
+                "_placeholder": "ADD: AI in healthcare or robotics example",
+                "caption": "AI helps doctors, businesses, and communities",
+                "category": "Applications"
+            },
+            {
+                "file": "data/team-discussion.jpg",
+                "_placeholder": "ADD: Group discussion activity photo",
+                "caption": "Critical thinking helps students analyze technology responsibly",
+                "category": "Discussion"
+            },
+            {
+                "file": "data/future-tech.jpg",
+                "_placeholder": "ADD: Future technology illustration",
+                "caption": "The future may combine human creativity with AI power",
+                "category": "Future"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is Artificial Intelligence (AI)?",
+        "AI vs Non-AI Systems — Learning vs Fixed Programming",
+        "Examples of AI — Chatbots, Self-driving Cars, Smart Assistants",
+        "Examples of Non-AI — Calculator, Basic Machines, Timers",
+        "Advantages of AI — Speed, Automation, Data Analysis",
+        "Challenges of AI — Privacy, Bias, Job Impact",
+        "Human Creativity vs Machine Intelligence",
+        "Ethics & Responsible Use of AI"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is Artificial Intelligence?",
+            "videoId": "2ePf9rue1Ao",
+            "_note": "Replace videoId with actual YouTube video ID",
+            "desc": "A beginner-friendly introduction to AI and machine learning."
+        },
+        {
+            "title": "AI vs Human Intelligence",
+            "videoId": "mJeNghZXtMo",
+            "desc": "Understanding the differences between human thinking and AI systems."
+        },
+        {
+            "title": "How AI is Changing the World",
+            "videoId": "ad79nYk2keg",
+            "desc": "Examples of AI applications in healthcare, education, and daily life."
+        },
+        {
+            "title": "Future of Artificial Intelligence",
+            "videoId": "5dZ_lvDgevk",
+            "desc": "Exploring future opportunities and challenges of AI."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Elements of AI",
+            "url": "https://www.elementsofai.com/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Google AI for Everyone",
+            "url": "https://ai.google/education/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Machine Learning for Kids",
+            "url": "https://machinelearningforkids.co.uk/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "AI vs Non-AI Classroom Debate",
+        "parts": [
+            "Chart paper",
+            "Markers",
+            "Debate cards",
+            "Notebook",
+            "Team members"
+        ],
+        "steps": [
+            "Divide students into AI and Non-AI debate teams",
+            "Research examples of AI and non-AI systems",
+            "List benefits and challenges of both approaches",
+            "Prepare arguments and supporting examples",
+            "Conduct a structured classroom debate",
+            "Discuss responsible and ethical use of technology"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does AI stand for?",
+            "options": [
+                "Automatic Internet",
+                "Artificial Intelligence",
+                "Advanced Information",
+                "Applied Innovation"
+            ],
+            "answer": 1,
+            "explanation": "AI stands for Artificial Intelligence — machines designed to mimic human intelligence."
+        },
+        {
+            "q": "Which of these is an example of AI?",
+            "options": [
+                "Calculator",
+                "Smart voice assistant",
+                "Simple flashlight",
+                "Mechanical clock"
+            ],
+            "answer": 1,
+            "explanation": "Smart assistants use AI to understand speech and answer questions."
+        },
+        {
+            "q": "What is a non-AI system?",
+            "options": [
+                "A machine that learns automatically",
+                "A fixed-program system that follows exact instructions",
+                "A robot with emotions",
+                "A self-driving car"
+            ],
+            "answer": 1,
+            "explanation": "Non-AI systems follow pre-programmed rules without learning."
+        },
+        {
+            "q": "Which is a major strength of AI?",
+            "options": [
+                "It gets tired quickly",
+                "It can process large amounts of data quickly",
+                "It avoids calculations",
+                "It only works offline"
+            ],
+            "answer": 1,
+            "explanation": "AI systems can analyze huge amounts of data very fast."
+        },
+        {
+            "q": "Which ability is strongest in humans?",
+            "options": [
+                "Emotions and creativity",
+                "Infinite memory",
+                "24-hour nonstop work",
+                "Instant calculations only"
+            ],
+            "answer": 0,
+            "explanation": "Humans excel in creativity, emotions, empathy, and imagination."
+        },
+        {
+            "q": "Which is an example of a non-AI device?",
+            "options": [
+                "Basic calculator",
+                "Chatbot",
+                "Face recognition system",
+                "Recommendation engine"
+            ],
+            "answer": 0,
+            "explanation": "A calculator follows fixed instructions and does not learn."
+        },
+        {
+            "q": "What is one concern about AI?",
+            "options": [
+                "Privacy and misuse of data",
+                "Too much creativity",
+                "Lack of electricity only",
+                "Slow typing speed"
+            ],
+            "answer": 0,
+            "explanation": "AI systems may create privacy and ethical concerns if misused."
+        },
+        {
+            "q": "Why is ethical AI important?",
+            "options": [
+                "To ensure fairness and responsible use",
+                "To stop all technology",
+                "To remove creativity",
+                "To avoid learning"
+            ],
+            "answer": 0,
+            "explanation": "Ethical AI helps ensure technology benefits society fairly and safely."
+        },
+        {
+            "q": "Can AI completely replace humans?",
+            "options": [
+                "Yes, in every way",
+                "No, humans still provide creativity and emotions",
+                "Only in sports",
+                "Only in schools"
+            ],
+            "answer": 1,
+            "explanation": "AI can assist humans, but human creativity, empathy, and judgment remain important."
+        },
+        {
+            "q": "What is the purpose of a debate?",
+            "options": [
+                "To explore different viewpoints and think critically",
+                "To avoid discussion",
+                "To memorize answers only",
+                "To stop teamwork"
+            ],
+            "answer": 0,
+            "explanation": "Debates encourage critical thinking, communication, and understanding multiple perspectives."
+        }
+    ]
+}

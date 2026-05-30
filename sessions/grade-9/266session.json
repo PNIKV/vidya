@@ -1,0 +1,221 @@
+{
+    "_meta": {
+        "version": "2.0",
+        "status": "polished",
+        "purpose": "curriculum-ready lesson schema for web development beginners",
+        "improvements": [
+            "Added structured documentation blocks",
+            "Improved learning clarity and progression",
+            "Standardized quiz format consistency",
+            "Separated code examples into reusable learning units",
+            "Improved metadata for LMS integration"
+        ]
+    },
+    "_documentation": {
+        "how_to_use": "This JSON represents a structured lesson module for teaching JavaScript basics in a classroom or LMS system.",
+        "sections_explained": {
+            "_instructions": "File/folder structure for assets (slides, images, PDFs)",
+            "learningOutcomes": "Measurable student skills after completion",
+            "slides.flow": "Recommended teaching sequence",
+            "codeExamples": "Runnable JavaScript snippets for classroom demos",
+            "quiz": "Assessment questions grouped by difficulty"
+        },
+        "asset_guidelines": {
+            "images": "Use real screenshots or diagrams (no placeholders in production)",
+            "slides": "Export as slide-01.jpg, slide-02.jpg...",
+            "pdf": "Optional compiled slide deck for offline viewing"
+        }
+    },
+    "_instructions": {
+        "folder_structure": "sessions/session-12/",
+        "slides_folder": "sessions/session-12/slides/",
+        "images_folder": "sessions/session-12/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-12",
+    "number": 12,
+    "title": "JavaScript Introduction",
+    "subtitle": "bringing websites to life with interactivity",
+    "date": "Session 12",
+    "duration": "1 Hour",
+    "phase": "Web Development",
+    "level": "Beginner",
+    "color": "#F7DF1E",
+    "icon": "⚡",
+    "tags": [
+        "JavaScript",
+        "Web Development",
+        "Programming Basics",
+        "Interactivity"
+    ],
+    "overview": "This session introduces JavaScript, the programming language of the web. Students learn how JavaScript enables interactivity in websites through variables, events, and simple DOM manipulation.",
+    "grades": [
+        9
+    ],
+    "learningOutcomes": [
+        "Define JavaScript and its role in web development",
+        "Differentiate HTML, CSS, and JavaScript responsibilities",
+        "Use variables (let, const) to store data",
+        "Implement simple user interactions (alerts, clicks)",
+        "Manipulate basic DOM elements dynamically"
+    ],
+    "slides": {
+        "pdf": "sessions/session-12/slides.pdf",
+        "flow": [
+            "Introduction: What is JavaScript?",
+            "Why JavaScript matters in modern web apps",
+            "How JavaScript connects with HTML",
+            "Variables and data types",
+            "Functions and basic logic",
+            "Events and user interaction",
+            "DOM manipulation basics",
+            "Mini project walkthrough"
+        ]
+    },
+    "images": {
+        "_note": "Replace placeholders with real UI screenshots, browser outputs, and code visuals.",
+        "gallery": [
+            {
+                "file": "data/js-browser-runtime.jpg",
+                "caption": "JavaScript runs inside the browser to add interactivity",
+                "category": "Concept"
+            },
+            {
+                "file": "data/js-syntax-example.jpg",
+                "caption": "Basic JavaScript syntax structure",
+                "category": "Code"
+            },
+            {
+                "file": "data/js-button-event.jpg",
+                "caption": "User interactions trigger JavaScript events",
+                "category": "Events"
+            },
+            {
+                "file": "data/dom-update-example.jpg",
+                "caption": "DOM manipulation updates webpage content dynamically",
+                "category": "DOM"
+            },
+            {
+                "file": "data/student-js-practice.jpg",
+                "caption": "Students practicing JavaScript coding",
+                "category": "Learning"
+            },
+            {
+                "file": "data/interactive-web-demo.jpg",
+                "caption": "Interactive web pages built using JavaScript",
+                "category": "Project"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is JavaScript?",
+        "Role of JavaScript in web development",
+        "Embedding JavaScript in HTML",
+        "Variables (let, const)",
+        "Data types (string, number, boolean)",
+        "Functions and logic basics",
+        "Events (click, input, load)",
+        "DOM (Document Object Model) fundamentals"
+    ],
+    "codeExamples": [
+        {
+            "title": "Basic Alert Example",
+            "language": "javascript",
+            "code": "alert('Hello, JavaScript!');",
+            "explanation": "Displays a popup message in the browser"
+        },
+        {
+            "title": "Variables Example",
+            "language": "javascript",
+            "code": "let student = 'Alex';\nconsole.log(student);",
+            "explanation": "Stores and prints a value using console.log"
+        },
+        {
+            "title": "Click Event Example",
+            "language": "javascript",
+            "code": "document.getElementById('btn').addEventListener('click', function () {\n  alert('Button clicked!');\n});",
+            "explanation": "Runs code when a button is clicked"
+        }
+    ],
+    "assessment": {
+        "format": "MCQ",
+        "difficulty_levels": [
+            "easy",
+            "medium"
+        ],
+        "quiz": {
+            "easy": [
+                {
+                    "q": "What is JavaScript mainly used for?",
+                    "options": [
+                        "Making websites interactive",
+                        "Styling websites",
+                        "Structuring HTML",
+                        "Printing documents"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "q": "Where does JavaScript run?",
+                    "options": [
+                        "Browser",
+                        "Printer",
+                        "Keyboard",
+                        "Router"
+                    ],
+                    "answer": 0
+                }
+            ],
+            "medium": [
+                {
+                    "q": "What does DOM stand for?",
+                    "options": [
+                        "Document Object Model",
+                        "Data Output Machine",
+                        "Digital Order Map",
+                        "Design Object Module"
+                    ],
+                    "answer": 0
+                },
+                {
+                    "q": "Which keyword is used to declare a variable?",
+                    "options": [
+                        "let",
+                        "style",
+                        "class",
+                        "html"
+                    ],
+                    "answer": 0
+                }
+            ]
+        }
+    },
+    "activity": {
+        "title": "Build Your First Interactive Web Page",
+        "objective": "Create a simple webpage that responds to user interaction using JavaScript",
+        "steps": [
+            "Create an HTML page with a button",
+            "Link a JavaScript file",
+            "Add a click event listener",
+            "Show an alert on button click",
+            "Change text content dynamically",
+            "Experiment with console.log outputs"
+        ],
+        "output": "A fully functional interactive webpage using JavaScript"
+    },
+    "resources": [
+        {
+            "title": "MDN JavaScript Guide",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+        },
+        {
+            "title": "JavaScript Info",
+            "url": "https://javascript.info/"
+        },
+        {
+            "title": "W3Schools JavaScript Tutorial",
+            "url": "https://www.w3schools.com/js/"
+        }
+    ]
+}

@@ -1,0 +1,228 @@
+{
+    "_meta": {
+        "version": "1.0",
+        "notes": "JavaScript Intro session designed for beginner web development learners"
+    },
+    "_instructions": {
+        "folder_structure": "sessions/session-12/",
+        "slides_folder": "sessions/session-12/slides/",
+        "images_folder": "sessions/session-12/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-12",
+    "number": 12,
+    "title": "JavaScript Intro",
+    "subtitle": "make websites come alive!",
+    "date": "Session 12",
+    "duration": "1 Hour",
+    "phase": "Web Development",
+    "level": "Beginner",
+    "color": "#F7DF1E",
+    "icon": "⚡",
+    "tags": [
+        "JavaScript",
+        "Programming",
+        "Web Development",
+        "Interactivity"
+    ],
+    "overview": "This session introduces JavaScript, the programming language of the web. Students learn how JavaScript adds interactivity to websites such as buttons, alerts, simple logic, and dynamic content updates.",
+    "grades": [
+        9
+    ],
+    "learningOutcomes": [
+        "Understand what JavaScript is and why it is used",
+        "Write basic JavaScript syntax",
+        "Use variables to store data",
+        "Create simple interactions like alerts and prompts",
+        "Understand how JavaScript connects with HTML"
+    ],
+    "slides": {
+        "pdf": "sessions/session-12/slides.pdf",
+        "flow": [
+            "What is JavaScript?",
+            "Why JavaScript is important",
+            "Adding JavaScript to HTML",
+            "Variables and data types",
+            "Basic functions and events",
+            "Simple DOM interaction",
+            "Mini interactive example"
+        ]
+    },
+    "images": {
+        "_note": "Add screenshots of code editor, browser output, and interactive UI examples.",
+        "gallery": [
+            {
+                "file": "data/js-browser-output.jpg",
+                "caption": "JavaScript runs in the browser to make pages interactive",
+                "category": "Concept"
+            },
+            {
+                "file": "data/js-code-example.jpg",
+                "caption": "Basic JavaScript syntax example",
+                "category": "Code"
+            },
+            {
+                "file": "data/button-click-event.jpg",
+                "caption": "Buttons can trigger JavaScript events",
+                "category": "Events"
+            },
+            {
+                "file": "data/dom-manipulation.jpg",
+                "caption": "JavaScript can change HTML content dynamically",
+                "category": "DOM"
+            },
+            {
+                "file": "data/student-coding-js.jpg",
+                "caption": "Students practicing JavaScript coding",
+                "category": "Learning"
+            },
+            {
+                "file": "data/interactive-webpage.jpg",
+                "caption": "Interactive web pages created using JavaScript",
+                "category": "Project"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is JavaScript?",
+        "JavaScript vs HTML vs CSS",
+        "Adding JavaScript to a webpage",
+        "Variables (let, const)",
+        "Data types (string, number, boolean)",
+        "Basic functions",
+        "Events (click, input)",
+        "DOM basics (document object model)"
+    ],
+    "codeExamples": [
+        {
+            "title": "Hello World Alert",
+            "code": "alert('Hello, world!');",
+            "explanation": "Displays a popup message in the browser"
+        },
+        {
+            "title": "Variable Example",
+            "code": "let name = 'Student';\nconsole.log(name);",
+            "explanation": "Stores and prints a value"
+        },
+        {
+            "title": "Button Click Event",
+            "code": "document.getElementById('btn').onclick = function() {\n  alert('Button clicked!');\n};",
+            "explanation": "Runs code when a button is clicked"
+        }
+    ],
+    "youtubeVideos": [
+        {
+            "title": "JavaScript Basics for Beginners",
+            "videoId": "W6NZfCO5SIk",
+            "desc": "Introduction to JavaScript programming fundamentals"
+        },
+        {
+            "title": "JavaScript DOM Tutorial",
+            "videoId": "0ik6X4DJKCc",
+            "desc": "Learn how JavaScript interacts with HTML elements"
+        },
+        {
+            "title": "JavaScript Events Explained",
+            "videoId": "Qqx_wzMmFeA",
+            "desc": "Understanding click, input, and other events"
+        },
+        {
+            "title": "Build Your First Interactive Web Page",
+            "videoId": "hdI2bqOjy3c",
+            "desc": "Create simple interactive projects using JavaScript"
+        }
+    ],
+    "resources": [
+        {
+            "title": "MDN JavaScript Guide",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+            "icon": "🔗"
+        },
+        {
+            "title": "JavaScript Info",
+            "url": "https://javascript.info/",
+            "icon": "🔗"
+        },
+        {
+            "title": "W3Schools JS Tutorial",
+            "url": "https://www.w3schools.com/js/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Make a Simple Interactive Web Page",
+        "objective": "Add JavaScript to make a webpage interactive",
+        "steps": [
+            "Create a basic HTML page with a button",
+            "Link a JavaScript file",
+            "Add a click event to the button",
+            "Show an alert message on click",
+            "Change text content dynamically",
+            "Experiment with variables"
+        ],
+        "output": "A simple interactive webpage using JavaScript"
+    },
+    "quiz": [
+        {
+            "q": "What is JavaScript used for?",
+            "options": [
+                "Making websites interactive",
+                "Styling websites",
+                "Structuring pages",
+                "Printing documents"
+            ],
+            "answer": 0
+        },
+        {
+            "q": "Where does JavaScript run?",
+            "options": [
+                "Browser",
+                "Printer",
+                "Router",
+                "Keyboard"
+            ],
+            "answer": 0
+        },
+        {
+            "q": "Which keyword is used to declare a variable?",
+            "options": [
+                "let",
+                "style",
+                "html",
+                "css"
+            ],
+            "answer": 0
+        },
+        {
+            "q": "What is DOM?",
+            "options": [
+                "Document Object Model",
+                "Data Output Method",
+                "Digital Object Map",
+                "Design Output Model"
+            ],
+            "answer": 0
+        },
+        {
+            "q": "What triggers an event?",
+            "options": [
+                "User action like click",
+                "Only internet speed",
+                "CSS styles",
+                "Server reboot"
+            ],
+            "answer": 0
+        },
+        {
+            "q": "What does console.log do?",
+            "options": [
+                "Prints output in console",
+                "Deletes files",
+                "Styles page",
+                "Creates HTML"
+            ],
+            "answer": 0
+        }
+    ]
+}

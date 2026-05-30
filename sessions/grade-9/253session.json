@@ -1,0 +1,314 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-1/",
+        "slides_folder": "sessions/session-1/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-1/images/   ← Put entrepreneurship activity photos here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-1",
+    "number": 1,
+    "title": "Entrepreneurship Basics",
+    "subtitle": "ideas into action!",
+    "date": "Session 01",
+    "duration": "1 Hour",
+    "phase": "Foundation",
+    "color": "#FF9800",
+    "icon": "🚀",
+    "tags": [
+        "Entrepreneurship",
+        "Innovation",
+        "Business",
+        "Leadership"
+    ],
+    "overview": "This session introduces students to the fundamentals of entrepreneurship, innovation, problem-solving, and how businesses are created from ideas. Students will learn entrepreneurial thinking, teamwork, creativity, and confidence-building skills.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-1/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from entrepreneurship activities, brainstorming sessions, startup examples, business model drawings, and student presentations.",
+        "gallery": [
+            {
+                "file": "data/startup-idea.jpg",
+                "_placeholder": "ADD: Photo of students brainstorming startup ideas",
+                "caption": "Every business starts with an IDEA!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/teamwork.jpg",
+                "_placeholder": "ADD: Students working together in teams",
+                "caption": "Entrepreneurs work together to solve problems",
+                "category": "Teamwork"
+            },
+            {
+                "file": "data/young-entrepreneur.jpg",
+                "_placeholder": "ADD: Student presenting a business idea",
+                "caption": "Confidence and communication are key skills",
+                "category": "Presentation"
+            },
+            {
+                "file": "data/problem-solving.jpg",
+                "_placeholder": "ADD: Problem-solving activity photo",
+                "caption": "Businesses solve real-world problems",
+                "category": "Concept"
+            },
+            {
+                "file": "data/business-plan.jpg",
+                "_placeholder": "ADD: Business model or planning worksheet photo",
+                "caption": "Planning helps ideas become successful businesses",
+                "category": "Planning"
+            },
+            {
+                "file": "data/customer-needs.jpg",
+                "_placeholder": "ADD: Students discussing customer needs",
+                "caption": "Great entrepreneurs understand customer problems",
+                "category": "Concept"
+            },
+            {
+                "file": "data/pitch-session.jpg",
+                "_placeholder": "ADD: Startup pitch activity photo",
+                "caption": "Pitch your idea like a real entrepreneur!",
+                "category": "Activity"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is Entrepreneurship? — Turning Ideas into Businesses",
+        "Problem Solving — Entrepreneurs solve everyday problems",
+        "Innovation — Thinking creatively and differently",
+        "Risk Taking — Trying new ideas even when uncertain",
+        "Leadership — Inspiring and guiding a team",
+        "Customers — Understanding what people need",
+        "Business Basics — Product, Price, Promotion, Profit",
+        "Startup Pitch — Explaining your idea confidently"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is Entrepreneurship?",
+            "videoId": "xwM5fM9xgR4",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "A beginner-friendly introduction to entrepreneurship and innovation."
+        },
+        {
+            "title": "How Businesses Start",
+            "videoId": "T6MhAwQ64c0",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "Learn how entrepreneurs turn simple ideas into successful businesses."
+        },
+        {
+            "title": "Young Entrepreneurs Inspiration",
+            "videoId": "f6nxcfbDfZo",
+            "desc": "Stories of young innovators and startup founders."
+        },
+        {
+            "title": "Creative Thinking for Kids",
+            "videoId": "3LopI4YeC4I",
+            "desc": "Fun exercises to improve creativity and innovation skills."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Canva Business Presentation Templates",
+            "url": "https://www.canva.com/presentations/templates/business/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Young Entrepreneur Institute",
+            "url": "https://yei.org/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Google for Startups",
+            "url": "https://startup.google.com/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Create Your Own Startup Idea",
+        "parts": [
+            "Notebook or worksheet",
+            "Markers / pens",
+            "Chart paper",
+            "Sticky notes",
+            "Team members"
+        ],
+        "steps": [
+            "Identify a real-world problem students face",
+            "Brainstorm creative solutions",
+            "Choose the best idea as a team",
+            "Give your startup a name and logo",
+            "Explain who your customers are",
+            "Present a 1-minute startup pitch to the class"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is an entrepreneur?",
+            "options": [
+                "A person who starts and runs a business",
+                "A sports coach",
+                "A scientist only",
+                "A movie actor"
+            ],
+            "answer": 0,
+            "explanation": "An entrepreneur is someone who creates and runs a business or startup."
+        },
+        {
+            "q": "What do entrepreneurs mainly do?",
+            "options": [
+                "Avoid problems",
+                "Solve problems with ideas and innovation",
+                "Only sell products",
+                "Play games all day"
+            ],
+            "answer": 1,
+            "explanation": "Entrepreneurs identify problems and create solutions that help people."
+        },
+        {
+            "q": "What is innovation?",
+            "options": [
+                "Copying others exactly",
+                "Doing nothing new",
+                "Creating new ideas or improving old ones",
+                "Closing businesses"
+            ],
+            "answer": 2,
+            "explanation": "Innovation means creating something new or improving existing ideas."
+        },
+        {
+            "q": "Why is teamwork important in entrepreneurship?",
+            "options": [
+                "One person can do everything alone",
+                "Teams combine skills and ideas",
+                "It wastes time",
+                "Businesses do not need teams"
+            ],
+            "answer": 1,
+            "explanation": "Great businesses are often built by teams with different talents."
+        },
+        {
+            "q": "Who are customers?",
+            "options": [
+                "People who buy or use products/services",
+                "Teachers only",
+                "Factory machines",
+                "Business owners only"
+            ],
+            "answer": 0,
+            "explanation": "Customers are the people who use or purchase products and services."
+        },
+        {
+            "q": "What is a startup?",
+            "options": [
+                "An old company",
+                "A newly created business idea",
+                "A school project only",
+                "A type of computer"
+            ],
+            "answer": 1,
+            "explanation": "A startup is a new business built around an idea or innovation."
+        },
+        {
+            "q": "Which skill helps entrepreneurs explain ideas confidently?",
+            "options": [
+                "Sleeping",
+                "Communication",
+                "Ignoring people",
+                "Drawing only"
+            ],
+            "answer": 1,
+            "explanation": "Communication helps entrepreneurs share and pitch their ideas effectively."
+        },
+        {
+            "q": "What is risk-taking in entrepreneurship?",
+            "options": [
+                "Trying new ideas despite uncertainty",
+                "Never trying anything",
+                "Avoiding all challenges",
+                "Only copying others"
+            ],
+            "answer": 0,
+            "explanation": "Entrepreneurs often take risks when trying new ideas and innovations."
+        },
+        {
+            "q": "Which of these is an example of entrepreneurship?",
+            "options": [
+                "Creating a recycling app for schools",
+                "Watching TV all day",
+                "Ignoring customer needs",
+                "Doing nothing"
+            ],
+            "answer": 0,
+            "explanation": "Entrepreneurship involves creating useful solutions and businesses."
+        },
+        {
+            "q": "Why is creativity important for entrepreneurs?",
+            "options": [
+                "It helps generate unique ideas",
+                "It stops innovation",
+                "It avoids teamwork",
+                "It makes businesses smaller"
+            ],
+            "answer": 0,
+            "explanation": "Creative thinking helps entrepreneurs build unique products and solutions."
+        },
+        {
+            "q": "What is a business pitch?",
+            "options": [
+                "A cricket field",
+                "Explaining a business idea clearly",
+                "A classroom test",
+                "A computer game"
+            ],
+            "answer": 1,
+            "explanation": "A business pitch is a short explanation of an idea to others."
+        },
+        {
+            "q": "What should entrepreneurs understand before building products?",
+            "options": [
+                "Customer needs",
+                "Movie scripts",
+                "Magic tricks",
+                "Sports scores"
+            ],
+            "answer": 0,
+            "explanation": "Successful entrepreneurs understand customer problems and needs first."
+        },
+        {
+            "q": "What does profit mean in business?",
+            "options": [
+                "Money earned after expenses",
+                "Losing all money",
+                "Only advertisements",
+                "Giving away products for free forever"
+            ],
+            "answer": 0,
+            "explanation": "Profit is the money left after paying business costs."
+        },
+        {
+            "q": "Which quality is important for entrepreneurs?",
+            "options": [
+                "Leadership",
+                "Giving up quickly",
+                "Avoiding learning",
+                "Fear of ideas"
+            ],
+            "answer": 0,
+            "explanation": "Leadership helps entrepreneurs guide teams and grow businesses."
+        },
+        {
+            "q": "What is the first step in creating a business idea?",
+            "options": [
+                "Identify a problem to solve",
+                "Buy expensive equipment immediately",
+                "Open a huge office",
+                "Print advertisements first"
+            ],
+            "answer": 0,
+            "explanation": "Most successful businesses start by solving a real problem."
+        }
+    ]
+}

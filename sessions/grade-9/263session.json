@@ -1,0 +1,257 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-11/",
+        "slides_folder": "sessions/session-11/slides/",
+        "images_folder": "sessions/session-11/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-11",
+    "number": 11,
+    "title": "HTML & CSS Advanced",
+    "subtitle": "build beautiful modern web pages!",
+    "date": "Session 11",
+    "duration": "1 Hour",
+    "phase": "Web Development",
+    "color": "#FF9800",
+    "icon": "🎨",
+    "tags": [
+        "HTML",
+        "CSS",
+        "Web Development",
+        "Design"
+    ],
+    "overview": "This session introduces advanced HTML and CSS concepts to help students build modern, responsive, and visually appealing web pages. Students learn layouts, flexbox, grid, animations, and best practices for web design.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-11/slides.pdf"
+    },
+    "images": {
+        "_note": "Add screenshots of web pages, coding examples, layout designs, and student projects.",
+        "gallery": [
+            {
+                "file": "data/responsive-layout.jpg",
+                "_placeholder": "ADD: Responsive website layout example",
+                "caption": "Modern websites adapt to different screen sizes",
+                "category": "Design"
+            },
+            {
+                "file": "data/flexbox-demo.jpg",
+                "_placeholder": "ADD: Flexbox layout diagram",
+                "caption": "Flexbox helps arrange elements easily",
+                "category": "CSS"
+            },
+            {
+                "file": "data/css-grid.jpg",
+                "_placeholder": "ADD: CSS Grid layout example",
+                "caption": "CSS Grid creates powerful two-dimensional layouts",
+                "category": "CSS"
+            },
+            {
+                "file": "data/html-structure.jpg",
+                "_placeholder": "ADD: HTML code structure screenshot",
+                "caption": "HTML provides structure to web pages",
+                "category": "HTML"
+            },
+            {
+                "file": "data/web-animation.jpg",
+                "_placeholder": "ADD: CSS animation example",
+                "caption": "Animations make websites interactive and engaging",
+                "category": "Animation"
+            },
+            {
+                "file": "data/student-website.jpg",
+                "_placeholder": "ADD: Student web project screenshot",
+                "caption": "Students build real websites using HTML and CSS",
+                "category": "Project"
+            },
+            {
+                "file": "data/modern-ui.jpg",
+                "_placeholder": "ADD: Modern UI design example",
+                "caption": "Good design improves user experience",
+                "category": "UI/UX"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Advanced HTML Structure — Semantic Tags (header, section, article, footer)",
+        "CSS Flexbox — Flexible layouts for modern web design",
+        "CSS Grid — Advanced 2D layout system",
+        "Responsive Design — Mobile-friendly websites",
+        "CSS Animations — Smooth transitions and effects",
+        "Typography & Colors — Visual design principles",
+        "Forms & Input Styling — Better user interaction",
+        "Best Practices — Clean and maintainable code"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "HTML & CSS Advanced Tutorial",
+            "videoId": "mU6anWqZJcc",
+            "_note": "Replace videoId with actual YouTube video ID",
+            "desc": "Learn advanced HTML and CSS concepts for modern web design."
+        },
+        {
+            "title": "CSS Flexbox in Depth",
+            "videoId": "JJSoEo8JSnc",
+            "desc": "Master flexible layouts using CSS Flexbox."
+        },
+        {
+            "title": "CSS Grid Tutorial",
+            "videoId": "0xMQfnTU6oo",
+            "desc": "Learn how to create powerful layouts with CSS Grid."
+        },
+        {
+            "title": "Responsive Web Design Basics",
+            "videoId": "srvUrASNj0s",
+            "desc": "Make websites look great on all devices."
+        }
+    ],
+    "resources": [
+        {
+            "title": "MDN Web Docs",
+            "url": "https://developer.mozilla.org/en-US/docs/Web",
+            "icon": "🔗"
+        },
+        {
+            "title": "W3Schools HTML & CSS",
+            "url": "https://www.w3schools.com/",
+            "icon": "🔗"
+        },
+        {
+            "title": "CSS Tricks",
+            "url": "https://css-tricks.com/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Build a Responsive Web Page",
+        "parts": [
+            "Laptop with code editor",
+            "HTML & CSS files",
+            "Browser for testing",
+            "Design inspiration images"
+        ],
+        "steps": [
+            "Create a basic HTML structure",
+            "Add sections like header, content, and footer",
+            "Style layout using Flexbox or Grid",
+            "Add colors, fonts, and spacing",
+            "Make the page responsive for mobile devices",
+            "Test and improve the design"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does HTML stand for?",
+            "options": [
+                "HyperText Markup Language",
+                "High Text Machine Language",
+                "Home Tool Markup Logic",
+                "Hyper Transfer Main Link"
+            ],
+            "answer": 0,
+            "explanation": "HTML stands for HyperText Markup Language, used to structure web pages."
+        },
+        {
+            "q": "What is CSS used for?",
+            "options": [
+                "Styling web pages",
+                "Running programs",
+                "Storing data",
+                "Sending emails"
+            ],
+            "answer": 0,
+            "explanation": "CSS is used to style and design web pages."
+        },
+        {
+            "q": "What does Flexbox help with?",
+            "options": [
+                "Layout alignment and spacing",
+                "Database storage",
+                "Internet speed",
+                "Hardware repair"
+            ],
+            "answer": 0,
+            "explanation": "Flexbox helps arrange items in flexible layouts."
+        },
+        {
+            "q": "What is CSS Grid used for?",
+            "options": [
+                "2D layout system",
+                "Image editing",
+                "Video streaming",
+                "Email sending"
+            ],
+            "answer": 0,
+            "explanation": "CSS Grid is used to create advanced two-dimensional layouts."
+        },
+        {
+            "q": "What is a responsive website?",
+            "options": [
+                "A website that works on all screen sizes",
+                "A website that only works on desktop",
+                "A broken website",
+                "A text-only website"
+            ],
+            "answer": 0,
+            "explanation": "Responsive websites adapt to mobile, tablet, and desktop screens."
+        },
+        {
+            "q": "Which tag is semantic in HTML?",
+            "options": [
+                "<header>",
+                "<div>",
+                "<span>",
+                "<b>"
+            ],
+            "answer": 0,
+            "explanation": "Semantic tags like <header> clearly describe their purpose."
+        },
+        {
+            "q": "What improves user experience in web design?",
+            "options": [
+                "Good layout and design",
+                "Random colors",
+                "Slow loading pages",
+                "Confusing structure"
+            ],
+            "answer": 0,
+            "explanation": "Good design makes websites easier and more enjoyable to use."
+        },
+        {
+            "q": "What does CSS stand for?",
+            "options": [
+                "Cascading Style Sheets",
+                "Creative Style System",
+                "Computer Style Syntax",
+                "Color Style Script"
+            ],
+            "answer": 0,
+            "explanation": "CSS stands for Cascading Style Sheets."
+        },
+        {
+            "q": "Why use animations in websites?",
+            "options": [
+                "To improve engagement and interaction",
+                "To slow down the site",
+                "To remove content",
+                "To break layout"
+            ],
+            "answer": 0,
+            "explanation": "Animations make websites more interactive and engaging."
+        },
+        {
+            "q": "What is the first step in building a webpage?",
+            "options": [
+                "Create HTML structure",
+                "Add animations first",
+                "Buy a domain",
+                "Install antivirus"
+            ],
+            "answer": 0,
+            "explanation": "Web pages start with HTML structure before styling and features."
+        }
+    ]
+}

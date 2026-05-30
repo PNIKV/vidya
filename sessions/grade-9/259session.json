@@ -1,0 +1,259 @@
+{
+  "_instructions": {
+    "folder_structure": "sessions/session-7/",
+    "slides_folder": "sessions/session-7/slides/",
+    "images_folder": "sessions/session-7/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+  },
+  "id": "session-7",
+  "number": 7,
+  "title": "AI + Hardware Link",
+  "subtitle": "smart machines in the real world!",
+  "date": "Session 07",
+  "duration": "1 Hour",
+  "phase": "AI & Robotics",
+  "color": "#FF5722",
+  "icon": "🤖",
+  "tags": [
+    "Artificial Intelligence",
+    "Hardware",
+    "Robotics",
+    "IoT"
+  ],
+  "overview": "This session introduces students to how Artificial Intelligence connects with hardware devices such as sensors, robots, microcontrollers, and smart systems. Students explore how AI can interact with the physical world through cameras, motors, sensors, and embedded devices.",
+  "grades": [
+    9
+  ],
+  "slides": {
+    "pdf": "sessions/session-7/slides.pdf"
+  },
+  "images": {
+    "_note": "Add photos of robots, sensors, Arduino/Raspberry Pi setups, AI cameras, and smart hardware projects.",
+    "gallery": [
+      {
+        "file": "data/ai-robotics.jpg",
+        "_placeholder": "ADD: AI robot or robotics project image",
+        "caption": "AI-powered robots can interact with the environment",
+        "category": "Robotics"
+      },
+      {
+        "file": "data/arduino-ai.jpg",
+        "_placeholder": "ADD: Arduino or Raspberry Pi setup photo",
+        "caption": "Microcontrollers help connect software with hardware",
+        "category": "Hardware"
+      },
+      {
+        "file": "data/smart-sensors.jpg",
+        "_placeholder": "ADD: Sensor components image",
+        "caption": "Sensors collect real-world data for AI systems",
+        "category": "Sensors"
+      },
+      {
+        "file": "data/ai-camera.jpg",
+        "_placeholder": "ADD: AI camera or vision system image",
+        "caption": "AI cameras can recognize faces and objects",
+        "category": "Computer Vision"
+      },
+      {
+        "file": "data/iot-home.jpg",
+        "_placeholder": "ADD: Smart home IoT system photo",
+        "caption": "Smart devices communicate using AI and IoT",
+        "category": "IoT"
+      },
+      {
+        "file": "data/student-robotics.jpg",
+        "_placeholder": "ADD: Students building robotics projects",
+        "caption": "Hands-on learning makes AI and hardware exciting",
+        "category": "Learning"
+      },
+      {
+        "file": "data/future-machine.jpg",
+        "_placeholder": "ADD: Futuristic AI machine illustration",
+        "caption": "Future machines may combine AI, robotics, and automation",
+        "category": "Future"
+      }
+    ]
+  },
+  "keyTopics": [
+    "What is Hardware? — Physical electronic components and devices",
+    "AI + Hardware Integration — Smart systems that sense and act",
+    "Microcontrollers — Arduino, Raspberry Pi, ESP32",
+    "Sensors — Temperature, Motion, Light, Distance",
+    "Actuators — Motors, LEDs, Buzzers, Relays",
+    "Computer Vision — AI cameras recognizing objects",
+    "IoT (Internet of Things) — Connected smart devices",
+    "Robotics — Machines controlled using AI and sensors"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is AI Hardware?",
+      "videoId": "aircAruvnKk",
+      "_note": "Replace videoId with actual YouTube video ID",
+      "desc": "Introduction to how AI works with hardware and electronics."
+    },
+    {
+      "title": "Arduino for Beginners",
+      "videoId": "nL34zDTPkcs",
+      "desc": "Learn how Arduino controls sensors and devices."
+    },
+    {
+      "title": "What is IoT?",
+      "videoId": "QSIPNhOiMoE",
+      "desc": "Understanding smart devices and connected systems."
+    },
+    {
+      "title": "Robotics and AI Explained",
+      "videoId": "szQIkIhA0mA",
+      "desc": "How robots use sensors, AI, and automation."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Arduino Official Website",
+      "url": "https://www.arduino.cc/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Raspberry Pi Foundation",
+      "url": "https://www.raspberrypi.org/",
+      "icon": "🔗"
+    },
+    {
+      "title": "Wokwi Arduino Simulator",
+      "url": "https://wokwi.com/",
+      "icon": "🔗"
+    }
+  ],
+  "activity": {
+    "title": "Build a Smart Sensor System",
+    "parts": [
+      "Arduino UNO or ESP32",
+      "Breadboard",
+      "LED",
+      "Sensor module",
+      "Jumper wires",
+      "Laptop with Arduino IDE"
+    ],
+    "steps": [
+      "Connect a sensor to the microcontroller",
+      "Add an LED or buzzer output",
+      "Write simple logic for sensor detection",
+      "Upload code to the board",
+      "Test how the hardware responds automatically",
+      "Discuss how AI can improve the system further"
+    ]
+  },
+  "quiz": [
+    {
+      "q": "What is hardware?",
+      "options": [
+        "Physical electronic devices and components",
+        "A social media app",
+        "Only computer games",
+        "Internet websites only"
+      ],
+      "answer": 0,
+      "explanation": "Hardware includes physical devices like sensors, motors, computers, and robots."
+    },
+    {
+      "q": "Which device is a microcontroller?",
+      "options": [
+        "Arduino",
+        "Speaker",
+        "Monitor",
+        "Keyboard"
+      ],
+      "answer": 0,
+      "explanation": "Arduino is a popular microcontroller used in electronics and robotics."
+    },
+    {
+      "q": "What do sensors do?",
+      "options": [
+        "Collect information from the environment",
+        "Play music",
+        "Only display videos",
+        "Store books"
+      ],
+      "answer": 0,
+      "explanation": "Sensors detect light, motion, temperature, distance, and other environmental data."
+    },
+    {
+      "q": "Which is an example of an actuator?",
+      "options": [
+        "Motor",
+        "Temperature sensor",
+        "Camera only",
+        "Internet cable"
+      ],
+      "answer": 0,
+      "explanation": "Actuators perform actions such as movement, sound, or lighting."
+    },
+    {
+      "q": "What is IoT?",
+      "options": [
+        "Internet of Things",
+        "Input of Technology",
+        "Inside Online Tools",
+        "Integrated Output Transfer"
+      ],
+      "answer": 0,
+      "explanation": "IoT connects smart devices through the internet."
+    },
+    {
+      "q": "How does AI help hardware systems?",
+      "options": [
+        "By making devices smarter and automated",
+        "By removing electricity",
+        "By stopping sensors",
+        "By disconnecting networks"
+      ],
+      "answer": 0,
+      "explanation": "AI allows devices to analyze data and make intelligent decisions."
+    },
+    {
+      "q": "Which technology helps AI systems recognize images?",
+      "options": [
+        "Computer Vision",
+        "Mechanical Wiring",
+        "Typing Software",
+        "Spreadsheet Tools"
+      ],
+      "answer": 0,
+      "explanation": "Computer Vision enables AI systems to understand images and videos."
+    },
+    {
+      "q": "What is a robot?",
+      "options": [
+        "A machine that can perform programmed tasks",
+        "Only a toy",
+        "A type of website",
+        "A calculator"
+      ],
+      "answer": 0,
+      "explanation": "Robots are machines designed to carry out tasks automatically."
+    },
+    {
+      "q": "Why are AI-powered smart homes useful?",
+      "options": [
+        "They automate and improve convenience",
+        "They stop internet access",
+        "They remove electricity",
+        "They avoid communication"
+      ],
+      "answer": 0,
+      "explanation": "Smart homes use AI and IoT to automate lighting, security, appliances, and more."
+    },
+    {
+      "q": "What skill is important for building AI hardware projects?",
+      "options": [
+        "Problem-solving",
+        "Creativity",
+        "Basic coding",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "AI hardware projects combine coding, creativity, and problem-solving skills."
+    }
+  ]
+}

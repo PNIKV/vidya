@@ -1,0 +1,258 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-10/",
+        "slides_folder": "sessions/session-10/slides/",
+        "images_folder": "sessions/session-10/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-10",
+    "number": 10,
+    "title": "AI Tools Exploration",
+    "subtitle": "discover the power of smart technology!",
+    "date": "Session 10",
+    "duration": "1 Hour",
+    "phase": "AI Applications",
+    "color": "#009688",
+    "icon": "🛠️",
+    "tags": [
+        "Artificial Intelligence",
+        "AI Tools",
+        "Technology",
+        "Innovation"
+    ],
+    "overview": "This session introduces students to popular AI tools used for creativity, learning, coding, design, communication, and productivity. Students explore how AI tools can help people solve problems, generate ideas, automate tasks, and create innovative projects responsibly.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-10/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos of students exploring AI tools, AI-generated art, coding tools, chatbot demos, and collaborative activities.",
+        "gallery": [
+            {
+                "file": "data/ai-chatbot.jpg",
+                "_placeholder": "ADD: AI chatbot interface image",
+                "caption": "AI chatbots can answer questions and assist users",
+                "category": "AI Assistant"
+            },
+            {
+                "file": "data/ai-art.jpg",
+                "_placeholder": "ADD: AI-generated artwork example",
+                "caption": "AI tools can generate creative artwork and designs",
+                "category": "Creativity"
+            },
+            {
+                "file": "data/student-ai-learning.jpg",
+                "_placeholder": "ADD: Students using AI tools for learning",
+                "caption": "AI tools support education and personalized learning",
+                "category": "Learning"
+            },
+            {
+                "file": "data/ai-coding.jpg",
+                "_placeholder": "ADD: AI coding assistant screenshot",
+                "caption": "AI coding tools help developers write and debug programs",
+                "category": "Coding"
+            },
+            {
+                "file": "data/voice-ai.jpg",
+                "_placeholder": "ADD: Voice AI or speech assistant image",
+                "caption": "Voice AI can recognize and respond to speech",
+                "category": "Voice AI"
+            },
+            {
+                "file": "data/team-exploration.jpg",
+                "_placeholder": "ADD: Team collaboration activity photo",
+                "caption": "Students exploring AI possibilities together",
+                "category": "Collaboration"
+            },
+            {
+                "file": "data/future-ai-tools.jpg",
+                "_placeholder": "ADD: Futuristic AI tools illustration",
+                "caption": "AI tools may become part of everyday work and learning",
+                "category": "Future"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What are AI Tools?",
+        "AI Chatbots and Virtual Assistants",
+        "AI Art & Design Generators",
+        "AI Coding Assistants",
+        "AI Productivity and Automation Tools",
+        "Voice Recognition & Speech AI",
+        "Benefits and Challenges of AI Tools",
+        "Responsible and Ethical Use of AI"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Introduction to AI Tools",
+            "videoId": "mEsleV16qdo",
+            "_note": "Replace videoId with actual YouTube video ID",
+            "desc": "Overview of popular AI tools and how they are used."
+        },
+        {
+            "title": "How AI Chatbots Work",
+            "videoId": "Rs_rAxEsAvI",
+            "desc": "Learn how conversational AI systems interact with users."
+        },
+        {
+            "title": "AI Art and Creativity",
+            "videoId": "SVcsDDABEkM",
+            "desc": "Explore how AI can generate images, music, and creative content."
+        },
+        {
+            "title": "Future of AI Tools",
+            "videoId": "ad79nYk2keg",
+            "desc": "How AI tools may transform learning, work, and innovation."
+        }
+    ],
+    "resources": [
+        {
+            "title": "OpenAI",
+            "url": "https://openai.com/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Google Teachable Machine",
+            "url": "https://teachablemachine.withgoogle.com/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Scratch AI Projects",
+            "url": "https://scratch.mit.edu/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Explore and Present an AI Tool",
+        "parts": [
+            "Laptop or tablet",
+            "Internet connection",
+            "Notebook",
+            "Presentation chart paper",
+            "Team members"
+        ],
+        "steps": [
+            "Choose an AI tool to explore",
+            "Understand what the tool does",
+            "List benefits and possible uses",
+            "Discuss ethical and responsible use",
+            "Create a short presentation or demo",
+            "Present findings to the class"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is an AI tool?",
+            "options": [
+                "Software that uses artificial intelligence to help users",
+                "A simple battery",
+                "A manual typewriter",
+                "A paper notebook"
+            ],
+            "answer": 0,
+            "explanation": "AI tools use artificial intelligence to automate tasks, generate content, or assist users."
+        },
+        {
+            "q": "Which of these is an example of an AI tool?",
+            "options": [
+                "Chatbot",
+                "AI image generator",
+                "Voice assistant",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Many modern AI tools help with communication, creativity, and productivity."
+        },
+        {
+            "q": "How can AI tools help students?",
+            "options": [
+                "Support learning and creativity",
+                "Generate ideas",
+                "Automate repetitive tasks",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "AI tools can improve learning, productivity, and creative work."
+        },
+        {
+            "q": "What is an AI chatbot?",
+            "options": [
+                "A conversational AI system",
+                "A gaming controller",
+                "A printer",
+                "A cable connection"
+            ],
+            "answer": 0,
+            "explanation": "AI chatbots interact with users through text or speech."
+        },
+        {
+            "q": "What can AI art tools create?",
+            "options": [
+                "Images and designs",
+                "Music",
+                "Creative content",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "AI creativity tools can generate many forms of digital content."
+        },
+        {
+            "q": "Why is responsible AI use important?",
+            "options": [
+                "To ensure fairness and safety",
+                "To avoid creativity",
+                "To stop innovation",
+                "To reduce teamwork"
+            ],
+            "answer": 0,
+            "explanation": "Responsible AI helps protect privacy, fairness, and ethical standards."
+        },
+        {
+            "q": "Which AI tool can help programmers write code?",
+            "options": [
+                "AI coding assistant",
+                "Calculator",
+                "Speaker",
+                "Scanner"
+            ],
+            "answer": 0,
+            "explanation": "AI coding tools assist developers with writing and debugging programs."
+        },
+        {
+            "q": "What does voice AI do?",
+            "options": [
+                "Recognizes and processes speech",
+                "Only displays pictures",
+                "Stores electricity",
+                "Repairs hardware"
+            ],
+            "answer": 0,
+            "explanation": "Voice AI understands spoken language and responds to commands."
+        },
+        {
+            "q": "What is one challenge of AI tools?",
+            "options": [
+                "Privacy and misuse concerns",
+                "Lack of internet only",
+                "No creativity at all",
+                "No educational use"
+            ],
+            "answer": 0,
+            "explanation": "AI tools must be used responsibly to protect privacy and avoid misuse."
+        },
+        {
+            "q": "What skill is important when using AI tools?",
+            "options": [
+                "Critical thinking",
+                "Creativity",
+                "Responsible decision-making",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Using AI effectively requires creativity, analysis, and responsible behavior."
+        }
+    ]
+}

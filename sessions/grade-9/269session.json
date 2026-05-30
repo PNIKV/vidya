@@ -1,0 +1,184 @@
+{
+    "_meta": {
+        "version": "1.0",
+        "purpose": "Final rehearsal and revision session before presentation/demo day",
+        "notes": "Focus on confidence building, project polishing, and presentation readiness"
+    },
+    "_instructions": {
+        "folder_structure": "sessions/session-15/",
+        "slides_folder": "sessions/session-15/slides/",
+        "images_folder": "sessions/session-15/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-15",
+    "number": 15,
+    "title": "Final Rehearsal",
+    "subtitle": "prepare, practice, present with confidence",
+    "date": "Session 15",
+    "duration": "1 Hour",
+    "phase": "Project Showcase Preparation",
+    "level": "Beginner",
+    "color": "#795548",
+    "icon": "🎤",
+    "tags": [
+        "Presentation",
+        "Rehearsal",
+        "Communication",
+        "Project Showcase"
+    ],
+    "overview": "This session is a final rehearsal before the project showcase. Students practice their presentations, refine their projects, improve communication skills, and receive feedback to enhance clarity, confidence, and impact.",
+    "grades": [
+        9
+    ],
+    "learningOutcomes": [
+        "Present project ideas clearly and confidently",
+        "Improve communication and storytelling skills",
+        "Identify and fix final project issues",
+        "Practice time management during presentations",
+        "Receive and apply constructive feedback"
+    ],
+    "slides": {
+        "pdf": "sessions/session-15/slides.pdf",
+        "flow": [
+            "What is a Final Rehearsal?",
+            "Checklist for project readiness",
+            "Presentation structure (Problem → Solution → Impact)",
+            "Communication tips",
+            "Common mistakes to avoid",
+            "Peer feedback session",
+            "Final improvements",
+            "Showcase preparation"
+        ]
+    },
+    "images": {
+        "_note": "Add photos of students presenting, practicing speeches, teamwork, and mock presentations.",
+        "gallery": [
+            {
+                "file": "data/student-presentation.jpg",
+                "caption": "Students practicing their project presentations",
+                "category": "Presentation"
+            },
+            {
+                "file": "data/mock-presentation.jpg",
+                "caption": "Mock presentation helps improve confidence",
+                "category": "Practice"
+            },
+            {
+                "file": "data/team-feedback.jpg",
+                "caption": "Peers giving constructive feedback",
+                "category": "Collaboration"
+            },
+            {
+                "file": "data/speech-practice.jpg",
+                "caption": "Students practicing speaking skills",
+                "category": "Communication"
+            },
+            {
+                "file": "data/project-refinement.jpg",
+                "caption": "Final improvements before showcase",
+                "category": "Iteration"
+            },
+            {
+                "file": "data/classroom-rehearsal.jpg",
+                "caption": "Full class rehearsal environment",
+                "category": "Learning"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Presentation structure: Problem → Solution → Impact",
+        "Public speaking fundamentals",
+        "Confidence building techniques",
+        "Time management during presentation",
+        "Handling Q&A sessions",
+        "Peer feedback and iteration",
+        "Project final polishing",
+        "Team coordination during demo"
+    ],
+    "checklist": [
+        "Project is complete and working",
+        "Slides or visuals are ready",
+        "Each team member knows their role",
+        "Presentation is within time limit",
+        "Clear explanation of problem and solution",
+        "Backup plan in case of technical issues",
+        "Practice run completed at least once"
+    ],
+    "activity": {
+        "title": "Mock Presentation Round",
+        "objective": "Simulate real showcase conditions and improve delivery",
+        "steps": [
+            "Each team presents their project",
+            "Time-limited presentation (3–5 minutes per team)",
+            "Peer and teacher feedback collection",
+            "Identify improvements",
+            "Refine final presentation",
+            "Repeat quick second rehearsal if needed"
+        ],
+        "output": "Final polished presentation ready for showcase"
+    },
+    "assessment": {
+        "rubric": {
+            "criteria": [
+                "Clarity of explanation",
+                "Confidence and communication",
+                "Technical understanding",
+                "Team coordination",
+                "Visual presentation quality"
+            ]
+        },
+        "quiz": [
+            {
+                "q": "What is the main goal of final rehearsal?",
+                "options": [
+                    "To practice and improve presentation",
+                    "To start a new project",
+                    "To delete old work",
+                    "To avoid speaking"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What is important in a good presentation?",
+                "options": [
+                    "Clear explanation of ideas",
+                    "Speaking too fast",
+                    "Ignoring audience",
+                    "Skipping practice"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What should you do after receiving feedback?",
+                "options": [
+                    "Improve your project",
+                    "Ignore it",
+                    "Delete your work",
+                    "Stop presenting"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What is a common presentation structure?",
+                "options": [
+                    "Problem → Solution → Impact",
+                    "Start → End → Random",
+                    "Code → Delete → Finish",
+                    "Intro → Skip → Stop"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "Why is rehearsal important?",
+                "options": [
+                    "Builds confidence and reduces mistakes",
+                    "Makes work harder",
+                    "Removes teamwork",
+                    "Stops learning"
+                ],
+                "answer": 0
+            }
+        ]
+    }
+}

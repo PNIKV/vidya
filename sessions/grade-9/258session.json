@@ -1,0 +1,258 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-6/",
+        "slides_folder": "sessions/session-6/slides/",
+        "images_folder": "sessions/session-6/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-6",
+    "number": 6,
+    "title": "Future of Work with AI",
+    "subtitle": "skills, creativity & the next generation!",
+    "date": "Session 06",
+    "duration": "1 Hour",
+    "phase": "Future Skills",
+    "color": "#00BCD4",
+    "icon": "🚀",
+    "tags": [
+        "Artificial Intelligence",
+        "Future Careers",
+        "Technology",
+        "Innovation"
+    ],
+    "overview": "This session explores how Artificial Intelligence is transforming jobs, careers, and industries around the world. Students learn about future-ready skills, human creativity, collaboration with AI tools, and how technology can create new opportunities instead of just replacing work.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-6/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos of AI tools, future workplaces, teamwork activities, robotics, and student career discussions.",
+        "gallery": [
+            {
+                "file": "data/future-office.jpg",
+                "_placeholder": "ADD: Illustration of future workplace with AI",
+                "caption": "Future workplaces may combine humans and AI systems",
+                "category": "Future"
+            },
+            {
+                "file": "data/robotics-lab.jpg",
+                "_placeholder": "ADD: Robotics or AI lab photo",
+                "caption": "AI and robotics are transforming industries",
+                "category": "Technology"
+            },
+            {
+                "file": "data/student-careers.jpg",
+                "_placeholder": "ADD: Students discussing future careers",
+                "caption": "Students preparing for future-ready careers",
+                "category": "Career"
+            },
+            {
+                "file": "data/creative-skills.jpg",
+                "_placeholder": "ADD: Creative teamwork activity",
+                "caption": "Creativity and innovation remain valuable human skills",
+                "category": "Skills"
+            },
+            {
+                "file": "data/ai-collaboration.jpg",
+                "_placeholder": "ADD: Human working with AI assistant",
+                "caption": "Humans and AI can work together productively",
+                "category": "Collaboration"
+            },
+            {
+                "file": "data/digital-learning.jpg",
+                "_placeholder": "ADD: Students using digital learning tools",
+                "caption": "Continuous learning is important in the AI era",
+                "category": "Learning"
+            },
+            {
+                "file": "data/future-jobs.jpg",
+                "_placeholder": "ADD: Future technology careers illustration",
+                "caption": "New careers will emerge with advancing technology",
+                "category": "Opportunities"
+            }
+        ]
+    },
+    "keyTopics": [
+        "How AI is Changing Jobs and Industries",
+        "Automation vs Human Creativity",
+        "Future Skills — Creativity, Communication, Critical Thinking",
+        "AI Collaboration — Humans working alongside technology",
+        "Emerging Careers — AI Engineer, Data Scientist, Robotics Expert",
+        "Lifelong Learning — Adapting to new technologies",
+        "Ethics and Responsible Innovation",
+        "Entrepreneurship Opportunities in the AI Era"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "The Future of Work and AI",
+            "videoId": "7Pq-S557XQU",
+            "_note": "Replace videoId with actual YouTube video ID",
+            "desc": "Understanding how AI is transforming careers and workplaces."
+        },
+        {
+            "title": "Jobs of the Future",
+            "videoId": "iH4SnD4A4Kg",
+            "desc": "Explore future careers driven by technology and innovation."
+        },
+        {
+            "title": "Human Skills That AI Cannot Replace",
+            "videoId": "wWLjz2ig3Bk",
+            "desc": "Learn why creativity, empathy, and teamwork remain important."
+        },
+        {
+            "title": "How Students Can Prepare for the AI Era",
+            "videoId": "QvyTEx1wyOY",
+            "desc": "Tips for developing future-ready skills and adaptability."
+        }
+    ],
+    "resources": [
+        {
+            "title": "World Economic Forum - Future of Jobs",
+            "url": "https://www.weforum.org/reports/the-future-of-jobs-report/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Google AI Learning Resources",
+            "url": "https://ai.google/education/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Coursera Career Skills",
+            "url": "https://www.coursera.org/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Design a Future Career with AI",
+        "parts": [
+            "Notebook",
+            "Markers",
+            "Chart paper",
+            "Internet access (optional)",
+            "Team members"
+        ],
+        "steps": [
+            "Discuss jobs students know today",
+            "Identify how AI could change those jobs",
+            "Brainstorm new careers that may exist in the future",
+            "Design a future workplace or startup idea",
+            "List important future-ready skills",
+            "Present the future career idea to the class"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is one major impact of AI on work?",
+            "options": [
+                "AI changes how tasks are performed",
+                "AI removes all jobs completely",
+                "AI stops technology growth",
+                "AI replaces schools"
+            ],
+            "answer": 0,
+            "explanation": "AI is transforming how work is done by automating certain tasks and creating new opportunities."
+        },
+        {
+            "q": "Which skill is highly valuable in the AI era?",
+            "options": [
+                "Creativity",
+                "Ignoring technology",
+                "Avoiding teamwork",
+                "Memorizing only"
+            ],
+            "answer": 0,
+            "explanation": "Creativity helps humans innovate and solve problems in unique ways."
+        },
+        {
+            "q": "What does automation mean?",
+            "options": [
+                "Humans doing every task manually",
+                "Machines performing tasks automatically",
+                "Avoiding computers",
+                "Writing books only"
+            ],
+            "answer": 1,
+            "explanation": "Automation allows machines and software to complete tasks automatically."
+        },
+        {
+            "q": "Which of these may become a future career?",
+            "options": [
+                "AI Engineer",
+                "Robotics Specialist",
+                "Data Scientist",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Many new technology careers are emerging because of AI and innovation."
+        },
+        {
+            "q": "Why is lifelong learning important?",
+            "options": [
+                "Technology keeps changing",
+                "Learning should stop after school",
+                "Skills never change",
+                "AI removes education"
+            ],
+            "answer": 0,
+            "explanation": "Continuous learning helps people adapt to new technologies and industries."
+        },
+        {
+            "q": "Which human quality is difficult for AI to fully replace?",
+            "options": [
+                "Empathy",
+                "Creativity",
+                "Emotional understanding",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Human empathy, creativity, and emotions remain unique strengths."
+        },
+        {
+            "q": "How can AI help workers?",
+            "options": [
+                "By automating repetitive tasks",
+                "By increasing productivity",
+                "By assisting with data analysis",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "AI can support workers by handling repetitive work and improving efficiency."
+        },
+        {
+            "q": "What is an important future-ready skill?",
+            "options": [
+                "Critical thinking",
+                "Communication",
+                "Adaptability",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Future careers require flexible thinking, communication, and adaptability."
+        },
+        {
+            "q": "What does responsible AI mean?",
+            "options": [
+                "Using AI ethically and safely",
+                "Avoiding all technology",
+                "Allowing unfair systems",
+                "Ignoring privacy"
+            ],
+            "answer": 0,
+            "explanation": "Responsible AI ensures fairness, safety, and ethical use of technology."
+        },
+        {
+            "q": "What is one positive outcome of AI?",
+            "options": [
+                "Creating new opportunities and industries",
+                "Stopping innovation",
+                "Reducing creativity completely",
+                "Removing communication"
+            ],
+            "answer": 0,
+            "explanation": "AI can create new jobs, industries, and opportunities for innovation."
+        }
+    ]
+}

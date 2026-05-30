@@ -1,0 +1,258 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-4/",
+        "slides_folder": "sessions/session-4/slides/",
+        "images_folder": "sessions/session-4/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-4",
+    "number": 4,
+    "title": "Community Solution: CODE",
+    "subtitle": "create solutions with coding!",
+    "date": "Session 04",
+    "duration": "1 Hour",
+    "phase": "Technology & Innovation",
+    "color": "#9C27B0",
+    "icon": "💻",
+    "tags": [
+        "Coding",
+        "Community",
+        "Innovation",
+        "Problem Solving"
+    ],
+    "overview": "This session introduces students to how coding can be used to solve real-world community problems. Students explore the CODE framework — Create, Organize, Develop, Empower — while learning basic programming logic, teamwork, and digital innovation.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-4/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from coding activities, app design sketches, teamwork sessions, and student project demos.",
+        "gallery": [
+            {
+                "file": "data/coding-lab.jpg",
+                "_placeholder": "ADD: Students coding in classroom",
+                "caption": "Coding helps transform ideas into digital solutions",
+                "category": "Coding"
+            },
+            {
+                "file": "data/app-design.jpg",
+                "_placeholder": "ADD: App or website design sketch photo",
+                "caption": "Apps can solve real community challenges",
+                "category": "Innovation"
+            },
+            {
+                "file": "data/team-collaboration.jpg",
+                "_placeholder": "ADD: Team collaboration activity",
+                "caption": "Technology projects grow stronger with teamwork",
+                "category": "Teamwork"
+            },
+            {
+                "file": "data/problem-solving-code.jpg",
+                "_placeholder": "ADD: Students solving coding challenge",
+                "caption": "Programming teaches logical problem-solving",
+                "category": "Learning"
+            },
+            {
+                "file": "data/student-presentation.jpg",
+                "_placeholder": "ADD: Student project presentation photo",
+                "caption": "Students presenting community-focused digital ideas",
+                "category": "Presentation"
+            },
+            {
+                "file": "data/scratch-project.jpg",
+                "_placeholder": "ADD: Scratch or block coding project image",
+                "caption": "Block coding makes programming fun and beginner-friendly",
+                "category": "Coding"
+            },
+            {
+                "file": "data/community-app.jpg",
+                "_placeholder": "ADD: Community service app mockup",
+                "caption": "Technology can improve everyday life",
+                "category": "Solution"
+            }
+        ]
+    },
+    "keyTopics": [
+        "C — Create: Build new ideas using technology",
+        "O — Organize: Plan and structure coding projects",
+        "D — Develop: Write and improve programs",
+        "E — Empower: Use technology to help communities",
+        "Algorithms — Step-by-step instructions",
+        "Programming Logic — Input, process, output",
+        "Apps & Websites — Digital solutions for society",
+        "Collaboration — Working together in tech teams"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is Coding?",
+            "videoId": "N7ZmPYaXoic",
+            "_note": "Replace videoId with actual YouTube video ID",
+            "desc": "A beginner-friendly introduction to coding and programming."
+        },
+        {
+            "title": "Coding for Kids with Scratch",
+            "videoId": "jXUZaf5D12Y",
+            "desc": "Learn how block coding works through fun examples."
+        },
+        {
+            "title": "How Apps Solve Problems",
+            "videoId": "dU1xS07N-FA",
+            "desc": "Examples of apps and technology improving communities."
+        },
+        {
+            "title": "Young Coders Changing the World",
+            "videoId": "STRPsW6hM1M",
+            "desc": "Stories of young innovators using technology for social impact."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Scratch Programming",
+            "url": "https://scratch.mit.edu/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Code.org",
+            "url": "https://code.org/",
+            "icon": "🔗"
+        },
+        {
+            "title": "MIT App Inventor",
+            "url": "https://appinventor.mit.edu/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Design a Community Helper App",
+        "parts": [
+            "Notebook",
+            "Markers",
+            "Chart paper",
+            "Laptop or tablet (optional)",
+            "Team members"
+        ],
+        "steps": [
+            "Identify a community problem students face",
+            "Discuss how technology could help solve it",
+            "Sketch a simple app or website idea",
+            "List important app features",
+            "Create a short presentation explaining the solution",
+            "Present the app idea to the class"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does the 'C' in CODE stand for?",
+            "options": [
+                "Create",
+                "Copy",
+                "Close",
+                "Calculate"
+            ],
+            "answer": 0,
+            "explanation": "C stands for Create — using coding to build new ideas and solutions."
+        },
+        {
+            "q": "What is coding?",
+            "options": [
+                "Writing instructions for computers",
+                "Drawing only",
+                "Playing games",
+                "Repairing wires"
+            ],
+            "answer": 0,
+            "explanation": "Coding means giving instructions that computers can understand and follow."
+        },
+        {
+            "q": "What is an algorithm?",
+            "options": [
+                "A random drawing",
+                "A step-by-step instruction process",
+                "A music app",
+                "A computer screen"
+            ],
+            "answer": 1,
+            "explanation": "Algorithms are clear step-by-step instructions used to solve problems."
+        },
+        {
+            "q": "Which coding platform uses blocks for beginners?",
+            "options": [
+                "Scratch",
+                "Calculator",
+                "Printer",
+                "Browser"
+            ],
+            "answer": 0,
+            "explanation": "Scratch uses visual coding blocks to make programming easy for beginners."
+        },
+        {
+            "q": "Why is coding important?",
+            "options": [
+                "It helps solve problems using technology",
+                "It only creates games",
+                "It avoids teamwork",
+                "It replaces books"
+            ],
+            "answer": 0,
+            "explanation": "Coding helps build apps, websites, and tools that solve real-world problems."
+        },
+        {
+            "q": "What does the 'O' in CODE stand for?",
+            "options": [
+                "Observe",
+                "Organize",
+                "Operate",
+                "Output"
+            ],
+            "answer": 1,
+            "explanation": "O stands for Organize — planning and structuring projects carefully."
+        },
+        {
+            "q": "What does the 'D' in CODE stand for?",
+            "options": [
+                "Delete",
+                "Develop",
+                "Design Only",
+                "Discover"
+            ],
+            "answer": 1,
+            "explanation": "D stands for Develop — building and improving programs."
+        },
+        {
+            "q": "What does the 'E' in CODE stand for?",
+            "options": [
+                "Erase",
+                "Empower",
+                "Execute",
+                "Edit"
+            ],
+            "answer": 1,
+            "explanation": "E stands for Empower — using technology to help people and communities."
+        },
+        {
+            "q": "Which of these can be created using coding?",
+            "options": [
+                "Apps",
+                "Websites",
+                "Games",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Coding is used to create apps, websites, games, and many digital tools."
+        },
+        {
+            "q": "Why is teamwork useful in coding projects?",
+            "options": [
+                "Different people contribute different skills",
+                "Only one person should work",
+                "It slows projects down",
+                "Coding never needs teamwork"
+            ],
+            "answer": 0,
+            "explanation": "Technology projects often require teamwork and collaboration."
+        }
+    ]
+}

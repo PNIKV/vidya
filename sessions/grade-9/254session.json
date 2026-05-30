@@ -1,0 +1,252 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-2/",
+        "slides_folder": "sessions/session-2/slides/",
+        "images_folder": "sessions/session-2/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-2",
+    "number": 2,
+    "title": "Community Solution: WIRE",
+    "subtitle": "work together, inspire, respond, empower!",
+    "date": "Session 02",
+    "duration": "1 Hour",
+    "phase": "Innovation",
+    "color": "#4CAF50",
+    "icon": "🌍",
+    "tags": [
+        "Community",
+        "Problem Solving",
+        "Innovation",
+        "Leadership"
+    ],
+    "overview": "In this session, students learn how communities solve problems together using the WIRE model — Work Together, Inspire Ideas, Respond to Needs, and Empower People. Students explore teamwork, empathy, communication, and innovation while designing solutions for real community challenges.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-2/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from teamwork activities, community surveys, brainstorming sessions, and solution presentations.",
+        "gallery": [
+            {
+                "file": "data/community-discussion.jpg",
+                "_placeholder": "ADD: Students discussing local problems",
+                "caption": "Communities grow stronger when people work together",
+                "category": "Discussion"
+            },
+            {
+                "file": "data/team-brainstorm.jpg",
+                "_placeholder": "ADD: Brainstorming activity photo",
+                "caption": "Creative thinking helps solve community challenges",
+                "category": "Innovation"
+            },
+            {
+                "file": "data/helping-community.jpg",
+                "_placeholder": "ADD: Students helping community members",
+                "caption": "Empathy and teamwork create meaningful impact",
+                "category": "Community"
+            },
+            {
+                "file": "data/poster-making.jpg",
+                "_placeholder": "ADD: Poster or awareness campaign activity",
+                "caption": "Awareness campaigns inspire positive action",
+                "category": "Awareness"
+            },
+            {
+                "file": "data/community-cleanup.jpg",
+                "_placeholder": "ADD: Cleanliness or social service activity",
+                "caption": "Small actions can create big community change",
+                "category": "Action"
+            },
+            {
+                "file": "data/student-pitch.jpg",
+                "_placeholder": "ADD: Student solution presentation",
+                "caption": "Students presenting innovative community ideas",
+                "category": "Presentation"
+            }
+        ]
+    },
+    "keyTopics": [
+        "W — Work Together: Teamwork builds stronger communities",
+        "I — Inspire Ideas: Creativity leads to innovation",
+        "R — Respond to Needs: Understand and solve real problems",
+        "E — Empower People: Help others grow and participate",
+        "Community Mapping — Identifying local challenges",
+        "Empathy — Understanding how others feel",
+        "Leadership — Guiding positive change",
+        "Social Innovation — Creating solutions for society"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "How Communities Solve Problems Together",
+            "videoId": "j7X7s9nQW4M",
+            "_note": "Replace videoId with actual YouTube video ID",
+            "desc": "A simple introduction to teamwork and community problem-solving."
+        },
+        {
+            "title": "What is Social Innovation?",
+            "videoId": "4z7gDsSKUmU",
+            "desc": "Learn how innovative ideas can improve society and communities."
+        },
+        {
+            "title": "Leadership and Teamwork for Students",
+            "videoId": "fUXdrl9ch_Q",
+            "desc": "Fun examples of teamwork, leadership, and collaboration."
+        },
+        {
+            "title": "Young Changemakers Around the World",
+            "videoId": "xH7Vd5mW4TM",
+            "desc": "Stories of young people creating positive community impact."
+        }
+    ],
+    "resources": [
+        {
+            "title": "UN Sustainable Development Goals",
+            "url": "https://sdgs.un.org/goals",
+            "icon": "🔗"
+        },
+        {
+            "title": "Design Thinking for Beginners",
+            "url": "https://www.ideou.com/blogs/inspiration/what-is-design-thinking",
+            "icon": "🔗"
+        },
+        {
+            "title": "Canva Poster Maker",
+            "url": "https://www.canva.com/create/posters/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Design a Community Solution",
+        "parts": [
+            "Chart paper",
+            "Markers",
+            "Sticky notes",
+            "Notebook",
+            "Team members"
+        ],
+        "steps": [
+            "Identify one problem in your school or community",
+            "Discuss how the problem affects people",
+            "Brainstorm creative solutions using the WIRE model",
+            "Create a poster or mini-presentation",
+            "Explain how your solution helps the community",
+            "Present your idea to the class"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What does the 'W' in WIRE stand for?",
+            "options": [
+                "Win",
+                "Work Together",
+                "Walk",
+                "Wonder"
+            ],
+            "answer": 1,
+            "explanation": "W stands for Work Together because teamwork helps communities solve problems."
+        },
+        {
+            "q": "What does the 'I' in WIRE stand for?",
+            "options": [
+                "Ignore",
+                "Invent",
+                "Inspire Ideas",
+                "Improve Alone"
+            ],
+            "answer": 2,
+            "explanation": "I stands for Inspire Ideas — creativity and innovation help communities grow."
+        },
+        {
+            "q": "Why is teamwork important in communities?",
+            "options": [
+                "One person can solve every problem",
+                "Communities become stronger together",
+                "It wastes time",
+                "It creates more problems"
+            ],
+            "answer": 1,
+            "explanation": "Working together allows people to combine skills and ideas for better solutions."
+        },
+        {
+            "q": "What does empathy mean?",
+            "options": [
+                "Ignoring others",
+                "Understanding how others feel",
+                "Winning arguments",
+                "Working alone"
+            ],
+            "answer": 1,
+            "explanation": "Empathy means understanding and caring about other people's feelings and needs."
+        },
+        {
+            "q": "Which is an example of a community problem?",
+            "options": [
+                "Clean parks",
+                "Good roads everywhere",
+                "Garbage pollution",
+                "Healthy rivers"
+            ],
+            "answer": 2,
+            "explanation": "Garbage pollution is a real community problem that needs solutions."
+        },
+        {
+            "q": "What does the 'R' in WIRE stand for?",
+            "options": [
+                "Respond to Needs",
+                "Run Away",
+                "Repeat",
+                "Relax"
+            ],
+            "answer": 0,
+            "explanation": "R means Respond to Needs by understanding and solving real problems."
+        },
+        {
+            "q": "What does the 'E' in WIRE stand for?",
+            "options": [
+                "Escape",
+                "Empower People",
+                "Erase",
+                "Exercise"
+            ],
+            "answer": 1,
+            "explanation": "E stands for Empower People by helping and encouraging others."
+        },
+        {
+            "q": "What is social innovation?",
+            "options": [
+                "Creating solutions that improve society",
+                "Avoiding community issues",
+                "Playing online games",
+                "Only earning money"
+            ],
+            "answer": 0,
+            "explanation": "Social innovation focuses on solving problems that help people and communities."
+        },
+        {
+            "q": "Why should students participate in community activities?",
+            "options": [
+                "To create positive change",
+                "To avoid responsibility",
+                "To compete with friends only",
+                "To skip learning"
+            ],
+            "answer": 0,
+            "explanation": "Students can become changemakers by helping improve their communities."
+        },
+        {
+            "q": "Which skill helps students share ideas clearly?",
+            "options": [
+                "Communication",
+                "Sleeping",
+                "Avoiding discussion",
+                "Silence"
+            ],
+            "answer": 0,
+            "explanation": "Communication helps students explain and present their ideas effectively."
+        }
+    ]
+}

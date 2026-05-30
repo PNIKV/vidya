@@ -1,0 +1,224 @@
+{
+    "_meta": {
+        "version": "2.0",
+        "improvement_notes": [
+            "Standardized naming across fields",
+            "Improved learning progression (Begin → Advanced)",
+            "Added clearer UX/UI structure for slides + activities",
+            "Normalized tags and phases",
+            "Improved quiz clarity and difficulty balance"
+        ]
+    },
+    "_instructions": {
+        "folder_structure": "sessions/session-11/",
+        "slides_folder": "sessions/session-11/slides/",
+        "images_folder": "sessions/session-11/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-11",
+    "number": 11,
+    "title": "HTML & CSS Advanced",
+    "subtitle": "build modern, responsive, beautiful websites",
+    "date": "Session 11",
+    "duration": "1 Hour",
+    "phase": "Web Development",
+    "level": "Intermediate",
+    "color": "#FF9800",
+    "icon": "🎨",
+    "tags": [
+        "HTML",
+        "CSS",
+        "Web Development",
+        "UI Design",
+        "Responsive Design"
+    ],
+    "overview": "Students explore advanced HTML and CSS techniques to build responsive, modern websites. The focus is on layout systems, design principles, animations, and real-world UI structure used in professional web development.",
+    "grades": [
+        9
+    ],
+    "learningOutcomes": [
+        "Build semantic HTML structures using modern tags",
+        "Design responsive layouts using Flexbox and Grid",
+        "Apply CSS styling principles for real UI designs",
+        "Create basic animations and transitions",
+        "Understand mobile-first design thinking"
+    ],
+    "slides": {
+        "pdf": "sessions/session-11/slides.pdf",
+        "flow": [
+            "Introduction to modern web design",
+            "HTML semantic structure deep dive",
+            "CSS Flexbox fundamentals",
+            "CSS Grid advanced layouts",
+            "Responsive design principles",
+            "Animations & transitions",
+            "Mini project walkthrough"
+        ]
+    },
+    "images": {
+        "_note": "Add real UI screenshots, student projects, and layout examples.",
+        "gallery": [
+            {
+                "file": "data/responsive-layout.jpg",
+                "caption": "Responsive websites adapt to all devices",
+                "category": "UI Design"
+            },
+            {
+                "file": "data/flexbox-demo.jpg",
+                "caption": "Flexbox simplifies alignment and spacing",
+                "category": "CSS Layout"
+            },
+            {
+                "file": "data/css-grid.jpg",
+                "caption": "CSS Grid enables advanced 2D layouts",
+                "category": "CSS Layout"
+            },
+            {
+                "file": "data/html-structure.jpg",
+                "caption": "Semantic HTML improves structure and SEO",
+                "category": "HTML"
+            },
+            {
+                "file": "data/web-animation.jpg",
+                "caption": "Animations improve user engagement",
+                "category": "Interaction"
+            },
+            {
+                "file": "data/student-website.jpg",
+                "caption": "Student-built responsive website project",
+                "category": "Project"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Semantic HTML5 structure",
+        "Flexbox layout system",
+        "CSS Grid system",
+        "Responsive design (mobile-first)",
+        "CSS transitions and animations",
+        "Typography and spacing systems",
+        "UI/UX design principles",
+        "Reusable CSS patterns"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Modern HTML & CSS Crash Course",
+            "videoId": "mU6anWqZJcc",
+            "desc": "Complete overview of modern web design fundamentals."
+        },
+        {
+            "title": "Flexbox Mastery",
+            "videoId": "JJSoEo8JSnc",
+            "desc": "Deep dive into flexible layout systems."
+        },
+        {
+            "title": "CSS Grid Explained",
+            "videoId": "0xMQfnTU6oo",
+            "desc": "Build complex layouts easily using CSS Grid."
+        },
+        {
+            "title": "Responsive Web Design",
+            "videoId": "srvUrASNj0s",
+            "desc": "Make websites work on all devices."
+        }
+    ],
+    "resources": [
+        {
+            "title": "MDN Web Docs",
+            "url": "https://developer.mozilla.org/en-US/docs/Web",
+            "icon": "🔗"
+        },
+        {
+            "title": "CSS-Tricks Guide",
+            "url": "https://css-tricks.com/",
+            "icon": "🔗"
+        },
+        {
+            "title": "W3Schools Practice",
+            "url": "https://www.w3schools.com/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Build a Responsive Landing Page",
+        "objective": "Design a modern landing page using HTML + Flexbox/Grid",
+        "steps": [
+            "Create semantic HTML structure (header, hero, sections, footer)",
+            "Design layout using Flexbox or CSS Grid",
+            "Add typography and spacing system",
+            "Include images and buttons",
+            "Make it responsive for mobile and tablet",
+            "Add simple hover effects and transitions"
+        ],
+        "output": "Fully responsive landing page"
+    },
+    "quiz": {
+        "easy": [
+            {
+                "q": "What is HTML used for?",
+                "options": [
+                    "Structure web pages",
+                    "Style pages",
+                    "Run servers",
+                    "Store data"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What does CSS do?",
+                "options": [
+                    "Styling",
+                    "Networking",
+                    "Hardware control",
+                    "Database"
+                ],
+                "answer": 0
+            }
+        ],
+        "medium": [
+            {
+                "q": "What is Flexbox used for?",
+                "options": [
+                    "Layout alignment",
+                    "Security",
+                    "Databases",
+                    "AI"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What is CSS Grid best for?",
+                "options": [
+                    "2D layouts",
+                    "Text only",
+                    "Audio",
+                    "Emails"
+                ],
+                "answer": 0
+            }
+        ],
+        "hard": [
+            {
+                "q": "What is mobile-first design?",
+                "options": [
+                    "Designing for mobile first then scaling up",
+                    "Only designing for desktop",
+                    "Ignoring responsiveness",
+                    "Using only images"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "Why use semantic HTML?",
+                "options": [
+                    "Better structure and SEO",
+                    "Faster internet",
+                    "More colors",
+                    "Less code"
+                ],
+                "answer": 0
+            }
+        ]
+    }
+}

@@ -1,0 +1,222 @@
+{
+  "_meta": {
+    "version": "1.0",
+    "purpose": "AI literacy + safety + ethics curriculum module",
+    "notes": "Designed for middle-school to early high-school learners"
+  },
+  "_instructions": {
+    "folder_structure": "sessions/session-13/",
+    "slides_folder": "sessions/session-13/slides/",
+    "images_folder": "sessions/session-13/images/",
+    "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+    "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+  },
+  "id": "session-13",
+  "number": 13,
+  "title": "AI Safety & Regulations",
+  "subtitle": "using AI responsibly, safely, and ethically",
+  "date": "Session 13",
+  "duration": "1 Hour",
+  "phase": "AI Ethics & Society",
+  "level": "Beginner",
+  "color": "#673AB7",
+  "icon": "🛡️",
+  "tags": [
+    "AI Safety",
+    "Ethics",
+    "Digital Citizenship",
+    "Regulations"
+  ],
+  "overview": "This session introduces students to AI safety, responsible usage, and global regulations. Students learn how AI systems can impact society, why rules are needed, and how to use AI tools ethically, safely, and responsibly.",
+  "grades": [
+    9
+  ],
+  "learningOutcomes": [
+    "Understand what AI safety means",
+    "Identify risks of AI misuse",
+    "Learn basic concepts of AI ethics",
+    "Recognize why AI regulations exist",
+    "Apply safe practices when using AI tools"
+  ],
+  "slides": {
+    "pdf": "sessions/session-13/slides.pdf",
+    "flow": [
+      "What is AI Safety?",
+      "Why AI needs rules and regulations",
+      "Real-world risks of AI misuse",
+      "Bias and fairness in AI systems",
+      "Privacy and data protection",
+      "Responsible AI usage guidelines",
+      "Global AI regulations overview",
+      "Student safety checklist"
+    ]
+  },
+  "images": {
+    "_note": "Use real-world illustrations: ethics, safety, cybersecurity, privacy concepts, and responsible AI usage.",
+    "gallery": [
+      {
+        "file": "data/ai-ethics-scale.jpg",
+        "caption": "Balancing innovation with responsibility in AI systems",
+        "category": "Ethics"
+      },
+      {
+        "file": "data/data-privacy-lock.jpg",
+        "caption": "Protecting user data and privacy in digital systems",
+        "category": "Privacy"
+      },
+      {
+        "file": "data/ai-bias-example.jpg",
+        "caption": "AI systems can sometimes reflect human bias",
+        "category": "Bias"
+      },
+      {
+        "file": "data/cyber-safety-students.jpg",
+        "caption": "Students learning safe digital practices",
+        "category": "Safety"
+      },
+      {
+        "file": "data/global-regulations-map.jpg",
+        "caption": "Different countries are creating AI regulations",
+        "category": "Regulation"
+      },
+      {
+        "file": "data/responsible-ai-use.jpg",
+        "caption": "Using AI tools responsibly and ethically",
+        "category": "Responsibility"
+      }
+    ]
+  },
+  "keyTopics": [
+    "AI Safety Fundamentals",
+    "Ethical AI Usage",
+    "Bias in Machine Learning",
+    "Data Privacy & Security",
+    "Misinformation & Deepfakes",
+    "Human Oversight in AI",
+    "AI Governance & Laws",
+    "Responsible Digital Citizenship"
+  ],
+  "realWorldExamples": [
+    {
+      "title": "AI Chatbot Misuse",
+      "desc": "Chatbots can generate incorrect or harmful information if not regulated properly."
+    },
+    {
+      "title": "Facial Recognition Concerns",
+      "desc": "Privacy and bias concerns arise when AI identifies people without consent."
+    },
+    {
+      "title": "Deepfake Technology",
+      "desc": "AI-generated fake videos can spread misinformation if misused."
+    }
+  ],
+  "safePractices": [
+    "Do not share personal or sensitive information with AI tools",
+    "Always verify AI-generated information",
+    "Use AI tools under guidance when possible",
+    "Respect privacy and consent",
+    "Avoid spreading AI-generated misinformation"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "What is AI Ethics?",
+      "videoId": "z1X4X0Y2Q5A",
+      "desc": "Introduction to ethical AI systems and responsible use."
+    },
+    {
+      "title": "AI Bias Explained",
+      "videoId": "59bMh59JQDo",
+      "desc": "Understanding how bias appears in AI systems."
+    },
+    {
+      "title": "Why AI Regulation Matters",
+      "videoId": "Zb1m0J9Q0oQ",
+      "desc": "Global efforts to regulate artificial intelligence."
+    },
+    {
+      "title": "Deepfakes and Digital Safety",
+      "videoId": "m4E9Q9Z2XyA",
+      "desc": "How deepfakes work and why awareness is important."
+    }
+  ],
+  "resources": [
+    {
+      "title": "UN AI Ethics Guidelines",
+      "url": "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics"
+    },
+    {
+      "title": "OECD AI Principles",
+      "url": "https://oecd.ai/en/ai-principles"
+    },
+    {
+      "title": "AI Safety Institute (UK)",
+      "url": "https://www.aisafety.gov.uk/"
+    }
+  ],
+  "activity": {
+    "title": "AI Safety Scenario Workshop",
+    "objective": "Learn how to identify safe and unsafe AI usage situations",
+    "steps": [
+      "Discuss real-life AI use cases",
+      "Identify possible risks in each scenario",
+      "Suggest safer alternatives",
+      "Create a 'Safe AI Use' poster",
+      "Present group findings to class"
+    ],
+    "output": "AI Safety awareness poster + discussion presentation"
+  },
+  "assessment": {
+    "quiz": [
+      {
+        "q": "What is AI safety mainly about?",
+        "options": [
+          "Using AI responsibly and safely",
+          "Making AI faster",
+          "Building robots only",
+          "Playing games"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is AI bias?",
+        "options": [
+          "Unfair or skewed AI decisions",
+          "Faster processing",
+          "Better graphics",
+          "Internet speed"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "Why is data privacy important?",
+        "options": [
+          "To protect personal information",
+          "To make AI slower",
+          "To increase storage",
+          "To delete apps"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What is a deepfake?",
+        "options": [
+          "AI-generated fake media",
+          "A type of computer hardware",
+          "A coding language",
+          "A search engine"
+        ],
+        "answer": 0
+      },
+      {
+        "q": "What should you NOT do with AI tools?",
+        "options": [
+          "Share personal sensitive data",
+          "Learn new things",
+          "Ask questions",
+          "Explore ideas"
+        ],
+        "answer": 0
+      }
+    ]
+  }
+}

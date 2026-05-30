@@ -1,0 +1,206 @@
+{
+    "_meta": {
+        "version": "1.0",
+        "purpose": "Introduce version control systems for beginners in software development",
+        "notes": "Focus on Git basics, collaboration, and real-world workflow understanding"
+    },
+    "_instructions": {
+        "folder_structure": "sessions/session-14/",
+        "slides_folder": "sessions/session-14/slides/",
+        "images_folder": "sessions/session-14/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-14",
+    "number": 14,
+    "title": "Version Control",
+    "subtitle": "track changes, collaborate, and build like professionals",
+    "date": "Session 14",
+    "duration": "1 Hour",
+    "phase": "Software Engineering Basics",
+    "level": "Beginner",
+    "color": "#4CAF50",
+    "icon": "🔁",
+    "tags": [
+        "Version Control",
+        "Git",
+        "Collaboration",
+        "Software Development"
+    ],
+    "overview": "This session introduces version control systems and explains how developers track changes, collaborate in teams, and manage code history using tools like Git. Students learn why version control is essential in real-world software development.",
+    "grades": [
+        9
+    ],
+    "learningOutcomes": [
+        "Understand what version control is",
+        "Explain why developers use Git",
+        "Identify basic Git concepts (commit, repository, branch)",
+        "Understand collaboration workflows",
+        "Recognize real-world use cases of version control"
+    ],
+    "slides": {
+        "pdf": "sessions/session-14/slides.pdf",
+        "flow": [
+            "What is Version Control?",
+            "Why version control is important",
+            "Introduction to Git",
+            "Repositories and commits",
+            "Branches and merging",
+            "Collaboration workflow",
+            "Real-world developer usage",
+            "Mini demo overview"
+        ]
+    },
+    "images": {
+        "_note": "Add diagrams of Git workflow, branching trees, and collaboration examples.",
+        "gallery": [
+            {
+                "file": "data/git-history-tree.jpg",
+                "caption": "Version control tracks changes over time like a timeline tree",
+                "category": "Concept"
+            },
+            {
+                "file": "data/github-collaboration.jpg",
+                "caption": "Teams collaborate using Git repositories",
+                "category": "Collaboration"
+            },
+            {
+                "file": "data/commit-example.jpg",
+                "caption": "Each commit saves a snapshot of code changes",
+                "category": "Git"
+            },
+            {
+                "file": "data/branching-diagram.jpg",
+                "caption": "Branches allow parallel development paths",
+                "category": "Git"
+            },
+            {
+                "file": "data/merge-conflict.jpg",
+                "caption": "Merge conflicts happen when changes overlap",
+                "category": "Advanced"
+            },
+            {
+                "file": "data/student-git-practice.jpg",
+                "caption": "Students practicing Git commands and workflows",
+                "category": "Learning"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is Version Control?",
+        "Local vs Remote Repositories",
+        "Git Basics",
+        "Commits and History Tracking",
+        "Branches and Merging",
+        "Collaboration in Teams",
+        "GitHub Overview",
+        "Handling Merge Conflicts"
+    ],
+    "codeExamples": [
+        {
+            "title": "Initialize Git Repository",
+            "language": "bash",
+            "code": "git init",
+            "explanation": "Creates a new Git repository in a project folder"
+        },
+        {
+            "title": "Add Files",
+            "language": "bash",
+            "code": "git add .",
+            "explanation": "Stages all changes for commit"
+        },
+        {
+            "title": "Commit Changes",
+            "language": "bash",
+            "code": "git commit -m \"Initial commit\"",
+            "explanation": "Saves a snapshot of the project with a message"
+        },
+        {
+            "title": "Check Status",
+            "language": "bash",
+            "code": "git status",
+            "explanation": "Shows current changes and file state"
+        }
+    ],
+    "realWorldExamples": [
+        {
+            "title": "Team Software Development",
+            "desc": "Multiple developers work on the same project using branches and merges."
+        },
+        {
+            "title": "Open Source Projects",
+            "desc": "Thousands of contributors collaborate on GitHub using version control."
+        },
+        {
+            "title": "Bug Fixing Workflow",
+            "desc": "Developers track bugs and fix them without breaking existing code."
+        }
+    ],
+    "activity": {
+        "title": "Simulate a Git Workflow",
+        "objective": "Understand version control through a hands-on classroom simulation",
+        "steps": [
+            "Create a simple text file (story or code)",
+            "Make changes and save versions manually",
+            "Label each version as commit 1, 2, 3",
+            "Simulate branching by copying file versions",
+            "Merge changes into final version",
+            "Discuss collaboration challenges"
+        ],
+        "output": "Understanding of how Git tracks changes and supports teamwork"
+    },
+    "assessment": {
+        "quiz": [
+            {
+                "q": "What is version control used for?",
+                "options": [
+                    "Tracking changes in files",
+                    "Playing games",
+                    "Editing videos",
+                    "Designing graphics"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What is a commit?",
+                "options": [
+                    "A saved snapshot of changes",
+                    "A deleted file",
+                    "A folder",
+                    "A bug report"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What does git add do?",
+                "options": [
+                    "Stages files for commit",
+                    "Deletes files",
+                    "Runs program",
+                    "Uploads website"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "What is a branch?",
+                "options": [
+                    "A parallel version of code",
+                    "A type of file",
+                    "A server",
+                    "A bug"
+                ],
+                "answer": 0
+            },
+            {
+                "q": "Why do teams use Git?",
+                "options": [
+                    "To collaborate efficiently",
+                    "To delete code",
+                    "To slow development",
+                    "To avoid teamwork"
+                ],
+                "answer": 0
+            }
+        ]
+    }
+}

@@ -1,0 +1,258 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-8/",
+        "slides_folder": "sessions/session-8/slides/",
+        "images_folder": "sessions/session-8/images/",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ...",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder"
+    },
+    "id": "session-8",
+    "number": 8,
+    "title": "Building an AI Assistant Concept",
+    "subtitle": "design your own smart assistant!",
+    "date": "Session 08",
+    "duration": "1 Hour",
+    "phase": "AI Innovation",
+    "color": "#3F51B5",
+    "icon": "🧠",
+    "tags": [
+        "Artificial Intelligence",
+        "AI Assistant",
+        "Innovation",
+        "Design Thinking"
+    ],
+    "overview": "This session introduces students to the concept of AI assistants and how they help people in daily life. Students learn how AI assistants listen, understand, respond, and automate tasks. Through creative activities, students design their own smart assistant ideas for solving real-world problems.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-8/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos of chatbot demos, voice assistants, app mockups, brainstorming activities, and student presentations.",
+        "gallery": [
+            {
+                "file": "data/voice-assistant.jpg",
+                "_placeholder": "ADD: Smart voice assistant image",
+                "caption": "AI assistants can understand voice commands",
+                "category": "AI Assistant"
+            },
+            {
+                "file": "data/chatbot-demo.jpg",
+                "_placeholder": "ADD: Chatbot interface or conversation screenshot",
+                "caption": "Chatbots help answer questions automatically",
+                "category": "Chatbot"
+            },
+            {
+                "file": "data/student-brainstorm.jpg",
+                "_placeholder": "ADD: Students brainstorming assistant ideas",
+                "caption": "Creative thinking helps design useful AI assistants",
+                "category": "Innovation"
+            },
+            {
+                "file": "data/app-wireframe.jpg",
+                "_placeholder": "ADD: AI assistant app sketch or wireframe",
+                "caption": "Planning the assistant interface and features",
+                "category": "Design"
+            },
+            {
+                "file": "data/smart-home-assistant.jpg",
+                "_placeholder": "ADD: Smart home AI assistant example",
+                "caption": "AI assistants can automate homes and devices",
+                "category": "Technology"
+            },
+            {
+                "file": "data/team-discussion-ai.jpg",
+                "_placeholder": "ADD: Team discussion or collaboration activity",
+                "caption": "Teamwork improves AI product ideas",
+                "category": "Collaboration"
+            },
+            {
+                "file": "data/future-ai-helper.jpg",
+                "_placeholder": "ADD: Futuristic AI helper illustration",
+                "caption": "Future AI assistants may support education, health, and daily life",
+                "category": "Future"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is an AI Assistant?",
+        "Voice Assistants — Siri, Alexa, Google Assistant",
+        "Chatbots — AI systems that answer questions",
+        "Natural Language Processing (NLP) — Understanding human language",
+        "Input → Processing → Response",
+        "Automation using AI",
+        "Design Thinking for AI Products",
+        "Building AI Solutions for Real Problems"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is an AI Assistant?",
+            "videoId": "Q3Nlb7DByW8",
+            "_note": "Replace videoId with actual YouTube video ID",
+            "desc": "Introduction to AI assistants and how they work."
+        },
+        {
+            "title": "How Chatbots Work",
+            "videoId": "Rs_rAxEsAvI",
+            "desc": "Simple explanation of chatbots and conversational AI."
+        },
+        {
+            "title": "Voice Recognition and AI",
+            "videoId": "8zKuNo4ay8E",
+            "desc": "Learn how AI assistants understand human speech."
+        },
+        {
+            "title": "Future of AI Assistants",
+            "videoId": "BrNs0M77Pd4",
+            "desc": "Exploring future possibilities of smart assistants."
+        }
+    ],
+    "resources": [
+        {
+            "title": "MIT App Inventor",
+            "url": "https://appinventor.mit.edu/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Scratch AI Extensions",
+            "url": "https://scratch.mit.edu/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Google Teachable Machine",
+            "url": "https://teachablemachine.withgoogle.com/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Design Your Own AI Assistant",
+        "parts": [
+            "Notebook",
+            "Markers",
+            "Chart paper",
+            "Sticky notes",
+            "Team members"
+        ],
+        "steps": [
+            "Choose a real-world problem students face",
+            "Brainstorm how an AI assistant could help",
+            "Give the assistant a name and personality",
+            "Design key features and commands",
+            "Sketch the app or device interface",
+            "Present the assistant idea to the class"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is an AI assistant?",
+            "options": [
+                "A smart system that helps users using AI",
+                "A gaming console",
+                "A printer",
+                "A type of cable"
+            ],
+            "answer": 0,
+            "explanation": "AI assistants use artificial intelligence to help users perform tasks and answer questions."
+        },
+        {
+            "q": "Which is an example of an AI assistant?",
+            "options": [
+                "Alexa",
+                "Siri",
+                "Google Assistant",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "Alexa, Siri, and Google Assistant are popular AI assistants."
+        },
+        {
+            "q": "What does NLP stand for?",
+            "options": [
+                "Natural Language Processing",
+                "Network Logic Program",
+                "New Learning Platform",
+                "Normal Language Practice"
+            ],
+            "answer": 0,
+            "explanation": "NLP helps computers understand and process human language."
+        },
+        {
+            "q": "What is the main job of a chatbot?",
+            "options": [
+                "Answer questions and interact with users",
+                "Repair computers",
+                "Build hardware",
+                "Store electricity"
+            ],
+            "answer": 0,
+            "explanation": "Chatbots communicate with users and provide information or support."
+        },
+        {
+            "q": "How do voice assistants understand commands?",
+            "options": [
+                "Using speech recognition and AI",
+                "By reading books",
+                "Using only buttons",
+                "Without any technology"
+            ],
+            "answer": 0,
+            "explanation": "Voice assistants use AI and speech recognition to understand spoken language."
+        },
+        {
+            "q": "What is automation?",
+            "options": [
+                "Machines performing tasks automatically",
+                "Drawing pictures only",
+                "Avoiding technology",
+                "Playing games"
+            ],
+            "answer": 0,
+            "explanation": "Automation allows systems to perform tasks without constant human control."
+        },
+        {
+            "q": "Why is design thinking important for AI products?",
+            "options": [
+                "It helps solve user problems effectively",
+                "It avoids creativity",
+                "It stops innovation",
+                "It removes teamwork"
+            ],
+            "answer": 0,
+            "explanation": "Design thinking focuses on understanding users and creating useful solutions."
+        },
+        {
+            "q": "What is the first step in designing an AI assistant?",
+            "options": [
+                "Identify a problem to solve",
+                "Buy expensive devices",
+                "Print advertisements",
+                "Create random code"
+            ],
+            "answer": 0,
+            "explanation": "Good AI assistants are designed to solve real problems."
+        },
+        {
+            "q": "Which skill is important for building AI assistant ideas?",
+            "options": [
+                "Creativity",
+                "Problem-solving",
+                "Communication",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "AI innovation combines creativity, communication, and problem-solving skills."
+        },
+        {
+            "q": "How can AI assistants help society?",
+            "options": [
+                "Improve productivity and accessibility",
+                "Support education and healthcare",
+                "Automate repetitive tasks",
+                "All of the above"
+            ],
+            "answer": 3,
+            "explanation": "AI assistants can improve daily life in many different areas."
+        }
+    ]
+}
