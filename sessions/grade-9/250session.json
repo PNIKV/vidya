@@ -23,9 +23,7 @@
     ],
     "overview": "This session takes a deep dive into neural networks — the architecture powering modern AI. Students explore how neurons, weights, activation functions, and backpropagation work together to let machines learn. From a single perceptron to multi-layer deep networks, students build intuition through analogies, visuals, and a hands-on Keras model.",
     "grades": [
-        8,
-        9,
-        10
+        9
     ],
     "slides": {
         "pdf": "sessions/session-12/slides.pdf"

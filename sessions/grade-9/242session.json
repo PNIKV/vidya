@@ -1,0 +1,325 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-2/",
+        "slides_folder": "sessions/session-2/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-2/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-2",
+    "number": 2,
+    "title": "Advanced Arduino",
+    "subtitle": "Sensors, Signals & Smart Code!",
+    "date": "Session 02",
+    "duration": "1 Hour",
+    "phase": "Intermediate",
+    "color": "#FF6B00",
+    "icon": "🤖",
+    "tags": [
+        "Technology",
+        "Engineering",
+        "Programming",
+        "Electronics"
+    ],
+    "overview": "This session dives deeper into Arduino programming and hardware integration — covering analog vs digital signals, PWM, sensors, and serial communication to build smarter, interactive projects.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-2/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from the actual session — sensor demos, wiring diagrams, student projects, serial monitor screenshots.",
+        "gallery": [
+            {
+                "file": "data/arduino-uno.jpg",
+                "_placeholder": "ADD: Photo of Arduino UNO with labeled pins",
+                "caption": "Arduino UNO — The Smart Brain of our circuit!",
+                "category": "Components"
+            },
+            {
+                "file": "data/analog-vs-digital.jpg",
+                "_placeholder": "ADD: Diagram showing analog wave vs digital square wave",
+                "caption": "Analog = Smooth wave | Digital = ON/OFF steps",
+                "category": "Concept"
+            },
+            {
+                "file": "data/pwm-signal.gif",
+                "_placeholder": "ADD: GIF or image showing PWM duty cycle changing",
+                "caption": "PWM — Rapidly blinking to fake in-between brightness!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/ultrasonic-sensor.jpg",
+                "_placeholder": "ADD: Photo of HC-SR04 ultrasonic sensor",
+                "caption": "HC-SR04 — Sends sound, measures echo time = distance!",
+                "category": "Components"
+            },
+            {
+                "file": "data/ldr-sensor.jpg",
+                "_placeholder": "ADD: Photo of LDR (light dependent resistor)",
+                "caption": "LDR — Resistance drops when light shines on it",
+                "category": "Components"
+            },
+            {
+                "file": "data/serial-monitor.png",
+                "_placeholder": "ADD: Screenshot of Arduino IDE Serial Monitor output",
+                "caption": "Serial Monitor — Arduino talking back to your computer!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/servo-wiring.jpg",
+                "_placeholder": "ADD: Photo of servo motor wired to Arduino",
+                "caption": "Servo Motor — Angle controlled by code (0°–180°)",
+                "category": "Lab"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Digital vs Analog Signals — ON/OFF (0 or 1) vs Smooth Range (0–1023)",
+        "PWM (Pulse Width Modulation) — Faking analog with rapid ON/OFF pulses",
+        "analogRead() — Reading sensor values (LDR, potentiometer, temperature)",
+        "analogWrite() — Controlling LED brightness and motor speed via PWM",
+        "Ultrasonic Sensor (HC-SR04) — Sound pulse → echo → distance calculation",
+        "Serial Monitor — Arduino sending data back to computer for debugging",
+        "Functions in Arduino — void setup(), void loop(), and custom functions",
+        "Servo Motor Control — Sweep 0° to 180° using the Servo library"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Arduino for Beginners — Full Crash Course",
+            "videoId": "zJ-LqeX_fLU",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "A complete beginner-friendly Arduino walkthrough covering pins, code, and your first project."
+        },
+        {
+            "title": "PWM Explained Simply",
+            "videoId": "YmkXPXO0koE",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "What is Pulse Width Modulation? Explained with animations for beginners."
+        },
+        {
+            "title": "Ultrasonic Sensor HC-SR04 with Arduino",
+            "videoId": "ZejQOX69K5M",
+            "desc": "How to wire and code an HC-SR04 ultrasonic sensor to measure distance."
+        },
+        {
+            "title": "Servo Motor Control with Arduino",
+            "videoId": "SfmHNb5QAzc",
+            "desc": "Control a servo motor angle using Arduino and the Servo library."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Arduino Official Reference",
+            "url": "https://www.arduino.cc/reference/en/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Wokwi — Free Arduino Simulator",
+            "url": "https://wokwi.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "Tinkercad Circuits (Browser-based Arduino)",
+            "url": "https://www.tinkercad.com/circuits",
+            "icon": "🔗"
+        },
+        {
+            "title": "HC-SR04 Distance Formula Calculator",
+            "url": "https://www.omnicalculator.com/physics/speed-of-sound",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Smart Distance Alarm with Ultrasonic Sensor + LED + Buzzer",
+        "parts": [
+            "Arduino UNO",
+            "Breadboard",
+            "HC-SR04 Ultrasonic Sensor",
+            "LED (Red)",
+            "Piezo Buzzer",
+            "220Ω Resistor",
+            "Jumper wires",
+            "USB cable + laptop with Arduino IDE"
+        ],
+        "steps": [
+            "Wire HC-SR04: VCC → 5V, GND → GND, TRIG → Pin 9, ECHO → Pin 10",
+            "Connect LED (with 220Ω resistor) to Pin 13 and GND",
+            "Connect buzzer positive leg to Pin 8, negative to GND",
+            "Open Arduino IDE and include the distance formula: distance = duration * 0.034 / 2",
+            "Code: If distance < 20 cm → LED ON + Buzzer beeps FAST",
+            "Code: If distance 20–50 cm → LED blinks slowly",
+            "Code: If distance > 50 cm → LED OFF + Buzzer silent",
+            "Open Serial Monitor (9600 baud) to watch live distance values",
+            "Challenge: Add a second threshold and change buzzer tone by distance!"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is a Digital signal in Arduino?",
+            "options": [
+                "A signal with smooth, continuous values",
+                "A signal that is either fully ON (1) or fully OFF (0)",
+                "A signal that only measures temperature",
+                "A signal sent over Wi-Fi"
+            ],
+            "answer": 1,
+            "explanation": "Digital = ON or OFF, 1 or 0! Like a light switch — it's either up or down, no in-between."
+        },
+        {
+            "q": "What range of values does analogRead() return on an Arduino UNO?",
+            "options": [
+                "0 to 255",
+                "0 to 100",
+                "0 to 1023",
+                "0 to 5000"
+            ],
+            "answer": 2,
+            "explanation": "analogRead() gives values from 0 to 1023 (10-bit resolution). 0 = 0V, 1023 = 5V."
+        },
+        {
+            "q": "What does PWM stand for?",
+            "options": [
+                "Power Wire Mode",
+                "Pulse Width Modulation",
+                "Program Write Memory",
+                "Positive Wave Method"
+            ],
+            "answer": 1,
+            "explanation": "PWM = Pulse Width Modulation! It rapidly switches ON/OFF to fake an analog output — used for LED dimming and motor speed."
+        },
+        {
+            "q": "Which Arduino pins support PWM output (marked with ~)?",
+            "options": [
+                "All digital pins",
+                "Only analog pins A0–A5",
+                "Pins 3, 5, 6, 9, 10, 11",
+                "Only Pin 13"
+            ],
+            "answer": 2,
+            "explanation": "On Arduino UNO, PWM is available on pins 3, 5, 6, 9, 10, 11 (marked with ~ on the board)."
+        },
+        {
+            "q": "What value do you pass to analogWrite() for 50% brightness (half power)?",
+            "options": [
+                "512",
+                "50",
+                "127",
+                "1023"
+            ],
+            "answer": 2,
+            "explanation": "analogWrite() takes 0–255. Half of 255 ≈ 127. So analogWrite(pin, 127) = ~50% brightness!"
+        },
+        {
+            "q": "What does the HC-SR04 ultrasonic sensor use to measure distance?",
+            "options": [
+                "Infrared light",
+                "Laser beams",
+                "Sound pulses and echo timing",
+                "Magnetic fields"
+            ],
+            "answer": 2,
+            "explanation": "HC-SR04 sends a sound pulse from TRIG, then measures how long the echo takes to return on ECHO. Time → Distance!"
+        },
+        {
+            "q": "What is the distance formula used with HC-SR04?",
+            "options": [
+                "distance = duration / 2",
+                "distance = duration × 0.034 / 2",
+                "distance = duration × 5V",
+                "distance = echo − trig"
+            ],
+            "answer": 1,
+            "explanation": "distance (cm) = duration × 0.034 / 2. We divide by 2 because sound travels TO the object AND back!"
+        },
+        {
+            "q": "What is the Serial Monitor used for in Arduino?",
+            "options": [
+                "To upload code wirelessly",
+                "To display text and sensor values sent from Arduino to the computer",
+                "To power the Arduino",
+                "To draw circuit diagrams"
+            ],
+            "answer": 1,
+            "explanation": "Serial Monitor lets Arduino 'talk' to your computer! Use Serial.println() to print values — great for debugging!"
+        },
+        {
+            "q": "What baud rate is most commonly used with Serial.begin()?",
+            "options": [
+                "115200",
+                "4800",
+                "9600",
+                "1200"
+            ],
+            "answer": 2,
+            "explanation": "Serial.begin(9600) is the most common baud rate for Arduino projects. Both the code and Serial Monitor must match!"
+        },
+        {
+            "q": "What does void loop() do in Arduino code?",
+            "options": [
+                "Runs once when the Arduino powers on",
+                "Defines the Wi-Fi connection",
+                "Runs forever in a continuous loop as long as Arduino has power",
+                "Stores values in memory"
+            ],
+            "answer": 2,
+            "explanation": "void loop() runs over and over, forever! It's the heart of Arduino — like a beating heart that never stops."
+        },
+        {
+            "q": "Which library is used to control a Servo Motor in Arduino?",
+            "options": [
+                "Wire.h",
+                "SPI.h",
+                "Servo.h",
+                "Motor.h"
+            ],
+            "answer": 2,
+            "explanation": "#include <Servo.h> lets you control servo motor angle easily. Use myServo.write(90) to move to 90 degrees!"
+        },
+        {
+            "q": "What angle range can a standard servo motor rotate to?",
+            "options": [
+                "0° to 90°",
+                "0° to 180°",
+                "0° to 360°",
+                "−90° to 90°"
+            ],
+            "answer": 1,
+            "explanation": "Standard servo motors rotate from 0° to 180°. Use myServo.write(0) for full left, write(180) for full right!"
+        },
+        {
+            "q": "An LDR (Light Dependent Resistor) behaves how?",
+            "options": [
+                "Resistance increases when light is bright",
+                "Resistance is always constant",
+                "Resistance decreases when light increases",
+                "It only works with digital signals"
+            ],
+            "answer": 2,
+            "explanation": "LDR = Light Dependent Resistor! More light → less resistance → more current flows. Dark → high resistance!"
+        },
+        {
+            "q": "What is a 'function' in Arduino programming?",
+            "options": [
+                "A type of sensor",
+                "A named block of reusable code that performs a specific task",
+                "A wire connector",
+                "A power regulator"
+            ],
+            "answer": 1,
+            "explanation": "Functions are reusable code blocks! Instead of repeating code, write a function once and call it anywhere. Saves time!"
+        },
+        {
+            "q": "What happens if you connect an LED directly to 5V without a resistor?",
+            "options": [
+                "LED glows dimly",
+                "Nothing happens",
+                "LED burns out due to too much current",
+                "LED blinks automatically"
+            ],
+            "answer": 2,
+            "explanation": "Without a resistor, too much current flows through the LED and it BURNS OUT instantly! Always use a 220Ω resistor to protect it."
+        }
+    ]
+}

@@ -1,0 +1,321 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-3/",
+        "slides_folder": "sessions/session-3/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-3/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-3",
+    "number": 3,
+    "title": "Cloud Storage Concepts",
+    "subtitle": "Store it, Share it, Access it Anywhere!",
+    "date": "Session 03",
+    "duration": "1 Hour",
+    "phase": "Intermediate",
+    "color": "#4A90D9",
+    "icon": "☁️",
+    "tags": [
+        "Technology",
+        "Networking",
+        "Cloud Computing",
+        "Data Management"
+    ],
+    "overview": "This session introduces students to the concept of cloud storage — how data is stored remotely on servers, accessed via the internet, and managed securely. Students explore real-world cloud services and understand the difference between local and cloud storage.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-3/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from the actual session — cloud diagrams, server rack images, app screenshots, whiteboard drawings.",
+        "gallery": [
+            {
+                "file": "data/cloud-vs-local.jpg",
+                "_placeholder": "ADD: Diagram comparing local storage (HDD/USB) vs cloud storage (server)",
+                "caption": "Local vs Cloud — Your files live on the internet!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/data-center.jpg",
+                "_placeholder": "ADD: Photo of a real data center with server racks",
+                "caption": "Data Centers — Massive warehouses of computers storing YOUR data",
+                "category": "Concept"
+            },
+            {
+                "file": "data/google-drive.png",
+                "_placeholder": "ADD: Screenshot of Google Drive interface",
+                "caption": "Google Drive — Free cloud storage for everyone!",
+                "category": "Components"
+            },
+            {
+                "file": "data/upload-download.gif",
+                "_placeholder": "ADD: GIF showing upload and download animation",
+                "caption": "Upload = Send to cloud | Download = Bring back to device",
+                "category": "Concept"
+            },
+            {
+                "file": "data/encryption-lock.jpg",
+                "_placeholder": "ADD: Image showing a lock icon over a file or data stream",
+                "caption": "Encryption — Your data is scrambled so only YOU can read it!",
+                "category": "Components"
+            },
+            {
+                "file": "data/cloud-sync.gif",
+                "_placeholder": "ADD: GIF showing files syncing across phone, tablet, laptop",
+                "caption": "Sync — Same file updated on ALL your devices instantly!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/bandwidth-analogy.jpg",
+                "_placeholder": "ADD: Diagram showing bandwidth as a highway with more/less lanes",
+                "caption": "Bandwidth = Highway lanes — More lanes = faster data!",
+                "category": "Lab"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is Cloud Storage? — Storing files on remote servers accessed via internet",
+        "Local vs Cloud Storage — USB/HDD (physical) vs Google Drive/iCloud (remote)",
+        "How Cloud Works — Client → Internet → Data Center → Server",
+        "Upload & Download — Sending data to cloud vs retrieving it back",
+        "Sync — Automatic update of files across all devices in real time",
+        "Encryption — Scrambling data so only authorized users can read it",
+        "Bandwidth & Latency — Speed of data transfer and delay in communication",
+        "Popular Cloud Services — Google Drive, iCloud, OneDrive, Dropbox, AWS S3"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "What is Cloud Computing?",
+            "videoId": "M988_fsOSWo",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "A beginner-friendly explanation of cloud computing — what it is, how it works, and why everyone uses it."
+        },
+        {
+            "title": "How Cloud Storage Works",
+            "videoId": "vxcZSFqNXEk",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "An animated explainer of how your files travel to data centers and back when you use cloud storage."
+        },
+        {
+            "title": "What is Encryption?",
+            "videoId": "AQDCe585Lnc",
+            "desc": "How encryption scrambles your data to keep it safe from hackers."
+        },
+        {
+            "title": "Data Centers Explained",
+            "videoId": "QAbqJzd0PEE",
+            "desc": "A tour inside a real data center — the backbone of all cloud services."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Google Drive — Free Cloud Storage",
+            "url": "https://drive.google.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "AWS Cloud Concepts (Free Training)",
+            "url": "https://aws.amazon.com/training/digital/aws-cloud-practitioner-essentials/",
+            "icon": "🔗"
+        },
+        {
+            "title": "How HTTPS & Encryption Works",
+            "url": "https://www.cloudflare.com/learning/ssl/what-is-encryption/",
+            "icon": "🔗"
+        },
+        {
+            "title": "Internet Speed Test (Bandwidth Demo)",
+            "url": "https://www.speedtest.net",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Cloud Storage Simulation — Upload, Share & Sync Challenge",
+        "parts": [
+            "Laptop or tablet with internet access",
+            "Google account (or teacher-provided demo account)",
+            "A sample text file or image to upload",
+            "Google Drive / OneDrive web interface",
+            "Whiteboard for drawing the client-server diagram"
+        ],
+        "steps": [
+            "Open Google Drive in the browser and log in",
+            "Upload a sample file (photo or document) to Google Drive",
+            "Observe the upload progress — discuss: where is the file going?",
+            "Share the file with a classmate using their email (view-only)",
+            "Classmate opens the shared link on their device — file appears!",
+            "Edit the document simultaneously — see real-time sync in action",
+            "Draw on whiteboard: Your Device → Internet → Google Data Center → Friend's Device",
+            "Challenge: Create a folder, organize files, and set sharing permissions (viewer vs editor)"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is Cloud Storage?",
+            "options": [
+                "Storing files inside your computer's hard drive",
+                "Storing files on remote servers accessed through the internet",
+                "Saving files on a USB drive",
+                "Printing documents for backup"
+            ],
+            "answer": 1,
+            "explanation": "Cloud Storage = saving your files on powerful remote servers (data centers) that you access via the internet from any device!"
+        },
+        {
+            "q": "Which of these is an example of LOCAL storage?",
+            "options": [
+                "Google Drive",
+                "iCloud",
+                "USB Pen Drive / Hard Disk",
+                "Dropbox"
+            ],
+            "answer": 2,
+            "explanation": "A USB pen drive or hard disk is LOCAL storage — it physically stores data on your device, not on the internet."
+        },
+        {
+            "q": "What is a Data Center?",
+            "options": [
+                "A classroom with computers",
+                "A large facility full of servers that store and process data for cloud services",
+                "A Wi-Fi router at home",
+                "A USB hub"
+            ],
+            "answer": 1,
+            "explanation": "Data Centers are massive warehouses packed with thousands of servers. They are the physical backbone of all cloud services!"
+        },
+        {
+            "q": "What does UPLOAD mean?",
+            "options": [
+                "Downloading a file from the internet to your device",
+                "Deleting a file from the cloud",
+                "Sending a file FROM your device TO the cloud",
+                "Copying a file from one folder to another"
+            ],
+            "answer": 2,
+            "explanation": "Upload = sending data FROM you TO the cloud. Think: pushing your file UP into the cloud!"
+        },
+        {
+            "q": "What does DOWNLOAD mean?",
+            "options": [
+                "Sending a file to someone else",
+                "Retrieving a file FROM the cloud TO your device",
+                "Encrypting a file",
+                "Deleting a file from the server"
+            ],
+            "answer": 1,
+            "explanation": "Download = pulling a file DOWN from the cloud to your device. Like catching rain from the cloud!"
+        },
+        {
+            "q": "What is SYNC (Synchronization) in cloud storage?",
+            "options": [
+                "Deleting old files automatically",
+                "Backing up files only once a week",
+                "Automatically keeping the same file updated across all your devices in real time",
+                "Encrypting all your files"
+            ],
+            "answer": 2,
+            "explanation": "Sync means if you edit a file on your phone, it instantly updates on your laptop and tablet too — all in real time!"
+        },
+        {
+            "q": "What is Encryption in simple terms?",
+            "options": [
+                "Making files smaller to save space",
+                "Scrambling data into a secret code so only authorized users can read it",
+                "Speeding up your internet connection",
+                "Sorting files into folders automatically"
+            ],
+            "answer": 1,
+            "explanation": "Encryption = scrambling your data into unreadable code. Only someone with the correct KEY can unscramble and read it. Keeps hackers out!"
+        },
+        {
+            "q": "Which of these is a popular cloud storage service?",
+            "options": [
+                "Microsoft Word",
+                "Google Drive",
+                "Notepad",
+                "VLC Media Player"
+            ],
+            "answer": 1,
+            "explanation": "Google Drive is a cloud storage service by Google. Others include iCloud (Apple), OneDrive (Microsoft), and Dropbox!"
+        },
+        {
+            "q": "What is BANDWIDTH?",
+            "options": [
+                "The size of a file in megabytes",
+                "The physical width of a network cable",
+                "The maximum amount of data that can be transferred over a network in a given time",
+                "The number of devices connected to Wi-Fi"
+            ],
+            "answer": 2,
+            "explanation": "Bandwidth = how much data can flow per second — like lanes on a highway! More bandwidth = faster uploads and downloads."
+        },
+        {
+            "q": "In the highway analogy, what does BANDWIDTH represent?",
+            "options": [
+                "The number of cars (files)",
+                "The speed limit on the road",
+                "The number of lanes — more lanes = more data at once",
+                "The destination of the cars"
+            ],
+            "answer": 2,
+            "explanation": "Bandwidth = number of highway lanes! More lanes = more data can travel at the same time = faster internet speed."
+        },
+        {
+            "q": "What is LATENCY?",
+            "options": [
+                "Total storage space in the cloud",
+                "The delay between sending a request and receiving a response",
+                "The cost of a cloud subscription",
+                "The brightness of your screen"
+            ],
+            "answer": 1,
+            "explanation": "Latency = delay! It's the time gap between clicking 'load' and the data actually arriving. Low latency = fast response. High latency = lag!"
+        },
+        {
+            "q": "What is the correct path data takes when you open a file from Google Drive?",
+            "options": [
+                "Your Device → USB → Printer → Screen",
+                "Your Device → Internet → Google Data Center → Back to Your Device",
+                "Your Device → Bluetooth → Friend's Device",
+                "Your Device → Local Hard Drive → Screen"
+            ],
+            "answer": 1,
+            "explanation": "Cloud path: Your Device → Internet → Data Center (where file lives) → Data sent back → Displayed on your screen!"
+        },
+        {
+            "q": "Which cloud storage service is made by Apple?",
+            "options": [
+                "OneDrive",
+                "Dropbox",
+                "iCloud",
+                "Google Drive"
+            ],
+            "answer": 2,
+            "explanation": "iCloud is Apple's cloud storage service — used for iPhone, iPad, and Mac to sync photos, contacts, and files automatically."
+        },
+        {
+            "q": "What is an advantage of cloud storage over local storage?",
+            "options": [
+                "It works without internet",
+                "Files can only be accessed from one device",
+                "Data is accessible from any device, anywhere with internet",
+                "It is always free with unlimited space"
+            ],
+            "answer": 2,
+            "explanation": "Cloud storage's biggest advantage = access from ANYWHERE! Lost your phone? Files are still safe in the cloud on another device."
+        },
+        {
+            "q": "What could be a RISK of using cloud storage?",
+            "options": [
+                "Files can be accessed from multiple devices",
+                "Automatic backup of data",
+                "Data privacy concerns and dependency on internet connection",
+                "Files stay updated across all devices"
+            ],
+            "answer": 2,
+            "explanation": "Cloud storage risks include: needing internet to access files, data privacy concerns (who can see your data?), and server outages. Always use strong passwords + encryption!"
+        }
+    ]
+}

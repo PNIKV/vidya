@@ -1,0 +1,322 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-6/",
+        "slides_folder": "sessions/session-6/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-6/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-6",
+    "number": 6,
+    "title": "Cybersecurity Advanced II",
+    "subtitle": "Deeper Threats, Stronger Defences!",
+    "date": "Session 06",
+    "duration": "1 Hour",
+    "phase": "Advanced",
+    "color": "#9B30FF",
+    "icon": "🛡️",
+    "tags": [
+        "Cybersecurity",
+        "Ethical Hacking",
+        "Network Security",
+        "Digital Forensics"
+    ],
+    "overview": "Building on Session 5, this advanced session explores deeper cybersecurity topics — network scanning, vulnerability assessment, malware analysis, digital forensics, and incident response. Students think like professional security analysts and practise real defensive techniques used in the industry.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-6/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from the actual session — Nmap scan output, malware lifecycle diagram, incident response flowchart, Kali Linux screenshots, forensics disk image.",
+        "gallery": [
+            {
+                "file": "data/nmap-scan.png",
+                "_placeholder": "ADD: Screenshot of Nmap scan results showing open ports on a target",
+                "caption": "Nmap — Scanning a network to find open doors (ports)!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/malware-types.jpg",
+                "_placeholder": "ADD: Diagram showing malware types — Virus, Worm, Trojan, Spyware, Rootkit, Keylogger",
+                "caption": "Malware Zoo — Every type of digital weapon explained!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/incident-response.jpg",
+                "_placeholder": "ADD: Flowchart showing Incident Response lifecycle — Prepare, Identify, Contain, Eradicate, Recover, Lessons Learned",
+                "caption": "Incident Response — 6 steps to survive a cyberattack!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/kali-linux.jpg",
+                "_placeholder": "ADD: Screenshot of Kali Linux desktop with security tools visible",
+                "caption": "Kali Linux — The ethical hacker's operating system!",
+                "category": "Components"
+            },
+            {
+                "file": "data/vpn-tunnel.jpg",
+                "_placeholder": "ADD: Diagram showing encrypted VPN tunnel between user and internet",
+                "caption": "VPN — An encrypted tunnel that hides your identity online!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/digital-forensics.jpg",
+                "_placeholder": "ADD: Image of forensic disk imaging or file recovery tools",
+                "caption": "Digital Forensics — Recovering deleted evidence from devices!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/two-factor-auth.jpg",
+                "_placeholder": "ADD: Screenshot showing 2FA prompt on a phone alongside a login screen",
+                "caption": "2FA — Even if they steal your password, they still can't get in!",
+                "category": "Components"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Malware Types — Virus, Worm, Trojan, Spyware, Rootkit, Keylogger — how each spreads and harms",
+        "Network Scanning — Using Nmap to discover hosts, open ports, and running services",
+        "Vulnerability Assessment vs Penetration Testing — Finding vs actively exploiting weaknesses",
+        "Incident Response Lifecycle — Prepare → Identify → Contain → Eradicate → Recover → Learn",
+        "VPN (Virtual Private Network) — Encrypted tunnel that masks IP and secures traffic",
+        "Two-Factor Authentication (2FA) — Adding a second layer beyond just a password",
+        "Digital Forensics — Collecting, preserving, and analysing digital evidence after an attack",
+        "OWASP Top 10 — The ten most critical web application security risks every developer must know"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Types of Malware Explained",
+            "videoId": "n8mbzU0X2nQ",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "Viruses, worms, trojans, ransomware, spyware — every type of malware explained clearly with real examples."
+        },
+        {
+            "title": "Nmap Tutorial for Beginners",
+            "videoId": "4t4kBkMsDbQ",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "How to use Nmap to scan networks, discover hosts, and identify open ports like a security professional."
+        },
+        {
+            "title": "How VPNs Work",
+            "videoId": "R-JUOpCgTZc",
+            "desc": "An animated explainer of how VPNs create encrypted tunnels and hide your real IP address."
+        },
+        {
+            "title": "OWASP Top 10 Explained",
+            "videoId": "ravRMMlXgXg",
+            "desc": "The 10 most critical web security vulnerabilities every developer and security professional must understand."
+        }
+    ],
+    "resources": [
+        {
+            "title": "OWASP Top 10 — Official List",
+            "url": "https://owasp.org/www-project-top-ten/",
+            "icon": "🔗"
+        },
+        {
+            "title": "TryHackMe — Free Hands-On Cyber Labs",
+            "url": "https://tryhackme.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "VirusTotal — Scan Files & URLs for Malware",
+            "url": "https://www.virustotal.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "Shodan — Search Engine for Internet-Connected Devices",
+            "url": "https://www.shodan.io",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Threat Hunt Challenge — Malware Identification + Incident Response Simulation",
+        "parts": [
+            "Laptop or tablet with browser",
+            "VirusTotal (virustotal.com) — free online malware scanner",
+            "Printed Incident Response scenario cards (3 scenarios)",
+            "Whiteboard for drawing the IR lifecycle",
+            "TryHackMe free account (optional for advanced challenge)"
+        ],
+        "steps": [
+            "Part 1 — Malware ID: Visit VirusTotal and upload a safe dummy file (or paste a known malicious URL provided by teacher)",
+            "Read the scan report — identify which antivirus engines flagged it and what malware family it belongs to",
+            "Discuss: What type of malware is it? How does it spread? What damage does it cause?",
+            "Part 2 — Incident Response Simulation: Draw the IR Lifecycle on the whiteboard — Prepare, Identify, Contain, Eradicate, Recover, Learn",
+            "Each team draws an Incident Response scenario card (e.g., 'Ransomware detected on 10 school computers')",
+            "Teams must walk through all 6 IR steps for their scenario and present to the class",
+            "Part 3 — 2FA Demo: Show how enabling 2FA on a Google account works — demonstrate authenticator app vs SMS code",
+            "Discuss: Why is SMS-based 2FA weaker than an authenticator app?",
+            "Challenge: Complete TryHackMe's free 'Intro to Cybersecurity' room for hands-on practice!"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is the difference between a VIRUS and a WORM?",
+            "options": [
+                "A virus needs a host file to attach to and spread; a worm spreads independently across networks without needing a host file",
+                "A worm needs a host file; a virus spreads on its own",
+                "They are exactly the same thing",
+                "A virus only attacks hardware; a worm only attacks software"
+            ],
+            "answer": 0,
+            "explanation": "Virus = attaches to a file and spreads when that file is shared. Worm = self-replicating, travels across networks on its own — no host file needed. Worms spread much faster!"
+        },
+        {
+            "q": "What is a TROJAN HORSE in cybersecurity?",
+            "options": [
+                "A physical device hidden inside a computer",
+                "Malware disguised as legitimate software that secretly performs malicious actions once installed",
+                "A type of DDoS attack using fake IP addresses",
+                "An ancient encryption algorithm"
+            ],
+            "answer": 1,
+            "explanation": "Trojan = disguised malware! Like the ancient Trojan Horse — it looks like a useful app (game, tool, software) but secretly installs malware, steals data, or gives attackers remote access."
+        },
+        {
+            "q": "What does a KEYLOGGER do?",
+            "options": [
+                "Locks your keyboard so you cannot type",
+                "Records every keystroke you type — capturing passwords, messages, and credit card numbers",
+                "Speeds up keyboard input",
+                "Encrypts your files and demands ransom"
+            ],
+            "answer": 1,
+            "explanation": "Keylogger = silent spy! It records EVERYTHING you type — passwords, bank details, messages — and sends it to the attacker. You never know it's there until it's too late!"
+        },
+        {
+            "q": "What is a ROOTKIT?",
+            "options": [
+                "A tool used to fix corrupted system files",
+                "Malware that hides deep inside the operating system, giving attackers persistent hidden access with admin privileges",
+                "A network scanning tool used by ethical hackers",
+                "A type of firewall that operates at the root level"
+            ],
+            "answer": 1,
+            "explanation": "Rootkit = the sneakiest malware! It hides so deep in the OS that antivirus tools often cannot detect it. It gives attackers ROOT (admin) access — full control of your system, silently."
+        },
+        {
+            "q": "What is Nmap used for?",
+            "options": [
+                "Creating encrypted tunnels for VPN connections",
+                "Scanning networks to discover connected hosts, open ports, and running services",
+                "Analysing malware files in a sandbox",
+                "Recovering deleted files from a hard drive"
+            ],
+            "answer": 1,
+            "explanation": "Nmap = Network Mapper! It scans a network to find: which devices are online, which ports are open, and what services are running. Used by both attackers (reconnaissance) and defenders (auditing)!"
+        },
+        {
+            "q": "What is the difference between VULNERABILITY ASSESSMENT and PENETRATION TESTING?",
+            "options": [
+                "They are the same process with different names",
+                "Vulnerability assessment only scans and identifies weaknesses; penetration testing actively exploits those weaknesses to prove the impact",
+                "Penetration testing only scans; vulnerability assessment actively exploits",
+                "Vulnerability assessment is illegal; penetration testing is always legal"
+            ],
+            "answer": 1,
+            "explanation": "VA = finding weaknesses (like checking if doors are unlocked). Pen Testing = actually opening the door to prove it works (with permission!). Pen testing goes deeper and shows real business impact."
+        },
+        {
+            "q": "What is the FIRST step in the Incident Response lifecycle?",
+            "options": [
+                "Contain",
+                "Eradicate",
+                "Prepare",
+                "Identify"
+            ],
+            "answer": 2,
+            "explanation": "Prepare comes FIRST! Before any attack happens, you must have policies, tools, and a trained team ready. The full cycle: Prepare → Identify → Contain → Eradicate → Recover → Lessons Learned."
+        },
+        {
+            "q": "During an incident, what does CONTAINMENT mean?",
+            "options": [
+                "Deleting all evidence of the attack",
+                "Paying the ransom to restore files quickly",
+                "Isolating affected systems to stop the attack from spreading further",
+                "Rebuilding all systems from scratch"
+            ],
+            "answer": 2,
+            "explanation": "Containment = stop the bleeding! Disconnect infected machines from the network immediately to prevent the attack from spreading to other systems. Preserve evidence — don't wipe anything yet!"
+        },
+        {
+            "q": "What is a VPN (Virtual Private Network)?",
+            "options": [
+                "A private social network for company employees",
+                "An encrypted tunnel between your device and the internet that hides your IP address and secures your traffic",
+                "A type of firewall that blocks all incoming connections",
+                "A tool for scanning Wi-Fi networks"
+            ],
+            "answer": 1,
+            "explanation": "VPN = encrypted tunnel! All your internet traffic goes through an encrypted tunnel to a VPN server — websites see the VPN's IP, not yours. Protects against MITM on public Wi-Fi!"
+        },
+        {
+            "q": "Why is an AUTHENTICATOR APP safer than SMS for Two-Factor Authentication?",
+            "options": [
+                "Authenticator apps are easier to use",
+                "SMS codes are longer and harder to type",
+                "SMS can be intercepted via SIM swapping or SS7 attacks; authenticator app codes are generated locally and never transmitted",
+                "Authenticator apps never expire their codes"
+            ],
+            "answer": 2,
+            "explanation": "SMS 2FA can be hijacked by SIM swapping (tricking your carrier to transfer your number) or SS7 network attacks. Authenticator app codes are generated offline on your device — never sent over a network!"
+        },
+        {
+            "q": "What is DIGITAL FORENSICS?",
+            "options": [
+                "Designing secure digital systems",
+                "The process of collecting, preserving, and analysing digital evidence from devices after a security incident",
+                "Testing software for bugs before release",
+                "Monitoring network traffic in real time"
+            ],
+            "answer": 1,
+            "explanation": "Digital Forensics = cyber detective work! After an attack, forensic analysts examine hard drives, logs, and memory to find what happened, who did it, and how — preserving evidence for legal proceedings."
+        },
+        {
+            "q": "What does OWASP stand for?",
+            "options": [
+                "Online Web Application Security Protocol",
+                "Open Worldwide Application Security Project",
+                "Organised Web Attack and Safety Procedures",
+                "Official Web Auditing and Scanning Platform"
+            ],
+            "answer": 1,
+            "explanation": "OWASP = Open Worldwide Application Security Project! A non-profit that publishes the famous OWASP Top 10 — the most critical web security risks every developer must know and fix."
+        },
+        {
+            "q": "Which of these is in the OWASP Top 10?",
+            "options": [
+                "Slow internet connection",
+                "Broken Access Control",
+                "Outdated graphics drivers",
+                "Weak Wi-Fi signal"
+            ],
+            "answer": 1,
+            "explanation": "Broken Access Control is #1 on the OWASP Top 10! It means users can access data or functions they shouldn't — like a regular user accessing admin pages. A massive and common vulnerability!"
+        },
+        {
+            "q": "What does VirusTotal do?",
+            "options": [
+                "It creates viruses for research purposes",
+                "It scans files and URLs against 70+ antivirus engines simultaneously to detect malware",
+                "It monitors network traffic for intrusions",
+                "It recovers files deleted by ransomware"
+            ],
+            "answer": 1,
+            "explanation": "VirusTotal = free malware scanner! Upload a suspicious file or URL and it checks it against 70+ antivirus engines at once. If multiple engines flag it — it's almost certainly malware!"
+        },
+        {
+            "q": "What is a BOTNET?",
+            "options": [
+                "A network of robots used in manufacturing",
+                "A group of security researchers who fight cybercrime",
+                "A network of malware-infected computers controlled remotely by an attacker to perform coordinated attacks",
+                "A type of VPN service"
+            ],
+            "answer": 2,
+            "explanation": "Botnet = army of zombie computers! Malware silently infects thousands of devices — they become 'bots'. The attacker commands them all at once — commonly used for DDoS attacks and spam campaigns!"
+        }
+    ]
+}

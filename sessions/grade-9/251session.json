@@ -23,30 +23,30 @@
     ],
     "overview": "Building on the Robot Arm Project (Session 13), this session upgrades the arm with smarter control — adding sensor-driven automation, inverse kinematics concepts, serial command input, and obstacle detection. Students evolve their manual arm into a semi-autonomous robot that can react to its environment.",
     "grades": [
-        10
+        9
     ],
     "slides": {
-        "pdf": "data/sessions/session251.pdf"
+        "pdf": "sessions/session-14/slides.pdf"
     },
     "images": {
         "_note": "Add photos from the actual session — serial monitor command input, ultrasonic sensor mounted on gripper, inverse kinematics diagram, PCA9685 servo driver board, smooth sweep code output.",
         "gallery": [
             {
-                "file": "data/Arm.png",
+                "file": "data/serial-command-arm.png",
                 "_placeholder": "ADD: Screenshot of Serial Monitor with typed commands controlling the robot arm",
-                "caption": "Robot Arm",
+                "caption": "Serial Control — Type a command, the arm obeys!",
                 "category": "Lab"
             },
             {
-                "file": "data/servo-sweeping.gif",
+                "file": "data/smooth-servo-sweep.gif",
                 "_placeholder": "ADD: GIF showing a servo moving smoothly in small increments vs jerky large jumps",
-                "caption": "Servo Sweeping — Small steps make the arm move like a pro!",
+                "caption": "Smooth Sweep — Small steps make the arm move like a pro!",
                 "category": "Concept"
             },
             {
-                "file": "data/UltrasonicDistance-Sensor_Arduino.png",
+                "file": "data/ultrasonic-on-gripper.jpg",
                 "_placeholder": "ADD: Photo of HC-SR04 ultrasonic sensor mounted on the robot arm gripper",
-                "caption": "Ultrasonic Distance Sensor",
+                "caption": "Sensor on Arm — The arm now SEES what is in front of it!",
                 "category": "Components"
             },
             {
@@ -56,19 +56,19 @@
                 "category": "Concept"
             },
             {
-                "file": "data/PCA9685.png",
+                "file": "data/pca9685-board.jpg",
                 "_placeholder": "ADD: Photo of PCA9685 16-channel servo driver board wired to Arduino via I2C",
                 "caption": "PCA9685 — Control 16 servos with just 2 Arduino pins via I2C!",
                 "category": "Components"
             },
             {
-                "file": "data/servo-motor.jpg",
+                "file": "data/arm-obstacle-detect.jpg",
                 "_placeholder": "ADD: Photo of robot arm pausing mid-movement when an object is detected in its path",
-                "caption": "Servo Motor it have presition control with feedback",
+                "caption": "Obstacle Detection — The arm stops automatically when something is in the way!",
                 "category": "Lab"
             },
             {
-                "file": "data/eeprom.jpg",
+                "file": "data/arm-sequence-eeprom.jpg",
                 "_placeholder": "ADD: Diagram showing servo angle arrays saved to EEPROM and reloaded on power-up",
                 "caption": "EEPROM Memory — The arm remembers its routine even after power off!",
                 "category": "Concept"
@@ -94,7 +94,7 @@
         },
         {
             "title": "Inverse Kinematics for Robot Arms Explained",
-            "videoId": "Q-UeYEpwXXU",
+            "videoId": "IN6tDQaxgGI",
             "_note": "Replace videoId with actual YouTube video ID from the URL",
             "desc": "A visual introduction to inverse kinematics — how to calculate joint angles from a desired end-effector position."
         },
@@ -128,11 +128,6 @@
         {
             "title": "Inverse Kinematics Interactive Demo",
             "url": "https://www.cs.cmu.edu/~quake/robust.html",
-            "icon": "🔗"
-        },
-        {
-            "title": "servo with Ultrasonic",
-            "url": "https://wokwi.com/projects/465270628959197185",
             "icon": "🔗"
         }
     ],

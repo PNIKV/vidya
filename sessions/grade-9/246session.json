@@ -1,0 +1,325 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-7/",
+        "slides_folder": "sessions/session-7/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-7/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-7",
+    "number": 7,
+    "title": "Python + Hardware",
+    "subtitle": "Code Meets the Physical World!",
+    "date": "Session 07",
+    "duration": "1 Hour",
+    "phase": "Intermediate",
+    "color": "#FFD600",
+    "icon": "🐍",
+    "tags": [
+        "Python",
+        "Hardware",
+        "Raspberry Pi",
+        "Physical Computing"
+    ],
+    "overview": "This session bridges the gap between software and hardware — students learn how Python code can directly control physical components like LEDs, buzzers, motors, and sensors. Using Raspberry Pi and GPIO pins, the physical world becomes programmable!",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-7/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from the actual session — Raspberry Pi GPIO diagram, Python terminal output, LED circuit wiring, sensor readings printed on screen.",
+        "gallery": [
+            {
+                "file": "data/raspberry-pi.jpg",
+                "_placeholder": "ADD: Photo of Raspberry Pi board with labeled GPIO pins",
+                "caption": "Raspberry Pi — A full Linux computer the size of a credit card!",
+                "category": "Components"
+            },
+            {
+                "file": "data/gpio-pinout.jpg",
+                "_placeholder": "ADD: GPIO pinout diagram showing all 40 pins of Raspberry Pi",
+                "caption": "GPIO Pins — The bridge between Python code and physical components!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/python-terminal.png",
+                "_placeholder": "ADD: Screenshot of Python terminal running GPIO code on Raspberry Pi",
+                "caption": "Python on Hardware — Just a few lines of code to blink an LED!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/led-gpio-circuit.jpg",
+                "_placeholder": "ADD: Photo of LED connected to Raspberry Pi GPIO pin with resistor",
+                "caption": "LED + GPIO — Python says HIGH, LED glows. Python says LOW, LED off!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/pir-sensor.jpg",
+                "_placeholder": "ADD: Photo of PIR motion sensor wired to Raspberry Pi",
+                "caption": "PIR Sensor — Detects movement and sends a signal to Python!",
+                "category": "Components"
+            },
+            {
+                "file": "data/python-vs-arduino.jpg",
+                "_placeholder": "ADD: Side-by-side comparison diagram of Python/Raspberry Pi vs C++/Arduino",
+                "caption": "Python vs Arduino C++ — Same result, different languages & boards!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/gpiozero-library.png",
+                "_placeholder": "ADD: Screenshot of GPIOZero library code controlling LED and button",
+                "caption": "GPIOZero — The easiest Python library for hardware control!",
+                "category": "Components"
+            }
+        ]
+    },
+    "keyTopics": [
+        "Python vs Arduino C++ — Same hardware goals, different languages and boards",
+        "Raspberry Pi vs Arduino — Full Linux computer (Pi) vs simple microcontroller (Arduino)",
+        "GPIO Pins — General Purpose Input/Output: the physical interface between code and components",
+        "Digital Output — Python sets a pin HIGH (3.3V) or LOW (0V) to turn LEDs, buzzers ON/OFF",
+        "Digital Input — Python reads a pin to detect button presses, PIR motion, switch states",
+        "GPIOZero Library — Simple beginner-friendly Python library for controlling GPIO hardware",
+        "RPi.GPIO Library — Lower-level Python library giving direct control over GPIO pins",
+        "Loops & Delays in Hardware — Using while True and time.sleep() to create blink, pulse, and sense patterns"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Raspberry Pi GPIO Explained for Beginners",
+            "videoId": "6PuK9fh3aL8",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "A clear introduction to GPIO pins on Raspberry Pi — what they are, how they work, and how to use them safely."
+        },
+        {
+            "title": "Python GPIO — Blink an LED with Raspberry Pi",
+            "videoId": "OQyntQLazPU",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "Step-by-step tutorial — wire an LED to a GPIO pin and write Python code to make it blink."
+        },
+        {
+            "title": "Raspberry Pi vs Arduino — Which Should You Use?",
+            "videoId": "7vhvnaWUZjE",
+            "desc": "A side-by-side comparison of Raspberry Pi and Arduino — strengths, weaknesses, and best use cases for each."
+        },
+        {
+            "title": "GPIOZero Python Library Tutorial",
+            "videoId": "rKcalyU0kd8",
+            "desc": "How to use the GPIOZero library to control LEDs, buttons, buzzers, and sensors with minimal Python code."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Raspberry Pi GPIO Pinout Reference",
+            "url": "https://pinout.xyz",
+            "icon": "🔗"
+        },
+        {
+            "title": "GPIOZero Official Documentation",
+            "url": "https://gpiozero.readthedocs.io",
+            "icon": "🔗"
+        },
+        {
+            "title": "Wokwi — Simulate Raspberry Pi & Python Online",
+            "url": "https://wokwi.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "Raspberry Pi Official Projects",
+            "url": "https://projects.raspberrypi.org",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Python Motion Alarm — PIR Sensor + LED + Buzzer with Raspberry Pi",
+        "parts": [
+            "Raspberry Pi (any model with GPIO) or Wokwi simulator",
+            "PIR Motion Sensor (HC-SR501)",
+            "LED (Red)",
+            "Piezo Buzzer",
+            "220Ω Resistor",
+            "Breadboard",
+            "Jumper wires",
+            "Python 3 installed (pre-installed on Raspberry Pi OS)"
+        ],
+        "steps": [
+            "Wire PIR sensor: VCC → 5V pin, GND → GND pin, OUT → GPIO 17",
+            "Wire LED (with 220Ω resistor): anode → GPIO 27, cathode → GND",
+            "Wire buzzer: positive → GPIO 22, negative → GND",
+            "Open Terminal on Raspberry Pi and create a new file: nano motion_alarm.py",
+            "Import libraries: from gpiozero import MotionSensor, LED, Buzzer and import time",
+            "Initialise components: pir = MotionSensor(17), led = LED(27), buzzer = Buzzer(22)",
+            "Write the main loop: while True — if pir.motion_detected → led.on(), buzzer.on(), print('Motion Detected!') — else → led.off(), buzzer.off()",
+            "Run the program: python3 motion_alarm.py — walk in front of the sensor!",
+            "Challenge: Add a time.sleep(2) cooldown so the alarm does not trigger continuously, and print a timestamp with each detection using datetime.now()"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is the main difference between a Raspberry Pi and an Arduino?",
+            "options": [
+                "Raspberry Pi is larger and more expensive only",
+                "Raspberry Pi is a full Linux computer capable of running Python and an OS; Arduino is a simple microcontroller that runs one program at a time",
+                "Arduino can run Python; Raspberry Pi can only run C++",
+                "They are identical in capability and use"
+            ],
+            "answer": 1,
+            "explanation": "Raspberry Pi = full Linux computer — runs Python, browsers, games, multiple programs at once. Arduino = simple microcontroller — runs one uploaded sketch at a time. Different tools for different jobs!"
+        },
+        {
+            "q": "What does GPIO stand for?",
+            "options": [
+                "General Power Input Output",
+                "Global Processor Interface Operations",
+                "General Purpose Input Output",
+                "Graphics Processing and I/O"
+            ],
+            "answer": 2,
+            "explanation": "GPIO = General Purpose Input Output! These pins on Raspberry Pi can be programmed as either inputs (read sensors, buttons) or outputs (control LEDs, buzzers, motors) — fully controlled by Python code!"
+        },
+        {
+            "q": "In Python GPIO, what does setting a pin to HIGH mean?",
+            "options": [
+                "The pin is disconnected from the circuit",
+                "The pin outputs 3.3V — turning ON whatever component is connected",
+                "The pin reads data from a sensor",
+                "The pin is set to analog mode"
+            ],
+            "answer": 1,
+            "explanation": "HIGH = 3.3V output on Raspberry Pi GPIO! When you set a pin HIGH in Python, it sends 3.3V — enough to light an LED, activate a relay, or signal another component. LOW = 0V (off)."
+        },
+        {
+            "q": "Which Python library is best for BEGINNERS to control GPIO on Raspberry Pi?",
+            "options": [
+                "RPi.GPIO",
+                "NumPy",
+                "GPIOZero",
+                "PySerial"
+            ],
+            "answer": 2,
+            "explanation": "GPIOZero is the beginner-friendly library! LED('LED').blink() is all you need to blink an LED. It abstracts the low-level details. RPi.GPIO is more powerful but requires more setup code."
+        },
+        {
+            "q": "What does this Python code do?  led.on()  time.sleep(1)  led.off()?",
+            "options": [
+                "Reads the LED brightness level",
+                "Turns the LED on for 1 second then turns it off",
+                "Blinks the LED continuously forever",
+                "Checks if the LED is connected correctly"
+            ],
+            "answer": 1,
+            "explanation": "led.on() turns the LED on → time.sleep(1) waits 1 second → led.off() turns it off. Simple but powerful! Add a while True loop around it to make it blink forever."
+        },
+        {
+            "q": "Why do we use time.sleep() in hardware Python programs?",
+            "options": [
+                "To save battery power on the Raspberry Pi",
+                "To pause execution for a set duration — controlling timing between actions like blink intervals or sensor polling",
+                "To prevent Python from crashing",
+                "To slow down the CPU for safety"
+            ],
+            "answer": 1,
+            "explanation": "time.sleep(seconds) pauses the program — essential in hardware! Without it, a while True loop runs millions of times per second — LEDs would flicker too fast to see and sensors would be spammed!"
+        },
+        {
+            "q": "What is a PIR sensor used for?",
+            "options": [
+                "Measuring temperature and humidity",
+                "Detecting infrared light from the sun",
+                "Detecting motion by sensing changes in infrared radiation from moving warm bodies",
+                "Measuring distance using sound"
+            ],
+            "answer": 2,
+            "explanation": "PIR = Passive Infrared sensor! It detects the infrared heat emitted by moving warm objects (humans, animals). When motion is detected, it sends a HIGH signal to the GPIO pin — perfect for alarm systems!"
+        },
+        {
+            "q": "What does while True: mean in a Python hardware program?",
+            "options": [
+                "The loop runs exactly once",
+                "The loop runs until the battery dies",
+                "The loop runs continuously and forever until the program is manually stopped",
+                "The loop only runs while a button is pressed"
+            ],
+            "answer": 2,
+            "explanation": "while True: = infinite loop! The code inside runs over and over forever — perfect for hardware that must constantly check sensors or respond to input. Stop it with Ctrl+C in the terminal."
+        },
+        {
+            "q": "What is the voltage level of a HIGH GPIO output pin on Raspberry Pi?",
+            "options": [
+                "5V",
+                "12V",
+                "1.8V",
+                "3.3V"
+            ],
+            "answer": 3,
+            "explanation": "Raspberry Pi GPIO pins output 3.3V when set HIGH — NOT 5V like Arduino! This is important when connecting components. Some sensors need 5V for VCC but only output 3.3V logic — always check datasheets!"
+        },
+        {
+            "q": "What is the purpose of a resistor when connecting an LED to a GPIO pin?",
+            "options": [
+                "To make the LED glow brighter",
+                "To filter out noise from the GPIO pin",
+                "To limit current flow and protect the LED and GPIO pin from burning out",
+                "To convert 3.3V to 5V for the LED"
+            ],
+            "answer": 2,
+            "explanation": "Resistor = current limiter! Without it, too much current flows through the LED and it burns out — and can damage the GPIO pin too! A 330Ω resistor is commonly used with LEDs on Raspberry Pi."
+        },
+        {
+            "q": "How do you read a digital INPUT (like a button) using GPIOZero in Python?",
+            "options": [
+                "led = LED(17) and check led.value",
+                "button = Button(17) and check button.is_pressed",
+                "sensor = Sensor(17) and check sensor.read()",
+                "pin = GPIO.input(17) and check pin.state"
+            ],
+            "answer": 1,
+            "explanation": "With GPIOZero: button = Button(17) creates a button object on GPIO 17. Then button.is_pressed returns True when pressed, False when not. Clean and simple Python hardware reading!"
+        },
+        {
+            "q": "What is the difference between Python on Raspberry Pi and C++ on Arduino for hardware control?",
+            "options": [
+                "Python is faster; C++ is slower",
+                "They cannot control the same types of components",
+                "Python on Pi is easier to write and supports complex logic, networking, and libraries; Arduino C++ is faster at real-time tasks with less overhead",
+                "Arduino C++ can only blink LEDs; Python can do everything"
+            ],
+            "answer": 2,
+            "explanation": "Python on Pi = flexible, easy, great for complex projects with networking, AI, and data. Arduino C++ = faster, better for real-time precise timing tasks like PWM and interrupt-driven projects. Choose the right tool!"
+        },
+        {
+            "q": "What does the RPi.GPIO library's GPIO.setmode(GPIO.BCM) do?",
+            "options": [
+                "Sets the Raspberry Pi to Bluetooth communication mode",
+                "Tells Python to use BCM (Broadcom chip) GPIO numbering — the numbers printed on GPIO pinout diagrams",
+                "Activates all GPIO pins at once",
+                "Sets all pins to output mode"
+            ],
+            "answer": 1,
+            "explanation": "GPIO.setmode(GPIO.BCM) tells RPi.GPIO to use BCM numbering — the numbers on pinout diagrams like GPIO17, GPIO27. The alternative is GPIO.BOARD which uses physical pin positions (1–40)."
+        },
+        {
+            "q": "What happens if you connect a component directly to Raspberry Pi's 5V pin without a resistor?",
+            "options": [
+                "Everything works perfectly",
+                "The component glows dimmer than expected",
+                "You may exceed the component's voltage rating and damage it or the Pi's GPIO circuitry",
+                "The Pi automatically reduces the voltage"
+            ],
+            "answer": 2,
+            "explanation": "Raspberry Pi has both 5V and 3.3V power pins, but GPIO logic is 3.3V. Connecting a 3.3V-rated component to 5V can destroy it. Always check component voltage ratings and use resistors for current protection!"
+        },
+        {
+            "q": "Which of these is a real-world project that uses Python + Hardware (Raspberry Pi)?",
+            "options": [
+                "A website built with HTML and CSS",
+                "A mobile game developed in Unity",
+                "A home security camera system that detects motion, captures photos, and emails alerts automatically",
+                "A spreadsheet that calculates student grades"
+            ],
+            "answer": 2,
+            "explanation": "Python + Raspberry Pi = powerful real-world projects! A Pi-powered security camera uses a PIR sensor (detect motion), camera module (capture photo), and Python smtplib (send email alert) — all in one small device!"
+        }
+    ]
+}

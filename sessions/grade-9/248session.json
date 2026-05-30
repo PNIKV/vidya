@@ -23,9 +23,7 @@
     ],
     "overview": "Building on Data Science Concepts (Session 9), this advanced session dives into predictive modelling, feature engineering, model evaluation, and real-world pipelines. Students move from describing data to predicting outcomes — using regression, classification, and model metrics to build data-driven solutions.",
     "grades": [
-        8,
-        9,
-        10
+        9
     ],
     "slides": {
         "pdf": "sessions/session-10/slides.pdf"

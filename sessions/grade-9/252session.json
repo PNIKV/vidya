@@ -1,0 +1,323 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-15/",
+        "slides_folder": "sessions/session-15/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-15/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-15",
+    "number": 15,
+    "title": "Sentiment Analysis",
+    "subtitle": "Teaching Machines to Feel the Vibe!",
+    "date": "Session 15",
+    "duration": "1 Hour",
+    "phase": "Advanced",
+    "color": "#FF4081",
+    "icon": "💬",
+    "tags": [
+        "Natural Language Processing",
+        "Machine Learning",
+        "Text Analysis",
+        "Python"
+    ],
+    "overview": "This session introduces Natural Language Processing (NLP) through one of its most popular applications — Sentiment Analysis. Students discover how machines read and understand human language, classify emotions in text, and power real-world tools like product review analysers, social media monitors, and customer feedback systems.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-15/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from the actual session — NLP pipeline diagram, tokenisation example, word cloud, positive/negative review examples, VADER score output screenshot.",
+        "gallery": [
+            {
+                "file": "data/sentiment-spectrum.jpg",
+                "_placeholder": "ADD: Diagram showing a spectrum from Very Negative to Very Positive with emoji faces",
+                "caption": "Sentiment Spectrum — From 😡 to 😍 — machines can read the vibe!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/nlp-pipeline.jpg",
+                "_placeholder": "ADD: Diagram showing NLP pipeline — Raw Text → Tokenise → Remove Stopwords → Vectorise → Model → Prediction",
+                "caption": "NLP Pipeline — How raw text becomes a machine-readable number!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/tokenisation.jpg",
+                "_placeholder": "ADD: Diagram showing a sentence split into individual word tokens",
+                "caption": "Tokenisation — Chopping a sentence into individual word pieces!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/word-cloud.png",
+                "_placeholder": "ADD: Word cloud image showing frequent positive and negative words from a review dataset",
+                "caption": "Word Cloud — Bigger word = appears more often in the dataset!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/vader-output.png",
+                "_placeholder": "ADD: Screenshot of VADER sentiment analyser output showing neg, neu, pos, and compound scores",
+                "caption": "VADER Scores — neg, neu, pos, compound — the full emotional breakdown!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/confusion-matrix-sentiment.jpg",
+                "_placeholder": "ADD: Confusion matrix showing true positive, false positive, true negative, false negative for sentiment classifier",
+                "caption": "Evaluating Sentiment Model — How many reviews did it get right?",
+                "category": "Lab"
+            },
+            {
+                "file": "data/real-world-sentiment.jpg",
+                "_placeholder": "ADD: Screenshot of Twitter/product review sentiment dashboard showing positive vs negative percentages",
+                "caption": "Real-World Sentiment — Companies analyse millions of reviews every day!",
+                "category": "Concept"
+            }
+        ]
+    },
+    "keyTopics": [
+        "What is NLP? — Natural Language Processing: teaching machines to read, understand, and generate human language",
+        "Sentiment Analysis — Classifying text as Positive, Negative, or Neutral based on emotional tone",
+        "NLP Pipeline — Raw Text → Tokenise → Clean → Remove Stopwords → Vectorise → Model → Predict",
+        "Tokenisation — Splitting text into individual words or subword units for processing",
+        "Stopwords — Common words (the, is, and) that carry no sentiment and are removed before analysis",
+        "Bag of Words & TF-IDF — Converting text into numerical vectors that machine learning models can process",
+        "VADER Sentiment Analyser — Rule-based Python tool that scores text sentiment without training data",
+        "Real-World Applications — Product reviews, social media monitoring, customer support, stock market prediction"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "Natural Language Processing Explained",
+            "videoId": "CMrHM8a3hqw",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "A beginner-friendly introduction to NLP — how computers process human language, common tasks, and real-world applications."
+        },
+        {
+            "title": "Sentiment Analysis with Python — Full Tutorial",
+            "videoId": "M7SWr5xObkA",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "Step-by-step sentiment analysis project in Python — using VADER and scikit-learn to classify text as positive or negative."
+        },
+        {
+            "title": "Bag of Words and TF-IDF Explained",
+            "videoId": "D2V1okCEsiE",
+            "desc": "How text is converted into numbers using Bag of Words and TF-IDF — the foundation of most text classification models."
+        },
+        {
+            "title": "VADER Sentiment Analysis — Python Tutorial",
+            "videoId": "u3XtBgT19rI",
+            "desc": "How to use the VADER sentiment analyser in Python to score text and classify it as positive, negative, or neutral."
+        }
+    ],
+    "resources": [
+        {
+            "title": "Google Colab — Free Python Notebook",
+            "url": "https://colab.research.google.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "NLTK — Natural Language Toolkit",
+            "url": "https://www.nltk.org",
+            "icon": "🔗"
+        },
+        {
+            "title": "Hugging Face — Pre-trained NLP Models",
+            "url": "https://huggingface.co",
+            "icon": "🔗"
+        },
+        {
+            "title": "WordCloud Python Library",
+            "url": "https://amueller.github.io/word_cloud/",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Movie Review Sentiment Analyser — VADER + Python + Word Cloud",
+        "parts": [
+            "Laptop or tablet with browser",
+            "Google Colab (colab.research.google.com) — free, no install needed",
+            "NLTK and VADER (install in Colab with pip)",
+            "Sample movie review dataset (provided by teacher or from NLTK built-in corpus)",
+            "WordCloud library for visualisation"
+        ],
+        "steps": [
+            "Open Google Colab and install libraries: !pip install nltk vaderSentiment wordcloud",
+            "Import: from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer, import pandas as pd, from wordcloud import WordCloud, import matplotlib.pyplot as plt",
+            "Initialise VADER: analyzer = SentimentIntensityAnalyzer()",
+            "Test on sample sentences: analyzer.polarity_scores('This movie was absolutely amazing!') — read the neg, neu, pos, compound scores",
+            "Load the movie review dataset: df = pd.read_csv('movie_reviews.csv') and display df.head()",
+            "Apply VADER to every review: df['compound'] = df['review'].apply(lambda x: analyzer.polarity_scores(x)['compound'])",
+            "Classify: df['sentiment'] = df['compound'].apply(lambda x: 'Positive' if x >= 0.05 else ('Negative' if x <= -0.05 else 'Neutral'))",
+            "Plot a bar chart showing count of Positive, Negative, and Neutral reviews",
+            "Generate a Word Cloud from all positive reviews — visualise the most common positive words",
+            "Challenge: Compare VADER results against the actual labels in the dataset — calculate accuracy and discuss where VADER gets it wrong!"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is Natural Language Processing (NLP)?",
+            "options": [
+                "A technique for processing images using neural networks",
+                "A field of AI that enables computers to read, understand, analyse, and generate human language",
+                "A method for speeding up Python code execution",
+                "A type of database used to store text documents"
+            ],
+            "answer": 1,
+            "explanation": "NLP = computers understanding human language! It powers autocomplete, translation, chatbots, spam filters, voice assistants, and sentiment analysis. Language is complex — sarcasm, slang, context — NLP teaches machines to handle all of it!"
+        },
+        {
+            "q": "What is SENTIMENT ANALYSIS?",
+            "options": [
+                "Analysing the grammar and spelling of a text document",
+                "Automatically identifying and classifying the emotional tone of text as Positive, Negative, or Neutral",
+                "Translating text from one language to another",
+                "Summarising long documents into short bullet points"
+            ],
+            "answer": 1,
+            "explanation": "Sentiment Analysis = reading the vibe! Given a product review, tweet, or comment, the model decides: is this person happy (Positive), unhappy (Negative), or indifferent (Neutral)? Used by every major company to monitor customer opinions at scale!"
+        },
+        {
+            "q": "What is TOKENISATION in NLP?",
+            "options": [
+                "Converting text into a secret encrypted code",
+                "Removing all punctuation from a sentence",
+                "Splitting raw text into individual units — usually words or subwords — for processing",
+                "Counting the total number of characters in a document"
+            ],
+            "answer": 2,
+            "explanation": "Tokenisation = chopping text into pieces! 'I love Python' → ['I', 'love', 'Python']. Machines cannot process a whole sentence at once — they need individual tokens. Every NLP pipeline starts with tokenisation!"
+        },
+        {
+            "q": "What are STOPWORDS in NLP?",
+            "options": [
+                "Words that cause the NLP model to stop processing",
+                "The most important emotional words in a sentence",
+                "Common, frequently occurring words like 'the', 'is', 'and' that carry no meaningful sentiment and are removed before analysis",
+                "Words that appear only once in the entire dataset"
+            ],
+            "answer": 2,
+            "explanation": "Stopwords = noise words! 'The movie is good' — 'The' and 'is' add no sentiment. Removing them leaves 'movie good' — cleaner signal for the model. NLTK has a built-in stopwords list for 20+ languages!"
+        },
+        {
+            "q": "What is the BAG OF WORDS model?",
+            "options": [
+                "A physical container used to store training data",
+                "A text representation that counts how many times each word appears in a document — ignoring grammar and word order",
+                "A neural network layer that processes words one at a time",
+                "A technique for generating new sentences from training data"
+            ],
+            "answer": 1,
+            "explanation": "Bag of Words = word frequency counter! Each document becomes a vector of word counts. 'I love this movie I love it' → {I:2, love:2, this:1, movie:1, it:1}. Simple but powerful — loses word order but captures vocabulary presence for classification!"
+        },
+        {
+            "q": "What is TF-IDF?",
+            "options": [
+                "A deep learning technique for image recognition",
+                "Term Frequency-Inverse Document Frequency — a scoring method that gives higher weight to words that are frequent in a document but rare across all documents",
+                "A method for translating text between languages",
+                "A type of neural network used for text generation"
+            ],
+            "answer": 1,
+            "explanation": "TF-IDF = smart word scoring! TF = how often a word appears in THIS document. IDF = how rare it is across ALL documents. 'Brilliant' appearing in one review scores high. 'The' appears everywhere — low score. Identifies truly meaningful words!"
+        },
+        {
+            "q": "What is VADER in sentiment analysis?",
+            "options": [
+                "A deep learning model trained on millions of movie reviews",
+                "A rule-based sentiment analysis tool specifically designed for social media text — it scores text without needing any training",
+                "A Python library for visualising text data",
+                "A tokeniser that splits text into subword units"
+            ],
+            "answer": 1,
+            "explanation": "VADER = Valence Aware Dictionary and sEntiment Reasoner! It uses a hand-crafted dictionary of words with sentiment scores. No training needed — just install and score. Great for social media, emojis, slang, and ALL CAPS emphasis!"
+        },
+        {
+            "q": "What does the COMPOUND score in VADER represent?",
+            "options": [
+                "The total number of words in the analysed text",
+                "A normalised overall sentiment score ranging from -1.0 (most negative) to +1.0 (most positive)",
+                "The percentage of neutral words in the text",
+                "The confidence level of the sentiment prediction"
+            ],
+            "answer": 1,
+            "explanation": "Compound = overall verdict! VADER gives neg, neu, pos scores for proportions, then a compound score: +1.0 = maximally positive, -1.0 = maximally negative, 0 = neutral. Rule of thumb: compound ≥ 0.05 = Positive, ≤ -0.05 = Negative!"
+        },
+        {
+            "q": "What is a WORD CLOUD used for in NLP analysis?",
+            "options": [
+                "Storing words in a compressed cloud database",
+                "Training a sentiment model faster using GPU cloud computing",
+                "Visualising word frequency — the larger the word appears, the more often it occurs in the dataset",
+                "Removing duplicate words from a text corpus"
+            ],
+            "answer": 2,
+            "explanation": "Word Cloud = frequency visualisation! Words that appear most often are displayed largest. Generate one from positive reviews and you instantly see dominant words like 'amazing', 'love', 'perfect'. Great for quick exploratory analysis!"
+        },
+        {
+            "q": "Why might a rule-based tool like VADER struggle with SARCASM?",
+            "options": [
+                "VADER cannot process sentences longer than 10 words",
+                "VADER scores each word individually based on its dictionary value — sarcasm like 'Oh great, another delay!' uses positive words but means the opposite",
+                "VADER only works on positive text",
+                "VADER requires internet access to detect sarcasm"
+            ],
+            "answer": 1,
+            "explanation": "Sarcasm = NLP's nightmare! 'Oh brilliant, my flight is delayed again' uses the positive word 'brilliant' — VADER scores it positive. But the meaning is negative! Context and tone are lost in word-by-word scoring. Deep learning models handle sarcasm better."
+        },
+        {
+            "q": "What does lambda x: analyzer.polarity_scores(x)['compound'] do in Python?",
+            "options": [
+                "Trains a new sentiment model on the dataset",
+                "Applies the VADER analyser to each row in a DataFrame column and extracts the compound score",
+                "Removes all neutral reviews from the dataset",
+                "Converts text reviews into numerical token IDs"
+            ],
+            "answer": 1,
+            "explanation": "Lambda + apply = row-by-row transformation! For every review text x in the column, it runs VADER and extracts the compound score. Result: a new column of sentiment scores for the entire dataset — processed in one clean line!"
+        },
+        {
+            "q": "What are the THREE main sentiment categories in sentiment analysis?",
+            "options": [
+                "Happy, Sad, Angry",
+                "Positive, Negative, Neutral",
+                "High, Medium, Low",
+                "True, False, Unknown"
+            ],
+            "answer": 1,
+            "explanation": "Positive (happy, praising, approving), Negative (unhappy, criticising, complaining), Neutral (factual, indifferent, no strong emotion). Some advanced systems go deeper — Very Positive, Positive, Neutral, Negative, Very Negative — or detect specific emotions like joy, anger, fear!"
+        },
+        {
+            "q": "Which company use case is a perfect real-world application of sentiment analysis?",
+            "options": [
+                "Google Maps calculating the fastest driving route",
+                "Netflix encoding video streams for faster playback",
+                "Amazon automatically scanning millions of product reviews to identify negative trends and flag products for quality review",
+                "Spotify compressing audio files to save storage space"
+            ],
+            "answer": 2,
+            "explanation": "Amazon + Sentiment Analysis = millions of reviews processed automatically! Instead of humans reading every review, NLP scans all of them instantly — flagging products with rising negative sentiment, spotting fake reviews, and surfacing top complaints. Scale impossible for humans!"
+        },
+        {
+            "q": "What is the difference between LEXICON-BASED and MACHINE LEARNING-BASED sentiment analysis?",
+            "options": [
+                "Lexicon-based is faster but less accurate; ML-based is always slower and less accurate",
+                "Lexicon-based uses a pre-built dictionary of sentiment words and rules; ML-based learns sentiment patterns from labelled training data",
+                "Lexicon-based requires a GPU; ML-based runs on any computer",
+                "They produce identical results using different programming languages"
+            ],
+            "answer": 1,
+            "explanation": "Lexicon-based (like VADER) = dictionary of pre-scored words + rules. Fast, no training needed, works out of the box. ML-based (like Naive Bayes, LSTM) = learns from thousands of labelled examples. More accurate on domain-specific text but needs labelled data to train!"
+        },
+        {
+            "q": "What is a CORPUS in NLP?",
+            "options": [
+                "A single sentence used to test a sentiment model",
+                "A large structured collection of text data used for training or evaluating NLP models",
+                "The output label predicted by a sentiment classifier",
+                "A Python function that tokenises text"
+            ],
+            "answer": 1,
+            "explanation": "Corpus = text dataset! The NLTK movie reviews corpus has 2000 labelled reviews (1000 positive, 1000 negative). IMDB corpus has 50,000. Training NLP models requires large, diverse corpora — the bigger and more varied, the better the model learns language!"
+        }
+    ]
+}

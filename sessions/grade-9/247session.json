@@ -1,0 +1,322 @@
+{
+    "_instructions": {
+        "folder_structure": "sessions/session-8/",
+        "slides_folder": "sessions/session-8/slides/   ← Put PPT slide images here (JPG/PNG)",
+        "images_folder": "sessions/session-8/images/   ← Put activity photos, lab pics here (JPG/PNG)",
+        "slide_naming": "slide-01.jpg, slide-02.jpg ... (exported from PowerPoint → File → Export → JPEG/PNG)",
+        "pdf_support": "Place a PDF as 'slides.pdf' in the slides folder for embedded PDF viewer"
+    },
+    "id": "session-8",
+    "number": 8,
+    "title": "AI Concepts: How It Works",
+    "subtitle": "Teaching Machines to Think!",
+    "date": "Session 08",
+    "duration": "1 Hour",
+    "phase": "Advanced",
+    "color": "#00E5CC",
+    "icon": "🧠",
+    "tags": [
+        "Artificial Intelligence",
+        "Machine Learning",
+        "Neural Networks",
+        "Data Science"
+    ],
+    "overview": "This session demystifies Artificial Intelligence — how machines learn from data, recognise patterns, and make decisions. Students explore the journey from raw data to trained models, understand neural networks through human brain analogies, and discover how AI powers the tools they use every day.",
+    "grades": [
+        9
+    ],
+    "slides": {
+        "pdf": "sessions/session-8/slides.pdf"
+    },
+    "images": {
+        "_note": "Add photos from the actual session — neural network diagrams, training data examples, confusion matrix, decision tree, loss curve graph.",
+        "gallery": [
+            {
+                "file": "data/ai-ml-dl-venn.jpg",
+                "_placeholder": "ADD: Venn diagram showing AI ⊃ Machine Learning ⊃ Deep Learning",
+                "caption": "AI vs ML vs Deep Learning — Nested circles of intelligence!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/neural-network.jpg",
+                "_placeholder": "ADD: Diagram of a neural network showing input layer, hidden layers, output layer with nodes and connections",
+                "caption": "Neural Network — Inspired by billions of neurons in YOUR brain!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/training-data.jpg",
+                "_placeholder": "ADD: Image showing labelled training data — cats vs dogs photos with labels",
+                "caption": "Training Data — The more examples you show, the smarter it gets!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/loss-curve.png",
+                "_placeholder": "ADD: Graph showing training loss decreasing over epochs",
+                "caption": "Loss Curve — The AI getting smarter with every training round!",
+                "category": "Lab"
+            },
+            {
+                "file": "data/decision-tree.jpg",
+                "_placeholder": "ADD: Diagram of a decision tree with yes/no branches leading to outcomes",
+                "caption": "Decision Tree — AI making choices just like a flowchart!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/supervised-unsupervised.jpg",
+                "_placeholder": "ADD: Side-by-side diagram comparing labelled data (supervised) vs unlabelled clusters (unsupervised)",
+                "caption": "Supervised vs Unsupervised — Labelled teacher vs curious explorer!",
+                "category": "Concept"
+            },
+            {
+                "file": "data/teachable-machine.png",
+                "_placeholder": "ADD: Screenshot of Google Teachable Machine interface training an image classifier",
+                "caption": "Teachable Machine — Train your own AI in the browser — no code needed!",
+                "category": "Lab"
+            }
+        ]
+    },
+    "keyTopics": [
+        "AI vs Machine Learning vs Deep Learning — Nested concepts: AI is the umbrella, ML learns from data, DL uses neural networks",
+        "How ML Works — Data → Features → Algorithm → Training → Model → Prediction",
+        "Supervised Learning — Learning from labelled examples (spam/not spam, cat/dog)",
+        "Unsupervised Learning — Finding hidden patterns in unlabelled data (clustering, grouping)",
+        "Neural Networks — Layers of connected nodes inspired by the human brain — input, hidden, output",
+        "Training & Loss — Model adjusts itself to reduce prediction errors over many epochs",
+        "Overfitting vs Underfitting — Memorising training data vs failing to learn patterns",
+        "Real-World AI Applications — Image recognition, voice assistants, recommendation engines, self-driving cars"
+    ],
+    "youtubeVideos": [
+        {
+            "title": "How does Artificial Intelligence work?",
+            "videoId": "ad79nYk2keg",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "A clear, beginner-friendly animated introduction to AI — what it is, how machines learn, and where AI is used in everyday life."
+        },
+        {
+            "title": "Neural Networks Explained — No Maths",
+            "videoId": "aircAruvnKk",
+            "_note": "Replace videoId with actual YouTube video ID from the URL",
+            "desc": "3Blue1Brown's legendary visual explainer — how neural networks process information layer by layer to recognise patterns."
+        },
+        {
+            "title": "Machine Learning for Beginners",
+            "videoId": "ukzFI9rgwfU",
+            "desc": "What is machine learning? Supervised, unsupervised, and reinforcement learning explained simply with real examples."
+        },
+        {
+            "title": "Google Teachable Machine — Train AI in Your Browser",
+            "videoId": "T2qQGqZxkD0",
+            "desc": "How to train your own image classification AI using Google Teachable Machine — no coding required!"
+        }
+    ],
+    "resources": [
+        {
+            "title": "Google Teachable Machine — Train AI in Browser",
+            "url": "https://teachablemachine.withgoogle.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "ML for Kids — Train AI Models Simply",
+            "url": "https://machinelearningforkids.co.uk",
+            "icon": "🔗"
+        },
+        {
+            "title": "Quick Draw — Google's AI Drawing Game",
+            "url": "https://quickdraw.withgoogle.com",
+            "icon": "🔗"
+        },
+        {
+            "title": "Playground TensorFlow — Visualise Neural Networks",
+            "url": "https://playground.tensorflow.org",
+            "icon": "🔗"
+        }
+    ],
+    "activity": {
+        "title": "Train Your Own AI — Image Classifier with Google Teachable Machine",
+        "parts": [
+            "Laptop or tablet with browser and webcam",
+            "Google Teachable Machine (teachablemachine.withgoogle.com)",
+            "3 categories of objects to classify (e.g. pen, eraser, ruler)",
+            "Good lighting for webcam capture",
+            "Whiteboard to draw the AI pipeline diagram"
+        ],
+        "steps": [
+            "Open teachablemachine.withgoogle.com and click 'Get Started' → 'Image Project' → 'Standard Image Model'",
+            "Create Class 1 — hold up a PEN in front of the webcam and record 30+ samples",
+            "Create Class 2 — hold up an ERASER and record 30+ samples",
+            "Create Class 3 — hold up a RULER and record 30+ samples",
+            "Click 'Train Model' — watch the training progress bar and loss graph update in real time",
+            "Test the model in the Preview panel — hold up each object and observe confidence percentages",
+            "Try testing with objects the model has never seen — discuss: why does confidence drop?",
+            "Draw on whiteboard: Training Data → Feature Extraction → Model → Prediction → Confidence %",
+            "Challenge: Add a 4th class for 'nothing' (empty hand) and retrain — observe how the model improves!"
+        ]
+    },
+    "quiz": [
+        {
+            "q": "What is the correct relationship between AI, Machine Learning, and Deep Learning?",
+            "options": [
+                "They are three completely separate fields with no overlap",
+                "Deep Learning is the broadest field, containing Machine Learning and AI inside it",
+                "AI is the broadest field — Machine Learning is a subset of AI, and Deep Learning is a subset of Machine Learning",
+                "Machine Learning and Deep Learning are the same thing"
+            ],
+            "answer": 2,
+            "explanation": "AI ⊃ Machine Learning ⊃ Deep Learning! AI is the big umbrella — any technique making machines smart. ML is AI that learns from data. Deep Learning is ML using multi-layered neural networks."
+        },
+        {
+            "q": "What is MACHINE LEARNING?",
+            "options": [
+                "Programming a computer with exact rules for every situation",
+                "A type of robot that learns by walking around",
+                "A method where computers learn patterns from data and improve their performance without being explicitly programmed for every case",
+                "Teaching machines to repair themselves"
+            ],
+            "answer": 2,
+            "explanation": "ML = learning from data! Instead of writing rules manually, you feed examples to an algorithm. It finds patterns on its own and uses them to make predictions on new, unseen data."
+        },
+        {
+            "q": "What is SUPERVISED LEARNING?",
+            "options": [
+                "A teacher watching students learn in a classroom",
+                "Training a model on labelled data where correct answers are provided — the model learns to map inputs to outputs",
+                "An AI that learns by exploring without any guidance",
+                "Training that only uses images as input"
+            ],
+            "answer": 1,
+            "explanation": "Supervised Learning = labelled examples! You show the model 1000 photos labelled 'cat' or 'dog'. It learns the difference. Then it can classify NEW photos it has never seen. Supervised = teacher provides correct answers!"
+        },
+        {
+            "q": "What is UNSUPERVISED LEARNING?",
+            "options": [
+                "Training without a GPU",
+                "Learning from labelled data where answers are pre-set",
+                "Finding hidden patterns or groupings in unlabelled data without being told the correct answers",
+                "An AI model that runs without supervision from engineers"
+            ],
+            "answer": 2,
+            "explanation": "Unsupervised Learning = no labels! The AI explores the data and finds natural groupings on its own. Example: clustering customers by shopping behaviour — nobody told it the groups, it discovered them!"
+        },
+        {
+            "q": "What is a NEURAL NETWORK inspired by?",
+            "options": [
+                "The structure of a computer's CPU",
+                "The way the internet routes data through servers",
+                "The biological structure of the human brain — billions of interconnected neurons passing signals",
+                "The layout of a printed circuit board"
+            ],
+            "answer": 2,
+            "explanation": "Neural Networks = brain-inspired! Just like your brain has billions of neurons connected by synapses, a neural network has nodes connected by weighted links — signals flow through layers to produce an output."
+        },
+        {
+            "q": "In a neural network, what are the THREE types of layers?",
+            "options": [
+                "Start, Middle, End",
+                "Input, Hidden, Output",
+                "Data, Process, Result",
+                "Learn, Think, Decide"
+            ],
+            "answer": 1,
+            "explanation": "Input Layer = receives raw data (pixels, numbers). Hidden Layers = extract features and patterns. Output Layer = produces the final prediction (cat/dog, spam/not spam). Deep Learning = many hidden layers!"
+        },
+        {
+            "q": "What is TRAINING in machine learning?",
+            "options": [
+                "Installing the software needed to run AI programs",
+                "The process of feeding data to a model so it adjusts its internal parameters to minimise prediction errors",
+                "Writing the code for an AI application",
+                "Testing the AI on new data it has never seen before"
+            ],
+            "answer": 1,
+            "explanation": "Training = the AI going to school! You feed it thousands of examples. It makes predictions, checks if they are wrong (loss), and adjusts its weights to do better next time — repeated over many epochs!"
+        },
+        {
+            "q": "What is LOSS in machine learning?",
+            "options": [
+                "The amount of data lost during training",
+                "The number of neurons removed from a network",
+                "A number that measures how wrong the model's predictions are — lower loss means a better model",
+                "The time taken to train a model"
+            ],
+            "answer": 2,
+            "explanation": "Loss = the AI's score of wrongness! If the model predicted 'dog' but the answer was 'cat', the loss is high. Training keeps adjusting until loss is as low as possible. Watch the loss curve go DOWN during training!"
+        },
+        {
+            "q": "What is OVERFITTING?",
+            "options": [
+                "When a model is trained on too little data",
+                "When a model memorises training data so perfectly that it performs poorly on new, unseen data",
+                "When a model trains for too few rounds",
+                "When a neural network has too few layers"
+            ],
+            "answer": 1,
+            "explanation": "Overfitting = too much memorising, too little learning! The model learns the training examples by heart — including noise and errors — but fails on new data. Like a student who memorises answers without understanding!"
+        },
+        {
+            "q": "What is UNDERFITTING?",
+            "options": [
+                "When a model is too complex for the data",
+                "When the training dataset is too large",
+                "When a model is too simple to capture the patterns in the data — performs poorly on both training and new data",
+                "When the model trains for too many epochs"
+            ],
+            "answer": 2,
+            "explanation": "Underfitting = the model did not learn enough! It is too simple — like trying to draw a curved boundary with only a straight line. It performs badly on training data AND new data. Need more complexity or more training!"
+        },
+        {
+            "q": "What does a CONFIDENCE PERCENTAGE mean in an AI prediction?",
+            "options": [
+                "How fast the AI made the prediction",
+                "How many training examples were used",
+                "How certain the model is about its prediction — higher percentage means stronger confidence",
+                "The accuracy of the training dataset"
+            ],
+            "answer": 2,
+            "explanation": "Confidence % = how sure the AI is! '92% cat' means it is very sure. '51% cat' means it is barely guessing. In Teachable Machine, you see these percentages live — low confidence shows the model needs more training data!"
+        },
+        {
+            "q": "Which of these is a real-world application of AI image recognition?",
+            "options": [
+                "Sending an email",
+                "Saving a file to a USB drive",
+                "Unlocking your phone with your face using Face ID",
+                "Printing a document"
+            ],
+            "answer": 2,
+            "explanation": "Face ID = AI image recognition! Your phone's neural network was trained on thousands of faces to recognise YOURS specifically. It analyses 30,000+ infrared dots of your face to unlock in milliseconds!"
+        },
+        {
+            "q": "What is a DATASET in machine learning?",
+            "options": [
+                "The code used to build a neural network",
+                "A collection of examples (data + labels) used to train and evaluate a machine learning model",
+                "The output produced by a trained AI model",
+                "The set of rules programmed into an AI manually"
+            ],
+            "answer": 1,
+            "explanation": "Dataset = the AI's textbook! It is a collection of examples the model learns from. More diverse, high-quality data = smarter model. Garbage in = garbage out — data quality is everything in ML!"
+        },
+        {
+            "q": "What is a DECISION TREE in machine learning?",
+            "options": [
+                "A diagram showing how a neural network is structured",
+                "A flowchart-like model that makes decisions by asking a series of yes/no questions based on data features",
+                "A tree planted near a data center for cooling",
+                "A type of training algorithm for deep learning"
+            ],
+            "answer": 1,
+            "explanation": "Decision Tree = AI flowchart! It splits data by asking questions — 'Is it bigger than 50cm? Yes → Is it green? No → Probably a flamingo!' Easy to understand and visualise — great for explaining AI decisions!"
+        },
+        {
+            "q": "What does Google's Quick Draw demonstrate about AI?",
+            "options": [
+                "How AI controls robotic arms to draw pictures",
+                "How a neural network can recognise hand-drawn sketches in real time by learning from millions of human drawings",
+                "How AI generates images from text descriptions",
+                "How computers store image files efficiently"
+            ],
+            "answer": 1,
+            "explanation": "Quick Draw = AI trained on 50 million drawings! As you sketch, the neural network recognises patterns in real time and guesses what you are drawing. It gets smarter with every new drawing added to its dataset!"
+        }
+    ]
+}
