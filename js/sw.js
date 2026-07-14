@@ -34,7 +34,7 @@ const PRECACHE_ASSETS = [
   './pages/offline.html',
   './data/site.json',
   './students.json',
-  './projects/projects.json',
+  './projects/datafolder/compiled_projects.json',
   './manifest.json',
   './icons/icon.svg',
   'https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap'

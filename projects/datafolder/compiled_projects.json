@@ -1,650 +1,5 @@
 [
   {
-    "id": "laser-security-system",
-    "title": "Laser Security System",
-    "project_title": "Laser Security System",
-    "project_category": "Embedded System / Security System",
-    "student_name": "",
-    "roll_number": "",
-    "college_name": "",
-    "department": "",
-    "date": "2026-06-26",
-    "trainer_name": "Sandhy Pokharkar",
-    "project_description": "Laser Security System is an electronic security device that uses a laser beam and an LDR (Light Dependent Resistor) to detect any interruption in the laser path. When the laser beam is interrupted by any object, the LDR senses the change in light intensity and sends the signal to Arduino Uno. Then Arduino activates a buzzer and LED as an alert indication. This system can be used for home security, object detection and intrusion alerts.",
-    "objective": [
-      "To design a simple and effective laser-based security system.",
-      "To detect any interruption in the laser beam path.",
-      "To trigger an alarm (buzzer) and visual indication (LED) when intrusion is detected.",
-      "To provide a low-cost and reliable security solution."
-    ],
-    "components": [
-      {
-        "name": "Arduino Uno",
-        "quantity": 1
-      },
-      {
-        "name": "Bread Board",
-        "quantity": 1
-      },
-      {
-        "name": "LDR Sensor",
-        "quantity": 1
-      },
-      {
-        "name": "Laser Module",
-        "quantity": 1
-      },
-      {
-        "name": "10K Resistor",
-        "quantity": 1
-      },
-      {
-        "name": "Buzzer",
-        "quantity": 1
-      },
-      {
-        "name": "LED",
-        "quantity": 1
-      },
-      {
-        "name": "Jumper Wires",
-        "quantity": "As Required"
-      }
-    ],
-    "circuit_connections": {
-      "Laser Module (+)": "5V",
-      "Laser Module (-)": "GND",
-      "LDR One Side": "5V",
-      "LDR Other Side": "A0 of Arduino",
-      "10K Resistor": "Between A0 and GND",
-      "LED (+)": "Digital Pin 8 through 220 Ohm resistor",
-      "LED (-)": "GND",
-      "Buzzer (+)": "Digital Pin 9",
-      "Buzzer (-)": "GND",
-      "Common": "All GND connections are connected together"
-    },
-    "circuit_diagram_description": "Laser module is placed facing the LDR sensor. LDR is connected to analog pin A0 using a 10K resistor as a voltage divider. LED is connected to digital pin 8 and buzzer is connected to digital pin 9 of Arduino Uno. All components share a common ground.",
-    "working_principle": [
-      "Laser beam continuously falls on the LDR sensor.",
-      "When the beam is interrupted, the resistance of the LDR changes.",
-      "Arduino detects the change in analog value.",
-      "Arduino turns ON the buzzer and LED to indicate an intrusion."
-    ],
-    "arduino_code": "int ldr = A0;\nint buzzer = 9;\nint led = 8;\nint threshold = 500;\n\nvoid setup() {\n  pinMode(buzzer, OUTPUT);\n  pinMode(led, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int value = analogRead(ldr);\n\n  if (value > threshold) {\n    digitalWrite(led, HIGH);\n    tone(buzzer, 1000);\n  } else {\n    digitalWrite(led, LOW);\n    noTone(buzzer);\n  }\n  delay(100);\n}",
-    "conclusion": "The Laser Security System successfully detects any interruption in the laser beam and provides an alert through buzzer and LED. It is simple, cost-effective and useful for home and office security applications. This project helps in understanding Arduino interfacing, LDR sensors and basic security systems.",
-    "difficulty": 1,
-    "level": "Beginner",
-    "status": "Available",
-    "desc": "Laser Security System using Arduino, LDR, and a laser module to detect intrusions.",
-    "tags": [
-      "Arduino",
-      "LDR",
-      "Laser",
-      "Security"
-    ],
-    "image": "projects/images/laser-security-system.jpg",
-    "gallery": [
-      {
-        "file": "projects/level-1/laser-security-system/poster1.jpg",
-        "caption": "Problem Statement"
-      },
-      {
-        "file": "projects/level-1/laser-security-system/poster2.jpg",
-        "caption": "Solution & Methodology"
-      },
-      {
-        "file": "projects/level-1/laser-security-system/poster3.jpg",
-        "caption": "Future Scope"
-      }
-    ],
-    "posters": [
-      {
-        "file": "projects/level-1/laser-security-system/poster1.jpg",
-        "caption": "Problem Statement"
-      },
-      {
-        "file": "projects/level-1/laser-security-system/poster2.jpg",
-        "caption": "Solution & Methodology"
-      },
-      {
-        "file": "projects/level-1/laser-security-system/poster3.jpg",
-        "caption": "Future Scope"
-      }
-    ],
-    "presentationPdfs": [
-      {
-        "file": "projects/level-1/laser-security-system/LASER SECURITY SYSTEM.pdf",
-        "name": "LASER SECURITY SYSTEM.pdf"
-      }
-    ]
-  },
-  {
-    "id": "automatic-school-bell-and-announcement-system",
-    "title": "Automatic School Bell and Announcement System",
-    "level": "Beginner",
-    "color": "#00D4FF",
-    "session": 30,
-    "desc": "Learn to build a Automatic School Bell and Announcement System.",
-    "fullDesc": "In this project, we will build a Automatic School Bell and Announcement System. This project will introduce you to the necessary components, coding logic, and assembly required.",
-    "components": [],
-    "difficulty": 2,
-    "status": "Coming Soon",
-    "tags": [
-      "Electronics",
-      "New"
-    ],
-    "date": "2026-06-24",
-    "author": "Tinkering Lab",
-    "youtubeVideos": [],
-    "resources": [],
-    "guide": [],
-    "image": "projects/Level-2/automatic-school-bell-and-announcement-system/icon.png",
-    "gallery": [
-      {
-        "file": "projects/Level-2/automatic-school-bell-and-announcement-system/banner.png",
-        "caption": "banner"
-      },
-      {
-        "file": "projects/Level-2/automatic-school-bell-and-announcement-system/icon.png",
-        "caption": "icon"
-      },
-      {
-        "file": "projects/Level-2/automatic-school-bell-and-announcement-system/poster1.jpg",
-        "caption": "Problem Statement"
-      },
-      {
-        "file": "projects/Level-2/automatic-school-bell-and-announcement-system/poster2.jpg",
-        "caption": "Solution & Methodology"
-      },
-      {
-        "file": "projects/Level-2/automatic-school-bell-and-announcement-system/poster3.jpg",
-        "caption": "Future Scope"
-      }
-    ],
-    "posters": [
-      {
-        "file": "projects/Level-2/automatic-school-bell-and-announcement-system/poster1.jpg",
-        "caption": "Problem Statement"
-      },
-      {
-        "file": "projects/Level-2/automatic-school-bell-and-announcement-system/poster2.jpg",
-        "caption": "Solution & Methodology"
-      },
-      {
-        "file": "projects/Level-2/automatic-school-bell-and-announcement-system/poster3.jpg",
-        "caption": "Future Scope"
-      }
-    ],
-    "presentationPdfs": [
-      {
-        "file": "projects/Level-2/automatic-school-bell-and-announcement-system/Automatic Schoolbell.pdf",
-        "name": "Automatic Schoolbell.pdf"
-      }
-    ],
-    "codeFiles": [
-      {
-        "name": "School_Bell_Systemv2.ino",
-        "url": "projects/Level-2/automatic-school-bell-and-announcement-system/School_Bell_Systemv2.ino",
-        "language": "Arduino C++"
-      }
-    ],
-    "bannerImages": [
-      "projects/Level-2/automatic-school-bell-and-announcement-system/banner.png"
-    ]
-  },
-  {
-    "id": "bus-tracking-system-at-bus-stop",
-    "title": "Bus tracking system at Bus Stop",
-    "level": "Beginner",
-    "color": "#00D4FF",
-    "session": 10,
-    "desc": "Learn to build a Bus tracking system at Bus Stop.",
-    "fullDesc": "In this project, we will build a Bus tracking system at Bus Stop. This project will introduce you to the necessary components, coding logic, and assembly required.",
-    "components": [],
-    "difficulty": 2,
-    "status": "Available",
-    "tags": [
-      "Electronics",
-      "New"
-    ],
-    "date": "2026-06-24",
-    "author": "Tinkering Lab",
-    "youtubeVideos": [],
-    "resources": [],
-    "guide": [],
-    "liveUrl": "projects/bus-tracking-system-at-bus-stop/livebus.html",
-    "image": "projects/images/bus-tracking-system-at-bus-stop.jpg",
-    "codeFiles": [
-      {
-        "name": "bus-tracking-system-at-bus-stop.ino",
-        "url": "projects/Level-2/bus-tracking-system-at-bus-stop/code/bus-tracking-system-at-bus-stop.ino",
-        "language": "Arduino C++"
-      },
-      {
-        "name": "README.md",
-        "url": "projects/Level-2/bus-tracking-system-at-bus-stop/README.md",
-        "language": "Markdown"
-      }
-    ],
-    "firmware": [
-      {
-        "name": "bustracking.ino.with_bootloader.bin",
-        "url": "projects/Level-2/bus-tracking-system-at-bus-stop/firmware/bustracking.ino.with_bootloader.bin"
-      }
-    ]
-  },
-  {
-    "id": "arduino-flight-simulator",
-    "title": "Arduino Flight Simulator",
-    "subtitle": "Dual joystick flight controller with Arduino + Web Simulator",
-    "level": "Intermediate",
-    "color": "#FF6B35",
-    "desc": "Build a custom flight controller using dual joysticks and fly in a web simulator!",
-    "fullDesc": "Build a real flight simulator controller using two joystick modules and an Arduino UNO. The controller reads analog input from both joysticks and streams data over Serial to a flight simulator application running on your PC.",
-    "difficulty": 3,
-    "status": "Available",
-    "tags": [
-      "Arduino",
-      "Joystick",
-      "Simulator",
-      "Gaming",
-      "3D Printing"
-    ],
-    "date": "2026-06-26",
-    "author": "Megha Kadam",
-    "team": [
-      {
-        "name": "Megha Kadam",
-        "role": "Trainer & Project Lead"
-      }
-    ],
-    "innovation": "A low-cost, student-built flight controller using off-the-shelf components and a 3D printed enclosure, bridging hardware and simulation software.",
-    "problemStatement": "Commercial flight simulator controllers are expensive and inaccessible for student learning environments.",
-    "solutionApproach": "Used dual joystick modules with an Arduino UNO to capture analog flight inputs and stream them via Serial to a web-based flight simulator. Housed in a custom 3D printed controller box for a professional feel.",
-    "hardwareSpecs": {
-      "microcontroller": "Arduino UNO (ATmega328P)",
-      "powerConsumption": "~50mA @ 5V",
-      "operatingVoltage": "5V DC (via USB)",
-      "communicationProtocol": "Serial UART (9600 baud)",
-      "dimensions": "3D Printed Controller Box — custom",
-      "sensors": [
-        "Dual Axis Joystick Module x2 (Analog X/Y output)"
-      ],
-      "displays": []
-    },
-    "components": [
-      "Arduino UNO",
-      "Dual Joystick Module (x2)",
-      "Jumper Wires",
-      "USB Cable",
-      "Laptop / PC",
-      "3D Printed Controller Box",
-      "Arduino IDE",
-      "Flight Simulator Software / Web Simulator"
-    ],
-    "componentRefs": [
-      "arduino-uno",
-      "joystick-module",
-      "usb-cable",
-      "jumper-wires"
-    ],
-    "guide": [
-      "Connect Joystick 1 VCC to Arduino 5V, GND to GND, VRX to A0, VRY to A1",
-      "Connect Joystick 2 VCC to Arduino 5V, GND to GND, VRX to A2, VRY to A3",
-      "Place both joystick modules inside the 3D printed controller box",
-      "Connect the Arduino to your laptop via USB cable",
-      "Open Arduino IDE and paste the provided sketch",
-      "Upload the sketch to the Arduino UNO",
-      "Open Serial Monitor at 9600 baud to verify joystick values are streaming",
-      "Launch the Flight Simulator or Web Simulator and configure it to read Serial input",
-      "Test joystick movements and verify corresponding simulator response"
-    ],
-    "estimatedTime": "90 minutes",
-    "prerequisites": [
-      "Basic Arduino wiring",
-      "Arduino IDE installed",
-      "Familiarity with Serial Monitor"
-    ],
-    "pdf": "",
-    "ppt": "projects/level-3/arduino-flight-simulator",
-    "circuitDiagram": "",
-    "youtubeVideos": [],
-    "liveUrl": "projects/Level-3/arduino-flight-simulator/index.html",
-    "resources": [
-      {
-        "icon": "📄",
-        "title": "Arduino Serial Communication Docs",
-        "url": "https://www.arduino.cc/reference/en/language/functions/communication/serial/"
-      },
-      {
-        "icon": "📚",
-        "title": "analogRead Reference",
-        "url": "https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/"
-      }
-    ],
-    "githubUrl": "",
-    "achievements": [],
-    "keywords": [
-      "flight simulator",
-      "joystick",
-      "Arduino",
-      "controller",
-      "serial",
-      "analog",
-      "3D printing",
-      "gaming"
-    ],
-    "image": "projects/Level-3/arduino-flight-simulator/icon.png",
-    "gallery": [
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/banner.png",
-        "caption": "banner"
-      },
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/banner2.png",
-        "caption": "banner2"
-      },
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/icon.png",
-        "caption": "icon"
-      },
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/Poster1.png",
-        "caption": "Problem Statement"
-      },
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/Poster2.png",
-        "caption": "Solution & Methodology"
-      },
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/Poster3.png",
-        "caption": "Future Scope"
-      }
-    ],
-    "posters": [
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/Poster1.png",
-        "caption": "Problem Statement"
-      },
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/Poster2.png",
-        "caption": "Solution & Methodology"
-      },
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/Poster3.png",
-        "caption": "Future Scope"
-      }
-    ],
-    "presentationPdfs": [
-      {
-        "file": "projects/Level-3/arduino-flight-simulator/Arduino-Based-Flight.pdf",
-        "name": "Arduino-Based-Flight.pdf"
-      }
-    ],
-    "files3d": [
-      {
-        "name": "arm.stl",
-        "url": "projects/Level-3/arduino-flight-simulator/arm.stl",
-        "size": "STL Format"
-      }
-    ],
-    "codeFiles": [
-      {
-        "name": "config.h",
-        "url": "projects/Level-3/arduino-flight-simulator/config.h",
-        "language": "C/C++ Header"
-      },
-      {
-        "name": "DataStore.cpp",
-        "url": "projects/Level-3/arduino-flight-simulator/DataStore.cpp",
-        "language": "C++"
-      },
-      {
-        "name": "DataStore.h",
-        "url": "projects/Level-3/arduino-flight-simulator/DataStore.h",
-        "language": "C/C++ Header"
-      },
-      {
-        "name": "flight_simulator_controller.ino",
-        "url": "projects/Level-3/arduino-flight-simulator/flight_simulator_controller.ino",
-        "language": "Arduino C++"
-      }
-    ],
-    "firmware": [
-      {
-        "name": "firmware.bin",
-        "url": "projects/Level-3/arduino-flight-simulator/firmware.bin"
-      }
-    ],
-    "bannerImages": [
-      "projects/Level-3/arduino-flight-simulator/banner.png",
-      "projects/Level-3/arduino-flight-simulator/banner2.png"
-    ]
-  },
-  {
-    "id": "arduino-flight-simulator",
-    "title": "Arduino Flight Simulator",
-    "subtitle": "Dual joystick flight controller with Arduino + Web Simulator",
-    "level": "Intermediate",
-    "color": "#FF6B35",
-    "desc": "Build a custom flight controller using dual joysticks and fly in a web simulator!",
-    "fullDesc": "Build a real flight simulator controller using two joystick modules and an Arduino UNO. The controller reads analog input from both joysticks and streams data over Serial to a flight simulator application running on your PC.",
-    "difficulty": 3,
-    "status": "Available",
-    "tags": [
-      "Arduino",
-      "Joystick",
-      "Simulator",
-      "Gaming",
-      "3D Printing"
-    ],
-    "date": "2026-06-26",
-    "author": "Siddharth Yadav",
-    "team": [
-      {
-        "name": "Siddharth Yadav",
-        "role": "Team Leader"
-      },
-      {
-        "name": "Yash Sawardekar",
-        "role": "Team Member"
-      },
-      {
-        "name": "Yash Surve",
-        "role": "Team Member"
-      }
-    ],
-    "innovation": "A low-cost, student-built flight controller using off-the-shelf components and a 3D printed enclosure, bridging hardware and simulation software.",
-    "problemStatement": "Commercial flight simulator controllers are expensive and inaccessible for student learning environments.",
-    "solutionApproach": "Used dual joystick modules with an Arduino UNO to capture analog flight inputs and stream them via Serial to a web-based flight simulator. Housed in a custom 3D printed controller box for a professional feel.",
-    "hardwareSpecs": {
-      "microcontroller": "Arduino UNO (ATmega328P)",
-      "powerConsumption": "~50mA @ 5V",
-      "operatingVoltage": "5V DC (via USB)",
-      "communicationProtocol": "Serial UART (9600 baud)",
-      "dimensions": "3D Printed Controller Box — custom",
-      "sensors": [
-        "Dual Axis Joystick Module x2 (Analog X/Y output)",
-        "Voltage Sensor",
-        "Current Sensor",
-        "DHT11 Temperature Sensor"
-      ],
-      "displays": []
-    },
-    "components": [
-      "Arduino UNO",
-      "Dual Joystick Module (x2)",
-      "Voltage Sensor",
-      "Current Sensor",
-      "DHT11 Temperature Sensor",
-      "Jumper Wires",
-      "USB Cable",
-      "Laptop / PC",
-      "3D Printed Controller Box",
-      "Arduino IDE",
-      "Flight Simulator Software / Web Simulator"
-    ],
-    "componentRefs": [
-      "arduino-uno",
-      "joystick-module",
-      "voltage-sensor",
-      "current-sensor",
-      "dht11-temperature-sensor",
-      "usb-cable",
-      "jumper-wires"
-    ],
-    "guide": [
-      "Connect Joystick 1 VCC to Arduino 5V, GND to GND, VRX to A0, VRY to A1",
-      "Connect Joystick 2 VCC to Arduino 5V, GND to GND, VRX to A2, VRY to A3",
-      "Place both joystick modules inside the 3D printed controller box",
-      "Connect the Arduino to your laptop via USB cable",
-      "Open Arduino IDE and paste the provided sketch",
-      "Upload the sketch to the Arduino UNO",
-      "Open Serial Monitor at 9600 baud to verify joystick values are streaming",
-      "Launch the Flight Simulator or Web Simulator and configure it to read Serial input",
-      "Test joystick movements and verify corresponding simulator response"
-    ],
-    "estimatedTime": "90 minutes",
-    "prerequisites": [
-      "Basic Arduino wiring",
-      "Arduino IDE installed",
-      "Familiarity with Serial Monitor"
-    ],
-    "pdf": "",
-    "ppt": "projects/level-3/arduino-flight-simulator",
-    "circuitDiagram": "",
-    "youtubeVideos": [],
-    "liveUrl": "projects/Level-3/arduino-flight-simulator/index.html",
-    "resources": [
-      {
-        "icon": "📄",
-        "title": "Arduino Serial Communication Docs",
-        "url": "https://www.arduino.cc/reference/en/language/functions/communication/serial/"
-      },
-      {
-        "icon": "📚",
-        "title": "analogRead Reference",
-        "url": "https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/"
-      }
-    ],
-    "githubUrl": "",
-    "achievements": [],
-    "keywords": [
-      "flight simulator",
-      "joystick",
-      "Arduino",
-      "controller",
-      "serial",
-      "analog",
-      "3D printing",
-      "gaming"
-    ],
-    "image": "projects/Level-3/vawt-hybrid-generator/icon.png",
-    "gallery": [
-      {
-        "file": "projects/Level-3/vawt-hybrid-generator/banner1.jpeg",
-        "caption": "banner1"
-      },
-      {
-        "file": "projects/Level-3/vawt-hybrid-generator/banner2.jpeg",
-        "caption": "banner2"
-      },
-      {
-        "file": "projects/Level-3/vawt-hybrid-generator/icon.png",
-        "caption": "icon"
-      },
-      {
-        "file": "projects/Level-3/vawt-hybrid-generator/poster1.jpeg",
-        "caption": "Problem Statement"
-      },
-      {
-        "file": "projects/Level-3/vawt-hybrid-generator/poster2.jpeg",
-        "caption": "Solution & Methodology"
-      },
-      {
-        "file": "projects/Level-3/vawt-hybrid-generator/poster3.jpeg",
-        "caption": "Future Scope"
-      }
-    ],
-    "posters": [
-      {
-        "file": "projects/Level-3/vawt-hybrid-generator/poster1.jpeg",
-        "caption": "Problem Statement"
-      },
-      {
-        "file": "projects/Level-3/vawt-hybrid-generator/poster2.jpeg",
-        "caption": "Solution & Methodology"
-      },
-      {
-        "file": "projects/Level-3/vawt-hybrid-generator/poster3.jpeg",
-        "caption": "Future Scope"
-      }
-    ],
-    "files3d": [
-      {
-        "name": "Center_support.stl",
-        "url": "projects/Level-3/vawt-hybrid-generator/Center_support.stl",
-        "size": "STL Format"
-      },
-      {
-        "name": "Lower_support.stl",
-        "url": "projects/Level-3/vawt-hybrid-generator/Lower_support.stl",
-        "size": "STL Format"
-      },
-      {
-        "name": "Shaft_133mm_3x.stl",
-        "url": "projects/Level-3/vawt-hybrid-generator/Shaft_133mm_3x.stl",
-        "size": "STL Format"
-      },
-      {
-        "name": "Shaft_133mm_Vasemode_3x.stl",
-        "url": "projects/Level-3/vawt-hybrid-generator/Shaft_133mm_Vasemode_3x.stl",
-        "size": "STL Format"
-      },
-      {
-        "name": "Shaft_200mm_2x.stl",
-        "url": "projects/Level-3/vawt-hybrid-generator/Shaft_200mm_2x.stl",
-        "size": "STL Format"
-      },
-      {
-        "name": "Shaft_200mm_Vasemode_2x.stl",
-        "url": "projects/Level-3/vawt-hybrid-generator/Shaft_200mm_Vasemode_2x.stl",
-        "size": "STL Format"
-      },
-      {
-        "name": "Upper_support.stl",
-        "url": "projects/Level-3/vawt-hybrid-generator/Upper_support.stl",
-        "size": "STL Format"
-      },
-      {
-        "name": "Wing_133mm_4X.stl",
-        "url": "projects/Level-3/vawt-hybrid-generator/Wing_133mm_4X.stl",
-        "size": "STL Format"
-      },
-      {
-        "name": "Wing_200mm_4X.stl",
-        "url": "projects/Level-3/vawt-hybrid-generator/Wing_200mm_4X.stl",
-        "size": "STL Format"
-      }
-    ],
-    "codeFiles": [
-      {
-        "name": "sfinal.ino",
-        "url": "projects/Level-3/vawt-hybrid-generator/sfinal.ino",
-        "language": "Arduino C++"
-      },
-      {
-        "name": "wayside_firmware.ino",
-        "url": "projects/Level-3/vawt-hybrid-generator/wayside_firmware.ino",
-        "language": "Arduino C++"
-      }
-    ],
-    "bannerImages": [
-      "projects/Level-3/vawt-hybrid-generator/banner1.jpeg",
-      "projects/Level-3/vawt-hybrid-generator/banner2.jpeg"
-    ]
-  },
-  {
     "id": "accident-detection-system",
     "title": "Smart Accident Detection & Alert System",
     "subtitle": "ESP8266 + MPU6050 based real-time accident detection",
@@ -779,15 +134,437 @@
     "image": "projects/images/accident-detection-system.jpg",
     "gallery": [
       {
-        "file": "projects/Level-4/accident-detection-system/ADS.png",
+        "file": "projects/accident-detection-system/ADS.png",
         "caption": "ads"
       }
     ],
     "codeFiles": [
       {
         "name": "ADS.ino",
-        "url": "projects/Level-4/accident-detection-system/ADS.ino",
+        "url": "projects/accident-detection-system/ADS.ino",
         "language": "Arduino C++"
+      }
+    ]
+  },
+  {
+    "id": "arduino-flight-simulator",
+    "title": "Arduino Flight Simulator",
+    "subtitle": "Dual joystick flight controller with Arduino + Web Simulator",
+    "level": "Intermediate",
+    "color": "#FF6B35",
+    "desc": "Build a custom flight controller using dual joysticks and fly in a web simulator!",
+    "fullDesc": "Build a real flight simulator controller using two joystick modules and an Arduino UNO. The controller reads analog input from both joysticks and streams data over Serial to a flight simulator application running on your PC.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Arduino",
+      "Joystick",
+      "Simulator",
+      "Gaming",
+      "3D Printing"
+    ],
+    "date": "2026-06-26",
+    "author": "Megha Kadam",
+    "team": [
+      {
+        "name": "Megha Kadam",
+        "role": "Trainer & Project Lead"
+      }
+    ],
+    "innovation": "A low-cost, student-built flight controller using off-the-shelf components and a 3D printed enclosure, bridging hardware and simulation software.",
+    "problemStatement": "Commercial flight simulator controllers are expensive and inaccessible for student learning environments.",
+    "solutionApproach": "Used dual joystick modules with an Arduino UNO to capture analog flight inputs and stream them via Serial to a web-based flight simulator. Housed in a custom 3D printed controller box for a professional feel.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "powerConsumption": "~50mA @ 5V",
+      "operatingVoltage": "5V DC (via USB)",
+      "communicationProtocol": "Serial UART (9600 baud)",
+      "dimensions": "3D Printed Controller Box — custom",
+      "sensors": [
+        "Dual Axis Joystick Module x2 (Analog X/Y output)"
+      ],
+      "displays": []
+    },
+    "components": [
+      "Arduino UNO",
+      "Dual Joystick Module (x2)",
+      "Jumper Wires",
+      "USB Cable",
+      "Laptop / PC",
+      "3D Printed Controller Box",
+      "Arduino IDE",
+      "Flight Simulator Software / Web Simulator"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "joystick-module",
+      "usb-cable",
+      "jumper-wires"
+    ],
+    "guide": [
+      "Connect Joystick 1 VCC to Arduino 5V, GND to GND, VRX to A0, VRY to A1",
+      "Connect Joystick 2 VCC to Arduino 5V, GND to GND, VRX to A2, VRY to A3",
+      "Place both joystick modules inside the 3D printed controller box",
+      "Connect the Arduino to your laptop via USB cable",
+      "Open Arduino IDE and paste the provided sketch",
+      "Upload the sketch to the Arduino UNO",
+      "Open Serial Monitor at 9600 baud to verify joystick values are streaming",
+      "Launch the Flight Simulator or Web Simulator and configure it to read Serial input",
+      "Test joystick movements and verify corresponding simulator response"
+    ],
+    "estimatedTime": "90 minutes",
+    "prerequisites": [
+      "Basic Arduino wiring",
+      "Arduino IDE installed",
+      "Familiarity with Serial Monitor"
+    ],
+    "pdf": "",
+    "ppt": "projects/arduino-flight-simulator",
+    "circuitDiagram": "",
+    "youtubeVideos": [],
+    "liveUrl": "projects/arduino-flight-simulator/index.html",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "Arduino Serial Communication Docs",
+        "url": "https://www.arduino.cc/reference/en/language/functions/communication/serial/"
+      },
+      {
+        "icon": "📚",
+        "title": "analogRead Reference",
+        "url": "https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [],
+    "keywords": [
+      "flight simulator",
+      "joystick",
+      "Arduino",
+      "controller",
+      "serial",
+      "analog",
+      "3D printing",
+      "gaming"
+    ],
+    "image": "projects/arduino-flight-simulator/icon.png",
+    "gallery": [
+      {
+        "file": "projects/arduino-flight-simulator/banner.png",
+        "caption": "banner"
+      },
+      {
+        "file": "projects/arduino-flight-simulator/banner2.png",
+        "caption": "banner2"
+      },
+      {
+        "file": "projects/arduino-flight-simulator/icon.png",
+        "caption": "icon"
+      },
+      {
+        "file": "projects/arduino-flight-simulator/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/arduino-flight-simulator/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/arduino-flight-simulator/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/arduino-flight-simulator/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/arduino-flight-simulator/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/arduino-flight-simulator/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/arduino-flight-simulator/Arduino-Based-Flight.pdf",
+        "name": "Arduino-Based-Flight.pdf"
+      }
+    ],
+    "files3d": [
+      {
+        "name": "arm.stl",
+        "url": "projects/arduino-flight-simulator/arm.stl",
+        "size": "STL Format"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "config.h",
+        "url": "projects/arduino-flight-simulator/config.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "DataStore.cpp",
+        "url": "projects/arduino-flight-simulator/DataStore.cpp",
+        "language": "C++"
+      },
+      {
+        "name": "DataStore.h",
+        "url": "projects/arduino-flight-simulator/DataStore.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "flight_simulator_controller.ino",
+        "url": "projects/arduino-flight-simulator/flight_simulator_controller.ino",
+        "language": "Arduino C++"
+      }
+    ],
+    "firmware": [
+      {
+        "name": "firmware.bin",
+        "url": "projects/arduino-flight-simulator/firmware.bin"
+      }
+    ],
+    "bannerImages": [
+      "projects/arduino-flight-simulator/banner.png",
+      "projects/arduino-flight-simulator/banner2.png"
+    ]
+  },
+  {
+    "id": "automatic-school-bell-and-announcement-system",
+    "title": "Automatic School Bell and Announcement System",
+    "level": "Beginner",
+    "color": "#00D4FF",
+    "session": 30,
+    "desc": "Learn to build a Automatic School Bell and Announcement System.",
+    "fullDesc": "In this project, we will build a Automatic School Bell and Announcement System. This project will introduce you to the necessary components, coding logic, and assembly required.",
+    "components": [],
+    "difficulty": 2,
+    "status": "Coming Soon",
+    "tags": [
+      "Electronics",
+      "New"
+    ],
+    "date": "2026-06-24",
+    "author": "Tinkering Lab",
+    "youtubeVideos": [],
+    "resources": [],
+    "guide": [],
+    "image": "projects/automatic-school-bell-and-announcement-system/icon.png",
+    "gallery": [
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/banner.png",
+        "caption": "banner"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/icon.png",
+        "caption": "icon"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/poster1.jpg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/poster2.jpg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/poster3.jpg",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/poster1.jpg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/poster2.jpg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/poster3.jpg",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/Automatic Schoolbell.pdf",
+        "name": "Automatic Schoolbell.pdf"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "School_Bell_Systemv2.ino",
+        "url": "projects/automatic-school-bell-and-announcement-system/School_Bell_Systemv2.ino",
+        "language": "Arduino C++"
+      }
+    ],
+    "bannerImages": [
+      "projects/automatic-school-bell-and-announcement-system/banner.png"
+    ]
+  },
+  {
+    "id": "bus-tracking-system-at-bus-stop",
+    "title": "Bus tracking system at Bus Stop",
+    "level": "Beginner",
+    "color": "#00D4FF",
+    "session": 10,
+    "desc": "Learn to build a Bus tracking system at Bus Stop.",
+    "fullDesc": "In this project, we will build a Bus tracking system at Bus Stop. This project will introduce you to the necessary components, coding logic, and assembly required.",
+    "components": [],
+    "difficulty": 2,
+    "status": "Available",
+    "tags": [
+      "Electronics",
+      "New"
+    ],
+    "date": "2026-06-24",
+    "author": "Tinkering Lab",
+    "youtubeVideos": [],
+    "resources": [],
+    "guide": [],
+    "liveUrl": "projects/bus-tracking-system-at-bus-stop/livebus.html",
+    "image": "projects/images/bus-tracking-system-at-bus-stop.jpg",
+    "codeFiles": [
+      {
+        "name": "bus-tracking-system-at-bus-stop.ino",
+        "url": "projects/bus-tracking-system-at-bus-stop/code/bus-tracking-system-at-bus-stop.ino",
+        "language": "Arduino C++"
+      },
+      {
+        "name": "README.md",
+        "url": "projects/bus-tracking-system-at-bus-stop/README.md",
+        "language": "Markdown"
+      }
+    ],
+    "firmware": [
+      {
+        "name": "bustracking.ino.with_bootloader.bin",
+        "url": "projects/bus-tracking-system-at-bus-stop/firmware/bustracking.ino.with_bootloader.bin"
+      }
+    ]
+  },
+  {
+    "id": "laser-security-system",
+    "title": "Laser Security System",
+    "project_title": "Laser Security System",
+    "project_category": "Embedded System / Security System",
+    "student_name": "",
+    "roll_number": "",
+    "college_name": "",
+    "department": "",
+    "date": "2026-06-26",
+    "trainer_name": "Sandhy Pokharkar",
+    "project_description": "Laser Security System is an electronic security device that uses a laser beam and an LDR (Light Dependent Resistor) to detect any interruption in the laser path. When the laser beam is interrupted by any object, the LDR senses the change in light intensity and sends the signal to Arduino Uno. Then Arduino activates a buzzer and LED as an alert indication. This system can be used for home security, object detection and intrusion alerts.",
+    "objective": [
+      "To design a simple and effective laser-based security system.",
+      "To detect any interruption in the laser beam path.",
+      "To trigger an alarm (buzzer) and visual indication (LED) when intrusion is detected.",
+      "To provide a low-cost and reliable security solution."
+    ],
+    "components": [
+      {
+        "name": "Arduino Uno",
+        "quantity": 1
+      },
+      {
+        "name": "Bread Board",
+        "quantity": 1
+      },
+      {
+        "name": "LDR Sensor",
+        "quantity": 1
+      },
+      {
+        "name": "Laser Module",
+        "quantity": 1
+      },
+      {
+        "name": "10K Resistor",
+        "quantity": 1
+      },
+      {
+        "name": "Buzzer",
+        "quantity": 1
+      },
+      {
+        "name": "LED",
+        "quantity": 1
+      },
+      {
+        "name": "Jumper Wires",
+        "quantity": "As Required"
+      }
+    ],
+    "circuit_connections": {
+      "Laser Module (+)": "5V",
+      "Laser Module (-)": "GND",
+      "LDR One Side": "5V",
+      "LDR Other Side": "A0 of Arduino",
+      "10K Resistor": "Between A0 and GND",
+      "LED (+)": "Digital Pin 8 through 220 Ohm resistor",
+      "LED (-)": "GND",
+      "Buzzer (+)": "Digital Pin 9",
+      "Buzzer (-)": "GND",
+      "Common": "All GND connections are connected together"
+    },
+    "circuit_diagram_description": "Laser module is placed facing the LDR sensor. LDR is connected to analog pin A0 using a 10K resistor as a voltage divider. LED is connected to digital pin 8 and buzzer is connected to digital pin 9 of Arduino Uno. All components share a common ground.",
+    "working_principle": [
+      "Laser beam continuously falls on the LDR sensor.",
+      "When the beam is interrupted, the resistance of the LDR changes.",
+      "Arduino detects the change in analog value.",
+      "Arduino turns ON the buzzer and LED to indicate an intrusion."
+    ],
+    "arduino_code": "int ldr = A0;\nint buzzer = 9;\nint led = 8;\nint threshold = 500;\n\nvoid setup() {\n  pinMode(buzzer, OUTPUT);\n  pinMode(led, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int value = analogRead(ldr);\n\n  if (value > threshold) {\n    digitalWrite(led, HIGH);\n    tone(buzzer, 1000);\n  } else {\n    digitalWrite(led, LOW);\n    noTone(buzzer);\n  }\n  delay(100);\n}",
+    "conclusion": "The Laser Security System successfully detects any interruption in the laser beam and provides an alert through buzzer and LED. It is simple, cost-effective and useful for home and office security applications. This project helps in understanding Arduino interfacing, LDR sensors and basic security systems.",
+    "difficulty": 1,
+    "level": "Beginner",
+    "status": "Available",
+    "desc": "Laser Security System using Arduino, LDR, and a laser module to detect intrusions.",
+    "tags": [
+      "Arduino",
+      "LDR",
+      "Laser",
+      "Security"
+    ],
+    "image": "projects/images/laser-security-system.jpg",
+    "gallery": [
+      {
+        "file": "projects/laser-security-system/poster1.jpg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/laser-security-system/poster2.jpg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/laser-security-system/poster3.jpg",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/laser-security-system/poster1.jpg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/laser-security-system/poster2.jpg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/laser-security-system/poster3.jpg",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/laser-security-system/LASER SECURITY SYSTEM.pdf",
+        "name": "LASER SECURITY SYSTEM.pdf"
       }
     ]
   },
@@ -816,7 +593,7 @@
     ],
     "date": "2026-06-12",
     "author": "Amogha",
-    "liveUrl": "projects/Level-4/sketching-live/index.html",
+    "liveUrl": "projects/sketching-live/index.html",
     "youtubeVideos": [],
     "resources": [],
     "guide": [
@@ -830,9 +607,224 @@
     "codeFiles": [
       {
         "name": "draw.ino",
-        "url": "projects/Level-4/sketching-live/draw.ino",
+        "url": "projects/sketching-live/draw.ino",
         "language": "Arduino C++"
       }
+    ]
+  },
+  {
+    "id": "vawt-hybrid-generator",
+    "title": "Smart Vertical Axis Wind Turbine",
+    "subtitle": "Kinetic harvesting with automatic dark-activated indicator",
+    "level": "Intermediate",
+    "color": "#00FF88",
+    "desc": "Build an omnidirectional wind turbine that generates power and senses ambient light!",
+    "fullDesc": "Build a functional Vertical Axis Wind Turbine (VAWT) using a Savonius rotor to drive a DC dynamo motor generator, paired with a BC547 transistor circuit that automatically triggers an indicator when night falls...",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Renewable Energy",
+      "Generators",
+      "Analog Electronics",
+      "Sustainability"
+    ],
+    "date": "2026-06-27",
+    "author": "Siddharth",
+    "team": [
+      {
+        "name": "Siddharth",
+        "role": "Hardware & Circuit Lead"
+      }
+    ],
+    "innovation": "An omnidirectional wind harvester integrated with an automatic light-sensing emergency load circuit for school yard applications.",
+    "problemStatement": "Standard clean energy setups require manual switching or expensive digital controllers to manage stored energy or trigger night indicators.",
+    "solutionApproach": "Utilized a high-efficiency vertical drag rotor coupled with a DC dynamo motor to harvest wind energy into a DC battery bank. Integrated an analog BC547 NPN transistor switching circuit with an LDR to automatically engage low-power indicators based on ambient light conditions.",
+    "hardwareSpecs": {
+      "microcontroller": "None (Pure Analog Automation)",
+      "powerConsumption": "Idle: ~0.5mA, Active Generation: Variable based on wind speed",
+      "operatingVoltage": "3.7V - 9V DC (Battery Bank dependent)",
+      "communicationProtocol": "Direct Analog Voltage Output",
+      "dimensions": "Turbine assembly — 200×150mm",
+      "sensors": [
+        "LDR (Light Dependent Resistor)"
+      ],
+      "displays": [
+        "LED Status Indicator"
+      ]
+    },
+    "components": [
+      "Dynamo Motor (DC Generator)",
+      "BC547 NPN Transistor",
+      "100kΩ Resistor",
+      "LDR Sensor",
+      "DC Battery (3.7V or 9V)",
+      "Savonius or Darrieus Rotor blades",
+      "1N4007 Diode (for battery charging protection)",
+      "Breadboard and Jumper wires",
+      "Structural frame base"
+    ],
+    "componentRefs": [
+      "dynamo-motor",
+      "bc547-transistor",
+      "resistor-100k",
+      "ldr-sensor",
+      "dc-battery"
+    ],
+    "guide": [
+      "Assemble the vertical rotor blades onto the central shaft and couple it directly to the axle of the DC dynamo motor.",
+      "Connect the positive output of the dynamo motor through a protection diode to the positive terminal of the DC Battery to store generated power safely.",
+      "Place the BC547 NPN transistor on the breadboard (Pins: Emitter, Base, Collector).",
+      "Connect the 100kΩ resistor from the positive battery rail to the Base pin of the BC547 transistor.",
+      "Connect the LDR sensor between the Base pin of the BC547 transistor and the Ground/Negative battery rail to form a voltage divider.",
+      "Connect an indicator LED (with appropriate current resistor) or secondary load from the Positive rail to the Collector pin of the transistor.",
+      "Connect the Emitter pin of the BC547 directly to the Ground/Negative rail.",
+      "Spin the wind turbine to confirm battery charging, and cover the LDR sensor to test the automatic dark-activated switching mechanism."
+    ],
+    "estimatedTime": "120 minutes",
+    "prerequisites": [
+      "Basic electronics circuit wiring",
+      "Understanding transistor switching states"
+    ],
+    "pdf": "data/Siddharth_STEAM_V1.pdf",
+    "ppt": "projects/docs/vawt-smart-presentation.pptx",
+    "circuitDiagram": "data/vawt-transistor-circuit.jpg",
+    "youtubeVideos": [
+      {
+        "title": "Smart VAWT Project Demo",
+        "videoId": "dQw4w9WgXcQ",
+        "desc": "Demonstrating wind power generation and automatic dark-switching using the BC547"
+      }
+    ],
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "BC547 NPN Datasheet",
+        "url": "data/components/bc547.pdf"
+      },
+      {
+        "icon": "📚",
+        "title": "Transistor as a Switch Principles",
+        "url": "https://www.electronics-tutorials.ws/transistor/tran_4.html"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [
+      "Presented at Regional STEM Fair 2026",
+      "Acknowledged for Creative Resource Optimization"
+    ],
+    "keywords": [
+      "vawt",
+      "wind turbine",
+      "dynamo motor",
+      "BC547",
+      "LDR",
+      "analog automation",
+      "clean energy"
+    ],
+    "image": "projects/vawt-hybrid-generator/icon.png",
+    "gallery": [
+      {
+        "file": "projects/vawt-hybrid-generator/banner1.jpeg",
+        "caption": "banner1"
+      },
+      {
+        "file": "projects/vawt-hybrid-generator/banner2.jpeg",
+        "caption": "banner2"
+      },
+      {
+        "file": "projects/vawt-hybrid-generator/icon.png",
+        "caption": "icon"
+      },
+      {
+        "file": "projects/vawt-hybrid-generator/poster1.jpeg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/vawt-hybrid-generator/poster2.jpeg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/vawt-hybrid-generator/poster3.jpeg",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/vawt-hybrid-generator/poster1.jpeg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/vawt-hybrid-generator/poster2.jpeg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/vawt-hybrid-generator/poster3.jpeg",
+        "caption": "Future Scope"
+      }
+    ],
+    "files3d": [
+      {
+        "name": "Center_support.stl",
+        "url": "projects/vawt-hybrid-generator/Center_support.stl",
+        "size": "STL Format"
+      },
+      {
+        "name": "Lower_support.stl",
+        "url": "projects/vawt-hybrid-generator/Lower_support.stl",
+        "size": "STL Format"
+      },
+      {
+        "name": "Shaft_133mm_3x.stl",
+        "url": "projects/vawt-hybrid-generator/Shaft_133mm_3x.stl",
+        "size": "STL Format"
+      },
+      {
+        "name": "Shaft_133mm_Vasemode_3x.stl",
+        "url": "projects/vawt-hybrid-generator/Shaft_133mm_Vasemode_3x.stl",
+        "size": "STL Format"
+      },
+      {
+        "name": "Shaft_200mm_2x.stl",
+        "url": "projects/vawt-hybrid-generator/Shaft_200mm_2x.stl",
+        "size": "STL Format"
+      },
+      {
+        "name": "Shaft_200mm_Vasemode_2x.stl",
+        "url": "projects/vawt-hybrid-generator/Shaft_200mm_Vasemode_2x.stl",
+        "size": "STL Format"
+      },
+      {
+        "name": "Upper_support.stl",
+        "url": "projects/vawt-hybrid-generator/Upper_support.stl",
+        "size": "STL Format"
+      },
+      {
+        "name": "Wing_133mm_4X.stl",
+        "url": "projects/vawt-hybrid-generator/Wing_133mm_4X.stl",
+        "size": "STL Format"
+      },
+      {
+        "name": "Wing_200mm_4X.stl",
+        "url": "projects/vawt-hybrid-generator/Wing_200mm_4X.stl",
+        "size": "STL Format"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "sfinal.ino",
+        "url": "projects/vawt-hybrid-generator/sfinal.ino",
+        "language": "Arduino C++"
+      },
+      {
+        "name": "wayside_firmware.ino",
+        "url": "projects/vawt-hybrid-generator/wayside_firmware.ino",
+        "language": "Arduino C++"
+      }
+    ],
+    "bannerImages": [
+      "projects/vawt-hybrid-generator/banner1.jpeg",
+      "projects/vawt-hybrid-generator/banner2.jpeg"
     ]
   }
 ]

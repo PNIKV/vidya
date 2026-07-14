@@ -324,7 +324,7 @@
       "sessions/grade-9/270session.json"
     ]
   },
-  "projects_file": "projects/projects.json",
+  "projects_file": "projects/datafolder/compiled_projects.json",
   "roadmap": [
     {
       "num": "01",

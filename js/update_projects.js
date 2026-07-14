@@ -38,28 +38,21 @@ const AUTO_FIELDS = [
 // ── Step 1: Auto-discover all project folders ──────────────────
 function discoverProjects() {
   const projects = [];
-  const levelDirs = fs.readdirSync(projectsDir).filter(d => {
+  const projectDirs = fs.readdirSync(projectsDir).filter(d => {
+    if (d === 'datafolder') return false;
     const full = path.join(projectsDir, d);
-    return fs.statSync(full).isDirectory() && /^level-?\d+$/i.test(d);
+    if (!fs.statSync(full).isDirectory()) return false;
+    // Must have a matching JSON file inside
+    const jsonPath = path.join(full, d + '.json');
+    return fs.existsSync(jsonPath);
   });
 
-  for (const levelDir of levelDirs) {
-    const levelPath = path.join(projectsDir, levelDir);
-    const projectDirs = fs.readdirSync(levelPath).filter(d => {
-      const full = path.join(levelPath, d);
-      if (!fs.statSync(full).isDirectory()) return false;
-      // Must have a matching JSON file inside
-      const jsonPath = path.join(full, d + '.json');
-      return fs.existsSync(jsonPath);
-    });
-
-    for (const projDir of projectDirs) {
-      const jsonFile = projDir + '.json';
-      const relPath = path.posix.join('projects', levelDir, projDir, jsonFile);
-      const absJsonPath = path.join(levelPath, projDir, jsonFile);
-      const absDirPath = path.join(levelPath, projDir);
-      projects.push({ relPath, absJsonPath, absDirPath, dirName: projDir });
-    }
+  for (const projDir of projectDirs) {
+    const jsonFile = projDir + '.json';
+    const relPath = path.posix.join('projects', projDir, jsonFile);
+    const absJsonPath = path.join(projectsDir, projDir, jsonFile);
+    const absDirPath = path.join(projectsDir, projDir);
+    projects.push({ relPath, absJsonPath, absDirPath, dirName: projDir });
   }
 
   return projects;
@@ -102,7 +95,7 @@ function categorizeFiles(absDirPath, relDirPath, jsonFilename) {
     const basename = path.basename(filename, ext).toLowerCase();
 
     // Build relative URL from project root (using posix separators)
-    const relFromRoot = path.relative(path.join(absDirPath, '..', '..', '..'), absFile);
+    const relFromRoot = path.relative(rootDir, absFile);
     const relativeUrl = relFromRoot.split(path.sep).join('/');
 
     // Skip the project's own JSON file and other JSON files
@@ -259,26 +252,14 @@ for (const proj of discoveredProjects) {
 }
 
 // ── Write compiled output ──
-const outputPath = path.join(projectsDir, 'compiled_projects.json');
-fs.writeFileSync(outputPath, JSON.stringify(compiledProjects, null, 2) + '\n');
-console.log(`\n📦 Wrote ${compiledProjects.length} projects → projects/compiled_projects.json`);
-
-// ── Auto-update projects.json index ──
-const projectsJsonPath = path.join(projectsDir, 'projects.json');
-let projectsIndex = { _instructions: { file: "projects/projects.json", purpose: "Index of all project files" } };
-
-if (fs.existsSync(projectsJsonPath)) {
-  try {
-    projectsIndex = JSON.parse(fs.readFileSync(projectsJsonPath, 'utf8'));
-  } catch (e) {
-    console.error("An error occurred during execution:", e);
-    // Ignore parse error and overwrite
-  }
+const datafolderPath = path.join(projectsDir, 'datafolder');
+if (!fs.existsSync(datafolderPath)) {
+  fs.mkdirSync(datafolderPath, { recursive: true });
 }
 
-projectsIndex.projects = projectPaths;
-fs.writeFileSync(projectsJsonPath, JSON.stringify(projectsIndex, null, 2) + '\n');
-console.log(`📋 Updated projects/projects.json with ${projectPaths.length} entries`);
+const outputPath = path.join(datafolderPath, 'compiled_projects.json');
+fs.writeFileSync(outputPath, JSON.stringify(compiledProjects, null, 2) + '\n');
+console.log(`\n📦 Wrote ${compiledProjects.length} projects → projects/datafolder/compiled_projects.json`);
 
 // ══════════════════════════════════════════════════════════════
 //  TEST MODE: Validate compiled output

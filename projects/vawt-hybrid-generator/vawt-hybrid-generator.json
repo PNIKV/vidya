@@ -1,0 +1,111 @@
+{
+  "id": "vawt-hybrid-generator",
+  "title": "Smart Vertical Axis Wind Turbine",
+  "subtitle": "Kinetic harvesting with automatic dark-activated indicator",
+  "level": "Intermediate",
+  "color": "#00FF88",
+  "desc": "Build an omnidirectional wind turbine that generates power and senses ambient light!",
+  "fullDesc": "Build a functional Vertical Axis Wind Turbine (VAWT) using a Savonius rotor to drive a DC dynamo motor generator, paired with a BC547 transistor circuit that automatically triggers an indicator when night falls...",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "Renewable Energy",
+    "Generators",
+    "Analog Electronics",
+    "Sustainability"
+  ],
+  "date": "2026-06-27",
+  "author": "Siddharth",
+  "team": [
+    {
+      "name": "Siddharth",
+      "role": "Hardware & Circuit Lead"
+    }
+  ],
+  "innovation": "An omnidirectional wind harvester integrated with an automatic light-sensing emergency load circuit for school yard applications.",
+  "problemStatement": "Standard clean energy setups require manual switching or expensive digital controllers to manage stored energy or trigger night indicators.",
+  "solutionApproach": "Utilized a high-efficiency vertical drag rotor coupled with a DC dynamo motor to harvest wind energy into a DC battery bank. Integrated an analog BC547 NPN transistor switching circuit with an LDR to automatically engage low-power indicators based on ambient light conditions.",
+  "hardwareSpecs": {
+    "microcontroller": "None (Pure Analog Automation)",
+    "powerConsumption": "Idle: ~0.5mA, Active Generation: Variable based on wind speed",
+    "operatingVoltage": "3.7V - 9V DC (Battery Bank dependent)",
+    "communicationProtocol": "Direct Analog Voltage Output",
+    "dimensions": "Turbine assembly — 200×150mm",
+    "sensors": [
+      "LDR (Light Dependent Resistor)"
+    ],
+    "displays": [
+      "LED Status Indicator"
+    ]
+  },
+  "components": [
+    "Dynamo Motor (DC Generator)",
+    "BC547 NPN Transistor",
+    "100kΩ Resistor",
+    "LDR Sensor",
+    "DC Battery (3.7V or 9V)",
+    "Savonius or Darrieus Rotor blades",
+    "1N4007 Diode (for battery charging protection)",
+    "Breadboard and Jumper wires",
+    "Structural frame base"
+  ],
+  "componentRefs": [
+    "dynamo-motor",
+    "bc547-transistor",
+    "resistor-100k",
+    "ldr-sensor",
+    "dc-battery"
+  ],
+  "guide": [
+    "Assemble the vertical rotor blades onto the central shaft and couple it directly to the axle of the DC dynamo motor.",
+    "Connect the positive output of the dynamo motor through a protection diode to the positive terminal of the DC Battery to store generated power safely.",
+    "Place the BC547 NPN transistor on the breadboard (Pins: Emitter, Base, Collector).",
+    "Connect the 100kΩ resistor from the positive battery rail to the Base pin of the BC547 transistor.",
+    "Connect the LDR sensor between the Base pin of the BC547 transistor and the Ground/Negative battery rail to form a voltage divider.",
+    "Connect an indicator LED (with appropriate current resistor) or secondary load from the Positive rail to the Collector pin of the transistor.",
+    "Connect the Emitter pin of the BC547 directly to the Ground/Negative rail.",
+    "Spin the wind turbine to confirm battery charging, and cover the LDR sensor to test the automatic dark-activated switching mechanism."
+  ],
+  "estimatedTime": "120 minutes",
+  "prerequisites": [
+    "Basic electronics circuit wiring",
+    "Understanding transistor switching states"
+  ],
+  "pdf": "data/Siddharth_STEAM_V1.pdf",
+  "ppt": "projects/docs/vawt-smart-presentation.pptx",
+  "circuitDiagram": "data/vawt-transistor-circuit.jpg",
+  "youtubeVideos": [
+    {
+      "title": "Smart VAWT Project Demo",
+      "videoId": "dQw4w9WgXcQ",
+      "desc": "Demonstrating wind power generation and automatic dark-switching using the BC547"
+    }
+  ],
+  "liveUrl": "",
+  "resources": [
+    {
+      "icon": "📄",
+      "title": "BC547 NPN Datasheet",
+      "url": "data/components/bc547.pdf"
+    },
+    {
+      "icon": "📚",
+      "title": "Transistor as a Switch Principles",
+      "url": "https://www.electronics-tutorials.ws/transistor/tran_4.html"
+    }
+  ],
+  "githubUrl": "",
+  "achievements": [
+    "Presented at Regional STEM Fair 2026",
+    "Acknowledged for Creative Resource Optimization"
+  ],
+  "keywords": [
+    "vawt",
+    "wind turbine",
+    "dynamo motor",
+    "BC547",
+    "LDR",
+    "analog automation",
+    "clean energy"
+  ]
+}

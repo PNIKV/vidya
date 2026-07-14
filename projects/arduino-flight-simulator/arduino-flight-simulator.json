@@ -16,19 +16,11 @@
     "3D Printing"
   ],
   "date": "2026-06-26",
-  "author": "Siddharth Yadav",
+  "author": "Megha Kadam",
   "team": [
     {
-      "name": "Siddharth Yadav",
-      "role": "Team Leader"
-    },
-    {
-      "name": "Yash Sawardekar",
-      "role": "Team Member"
-    },
-    {
-      "name": "Yash Surve",
-      "role": "Team Member"
+      "name": "Megha Kadam",
+      "role": "Trainer & Project Lead"
     }
   ],
   "innovation": "A low-cost, student-built flight controller using off-the-shelf components and a 3D printed enclosure, bridging hardware and simulation software.",
@@ -41,19 +33,13 @@
     "communicationProtocol": "Serial UART (9600 baud)",
     "dimensions": "3D Printed Controller Box — custom",
     "sensors": [
-      "Dual Axis Joystick Module x2 (Analog X/Y output)",
-      "Voltage Sensor",
-      "Current Sensor",
-      "DHT11 Temperature Sensor"
+      "Dual Axis Joystick Module x2 (Analog X/Y output)"
     ],
     "displays": []
   },
   "components": [
     "Arduino UNO",
     "Dual Joystick Module (x2)",
-    "Voltage Sensor",
-    "Current Sensor",
-    "DHT11 Temperature Sensor",
     "Jumper Wires",
     "USB Cable",
     "Laptop / PC",
@@ -64,9 +50,6 @@
   "componentRefs": [
     "arduino-uno",
     "joystick-module",
-    "voltage-sensor",
-    "current-sensor",
-    "dht11-temperature-sensor",
     "usb-cable",
     "jumper-wires"
   ],
@@ -88,10 +71,10 @@
     "Familiarity with Serial Monitor"
   ],
   "pdf": "",
-  "ppt": "projects/level-3/arduino-flight-simulator",
+  "ppt": "projects/arduino-flight-simulator",
   "circuitDiagram": "",
   "youtubeVideos": [],
-  "liveUrl": "projects/Level-3/arduino-flight-simulator/index.html",
+  "liveUrl": "projects/arduino-flight-simulator/index.html",
   "resources": [
     {
       "icon": "📄",
