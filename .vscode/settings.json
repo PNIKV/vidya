@@ -1,0 +1,12 @@
+{
+  "liveServer.settings.NoBrowser": false,
+  "liveServer.settings.mount": [
+    ["/project", "/index.html"],
+    ["/projects", "/index.html"],
+    ["/sessions", "/index.html"],
+    ["/about", "/index.html"],
+    ["/whiteboard", "/index.html"],
+    ["/live-quiz", "/index.html"],
+    ["/session-detail", "/index.html"]
+  ]
+}
