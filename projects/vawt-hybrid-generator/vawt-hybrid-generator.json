@@ -6,6 +6,8 @@
   "color": "#00FF88",
   "desc": "Build an omnidirectional wind turbine that generates power and senses ambient light!",
   "fullDesc": "Build a functional Vertical Axis Wind Turbine (VAWT) using a Savonius rotor to drive a DC dynamo motor generator, paired with a BC547 transistor circuit that automatically triggers an indicator when night falls...",
+  "image": "projects/images/vawt-generator.jpg",
+  "bannerImage": "projects/images/vawt-generator-banner.jpg",
   "difficulty": 3,
   "status": "Available",
   "tags": [
@@ -72,13 +74,32 @@
     "Understanding transistor switching states"
   ],
   "pdf": "data/Siddharth_STEAM_V1.pdf",
+  "poster": "data/vawt_smart_project.jpeg",
   "ppt": "projects/docs/vawt-smart-presentation.pptx",
+  "researchPaper": "data/Siddharth_STEAM_V1.pdf",
   "circuitDiagram": "data/vawt-transistor-circuit.jpg",
+  "files3d": [
+    "data/3dmodels/vawt_rotor.stl"
+  ],
+  "codeFiles": [],
   "youtubeVideos": [
     {
       "title": "Smart VAWT Project Demo",
       "videoId": "dQw4w9WgXcQ",
       "desc": "Demonstrating wind power generation and automatic dark-switching using the BC547"
+    }
+  ],
+  "dataVideos": [],
+  "gallery": [
+    {
+      "file": "data/vawt_build1.jpg",
+      "caption": "Dynamo Motor Integration",
+      "category": "Build"
+    },
+    {
+      "file": "data/vawt_circuit.jpg",
+      "caption": "BC547 and LDR Circuit Assembly",
+      "category": "Hardware"
     }
   ],
   "liveUrl": "",
