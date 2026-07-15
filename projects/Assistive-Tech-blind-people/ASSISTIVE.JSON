@@ -1,0 +1,97 @@
+{
+  "id": "assistive-tech-blind",
+  "title": "Assistive Technology for Blind People",
+  "subtitle": "Smart Navigation Assistance using Ultrasonic Sensor & Buzzer",
+  "level": "Advanced",
+  "color": "#FF5733",
+  "desc": "Detect obstacles in real-time and alert visually impaired users via buzzer feedback.",
+  "fullDesc": "Build an intelligent assistive device designed to help blind individuals navigate safely. The system uses ultrasonic waves to detect obstacles in front of the user and provides instant vibrating buzzer feedback.",
+  "difficulty": 4,
+  "status": "Available",
+  "tags": [
+    "Sensors",
+    "Assistive Tech",
+    "Arduino",
+    "Social Innovation"
+  ],
+  "date": "2026-07-07",
+  "author": "Shaheena Rai",
+  "team": [
+    {
+      "name": "Shaheena Rai",
+      "role": "Project Lead & Developer"
+    },
+    {
+      "name": "Shaheena Team",
+      "role": "Project Support"
+    }
+  ],
+  "innovation": "Low-cost, lightweight smart attachment for walking sticks to prevent collisions for visually impaired individuals.",
+  "problemStatement": "Visually impaired people face high risks of injury from unexpected obstacles that traditional walking sticks cannot detect easily.",
+  "solutionApproach": "Used an HC-SR04 ultrasonic sensor with an Arduino UNO to measure obstacle distance. The system triggers a vibrating buzzer sound that alerts the user as an obstacle gets closer.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO (ATmega328P)",
+    "powerConsumption": "~80mA @ 5V",
+    "operatingVoltage": "5V DC",
+    "communicationProtocol": "GPIO / PWM",
+    "dimensions": "Standard prototype board — 120×80mm",
+    "sensors": [
+      "HC-SR04 Ultrasonic Sensor"
+    ],
+    "displays": [
+      "No display (Audio/Buzzer feedback only)"
+    ]
+  },
+  "components": [
+    "Arduino UNO",
+    "HC-SR04 Ultrasonic Sensor",
+    "5V Buzzer",
+    "9V Battery or Power Source",
+    "Breadboard",
+    "Jumper wires"
+  ],
+  "componentRefs": [
+    "hc-sr04",
+    "arduino-uno",
+    "buzzer"
+  ],
+  "guide": [
+    "Connect Ultrasonic Sensor: VCC to Arduino 5V, GND to GND, Trig to D2, and Echo to D3",
+    "Connect Buzzer positive pin to Arduino D4 and negative pin to GND",
+    "Power the Arduino UNO using a 9V battery or USB cable",
+    "Open Arduino IDE and write code to calculate distance using the ultrasonic sensor",
+    "Set the logic: If an obstacle is detected within the set range, activate the buzzer to vibrate/sound an alert",
+    "Upload the code to your Arduino UNO and test it with various obstacles"
+  ],
+  "estimatedTime": "90 minutes",
+  "prerequisites": [
+    "Basic Arduino UNO wiring",
+    "Basic understanding of Ultrasonic sensors"
+  ],
+  "youtubeVideos": [
+    {
+      "title": "Smart Assistive Device Demo",
+      "videoId": "exampleVideoId",
+      "desc": "Demonstrating the completed project by Shaheena Rai"
+    }
+  ],
+  "liveUrl": "",
+  "resources": [
+    {
+      "icon": "📄",
+      "title": "HC-SR04 Datasheet",
+      "url": "data/components/hc_sr04.json"
+    }
+  ],
+  "githubUrl": "",
+  "achievements": [
+    "Designed for social impact and accessibility"
+  ],
+  "keywords": [
+    "blind assistance",
+    "ultrasonic",
+    "Arduino UNO",
+    "buzzer",
+    "accessibility"
+  ]
+}

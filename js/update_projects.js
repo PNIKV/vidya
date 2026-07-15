@@ -25,6 +25,7 @@ const VIDEO_EXTS = new Set(['.mp4', '.webm', '.mkv', '.mov']);
 const CODE_EXTS = new Set(['.ino', '.cpp', '.h', '.c', '.py', '.md']);
 const MODEL_EXTS = new Set(['.stl', '.obj']);
 const PDF_EXTS = new Set(['.pdf']);
+const PPTX_EXTS = new Set(['.pptx', '.ppt']);
 const FW_EXTS = new Set(['.bin', '.hex']);
 
 // Fields that are auto-generated — NEVER stored in source JSON
@@ -38,20 +39,29 @@ const AUTO_FIELDS = [
 // ── Step 1: Auto-discover all project folders ──────────────────
 function discoverProjects() {
   const projects = [];
-  const projectDirs = fs.readdirSync(projectsDir).filter(d => {
+  const allDirs = fs.readdirSync(projectsDir).filter(d => {
     if (d === 'datafolder') return false;
-    const full = path.join(projectsDir, d);
-    if (!fs.statSync(full).isDirectory()) return false;
-    // Must have a matching JSON file inside
-    const jsonPath = path.join(full, d + '.json');
-    return fs.existsSync(jsonPath);
+    return fs.statSync(path.join(projectsDir, d)).isDirectory();
   });
 
-  for (const projDir of projectDirs) {
-    const jsonFile = projDir + '.json';
+  for (const projDir of allDirs) {
+    const dirFull = path.join(projectsDir, projDir);
+    // Find ALL .json files in this folder (top-level only)
+    const jsonFiles = fs.readdirSync(dirFull)
+      .filter(f => f.toLowerCase().endsWith('.json'));
+
+    if (jsonFiles.length === 0) {
+      console.log(`  ⚠️  Skipped "${projDir}" — no .json file found`);
+      continue;
+    }
+    if (jsonFiles.length > 1) {
+      console.log(`  ⚠️  "${projDir}" has ${jsonFiles.length} JSON files, using "${jsonFiles[0]}"`);
+    }
+
+    const jsonFile = jsonFiles[0];
     const relPath = path.posix.join('projects', projDir, jsonFile);
-    const absJsonPath = path.join(projectsDir, projDir, jsonFile);
-    const absDirPath = path.join(projectsDir, projDir);
+    const absJsonPath = path.join(dirFull, jsonFile);
+    const absDirPath = dirFull;
     projects.push({ relPath, absJsonPath, absDirPath, dirName: projDir });
   }
 
@@ -138,7 +148,12 @@ function categorizeFiles(absDirPath, relDirPath, jsonFilename) {
 
     // ── PDFs ──
     else if (PDF_EXTS.has(ext)) {
-      result.presentationPdfs.push({ file: relativeUrl, name: filename });
+      result.presentationPdfs.push({ file: relativeUrl, name: filename, type: 'pdf' });
+    }
+
+    // ── PPTX Presentations ──
+    else if (PPTX_EXTS.has(ext)) {
+      result.presentationPdfs.push({ file: relativeUrl, name: filename, type: 'pptx' });
     }
 
     // ── 3D Models ──
@@ -217,6 +232,24 @@ for (const proj of discoveredProjects) {
     if (detected.gallery.length > 0) compiled.gallery = detected.gallery;
     if (detected.posters.length > 0) compiled.posters = detected.posters;
     if (detected.presentationPdfs.length > 0) compiled.presentationPdfs = detected.presentationPdfs;
+    else compiled.presentationPdfs = compiled.presentationPdfs || [];
+
+    // Merge 'ppt' field from source JSON into presentationPdfs if present
+    if (cleanData.ppt) {
+      const pptFile = cleanData.ppt;
+      const alreadyIncluded = (compiled.presentationPdfs || []).some(
+        p => p.file === pptFile
+      );
+      if (!alreadyIncluded) {
+        if (!compiled.presentationPdfs) compiled.presentationPdfs = [];
+        compiled.presentationPdfs.push({
+          file: pptFile,
+          name: path.basename(pptFile),
+          type: 'pptx'
+        });
+      }
+    }
+
     if (detected.files3d.length > 0) compiled.files3d = detected.files3d;
     if (detected.codeFiles.length > 0) compiled.codeFiles = detected.codeFiles;
     if (detected.firmware.length > 0) compiled.firmware = detected.firmware;

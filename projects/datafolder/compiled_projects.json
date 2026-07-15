@@ -138,6 +138,7 @@
         "caption": "ads"
       }
     ],
+    "presentationPdfs": [],
     "codeFiles": [
       {
         "name": "ADS.ino",
@@ -291,7 +292,13 @@
     "presentationPdfs": [
       {
         "file": "projects/arduino-flight-simulator/Arduino-Based-Flight.pdf",
-        "name": "Arduino-Based-Flight.pdf"
+        "name": "Arduino-Based-Flight.pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/arduino-flight-simulator",
+        "name": "arduino-flight-simulator",
+        "type": "pptx"
       }
     ],
     "files3d": [
@@ -332,6 +339,139 @@
     "bannerImages": [
       "projects/arduino-flight-simulator/banner.png",
       "projects/arduino-flight-simulator/banner2.png"
+    ]
+  },
+  {
+    "id": "assistive-tech-blind",
+    "title": "Assistive Technology for Blind People",
+    "subtitle": "Smart Navigation Assistance using Ultrasonic Sensor & Buzzer",
+    "level": "Advanced",
+    "color": "#FF5733",
+    "desc": "Detect obstacles in real-time and alert visually impaired users via buzzer feedback.",
+    "fullDesc": "Build an intelligent assistive device designed to help blind individuals navigate safely. The system uses ultrasonic waves to detect obstacles in front of the user and provides instant vibrating buzzer feedback.",
+    "difficulty": 4,
+    "status": "Available",
+    "tags": [
+      "Sensors",
+      "Assistive Tech",
+      "Arduino",
+      "Social Innovation"
+    ],
+    "date": "2026-07-07",
+    "author": "Shaheena Rai",
+    "team": [
+      {
+        "name": "Shaheena Rai",
+        "role": "Project Lead & Developer"
+      },
+      {
+        "name": "Shaheena Team",
+        "role": "Project Support"
+      }
+    ],
+    "innovation": "Low-cost, lightweight smart attachment for walking sticks to prevent collisions for visually impaired individuals.",
+    "problemStatement": "Visually impaired people face high risks of injury from unexpected obstacles that traditional walking sticks cannot detect easily.",
+    "solutionApproach": "Used an HC-SR04 ultrasonic sensor with an Arduino UNO to measure obstacle distance. The system triggers a vibrating buzzer sound that alerts the user as an obstacle gets closer.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "powerConsumption": "~80mA @ 5V",
+      "operatingVoltage": "5V DC",
+      "communicationProtocol": "GPIO / PWM",
+      "dimensions": "Standard prototype board — 120×80mm",
+      "sensors": [
+        "HC-SR04 Ultrasonic Sensor"
+      ],
+      "displays": [
+        "No display (Audio/Buzzer feedback only)"
+      ]
+    },
+    "components": [
+      "Arduino UNO",
+      "HC-SR04 Ultrasonic Sensor",
+      "5V Buzzer",
+      "9V Battery or Power Source",
+      "Breadboard",
+      "Jumper wires"
+    ],
+    "componentRefs": [
+      "hc-sr04",
+      "arduino-uno",
+      "buzzer"
+    ],
+    "guide": [
+      "Connect Ultrasonic Sensor: VCC to Arduino 5V, GND to GND, Trig to D2, and Echo to D3",
+      "Connect Buzzer positive pin to Arduino D4 and negative pin to GND",
+      "Power the Arduino UNO using a 9V battery or USB cable",
+      "Open Arduino IDE and write code to calculate distance using the ultrasonic sensor",
+      "Set the logic: If an obstacle is detected within the set range, activate the buzzer to vibrate/sound an alert",
+      "Upload the code to your Arduino UNO and test it with various obstacles"
+    ],
+    "estimatedTime": "90 minutes",
+    "prerequisites": [
+      "Basic Arduino UNO wiring",
+      "Basic understanding of Ultrasonic sensors"
+    ],
+    "youtubeVideos": [
+      {
+        "title": "Smart Assistive Device Demo",
+        "videoId": "exampleVideoId",
+        "desc": "Demonstrating the completed project by Shaheena Rai"
+      }
+    ],
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "HC-SR04 Datasheet",
+        "url": "data/components/hc_sr04.json"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [
+      "Designed for social impact and accessibility"
+    ],
+    "keywords": [
+      "blind assistance",
+      "ultrasonic",
+      "Arduino UNO",
+      "buzzer",
+      "accessibility"
+    ],
+    "image": "projects/images/assistive-tech-blind.jpg",
+    "gallery": [
+      {
+        "file": "projects/Assistive-Tech-blind-people/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Assistive-Tech-blind-people/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Assistive-Tech-blind-people/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/Assistive-Tech-blind-people/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Assistive-Tech-blind-people/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Assistive-Tech-blind-people/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Assistive-Tech-blind-people/Blind-people-Help-shoes.pptx",
+        "name": "Blind-people-Help-shoes.pptx",
+        "type": "pptx"
+      }
     ]
   },
   {
@@ -394,7 +534,8 @@
     "presentationPdfs": [
       {
         "file": "projects/automatic-school-bell-and-announcement-system/Automatic Schoolbell.pdf",
-        "name": "Automatic Schoolbell.pdf"
+        "name": "Automatic Schoolbell.pdf",
+        "type": "pdf"
       }
     ],
     "codeFiles": [
@@ -430,6 +571,7 @@
     "guide": [],
     "liveUrl": "projects/bus-tracking-system-at-bus-stop/livebus.html",
     "image": "projects/images/bus-tracking-system-at-bus-stop.jpg",
+    "presentationPdfs": [],
     "codeFiles": [
       {
         "name": "bus-tracking-system-at-bus-stop.ino",
@@ -564,7 +706,8 @@
     "presentationPdfs": [
       {
         "file": "projects/laser-security-system/LASER SECURITY SYSTEM.pdf",
-        "name": "LASER SECURITY SYSTEM.pdf"
+        "name": "LASER SECURITY SYSTEM.pdf",
+        "type": "pdf"
       }
     ]
   },
@@ -604,11 +747,287 @@
       "Watch your artwork sync live to the hardware display!"
     ],
     "image": "projects/images/sketching-live.jpg",
+    "presentationPdfs": [],
     "codeFiles": [
       {
         "name": "draw.ino",
         "url": "projects/sketching-live/draw.ino",
         "language": "Arduino C++"
+      }
+    ]
+  },
+  {
+    "id": "unihiker-k10",
+    "title": "UNIHIKER K10",
+    "subtitle": "All-in-one AI coding board with Vision, Voice & TinyML",
+    "level": "Beginner",
+    "color": "#00C2A8",
+    "desc": "One board, four AI models — face, pet, QR & motion detection out of the box!",
+    "fullDesc": "Explore a complete AI + IoT learning board built around the ESP32-S3. UNIHIKER K10 packs a 2.8\" color touchscreen, camera, microphone, speaker, and a full environmental sensor suite onto a single board — so beginners can run real vision, voice, and TinyML projects with zero extra wiring, then graduate to MicroPython and PlatformIO as their skills grow.",
+    "difficulty": 2,
+    "status": "Available",
+    "tags": [
+      "AI",
+      "IoT",
+      "Vision",
+      "Voice",
+      "TinyML",
+      "ESP32"
+    ],
+    "date": "2026-07-04",
+    "author": "Nikhil",
+    "team": [
+      {
+        "name": "Nikhil",
+        "role": "Firmware & AI Models Lead"
+      },
+      {
+        "name": "Rohan",
+        "role": "Hardware & Sensor Integration"
+      }
+    ],
+    "innovation": "A single classroom-ready board that runs offline vision AI, offline voice recognition, and on-device TinyML training — removing the need for cloud connectivity or extra modules in beginner AI education.",
+    "problemStatement": "Most AI/IoT learning kits require assembling multiple modules (camera, mic, sensors, screen) before students can even start coding, which slows down classroom adoption and increases cost and failure points.",
+    "solutionApproach": "UNIHIKER K10 integrates the camera, mic, speaker, screen, and sensors onto one ESP32-S3 board with four pre-loaded vision AI models, offline voice recognition, and TinyML support — letting students go from unboxing to a working AI demo in one sitting, using Mind+ blocks or MicroPython.",
+    "hardwareSpecs": {
+      "microcontroller": "ESP32-S3 (dual-core)",
+      "powerConsumption": "~350–500mA @ 5V (camera + Wi-Fi active)",
+      "operatingVoltage": "5V DC (USB-C) or 3.0–6.0V DC (PH2.0 battery port)",
+      "communicationProtocol": "Wi-Fi 2.4G, Bluetooth 5.0, I2C/UART (Gravity 3-pin/4-pin, edge connectors)",
+      "dimensions": "Single-board form factor with edge connectors — approx. 70×95mm",
+      "sensors": [
+        "2MP Camera",
+        "Microphone",
+        "Temperature & Humidity",
+        "Ambient Light",
+        "Accelerometer"
+      ],
+      "displays": [
+        "2.8\" Color Touchscreen"
+      ]
+    },
+    "components": [
+      "UNIHIKER K10 Board",
+      "USB Type-C Cable",
+      "MicroSD Card (optional, for data logging)",
+      "Gravity 3-pin/4-pin Sensor Cables",
+      "3.7V LiPo Battery or 3x AA/AAA (optional, for portable power)"
+    ],
+    "componentRefs": [
+      "unihiker-k10-board",
+      "usb-c-cable",
+      "microsd-card",
+      "gravity-sensor-cable"
+    ],
+    "guide": [
+      "Connect UNIHIKER K10 to your computer via the USB Type-C port",
+      "Install Mind+ (or your preferred IDE) and select the UNIHIKER K10 board",
+      "Press button B on-device to cycle through built-in demo modes (voice, sensor, tutorial)",
+      "Try a pre-loaded vision model — point the camera and test Face Detection or QR Code Scanning",
+      "Wake the board by voice (\"Jarvis\" or \"Hi Telly\") and issue a spoken command",
+      "Switch to MicroPython for more control, using the on-board editor or VS Code",
+      "Connect an external Gravity sensor to the edge connector and read live values on the touchscreen"
+    ],
+    "estimatedTime": "60 minutes",
+    "prerequisites": [
+      "Basic block or Python coding",
+      "USB driver installation"
+    ],
+    "youtubeVideos": [
+      {
+        "title": "UNIHIKER K10 Unboxing & First AI Demo",
+        "videoId": "dQw4w9WgXcQ",
+        "desc": "Setting up the board and running the first vision AI model"
+      }
+    ],
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "UNIHIKER K10 Official Docs",
+        "url": "https://www.unihiker.com/wiki/K10/"
+      },
+      {
+        "icon": "🛠️",
+        "title": "DFRobot Product Page",
+        "url": "https://www.dfrobot.com/product-2904.html"
+      },
+      {
+        "icon": "📚",
+        "title": "Mind+ Programming Tool",
+        "url": "https://mindplus.dfrobot.com/"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [
+      "Featured in K12 STEM AI curriculum pilot",
+      "Used in school Edge AI workshop 2026"
+    ],
+    "keywords": [
+      "UNIHIKER",
+      "K10",
+      "ESP32-S3",
+      "AI",
+      "TinyML",
+      "vision",
+      "voice recognition",
+      "IoT",
+      "STEM"
+    ],
+    "image": "projects/images/unihiker-k10.jpg",
+    "presentationPdfs": []
+  },
+  {
+    "id": "vasc-age",
+    "title": "VASC Age",
+    "subtitle": "Pulse-based vascular age estimation using MAX30102",
+    "level": "Intermediate",
+    "color": "#FF6B6B",
+    "desc": "Measure your pulse — estimate your vascular age over WiFi!",
+    "fullDesc": "Build a smart health-monitoring device that reads pulse and blood-oxygen data from a MAX30102 sensor via an ESP8266, then serves live readings and an estimated vascular age to a web dashboard over WiFi — no app installation required.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Sensors",
+      "IoT",
+      "Health",
+      "ESP8266"
+    ],
+    "date": "2026-07-08",
+    "author": "Shruti Mestry",
+    "team": [
+      {
+        "name": "Shruti Mestry",
+        "role": "Trainer & Project Lead"
+      }
+    ],
+    "innovation": "A low-cost, WiFi-connected vascular age estimator that turns raw pulse-oximetry data into an accessible health metric, viewable from any browser on the local network.",
+    "problemStatement": "Vascular age and pulse health monitoring devices are often expensive or require dedicated apps, making them inaccessible for students and hobbyists wanting to learn practical health-tech.",
+    "solutionApproach": "Used a MAX30102 pulse-oximetry sensor connected to an ESP8266 over I2C. The ESP8266 connects to WiFi, continuously reads sensor data via a SensorManager module, and serves live readings through a lightweight built-in web server (WebManager), removing the need for a companion app.",
+    "hardwareSpecs": {
+      "microcontroller": "ESP8266 (NodeMCU / Wemos D1 Mini)",
+      "powerConsumption": "~120mA @ 3.3V (active WiFi + sensor)",
+      "operatingVoltage": "3.3V DC (5V via USB with onboard regulator)",
+      "communicationProtocol": "I2C (MAX30102), WiFi (ESP8266 web server)",
+      "dimensions": "Breadboard prototype — 170×130mm",
+      "sensors": [
+        "MAX30102 (Pulse & SpO2 sensor)"
+      ],
+      "displays": [
+        "Web-based dashboard (served over local WiFi)"
+      ]
+    },
+    "components": [
+      "ESP8266",
+      "MAX30102 Pulse Oximeter Sensor",
+      "Jumper Wires",
+      "USB Cable",
+      "Breadboard"
+    ],
+    "componentRefs": [
+      "esp8266",
+      "max30102",
+      "jumper-wires",
+      "usb-cable",
+      "breadboard"
+    ],
+    "guide": [
+      "Wire MAX30102 to ESP8266 via I2C: SDA→D2, SCL→D1, VCC→3.3V, GND→GND",
+      "Connect ESP8266 to computer via USB cable for power and programming",
+      "Update Config.h with your WiFi SSID and password",
+      "Install required libraries (ESP8266WiFi, MAX30102 sensor library) via Arduino IDE Library Manager",
+      "Upload the firmware (main sketch + SensorManager, WebManager, DataStore, Config modules)",
+      "Open Serial Monitor at 115200 baud to confirm WiFi connection and note the device IP address",
+      "Visit http://<device-ip> in a browser to view live pulse readings and vascular age estimate"
+    ],
+    "estimatedTime": "60 minutes",
+    "prerequisites": [
+      "Basic ESP8266/Arduino wiring",
+      "WiFi network configuration",
+      "Library installation"
+    ],
+    "circuitDiagram": "",
+    "youtubeVideos": [],
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "MAX30102 Datasheet",
+        "url": "data/components/max30102.json"
+      },
+      {
+        "icon": "📚",
+        "title": "ESP8266WiFi Library Docs",
+        "url": "https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [],
+    "keywords": [
+      "VASC Age",
+      "MAX30102",
+      "ESP8266",
+      "pulse",
+      "vascular age",
+      "heart rate",
+      "SpO2",
+      "IoT",
+      "health monitoring"
+    ],
+    "image": "projects/images/vasc-age.jpg",
+    "gallery": [
+      {
+        "file": "projects/VASCAGE/VASC_Age_Poster.png",
+        "caption": "vasc_age_poster"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/VASCAGE/VASC_Age.pptx",
+        "name": "VASC_Age.pptx",
+        "type": "pptx"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "config.h",
+        "url": "projects/VASCAGE/config.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "DataStore.cpp",
+        "url": "projects/VASCAGE/DataStore.cpp",
+        "language": "C++"
+      },
+      {
+        "name": "DataStore.h",
+        "url": "projects/VASCAGE/DataStore.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "SensorManager.cpp",
+        "url": "projects/VASCAGE/SensorManager.cpp",
+        "language": "C++"
+      },
+      {
+        "name": "SensorManager.h",
+        "url": "projects/VASCAGE/SensorManager.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "VitalSense.ino",
+        "url": "projects/VASCAGE/VitalSense.ino",
+        "language": "Arduino C++"
+      },
+      {
+        "name": "WebManager.cpp",
+        "url": "projects/VASCAGE/WebManager.cpp",
+        "language": "C++"
+      },
+      {
+        "name": "WebManager.h",
+        "url": "projects/VASCAGE/WebManager.h",
+        "language": "C/C++ Header"
       }
     ]
   },
@@ -761,6 +1180,13 @@
       {
         "file": "projects/vawt-hybrid-generator/poster3.jpeg",
         "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/docs/vawt-smart-presentation.pptx",
+        "name": "vawt-smart-presentation.pptx",
+        "type": "pptx"
       }
     ],
     "files3d": [

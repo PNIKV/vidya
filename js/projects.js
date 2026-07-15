@@ -333,18 +333,35 @@ async function renderProjectDetail() {
             </div>
           ` : ''}
 
-          ${p.presentationPdfs ? p.presentationPdfs.map(pdf => `
-            <div class="presentation-box" onclick="openFullscreenMedia('${pdf.file}', 'pdf')">
-              <div class="presentation-box-img" style="background: #fff;">
-                <iframe src="${pdf.file}#toolbar=0&navpanes=0&scrollbar=0&view=Fit" style="width: 100%; height: 100%; border: none; pointer-events: none;" title="${pdf.name}"></iframe>
-              </div>
-              <div class="presentation-box-label">
-                <span class="presentation-box-icon">🔬</span>
-                <span>${pdf.name}</span>
-                <a href="${pdf.file}" target="_blank" onclick="event.stopPropagation()" class="presentation-box-dl">↗</a>
-              </div>
-            </div>
-          `).join('') : ''}
+          ${p.presentationPdfs ? p.presentationPdfs.map(doc => {
+            const isPptx = doc.type === 'pptx' || doc.file.toLowerCase().endsWith('.pptx') || doc.file.toLowerCase().endsWith('.ppt');
+            if (isPptx) {
+              return `
+              <div class="presentation-box" onclick="window.open('${doc.file}', '_blank')">
+                <div class="presentation-box-img" style="background: linear-gradient(135deg, #D04423 0%, #B7312C 100%); display:flex; flex-direction:column; align-items:center; justify-content:center; gap: 12px;">
+                  <span style="font-size: 3.5rem;">📊</span>
+                  <span style="background: rgba(255,255,255,0.2); padding: 6px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; color: #fff; letter-spacing: 1px;">PPTX</span>
+                </div>
+                <div class="presentation-box-label">
+                  <span class="presentation-box-icon">📊</span>
+                  <span>${doc.name}</span>
+                  <a href="${doc.file}" download onclick="event.stopPropagation()" class="presentation-box-dl" title="Download PPTX">⬇️</a>
+                </div>
+              </div>`;
+            } else {
+              return `
+              <div class="presentation-box" onclick="openFullscreenMedia('${doc.file}', 'pdf')">
+                <div class="presentation-box-img" style="background: #fff;">
+                  <iframe src="${doc.file}#toolbar=0&navpanes=0&scrollbar=0&view=Fit" style="width: 100%; height: 100%; border: none; pointer-events: none;" title="${doc.name}"></iframe>
+                </div>
+                <div class="presentation-box-label">
+                  <span class="presentation-box-icon">🔬</span>
+                  <span>${doc.name}</span>
+                  <a href="${doc.file}" target="_blank" onclick="event.stopPropagation()" class="presentation-box-dl">↗</a>
+                </div>
+              </div>`;
+            }
+          }).join('') : ''}
         </div>
         
         ${ytVideoCount > 0 ? `
