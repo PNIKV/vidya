@@ -1,359 +1,54 @@
-# Vidya STEAM Education Website
-## How to Use & Add New Content
+# STEM Assessment Platform
 
----
+Welcome to the new STEM Assessment platform! This system replaces the old "Live Quiz" with a robust, scalable, and beautifully designed interface meant specifically for kids learning STEM and Tinkering in India.
 
-## 📁 Folder Structure
+## Features
+- **Kids-Friendly UI**: Vibrant, engaging, and responsive interface using Glassmorphism.
+- **Dark/Light Mode**: Easily toggleable themes.
+- **Role-Based Access**: 
+  - **Students**: Enter Name, Grade, and School to start an assessment.
+  - **Teachers**: Login (default `admin` / `password` in dev mode) to view submitted results.
+- **Media Support**: Questions can now include images and audio clips.
+- **Cloudflare Powered Backend**: A serverless Node.js backend using Cloudflare Workers ensures fast and secure data handling.
+- **Discord Integration**: Webhook integration to automatically send answer sheets to a Discord server.
 
-```
-vidya-steam/
-│
-├── index.html              ← Main website (open this in browser)
-├── style.css               ← All styles
-├── app.js                  ← All JavaScript
-├── site.json               ← MASTER CONFIG (add new sessions here)
-│
-├── sessions/
-│   ├── session-1/
-│   │   ├── session.json    ← Session 1 data (title, quiz, topics, etc.)
-│   │   ├── slides/
-│   │   │   ├── slide-01.jpg   ← Exported PPT slides (JPG/PNG)
-│   │   │   ├── slide-02.jpg
-│   │   │   ├── ...
-│   │   │   └── slides.pdf     ← OR put PDF here instead of images
-│   │   └── images/
-│   │       ├── img-01.jpg     ← Lab photos, activity pics, component shots
-│   │       ├── img-02.jpg
-│   │       └── ...
-│   │
-│   ├── session-2/          ← Same structure
-│   └── session-3/          ← Same structure
-│
-├── projects/
-│   ├── projects.json       ← All project cards data
-│   └── images/
-│       ├── smart-light.jpg
-│       ├── weather-station.jpg
-│       └── ...
-```
+## File Structure
+- `pages/assessment.html`: The main entry point for the frontend application.
+- `css/assessment.css`: Stylesheet handling the UI, animations, and themes.
+- `js/assessment.js`: Frontend logic for managing state, timers, and API communication.
+- `live-quiz-data/questions.json`: The database of 50 questions used in the assessment.
+- `backend-api/`: The Cloudflare Worker project for the backend.
 
----
-
-## ➕ HOW TO ADD A NEW SESSION
-
-### Step 1 — Create Folder
-```
-sessions/session-4/
-sessions/session-4/slides/
-sessions/session-4/images/
-```
-
-### Step 2 — Export PPT Slides as Images
-- Open your PPT in PowerPoint
-- File → Export → Change File Type → JPEG or PNG
-- Click "Save All Slides"
-- Copy the exported images into `sessions/session-4/slides/`
-- Rename them: `slide-01.jpg`, `slide-02.jpg`, `slide-03.jpg` …
-
-**OR** — Export as PDF:
-- File → Export → Create PDF/XPS
-- Save as `slides.pdf` inside `sessions/session-4/slides/`
-
-### Step 3 — Create session.json
-Copy `sessions/session-1/session.json` to `sessions/session-4/session.json`
-
-Edit these fields:
-```json
-{
-  "id": "session-4",
-  "number": 4,
-  "title": "Your Session Title",
-  "subtitle": "Short description",
-  "date": "Session 04",
-  "duration": "75 minutes",
-  "phase": "Sensors",
-  "color": "#9B6BFF",
-  "icon": "🌡️",
-  "tags": ["Sensor", "Arduino", "Code"],
-  "overview": "What this session is about...",
-
-  "slides": {
-    "pdf": "sessions/session-4/slides/slides.pdf",
-    "images": [
-      {
-        "file": "sessions/session-4/slides/slide-01.jpg",
-        "title": "Slide 1 Title",
-        "caption": "What this slide shows"
-      }
-    ]
-  },
-
-  "images": {
-    "gallery": [
-      {
-        "file": "sessions/session-4/images/img-01.jpg",
-        "caption": "Photo description",
-        "category": "Lab"
-      }
-    ]
-  },
-
-  "keyTopics": ["Topic 1", "Topic 2"],
-
-  "youtubeVideos": [
-    {
-      "title": "Video Title",
-      "videoId": "YOUTUBE_VIDEO_ID",
-      "desc": "What this video covers"
-    }
-  ],
-
-  "resources": [
-    { "title": "Website Name", "url": "https://...", "icon": "🔗" }
-  ],
-
-  "activity": {
-    "title": "Activity Name",
-    "parts": ["Part 1", "Part 2"],
-    "steps": ["Step 1", "Step 2"]
-  },
-
-  "quiz": [
-    {
-      "q": "Question text?",
-      "options": ["Option A", "Option B", "Option C", "Option D"],
-      "answer": 0,
-      "explanation": "Why A is correct..."
-    }
-  ]
-}
-```
-
-### Step 4 — Register in site.json
-Open `site.json` and add to the sessions array:
-```json
-"sessions": [
-  { "id": "session-1", "number": 1, "file": "sessions/session-1/session.json" },
-  { "id": "session-2", "number": 2, "file": "sessions/session-2/session.json" },
-  { "id": "session-3", "number": 3, "file": "sessions/session-3/session.json" },
-  { "id": "session-4", "number": 4, "file": "sessions/session-4/session.json" }
-]
-```
-
-**Done!** Open the website and the new session will appear automatically.
-
----
-
-## 🖼️ Adding Images to a Session
-
-1. Take photos during the session (lab activity, student work, components)
-2. Copy photos into `sessions/session-X/images/`
-3. Open `sessions/session-X/session.json`
-4. Add entries to `images.gallery`:
-
-```json
-"images": {
-  "gallery": [
-    {
-      "file": "sessions/session-1/images/my-photo.jpg",
-      "caption": "Students building LED circuits",
-      "category": "Lab"
-    }
-  ]
-}
-```
-
-Categories can be: `Lab`, `Activity`, `Components`, `Code`, `Concept`, or anything you like.
-
----
-
-## 🎬 Adding YouTube Videos
-
-Find the video on YouTube. The ID is in the URL:
-`https://www.youtube.com/watch?v=`**`dQw4w9WgXcQ`** ← this part
-
-```json
-"youtubeVideos": [
-  {
-    "title": "Arduino Blink Tutorial",
-    "videoId": "dQw4w9WgXcQ",
-    "desc": "How to make an LED blink with Arduino"
-  }
-]
-```
-
----
-
-## 🧠 Adding Quiz Questions
-
-```json
-{
-  "q": "What does LED stand for?",
-  "options": [
-    "Light Emitting Diode",
-    "Low Energy Device",
-    "Light Energy Driver",
-    "Large Electric Display"
-  ],
-  "answer": 0,
-  "explanation": "LED = Light Emitting Diode! It emits light when electricity flows through it."
-}
-```
-
-- `"answer"` is the index (0=A, 1=B, 2=C, 3=D)
-- Add as many questions as you want — the quiz shuffles them randomly each time
-
----
-
-## 🚀 Adding a New Project
-
-Open `projects/projects.json` and add to the `projects` array:
-
-```json
-{
-  "id": "my-project",
-  "title": "My Cool Project",
-  "icon": "🔥",
-  "level": "Intermediate",
-  "session": 2,
-  "desc": "Short description for the card",
-  "fullDesc": "Detailed description...",
-  "image": "projects/images/my-project.jpg",
-  "components": ["Arduino UNO", "LED", "Sensor"],
-  "skills": ["Coding", "Circuit building"],
-  "difficulty": 3,
-  "status": "Available"
-}
-```
-
-- `level`: "Beginner" / "Intermediate" / "Advanced"
-- `status`: "Available" / "Coming Soon"
-- `difficulty`: 1-5
-
----
-
-## 🌐 Running the Website
-
-Since it loads JSON files via `fetch()`, you need a local server:
-
-**Option 1 — VS Code Live Server** (recommended)
-- Install "Live Server" extension in VS Code
-- Right-click `index.html` → Open with Live Server
-
-**Option 2 — Python**
+## How to Run the Frontend
+Since it is built with pure HTML/CSS/JS, you can serve it using any simple web server:
 ```bash
-cd vidya-steam
-python3 -m http.server 8000
-# Open: http://localhost:8000
+python -m http.server 8000
 ```
+Then navigate to `http://localhost:8000/pages/assessment.html`.
 
-**Option 3 — Node.js**
+## How to Run the Cloudflare Backend
+
+1. Navigate to the backend directory:
 ```bash
-npx serve .
+cd backend-api
 ```
-
-> ⚠️ Do NOT just double-click `index.html` — it won't load the JSON files due to browser security.
-
----
-
-*Vidya STEAM Education · Build. Break. Learn. Repeat. ⚡*
-
-## 🎲 5. Adding Questions for Live Quiz
-
-Questions are stored in **`live-quiz-data/questions.json`**.
-
-### File Structure:
-```json
-{
-  "questions": [
-    {
-      "id": 1,
-      "type": "multiple_choice",
-      "text": "What does LED stand for?",
-      "options": ["Light Emitting Diode", "LED Device", "Light Electric Display"],
-      "answer": 0,
-      "marks": 10
-    },
-    {
-      "id": 2,
-      "type": "fill_blank",
-      "text": "The unit of electric current is _____",
-      "answer": "Ampere",
-      "marks": 10
-    }
-  ]
-}
+2. Install Wrangler (Cloudflare CLI) if you haven't already:
+```bash
+npm install -g wrangler
 ```
-
-### Supported Question Types:
-- **`multiple_choice`** - Multiple choice questions
-- **`fill_blank`** - Fill-in-the-blank
-- **`short_answer`** - Short answer (case-insensitive matching)
-
-### How to Add Questions:
-1. Open `live-quiz-data/questions.json`
-2. Add your question to the `questions` array
-3. Make sure to add the correct answer!
-
----
-
-## 👥 6. Adding Students & Teachers
-
-Student and teacher credentials are in **`live-quiz-data/students.json`** and **`live-quiz-data/teachers.json`**.
-
-### File Structures:
-
-**`students.json`**:
-```json
-{
-  "school_name": "Vidya STEAM School",
-  "students": [
-    { "name": "Ravi Kumar", "password": "123" },
-    { "name": "Priya Sharma", "password": "456" }
-  ]
-}
+3. Run the local development server:
+```bash
+npm run dev
 ```
+By default, this will run on `http://127.0.0.1:8787`. The frontend (`js/assessment.js`) is already configured to point to this address.
 
-**`teachers.json`**:
-```json
-{
-  "teachers": [
-    { "name": "Mr. Gupta", "password": "teacher123" },
-    { "name": "Ms. Desai", "password": "teacher456" }
-  ]
-}
-```
+## Setting Up Discord Webhook
+1. Go to your Discord Server Settings > Integrations > Webhooks.
+2. Create a New Webhook and copy the URL.
+3. Open `backend-api/wrangler.toml` and paste the URL under `[vars] DISCORD_WEBHOOK_URL = "..."`.
+4. The worker will automatically send a message with the answer sheet whenever a student submits.
 
-### How to Add Credentials:
-
-**For Students:**
-```json
-{
-  "name": "Student Name",
-  "password": "password123"
-}
-```
-
-**For Teachers:**
-```json
-{
-  "name": "Teacher Name",
-  "password": "teacher123"
-}
-```
-
----
-
-## 📋 Quick Setup Summary:
-
-| File | Purpose |
-|------|---------|
-| `site.json` | Website config (sessions list) |
-| `sessions/session-X/session.json` | Individual session data |
-| `sessions/session-X/slides/*.jpg` | PPT slides (export from PowerPoint) |
-| `sessions/session-X/images/*.jpg` | Activity photos |
-| `projects/projects.json` | Project descriptions and links |
-| `projects/images/*.jpg` | Project photos |
-| `live-quiz-data/questions.json` | Quiz questions |
-| `live-quiz-data/students.json` | Student credentials |
-| `live-quiz-data/teachers.json` | Teacher credentials |
+## Managing Questions
+To add more questions or modify existing ones, edit `live-quiz-data/questions.json`.
+- For image questions, add: `"media_type": "image", "media_url": "URL"`
+- For audio questions, add: `"media_type": "audio", "media_url": "URL"`

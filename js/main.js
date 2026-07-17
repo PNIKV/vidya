@@ -70,7 +70,6 @@ async function init() {
   renderHome();
   renderSessionsList();
   renderProjects();
-  renderLeaderboard();
   renderAbout();
 
   // Handle initial load based on path or redirect
@@ -78,7 +77,7 @@ async function init() {
   const redirectPage = urlParams.get('p');
   let targetPage = 'home';
   let targetParam = null;
-  const validPages = new Set(['home', 'sessions', 'projects', 'whiteboard', 'live-quiz', 'about', 'session-detail', 'project-detail']);
+  const validPages = new Set(['home', 'sessions', 'projects', 'whiteboard', 'about', 'session-detail', 'project-detail']);
 
   if (redirectPage) {
     const base = globalThis.BASE_PATH || '/';
@@ -128,7 +127,7 @@ async function init() {
 // =============================================
 globalThis.addEventListener('popstate', () => {
   const pathSegments = globalThis.location.pathname.split('/').filter(Boolean);
-  const validPages = ['home', 'sessions', 'projects', 'whiteboard', 'live-quiz', 'about', 'session-detail', 'project-detail'];
+  const validPages = ['home', 'sessions', 'projects', 'whiteboard', 'about', 'session-detail', 'project-detail'];
 
   // Filter out the repo name (e.g. "vidya") from the path segments
   const repoIndex = pathSegments.indexOf('vidya');

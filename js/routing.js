@@ -40,8 +40,6 @@ function runPageLogic(name) {
   else if (name === 'project-detail') renderProjectDetail();
   else if (name === 'about') renderAbout();
   else if (name === 'whiteboard' && globalThis.initWhiteboard) globalThis.initWhiteboard();
-  else if (name === 'live-quiz' && globalThis.initLiveQuiz) globalThis.initLiveQuiz();
-  renderLeaderboard();
 }
 
 function toggleMobileMenu() {

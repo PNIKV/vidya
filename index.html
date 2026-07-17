@@ -13,7 +13,7 @@
   <script>
     // Automated Cache Busting: Appends a timestamp to force browsers to load fresh CSS
     const _v = Date.now();
-    const _cssFiles = ['style.css', 'css/home.css', 'css/sessions.css', 'css/projects.css', 'css/about.css', 'css/whiteboard.css', 'css/live-quiz.css'];
+    const _cssFiles = ['style.css', 'css/home.css', 'css/sessions.css', 'css/projects.css', 'css/about.css', 'css/whiteboard.css'];
     _cssFiles.forEach(f => document.write(`<link rel="stylesheet" href="${f}?v=${_v}" />`));
   </script>
   <link rel="manifest" href="manifest.json" />
@@ -35,7 +35,7 @@
       <div class="nav-links">
         <button onclick="showPage('home')" class="nav-link" data-page="home">Home</button>
         <button onclick="showPage('sessions')" class="nav-link" data-page="sessions">Curriculum</button>
-        <button onclick="showPage('live-quiz')" class="nav-link" data-page="live-quiz">Assessment</button>
+        <button onclick="window.location.href='assessment/beginner-demo.html'" class="nav-link">Assessment</button>
         <button onclick="showPage('projects')" class="nav-link" data-page="projects">Projects</button>
         <button onclick="showPage('whiteboard')" class="nav-link" data-page="whiteboard">📟 Circuit Board</button>
         <button onclick="showPage('about')" class="nav-link" data-page="about">About</button>
@@ -49,7 +49,7 @@
       <button onclick="showPage('sessions');toggleMobileMenu()">Curriculum</button>
       <button onclick="showPage('projects');toggleMobileMenu()">Projects</button>
       <button onclick="showPage('whiteboard');toggleMobileMenu()">📟 Circuit Board</button>
-      <button onclick="showPage('live-quiz');toggleMobileMenu()">Live Quiz</button>
+      <button onclick="window.location.href='assessment/beginner-demo.html'">Assessment</button>
       <button onclick="showPage('about');toggleMobileMenu()">About</button>
     </div>
   </nav>
@@ -87,9 +87,8 @@
 
   <script>
     // Automated Cache Busting for JS
-    const _jsFiles = ['js/state.js', 'js/routing.js', 'js/home.js', 'js/session.js', 'js/quiz.js', 'js/leaderboard.js', 'js/projects.js', 'js/about.js', 'js/whiteboard.js', 'js/main.js'];
+    const _jsFiles = ['js/state.js', 'js/routing.js', 'js/home.js', 'js/session.js', 'js/projects.js', 'js/about.js', 'js/whiteboard.js', 'js/main.js'];
     _jsFiles.forEach(f => document.write(`<script src="${f}?v=${_v}">\x3C/script>`));
-    document.write(`<script type="module" src="js/live-quiz.js?v=${_v}">\x3C/script>`);
   </script>
 
   <!-- Service Worker Registration (Cache-Busted) -->

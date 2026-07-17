@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEM Quest - VIDYA</title>
+    <!-- Fun Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/assessment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgm" loop>
+        <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=fun-life-112188.mp3" type="audio/mpeg">
+    </audio>
+    <!-- SFX -->
+    <audio id="sfx-correct" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3?filename=success-1-6297.mp3"></audio>
+    <audio id="sfx-wrong" src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=error-126627.mp3"></audio>
+    <audio id="sfx-click" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_e607421183.mp3?filename=pop-39222.mp3"></audio>
+
+    <header class="app-header">
+        <div class="logo-container">
+            <h1><i class="fa-solid fa-gamepad"></i> STEM Quest</h1>
+        </div>
+        <div class="header-controls">
+            <button id="btn-back-home" class="btn-icon" aria-label="Back to Home" onclick="window.location.href='../index.html'">
+                <i class="fa-solid fa-house"></i>
+            </button>
+            <button id="music-toggle" class="btn-icon" aria-label="Toggle Music">
+                <i class="fa-solid fa-music"></i>
+            </button>
+            <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <!-- ROLE SELECTION -->
+        <section id="view-role-select" class="view-section active">
+            <div class="game-card zoom-in">
+                <h2>Ready to Play?</h2>
+                <p style="font-size: 1.2rem; margin-bottom: 30px;">Choose your character to start the adventure!</p>
+                <div class="button-group">
+                    <button class="btn btn-primary" id="btn-student-role">
+                        <i class="fa-solid fa-rocket"></i> Player 1
+                    </button>
+                    <button class="btn btn-secondary" id="btn-teacher-role">
+                        <i class="fa-solid fa-user-gear"></i> Game Master
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEACHER LOGIN -->
+        <section id="view-teacher-login" class="view-section hidden">
+            <div class="game-card zoom-in">
+                <h2>Game Master Login</h2>
+                <form id="form-teacher-login">
+                    <div class="input-group">
+                        <label>Admin ID</label>
+                        <input type="text" id="teacher-id" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Secret Code</label>
+                        <input type="password" id="teacher-pass" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" id="btn-back-from-teacher">Back</button>
+                        <button type="submit" class="btn btn-primary">Enter</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- TEACHER DASHBOARD -->
+        <section id="view-teacher-dashboard" class="view-section hidden">
+            <div class="game-card zoom-in">
+                <h2>High Scores</h2>
+                <div id="results-container" style="background: var(--input-bg); padding: 15px; border-radius: 15px; max-height: 300px; overflow-y: auto; text-align: left; border: 3px solid var(--input-border);">
+                    Loading...
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="btn-logout-teacher">Log Out</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- STUDENT REGISTRATION -->
+        <section id="view-student-register" class="view-section hidden">
+            <div class="game-card zoom-in">
+                <h2>Player Profile</h2>
+                <form id="form-student-register">
+                    <div class="input-group">
+                        <label>Hero Name</label>
+                        <input type="text" id="student-name" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Level (Grade)</label>
+                        <input type="text" id="student-grade" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Academy (School)</label>
+                        <input type="text" id="student-school" required>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-secondary" id="btn-back-from-student">Back</button>
+                        <button type="submit" class="btn btn-success">START QUEST <i class="fa-solid fa-play"></i></button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- ASSESSMENT VIEW -->
+        <section id="view-assessment" class="view-section hidden">
+            <div class="assessment-header">
+                <div class="level-indicator">
+                    <i class="fa-solid fa-star"></i> <span id="question-counter">Level 1 / 10</span>
+                </div>
+                <div class="score-board">
+                    <i class="fa-solid fa-coins"></i> Score: <span id="current-score">0</span>
+                </div>
+            </div>
+
+            <div class="game-card zoom-in" id="question-card">
+                <h3 id="question-text" class="question-text">Loading quest...</h3>
+                
+                <div id="media-container" class="media-container hidden"></div>
+                
+                <!-- Dynamic Area for Options -->
+                <div id="interaction-area"></div>
+            </div>
+
+            <div class="button-group" style="justify-content: flex-end; margin-top: 20px;">
+                <button class="btn btn-primary" id="btn-next-question" disabled>Next <i class="fa-solid fa-forward-step"></i></button>
+                <button class="btn btn-success hidden" id="btn-submit-assessment">Finish Quest <i class="fa-solid fa-flag-checkered"></i></button>
+            </div>
+        </section>
+
+        <!-- RESULTS VIEW -->
+        <section id="view-results" class="view-section hidden">
+            <div class="game-card zoom-in">
+                <i class="fa-solid fa-trophy" style="color: #f1c40f; font-size: 5rem; margin-bottom: 20px;"></i>
+                <h2>Quest Completed!</h2>
+                <h3 id="result-score" style="font-size: 2.5rem; color: var(--primary-color); font-family: var(--game-font); margin: 20px 0;">Score: 0</h3>
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="btn-download-csv"><i class="fa-solid fa-file-csv"></i> Download CSV</button>
+                    <button class="btn btn-primary" id="btn-go-home">Play Again</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="loading-overlay" class="overlay hidden">
+            <h2>LOADING...</h2>
+        </div>
+    </main>
+
+    <script src="../js/assessment.js"></script>
+</body>
+</html>

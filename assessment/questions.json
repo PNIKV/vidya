@@ -1,0 +1,669 @@
+{
+  "stem_baseline": {
+    "baseline": {
+      "quiz_title": "STEM Quest",
+      "duration": 20,
+      "questions": [
+        {
+          "id": 1,
+          "type": "multiple_choice",
+          "text": "What does STEM stand for?",
+          "options": [
+            "Science, Tech, English, Math",
+            "Science, Tech, Engineering, Math",
+            "Space, Tech, Engine, Motion"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 2,
+          "type": "multiple_choice",
+          "text": "Which of these is a microcontroller?",
+          "options": [
+            "Resistor",
+            "Arduino Uno",
+            "Battery"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 3,
+          "type": "multiple_choice",
+          "text": "What does an LED do?",
+          "options": [
+            "Makes sound",
+            "Emits light",
+            "Spins around"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 4,
+          "type": "multiple_choice",
+          "text": "What is 3D printing also known as?",
+          "options": [
+            "Additive Manufacturing",
+            "Subtractive Manufacturing",
+            "Laser Cutting"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 5,
+          "type": "multiple_choice",
+          "text": "What coding language uses blocks that snap together?",
+          "options": [
+            "Python",
+            "C++",
+            "Scratch"
+          ],
+          "answer": 2,
+          "marks": 1
+        },
+        {
+          "id": 6,
+          "type": "multiple_choice",
+          "text": "Which sensor detects distance using sound?",
+          "options": [
+            "LDR",
+            "Ultrasonic Sensor",
+            "PIR Sensor"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 7,
+          "type": "multiple_choice",
+          "text": "What component is used to store electrical energy?",
+          "options": [
+            "Capacitor",
+            "Resistor",
+            "Diode"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 8,
+          "type": "multiple_choice",
+          "text": "Which of these allows electricity to flow in only one direction?",
+          "options": [
+            "Motor",
+            "Diode",
+            "Switch"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 9,
+          "type": "multiple_choice",
+          "text": "What is the unit of voltage?",
+          "options": [
+            "Amps",
+            "Ohms",
+            "Volts"
+          ],
+          "answer": 2,
+          "marks": 1
+        },
+        {
+          "id": 10,
+          "type": "multiple_choice",
+          "text": "Which tool melts plastic filament?",
+          "options": [
+            "Hot Glue Gun",
+            "3D Printer Extruder",
+            "Soldering Iron"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 11,
+          "type": "true_false",
+          "text": "True or False: A battery provides AC (Alternating Current) power.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 12,
+          "type": "true_false",
+          "text": "True or False: Python is a text-based programming language.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 13,
+          "type": "true_false",
+          "text": "True or False: A resistor increases the flow of current.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 14,
+          "type": "true_false",
+          "text": "True or False: Robotics involves mechanical, electrical, and software engineering.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 15,
+          "type": "true_false",
+          "text": "True or False: PLA is a biodegradable material used in 3D printing.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 16,
+          "type": "true_false",
+          "text": "True or False: Breadboards require soldering to create circuits.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 17,
+          "type": "true_false",
+          "text": "True or False: An ultrasonic sensor uses light to detect objects.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 18,
+          "type": "true_false",
+          "text": "True or False: G-Code is the language used to instruct 3D printers.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 19,
+          "type": "true_false",
+          "text": "True or False: A servo motor can rotate continuously forever.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 1,
+          "marks": 1
+        },
+        {
+          "id": 20,
+          "type": "true_false",
+          "text": "True or False: A multimeter can measure voltage, current, and resistance.",
+          "options": [
+            "True",
+            "False"
+          ],
+          "answer": 0,
+          "marks": 1
+        },
+        {
+          "id": 21,
+          "type": "fill_in_the_blank",
+          "text": "An LED stands for Light ________ Diode.",
+          "answer": [
+            "emitting"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 22,
+          "type": "fill_in_the_blank",
+          "text": "To make an Arduino run code, you must write a ________ function.",
+          "answer": [
+            "loop"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 23,
+          "type": "fill_in_the_blank",
+          "text": "The brain of a computer is called the ________.",
+          "answer": [
+            "cpu",
+            "processor"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 24,
+          "type": "fill_in_the_blank",
+          "text": "A closed path that electricity flows through is called a ________.",
+          "answer": [
+            "circuit"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 25,
+          "type": "fill_in_the_blank",
+          "text": "The standard material used for basic 3D printing is called ________.",
+          "answer": [
+            "pla"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 26,
+          "type": "fill_in_the_blank",
+          "text": "In coding, a ________ is used to store data.",
+          "answer": [
+            "variable"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 27,
+          "type": "fill_in_the_blank",
+          "text": "To measure voltage, you connect the multimeter in ________.",
+          "answer": [
+            "parallel"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 28,
+          "type": "fill_in_the_blank",
+          "text": "V = I * R is known as ________ Law.",
+          "answer": [
+            "ohms",
+            "ohm's",
+            "ohm"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 29,
+          "type": "fill_in_the_blank",
+          "text": "The 'T' in STEM stands for ________.",
+          "answer": [
+            "technology"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 30,
+          "type": "fill_in_the_blank",
+          "text": "A ________ motor moves in precise, discrete steps.",
+          "answer": [
+            "stepper"
+          ],
+          "marks": 2
+        },
+        {
+          "id": 31,
+          "type": "match_the_following",
+          "text": "Match the component to its function:",
+          "pairs": [
+            {
+              "left": "Battery",
+              "right": "Power Source"
+            },
+            {
+              "left": "LED",
+              "right": "Output Device"
+            },
+            {
+              "left": "Button",
+              "right": "Input Device"
+            },
+            {
+              "left": "Arduino",
+              "right": "Microcontroller"
+            },
+            {
+              "left": "Resistor",
+              "right": "Limits Current"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 32,
+          "type": "match_the_following",
+          "text": "Match the component to its function:",
+          "pairs": [
+            {
+              "left": "Motor",
+              "right": "Motion"
+            },
+            {
+              "left": "Ultrasonic",
+              "right": "Distance"
+            },
+            {
+              "left": "Buzzer",
+              "right": "Sound"
+            },
+            {
+              "left": "LDR",
+              "right": "Light Sensor"
+            },
+            {
+              "left": "Breadboard",
+              "right": "Prototyping"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 33,
+          "type": "match_the_following",
+          "text": "Match the concepts correctly:",
+          "pairs": [
+            {
+              "left": "Code",
+              "right": "Software"
+            },
+            {
+              "left": "Circuit",
+              "right": "Hardware"
+            },
+            {
+              "left": "3D Print",
+              "right": "Mechanical"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 34,
+          "type": "match_the_following",
+          "text": "Match the concepts correctly:",
+          "pairs": [
+            {
+              "left": "Code",
+              "right": "Software"
+            },
+            {
+              "left": "Circuit",
+              "right": "Hardware"
+            },
+            {
+              "left": "3D Print",
+              "right": "Mechanical"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 35,
+          "type": "match_the_following",
+          "text": "Match the concepts correctly:",
+          "pairs": [
+            {
+              "left": "Code",
+              "right": "Software"
+            },
+            {
+              "left": "Circuit",
+              "right": "Hardware"
+            },
+            {
+              "left": "3D Print",
+              "right": "Mechanical"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 36,
+          "type": "match_the_following",
+          "text": "Match the concepts correctly:",
+          "pairs": [
+            {
+              "left": "Code",
+              "right": "Software"
+            },
+            {
+              "left": "Circuit",
+              "right": "Hardware"
+            },
+            {
+              "left": "3D Print",
+              "right": "Mechanical"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 37,
+          "type": "match_the_following",
+          "text": "Match the concepts correctly:",
+          "pairs": [
+            {
+              "left": "Code",
+              "right": "Software"
+            },
+            {
+              "left": "Circuit",
+              "right": "Hardware"
+            },
+            {
+              "left": "3D Print",
+              "right": "Mechanical"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 38,
+          "type": "match_the_following",
+          "text": "Match the concepts correctly:",
+          "pairs": [
+            {
+              "left": "Code",
+              "right": "Software"
+            },
+            {
+              "left": "Circuit",
+              "right": "Hardware"
+            },
+            {
+              "left": "3D Print",
+              "right": "Mechanical"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 39,
+          "type": "match_the_following",
+          "text": "Match the concepts correctly:",
+          "pairs": [
+            {
+              "left": "Code",
+              "right": "Software"
+            },
+            {
+              "left": "Circuit",
+              "right": "Hardware"
+            },
+            {
+              "left": "3D Print",
+              "right": "Mechanical"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 40,
+          "type": "match_the_following",
+          "text": "Match the concepts correctly:",
+          "pairs": [
+            {
+              "left": "Code",
+              "right": "Software"
+            },
+            {
+              "left": "Circuit",
+              "right": "Hardware"
+            },
+            {
+              "left": "3D Print",
+              "right": "Mechanical"
+            }
+          ],
+          "marks": 3
+        },
+        {
+          "id": 41,
+          "type": "image_selection",
+          "text": "Which of these is an Arduino Uno?",
+          "options": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Resistor.jpg/220px-Resistor.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Arduino_Uno_-_R3.jpg/300px-Arduino_Uno_-_R3.jpg"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 42,
+          "type": "image_selection",
+          "text": "Which of these is a Breadboard?",
+          "options": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Breadboard.svg/220px-Breadboard.svg.png",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Small_electric_motor.jpg/220px-Small_electric_motor.jpg"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 43,
+          "type": "image_selection",
+          "text": "Select the LED.",
+          "options": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Small_electric_motor.jpg/220px-Small_electric_motor.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Light_emitting_diode_-_LED.jpg/220px-Light_emitting_diode_-_LED.jpg"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 44,
+          "type": "image_selection",
+          "text": "Which one is used to print 3D objects?",
+          "options": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/3D_printing_with_a_fused_deposition_modeling_printer.jpg/220px-3D_printing_with_a_fused_deposition_modeling_printer.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Thermistor.jpg/220px-Thermistor.jpg"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 45,
+          "type": "image_selection",
+          "text": "Identify the Servo Motor.",
+          "options": [
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Servomotor.jpg/220px-Servomotor.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Resistor.jpg/220px-Resistor.jpg"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 46,
+          "type": "audio_recognition",
+          "text": "Listen to the audio. Is this a DC motor spinning or a button clicking?",
+          "media_type": "audio",
+          "media_url": "https://www.soundjay.com/buttons/sounds/button-10.mp3",
+          "options": [
+            "DC Motor",
+            "Button Click"
+          ],
+          "answer": 1,
+          "marks": 2
+        },
+        {
+          "id": 47,
+          "type": "audio_recognition",
+          "text": "Listen closely. Is this a buzzer beep or a laser cutter?",
+          "media_type": "audio",
+          "media_url": "https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3",
+          "options": [
+            "Buzzer Beep",
+            "Laser Cutter"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 48,
+          "type": "audio_recognition",
+          "text": "What is this sound?",
+          "media_type": "audio",
+          "media_url": "https://www.soundjay.com/buttons/sounds/button-10.mp3",
+          "options": [
+            "Click",
+            "Crash"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 49,
+          "type": "audio_recognition",
+          "text": "Identify the electronic sound.",
+          "media_type": "audio",
+          "media_url": "https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3",
+          "options": [
+            "Error/Wrong Buzz",
+            "Motor Spin"
+          ],
+          "answer": 0,
+          "marks": 2
+        },
+        {
+          "id": 50,
+          "type": "audio_recognition",
+          "text": "Does this sound like a success chime?",
+          "media_type": "audio",
+          "media_url": "https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3",
+          "options": [
+            "Yes",
+            "No"
+          ],
+          "answer": 0,
+          "marks": 2
+        }
+      ]
+    }
+  }
+}

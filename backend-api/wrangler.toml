@@ -1,0 +1,14 @@
+name = "assessment-backend"
+main = "src/index.js"
+compatibility_date = "2023-01-01"
+node_compat = true
+
+# We will use KV namespace for storing results
+# You must create this via `wrangler kv:namespace create RESULTS` and update the ID below
+# [[kv_namespaces]]
+# binding = "RESULTS_KV"
+# id = "YOUR_KV_NAMESPACE_ID"
+
+[vars]
+# Add your Discord Webhook URL here
+DISCORD_WEBHOOK_URL = ""
