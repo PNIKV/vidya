@@ -1,230 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>STEM Quest – Beginner Challenge | VIDYA</title>
-  <meta name="description" content="STEM Quest Beginner - A super fun gamified STEM exam for Grade 4 & 5. Block coding, Arduino IDE, drag-and-drop matching, and more!">
+  <meta name="description"
+    content="STEM Quest Beginner - A super fun gamified STEM exam for Grade 4 & 5. Block coding, Arduino IDE, drag-and-drop matching, and more!">
   <link rel="stylesheet" href="beginner-styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      ANIMATED BACKGROUND
 ════════════════════════════════════════ -->
-<canvas id="bg-canvas"></canvas>
-<div id="bg-sprites">
-  <!-- Walking Robot -->
-  <div class="bg-sprite" id="sprite-robot">
-    <span class="robot-inner">🤖</span>
-  </div>
-  <!-- Flying Drone -->
-  <div class="bg-sprite" id="sprite-drone">
-    <div class="drone-body">
-      <svg width="70" height="50" viewBox="0 0 70 50" xmlns="http://www.w3.org/2000/svg">
-        <style>
-          .prop { transform-origin: center; transform-box: fill-box; animation: spinProp 0.12s linear infinite; }
-          @keyframes spinProp { to { transform: rotate(360deg); } }
-        </style>
-        <!-- Arms -->
-        <line x1="10" y1="24" x2="35" y2="24" stroke="#4a90e2" stroke-width="2.5" opacity="0.8"/>
-        <line x1="35" y1="24" x2="60" y2="24" stroke="#4a90e2" stroke-width="2.5" opacity="0.8"/>
-        <!-- Body -->
-        <ellipse cx="35" cy="24" rx="10" ry="6" fill="#3b5bdb" opacity="0.9"/>
-        <!-- Camera -->
-        <circle cx="35" cy="28" r="3" fill="#1a1a2e"/>
-        <circle cx="35" cy="28" r="1.5" fill="#ff4757"/>
-        <!-- Left propeller -->
-        <g class="prop" transform="translate(10,18)">
-          <ellipse rx="8" ry="2.5" fill="#06b6d4" opacity="0.75"/>
-          <ellipse ry="8" rx="2.5" fill="#06b6d4" opacity="0.75"/>
-        </g>
-        <!-- Right propeller -->
-        <g class="prop" transform="translate(60,18)">
-          <ellipse rx="8" ry="2.5" fill="#06b6d4" opacity="0.75"/>
-          <ellipse ry="8" rx="2.5" fill="#06b6d4" opacity="0.75"/>
-        </g>
-        <!-- LED blink -->
-        <circle cx="35" cy="20" r="2" fill="#fbbf24" opacity="0.9">
-          <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.2s" repeatCount="indefinite"/>
-        </circle>
-      </svg>
+  <canvas id="bg-canvas"></canvas>
+  <div id="bg-sprites">
+    <!-- Walking Robot -->
+    <div class="bg-sprite" id="sprite-robot">
+      <span class="robot-inner">🤖</span>
+    </div>
+    <!-- Flying Drone -->
+    <div class="bg-sprite" id="sprite-drone">
+      <div class="drone-body">
+        <svg width="70" height="50" viewBox="0 0 70 50" xmlns="http://www.w3.org/2000/svg">
+          <style>
+            .prop {
+              transform-origin: center;
+              transform-box: fill-box;
+              animation: spinProp 0.12s linear infinite;
+            }
+
+            @keyframes spinProp {
+              to {
+                transform: rotate(360deg);
+              }
+            }
+          </style>
+          <!-- Arms -->
+          <line x1="10" y1="24" x2="35" y2="24" stroke="#4a90e2" stroke-width="2.5" opacity="0.8" />
+          <line x1="35" y1="24" x2="60" y2="24" stroke="#4a90e2" stroke-width="2.5" opacity="0.8" />
+          <!-- Body -->
+          <ellipse cx="35" cy="24" rx="10" ry="6" fill="#3b5bdb" opacity="0.9" />
+          <!-- Camera -->
+          <circle cx="35" cy="28" r="3" fill="#1a1a2e" />
+          <circle cx="35" cy="28" r="1.5" fill="#ff4757" />
+          <!-- Left propeller -->
+          <g class="prop" transform="translate(10,18)">
+            <ellipse rx="8" ry="2.5" fill="#06b6d4" opacity="0.75" />
+            <ellipse ry="8" rx="2.5" fill="#06b6d4" opacity="0.75" />
+          </g>
+          <!-- Right propeller -->
+          <g class="prop" transform="translate(60,18)">
+            <ellipse rx="8" ry="2.5" fill="#06b6d4" opacity="0.75" />
+            <ellipse ry="8" rx="2.5" fill="#06b6d4" opacity="0.75" />
+          </g>
+          <!-- LED blink -->
+          <circle cx="35" cy="20" r="2" fill="#fbbf24" opacity="0.9">
+            <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.2s" repeatCount="indefinite" />
+          </circle>
+        </svg>
+      </div>
+    </div>
+    <!-- Rocket -->
+    <div class="bg-sprite" id="sprite-rocket">
+      <div class="rocket-inner">🚀</div>
     </div>
   </div>
-  <!-- Rocket -->
-  <div class="bg-sprite" id="sprite-rocket">
-    <div class="rocket-inner">🚀</div>
-  </div>
-</div>
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      AUDIO
 ════════════════════════════════════════ -->
-<audio id="bgm" loop>
-  <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=fun-life-112188.mp3" type="audio/mpeg">
-</audio>
-<audio id="sfx-ok"    src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3?filename=success-1-6297.mp3"></audio>
-<audio id="sfx-bad"   src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=error-126627.mp3"></audio>
-<audio id="sfx-click" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_e607421183.mp3?filename=pop-39222.mp3"></audio>
+  <audio id="bgm" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=fun-life-112188.mp3"
+      type="audio/mpeg">
+  </audio>
+  <audio id="sfx-ok"
+    src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3?filename=success-1-6297.mp3"></audio>
+  <audio id="sfx-bad"
+    src="https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=error-126627.mp3"></audio>
+  <audio id="sfx-click"
+    src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_e607421183.mp3?filename=pop-39222.mp3"></audio>
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      HEADER
 ════════════════════════════════════════ -->
-<header class="game-header">
-  <div class="logo">
-    <span class="logo-icon">⚡</span>
-    <span>STEM Quest</span>
-    <span class="logo-badge">BEGINNER</span>
-  </div>
-  <div class="header-right">
-    <div class="xp-wrap">
-      <span class="xp-label" id="xp-label">XP 0/41</span>
-      <div class="xp-track"><div class="xp-fill" id="xp-fill"></div></div>
+  <header class="game-header">
+    <div class="logo">
+      <span class="logo-icon">⚡</span>
+      <span>STEM Quest</span>
+      <span class="logo-badge">BEGINNER</span>
     </div>
-    <div class="score-chip">⭐ <span id="score-display">0</span></div>
-    <button id="btn-music" class="ctrl-btn" title="Toggle Music">🎵</button>
-  </div>
-</header>
+    <div class="header-right">
+      <div class="xp-wrap">
+        <span class="xp-label" id="xp-label">XP 0/41</span>
+        <div class="xp-track">
+          <div class="xp-fill" id="xp-fill"></div>
+        </div>
+      </div>
+      <div class="score-chip">⭐ <span id="score-display">0</span></div>
+      <button id="btn-music" class="ctrl-btn" title="Toggle Music">🎵</button>
+    </div>
+  </header>
 
-<!-- Feedback Toast -->
-<div class="feedback-toast" id="feedback-toast"></div>
+  <!-- Feedback Toast -->
+  <div class="feedback-toast" id="feedback-toast"></div>
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      MAIN VIEWS
 ════════════════════════════════════════ -->
-<main class="app-main">
+  <main class="app-main">
 
-  <!-- ──── LANDING ──────────────────────── -->
-  <section id="view-landing" class="view">
-    <div class="hero-card">
-      <div class="hero-title">
-        <h1>🚀 STEM Quest</h1>
-        <p class="tagline">The exam that actually feels like a game!</p>
-      </div>
-      <div class="level-badges">
-        <div class="level-badge active-level">
-          <div class="badge-icon">⭐</div>
-          <div class="badge-name">Beginner</div>
-          <div class="badge-desc">Grade 4 – 5</div>
+    <!-- ──── LANDING ──────────────────────── -->
+    <section id="view-landing" class="view">
+      <div class="hero-card">
+        <div class="hero-title">
+          <h1>🚀 STEM Quest</h1>
+          <p class="tagline">The exam that actually feels like a game!</p>
         </div>
-        <div class="level-badge locked">
-          <div class="badge-icon">🔒</div>
-          <div class="badge-name">Intermediate</div>
-          <div class="badge-desc">Coming soon!</div>
+        <div class="level-badges">
+          <div class="level-badge active-level">
+            <div class="badge-icon">⭐</div>
+            <div class="badge-name">Beginner</div>
+            <div class="badge-desc">Grade 5 – 12</div>
+          </div>
+          <div class="level-badge locked">
+            <div class="badge-icon">🔒</div>
+            <div class="badge-name">Intermediate</div>
+            <div class="badge-desc">Coming soon!</div>
+          </div>
+          <div class="level-badge locked">
+            <div class="badge-icon">🔒</div>
+            <div class="badge-name">Advanced</div>
+            <div class="badge-desc">Coming soon!</div>
+          </div>
         </div>
-        <div class="level-badge locked">
-          <div class="badge-icon">🔒</div>
-          <div class="badge-name">Advanced</div>
-          <div class="badge-desc">Coming soon!</div>
+        <div
+          style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:16px 20px;margin-bottom:28px;font-size:0.9rem;color:var(--text-dim);line-height:1.6;">
+          🎮 MCQ • 👍 True/False • 🔗 Drag &amp; Match • ✏️ Word Bank Fill<br>
+          🔢 Ohm's Law Calc • 🧩 PictoBlock Coding • 💻 Arduino IDE • 🤖 AI Challenge
+        </div>
+        <div class="hero-btns">
+          <button class="big-btn btn-play" id="btn-play">🎮 Play Now!</button>
+          <button class="big-btn btn-teacher" id="btn-teacher-mode">👩‍🏫 Teacher View</button>
         </div>
       </div>
-      <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:16px 20px;margin-bottom:28px;font-size:0.9rem;color:var(--text-dim);line-height:1.6;">
-        🎮 MCQ • 👍 True/False • 🔗 Drag &amp; Match • ✏️ Word Bank Fill<br>
-        🔢 Ohm's Law Calc • 🧩 PictoBlock Coding • 💻 Arduino IDE • 🤖 AI Challenge
-      </div>
-      <div class="hero-btns">
-        <button class="big-btn btn-play" id="btn-play">🎮 Play Now!</button>
-        <button class="big-btn btn-teacher" id="btn-teacher-mode">👩‍🏫 Teacher View</button>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ──── REGISTER ─────────────────────── -->
-  <section id="view-register" class="view">
-    <div class="form-card">
-      <h2>🏆 Player Profile</h2>
-      <p class="form-subtitle">Tell us about yourself before the quest begins!</p>
-      <form id="form-register">
-        <div class="field-group">
-          <label>Hero Name</label>
-          <input type="text" id="inp-name" placeholder="Your name..." required autocomplete="off">
+    <!-- ──── REGISTER ─────────────────────── -->
+    <section id="view-register" class="view">
+      <div class="form-card">
+        <h2>🏆 Player Profile</h2>
+        <p class="form-subtitle">Tell us about yourself before the quest begins!</p>
+        <form id="form-register">
+          <div class="field-group">
+            <label>Name</label>
+            <input type="text" id="inp-name" placeholder="Your name..." required autocomplete="off">
+          </div>
+          <div class="field-group">
+            <label>Grade / Level</label>
+            <input type="text" id="inp-grade" placeholder="e.g. Grade 5" required autocomplete="off">
+          </div>
+          <div class="field-group">
+            <label>School / Academy</label>
+            <input type="text" id="inp-school" placeholder="Your school..." required autocomplete="off">
+          </div>
+          <div class="form-btns">
+            <button type="button" class="big-btn btn-back" id="btn-back-reg">← Back</button>
+            <button type="submit" class="big-btn btn-play">🚀 Start Quest!</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ──── GAME ─────────────────────────── -->
+    <section id="view-game" class="view">
+      <!-- Question header -->
+      <div class="q-header">
+        <div class="q-counter" id="q-counter">Quest 1 / 41</div>
+        <div class="score-chip" style="font-size:0.9rem;">⭐ <span id="score-live">0</span> pts</div>
+        <div class="q-type-badge badge-mcq" id="q-type-badge">⚡ Multiple Choice</div>
+      </div>
+
+      <!-- Question card -->
+      <div class="q-card" id="q-card">
+        <div class="q-img-wrap hidden" id="q-img-wrap"></div>
+        <h2 class="q-text" id="q-text">Loading quest...</h2>
+        <p class="q-tagline" id="q-tagline"></p>
+        <div class="interaction-area" id="interaction-area"></div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="q-nav">
+        <button class="skip-btn" id="btn-skip">⏭ Skip</button>
+        <button class="next-btn" id="btn-next" disabled>Next ➜</button>
+      </div>
+    </section>
+
+    <!-- ──── RESULTS ──────────────────────── -->
+    <section id="view-results" class="view">
+      <div class="results-card">
+        <div class="results-trophy">🏆</div>
+        <h2 class="results-title" id="res-name">Quest Complete!</h2>
+        <div class="results-stars" id="res-stars"></div>
+        <div class="results-score" id="res-score">0 / 0</div>
+        <p class="results-msg" id="res-pct"></p>
+        <div class="results-btns">
+          <button class="csv-btn" id="btn-csv">📥 Download My Report (CSV)</button>
+          <button class="big-btn btn-play" id="btn-play-again">🔄 Play Again!</button>
+          <button class="big-btn btn-teacher" onclick="window.location.href='../index.html'">🏠 Home</button>
         </div>
-        <div class="field-group">
-          <label>Grade / Level</label>
-          <input type="text" id="inp-grade" placeholder="e.g. Grade 5" required autocomplete="off">
-        </div>
-        <div class="field-group">
-          <label>School / Academy</label>
-          <input type="text" id="inp-school" placeholder="Your school..." required autocomplete="off">
-        </div>
-        <div class="form-btns">
-          <button type="button" class="big-btn btn-back" id="btn-back-reg">← Back</button>
-          <button type="submit" class="big-btn btn-play">🚀 Start Quest!</button>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <!-- ──── GAME ─────────────────────────── -->
-  <section id="view-game" class="view">
-    <!-- Question header -->
-    <div class="q-header">
-      <div class="q-counter" id="q-counter">Quest 1 / 41</div>
-      <div class="score-chip" style="font-size:0.9rem;">⭐ <span id="score-live">0</span> pts</div>
-      <div class="q-type-badge badge-mcq" id="q-type-badge">⚡ Multiple Choice</div>
-    </div>
-
-    <!-- Question card -->
-    <div class="q-card" id="q-card">
-      <div class="q-img-wrap hidden" id="q-img-wrap"></div>
-      <h2 class="q-text" id="q-text">Loading quest...</h2>
-      <p class="q-tagline" id="q-tagline"></p>
-      <div class="interaction-area" id="interaction-area"></div>
-    </div>
-
-    <!-- Navigation -->
-    <div class="q-nav">
-      <button class="skip-btn" id="btn-skip">⏭ Skip</button>
-      <button class="next-btn" id="btn-next" disabled>Next ➜</button>
-    </div>
-  </section>
-
-  <!-- ──── RESULTS ──────────────────────── -->
-  <section id="view-results" class="view">
-    <div class="results-card">
-      <div class="results-trophy">🏆</div>
-      <h2 class="results-title" id="res-name">Quest Complete!</h2>
-      <div class="results-stars" id="res-stars"></div>
-      <div class="results-score" id="res-score">0 / 0</div>
-      <p class="results-msg" id="res-pct"></p>
-      <div class="results-btns">
-        <button class="csv-btn" id="btn-csv">📥 Download My Report (CSV)</button>
-        <button class="big-btn btn-play" id="btn-play-again">🔄 Play Again!</button>
-        <button class="big-btn btn-teacher" onclick="window.location.href='../index.html'">🏠 Home</button>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ──── TEACHER DASHBOARD ────────────── -->
-  <section id="view-teacher" class="view">
-    <div class="teacher-card">
-      <h2 style="font-family:var(--font-game);font-size:1.8rem;color:#fff;margin-bottom:6px;">👩‍🏫 Teacher Dashboard</h2>
-      <p style="color:var(--text-dim);margin-bottom:20px;">All student results stored locally in this browser.</p>
-      <div style="overflow-x:auto;">
-        <table class="teacher-table">
-          <thead>
-            <tr>
-              <th>#</th><th>Name</th><th>Grade</th><th>School</th><th>Score</th><th>Progress</th>
-            </tr>
-          </thead>
-          <tbody id="teacher-tbody">
-            <tr><td colspan="6" style="text-align:center;color:var(--text-dim)">No results yet!</td></tr>
-          </tbody>
-        </table>
+    <!-- ──── TEACHER DASHBOARD ────────────── -->
+    <section id="view-teacher" class="view">
+      <div class="teacher-card">
+        <h2 style="font-family:var(--font-game);font-size:1.8rem;color:#fff;margin-bottom:6px;">👩‍🏫 Teacher Dashboard
+        </h2>
+        <p style="color:var(--text-dim);margin-bottom:20px;">All student results stored locally in this browser.</p>
+        <div style="overflow-x:auto;">
+          <table class="teacher-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>School</th>
+                <th>Score</th>
+                <th>Progress</th>
+              </tr>
+            </thead>
+            <tbody id="teacher-tbody">
+              <tr>
+                <td colspan="6" style="text-align:center;color:var(--text-dim)">No results yet!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
+          <button class="csv-btn" id="btn-teacher-csv">📥 Export All Results (CSV)</button>
+          <button class="big-btn btn-teacher" id="btn-teacher-back">← Back</button>
+          <button
+            style="background:rgba(239,68,68,0.1);border:2px solid var(--danger);color:#f87171;padding:14px 24px;border-radius:14px;font-family:var(--font-game);cursor:pointer;"
+            id="btn-teacher-clear">🗑 Clear All</button>
+        </div>
       </div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;">
-        <button class="csv-btn" id="btn-teacher-csv">📥 Export All Results (CSV)</button>
-        <button class="big-btn btn-teacher" id="btn-teacher-back">← Back</button>
-        <button style="background:rgba(239,68,68,0.1);border:2px solid var(--danger);color:#f87171;padding:14px 24px;border-radius:14px;font-family:var(--font-game);cursor:pointer;" id="btn-teacher-clear">🗑 Clear All</button>
-      </div>
-    </div>
-  </section>
+    </section>
 
-</main>
+  </main>
 
-<!-- Scripts -->
-<script src="beginner-questions.js"></script>
-<script src="beginner-game.js"></script>
+  <!-- Scripts -->
+  <script src="beginner-questions.js"></script>
+  <script src="beginner-game.js"></script>
 </body>
+
 </html>
