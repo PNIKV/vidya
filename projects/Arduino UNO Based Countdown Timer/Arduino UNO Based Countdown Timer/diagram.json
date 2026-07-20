@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "author": "Sujal Prasad",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 154.2, "left": -58.2, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -89.6,
+      "left": -61.6,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-ky-040", "id": "encoder1", "top": 68.9, "left": -260, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -61.2,
+      "left": 512.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 81.6,
+      "left": 450.65,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    { "type": "wokwi-led", "id": "led2", "top": -61.2, "left": 455, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 81.6,
+      "left": 508.25,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -93.6,
+      "left": 357,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:GND", "uno:GND.1", "black", [ "h-28.8", "v163.2", "h144" ] ],
+    [ "encoder1:VCC", "uno:5V", "red", [ "h38.4", "v269.2", "h207.4" ] ],
+    [ "lcd1:VCC", "uno:5V", "red", [ "h-48", "v422.5", "h201.6" ] ],
+    [
+      "lcd1:SDA",
+      "uno:A4",
+      "limegreen",
+      [ "h-76.8", "v0.2", "h0", "v-76.8", "h403.2", "v480", "h0", "v9.6", "h-86.4" ]
+    ],
+    [ "lcd1:SCL", "uno:A5", "green", [ "h-57.6", "v-66.9", "h364.8", "v451.2" ] ],
+    [ "encoder1:GND", "uno:GND.3", "black", [ "h19.2", "v279.2", "h245.6" ] ],
+    [ "encoder1:CLK", "uno:2", "blue", [ "h0" ] ],
+    [ "encoder1:DT", "uno:3", "gold", [ "h0" ] ],
+    [ "encoder1:SW", "uno:4", "orange", [ "h0" ] ],
+    [ "led1:A", "r2:1", "magenta", [ "v0" ] ],
+    [ "led2:A", "r1:1", "magenta", [ "v0" ] ],
+    [ "led2:C", "bz1:1", "black", [ "v67.2", "h-86" ] ],
+    [ "led1:C", "bz1:1", "black", [ "v67.2", "h-124.4" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v57.6", "h-326.4" ] ],
+    [ "bz1:2", "uno:5", "purple", [ "v144", "h-250" ] ],
+    [ "r2:2", "uno:6", "violet", [ "h0" ] ],
+    [ "r1:2", "uno:7", "magenta", [ "h0", "v27.6", "h-345.6" ] ]
+  ],
+  "dependencies": {}
+}

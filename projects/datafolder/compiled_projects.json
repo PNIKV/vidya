@@ -148,6 +148,263 @@
     ]
   },
   {
+    "id": "arduino-uno-countdown-timer",
+    "title": "Arduino UNO Based Countdown Timer",
+    "subtitle": "A Smart Adjustable Countdown Timer Using Arduino UNO",
+    "level": "Level 1",
+    "color": "#00B8A9",
+    "desc": "A simple countdown timer built using Arduino UNO, LCD, Rotary Encoder, LEDs, and Buzzer.",
+    "fullDesc": "This project is an Arduino UNO based countdown timer designed and tested using the Wokwi Simulator. The user can set the countdown time using a rotary encoder. The remaining time is displayed on a 16×2 I2C LCD. During the countdown, a green LED indicates that the timer is running. When the countdown reaches zero, a red LED lights up and a buzzer sounds to alert the user. This project helps students learn Arduino programming, LCD interfacing, digital electronics, and embedded systems through an interactive hands-on project.",
+    "difficulty": 2,
+    "status": "Available",
+    "tags": [
+      "Arduino",
+      "Countdown Timer",
+      "LCD",
+      "Rotary Encoder",
+      "Learning",
+      "Embedded Systems"
+    ],
+    "date": "2026-07-13",
+    "author": "Sujal Prasad",
+    "team": [
+      {
+        "name": "Shreya Mishra",
+        "role": "Student Developer (Class X)"
+      },
+      {
+        "name": "Khushi Varma",
+        "role": "Student Developer (Class X)"
+      }
+    ],
+    "innovation": "A beginner-friendly adjustable countdown timer that combines a rotary encoder, LCD display, LEDs, and buzzer to create an interactive learning experience.",
+    "problemStatement": "Students often find it difficult to understand how input devices, displays, and output components work together in embedded systems. A practical project is needed to demonstrate these concepts in an easy and interactive way.",
+    "solutionApproach": "Arduino UNO controls the complete countdown process. The rotary encoder is used to set the desired time, the LCD displays the remaining countdown, the green LED indicates that the timer is running, and the red LED with buzzer provides an alert when the countdown reaches zero.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO",
+      "operatingVoltage": "5V DC"
+    },
+    "components": [
+      "Arduino UNO",
+      "16×2 LCD I2C",
+      "Rotary Encoder",
+      "Green LED",
+      "Red LED",
+      "Active Buzzer",
+      "220Ω Resistor",
+      "Breadboard",
+      "Jumper Wires"
+    ],
+    "componentRefs": [
+      "arduino-uno"
+    ],
+    "guide": [
+      "Connect all components according to the circuit diagram.",
+      "Upload the Arduino code using Arduino IDE.",
+      "Rotate the encoder to set the countdown time.",
+      "Press the encoder button to start the timer.",
+      "Observe the LCD countdown, LEDs, and buzzer notification."
+    ],
+    "estimatedTime": "1 Week",
+    "prerequisites": [
+      "Basic Arduino knowledge"
+    ],
+    "resources": [
+      {
+        "icon": "💻",
+        "title": "Wokwi Project Simulation",
+        "url": "https://wokwi.com/projects/469406003391025153"
+      },
+      {
+        "icon": "🛠️",
+        "title": "Arduino IDE (Latest Version)",
+        "url": "https://www.arduino.cc/en/software"
+      }
+    ],
+    "githubUrl": "",
+    "youtubeVideos": [],
+    "achievements": [],
+    "keywords": [
+      "Arduino UNO",
+      "Countdown Timer",
+      "LCD I2C",
+      "Rotary Encoder",
+      "LED",
+      "Buzzer",
+      "Embedded Systems",
+      "Learning",
+      "Wokwi",
+      "Arduino IDE"
+    ],
+    "image": "projects/images/arduino-uno-countdown-timer.jpg",
+    "gallery": [
+      {
+        "file": "projects/Arduino UNO Based Countdown Timer/Poster 1.jpeg",
+        "caption": "poster 1"
+      },
+      {
+        "file": "projects/Arduino UNO Based Countdown Timer/Poster 2.jpeg",
+        "caption": "poster 2"
+      },
+      {
+        "file": "projects/Arduino UNO Based Countdown Timer/Poster 3.jpeg",
+        "caption": "poster 3"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Arduino UNO Based Countdown Timer/Arduino-UNO-Based-Countdown-Timer finaaal.pdf",
+        "name": "Arduino-UNO-Based-Countdown-Timer finaaal.pdf",
+        "type": "pdf"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "sketch.ino",
+        "url": "projects/Arduino UNO Based Countdown Timer/Arduino UNO Based Countdown Timer/sketch.ino",
+        "language": "Arduino C++"
+      }
+    ]
+  },
+  {
+    "id": "arduino-flight-simulator",
+    "title": "Arduino Flight Simulator",
+    "subtitle": "Dual joystick flight controller with Arduino + Web Simulator",
+    "level": "Intermediate",
+    "color": "#FF6B35",
+    "desc": "Build a custom flight controller using dual joysticks and fly in a web simulator!",
+    "fullDesc": "Build a real flight simulator controller using two joystick modules and an Arduino UNO. The controller reads analog input from both joysticks and streams data over Serial to a flight simulator application running on your PC.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Arduino",
+      "Joystick",
+      "Simulator",
+      "Gaming",
+      "3D Printing"
+    ],
+    "date": "2026-06-26",
+    "author": "Megha Kadam",
+    "team": [
+      {
+        "name": "Megha Kadam",
+        "role": "Trainer & Project Lead"
+      }
+    ],
+    "innovation": "A low-cost, student-built flight controller using off-the-shelf components and a 3D printed enclosure, bridging hardware and simulation software.",
+    "problemStatement": "Commercial flight simulator controllers are expensive and inaccessible for student learning environments.",
+    "solutionApproach": "Used dual joystick modules with an Arduino UNO to capture analog flight inputs and stream them via Serial to a web-based flight simulator. Housed in a custom 3D printed controller box for a professional feel.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "powerConsumption": "~50mA @ 5V",
+      "operatingVoltage": "5V DC (via USB)",
+      "communicationProtocol": "Serial UART (9600 baud)",
+      "dimensions": "3D Printed Controller Box — custom",
+      "sensors": [
+        "Dual Axis Joystick Module x2 (Analog X/Y output)"
+      ],
+      "displays": []
+    },
+    "components": [
+      "Arduino UNO",
+      "Dual Joystick Module (x2)",
+      "Jumper Wires",
+      "USB Cable",
+      "Laptop / PC",
+      "3D Printed Controller Box",
+      "Arduino IDE",
+      "Flight Simulator Software / Web Simulator"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "joystick-module",
+      "usb-cable",
+      "jumper-wires"
+    ],
+    "guide": [
+      "Connect Joystick 1 VCC to Arduino 5V, GND to GND, VRX to A0, VRY to A1",
+      "Connect Joystick 2 VCC to Arduino 5V, GND to GND, VRX to A2, VRY to A3",
+      "Place both joystick modules inside the 3D printed controller box",
+      "Connect the Arduino to your laptop via USB cable",
+      "Open Arduino IDE and paste the provided sketch",
+      "Upload the sketch to the Arduino UNO",
+      "Open Serial Monitor at 9600 baud to verify joystick values are streaming",
+      "Launch the Flight Simulator or Web Simulator and configure it to read Serial input",
+      "Test joystick movements and verify corresponding simulator response"
+    ],
+    "estimatedTime": "90 minutes",
+    "prerequisites": [
+      "Basic Arduino wiring",
+      "Arduino IDE installed",
+      "Familiarity with Serial Monitor"
+    ],
+    "pdf": "",
+    "ppt": "",
+    "circuitDiagram": "",
+    "youtubeVideos": [],
+    "liveUrl": "https://pnikv.github.io/sim-flight/",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "Arduino Serial Communication Docs",
+        "url": "https://www.arduino.cc/reference/en/language/functions/communication/serial/"
+      },
+      {
+        "icon": "📚",
+        "title": "analogRead Reference",
+        "url": "https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [],
+    "keywords": [
+      "flight simulator",
+      "joystick",
+      "Arduino",
+      "controller",
+      "serial",
+      "analog",
+      "3D printing",
+      "gaming"
+    ],
+    "image": "projects/images/arduino-flight-simulator.jpg",
+    "gallery": [
+      {
+        "file": "projects/Arduino-Based Flight Simulator Using Joystick Project/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Arduino-Based Flight Simulator Using Joystick Project/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Arduino-Based Flight Simulator Using Joystick Project/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/Arduino-Based Flight Simulator Using Joystick Project/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Arduino-Based Flight Simulator Using Joystick Project/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Arduino-Based Flight Simulator Using Joystick Project/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Arduino-Based Flight Simulator Using Joystick Project/Arduino-Based-Flight-Simulator.pdf",
+        "name": "Arduino-Based-Flight-Simulator.pdf",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
     "id": "arduino-flight-simulator",
     "title": "Arduino Flight Simulator",
     "subtitle": "Dual joystick flight controller with Arduino + Web Simulator",
@@ -475,6 +732,147 @@
     ]
   },
   {
+    "id": "assistive-tech-blind",
+    "title": "Assistive Technology for Blind People",
+    "subtitle": "Smart Navigation Assistance using Ultrasonic Sensor & Buzzer",
+    "level": "Advanced",
+    "color": "#FF5733",
+    "desc": "Detect obstacles in real-time and alert visually impaired users via buzzer feedback.",
+    "fullDesc": "Build an intelligent assistive device designed to help blind individuals navigate safely. The system uses ultrasonic waves to detect obstacles in front of the user and provides instant vibrating buzzer feedback.",
+    "difficulty": 4,
+    "status": "Available",
+    "tags": [
+      "Sensors",
+      "Assistive Tech",
+      "Arduino",
+      "Social Innovation"
+    ],
+    "date": "2026-07-07",
+    "author": "Shaheena Rai",
+    "team": [
+      {
+        "name": "Shaheena Rai",
+        "role": "Project Lead & Developer"
+      },
+      {
+        "name": "Shaheena Team",
+        "role": "Project Support"
+      }
+    ],
+    "innovation": "Low-cost, lightweight smart attachment for walking sticks to prevent collisions for visually impaired individuals.",
+    "problemStatement": "Visually impaired people face high risks of injury from unexpected obstacles that traditional walking sticks cannot detect easily.",
+    "solutionApproach": "Used an HC-SR04 ultrasonic sensor with an Arduino UNO to measure obstacle distance. The system triggers a vibrating buzzer sound that alerts the user as an obstacle gets closer.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "powerConsumption": "~80mA @ 5V",
+      "operatingVoltage": "5V DC",
+      "communicationProtocol": "GPIO / PWM",
+      "dimensions": "Standard prototype board — 120×80mm",
+      "sensors": [
+        "HC-SR04 Ultrasonic Sensor"
+      ],
+      "displays": [
+        "No display (Audio/Buzzer feedback only)"
+      ]
+    },
+    "components": [
+      "Arduino UNO",
+      "HC-SR04 Ultrasonic Sensor",
+      "5V Buzzer",
+      "9V Battery or Power Source",
+      "Breadboard",
+      "Jumper wires"
+    ],
+    "componentRefs": [
+      "hc-sr04",
+      "arduino-uno",
+      "buzzer"
+    ],
+    "guide": [
+      "Connect Ultrasonic Sensor: VCC to Arduino 5V, GND to GND, Trig to D2, and Echo to D3",
+      "Connect Buzzer positive pin to Arduino D4 and negative pin to GND",
+      "Power the Arduino UNO using a 9V battery or USB cable",
+      "Open Arduino IDE and write code to calculate distance using the ultrasonic sensor",
+      "Set the logic: If an obstacle is detected within the set range, activate the buzzer to vibrate/sound an alert",
+      "Upload the code to your Arduino UNO and test it with various obstacles"
+    ],
+    "estimatedTime": "90 minutes",
+    "prerequisites": [
+      "Basic Arduino UNO wiring",
+      "Basic understanding of Ultrasonic sensors"
+    ],
+    "pdf": "data/Shaheena_Assistive_Tech.pdf",
+    "ppt": "projects/docs/assistive-tech-presentation.pptx",
+    "circuitDiagram": "data/assistive-stick-circuit.jpg",
+    "youtubeVideos": [
+      {
+        "title": "Smart Assistive Device Demo",
+        "videoId": "exampleVideoId",
+        "desc": "Demonstrating the completed project by Shaheena Rai"
+      }
+    ],
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "HC-SR04 Datasheet",
+        "url": "data/components/hc_sr04.json"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [
+      "Designed for social impact and accessibility"
+    ],
+    "keywords": [
+      "blind assistance",
+      "ultrasonic",
+      "Arduino UNO",
+      "buzzer",
+      "accessibility"
+    ],
+    "image": "projects/images/assistive-tech-blind.jpg",
+    "gallery": [
+      {
+        "file": "projects/Assistive-Tech-blind-people copy/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Assistive-Tech-blind-people copy/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Assistive-Tech-blind-people copy/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/Assistive-Tech-blind-people copy/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Assistive-Tech-blind-people copy/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Assistive-Tech-blind-people copy/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Assistive-Tech-blind-people copy/Blind-people-Help-shoes.pdf",
+        "name": "Blind-people-Help-shoes.pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/docs/assistive-tech-presentation.pptx",
+        "name": "assistive-tech-presentation.pptx",
+        "type": "pptx"
+      }
+    ]
+  },
+  {
     "id": "automatic-school-bell-and-announcement-system",
     "title": "Automatic School Bell and Announcement System",
     "level": "Beginner",
@@ -550,6 +948,134 @@
     ]
   },
   {
+    "id": "bus-tracking-system",
+    "title": "Bus Tracking System",
+    "subtitle": "Smart Bus Arrival Information Display for Rural Bus Stops",
+    "student": "Shraddha Malve",
+    "category": "Community Problem Solving",
+    "level": "Intermediate",
+    "theme": "Smart Transportation",
+    "problem": {
+      "title": "Lack of Bus Tracking Information in Rural Areas",
+      "description": "Many rural bus stops do not have digital bus tracking systems like CHALO or real-time information displays. Passengers do not know which bus is arriving, its expected arrival time, or possible delays. Students, workers, senior citizens, and daily commuters often spend a long time waiting at bus stops, making it difficult to manage their time and plan their journey."
+    },
+    "solution": {
+      "title": "Smart Bus Tracking System",
+      "description": "A Bus Tracking System is developed using an Arduino UNO and a 3.5-inch TFT Display. The display is installed at a model bus stop and shows the bus number, destination, and expected arrival time. This provides passengers with clear and timely information, helping them plan their travel more efficiently. In a real-world implementation, the display can receive live data from a GPS-enabled bus tracking system."
+    },
+    "working": [
+      {
+        "step": 1,
+        "action": "The TFT display shows a list of buses arriving at the nearest bus stop."
+      },
+      {
+        "step": 2,
+        "action": "Each bus is displayed with its route number, destination, and estimated arrival time."
+      },
+      {
+        "step": 3,
+        "action": "Passengers check the display before boarding the bus."
+      },
+      {
+        "step": 4,
+        "action": "The displayed information helps passengers plan their journey and reduces unnecessary waiting."
+      },
+      {
+        "step": 5,
+        "action": "In future, the system can be connected to GPS and the Internet for real-time bus tracking."
+      }
+    ],
+    "components": [
+      "Arduino UNO",
+      "3.5-inch TFT Display",
+      "USB Cable",
+      "Jumper Wires",
+      "Breadboard (if required)",
+      "Power Supply",
+      "Bus Stop Model"
+    ],
+    "benefits": [
+      "Reduces waiting time at bus stops.",
+      "Helps passengers manage their travel time.",
+      "Provides bus arrival information at rural bus stops.",
+      "Supports students, workers, senior citizens, and daily commuters.",
+      "Improves convenience and confidence while using public transport.",
+      "Can be upgraded into a real-time smart transportation system."
+    ],
+    "realLifeApplications": [
+      "Rural bus stops",
+      "Village transportation",
+      "School and college bus stops",
+      "Small towns without digital transport systems",
+      "Public transport information displays",
+      "Smart village initiatives"
+    ],
+    "futureScope": [
+      "Integrate GPS for live bus location tracking.",
+      "Connect to the Internet for real-time updates.",
+      "Display bus delays and cancellation alerts.",
+      "Provide voice announcements for visually impaired passengers.",
+      "Develop a mobile application connected to the display.",
+      "Power the system using solar energy for remote locations."
+    ],
+    "impact": {
+      "community": "Makes public transportation more accessible, reliable, and convenient for rural communities.",
+      "environment": "Encourages the use of public transport, reducing private vehicle usage and fuel consumption.",
+      "social": "Improves travel planning and saves time for students, workers, and other daily commuters."
+    },
+    "keywords": [
+      "Bus Tracking System",
+      "Arduino UNO",
+      "TFT Display",
+      "Smart Bus Stop",
+      "Public Transport",
+      "Rural Innovation",
+      "Smart Village",
+      "GPS",
+      "Real-Time Tracking",
+      "Community Solution"
+    ],
+    "image": "projects/images/bus-tracking-system.jpg",
+    "gallery": [
+      {
+        "file": "projects/Bus-tracking/Bus_Tracking_System_Poster_1.jpg",
+        "caption": "bus_tracking_system_poster_1"
+      },
+      {
+        "file": "projects/Bus-tracking/Bus_Tracking_System_Poster_2.jpg",
+        "caption": "bus_tracking_system_poster_2"
+      },
+      {
+        "file": "projects/Bus-tracking/Bus_Tracking_System_Poster_3.jpg",
+        "caption": "bus_tracking_system_poster_3"
+      },
+      {
+        "file": "projects/Bus-tracking/bus-dashboard.jpeg",
+        "caption": "bus-dashboard"
+      },
+      {
+        "file": "projects/Bus-tracking/busdetails.jpeg",
+        "caption": "busdetails"
+      },
+      {
+        "file": "projects/Bus-tracking/stopdisplay.jpeg",
+        "caption": "stopdisplay"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Bus-tracking/Bus_Tracking_System(1).pdf",
+        "name": "Bus_Tracking_System(1).pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/Bus-tracking/Bus_Tracking_System.pdf",
+        "name": "Bus_Tracking_System.pdf",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
     "id": "bus-tracking-system-at-bus-stop",
     "title": "Bus tracking system at Bus Stop",
     "level": "Beginner",
@@ -588,6 +1114,378 @@
       {
         "name": "bustracking.ino.with_bootloader.bin",
         "url": "projects/bus-tracking-system-at-bus-stop/firmware/bustracking.ino.with_bootloader.bin"
+      }
+    ]
+  },
+  {
+    "id": "gripper-robot-pictoblox",
+    "title": "Gripper Robot",
+    "subtitle": "Pick, Lift and Place Robot using Quarky & PictoBlox",
+    "level": "Intermediate",
+    "color": "#4CAF50",
+    "desc": "Build an intelligent robotic vehicle capable of picking, lifting, transporting, and placing objects using the Quarky Kit and PictoBlox.",
+    "fullDesc": "The Gripper Robot is a smart robotic vehicle developed using the Quarky Robotics Kit and PictoBlox programming software. It is equipped with a robotic gripper arm that can pick up objects, lift them, transport them safely, and place them at the desired location. This project introduces students to robotics, automation, servo motor control, obstacle detection, and autonomous navigation while developing problem-solving and engineering skills.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Quarky",
+      "PictoBlox",
+      "Robotics",
+      "Automation",
+      "Servo Motor",
+      "STEM",
+      "AI",
+      "Education"
+    ],
+    "date": "2026-07-17",
+    "author": "Dipavalee Sudrik",
+    "team": [
+      {
+        "name": "Dipavalee Sudrik",
+        "role": "Trainer & Project Lead"
+      }
+    ],
+    "innovation": "A low-cost educational robotic arm integrated with a mobile robot that performs automated pick-and-place operations using Quarky hardware and block-based PictoBlox programming.",
+    "problemStatement": "Manual handling of small objects is repetitive, time-consuming, and prone to human error in industries, warehouses, and educational environments. Students need an affordable platform to learn robotics and industrial automation.",
+    "solutionApproach": "The robot is built using the Quarky Robotics Kit and programmed in PictoBlox. It uses servo motors to operate the robotic gripper and ultrasonic sensing for obstacle detection. The robot can move, detect objects, pick them up, transport them safely, and place them at another location.",
+    "hardwareSpecs": {
+      "microcontroller": "Quarky Controller",
+      "powerConsumption": "~250mA @ 5V",
+      "operatingVoltage": "5V DC",
+      "communicationProtocol": "USB / Bluetooth",
+      "dimensions": "Standard Quarky Gripper Robot Chassis",
+      "sensors": [
+        "Ultrasonic Sensor"
+      ],
+      "actuators": [
+        "Servo Motor (Gripper)",
+        "Servo Motor (Arm)",
+        "DC Motors"
+      ],
+      "displays": []
+    },
+    "components": [
+      "Quarky Controller",
+      "PictoBlox Software",
+      "Robotic Gripper Kit",
+      "Ultrasonic Sensor",
+      "Servo Motor x2",
+      "DC Motors",
+      "Robot Chassis",
+      "Battery Pack",
+      "USB Cable",
+      "Jumper Wires"
+    ],
+    "componentRefs": [
+      "quarky-controller",
+      "pictoblox",
+      "servo-motor",
+      "ultrasonic-sensor",
+      "robot-chassis"
+    ],
+    "guide": [
+      "Assemble the Quarky robotic chassis.",
+      "Mount the robotic gripper mechanism.",
+      "Attach the two servo motors for arm movement and gripper control.",
+      "Connect the ultrasonic sensor to the Quarky board.",
+      "Connect all motors according to the Quarky wiring guide.",
+      "Open PictoBlox Software.",
+      "Connect the Quarky board using USB or Bluetooth.",
+      "Create the block-based program for robot movement.",
+      "Program the servo motors to open and close the gripper.",
+      "Upload the program to the Quarky board.",
+      "Place an object in front of the robot.",
+      "Run the program and observe the robot picking, lifting, moving, and placing the object."
+    ],
+    "estimatedTime": "90 Minutes",
+    "prerequisites": [
+      "Basic PictoBlox Programming",
+      "Knowledge of Servo Motors",
+      "Basic Robotics Concepts",
+      "Quarky Kit Assembly"
+    ],
+    "pdf": "",
+    "ppt": "projects/level-3/gripper-robot",
+    "circuitDiagram": "",
+    "youtubeVideos": [
+      {
+        "title": "Gripper Robot using Quarky & PictoBlox",
+        "url": "https://youtu.be/MXJ5BRUqfdw?si=CGZrQoy0x5ZoCkTK"
+      }
+    ],
+    "codeFile": {
+      "language": "PictoBlox",
+      "fileName": "Gripper_Robot.sb3",
+      "description": "PictoBlox block programming file for controlling the Quarky Gripper Robot."
+    },
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "🤖",
+        "title": "PictoBlox Documentation",
+        "url": "https://ai.thestempedia.com/docs/pictoblox/"
+      },
+      {
+        "icon": "📘",
+        "title": "Quarky Documentation",
+        "url": "https://ai.thestempedia.com/docs/quarky/"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [],
+    "keywords": [
+      "Gripper Robot",
+      "Quarky",
+      "PictoBlox",
+      "Servo Motor",
+      "Robotics",
+      "Automation",
+      "Pick and Place",
+      "STEM",
+      "Educational Robot",
+      "Ultrasonic Sensor"
+    ],
+    "image": "projects/images/gripper-robot-pictoblox.jpg",
+    "gallery": [
+      {
+        "file": "projects/Griper Robot/Gripper Robot Poster 1.png",
+        "caption": "gripper robot poster 1"
+      },
+      {
+        "file": "projects/Griper Robot/Gripper Robot poster 2.png",
+        "caption": "gripper robot poster 2"
+      },
+      {
+        "file": "projects/Griper Robot/Gripper Robot poster 3.png",
+        "caption": "gripper robot poster 3"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/level-3/gripper-robot",
+        "name": "gripper-robot",
+        "type": "pptx"
+      }
+    ]
+  },
+  {
+    "id": "keypad-password-door-lock",
+    "title": "Keypad Password Door Lock",
+    "subtitle": "Arduino-based Smart Door Lock using 4×4 Matrix Keypad",
+    "level": "Intermediate",
+    "color": "#4CAF50",
+    "desc": "Build a secure electronic door lock using an Arduino UNO, keypad, servo motor, and LCD display.",
+    "fullDesc": "This project demonstrates a smart password-protected door lock system using an Arduino UNO. Users enter a password through a 4×4 matrix keypad. If the password is correct, the servo motor unlocks the door and a success message is displayed on the LCD. If the password is incorrect, an error message is shown and access is denied.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Arduino",
+      "Security",
+      "Password",
+      "Servo Motor",
+      "Keypad",
+      "LCD",
+      "Embedded Systems"
+    ],
+    "date": "2026-07-18",
+    "author": "Nayana Patil",
+    "team": [
+      {
+        "name": "Nayana Patil",
+        "role": "Trainer & Project Lead"
+      }
+    ],
+    "innovation": "A low-cost smart door locking system that provides password-based authentication using easily available Arduino components, making home automation and embedded security accessible for students.",
+    "problemStatement": "Traditional mechanical locks can be lost, duplicated, or accessed without proper authentication. Schools and beginners need an affordable electronic security project to understand password-based access control.",
+    "solutionApproach": "An Arduino UNO reads password input from a 4×4 matrix keypad. The entered password is compared with the stored password. If it matches, the servo motor rotates to unlock the door and the LCD displays 'Access Granted'. If the password is incorrect, the LCD displays 'Access Denied' and the door remains locked.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "powerConsumption": "~70mA @ 5V",
+      "operatingVoltage": "5V DC (USB or External Supply)",
+      "communicationProtocol": "Digital I/O",
+      "dimensions": "Prototype on Breadboard",
+      "sensors": [
+        "4×4 Matrix Keypad"
+      ],
+      "displays": [
+        "16×2 LCD Display"
+      ]
+    },
+    "components": [
+      "Arduino UNO",
+      "4×4 Matrix Keypad",
+      "Servo Motor (SG90)",
+      "16×2 LCD Display",
+      "Jumper Wires",
+      "USB Cable",
+      "Breadboard",
+      "Arduino IDE"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "matrix-keypad",
+      "servo-motor",
+      "16x2-lcd",
+      "jumper-wires"
+    ],
+    "guide": [
+      "Connect the 4×4 Matrix Keypad to the Arduino digital pins.",
+      "Connect the Servo Motor signal pin to a PWM pin (e.g., D10), VCC to 5V, and GND to GND.",
+      "Connect the 16×2 LCD display according to the Arduino wiring used in the program.",
+      "Connect all GND pins together.",
+      "Connect the Arduino UNO to the computer using a USB cable.",
+      "Open Arduino IDE and install the required libraries if necessary.",
+      "Upload the keypad password door lock sketch to the Arduino.",
+      "Power on the circuit and wait for the LCD to display the password prompt.",
+      "Enter the correct password using the keypad.",
+      "If the password is correct, the servo motor unlocks the door and the LCD displays 'Access Granted'.",
+      "If the password is incorrect, the LCD displays 'Access Denied' and the door remains locked."
+    ],
+    "estimatedTime": "60 minutes",
+    "prerequisites": [
+      "Basic Arduino Programming",
+      "Digital Input and Output",
+      "Servo Motor Basics",
+      "Matrix Keypad Working",
+      "Arduino IDE Installed"
+    ],
+    "pdf": "",
+    "ppt": "projects/level-3/keypad-password-door-lock",
+    "circuitDiagram": "",
+    "youtubeVideos": [
+      "https://youtu.be/qF75ZS3YjNE?si=GjTsRXmPBUFbKpmO"
+    ],
+    "liveUrl": "projects/Level-3/keypad-password-door-lock/index.html",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "Arduino Servo Library",
+        "url": "https://www.arduino.cc/reference/en/libraries/servo/"
+      },
+      {
+        "icon": "📚",
+        "title": "Keypad Library Documentation",
+        "url": "https://playground.arduino.cc/Code/Keypad/"
+      },
+      {
+        "icon": "📺",
+        "title": "Project Demonstration",
+        "url": "https://youtu.be/qF75ZS3YjNE?si=GjTsRXmPBUFbKpmO"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [],
+    "keywords": [
+      "Arduino",
+      "Keypad Password",
+      "Door Lock",
+      "Security",
+      "Servo Motor",
+      "LCD",
+      "Authentication",
+      "Embedded Systems",
+      "Access Control",
+      "Smart Lock"
+    ],
+    "image": "projects/images/keypad-password-door-lock.jpg",
+    "gallery": [
+      {
+        "file": "projects/keypad-door-lock/Poster1.jpg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/keypad-door-lock/Poster2.jpg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/keypad-door-lock/Poster3.jpg",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/keypad-door-lock/Poster1.jpg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/keypad-door-lock/Poster2.jpg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/keypad-door-lock/Poster3.jpg",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/keypad-door-lock/Keypad-Password Door-Lock-System.pdf",
+        "name": "Keypad-Password Door-Lock-System.pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/level-3/keypad-password-door-lock",
+        "name": "keypad-password-door-lock",
+        "type": "pptx"
+      }
+    ]
+  },
+  {
+    "filename": "Arduino code.docx",
+    "content": "// Laser Security System\n// LDR Module (DO) -> D7\n// Active Buzzer -> D11\nint ldr = 7;\nint buzzer = 11;\nvoid setup() {\n  pinMode(ldr, INPUT);\n  pinMode(buzzer, OUTPUT);\n  digitalWrite(buzzer, LOW);   // Start with buzzer OFF\n}\nvoid loop() {\n  int sensor = digitalRead(ldr);\n  if (sensor == LOW) {\n    // Laser beam is on the LDR\n    digitalWrite(buzzer, LOW);   // Buzzer OFF\n  }\n  else {\n    // Laser beam is broken\n    digitalWrite(buzzer, HIGH);  // Buzzer ON\n  }\n  delay(50);   // Small delay for stable operation\n}",
+    "image": "projects/images/default.jpg",
+    "gallery": [
+      {
+        "file": "projects/Laser Security System/poster1.jpg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Laser Security System/poster2.jpg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Laser Security System/poster3.jpg",
+        "caption": "Future Scope"
+      },
+      {
+        "file": "projects/Laser Security System/Project Photos/connection.png",
+        "caption": "connection"
+      },
+      {
+        "file": "projects/Laser Security System/Project Photos/WhatsApp Image 2026-07-15 at 3.06.20 PM.jpeg",
+        "caption": "whatsapp image 2026-07-15 at 3.06.20 pm"
+      },
+      {
+        "file": "projects/Laser Security System/Project Photos/WhatsApp Image 2026-07-15 at 3.07.44 PM (1).jpeg",
+        "caption": "whatsapp image 2026-07-15 at 3.07.44 pm (1)"
+      },
+      {
+        "file": "projects/Laser Security System/Project Photos/WhatsApp Image 2026-07-15 at 3.07.44 PM.jpeg",
+        "caption": "whatsapp image 2026-07-15 at 3.07.44 pm"
+      },
+      {
+        "file": "projects/Laser Security System/Project Photos/WhatsApp Image 2026-07-15 at 3.07.45 PM.jpeg",
+        "caption": "whatsapp image 2026-07-15 at 3.07.45 pm"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/Laser Security System/poster1.jpg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Laser Security System/poster2.jpg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Laser Security System/poster3.jpg",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Laser Security System/LASER SECURITY SYSTEM.pdf",
+        "name": "LASER SECURITY SYSTEM.pdf",
+        "type": "pdf"
       }
     ]
   },
@@ -753,6 +1651,590 @@
         "name": "draw.ino",
         "url": "projects/sketching-live/draw.ino",
         "language": "Arduino C++"
+      }
+    ]
+  },
+  {
+    "id": "accident-detection-system",
+    "title": "Smart Accident Detection & Alert System",
+    "subtitle": "ESP8266 + MPU6050 based real-time accident detection",
+    "level": "Intermediate",
+    "color": "#FF3B30",
+    "desc": "Detect vehicle accidents using an IMU and instantly send emergency alerts over Wi-Fi.",
+    "fullDesc": "This project uses an ESP8266 NodeMCU and an MPU6050 IMU sensor to monitor vehicle motion in real time. The system continuously analyzes acceleration and gyroscope data to detect severe impacts, sudden orientation changes, and post-impact inactivity. Once an accident is confirmed, it activates a warning countdown allowing the driver to cancel false alarms. If no cancellation is made, the ESP8266 connects to Wi-Fi and sends an emergency notification to predefined contacts through an online service such as Telegram, Firebase, or a custom web server. The system provides a low-cost IoT-based accident detection solution for improving emergency response.",
+    "difficulty": 4,
+    "status": "Available",
+    "tags": [
+      "IoT",
+      "ESP8266",
+      "MPU6050",
+      "Accident Detection",
+      "Wi-Fi",
+      "Safety"
+    ],
+    "date": "2026-06-27",
+    "author": "Nikhil",
+    "team": [
+      {
+        "name": "Sakshi Gawand",
+        "role": "Computer Trainer"
+      },
+      {
+        "name": "Sejal Patil",
+        "role": "Computer Trainer"
+      },
+      {
+        "name": "Vaidehi Gawand",
+        "role": "Intern"
+      },
+      {
+        "name": "Ritesh Gawand",
+        "role": "Intern"
+      }
+    ],
+    "innovation": "A low-cost IoT-based accident detection system capable of identifying vehicle crashes using only an ESP8266 and MPU6050, without requiring expensive automotive hardware.",
+    "problemStatement": "Road accidents often delay emergency response because nearby people or family members are not immediately informed. Existing vehicle safety systems are expensive and unavailable in many two-wheelers and budget vehicles.",
+    "solutionApproach": "The ESP8266 continuously reads acceleration and gyroscope values from the MPU6050. The firmware detects high-impact acceleration, sudden orientation changes, and a period of inactivity after impact. When all conditions are satisfied, a 15-second countdown begins. If the cancel button is not pressed, the ESP8266 connects to Wi-Fi and sends an emergency alert through Telegram, Firebase, or a web server.",
+    "hardwareSpecs": {
+      "microcontroller": "ESP8266 NodeMCU",
+      "powerConsumption": "~90mA @ 5V (Wi-Fi Active)",
+      "operatingVoltage": "5V USB / 3.3V Logic",
+      "communicationProtocol": "I2C (MPU6050), Wi-Fi (802.11 b/g/n)",
+      "dimensions": "Breadboard Prototype",
+      "sensors": [
+        "MPU6050 6-Axis Accelerometer & Gyroscope"
+      ],
+      "communication": [
+        "Wi-Fi HTTP Requests"
+      ]
+    },
+    "components": [
+      "ESP8266 NodeMCU",
+      "MPU6050 IMU Sensor",
+      "Breadboard",
+      "Jumper Wires",
+      "Micro USB Cable",
+      "Buzzer ",
+      "Push Button "
+    ],
+    "componentRefs": [
+      "esp8266-nodemcu",
+      "mpu6050",
+      "buzzer",
+      "push-button"
+    ],
+    "guide": [
+      "Connect MPU6050 SDA to D2 (GPIO4) and SCL to D1 (GPIO5).",
+      "Connect MPU6050 VCC to 3.3V and GND to GND.",
+      "Connect an  buzzer to D8.",
+      "Connect an cancel push button to D7 using INPUT_PULLUP.",
+      "Install Wire and MPU6050 libraries in Arduino IDE.",
+      "Enter your Wi-Fi SSID and password in the code.",
+      "Upload the sketch to ESP8266.",
+      "Open Serial Monitor at 115200 baud.",
+      "Verify accelerometer and gyroscope readings.",
+      "Test with normal movement and simulated impacts.",
+      "Confirm that emergency alerts are sent only during actual accident conditions."
+    ],
+    "estimatedTime": "2-3 Hours",
+    "prerequisites": [
+      "Basic Arduino IDE knowledge",
+      "ESP8266 Board Package Installed",
+      "Basic I2C Sensor Wiring",
+      "Wi-Fi Network"
+    ],
+    "pdf": "",
+    "ppt": "",
+    "circuitDiagram": "",
+    "youtubeVideos": [
+      {
+        "title": "Smart Accident Detection System Demo",
+        "videoId": "YOUR_VIDEO_ID",
+        "desc": "Demonstration of accident detection and emergency alert notification."
+      }
+    ],
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "MPU6050 Datasheet",
+        "url": "data/components/mpu6050.json"
+      },
+      {
+        "icon": "📘",
+        "title": "ESP8266 Arduino Documentation",
+        "url": "https://arduino-esp8266.readthedocs.io/"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [
+      "Prototype for Smart Vehicle Safety System",
+      "Low-Cost IoT Safety Solution",
+      "Real-Time Accident Detection using ESP8266"
+    ],
+    "keywords": [
+      "accident",
+      "vehicle",
+      "ESP8266",
+      "NodeMCU",
+      "MPU6050",
+      "IoT",
+      "emergency",
+      "Wi-Fi",
+      "sensor",
+      "Arduino",
+      "alert",
+      "safety"
+    ],
+    "image": "projects/images/accident-detection-system.jpg",
+    "gallery": [
+      {
+        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "caption": "Future Scope"
+      },
+      {
+        "file": "projects/Smart-Accident-Detection/Project (1).jpeg",
+        "caption": "project (1)"
+      },
+      {
+        "file": "projects/Smart-Accident-Detection/Project (2).jpeg",
+        "caption": "project (2)"
+      },
+      {
+        "file": "projects/Smart-Accident-Detection/Project (3).jpeg",
+        "caption": "project (3)"
+      },
+      {
+        "file": "projects/Smart-Accident-Detection/Project (4).jpeg",
+        "caption": "project (4)"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Smart-Accident-Detection/Smart Accident Detection & Alert System.pdf",
+        "name": "Smart Accident Detection & Alert System.pdf",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
+    "id": "smart-bridge-flood-alert",
+    "title": "Smart Bridge for Flood Safety",
+    "subtitle": "Automatic Bridge Lift System Using Water Level Detection",
+    "student": "Anjum Shaikh",
+    "category": "Community Problem Solving",
+    "level": "Intermediate",
+    "theme": "Smart Infrastructure",
+    "problem": {
+      "title": "Increasing River Water Level During Heavy Rainfall",
+      "description": "During heavy rainfall, the river water level rises rapidly and floods low-level bridges. Students, office workers, emergency services, and vehicles are unable to cross the bridge safely. Many people remain stranded for hours or even days, causing delays, accidents, and disruption of essential services."
+    },
+    "solution": {
+      "title": "Smart Automatic Bridge",
+      "description": "A smart bridge continuously monitors the river water level using a water level sensor. When the water reaches a dangerous level, the bridge automatically lifts upward, preventing vehicles and people from entering the flooded area. At the same time, a buzzer sounds and an LED glows to warn everyone nearby. Once the water level becomes safe, the bridge returns to its normal position."
+    },
+    "working": [
+      {
+        "step": 1,
+        "action": "Water level sensor continuously measures the river water level."
+      },
+      {
+        "step": 2,
+        "action": "If the water level exceeds the safe limit, the controller activates the system."
+      },
+      {
+        "step": 3,
+        "action": "A servo motor lifts the bridge automatically."
+      },
+      {
+        "step": 4,
+        "action": "The buzzer starts beeping and the LED glows to alert people."
+      },
+      {
+        "step": 5,
+        "action": "When the water level drops below the danger level, the bridge lowers automatically and traffic resumes safely."
+      }
+    ],
+    "components": [
+      "Arduino UNO",
+      "Water Level Sensor",
+      "Servo Motor",
+      "Buzzer",
+      "LED",
+      "Jumper Wires",
+      "Breadboard",
+      "USB Cable",
+      "Power Supply",
+      "Bridge Model"
+    ],
+    "benefits": [
+      "Prevents accidents during floods.",
+      "Provides early warning to people.",
+      "Protects students, vehicles, and pedestrians.",
+      "Supports emergency services with timely information.",
+      "Reduces traffic disruption caused by flooded bridges.",
+      "Improves public safety in flood-prone areas."
+    ],
+    "realLifeApplications": [
+      "Flood-prone villages",
+      "River bridges in rural areas",
+      "School routes crossing rivers",
+      "Disaster management systems",
+      "Smart city infrastructure",
+      "High rainfall regions"
+    ],
+    "futureScope": [
+      "Send SMS alerts to nearby residents.",
+      "Display water level information on an LED display board.",
+      "Connect with a mobile application for live monitoring.",
+      "Integrate with weather forecasting systems.",
+      "Upload real-time bridge status to the cloud using IoT.",
+      "Install CCTV cameras for remote monitoring."
+    ],
+    "impact": {
+      "community": "Improves public safety and reduces the risk of flood-related accidents.",
+      "environment": "Encourages safe disaster management without harming the environment.",
+      "social": "Helps people travel safely and reduces panic during floods."
+    },
+    "keywords": [
+      "Smart Bridge",
+      "Flood Alert",
+      "Water Level Sensor",
+      "Arduino",
+      "Servo Motor",
+      "Disaster Management",
+      "Safety",
+      "IoT",
+      "Community Innovation"
+    ],
+    "image": "projects/images/smart-bridge-flood-alert.jpg",
+    "gallery": [
+      {
+        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge_System_Poster1.png",
+        "caption": "smart_flood_alert_bridge_system_poster1"
+      },
+      {
+        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge_System_Poster2.png",
+        "caption": "smart_flood_alert_bridge_system_poster2"
+      },
+      {
+        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge_System_Poster3.png",
+        "caption": "smart_flood_alert_bridge_system_poster3"
+      },
+      {
+        "file": "projects/Smart-Flood-Alert/smartbridge.jpeg",
+        "caption": "smartbridge"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge.pdf",
+        "name": "Smart_Flood_Alert_Bridge.pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/Smart-Flood-Alert/smart_flood_alert_bridge_System_ppt.pdf",
+        "name": "smart_flood_alert_bridge_System_ppt.pdf",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
+    "id": "arduino-home-automation-ir-remote",
+    "title": "Home Automation using Arduino IR Remote Control Sensor | Smart Home",
+    "subtitle": "Control Home Appliances with an IR Remote and Arduino UNO",
+    "level": "Beginner",
+    "color": "#2196F3",
+    "desc": "Build a smart home automation system using an Arduino UNO, IR Remote, and Relay Module to control electrical appliances wirelessly.",
+    "fullDesc": "This project demonstrates a simple and affordable home automation system using an Arduino UNO and an IR Remote Control. The Arduino receives commands from the IR receiver sensor and controls electrical appliances through a relay module. It introduces students to wireless communication, embedded systems, and smart home technology.",
+    "difficulty": 2,
+    "status": "Available",
+    "tags": [
+      "Arduino",
+      "Home Automation",
+      "IR Remote",
+      "Relay Module",
+      "Smart Home",
+      "Electronics"
+    ],
+    "date": "2026-07-17",
+    "author": "Dipavalee Sudrik",
+    "team": [
+      {
+        "name": "Dipavalee Sudrik",
+        "role": "Trainer & Project Lead"
+      }
+    ],
+    "innovation": "A low-cost smart home automation solution that enables wireless appliance control using an IR remote and Arduino, making home automation affordable for students and beginners.",
+    "problemStatement": "Traditional electrical switches require manual operation and are not convenient for elderly people, people with disabilities, or users seeking smart home functionality.",
+    "solutionApproach": "An Arduino UNO receives signals from an IR receiver sensor connected to an IR remote. Based on the received command, the Arduino switches the relay ON or OFF, allowing household electrical appliances such as lamps or bulbs to be controlled wirelessly.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "powerConsumption": "~60mA @ 5V",
+      "operatingVoltage": "5V DC",
+      "communicationProtocol": "Infrared (IR)",
+      "dimensions": "Breadboard Prototype / Project Enclosure",
+      "sensors": [
+        "IR Receiver Sensor"
+      ],
+      "displays": []
+    },
+    "components": [
+      "Arduino UNO",
+      "IR Receiver Sensor",
+      "IR Remote Control",
+      "1-Channel Relay Module",
+      "Jumper Wires",
+      "Lamp Holder",
+      "AC Bulb",
+      "USB Cable",
+      "Breadboard (Optional)",
+      "Arduino IDE"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "ir-receiver",
+      "ir-remote",
+      "relay-module",
+      "jumper-wires"
+    ],
+    "guide": [
+      "Connect the IR Receiver VCC to Arduino 5V.",
+      "Connect the IR Receiver GND to Arduino GND.",
+      "Connect the IR Receiver OUT pin to Arduino Digital Pin 2.",
+      "Connect the Relay Module IN pin to Arduino Digital Pin 13.",
+      "Connect Relay VCC to Arduino 5V and GND to Arduino GND.",
+      "Connect the Lamp Holder through the Relay Module following proper electrical safety guidelines.",
+      "Connect the Arduino UNO to the computer using a USB cable.",
+      "Open Arduino IDE and paste the provided Arduino code.",
+      "Upload the program to the Arduino UNO.",
+      "Point the IR Remote toward the IR Receiver and press Button 1 to turn the lamp ON or OFF."
+    ],
+    "estimatedTime": "45 Minutes",
+    "prerequisites": [
+      "Basic Arduino Programming",
+      "Knowledge of Digital Output",
+      "Arduino IDE Installed",
+      "Basic Electrical Safety"
+    ],
+    "pdf": "",
+    "ppt": "projects/level-2/home-automation-ir-remote",
+    "circuitDiagram": "",
+    "youtubeVideos": [
+      {
+        "title": "Home Automation using Arduino IR Remote Control Sensor | Smart Home",
+        "url": "https://youtu.be/HKy4w9YLJqo?si=_2qGUbNuRMbXydko"
+      }
+    ],
+    "codeFile": {
+      "language": "Arduino C++",
+      "fileName": "Home_Automation_IR_Remote.ino",
+      "description": "Arduino sketch for controlling a relay using an IR Remote."
+    },
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "Arduino IRremote Library",
+        "url": "https://github.com/Arduino-IRremote/Arduino-IRremote"
+      },
+      {
+        "icon": "📚",
+        "title": "Arduino DigitalWrite Reference",
+        "url": "https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [],
+    "keywords": [
+      "Arduino",
+      "Home Automation",
+      "IR Remote",
+      "Relay",
+      "Smart Home",
+      "Arduino UNO",
+      "IR Receiver",
+      "Wireless Control",
+      "Bulb Control",
+      "Electronics"
+    ],
+    "arduinoCode": "//SL IDEAS\n//https://www.youtube.com/channel/UCsa_AZGAnWCcgYGkkGd_r4w/?sub_confirmation=1\n\n#include <IRremote.h>\n#define PIN 2\n#define Relay1 13\n#define Relay2 4\n#define Relay3 5\n#define Relay4 6\n#define Relay5 7\n#define Relay6 8\n#define Relay7 9\n#define Relay8 10\n\nIRrecv irrecv(PIN);\ndecode_results results;\n\n#define remotevalue1 16724175\n\nbyte relay1 = 0;\nlong value;\n\nvoid setup() {\n  Serial.begin(9600);\n  irrecv.enableIRIn();\n  pinMode(Relay1, OUTPUT);\n\n  for (int a = 3; a <= 10; a++) {\n    digitalWrite(a, HIGH);\n  }\n}\n\nvoid loop() {\n  if (irrecv.decode(&results)) {\n    Serial.println(results.value);\n    value = results.value;\n    irrecv.resume();\n  }\n\n  delay(400);\n\n  if (value == remotevalue1 && relay1 == 0) {\n    digitalWrite(Relay1, LOW);\n    relay1 = 1;\n    value = 0;\n  }\n  else if (value == remotevalue1 && relay1 == 1) {\n    digitalWrite(Relay1, HIGH);\n    relay1 = 0;\n    value = 0;\n  }\n}",
+    "image": "projects/images/arduino-home-automation-ir-remote.jpg",
+    "gallery": [
+      {
+        "file": "projects/Smart-Home-Automation/Home Automation Poster/Poster 1.png",
+        "caption": "poster 1"
+      },
+      {
+        "file": "projects/Smart-Home-Automation/Home Automation Poster/Poster 2.png",
+        "caption": "poster 2"
+      },
+      {
+        "file": "projects/Smart-Home-Automation/Home Automation Poster/Poster 3.png",
+        "caption": "poster 3"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Smart-Home-Automation/Home_Automation_Arduino_DSV_Techfest.pdf",
+        "name": "Home_Automation_Arduino_DSV_Techfest.pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/level-2/home-automation-ir-remote",
+        "name": "home-automation-ir-remote",
+        "type": "pptx"
+      }
+    ]
+  },
+  {
+    "id": "smart-parking-system",
+    "title": "Smart Parking System",
+    "subtitle": "Automated slot detection with IR sensors + servo barrier",
+    "level": "Intermediate",
+    "color": "#FF6B35",
+    "desc": "Detect car presence with IR sensors — control entry with a servo!",
+    "fullDesc": "Build a smart parking system that uses 6 IR sensors to detect occupied and free slots, controls entry/exit with a servo motor barrier, and displays real-time slot availability on a display.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Sensors",
+      "Servo",
+      "Arduino",
+      "Automation",
+      "IoT"
+    ],
+    "date": "2026-06-26",
+    "author": "Shruti Doke",
+    "team": [
+      {
+        "name": "Shruti Doke",
+        "role": "Trainer & Project Lead"
+      }
+    ],
+    "innovation": "Low-cost parking management prototype using IR-based slot detection and automated barrier control, suitable for school labs and demo environments.",
+    "problemStatement": "Manual parking management is inefficient and prone to errors. There is no easy way to know slot availability without physically checking each space.",
+    "solutionApproach": "Used 6 IR sensors to detect car presence in each slot, a servo motor as an entry/exit barrier, and a display to show live slot availability — all controlled by an Arduino UNO.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "powerConsumption": "~150mA @ 5V",
+      "operatingVoltage": "5V DC",
+      "communicationProtocol": "Digital I/O (IR sensors), PWM (Servo), I2C or 4-bit parallel (Display)",
+      "dimensions": "Breadboard / custom board prototype",
+      "sensors": [
+        "IR Sensor ×6 (slot occupancy detection)"
+      ],
+      "displays": [
+        "16×2 LCD (HD44780) or compatible display"
+      ]
+    },
+    "components": [
+      "Arduino UNO",
+      "IR Sensor ×6",
+      "Servo Motor ×1",
+      "16×2 LCD Display",
+      "Jumper Wires",
+      "3D Printed Cars ×6"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "ir-sensor",
+      "servo-motor",
+      "lcd-16x2"
+    ],
+    "guide": [
+      "Connect each IR sensor OUT pin to Arduino digital pins D2–D7; VCC to 5V, GND to GND",
+      "Connect servo signal wire to Arduino D9 (PWM pin); VCC to 5V, GND to GND",
+      "Wire LCD in 4-bit mode: RS→D10, EN→D11, D4-D7→D12-D13 (adjust as needed)",
+      "Connect potentiometer wiper to LCD V0 pin for contrast control",
+      "Install the Servo library (built-in) and LiquidCrystal library via Arduino IDE Library Manager",
+      "Upload the starter sketch and open Serial Monitor at 9600 baud",
+      "Place 3D printed cars in front of IR sensors to simulate parked vehicles",
+      "Verify slot detection in Serial Monitor; observe servo opening/closing on entry trigger",
+      "Confirm display shows correct free/occupied slot count"
+    ],
+    "estimatedTime": "90 minutes",
+    "prerequisites": [
+      "Basic Arduino wiring",
+      "Library installation",
+      "Understanding of digital I/O and PWM"
+    ],
+    "pdf": "",
+    "ppt": "",
+    "circuitDiagram": "",
+    "youtubeVideos": [],
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "IR Sensor Datasheet",
+        "url": "data/components/ir-sensor.json"
+      },
+      {
+        "icon": "📚",
+        "title": "Servo Library Docs",
+        "url": "https://www.arduino.cc/reference/en/libraries/servo/"
+      },
+      {
+        "icon": "📚",
+        "title": "LiquidCrystal Library Docs",
+        "url": "https://www.arduino.cc/reference/en/libraries/liquidcrystal/"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [],
+    "keywords": [
+      "parking",
+      "IR sensor",
+      "servo",
+      "slot detection",
+      "automation",
+      "Arduino",
+      "smart parking",
+      "barrier"
+    ],
+    "image": "projects/images/smart-parking-system.jpg",
+    "gallery": [
+      {
+        "file": "projects/Smart_parking_system/Poster_1.png",
+        "caption": "poster_1"
+      },
+      {
+        "file": "projects/Smart_parking_system/Poster_2.png",
+        "caption": "poster_2"
+      },
+      {
+        "file": "projects/Smart_parking_system/Poster_3.png",
+        "caption": "poster_3"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/Smart_parking_system/PPT smart_parking_system.pdf",
+        "name": "PPT smart_parking_system.pdf",
+        "type": "pdf"
       }
     ]
   },
@@ -946,6 +2428,8 @@
       "WiFi network configuration",
       "Library installation"
     ],
+    "pdf": "",
+    "ppt": "",
     "circuitDiagram": "",
     "youtubeVideos": [],
     "liveUrl": "",
@@ -977,11 +2461,28 @@
     "image": "projects/images/vasc-age.jpg",
     "gallery": [
       {
+        "file": "projects/VASCAGE/1.jpeg",
+        "caption": "1"
+      },
+      {
+        "file": "projects/VASCAGE/2.png",
+        "caption": "2"
+      },
+      {
+        "file": "projects/VASCAGE/3.png",
+        "caption": "3"
+      },
+      {
         "file": "projects/VASCAGE/VASC_Age_Poster.png",
         "caption": "vasc_age_poster"
       }
     ],
     "presentationPdfs": [
+      {
+        "file": "projects/VASCAGE/VASC_Age.pdf",
+        "name": "VASC_Age.pdf",
+        "type": "pdf"
+      },
       {
         "file": "projects/VASCAGE/VASC_Age.pptx",
         "name": "VASC_Age.pptx",

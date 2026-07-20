@@ -68,6 +68,9 @@
     "Basic Arduino UNO wiring",
     "Basic understanding of Ultrasonic sensors"
   ],
+  "pdf": "data/Shaheena_Assistive_Tech.pdf",
+  "ppt": "projects/docs/assistive-tech-presentation.pptx",
+  "circuitDiagram": "data/assistive-stick-circuit.jpg",
   "youtubeVideos": [
     {
       "title": "Smart Assistive Device Demo",

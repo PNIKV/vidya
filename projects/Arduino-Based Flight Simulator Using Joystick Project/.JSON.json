@@ -1,0 +1,102 @@
+{
+  "id": "arduino-flight-simulator",
+  "title": "Arduino Flight Simulator",
+  "subtitle": "Dual joystick flight controller with Arduino + Web Simulator",
+  "level": "Intermediate",
+  "color": "#FF6B35",
+  "desc": "Build a custom flight controller using dual joysticks and fly in a web simulator!",
+  "fullDesc": "Build a real flight simulator controller using two joystick modules and an Arduino UNO. The controller reads analog input from both joysticks and streams data over Serial to a flight simulator application running on your PC.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "Arduino",
+    "Joystick",
+    "Simulator",
+    "Gaming",
+    "3D Printing"
+  ],
+  "date": "2026-06-26",
+  "author": "Megha Kadam",
+  "team": [
+    {
+      "name": "Megha Kadam",
+      "role": "Trainer & Project Lead"
+    }
+  ],
+  "innovation": "A low-cost, student-built flight controller using off-the-shelf components and a 3D printed enclosure, bridging hardware and simulation software.",
+  "problemStatement": "Commercial flight simulator controllers are expensive and inaccessible for student learning environments.",
+  "solutionApproach": "Used dual joystick modules with an Arduino UNO to capture analog flight inputs and stream them via Serial to a web-based flight simulator. Housed in a custom 3D printed controller box for a professional feel.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO (ATmega328P)",
+    "powerConsumption": "~50mA @ 5V",
+    "operatingVoltage": "5V DC (via USB)",
+    "communicationProtocol": "Serial UART (9600 baud)",
+    "dimensions": "3D Printed Controller Box — custom",
+    "sensors": [
+      "Dual Axis Joystick Module x2 (Analog X/Y output)"
+    ],
+    "displays": []
+  },
+  "components": [
+    "Arduino UNO",
+    "Dual Joystick Module (x2)",
+    "Jumper Wires",
+    "USB Cable",
+    "Laptop / PC",
+    "3D Printed Controller Box",
+    "Arduino IDE",
+    "Flight Simulator Software / Web Simulator"
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "joystick-module",
+    "usb-cable",
+    "jumper-wires"
+  ],
+  "guide": [
+    "Connect Joystick 1 VCC to Arduino 5V, GND to GND, VRX to A0, VRY to A1",
+    "Connect Joystick 2 VCC to Arduino 5V, GND to GND, VRX to A2, VRY to A3",
+    "Place both joystick modules inside the 3D printed controller box",
+    "Connect the Arduino to your laptop via USB cable",
+    "Open Arduino IDE and paste the provided sketch",
+    "Upload the sketch to the Arduino UNO",
+    "Open Serial Monitor at 9600 baud to verify joystick values are streaming",
+    "Launch the Flight Simulator or Web Simulator and configure it to read Serial input",
+    "Test joystick movements and verify corresponding simulator response"
+  ],
+  "estimatedTime": "90 minutes",
+  "prerequisites": [
+    "Basic Arduino wiring",
+    "Arduino IDE installed",
+    "Familiarity with Serial Monitor"
+  ],
+  "pdf": "",
+  "ppt": "",
+  "circuitDiagram": "",
+  "youtubeVideos": [],
+  "liveUrl": "https://pnikv.github.io/sim-flight/",
+  "resources": [
+    {
+      "icon": "📄",
+      "title": "Arduino Serial Communication Docs",
+      "url": "https://www.arduino.cc/reference/en/language/functions/communication/serial/"
+    },
+    {
+      "icon": "📚",
+      "title": "analogRead Reference",
+      "url": "https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/"
+    }
+  ],
+  "githubUrl": "",
+  "achievements": [],
+  "keywords": [
+    "flight simulator",
+    "joystick",
+    "Arduino",
+    "controller",
+    "serial",
+    "analog",
+    "3D printing",
+    "gaming"
+  ]
+}

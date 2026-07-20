@@ -1,0 +1,121 @@
+{
+  "id": "arduino-home-automation-ir-remote",
+  "title": "Home Automation using Arduino IR Remote Control Sensor | Smart Home",
+  "subtitle": "Control Home Appliances with an IR Remote and Arduino UNO",
+  "level": "Beginner",
+  "color": "#2196F3",
+  "desc": "Build a smart home automation system using an Arduino UNO, IR Remote, and Relay Module to control electrical appliances wirelessly.",
+  "fullDesc": "This project demonstrates a simple and affordable home automation system using an Arduino UNO and an IR Remote Control. The Arduino receives commands from the IR receiver sensor and controls electrical appliances through a relay module. It introduces students to wireless communication, embedded systems, and smart home technology.",
+  "difficulty": 2,
+  "status": "Available",
+  "tags": [
+    "Arduino",
+    "Home Automation",
+    "IR Remote",
+    "Relay Module",
+    "Smart Home",
+    "Electronics"
+  ],
+  "date": "2026-07-17",
+  "author": "Dipavalee Sudrik",
+  "team": [
+    {
+      "name": "Dipavalee Sudrik",
+      "role": "Trainer & Project Lead"
+    }
+  ],
+  "innovation": "A low-cost smart home automation solution that enables wireless appliance control using an IR remote and Arduino, making home automation affordable for students and beginners.",
+  "problemStatement": "Traditional electrical switches require manual operation and are not convenient for elderly people, people with disabilities, or users seeking smart home functionality.",
+  "solutionApproach": "An Arduino UNO receives signals from an IR receiver sensor connected to an IR remote. Based on the received command, the Arduino switches the relay ON or OFF, allowing household electrical appliances such as lamps or bulbs to be controlled wirelessly.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO (ATmega328P)",
+    "powerConsumption": "~60mA @ 5V",
+    "operatingVoltage": "5V DC",
+    "communicationProtocol": "Infrared (IR)",
+    "dimensions": "Breadboard Prototype / Project Enclosure",
+    "sensors": [
+      "IR Receiver Sensor"
+    ],
+    "displays": []
+  },
+  "components": [
+    "Arduino UNO",
+    "IR Receiver Sensor",
+    "IR Remote Control",
+    "1-Channel Relay Module",
+    "Jumper Wires",
+    "Lamp Holder",
+    "AC Bulb",
+    "USB Cable",
+    "Breadboard (Optional)",
+    "Arduino IDE"
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "ir-receiver",
+    "ir-remote",
+    "relay-module",
+    "jumper-wires"
+  ],
+  "guide": [
+    "Connect the IR Receiver VCC to Arduino 5V.",
+    "Connect the IR Receiver GND to Arduino GND.",
+    "Connect the IR Receiver OUT pin to Arduino Digital Pin 2.",
+    "Connect the Relay Module IN pin to Arduino Digital Pin 13.",
+    "Connect Relay VCC to Arduino 5V and GND to Arduino GND.",
+    "Connect the Lamp Holder through the Relay Module following proper electrical safety guidelines.",
+    "Connect the Arduino UNO to the computer using a USB cable.",
+    "Open Arduino IDE and paste the provided Arduino code.",
+    "Upload the program to the Arduino UNO.",
+    "Point the IR Remote toward the IR Receiver and press Button 1 to turn the lamp ON or OFF."
+  ],
+  "estimatedTime": "45 Minutes",
+  "prerequisites": [
+    "Basic Arduino Programming",
+    "Knowledge of Digital Output",
+    "Arduino IDE Installed",
+    "Basic Electrical Safety"
+  ],
+  "pdf": "",
+  "ppt": "projects/level-2/home-automation-ir-remote",
+  "circuitDiagram": "",
+  "youtubeVideos": [
+    {
+      "title": "Home Automation using Arduino IR Remote Control Sensor | Smart Home",
+      "url": "https://youtu.be/HKy4w9YLJqo?si=_2qGUbNuRMbXydko"
+    }
+  ],
+  "codeFile": {
+    "language": "Arduino C++",
+    "fileName": "Home_Automation_IR_Remote.ino",
+    "description": "Arduino sketch for controlling a relay using an IR Remote."
+  },
+  "liveUrl": "",
+  "resources": [
+    {
+      "icon": "📄",
+      "title": "Arduino IRremote Library",
+      "url": "https://github.com/Arduino-IRremote/Arduino-IRremote"
+    },
+    {
+      "icon": "📚",
+      "title": "Arduino DigitalWrite Reference",
+      "url": "https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/"
+    }
+  ],
+  "githubUrl": "",
+  "achievements": [],
+  "keywords": [
+    "Arduino",
+    "Home Automation",
+    "IR Remote",
+    "Relay",
+    "Smart Home",
+    "Arduino UNO",
+    "IR Receiver",
+    "Wireless Control",
+    "Bulb Control",
+    "Electronics"
+  ],
+  "arduinoCode": "//SL IDEAS\n//https://www.youtube.com/channel/UCsa_AZGAnWCcgYGkkGd_r4w/?sub_confirmation=1\n\n#include <IRremote.h>\n#define PIN 2\n#define Relay1 13\n#define Relay2 4\n#define Relay3 5\n#define Relay4 6\n#define Relay5 7\n#define Relay6 8\n#define Relay7 9\n#define Relay8 10\n\nIRrecv irrecv(PIN);\ndecode_results results;\n\n#define remotevalue1 16724175\n\nbyte relay1 = 0;\nlong value;\n\nvoid setup() {\n  Serial.begin(9600);\n  irrecv.enableIRIn();\n  pinMode(Relay1, OUTPUT);\n\n  for (int a = 3; a <= 10; a++) {\n    digitalWrite(a, HIGH);\n  }\n}\n\nvoid loop() {\n  if (irrecv.decode(&results)) {\n    Serial.println(results.value);\n    value = results.value;\n    irrecv.resume();\n  }\n\n  delay(400);\n\n  if (value == remotevalue1 && relay1 == 0) {\n    digitalWrite(Relay1, LOW);\n    relay1 = 1;\n    value = 0;\n  }\n  else if (value == remotevalue1 && relay1 == 1) {\n    digitalWrite(Relay1, HIGH);\n    relay1 = 0;\n    value = 0;\n  }\n}"
+}

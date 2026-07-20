@@ -1,0 +1,91 @@
+{
+  "id": "smart-bridge-flood-alert",
+  "title": "Smart Bridge for Flood Safety",
+  "subtitle": "Automatic Bridge Lift System Using Water Level Detection",
+  "student": "Anjum Shaikh",
+  "category": "Community Problem Solving",
+  "level": "Intermediate",
+  "theme": "Smart Infrastructure",
+  "problem": {
+    "title": "Increasing River Water Level During Heavy Rainfall",
+    "description": "During heavy rainfall, the river water level rises rapidly and floods low-level bridges. Students, office workers, emergency services, and vehicles are unable to cross the bridge safely. Many people remain stranded for hours or even days, causing delays, accidents, and disruption of essential services."
+  },
+  "solution": {
+    "title": "Smart Automatic Bridge",
+    "description": "A smart bridge continuously monitors the river water level using a water level sensor. When the water reaches a dangerous level, the bridge automatically lifts upward, preventing vehicles and people from entering the flooded area. At the same time, a buzzer sounds and an LED glows to warn everyone nearby. Once the water level becomes safe, the bridge returns to its normal position."
+  },
+  "working": [
+    {
+      "step": 1,
+      "action": "Water level sensor continuously measures the river water level."
+    },
+    {
+      "step": 2,
+      "action": "If the water level exceeds the safe limit, the controller activates the system."
+    },
+    {
+      "step": 3,
+      "action": "A servo motor lifts the bridge automatically."
+    },
+    {
+      "step": 4,
+      "action": "The buzzer starts beeping and the LED glows to alert people."
+    },
+    {
+      "step": 5,
+      "action": "When the water level drops below the danger level, the bridge lowers automatically and traffic resumes safely."
+    }
+  ],
+  "components": [
+    "Arduino UNO",
+    "Water Level Sensor",
+    "Servo Motor",
+    "Buzzer",
+    "LED",
+    "Jumper Wires",
+    "Breadboard",
+    "USB Cable",
+    "Power Supply",
+    "Bridge Model"
+  ],
+  "benefits": [
+    "Prevents accidents during floods.",
+    "Provides early warning to people.",
+    "Protects students, vehicles, and pedestrians.",
+    "Supports emergency services with timely information.",
+    "Reduces traffic disruption caused by flooded bridges.",
+    "Improves public safety in flood-prone areas."
+  ],
+  "realLifeApplications": [
+    "Flood-prone villages",
+    "River bridges in rural areas",
+    "School routes crossing rivers",
+    "Disaster management systems",
+    "Smart city infrastructure",
+    "High rainfall regions"
+  ],
+  "futureScope": [
+    "Send SMS alerts to nearby residents.",
+    "Display water level information on an LED display board.",
+    "Connect with a mobile application for live monitoring.",
+    "Integrate with weather forecasting systems.",
+    "Upload real-time bridge status to the cloud using IoT.",
+    "Install CCTV cameras for remote monitoring."
+  ],
+  "impact": {
+    "community": "Improves public safety and reduces the risk of flood-related accidents.",
+    "environment": "Encourages safe disaster management without harming the environment.",
+    "social": "Helps people travel safely and reduces panic during floods."
+  },
+  "keywords": [
+    "Smart Bridge",
+    "Flood Alert",
+    "Water Level Sensor",
+    "Arduino",
+    "Servo Motor",
+    "Disaster Management",
+    "Safety",
+    "IoT",
+    "Community Innovation"
+  ]
+}

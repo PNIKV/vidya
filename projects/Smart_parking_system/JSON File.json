@@ -1,0 +1,107 @@
+{
+  "id": "smart-parking-system",
+  "title": "Smart Parking System",
+  "subtitle": "Automated slot detection with IR sensors + servo barrier",
+  "level": "Intermediate",
+  "color": "#FF6B35",
+  "desc": "Detect car presence with IR sensors — control entry with a servo!",
+  "fullDesc": "Build a smart parking system that uses 6 IR sensors to detect occupied and free slots, controls entry/exit with a servo motor barrier, and displays real-time slot availability on a display.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "Sensors",
+    "Servo",
+    "Arduino",
+    "Automation",
+    "IoT"
+  ],
+  "date": "2026-06-26",
+  "author": "Shruti Doke",
+  "team": [
+    {
+      "name": "Shruti Doke",
+      "role": "Trainer & Project Lead"
+    }
+  ],
+  "innovation": "Low-cost parking management prototype using IR-based slot detection and automated barrier control, suitable for school labs and demo environments.",
+  "problemStatement": "Manual parking management is inefficient and prone to errors. There is no easy way to know slot availability without physically checking each space.",
+  "solutionApproach": "Used 6 IR sensors to detect car presence in each slot, a servo motor as an entry/exit barrier, and a display to show live slot availability — all controlled by an Arduino UNO.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO (ATmega328P)",
+    "powerConsumption": "~150mA @ 5V",
+    "operatingVoltage": "5V DC",
+    "communicationProtocol": "Digital I/O (IR sensors), PWM (Servo), I2C or 4-bit parallel (Display)",
+    "dimensions": "Breadboard / custom board prototype",
+    "sensors": [
+      "IR Sensor ×6 (slot occupancy detection)"
+    ],
+    "displays": [
+      "16×2 LCD (HD44780) or compatible display"
+    ]
+  },
+  "components": [
+    "Arduino UNO",
+    "IR Sensor ×6",
+    "Servo Motor ×1",
+    "16×2 LCD Display",
+    "Jumper Wires",
+    "3D Printed Cars ×6"
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "ir-sensor",
+    "servo-motor",
+    "lcd-16x2"
+  ],
+  "guide": [
+    "Connect each IR sensor OUT pin to Arduino digital pins D2–D7; VCC to 5V, GND to GND",
+    "Connect servo signal wire to Arduino D9 (PWM pin); VCC to 5V, GND to GND",
+    "Wire LCD in 4-bit mode: RS→D10, EN→D11, D4-D7→D12-D13 (adjust as needed)",
+    "Connect potentiometer wiper to LCD V0 pin for contrast control",
+    "Install the Servo library (built-in) and LiquidCrystal library via Arduino IDE Library Manager",
+    "Upload the starter sketch and open Serial Monitor at 9600 baud",
+    "Place 3D printed cars in front of IR sensors to simulate parked vehicles",
+    "Verify slot detection in Serial Monitor; observe servo opening/closing on entry trigger",
+    "Confirm display shows correct free/occupied slot count"
+  ],
+  "estimatedTime": "90 minutes",
+  "prerequisites": [
+    "Basic Arduino wiring",
+    "Library installation",
+    "Understanding of digital I/O and PWM"
+  ],
+  "pdf": "",
+  "ppt": "",
+  "circuitDiagram": "",
+  "youtubeVideos": [],
+  "liveUrl": "",
+  "resources": [
+    {
+      "icon": "📄",
+      "title": "IR Sensor Datasheet",
+      "url": "data/components/ir-sensor.json"
+    },
+    {
+      "icon": "📚",
+      "title": "Servo Library Docs",
+      "url": "https://www.arduino.cc/reference/en/libraries/servo/"
+    },
+    {
+      "icon": "📚",
+      "title": "LiquidCrystal Library Docs",
+      "url": "https://www.arduino.cc/reference/en/libraries/liquidcrystal/"
+    }
+  ],
+  "githubUrl": "",
+  "achievements": [],
+  "keywords": [
+    "parking",
+    "IR sensor",
+    "servo",
+    "slot detection",
+    "automation",
+    "Arduino",
+    "smart parking",
+    "barrier"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "arduino-uno-countdown-timer",
+  "title": "Arduino UNO Based Countdown Timer",
+  "subtitle": "A Smart Adjustable Countdown Timer Using Arduino UNO",
+  "level": "Level 1",
+  "color": "#00B8A9",
+  "desc": "A simple countdown timer built using Arduino UNO, LCD, Rotary Encoder, LEDs, and Buzzer.",
+  "fullDesc": "This project is an Arduino UNO based countdown timer designed and tested using the Wokwi Simulator. The user can set the countdown time using a rotary encoder. The remaining time is displayed on a 16×2 I2C LCD. During the countdown, a green LED indicates that the timer is running. When the countdown reaches zero, a red LED lights up and a buzzer sounds to alert the user. This project helps students learn Arduino programming, LCD interfacing, digital electronics, and embedded systems through an interactive hands-on project.",
+  "difficulty": 2,
+  "status": "Available",
+  "tags": [
+    "Arduino",
+    "Countdown Timer",
+    "LCD",
+    "Rotary Encoder",
+    "Learning",
+    "Embedded Systems"
+  ],
+  "date": "2026-07-13",
+  "author": "Sujal Prasad",
+  "team": [
+    {
+      "name": "Shreya Mishra",
+      "role": "Student Developer (Class X)"
+    },
+    {
+      "name": "Khushi Varma",
+      "role": "Student Developer (Class X)"
+    }
+  ],
+  "innovation": "A beginner-friendly adjustable countdown timer that combines a rotary encoder, LCD display, LEDs, and buzzer to create an interactive learning experience.",
+  "problemStatement": "Students often find it difficult to understand how input devices, displays, and output components work together in embedded systems. A practical project is needed to demonstrate these concepts in an easy and interactive way.",
+  "solutionApproach": "Arduino UNO controls the complete countdown process. The rotary encoder is used to set the desired time, the LCD displays the remaining countdown, the green LED indicates that the timer is running, and the red LED with buzzer provides an alert when the countdown reaches zero.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO",
+    "operatingVoltage": "5V DC"
+  },
+  "components": [
+    "Arduino UNO",
+    "16×2 LCD I2C",
+    "Rotary Encoder",
+    "Green LED",
+    "Red LED",
+    "Active Buzzer",
+    "220Ω Resistor",
+    "Breadboard",
+    "Jumper Wires"
+  ],
+  "componentRefs": [
+    "arduino-uno"
+  ],
+  "guide": [
+    "Connect all components according to the circuit diagram.",
+    "Upload the Arduino code using Arduino IDE.",
+    "Rotate the encoder to set the countdown time.",
+    "Press the encoder button to start the timer.",
+    "Observe the LCD countdown, LEDs, and buzzer notification."
+  ],
+  "estimatedTime": "1 Week",
+  "prerequisites": [
+    "Basic Arduino knowledge"
+  ],
+  "resources": [
+    {
+      "icon": "💻",
+      "title": "Wokwi Project Simulation",
+      "url": "https://wokwi.com/projects/469406003391025153"
+    },
+    {
+      "icon": "🛠️",
+      "title": "Arduino IDE (Latest Version)",
+      "url": "https://www.arduino.cc/en/software"
+    }
+  ],
+  "githubUrl": "",
+  "youtubeVideos": [],
+  "achievements": [],
+  "keywords": [
+    "Arduino UNO",
+    "Countdown Timer",
+    "LCD I2C",
+    "Rotary Encoder",
+    "LED",
+    "Buzzer",
+    "Embedded Systems",
+    "Learning",
+    "Wokwi",
+    "Arduino IDE"
+  ]
+}
