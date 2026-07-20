@@ -8,7 +8,15 @@
   <meta name="description"
     content="STEM Quest Beginner - A super fun gamified STEM exam for Grade 4 & 5. Block coding, Arduino IDE, drag-and-drop matching, and more!">
   <link rel="stylesheet" href="beginner-styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    window.addEventListener('error', function(e) {
+      const err = document.createElement('div');
+      err.style.cssText = 'position:fixed;top:0;left:0;z-index:9999;background:red;color:white;padding:10px;font-family:monospace;';
+      err.textContent = e.message + ' at ' + e.filename + ':' + e.lineno;
+      document.body.appendChild(err);
+    });
+  </script>
 </head>
 
 <body>
@@ -25,7 +33,8 @@
     <!-- Flying Drone -->
     <div class="bg-sprite" id="sprite-drone">
       <div class="drone-body">
-        <svg width="70" height="50" viewBox="0 0 70 50" xmlns="http://www.w3.org/2000/svg">
+        <!-- Made bigger -->
+        <svg width="100" height="70" viewBox="0 0 70 50" xmlns="http://www.w3.org/2000/svg">
           <style>
             .prop {
               transform-origin: center;
@@ -66,7 +75,7 @@
     </div>
     <!-- Rocket -->
     <div class="bg-sprite" id="sprite-rocket">
-      <div class="rocket-inner">🚀</div>
+      <div class="rocket-inner" style="font-size: 4rem;">🚀</div>
     </div>
   </div>
 
@@ -93,14 +102,19 @@
       <span>STEM Quest</span>
       <span class="logo-badge">BEGINNER</span>
     </div>
+    
+    <div class="header-center">
+      <div id="game-timer" class="game-timer hidden">
+        ⏳ <span id="timer-text">20:00</span>
+      </div>
+    </div>
+
     <div class="header-right">
-      <div class="xp-wrap">
-        <span class="xp-label" id="xp-label">XP 0/41</span>
+      <div class="xp-wrap hidden" id="progress-wrap">
         <div class="xp-track">
           <div class="xp-fill" id="xp-fill"></div>
         </div>
       </div>
-      <div class="score-chip">⭐ <span id="score-display">0</span></div>
       <button id="btn-music" class="ctrl-btn" title="Toggle Music">🎵</button>
     </div>
   </header>
@@ -140,7 +154,7 @@
         <div
           style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:16px 20px;margin-bottom:28px;font-size:0.9rem;color:var(--text-dim);line-height:1.6;">
           🎮 MCQ • 👍 True/False • 🔗 Drag &amp; Match • ✏️ Word Bank Fill<br>
-          🔢 Ohm's Law Calc • 🧩 PictoBlock Coding • 💻 Arduino IDE • 🤖 AI Challenge
+          🔢 Ohm's Law Calc • 🧩 PictoBlock Coding • 💻 Arduino IDE • 🤖 AI Challenge • 🔊 Audio Identifier
         </div>
         <div class="hero-btns">
           <button class="big-btn btn-play" id="btn-play">🎮 Play Now!</button>
@@ -156,16 +170,30 @@
         <p class="form-subtitle">Tell us about yourself before the quest begins!</p>
         <form id="form-register">
           <div class="field-group">
-            <label>Name</label>
+            <label for="inp-name">Name</label>
             <input type="text" id="inp-name" placeholder="Your name..." required autocomplete="off">
           </div>
           <div class="field-group">
-            <label>Grade / Level</label>
-            <input type="text" id="inp-grade" placeholder="e.g. Grade 5" required autocomplete="off">
+            <label for="inp-grade">Grade / Level</label>
+            <select id="inp-grade" required>
+              <option value="" disabled selected>Select Grade/Level</option>
+              <option value="5th Grade">5th Grade</option>
+              <option value="6th Grade">6th Grade</option>
+              <option value="7th Grade">7th Grade</option>
+              <option value="8th Grade">8th Grade</option>
+              <option value="9th Grade">9th Grade</option>
+              <option value="10th Grade">10th Grade</option>
+              <option value="11th Grade">11th Grade</option>
+              <option value="12th Grade">12th Grade</option>
+              <option value="1st Year">1st Year College</option>
+              <option value="2nd Year">2nd Year College</option>
+              <option value="3rd Year">3rd Year College</option>
+              <option value="4th Year">4th Year College</option>
+            </select>
           </div>
           <div class="field-group">
-            <label>School / Academy</label>
-            <input type="text" id="inp-school" placeholder="Your school..." required autocomplete="off">
+            <label for="inp-school">School / College</label>
+            <input type="text" id="inp-school" placeholder="Your school or college..." required autocomplete="off">
           </div>
           <div class="form-btns">
             <button type="button" class="big-btn btn-back" id="btn-back-reg">← Back</button>
@@ -177,25 +205,39 @@
 
     <!-- ──── GAME ─────────────────────────── -->
     <section id="view-game" class="view">
-      <!-- Question header -->
-      <div class="q-header">
-        <div class="q-counter" id="q-counter">Quest 1 / 41</div>
-        <div class="score-chip" style="font-size:0.9rem;">⭐ <span id="score-live">0</span> pts</div>
-        <div class="q-type-badge badge-mcq" id="q-type-badge">⚡ Multiple Choice</div>
-      </div>
+      <div class="game-container">
+        
+        <!-- Side Nav Prev -->
+        <button class="side-nav-btn prev-btn hidden" id="btn-prev-side" title="Previous Question">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
 
-      <!-- Question card -->
-      <div class="q-card" id="q-card">
-        <div class="q-img-wrap hidden" id="q-img-wrap"></div>
-        <h2 class="q-text" id="q-text">Loading quest...</h2>
-        <p class="q-tagline" id="q-tagline"></p>
-        <div class="interaction-area" id="interaction-area"></div>
-      </div>
+        <div class="q-main">
+          <!-- Question header -->
+          <div class="q-header">
+            <div class="q-type-badge badge-mcq" id="q-type-badge">⚡ Multiple Choice</div>
+          </div>
 
-      <!-- Navigation -->
-      <div class="q-nav">
-        <button class="skip-btn" id="btn-skip">⏭ Skip</button>
-        <button class="next-btn" id="btn-next" disabled>Next ➜</button>
+          <!-- Question card -->
+          <div class="q-card" id="q-card">
+            <div class="q-img-wrap hidden" id="q-img-wrap"></div>
+            <h2 class="q-text" id="q-text">Loading quest...</h2>
+            <p class="q-tagline" id="q-tagline"></p>
+            <div class="interaction-area" id="interaction-area"></div>
+          </div>
+
+          <!-- Bottom Navigation (fallback/mobile) -->
+          <div class="q-nav">
+            <button class="nav-btn-mobile hidden" id="btn-prev-mobile">← Prev</button>
+            <button class="nav-btn-mobile hidden" id="btn-next-mobile" disabled>Next ➜</button>
+          </div>
+        </div>
+
+        <!-- Side Nav Next -->
+        <button class="side-nav-btn next-btn hidden" id="btn-next-side" title="Next Question" disabled>
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
       </div>
     </section>
 
@@ -204,11 +246,11 @@
       <div class="results-card">
         <div class="results-trophy">🏆</div>
         <h2 class="results-title" id="res-name">Quest Complete!</h2>
-        <div class="results-stars" id="res-stars"></div>
-        <div class="results-score" id="res-score">0 / 0</div>
-        <p class="results-msg" id="res-pct"></p>
+        <div class="results-score" id="res-score"></div>
+        <div id="res-grade" style="font-family: var(--font-game); font-size: 2.2rem; color: var(--accent); margin-bottom: 24px; text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);">Grade: -</div>
+        <p class="results-msg" id="res-pct">Your answers have been saved and your report will download automatically!</p>
         <div class="results-btns">
-          <button class="csv-btn" id="btn-csv">📥 Download My Report (CSV)</button>
+          <button class="csv-btn" id="btn-csv">📥 Download Report (CSV)</button>
           <button class="big-btn btn-play" id="btn-play-again">🔄 Play Again!</button>
           <button class="big-btn btn-teacher" onclick="window.location.href='../index.html'">🏠 Home</button>
         </div>
@@ -230,7 +272,7 @@
                 <th>Grade</th>
                 <th>School</th>
                 <th>Score</th>
-                <th>Progress</th>
+                <th>%</th>
               </tr>
             </thead>
             <tbody id="teacher-tbody">
@@ -244,7 +286,7 @@
           <button class="csv-btn" id="btn-teacher-csv">📥 Export All Results (CSV)</button>
           <button class="big-btn btn-teacher" id="btn-teacher-back">← Back</button>
           <button
-            style="background:rgba(239,68,68,0.1);border:2px solid var(--danger);color:#f87171;padding:14px 24px;border-radius:14px;font-family:var(--font-game);cursor:pointer;"
+            style="background:rgba(239,68,68,0.1);border:2px solid var(--danger);color:#ff8a8a;padding:14px 24px;border-radius:14px;font-family:var(--font-game);cursor:pointer;"
             id="btn-teacher-clear">🗑 Clear All</button>
         </div>
       </div>

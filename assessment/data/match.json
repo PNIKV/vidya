@@ -1,0 +1,86 @@
+[
+  {
+    "id": 16,
+    "type": "match",
+    "marks": 5,
+    "text": "🔗 Match each component to its function!",
+    "pairs": [
+      {
+        "left": "🔋 Battery",
+        "right": "⚡ Provides Power"
+      },
+      {
+        "left": "💡 LED",
+        "right": "🌟 Emits Light"
+      },
+      {
+        "left": "⬜ Resistor",
+        "right": "🔽 Limits Current"
+      },
+      {
+        "left": "⚙️ Motor",
+        "right": "🔄 Creates Motion"
+      },
+      {
+        "left": "🔊 Buzzer",
+        "right": "📢 Makes Sound"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "type": "match",
+    "marks": 5,
+    "text": "🔗 Match the coding concept to its meaning!",
+    "pairs": [
+      {
+        "left": "🔄 Loop",
+        "right": "🔁 Repeat code forever"
+      },
+      {
+        "left": "📦 Variable",
+        "right": "💾 Store a value"
+      },
+      {
+        "left": "🔀 If / Else",
+        "right": "❓ Make a decision"
+      },
+      {
+        "left": "📞 Function",
+        "right": "📋 Reusable block of code"
+      },
+      {
+        "left": "💬 Comment",
+        "right": "📝 Note for humans only"
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "type": "match",
+    "marks": 5,
+    "text": "🔗 Match the Arduino function to what it does!",
+    "pairs": [
+      {
+        "left": "📌 pinMode()",
+        "right": "🔧 Sets pin as INPUT or OUTPUT"
+      },
+      {
+        "left": "✍️ digitalWrite()",
+        "right": "💡 Sends HIGH or LOW to pin"
+      },
+      {
+        "left": "📖 digitalRead()",
+        "right": "👂 Reads button/sensor state"
+      },
+      {
+        "left": "⏱️ delay()",
+        "right": "⏸️ Waits for a given time (ms)"
+      },
+      {
+        "left": "⚙️ setup()",
+        "right": "1️⃣ Runs ONCE at the start"
+      }
+    ]
+  }
+]

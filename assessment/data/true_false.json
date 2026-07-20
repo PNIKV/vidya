@@ -1,0 +1,42 @@
+[
+  {
+    "id": 11,
+    "type": "true_false",
+    "marks": 1,
+    "text": "A battery provides AC (Alternating Current) power.",
+    "answer": false,
+    "funFact": "🔋 Batteries give DC (Direct Current)! AC comes from power outlets!"
+  },
+  {
+    "id": 12,
+    "type": "true_false",
+    "marks": 1,
+    "text": "A resistor INCREASES the flow of electricity.",
+    "answer": false,
+    "funFact": "⬜ Resistors RESIST (reduce) current flow – that's literally their job!"
+  },
+  {
+    "id": 13,
+    "type": "true_false",
+    "marks": 1,
+    "text": "PLA plastic used in 3D printing is biodegradable.",
+    "answer": true,
+    "funFact": "♻️ PLA is made from corn starch – it naturally breaks down over time!"
+  },
+  {
+    "id": 14,
+    "type": "true_false",
+    "marks": 1,
+    "text": "A breadboard REQUIRES soldering to build circuits.",
+    "answer": false,
+    "funFact": "🔧 Breadboards are solder-FREE! Just push components into the holes!"
+  },
+  {
+    "id": 15,
+    "type": "true_false",
+    "marks": 1,
+    "text": "A laser cutter should be operated with the lid open for better cooling.",
+    "answer": false,
+    "funFact": "🔥 NEVER open the lid while cutting! It can cause eye damage or fire."
+  }
+]

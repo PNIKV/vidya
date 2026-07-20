@@ -1,0 +1,74 @@
+[
+  {
+    "id": 19,
+    "type": "fill_bank",
+    "marks": 2,
+    "text": "An ___ emits ___ when electricity flows through it.",
+    "blanks": 2,
+    "blankLabels": [
+      "Component",
+      "Produces"
+    ],
+    "answers": [
+      "LED",
+      "light"
+    ],
+    "wordBank": [
+      "LED",
+      "light",
+      "battery",
+      "sound",
+      "motor",
+      "heat",
+      "sensor"
+    ]
+  },
+  {
+    "id": 20,
+    "type": "fill_bank",
+    "marks": 2,
+    "text": "In Arduino, the ___ function runs once. The ___ function loops forever.",
+    "blanks": 2,
+    "blankLabels": [
+      "Run once",
+      "Loops forever"
+    ],
+    "answers": [
+      "setup",
+      "loop"
+    ],
+    "wordBank": [
+      "setup",
+      "loop",
+      "void",
+      "delay",
+      "begin",
+      "print",
+      "start"
+    ]
+  },
+  {
+    "id": 21,
+    "type": "fill_bank",
+    "marks": 2,
+    "text": "A ___ sensor uses ___ waves to measure distance to an object.",
+    "blanks": 2,
+    "blankLabels": [
+      "Sensor type",
+      "Wave type"
+    ],
+    "answers": [
+      "Ultrasonic",
+      "sound"
+    ],
+    "wordBank": [
+      "Ultrasonic",
+      "sound",
+      "PIR",
+      "light",
+      "IR",
+      "motion",
+      "radio"
+    ]
+  }
+]

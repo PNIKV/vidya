@@ -357,10 +357,10 @@ body {
 .badge-true_false { background: rgba(6,182,212,0.2);   color: var(--accent-h);  border: 1px solid rgba(6,182,212,0.4); }
 .badge-match      { background: rgba(245,158,11,0.2);  color: var(--warn);      border: 1px solid rgba(245,158,11,0.4); }
 .badge-fill_bank  { background: rgba(16,185,129,0.2);  color: var(--success);   border: 1px solid rgba(16,185,129,0.4); }
-.badge-calc       { background: rgba(239,68,68,0.2);   color: #f87171;          border: 1px solid rgba(239,68,68,0.4); }
-.badge-picto      { background: rgba(168,85,247,0.2);  color: #c084fc;          border: 1px solid rgba(168,85,247,0.4); }
-.badge-arduino_ide{ background: rgba(14,165,233,0.2);  color: #38bdf8;          border: 1px solid rgba(14,165,233,0.4); }
-.badge-ai_question{ background: rgba(251,191,36,0.2);  color: #fbbf24;          border: 1px solid rgba(251,191,36,0.4); }
+.badge-calc       { background: rgba(239,68,68,0.2);   color: #ff9b9b;          border: 1px solid rgba(239,68,68,0.4); }
+.badge-picto      { background: rgba(168,85,247,0.2);  color: #d8b4fe;          border: 1px solid rgba(168,85,247,0.4); }
+.badge-arduino_ide{ background: rgba(14,165,233,0.2);  color: #7dd3fc;          border: 1px solid rgba(14,165,233,0.4); }
+.badge-ai_question{ background: rgba(251,191,36,0.2);  color: #fde047;          border: 1px solid rgba(251,191,36,0.4); }
 
 .q-card {
   background: var(--surface);
@@ -519,10 +519,10 @@ body {
   display: inline-block; vertical-align: middle;
   min-width: 120px; height: 42px; line-height: 42px;
   background: rgba(124,58,237,0.1);
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 2px solid var(--accent);
   border-radius: 8px 8px 0 0;
   text-align: center; font-weight: 800;
-  color: var(--primary-h); cursor: pointer;
+  color: #fff; cursor: pointer;
   transition: all 0.2s; padding: 0 12px;
 }
 .fill-blank.filled { background: rgba(124,58,237,0.2); border-color: var(--accent); color: var(--accent-h); }
@@ -639,14 +639,14 @@ body {
 .kw-num    { color: #fab387; }
 .kw-blank  {
   display: inline-block;
-  background: rgba(250,179,135,0.2); border: 2px solid #fab387;
-  border-radius: 6px; padding: 0 10px; color: #fab387;
+  background: rgba(250,179,135,0.2); border: 2px solid #ffd0b5;
+  border-radius: 6px; padding: 0 10px; color: #ffd0b5;
   font-weight: 700; animation: blinkBorder 1.5s ease-in-out infinite;
   min-width: 120px; text-align: center;
 }
 @keyframes blinkBorder {
-  0%,100% { border-color: #fab387; box-shadow: none; }
-  50%      { border-color: #f38ba8; box-shadow: 0 0 8px rgba(250,179,135,0.4); }
+  0%,100% { border-color: #ffd0b5; box-shadow: none; }
+  50%      { border-color: #ffd0b5; box-shadow: 0 0 8px rgba(250,179,135,0.4); }
 }
 .ide-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .ide-opt {
@@ -699,10 +699,12 @@ body {
   font-family: var(--font-game); font-size: 1.4rem; color: #fff;
   pointer-events: none; transition: all 0.3s;
   white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
 }
 .feedback-toast.correct { background: rgba(16,185,129,0.9); box-shadow: 0 0 30px rgba(16,185,129,0.5); }
 .feedback-toast.wrong   { background: rgba(239,68,68,0.9);   box-shadow: 0 0 30px rgba(239,68,68,0.5); }
-.feedback-toast.show    { animation: toastPop 0.4s ease-out; }
+.feedback-toast.show    { opacity: 1; visibility: visible; animation: toastPop 0.4s ease-out forwards; }
 @keyframes toastPop {
   from { transform: translateX(-50%) scale(0.7); opacity: 0; }
   to   { transform: translateX(-50%) scale(1); opacity: 1; }
@@ -805,4 +807,117 @@ body {
   .ai-opts { grid-template-columns: 1fr; }
   .ide-opts { grid-template-columns: 1fr; }
   .mcq-emoji-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─── Overrides & New UI ────────────────────────────────── */
+.game-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.q-main {
+  flex: 1;
+  max-width: 780px;
+}
+
+.side-nav-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.side-nav-btn:hover {
+  background: rgba(124, 58, 237, 0.5);
+  transform: scale(1.1);
+}
+
+.side-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.game-timer {
+  font-family: var(--font-code);
+  font-size: 1.2rem;
+  color: var(--accent);
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.2);
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Mobile adjustments */
+.nav-btn-mobile {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-family: var(--font-game);
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.nav-btn-mobile:disabled {
+  opacity: 0.3;
+}
+
+@media (max-width: 900px) {
+  .side-nav-btn {
+    display: none;
+  }
+  .nav-btn-mobile.hidden {
+    display: none !important;
+  }
+  .nav-btn-mobile {
+    display: block !important;
+  }
+}
+
+@media (min-width: 901px) {
+  .nav-btn-mobile {
+    display: none !important;
+  }
+}
+
+/* Match the following Mobile layout fix */
+@media (max-width: 600px) {
+  .match-cols {
+    flex-direction: row !important;
+    gap: 10px;
+  }
+  .match-col {
+    width: 50%;
+  }
+  .match-item {
+    padding: 10px 5px !important;
+    font-size: 0.8rem;
+    min-height: 50px;
+  }
+}
+
+/* Improve contrast for Fill in blank and MCQ emoji */
+.mcq-emoji-opt .opt-text, .mcq-img-opt .opt-label {
+  color: #fff !important;
 }

@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "type": "mcq",
+    "variant": "card",
+    "marks": 2,
+    "text": "What does STEM stand for?",
+    "options": [
+      "Science, Tech, English, Math",
+      "Science, Technology, Engineering, Math",
+      "Space, Tech, Engine, Motion",
+      "Simple Tech Easy Math"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 2,
+    "type": "mcq",
+    "variant": "card",
+    "marks": 2,
+    "text": "Which language uses colorful snap-together blocks for coding?",
+    "options": [
+      "Python",
+      "C++",
+      "Scratch / Block Coding",
+      "HTML"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 3,
+    "type": "mcq",
+    "variant": "emoji",
+    "marks": 2,
+    "text": "What is the unit of Voltage?",
+    "options": [
+      {
+        "text": "Ampere (A)",
+        "emoji": "🔌"
+      },
+      {
+        "text": "Ohm (Ω)",
+        "emoji": "🔬"
+      },
+      {
+        "text": "Volt (V)",
+        "emoji": "⚡"
+      },
+      {
+        "text": "Watt (W)",
+        "emoji": "💡"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": 4,
+    "type": "mcq",
+    "variant": "card",
+    "marks": 2,
+    "text": "Which component stores electrical energy temporarily?",
+    "options": [
+      "Resistor",
+      "Capacitor",
+      "Diode",
+      "LED"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 5,
+    "type": "mcq",
+    "variant": "card",
+    "marks": 2,
+    "text": "What is Ohm's Law formula?",
+    "options": [
+      "V = I + R",
+      "V = I × R",
+      "V = I ÷ R",
+      "V = I – R"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 6,
+    "type": "mcq",
+    "variant": "emoji",
+    "marks": 2,
+    "text": "Which of these is an INPUT device for a computer?",
+    "options": [
+      {
+        "text": "Monitor",
+        "emoji": "🖥️"
+      },
+      {
+        "text": "Speaker",
+        "emoji": "🔊"
+      },
+      {
+        "text": "Keyboard",
+        "emoji": "⌨️"
+      },
+      {
+        "text": "Printer",
+        "emoji": "🖨️"
+      }
+    ],
+    "answer": 2
+  },
+  {
+    "id": 7,
+    "type": "mcq",
+    "variant": "card",
+    "marks": 2,
+    "text": "What type of file is used to provide instructions to a 3D printer?",
+    "options": [
+      ".STL",
+      "G-Code",
+      ".DOCX",
+      ".MP3"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 8,
+    "type": "mcq",
+    "variant": "card",
+    "marks": 2,
+    "text": "Which tool is used to remove material using a highly focused beam of light?",
+    "options": [
+      "3D Printer",
+      "CNC Router",
+      "Laser Cutter",
+      "Soldering Iron"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 9,
+    "type": "mcq",
+    "variant": "card",
+    "marks": 2,
+    "text": "What material is commonly cut using a beginner-friendly Laser Cutter?",
+    "options": [
+      "Solid Steel block",
+      "Acrylic and Wood",
+      "Glass window",
+      "Concrete"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 10,
+    "type": "mcq",
+    "variant": "emoji",
+    "marks": 2,
+    "text": "What does an LED emit when powered correctly?",
+    "options": [
+      {
+        "text": "Sound",
+        "emoji": "🔊"
+      },
+      {
+        "text": "Light",
+        "emoji": "💡"
+      },
+      {
+        "text": "Heat only",
+        "emoji": "🔥"
+      },
+      {
+        "text": "Motion",
+        "emoji": "🌀"
+      }
+    ],
+    "answer": 1
+  }
+]

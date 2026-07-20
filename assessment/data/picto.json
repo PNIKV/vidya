@@ -1,0 +1,69 @@
+[
+  {
+    "id": 29,
+    "type": "picto",
+    "marks": 4,
+    "text": "🧩 Arrange the PictoBlocks to make an LED blink!",
+    "instruction": "Click blocks from the PALETTE to add them to your CODE. Get the right sequence!",
+    "correctSequence": [
+      "setup",
+      "pinmode",
+      "loop",
+      "high",
+      "delay1",
+      "low",
+      "delay2"
+    ],
+    "palette": [
+      {
+        "id": "setup",
+        "label": "void setup()",
+        "color": "#ff6b6b",
+        "icon": "⚙️",
+        "category": "Structure"
+      },
+      {
+        "id": "pinmode",
+        "label": "pinMode(13, OUTPUT)",
+        "color": "#ff9f43",
+        "icon": "📌",
+        "category": "Setup"
+      },
+      {
+        "id": "loop",
+        "label": "void loop()",
+        "color": "#48dbfb",
+        "icon": "🔄",
+        "category": "Structure"
+      },
+      {
+        "id": "high",
+        "label": "digitalWrite(HIGH)",
+        "color": "#feca57",
+        "icon": "💡",
+        "category": "Control"
+      },
+      {
+        "id": "delay1",
+        "label": "delay(1000)",
+        "color": "#1dd1a1",
+        "icon": "⏱️",
+        "category": "Control"
+      },
+      {
+        "id": "low",
+        "label": "digitalWrite(LOW)",
+        "color": "#ff6348",
+        "icon": "🔕",
+        "category": "Control"
+      },
+      {
+        "id": "delay2",
+        "label": "delay(1000)",
+        "color": "#1dd1a1",
+        "icon": "⏱️",
+        "category": "Control"
+      }
+    ]
+  }
+]

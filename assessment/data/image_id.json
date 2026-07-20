@@ -1,0 +1,282 @@
+[
+  {
+    "id": 31,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/Arduino Ide.jpeg",
+    "options": [
+      "Serial Monitor",
+      "Arduino IDE interface",
+      "Scratch blocks",
+      "Web Browser"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 32,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/Arduino-uno.jpg",
+    "options": [
+      "Raspberry Pi",
+      "Arduino Uno",
+      "ESP32",
+      "Breadboard"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 33,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/BreadBoard.jpg",
+    "options": [
+      "Breadboard",
+      "Motherboard",
+      "Solar Panel",
+      "Keyboard"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 34,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/ESP32-pinout.png",
+    "options": [
+      "ESP32 Microcontroller",
+      "Arduino Mega",
+      "555 Timer IC",
+      "Bluetooth Module"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 35,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/IR-sensor.jpeg",
+    "options": [
+      "Ultrasonic Sensor",
+      "PIR Motion Sensor",
+      "IR Sensor",
+      "Temperature Sensor"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 36,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/PIR-Motion-sensor.jpg",
+    "options": [
+      "PIR Motion Sensor",
+      "Camera Module",
+      "Microphone",
+      "Speaker"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 37,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/Resistor-color-codes-1.png",
+    "options": [
+      "Capacitor",
+      "Resistor",
+      "Inductor",
+      "Diode"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 38,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/Types-of-Batteries.jpg",
+    "options": [
+      "Capacitors",
+      "Batteries",
+      "Motors",
+      "Relays"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 39,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/Types-of-Capacitor.jpg",
+    "options": [
+      "Resistors",
+      "LEDs",
+      "Capacitors",
+      "Transistors"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 40,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/UltrasonicDistance-Sensor_Arduino.png",
+    "options": [
+      "Camera",
+      "Ultrasonic Sensor",
+      "Speaker",
+      "Laser Module"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 41,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/battery.jpg",
+    "options": [
+      "AA Battery",
+      "9V Battery",
+      "Coin Cell",
+      "LiPo Battery"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 42,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/buzzer-circuit.jpg",
+    "options": [
+      "Buzzer",
+      "Microphone",
+      "Potentiometer",
+      "Motor"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 43,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/cpu.jpg",
+    "options": [
+      "RAM",
+      "CPU Processor",
+      "GPU",
+      "SSD"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 44,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/esp8266.jpg",
+    "options": [
+      "Arduino Nano",
+      "NodeMCU ESP8266",
+      "Raspberry Pi Pico",
+      "Bluetooth HC-05"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 45,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/jumper-wire.webp",
+    "options": [
+      "USB Cables",
+      "Ethernet Cables",
+      "Jumper Wires",
+      "Optical Fibers"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 46,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/keyboard.jpg",
+    "options": [
+      "Mouse",
+      "Monitor",
+      "Keyboard",
+      "Tablet"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 47,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/led.jpg",
+    "options": [
+      "LDR",
+      "LED (Light Emitting Diode)",
+      "Photodiode",
+      "Zener Diode"
+    ],
+    "answer": 1
+  },
+  {
+    "id": 48,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/mouse.jpg",
+    "options": [
+      "Computer Mouse",
+      "Trackpad",
+      "Joystick",
+      "Scanner"
+    ],
+    "answer": 0
+  },
+  {
+    "id": 49,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/servo-motor.jpg",
+    "options": [
+      "DC Motor",
+      "Stepper Motor",
+      "Servo Motor",
+      "Linear Actuator"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 50,
+    "type": "image_id",
+    "marks": 2,
+    "text": "Identify the component in the image.",
+    "image": "../data/images/monitor.jpg",
+    "options": [
+      "Television",
+      "Monitor",
+      "Projector",
+      "Tablet"
+    ],
+    "answer": 1
+  }
+]

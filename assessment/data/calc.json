@@ -1,0 +1,74 @@
+[
+  {
+    "id": 22,
+    "type": "calc",
+    "marks": 3,
+    "emoji": "⚡",
+    "title": "Ohm's Law Challenge!",
+    "text": "If Voltage = 9V and Resistance = 100Ω, what is the Current?",
+    "formula": "I = V ÷ R",
+    "given": [
+      {
+        "symbol": "V",
+        "label": "Voltage",
+        "value": "9",
+        "unit": "Volts"
+      },
+      {
+        "symbol": "R",
+        "label": "Resistance",
+        "value": "100",
+        "unit": "Ohms (Ω)"
+      }
+    ],
+    "find": {
+      "symbol": "I",
+      "label": "Current",
+      "unit": "mA"
+    },
+    "hint": "9 ÷ 100 = 0.09 A = 90 mA",
+    "options": [
+      "9 mA",
+      "45 mA",
+      "90 mA",
+      "900 mA"
+    ],
+    "answer": 2
+  },
+  {
+    "id": 23,
+    "type": "calc",
+    "marks": 3,
+    "emoji": "💡",
+    "title": "LED Power Challenge!",
+    "text": "Your supply gives 5V and 100mA total. Each LED needs 20mA. How many LEDs can you light up?",
+    "formula": "Count = Total mA ÷ mA per LED",
+    "given": [
+      {
+        "symbol": "Total",
+        "label": "Total Current",
+        "value": "100",
+        "unit": "mA"
+      },
+      {
+        "symbol": "Per LED",
+        "label": "Each LED needs",
+        "value": "20",
+        "unit": "mA"
+      }
+    ],
+    "find": {
+      "symbol": "N",
+      "label": "Number of LEDs",
+      "unit": "LEDs"
+    },
+    "hint": "100 ÷ 20 = ?",
+    "options": [
+      "2 LEDs",
+      "4 LEDs",
+      "5 LEDs",
+      "10 LEDs"
+    ],
+    "answer": 2
+  }
+]

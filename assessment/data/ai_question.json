@@ -1,0 +1,31 @@
+[
+  {
+    "id": 30,
+    "type": "ai_question",
+    "marks": 2,
+    "aiName": "VIDYA AI Bot",
+    "setupText": "Our AI Bot has a tricky real-world question! Can you help it answer?",
+    "text": "What happens when you connect an LED directly to a 9V battery WITHOUT a resistor?",
+    "aiHint": "🤔 Think... what does too much current do to a tiny component?",
+    "options": [
+      {
+        "text": "The LED glows extra bright forever",
+        "emoji": "✨"
+      },
+      {
+        "text": "The LED burns out instantly!",
+        "emoji": "💥"
+      },
+      {
+        "text": "The LED starts blinking on its own",
+        "emoji": "🔄"
+      },
+      {
+        "text": "Nothing happens at all",
+        "emoji": "😴"
+      }
+    ],
+    "answer": 1,
+    "explanation": "Without a resistor, too much current flows through the LED and it burns out! Always protect LEDs with a resistor! ⬜ → 💡"
+  }
+]

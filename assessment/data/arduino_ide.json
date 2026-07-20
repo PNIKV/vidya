@@ -1,0 +1,58 @@
+[
+  {
+    "id": 24,
+    "type": "arduino_ide",
+    "marks": 3,
+    "text": "💻 Complete the Arduino code! Which function goes in the blank?",
+    "subtitle": "This code makes LED on pin 13 blink. Fill in the missing function name:",
+    "codeLines": [
+      {
+        "text": "void setup() {",
+        "type": "normal"
+      },
+      {
+        "text": "  ________(13, OUTPUT);",
+        "type": "blank"
+      },
+      {
+        "text": "}",
+        "type": "normal"
+      },
+      {
+        "text": "",
+        "type": "empty"
+      },
+      {
+        "text": "void loop() {",
+        "type": "normal"
+      },
+      {
+        "text": "  digitalWrite(13, HIGH);",
+        "type": "normal"
+      },
+      {
+        "text": "  delay(1000);",
+        "type": "normal"
+      },
+      {
+        "text": "  digitalWrite(13, LOW);",
+        "type": "normal"
+      },
+      {
+        "text": "  delay(1000);",
+        "type": "normal"
+      },
+      {
+        "text": "}",
+        "type": "normal"
+      }
+    ],
+    "options": [
+      "pinMode",
+      "digitalRead",
+      "analogWrite",
+      "Serial.begin"
+    ],
+    "answer": 0
+  }
+]
