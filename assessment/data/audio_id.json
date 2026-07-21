@@ -4,7 +4,7 @@
     "type": "audio_id",
     "marks": 2,
     "text": "Listen to the sound. Which component makes this noise?",
-    "audio": "https://cdn.pixabay.com/download/audio/2022/03/15/audio_e607421183.mp3?filename=pop-39222.mp3",
+    "audio": "data/audio/relay_click.mp3",
     "options": [
       "Buzzer",
       "DC Motor",
@@ -18,7 +18,7 @@
     "type": "audio_id",
     "marks": 2,
     "text": "Identify this continuous whirring sound.",
-    "audio": "https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=fun-life-112188.mp3",
+    "audio": "data/audio/dc_motor.mp3",
     "options": [
       "Capacitor charging",
       "DC Motor spinning",
@@ -32,7 +32,7 @@
     "type": "audio_id",
     "marks": 2,
     "text": "Listen to the high pitched beep. What is it?",
-    "audio": "https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3?filename=success-1-6297.mp3",
+    "audio": "data/audio/buzzer_beep.mp3",
     "options": [
       "Active Buzzer",
       "Passive Buzzer",
@@ -45,8 +45,8 @@
     "id": 28,
     "type": "audio_id",
     "marks": 2,
-    "text": "What component produces a mechanical grinding or sweeping sound when moving?",
-    "audio": "https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=error-126627.mp3",
+    "text": "What component produces a mechanical sweeping sound when moving?",
+    "audio": "data/audio/servo_motor.mp3",
     "options": [
       "Servo Motor",
       "Battery",

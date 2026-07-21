@@ -254,9 +254,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const checkMatch = () => {
             if (selectedLeft !== null && selectedRight !== null) {
                 playClick();
-                // visually link them
                 const lBtn = col1.children[selectedLeft];
                 const rBtn = col2.children[selectedRight];
+                lBtn.classList.remove('selected-left');
+                rBtn.classList.remove('selected-right');
                 lBtn.classList.add('matched');
                 rBtn.classList.add('matched');
                 
@@ -276,7 +277,18 @@ document.addEventListener('DOMContentLoaded', () => {
             btnL.className = 'match-item';
             btnL.innerText = pair.left;
             btnL.onclick = () => {
-                if (btnL.classList.contains('matched')) return;
+                if (btnL.classList.contains('matched')) {
+                    // Unmatch
+                    btnL.classList.remove('matched');
+                    const matchedR = currentAnswer[index];
+                    if (matchedR !== undefined) {
+                        col2.children[matchedR]?.classList.remove('matched');
+                        delete currentAnswer[index];
+                    }
+                    btnNextQuestion.disabled = true;
+                    btnSubmitAssessment.disabled = true;
+                    return;
+                }
                 Array.from(col1.children).forEach(c => c.classList.remove('selected-left'));
                 btnL.classList.add('selected-left');
                 selectedLeft = index;
@@ -284,12 +296,24 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             col1.appendChild(btnL);
 
-            // Scramble right side visually (simple shift for logic sake, but using indices)
             const btnR = document.createElement('div');
             btnR.className = 'match-item';
             btnR.innerText = pair.right;
             btnR.onclick = () => {
-                if (btnR.classList.contains('matched')) return;
+                if (btnR.classList.contains('matched')) {
+                    // Unmatch
+                    btnR.classList.remove('matched');
+                    for (let lIdx in currentAnswer) {
+                        if (currentAnswer[lIdx] === index) {
+                            col1.children[lIdx]?.classList.remove('matched');
+                            delete currentAnswer[lIdx];
+                            break;
+                        }
+                    }
+                    btnNextQuestion.disabled = true;
+                    btnSubmitAssessment.disabled = true;
+                    return;
+                }
                 Array.from(col2.children).forEach(c => c.classList.remove('selected-right'));
                 btnR.classList.add('selected-right');
                 selectedRight = index;

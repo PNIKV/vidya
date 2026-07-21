@@ -61,11 +61,14 @@
       // Navigation Buttons
       const nextFn = () => { if (!$('btn-next-side').disabled) this.nextQuestion(); };
       const prevFn = () => { if (!$('btn-prev-side').disabled) this.prevQuestion(); };
+      const skipFn = () => { this.skipQuestion(); };
 
       $('btn-next-side')?.addEventListener('click', nextFn);
       $('btn-next-mobile')?.addEventListener('click', nextFn);
       $('btn-prev-side')?.addEventListener('click', prevFn);
       $('btn-prev-mobile')?.addEventListener('click', prevFn);
+      $('btn-skip-side')?.addEventListener('click', skipFn);
+      $('btn-skip-mobile')?.addEventListener('click', skipFn);
 
       $('btn-csv')?.addEventListener('click', () => this.downloadCSV());
       $('btn-play-again')?.addEventListener('click', () => location.reload());
@@ -178,6 +181,11 @@
         prevMob.disabled = isFirst;
         if(isFirst) prevMob.classList.add('hidden'); else prevMob.classList.remove('hidden');
       }
+
+      const skipSide = $('btn-skip-side');
+      const skipMob = $('btn-skip-mobile');
+      if (skipSide) skipSide.classList.remove('hidden');
+      if (skipMob) skipMob.classList.remove('hidden');
     }
 
     nextQuestion() {
@@ -185,6 +193,17 @@
       // Only advance if answered
       if (this.state.answers[this.state.idx] === null) return;
 
+      if (this.state.idx < this.questions.length - 1) {
+        this.state.idx++;
+        this.loadQuestion();
+      } else {
+        this.finishQuest();
+      }
+    }
+
+    // Skip — advance without requiring an answer (leaves answer as null)
+    skipQuestion() {
+      this.playClick();
       if (this.state.idx < this.questions.length - 1) {
         this.state.idx++;
         this.loadQuestion();
@@ -242,29 +261,19 @@
       this.timer.stop();
       this.showView('results');
       
-      const { total, max } = this.calculateScore();
-      const pct = Math.round((total / max) * 100) || 0;
+      const { total } = this.calculateScore();
       this.state.score = total;
 
-      $('res-name').textContent = `Great Job, ${this.state.studentData.name}!`;
-
-      if ($('res-score')) {
-        $('res-score').textContent = `${total} / ${max} Points (${pct}%)`;
-      }
-
-      let grade = 'F';
-      let message = 'Keep practicing!';
-      if (pct >= 90) { grade = 'A+'; message = 'Super STEM Master! 🌟'; }
-      else if (pct >= 80) { grade = 'A'; message = 'Excellent job! 🚀'; }
-      else if (pct >= 70) { grade = 'B'; message = 'Great effort! 👍'; }
-      else if (pct >= 60) { grade = 'C'; message = 'Passed! Let\'s keep learning! 📚'; }
-      else if (pct >= 50) { grade = 'D'; message = 'Need a bit more practice! 💪'; }
+      $('res-name').textContent = `🎉 Champion ${this.state.studentData.name}! You Won 1st Place! 🏆`;
 
       if ($('res-grade')) {
-        $('res-grade').textContent = `Grade: ${grade}`;
+        $('res-grade').textContent = `🥇 STEM QUEST WINNER 🥇`;
       }
       if ($('res-pct')) {
-        $('res-pct').textContent = `${message} Your answers have been saved and your report will download automatically!`;
+        $('res-pct').textContent = `Awesome performance! You completed the challenge like a true STEM Star! ⭐`;
+      }
+      if ($('res-score')) {
+        $('res-score').textContent = `Total Points Earned: ${total}`;
       }
 
       // Trigger download immediately
@@ -274,15 +283,26 @@
     downloadCSV() {
       const { total, max } = this.calculateScore();
       const pct = Math.round((total / max) * 100) || 0;
-      
-      // Header: Name, Grade, School, Q1..Q50, Total, %
-      let header = ['Name', 'Grade', 'School/College'];
-      this.questions.forEach((q, i) => header.push(`Q${i+1}`));
-      header.push('Total Score');
-      header.push('Percentage');
+      const timestamp = new Date().toISOString().replace('T', ' ').substring(0, 19);
 
-      // Row Data
-      let row = [
+      // Row 1: Main Headers
+      let headerRow1 = ['Timestamp', 'Student Name', 'Grade', 'School/College'];
+      let headerRow2 = ['', '', '', 'Max Marks Per Question:'];
+
+      this.questions.forEach((q, i) => {
+        const qText = q.text ? q.text.replace(/"/g, '""').replace(/\n/g, ' ') : `Question ${i + 1}`;
+        headerRow1.push(`"Q${i + 1}: ${qText}"`);
+        headerRow2.push(`"${q.marks || 1} Marks"`);
+      });
+
+      headerRow1.push('Total Score');
+      headerRow1.push('Percentage');
+      headerRow2.push(`"${max} Max"`);
+      headerRow2.push('100%');
+
+      // Student Answer Row Data
+      let dataRow = [
+        `"${timestamp}"`,
         `"${this.state.studentData.name}"`,
         `"${this.state.studentData.grade}"`,
         `"${this.state.studentData.school}"`
@@ -290,23 +310,58 @@
 
       this.questions.forEach((q, idx) => {
         const ans = this.state.answers[idx];
-        let val = '';
-        if (ans !== null) {
-          if (Array.isArray(ans)) val = ans.join('|');
-          else if (typeof ans === 'object') val = JSON.stringify(ans);
-          else val = ans.toString();
+        let val = 'Unanswered';
+        if (ans !== null && ans !== undefined) {
+          if (q.type === 'match' && typeof ans === 'object') {
+            const pairsText = [];
+            for (let lIdx in ans) {
+              const rIdx = ans[lIdx];
+              const leftText = q.pairs[lIdx] ? q.pairs[lIdx].left : `L${lIdx}`;
+              const rightText = q.pairs[rIdx] ? q.pairs[rIdx].right : (q.pairs[lIdx] ? q.pairs[lIdx].right : `R${rIdx}`);
+              pairsText.push(`${leftText} -> ${rightText}`);
+            }
+            val = pairsText.join(' | ') || 'None';
+          } else if (q.type === 'mcq' || q.type === 'calc' || q.type === 'arduino_ide' || q.type === 'audio_id') {
+            if (typeof ans === 'number' && q.options && q.options[ans]) {
+              val = typeof q.options[ans] === 'object' ? q.options[ans].text : q.options[ans];
+            } else {
+              val = ans.toString();
+            }
+          } else if (Array.isArray(ans)) {
+            val = ans.join(' | ');
+          } else if (typeof ans === 'object') {
+            val = JSON.stringify(ans);
+          } else {
+            val = ans.toString();
+          }
         }
-        row.push(`"${val}"`);
+        val = val.replace(/"/g, '""').replace(/\n/g, ' ');
+        dataRow.push(`"${val}"`);
       });
 
-      row.push(total);
-      row.push(`${pct}%`);
+      dataRow.push(total);
+      dataRow.push(`${pct}%`);
 
-      const csvContent = "data:text/csv;charset=utf-8," + header.join(",") + "\n" + row.join(",");
+      // Summary / Benchmark Row
+      let summaryRow = ['"Summary / Max Total"', '"Class Benchmark"', '""', '""'];
+      this.questions.forEach((q) => {
+        summaryRow.push(`"${q.marks || 1}"`);
+      });
+      summaryRow.push(`"${total} / ${max}"`);
+      summaryRow.push(`"${pct}%"`);
+
+      const csvRows = [
+        headerRow1.join(','),
+        headerRow2.join(','),
+        dataRow.join(','),
+        summaryRow.join(',')
+      ];
+
+      const csvContent = "data:text/csv;charset=utf-8,\uFEFF" + csvRows.join('\n');
       const encodedUri = encodeURI(csvContent);
       const link = document.createElement("a");
       link.setAttribute("href", encodedUri);
-      link.setAttribute("download", `STEM_Quest_${this.state.studentData.name.replace(/\s+/g,'_')}.csv`);
+      link.setAttribute("download", `STEM_Quest_${this.state.studentData.name.replace(/\s+/g,'_')}_${new Date().toISOString().substring(0,10)}.csv`);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -337,16 +392,28 @@
   
       const drawFrame = () => {
         ctx.clearRect(0, 0, w, h);
+
+        // Rich dark-to-indigo gradient bg
         const grad = ctx.createLinearGradient(0, 0, w, h);
-        grad.addColorStop(0, '#080818');
-        grad.addColorStop(1, '#0d0a22');
+        grad.addColorStop(0, '#06060f');
+        grad.addColorStop(0.5, '#0c0d20');
+        grad.addColorStop(1, '#10081c');
         ctx.fillStyle = grad;
         ctx.fillRect(0, 0, w, h);
-  
+
+        // Warm glow from workbench at the bottom
+        const warmGlow = ctx.createLinearGradient(0, h - 230, 0, h);
+        warmGlow.addColorStop(0, 'rgba(180,90,30,0)');
+        warmGlow.addColorStop(0.6, 'rgba(180,90,30,0.12)');
+        warmGlow.addColorStop(1, 'rgba(180,90,30,0.35)');
+        ctx.fillStyle = warmGlow;
+        ctx.fillRect(0, h - 230, w, 230);
+
         const ox = offset % GRID;
         const oy = (offset * 0.4) % GRID;
-  
-        ctx.strokeStyle = 'rgba(100,80,220,0.08)';
+
+        // Scrolling grid lines
+        ctx.strokeStyle = 'rgba(100,80,220,0.07)';
         ctx.lineWidth = 1;
         for (let x = -ox; x < w + GRID; x += GRID) {
           ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke();
@@ -354,46 +421,52 @@
         for (let y = -oy; y < h + GRID; y += GRID) {
           ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
         }
-  
-        ctx.fillStyle = 'rgba(120,100,255,0.18)';
+
+        // Grid intersection dots
+        ctx.fillStyle = 'rgba(120,100,255,0.15)';
         for (let x = -ox; x < w + GRID; x += GRID) {
           for (let y = -oy; y < h + GRID; y += GRID) {
             ctx.beginPath(); ctx.arc(x, y, 2.5, 0, Math.PI * 2); ctx.fill();
           }
         }
-  
-        components.forEach(c => {
-          const cx = (c.x * w - ox * 0.5) % w;
-          const cy = (c.y * h - oy * 0.3) % h;
+
+        // Floating schematic symbols (resistor, capacitor, diode, LED)
+        const t = Date.now() * 0.001;
+        components.forEach((c, i) => {
+          const cx = ((c.x * w + t * 12 * (i % 2 === 0 ? 1 : -1)) % (w + 80)) - 40;
+          const cy = ((c.y * h + t * 8 * (i % 3 === 0 ? 1 : -1)) % (h - 240)) + 10;
+          if (cy > h - 250) return; // don't draw on workbench area
           ctx.save();
           ctx.translate(cx, cy);
-          ctx.globalAlpha = 0.06;
-          ctx.strokeStyle = '#00ffcc';
+          ctx.globalAlpha = 0.055 + 0.03 * Math.sin(t + i);
+          ctx.strokeStyle = ['#fbbf24','#06b6d4','#818cf8','#10b981'][c.type];
           ctx.lineWidth = 1.5;
-          if (c.type === 0) {
-            ctx.beginPath();
-            ctx.moveTo(-15, 0);
-            [-10,-5,0,5,10].forEach((xi, i) => ctx.lineTo(xi, i%2===0?-6:6));
-            ctx.lineTo(15, 0); ctx.stroke();
-          } else if (c.type === 1) {
-            ctx.beginPath(); ctx.moveTo(-8,0); ctx.lineTo(8,0); ctx.stroke();
-            ctx.beginPath(); ctx.moveTo(-8,-8); ctx.lineTo(-8,8); ctx.stroke();
-            ctx.beginPath(); ctx.moveTo(8,-8);  ctx.lineTo(8,8);  ctx.stroke();
-          } else if (c.type === 2) {
-            ctx.beginPath(); ctx.moveTo(-8,8); ctx.lineTo(8,0); ctx.lineTo(-8,-8); ctx.closePath(); ctx.stroke();
-          } else {
-            ctx.beginPath(); ctx.arc(0, 0, 8, 0, Math.PI*2); ctx.stroke();
+          if (c.type === 0) { // resistor zigzag
+            ctx.beginPath(); ctx.moveTo(-16, 0);
+            [-12,-8,-4,0,4,8,12].forEach((xi, ii) => ctx.lineTo(xi, ii%2===0?-7:7));
+            ctx.lineTo(16, 0); ctx.stroke();
+          } else if (c.type === 1) { // capacitor
+            ctx.beginPath(); ctx.moveTo(-10,0); ctx.lineTo(10,0); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(-10,-9); ctx.lineTo(-10,9); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(10,-9);  ctx.lineTo(10,9);  ctx.stroke();
+          } else if (c.type === 2) { // diode triangle
+            ctx.beginPath(); ctx.moveTo(-9,8); ctx.lineTo(9,0); ctx.lineTo(-9,-8); ctx.closePath(); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(9,-8); ctx.lineTo(9,8); ctx.stroke();
+          } else { // LED circle
+            ctx.beginPath(); ctx.arc(0, 0, 9, 0, Math.PI*2); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(5,-7); ctx.lineTo(12,-14); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(9,-4); ctx.lineTo(16,-11); ctx.stroke();
           }
           ctx.restore();
         });
-  
-        const t = Date.now() * 0.001;
+
+        // Falling data droplets
         for (let x = -ox; x < w + GRID; x += GRID*2) {
-          const py = ((t * 60 + x * 3.7) % (h + 20)) - 10;
-          ctx.fillStyle = 'rgba(6,182,212,0.35)';
+          const py = ((t * 55 + x * 3.7) % (h - 220 + 20)) - 10;
+          ctx.fillStyle = 'rgba(6,182,212,0.3)';
           ctx.beginPath(); ctx.arc(x, py, 3, 0, Math.PI*2); ctx.fill();
         }
-  
+
         offset += 0.35;
         requestAnimationFrame(drawFrame);
       };
@@ -689,24 +762,85 @@
           }
         }
 
-        if (Object.keys(state).length === q.pairs.length) {
-          this.app.setAnswer(state);
+        this.app.setAnswer(Object.keys(state).length === q.pairs.length ? state : null);
+      };
+
+      const removeFloatingLine = () => {
+        const floatLine = svg.querySelector('.floating-match-line');
+        if (floatLine) floatLine.remove();
+      };
+
+      const drawFloatingLine = (e) => {
+        if (!selectedNode) return;
+        removeFloatingLine();
+
+        const svgRect = svg.getBoundingClientRect();
+        const fromRect = selectedNode.el.getBoundingClientRect();
+        
+        let x1, y1;
+        if (selectedNode.side === 'L') {
+          x1 = fromRect.right - svgRect.left;
+          y1 = fromRect.top - svgRect.top + fromRect.height / 2;
+        } else {
+          x1 = fromRect.left - svgRect.left;
+          y1 = fromRect.top - svgRect.top + fromRect.height / 2;
         }
+
+        const x2 = e.clientX - svgRect.left;
+        const y2 = e.clientY - svgRect.top;
+
+        const cx1 = x1 + (x2 - x1) * 0.5;
+        const cx2 = x2 - (x2 - x1) * 0.5;
+
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('class', 'floating-match-line');
+        path.setAttribute('d', `M${x1},${y1} C${cx1},${y1} ${cx2},${y2} ${x2},${y2}`);
+        path.setAttribute('stroke', '#f59e0b');
+        path.setAttribute('stroke-width', '3');
+        path.setAttribute('stroke-dasharray', '6 4');
+        path.setAttribute('fill', 'none');
+        path.setAttribute('pointer-events', 'none');
+        svg.appendChild(path);
+      };
+
+      wrapper.onmousemove = (e) => {
+        if (selectedNode) drawFloatingLine(e);
       };
 
       const handleNodeClick = (side, el, idx) => {
-        if (el.classList.contains('matched')) return; // ignore matched
         this.app.playClick();
         
+        // If node is already matched, clicking it will unmatch / remove connection
+        if (el.classList.contains('matched')) {
+          if (side === 'L') {
+            delete state[idx];
+          } else {
+            for (let lKey in state) {
+              if (state[lKey] === idx) {
+                delete state[lKey];
+                break;
+              }
+            }
+          }
+          if (selectedNode) {
+            selectedNode.el.classList.remove('picked');
+            selectedNode = null;
+            removeFloatingLine();
+          }
+          updateLines();
+          return;
+        }
+        
         if (!selectedNode) {
-          // Select this one
+          // Select this node from either column
           selectedNode = { side, el, idx };
           el.classList.add('picked');
         } else {
-          // If clicking the same node, deselect
+          // If clicking the exact same node, deselect
           if (selectedNode.el === el) {
             el.classList.remove('picked');
             selectedNode = null;
+            removeFloatingLine();
             return;
           }
           // If clicking same side, swap selection
@@ -714,11 +848,14 @@
             selectedNode.el.classList.remove('picked');
             el.classList.add('picked');
             selectedNode = { side, el, idx };
+            removeFloatingLine();
             return;
           }
           
-          // Match made
+          // Match made between L and R (or R and L)
           selectedNode.el.classList.remove('picked');
+          removeFloatingLine();
+
           const lIdx = side === 'L' ? idx : selectedNode.idx;
           const rIdx = side === 'R' ? idx : selectedNode.idx;
           state[lIdx] = rIdx;
@@ -771,11 +908,11 @@
       const x2 = toRect.left - svgRect.left;
       const y2 = toRect.top - svgRect.top + toRect.height / 2;
 
-      // Add arrowhead marker if not present
-      const markerId = `arrow-${colorIdx}`;
+      // Add glowing dot marker if not present
+      const markerId = `glowdot-${colorIdx}`;
       if (!svg.querySelector(`#${markerId}`)) {
         const defs = svg.querySelector('defs') || (() => { const d = document.createElementNS('http://www.w3.org/2000/svg','defs'); svg.insertBefore(d, svg.firstChild); return d; })();
-        defs.innerHTML += `<marker id="${markerId}" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="${color}"/></marker>`;
+        defs.innerHTML += `<marker id="${markerId}" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><circle cx="5" cy="5" r="4" fill="${color}" stroke="#ffffff" stroke-width="1.5"/></marker>`;
       }
 
       // Curved bezier path
@@ -784,10 +921,12 @@
       const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
       path.setAttribute('d', `M${x1},${y1} C${cx1},${y1} ${cx2},${y2} ${x2},${y2}`);
       path.setAttribute('stroke', color);
-      path.setAttribute('stroke-width', '3');
+      path.setAttribute('stroke-width', '4');
       path.setAttribute('fill', 'none');
       path.setAttribute('stroke-linecap', 'round');
       path.setAttribute('marker-end', `url(#${markerId})`);
+      path.setAttribute('marker-start', `url(#${markerId})`);
+      path.style.filter = `drop-shadow(0 0 8px ${color})`;
       path.style.animation = 'dashDraw 0.5s ease-out forwards';
       svg.appendChild(path);
     }

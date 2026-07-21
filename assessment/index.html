@@ -4,11 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STEM Quest – Beginner Challenge | VIDYA</title>
+  <title>STEM Quest – Interactive Assessment & Quest | VIDYA</title>
   <meta name="description"
-    content="STEM Quest Beginner - A super fun gamified STEM exam for Grade 4 & 5. Block coding, Arduino IDE, drag-and-drop matching, and more!">
+    content="STEM Quest - A gamified STEM exam for Grade 5 to College level. Block coding, Arduino IDE, circuit math, 3D printing & laser cutting simulations!">
+  <link rel="icon" type="image/png" href="../icons/vidya-logo.png">
+  <link rel="shortcut icon" href="../icons/vidya-logo.png">
   <link rel="stylesheet" href="beginner-styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
   <script>
     window.addEventListener('error', function(e) {
       const err = document.createElement('div');
@@ -23,182 +25,183 @@
 
   <!-- ═══════════════════════════════════════
      ANIMATED BACKGROUND
-════════════════════════════════════════ -->
+  ════════════════════════════════════════ -->
   <canvas id="bg-canvas"></canvas>
-    <!-- WORKBENCH + EQUIPMENT + DANCING ROBOT BACKGROUND SCENE -->
-    <div id="bg-workbench">
 
-      <!-- LEFT GRAY METAL WORKBENCH TABLE (For 3D Printer) -->
-      <div id="wb-table-left">
-        <svg class="wb-table-svg" width="260" height="140" viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="table-top-g" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#cbd5e1"/>
-              <stop offset="30%" stop-color="#94a3b8"/>
-              <stop offset="70%" stop-color="#64748b"/>
-              <stop offset="100%" stop-color="#475569"/>
-            </linearGradient>
-            <linearGradient id="table-leg-g" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#475569"/>
-              <stop offset="50%" stop-color="#64748b"/>
-              <stop offset="100%" stop-color="#334155"/>
-            </linearGradient>
-          </defs>
-          <!-- Table Legs -->
-          <rect x="15"  y="36" width="12" height="98" rx="2" fill="url(#table-leg-g)"/>
-          <rect x="233" y="36" width="12" height="98" rx="2" fill="url(#table-leg-g)"/>
-          <rect x="75"  y="40" width="9"  height="94" rx="2" fill="url(#table-leg-g)" opacity="0.6"/>
-          <rect x="176" y="40" width="9"  height="94" rx="2" fill="url(#table-leg-g)" opacity="0.6"/>
-          <!-- Rubber Feet -->
-          <rect x="12"  y="132" width="18" height="6" rx="2" fill="#1e293b"/>
-          <rect x="230" y="132" width="18" height="6" rx="2" fill="#1e293b"/>
-          <!-- Support Brace -->
-          <rect x="15" y="98" width="230" height="8" rx="2" fill="#334155"/>
-          <!-- Table Top Bevel Underlayer -->
-          <rect x="8" y="32" width="244" height="6" fill="#1e293b"/>
-          <!-- Table Top Surface Plate -->
-          <rect x="8" y="18" width="244" height="16" rx="3" fill="url(#table-top-g)" stroke="#94a3b8" stroke-width="1.5"/>
-          <!-- Metallic Reflection Highlight Lines -->
-          <line x1="15" y1="21" x2="80" y2="21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="110" y1="21" x2="235" y2="21" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
+  <!-- WORKBENCH + EQUIPMENT + DANCING ROBOT BACKGROUND SCENE -->
+  <div id="bg-workbench">
 
-      <!-- BAMBU LAB P1S 3D PRINTER (Sitting ON LEFT TABLE) -->
-      <div id="sprite-printer" title="Bambu Lab P1S 3D Printer">
-        <svg width="130" height="150" viewBox="0 0 130 150" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="p1s-body" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#e2e8f0"/>
-              <stop offset="50%" stop-color="#475569"/>
-              <stop offset="100%" stop-color="#1e293b"/>
-            </linearGradient>
-            <radialGradient id="p1s-glow" cx="50%" cy="35%" r="60%">
-              <stop offset="0%" stop-color="rgba(6,182,212,0.4)"/>
-              <stop offset="100%" stop-color="rgba(0,0,0,0.85)"/>
-            </radialGradient>
-          </defs>
-          <!-- Spool -->
-          <ellipse cx="65" cy="12" rx="16" ry="5" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
-          <circle cx="65" cy="12" r="5" fill="#0f172a"/>
-          <path d="M 65 17 Q 78 22 80 32" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3,2"/>
-          <!-- Frame -->
-          <rect x="10" y="24" width="110" height="122" rx="8" fill="url(#p1s-body)" stroke="#475569" stroke-width="1.5"/>
-          <!-- Glass Door -->
-          <rect x="16" y="32" width="98" height="76" rx="5" fill="url(#p1s-glow)" stroke="#06b6d4" stroke-width="1.5"/>
-          <line x1="18" y1="34" x2="52" y2="105" stroke="rgba(255,255,255,0.15)" stroke-width="3" stroke-linecap="round"/>
-          <!-- Z Rods -->
-          <line x1="22" y1="33" x2="22" y2="107" stroke="#475569" stroke-width="2"/>
-          <line x1="108" y1="33" x2="108" y2="107" stroke="#475569" stroke-width="2"/>
-          <!-- Gantry Bar -->
-          <rect x="15" y="40" width="100" height="6" rx="2" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
-          <!-- Toolhead (Centered at x=65, animated left-right scan along gantry bar) -->
-          <g class="p1s-toolhead-move">
-            <rect x="53" y="33" width="24" height="20" rx="4" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
-            <line x1="57" y1="38" x2="73" y2="38" stroke="#334155" stroke-width="1.5"/>
-            <line x1="57" y1="42" x2="73" y2="42" stroke="#334155" stroke-width="1.5"/>
-            <circle cx="65" cy="42" r="3" fill="#ef4444" class="hotend-heat"/>
-            <rect x="61" y="53" width="8" height="6" rx="1" fill="#cbd5e1" stroke="#475569" stroke-width="0.8"/>
-            <polygon points="62,59 68,59 65,66" fill="#f59e0b" class="hotend-heat"/>
-            <line x1="65" y1="66" x2="65" y2="70" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" class="hotend-heat"/>
-          </g>
-          <!-- Print Bed & 3D Object -->
-          <rect x="20" y="92" width="90" height="6" rx="2" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
-          <g class="p1s-print-anim" style="transform-origin:65px 92px">
-            <rect x="45" y="70" width="40" height="22" rx="3" fill="#06b6d4" opacity="0.85"/>
-            <rect x="52" y="64" width="26" height="7" rx="2" fill="#22d3ee" opacity="0.9"/>
-          </g>
-          <line x1="20" y1="82" x2="110" y2="82" stroke="#fbbf24" stroke-width="1.5" class="print-layer-line" opacity="0.6"/>
-          <!-- OLED Display -->
-          <rect x="12" y="122" width="55" height="16" rx="3" fill="#090d16" stroke="#06b6d4" stroke-width="1"/>
-          <text x="16" y="130" font-size="5" fill="#06b6d4" font-family="monospace" font-weight="bold">BAMBU P1S</text>
-          <text x="16" y="136" font-size="4.5" fill="#10b981" font-family="monospace">PRINT 78%</text>
-          <!-- Knob & Status LED -->
-          <circle cx="95" cy="130" r="7" fill="#334155" stroke="#64748b" stroke-width="1.5"/>
-          <circle cx="95" cy="130" r="3" fill="#0f172a"/>
-          <circle cx="114" cy="122" r="4" fill="#10b981" class="p1s-status-led"/>
-        </svg>
-      </div>
-
-      <!-- RIGHT GRAY METAL WORKBENCH TABLE (For Laser Cutter) -->
-      <div id="wb-table-right">
-        <svg class="wb-table-svg" width="260" height="140" viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="table-top-g-r" x1="0%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stop-color="#cbd5e1"/>
-              <stop offset="30%" stop-color="#94a3b8"/>
-              <stop offset="70%" stop-color="#64748b"/>
-              <stop offset="100%" stop-color="#475569"/>
-            </linearGradient>
-            <linearGradient id="table-leg-g-r" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#475569"/>
-              <stop offset="50%" stop-color="#64748b"/>
-              <stop offset="100%" stop-color="#334155"/>
-            </linearGradient>
-          </defs>
-          <!-- Table Legs -->
-          <rect x="15"  y="36" width="12" height="98" rx="2" fill="url(#table-leg-g-r)"/>
-          <rect x="233" y="36" width="12" height="98" rx="2" fill="url(#table-leg-g-r)"/>
-          <rect x="75"  y="40" width="9"  height="94" rx="2" fill="url(#table-leg-g-r)" opacity="0.6"/>
-          <rect x="176" y="40" width="9"  height="94" rx="2" fill="url(#table-leg-g-r)" opacity="0.6"/>
-          <!-- Rubber Feet -->
-          <rect x="12"  y="132" width="18" height="6" rx="2" fill="#1e293b"/>
-          <rect x="230" y="132" width="18" height="6" rx="2" fill="#1e293b"/>
-          <!-- Support Brace -->
-          <rect x="15" y="98" width="230" height="8" rx="2" fill="#334155"/>
-          <!-- Table Top Bevel Underlayer -->
-          <rect x="8" y="32" width="244" height="6" fill="#1e293b"/>
-          <!-- Table Top Surface Plate -->
-          <rect x="8" y="18" width="244" height="16" rx="3" fill="url(#table-top-g-r)" stroke="#94a3b8" stroke-width="1.5"/>
-          <!-- Metallic Reflection Highlight Lines -->
-          <line x1="15" y1="21" x2="80" y2="21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="110" y1="21" x2="235" y2="21" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </div>
-
-      <!-- CREALITY FALCON LASER CUTTER (Sitting ON RIGHT TABLE) -->
-      <div id="sprite-laser" title="Falcon Laser Engraver & Cutter">
-        <svg width="160" height="135" viewBox="0 0 160 135" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="falcon-frame" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#dc2626"/>
-              <stop offset="20%" stop-color="#b91c1c"/>
-              <stop offset="100%" stop-color="#7f1d1d"/>
-            </linearGradient>
-          </defs>
-          <text x="14" y="14" font-size="7.5" fill="#818cf8" font-family="monospace" font-weight="bold">FALCON 10W</text>
-          <circle cx="140" cy="12" r="4.5" fill="#10b981" class="p1s-status-led"/>
-          <!-- Side Rails (Red Anodized) -->
-          <rect x="10" y="24" width="12" height="76" rx="3" fill="url(#falcon-frame)"/>
-          <rect x="138" y="24" width="12" height="76" rx="3" fill="url(#falcon-frame)"/>
-          <!-- Gantry bar -->
-          <rect x="8" y="34" width="144" height="10" rx="2" fill="#0f172a" stroke="#818cf8" stroke-width="1.2"/>
-          <line x1="12" y1="39" x2="148" y2="39" stroke="#6366f1" stroke-width="1.5" opacity="0.7"/>
-          <!-- Laser Head (Centered at x=80, animated L-R scan) -->
-          <g class="falcon-head-move">
-            <rect x="66" y="25" width="28" height="24" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
-            <rect x="70" y="27" width="20" height="6" rx="2" fill="#dc2626"/>
-            <polygon points="74,49 86,49 82,55 78,55" fill="#475569" stroke="#818cf8" stroke-width="1"/>
-            <circle cx="80" cy="38" r="2.5" fill="#38bdf8" class="hotend-heat"/>
-            <!-- Focused Laser Beam -->
-            <line x1="80" y1="55" x2="80" y2="105" stroke="#a855f7" stroke-width="2.5" class="laser-beam"/>
-            <line x1="80" y1="55" x2="80" y2="105" stroke="#818cf8" stroke-width="7" opacity="0.35" class="laser-aura"/>
-            <!-- Contact Spark -->
-            <circle cx="80" cy="105" r="3.5" fill="#ffffff" class="laser-spark"/>
-            <circle cx="80" cy="105" r="11" fill="#a855f7" opacity="0.3" class="laser-spark"/>
-            <circle cx="80" cy="105" r="5" fill="#f59e0b" opacity="0.5" class="laser-spark"/>
-          </g>
-          <!-- Cutting Honeycomb Bed -->
-          <rect x="20" y="100" width="120" height="20" rx="2" fill="#0f172a" stroke="#334155" stroke-width="1"/>
-          <line x1="20" y1="108" x2="140" y2="108" stroke="#1e293b" stroke-width="1" stroke-dasharray="4,4"/>
-          <rect x="35" y="102" width="90" height="15" rx="1" fill="#f59e0b" opacity="0.08"/>
-          <path d="M 38 105 L 122 105" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" class="engrave-line"/>
-          <!-- Base frame -->
-          <rect x="8" y="118" width="144" height="10" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1"/>
-        </svg>
-      </div>
-
+    <!-- LEFT GRAY METAL WORKBENCH TABLE (For 3D Printer) -->
+    <div id="wb-table-left">
+      <svg class="wb-table-svg" width="260" height="140" viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="table-top-g" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#cbd5e1"/>
+            <stop offset="30%" stop-color="#94a3b8"/>
+            <stop offset="70%" stop-color="#64748b"/>
+            <stop offset="100%" stop-color="#475569"/>
+          </linearGradient>
+          <linearGradient id="table-leg-g" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#475569"/>
+            <stop offset="50%" stop-color="#64748b"/>
+            <stop offset="100%" stop-color="#334155"/>
+          </linearGradient>
+        </defs>
+        <!-- Table Legs -->
+        <rect x="15"  y="36" width="12" height="98" rx="2" fill="url(#table-leg-g)"/>
+        <rect x="233" y="36" width="12" height="98" rx="2" fill="url(#table-leg-g)"/>
+        <rect x="75"  y="40" width="9"  height="94" rx="2" fill="url(#table-leg-g)" opacity="0.6"/>
+        <rect x="176" y="40" width="9"  height="94" rx="2" fill="url(#table-leg-g)" opacity="0.6"/>
+        <!-- Rubber Feet -->
+        <rect x="12"  y="132" width="18" height="6" rx="2" fill="#1e293b"/>
+        <rect x="230" y="132" width="18" height="6" rx="2" fill="#1e293b"/>
+        <!-- Support Brace -->
+        <rect x="15" y="98" width="230" height="8" rx="2" fill="#334155"/>
+        <!-- Table Top Bevel Underlayer -->
+        <rect x="8" y="32" width="244" height="6" fill="#1e293b"/>
+        <!-- Table Top Surface Plate -->
+        <rect x="8" y="18" width="244" height="16" rx="3" fill="url(#table-top-g)" stroke="#94a3b8" stroke-width="1.5"/>
+        <!-- Metallic Reflection Highlight Lines -->
+        <line x1="15" y1="21" x2="80" y2="21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="110" y1="21" x2="235" y2="21" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
     </div>
+
+    <!-- BAMBU LAB P1S 3D PRINTER (Sitting ON LEFT TABLE) -->
+    <div id="sprite-printer" title="Bambu Lab P1S 3D Printer">
+      <svg width="130" height="150" viewBox="0 0 130 150" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="p1s-body" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#e2e8f0"/>
+            <stop offset="50%" stop-color="#475569"/>
+            <stop offset="100%" stop-color="#1e293b"/>
+          </linearGradient>
+          <radialGradient id="p1s-glow" cx="50%" cy="35%" r="60%">
+            <stop offset="0%" stop-color="rgba(6,182,212,0.4)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0.85)"/>
+          </radialGradient>
+        </defs>
+        <!-- Spool -->
+        <ellipse cx="65" cy="12" rx="16" ry="5" fill="#1e293b" stroke="#06b6d4" stroke-width="1.5"/>
+        <circle cx="65" cy="12" r="5" fill="#0f172a"/>
+        <path d="M 65 17 Q 78 22 80 32" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3,2"/>
+        <!-- Frame -->
+        <rect x="10" y="24" width="110" height="122" rx="8" fill="url(#p1s-body)" stroke="#475569" stroke-width="1.5"/>
+        <!-- Glass Door -->
+        <rect x="16" y="32" width="98" height="76" rx="5" fill="url(#p1s-glow)" stroke="#06b6d4" stroke-width="1.5"/>
+        <line x1="18" y1="34" x2="52" y2="105" stroke="rgba(255,255,255,0.15)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Z Rods -->
+        <line x1="22" y1="33" x2="22" y2="107" stroke="#475569" stroke-width="2"/>
+        <line x1="108" y1="33" x2="108" y2="107" stroke="#475569" stroke-width="2"/>
+        <!-- Gantry Bar -->
+        <rect x="15" y="40" width="100" height="6" rx="2" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+        <!-- Toolhead (Centered at x=65, animated left-right scan along gantry bar) -->
+        <g class="p1s-toolhead-move">
+          <rect x="53" y="33" width="24" height="20" rx="4" fill="#0f172a" stroke="#06b6d4" stroke-width="1.5"/>
+          <line x1="57" y1="38" x2="73" y2="38" stroke="#334155" stroke-width="1.5"/>
+          <line x1="57" y1="42" x2="73" y2="42" stroke="#334155" stroke-width="1.5"/>
+          <circle cx="65" cy="42" r="3" fill="#ef4444" class="hotend-heat"/>
+          <rect x="61" y="53" width="8" height="6" rx="1" fill="#cbd5e1" stroke="#475569" stroke-width="0.8"/>
+          <polygon points="62,59 68,59 65,66" fill="#f59e0b" class="hotend-heat"/>
+          <line x1="65" y1="66" x2="65" y2="70" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round" class="hotend-heat"/>
+        </g>
+        <!-- Print Bed & 3D Object -->
+        <rect x="20" y="92" width="90" height="6" rx="2" fill="#1e293b" stroke="#fbbf24" stroke-width="1"/>
+        <g class="p1s-print-anim" style="transform-origin:65px 92px">
+          <rect x="45" y="70" width="40" height="22" rx="3" fill="#06b6d4" opacity="0.85"/>
+          <rect x="52" y="64" width="26" height="7" rx="2" fill="#22d3ee" opacity="0.9"/>
+        </g>
+        <line x1="20" y1="82" x2="110" y2="82" stroke="#fbbf24" stroke-width="1.5" class="print-layer-line" opacity="0.6"/>
+        <!-- OLED Display -->
+        <rect x="12" y="122" width="55" height="16" rx="3" fill="#090d16" stroke="#06b6d4" stroke-width="1"/>
+        <text x="16" y="130" font-size="5" fill="#06b6d4" font-family="monospace" font-weight="bold">BAMBU P1S</text>
+        <text x="16" y="136" font-size="4.5" fill="#10b981" font-family="monospace">PRINT 78%</text>
+        <!-- Knob & Status LED -->
+        <circle cx="95" cy="130" r="7" fill="#334155" stroke="#64748b" stroke-width="1.5"/>
+        <circle cx="95" cy="130" r="3" fill="#0f172a"/>
+        <circle cx="114" cy="122" r="4" fill="#10b981" class="p1s-status-led"/>
+      </svg>
+    </div>
+
+    <!-- RIGHT GRAY METAL WORKBENCH TABLE (For Laser Cutter) -->
+    <div id="wb-table-right">
+      <svg class="wb-table-svg" width="260" height="140" viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="table-top-g-r" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#cbd5e1"/>
+            <stop offset="30%" stop-color="#94a3b8"/>
+            <stop offset="70%" stop-color="#64748b"/>
+            <stop offset="100%" stop-color="#475569"/>
+          </linearGradient>
+          <linearGradient id="table-leg-g-r" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#475569"/>
+            <stop offset="50%" stop-color="#64748b"/>
+            <stop offset="100%" stop-color="#334155"/>
+          </linearGradient>
+        </defs>
+        <!-- Table Legs -->
+        <rect x="15"  y="36" width="12" height="98" rx="2" fill="url(#table-leg-g-r)"/>
+        <rect x="233" y="36" width="12" height="98" rx="2" fill="url(#table-leg-g-r)"/>
+        <rect x="75"  y="40" width="9"  height="94" rx="2" fill="url(#table-leg-g-r)" opacity="0.6"/>
+        <rect x="176" y="40" width="9"  height="94" rx="2" fill="url(#table-leg-g-r)" opacity="0.6"/>
+        <!-- Rubber Feet -->
+        <rect x="12"  y="132" width="18" height="6" rx="2" fill="#1e293b"/>
+        <rect x="230" y="132" width="18" height="6" rx="2" fill="#1e293b"/>
+        <!-- Support Brace -->
+        <rect x="15" y="98" width="230" height="8" rx="2" fill="#334155"/>
+        <!-- Table Top Bevel Underlayer -->
+        <rect x="8" y="32" width="244" height="6" fill="#1e293b"/>
+        <!-- Table Top Surface Plate -->
+        <rect x="8" y="18" width="244" height="16" rx="3" fill="url(#table-top-g-r)" stroke="#94a3b8" stroke-width="1.5"/>
+        <!-- Metallic Reflection Highlight Lines -->
+        <line x1="15" y1="21" x2="80" y2="21" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-linecap="round"/>
+        <line x1="110" y1="21" x2="235" y2="21" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- CREALITY FALCON LASER CUTTER (Sitting ON RIGHT TABLE) -->
+    <div id="sprite-laser" title="Falcon Laser Engraver & Cutter">
+      <svg width="160" height="135" viewBox="0 0 160 135" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="falcon-frame" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#dc2626"/>
+            <stop offset="20%" stop-color="#b91c1c"/>
+            <stop offset="100%" stop-color="#7f1d1d"/>
+          </linearGradient>
+        </defs>
+        <text x="14" y="14" font-size="7.5" fill="#818cf8" font-family="monospace" font-weight="bold">FALCON 10W</text>
+        <circle cx="140" cy="12" r="4.5" fill="#10b981" class="p1s-status-led"/>
+        <!-- Side Rails (Red Anodized) -->
+        <rect x="10" y="24" width="12" height="76" rx="3" fill="url(#falcon-frame)"/>
+        <rect x="138" y="24" width="12" height="76" rx="3" fill="url(#falcon-frame)"/>
+        <!-- Gantry bar -->
+        <rect x="8" y="34" width="144" height="10" rx="2" fill="#0f172a" stroke="#818cf8" stroke-width="1.2"/>
+        <line x1="12" y1="39" x2="148" y2="39" stroke="#6366f1" stroke-width="1.5" opacity="0.7"/>
+        <!-- Laser Head (Centered at x=80, animated L-R scan) -->
+        <g class="falcon-head-move">
+          <rect x="66" y="25" width="28" height="24" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5"/>
+          <rect x="70" y="27" width="20" height="6" rx="2" fill="#dc2626"/>
+          <polygon points="74,49 86,49 82,55 78,55" fill="#475569" stroke="#818cf8" stroke-width="1"/>
+          <circle cx="80" cy="38" r="2.5" fill="#38bdf8" class="hotend-heat"/>
+          <!-- Focused Laser Beam -->
+          <line x1="80" y1="55" x2="80" y2="105" stroke="#a855f7" stroke-width="2.5" class="laser-beam"/>
+          <line x1="80" y1="55" x2="80" y2="105" stroke="#818cf8" stroke-width="7" opacity="0.35" class="laser-aura"/>
+          <!-- Contact Spark -->
+          <circle cx="80" cy="105" r="3.5" fill="#ffffff" class="laser-spark"/>
+          <circle cx="80" cy="105" r="11" fill="#a855f7" opacity="0.3" class="laser-spark"/>
+          <circle cx="80" cy="105" r="5" fill="#f59e0b" opacity="0.5" class="laser-spark"/>
+        </g>
+        <!-- Cutting Honeycomb Bed -->
+        <rect x="20" y="100" width="120" height="20" rx="2" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+        <line x1="20" y1="108" x2="140" y2="108" stroke="#1e293b" stroke-width="1" stroke-dasharray="4,4"/>
+        <rect x="35" y="102" width="90" height="15" rx="1" fill="#f59e0b" opacity="0.08"/>
+        <path d="M 38 105 L 122 105" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" class="engrave-line"/>
+        <!-- Base frame -->
+        <rect x="8" y="118" width="144" height="10" rx="3" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      </svg>
+    </div>
+
+  </div>
 
   <!-- FLOATING SPRITES LAYER (DANCING HUMANOID ROBOT + FLOATING SYMBOLS) -->
   <div id="bg-sprites">
@@ -373,62 +376,7 @@
 
   <!-- ═══════════════════════════════════════
      AUDIO
-  <!-- Walking Robot -->
-    <div class="bg-sprite" id="sprite-robot">
-      <span class="robot-inner">🤖</span>
-    </div>
-    <!-- Flying Drone -->
-    <div class="bg-sprite" id="sprite-drone">
-      <div class="drone-body">
-        <!-- Made bigger -->
-        <svg width="100" height="70" viewBox="0 0 70 50" xmlns="http://www.w3.org/2000/svg">
-          <style>
-            .prop {
-              transform-origin: center;
-              transform-box: fill-box;
-              animation: spinProp 0.12s linear infinite;
-            }
-
-            @keyframes spinProp {
-              to {
-                transform: rotate(360deg);
-              }
-            }
-          </style>
-          <!-- Arms -->
-          <line x1="10" y1="24" x2="35" y2="24" stroke="#4a90e2" stroke-width="2.5" opacity="0.8" />
-          <line x1="35" y1="24" x2="60" y2="24" stroke="#4a90e2" stroke-width="2.5" opacity="0.8" />
-          <!-- Body -->
-          <ellipse cx="35" cy="24" rx="10" ry="6" fill="#3b5bdb" opacity="0.9" />
-          <!-- Camera -->
-          <circle cx="35" cy="28" r="3" fill="#1a1a2e" />
-          <circle cx="35" cy="28" r="1.5" fill="#ff4757" />
-          <!-- Left propeller -->
-          <g class="prop" transform="translate(10,18)">
-            <ellipse rx="8" ry="2.5" fill="#06b6d4" opacity="0.75" />
-            <ellipse ry="8" rx="2.5" fill="#06b6d4" opacity="0.75" />
-          </g>
-          <!-- Right propeller -->
-          <g class="prop" transform="translate(60,18)">
-            <ellipse rx="8" ry="2.5" fill="#06b6d4" opacity="0.75" />
-            <ellipse ry="8" rx="2.5" fill="#06b6d4" opacity="0.75" />
-          </g>
-          <!-- LED blink -->
-          <circle cx="35" cy="20" r="2" fill="#fbbf24" opacity="0.9">
-            <animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.2s" repeatCount="indefinite" />
-          </circle>
-        </svg>
-      </div>
-    </div>
-    <!-- Rocket -->
-    <div class="bg-sprite" id="sprite-rocket">
-      <div class="rocket-inner" style="font-size: 4rem;">🚀</div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════════════════════
-     AUDIO
-════════════════════════════════════════ -->
+  ════════════════════════════════════════ -->
   <audio id="bgm" loop>
     <source src="https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=fun-life-112188.mp3"
       type="audio/mpeg">
@@ -442,12 +390,18 @@
 
   <!-- ═══════════════════════════════════════
      HEADER
-════════════════════════════════════════ -->
+  ════════════════════════════════════════ -->
   <header class="game-header">
-    <div class="logo">
-      <span class="logo-icon">⚡</span>
-      <span>STEM Quest</span>
-      <span class="logo-badge">BEGINNER</span>
+    <div class="header-left">
+      <a href="../index.html" class="btn-home-link" title="Return to Main Website">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span>STEM Quest</span>
+        <span class="logo-badge">BEGINNER</span>
+      </div>
     </div>
     
     <div class="header-center">
@@ -471,7 +425,7 @@
 
   <!-- ═══════════════════════════════════════
      MAIN VIEWS
-════════════════════════════════════════ -->
+  ════════════════════════════════════════ -->
   <main class="app-main">
 
     <!-- ──── LANDING ──────────────────────── -->
@@ -479,13 +433,14 @@
       <div class="hero-card">
         <div class="hero-title">
           <h1>🚀 STEM Quest</h1>
-          <p class="tagline">The exam that actually feels like a game!</p>
+          <p class="tagline">The Interactive Gamified STEM Assessment &amp; Challenge!</p>
         </div>
+
         <div class="level-badges">
           <div class="level-badge active-level">
             <div class="badge-icon">⭐</div>
-            <div class="badge-name">Beginner</div>
-            <div class="badge-desc">Grade 5 – 12</div>
+            <div class="badge-name">Beginner Level</div>
+            <div class="badge-desc">Grade 5 – College</div>
           </div>
           <div class="level-badge locked">
             <div class="badge-icon">🔒</div>
@@ -498,13 +453,58 @@
             <div class="badge-desc">Coming soon!</div>
           </div>
         </div>
-        <div
-          style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:16px;padding:16px 20px;margin-bottom:28px;font-size:0.9rem;color:var(--text-dim);line-height:1.6;">
-          🎮 MCQ • 👍 True/False • 🔗 Drag &amp; Match • ✏️ Word Bank Fill<br>
-          🔢 Ohm's Law Calc • 🧩 PictoBlock Coding • 💻 Arduino IDE • 🤖 AI Challenge • 🔊 Audio Identifier
+
+        <!-- ENRICHED STEM DOMAINS GRID -->
+        <div class="stem-domains-row">
+          <div class="domain-pill">⚡ Electronics &amp; Ohm's Law</div>
+          <div class="domain-pill">🤖 Arduino &amp; Sensor Circuits</div>
+          <div class="domain-pill">💻 Block &amp; C++ Code Logic</div>
+          <div class="domain-pill">🖨️ 3D Printing &amp; G-Code</div>
+          <div class="domain-pill">🔥 Laser Cutting &amp; Optics</div>
+          <div class="domain-pill">🛸 Aero &amp; Drone Physics</div>
         </div>
+
+        <!-- QUEST OVERVIEW & RULES STATS GRID -->
+        <div class="quest-stats-grid">
+          <div class="quest-stat-card">
+            <div class="qstat-icon">❓</div>
+            <div class="qstat-val">50 Questions</div>
+            <div class="qstat-lbl">Interactive Challenges</div>
+          </div>
+          <div class="quest-stat-card">
+            <div class="qstat-icon">⏱️</div>
+            <div class="qstat-val">20 Minutes</div>
+            <div class="qstat-lbl">Adaptive Timer</div>
+          </div>
+          <div class="quest-stat-card">
+            <div class="qstat-icon">🎯</div>
+            <div class="qstat-val">60% Pass</div>
+            <div class="qstat-lbl">Gold Medal at 90%+</div>
+          </div>
+          <div class="quest-stat-card">
+            <div class="qstat-icon">🏆</div>
+            <div class="qstat-val">Live XP</div>
+            <div class="qstat-lbl">Rank &amp; Score Track</div>
+          </div>
+        </div>
+
+        <div class="challenge-types-box">
+          <div class="ct-header">🎮 Challenge Formats Included:</div>
+          <div class="ct-list">
+            <span>🎮 Multiple Choice</span>
+            <span>👍 True / False</span>
+            <span>🔗 Drag &amp; Match</span>
+            <span>✏️ Word Bank Fill</span>
+            <span>🔢 Circuit Calculations</span>
+            <span>🧩 PictoBlock Coding</span>
+            <span>💻 Arduino IDE</span>
+            <span>🤖 AI &amp; Robotics</span>
+            <span>🔊 Audio Identifier</span>
+          </div>
+        </div>
+
         <div class="hero-btns">
-          <button class="big-btn btn-play" id="btn-play">🎮 Play Now!</button>
+          <button class="big-btn btn-play" id="btn-play">🎮 Start Quest!</button>
           <button class="big-btn btn-teacher" id="btn-teacher-mode">👩‍🏫 Teacher View</button>
         </div>
       </div>
@@ -514,16 +514,16 @@
     <section id="view-register" class="view">
       <div class="form-card">
         <h2>🏆 Player Profile</h2>
-        <p class="form-subtitle">Tell us about yourself before the quest begins!</p>
+        <p class="form-subtitle">Enter your details to generate your official STEM Quest certificate!</p>
         <form id="form-register">
           <div class="field-group">
-            <label for="inp-name">Name</label>
-            <input type="text" id="inp-name" placeholder="Your name..." required autocomplete="off">
+            <label for="inp-name"><i class="fa-solid fa-user"></i> Full Name</label>
+            <input type="text" id="inp-name" placeholder="Enter your full name..." required autocomplete="off">
           </div>
           <div class="field-group">
-            <label for="inp-grade">Grade / Level</label>
+            <label for="inp-grade"><i class="fa-solid fa-graduation-cap"></i> Grade / Academic Level</label>
             <select id="inp-grade" required>
-              <option value="" disabled selected>Select Grade/Level</option>
+              <option value="" disabled selected>Select Grade or College Year</option>
               <option value="5th Grade">5th Grade</option>
               <option value="6th Grade">6th Grade</option>
               <option value="7th Grade">7th Grade</option>
@@ -539,8 +539,8 @@
             </select>
           </div>
           <div class="field-group">
-            <label for="inp-school">School / College</label>
-            <input type="text" id="inp-school" placeholder="Your school or college..." required autocomplete="off">
+            <label for="inp-school"><i class="fa-solid fa-school"></i> School / Institution Name</label>
+            <input type="text" id="inp-school" placeholder="Enter your school or college name..." required autocomplete="off">
           </div>
           <div class="form-btns">
             <button type="button" class="big-btn btn-back" id="btn-back-reg">← Back</button>

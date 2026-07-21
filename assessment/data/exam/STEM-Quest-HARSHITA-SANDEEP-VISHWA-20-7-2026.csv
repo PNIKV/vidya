@@ -1,0 +1,44 @@
+Student Name,Grade,School,Q#,Type,Question,Correct?,Marks Earned,Max Marks
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",1,match," Match each STEM letter to its field",Yes,3,3
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",2,calc,"If Voltage  9V and Resistance  100 what is the Current",No,0,3
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",3,fill_bank,"An ___ emits ___ when electricity flows through it",No,0,2
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",4,match," Match the computer part to what it does",No,0,3
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",5,true_false,"A battery provides AC Alternating Current power",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",6,mcq,"Which one is an Arduino Uno",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",7,true_false,"An ultrasonic sensor uses LIGHT to detect objects",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",8,true_false,"GCode is the language used to control 3D printers",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",9,match," Match each component to its function",No,0,3
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",10,mcq,"What does STEM stand for",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",11,mcq,"What does an LED emit when powered",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",12,fill_bank,"A ___ board lets you build circuits quickly without ___",No,0,2
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",13,calc,"You have 3 LEDs in SERIES Each LED needs 2V What is the TOTAL voltage needed",No,0,3
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",14,mcq,"Which sensor uses sound waves to detect distance",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",15,true_false,"Arduino programs are written in the Python language",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",16,match," Match the Arduino function to what it does",No,0,3
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",17,true_false,"A multimeter can measure voltage current AND resistance",Yes,1,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",18,true_false,"A standard servo motor can rotate 360 continuously forever",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",19,mcq,"Which of these shows the Arduino IDE interface",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",20,mcq,"What is the unit of Voltage",Yes,1,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",21,true_false,"A breadboard REQUIRES soldering to build circuits",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",22,mcq,"Which component stores electrical energy",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",23,true_false,"3D printing is called Subtractive Manufacturing",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",24,ai_question,"What happens when you connect an LED directly to a 9V battery WITHOUT a resistor",No,0,2
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",25,picto," Arrange the PictoBlocks to make an LED blink",Yes,4,4
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",26,true_false,"A resistor INCREASES the flow of electricity",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",27,true_false,"Python is a textbased programming language",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",28,calc,"Your supply gives 5V and 100mA total Each LED needs 20mA How many LEDs can you light up",Yes,3,3
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",29,true_false,"A sensor detects information from the environment",Yes,1,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",30,true_false,"Robotics combines mechanical electrical and software skills",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",31,fill_bank,"A ___ sensor uses ___ waves to measure distance to an object",No,0,2
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",32,arduino_ide," Complete the Arduino code Which function goes in the blank",No,0,3
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",33,match," Match the coding concept to its meaning",No,0,3
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",34,mcq,"Which language uses colorful snaptogether blocks for coding",Yes,1,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",35,mcq,"What is Ohms Law formula",Yes,1,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",36,mcq,"Which of these is an INPUT device for a computer",Yes,1,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",37,true_false,"PLA plastic used in 3D printing is biodegradable",Yes,1,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",38,fill_bank,"V  I  R is called ___ Law V stands for ___",No,0,2
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",39,true_false,"In an open circuit electricity CAN flow freely",No,0,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",40,fill_bank,"In Arduino the ___ function runs once The ___ function loops forever",No,0,2
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",41,true_false,"LED stands for Light Emitting Diode",Yes,1,1
+"HARSHITA  SANDEEP  VISHWA","7TH","DHANRAJI PAL VIDYALAYA",TOTAL,-,"Final Score",-,18,68
+,,,,,,"Score %","26%",

@@ -1,4 +1,4 @@
-﻿window.BEGINNER_QUESTIONS = [
+window.BEGINNER_QUESTIONS = [
   {
     "id": 1,
     "type": "mcq",
@@ -36,19 +36,19 @@
     "options": [
       {
         "text": "Ampere (A)",
-        "emoji": "ðŸ”Œ"
+        "emoji": "🔌"
       },
       {
-        "text": "Ohm (Î©)",
-        "emoji": "ðŸ”¬"
+        "text": "Ohm (Ω)",
+        "emoji": "🔬"
       },
       {
         "text": "Volt (V)",
-        "emoji": "âš¡"
+        "emoji": "⚡"
       },
       {
         "text": "Watt (W)",
-        "emoji": "ðŸ’¡"
+        "emoji": "💡"
       }
     ],
     "answer": 2
@@ -90,19 +90,19 @@
     "options": [
       {
         "text": "Resistor",
-        "emoji": "â¬œ"
+        "emoji": "⚡"
       },
       {
         "text": "Diode",
-        "emoji": "âž¡ï¸"
+        "emoji": "➡️"
       },
       {
         "text": "Capacitor",
-        "emoji": "âš¡"
+        "emoji": "⚡"
       },
       {
         "text": "Inductor",
-        "emoji": "ðŸ”„"
+        "emoji": "🔄"
       }
     ],
     "answer": 1
@@ -158,19 +158,19 @@
     "options": [
       {
         "text": "Sound",
-        "emoji": "ðŸ”Š"
+        "emoji": "🔊"
       },
       {
         "text": "Light",
-        "emoji": "ðŸ’¡"
+        "emoji": "💡"
       },
       {
         "text": "Heat only",
-        "emoji": "ðŸ”¥"
+        "emoji": "🔥"
       },
       {
         "text": "Motion",
-        "emoji": "ðŸŒ€"
+        "emoji": "🌀"
       }
     ],
     "answer": 1
@@ -181,7 +181,7 @@
     "marks": 1,
     "text": "A battery provides AC (Alternating Current) power.",
     "answer": false,
-    "funFact": "ðŸ”‹ Batteries give DC (Direct Current)! AC comes from power outlets!"
+    "funFact": "🔋 Batteries give DC (Direct Current)! AC comes from power outlets!"
   },
   {
     "id": 12,
@@ -189,7 +189,7 @@
     "marks": 1,
     "text": "A resistor INCREASES the flow of electricity.",
     "answer": false,
-    "funFact": "â¬œ Resistors RESIST (reduce) current flow â€“ that's literally their job!"
+    "funFact": "⚡ Resistors RESIST (reduce) current flow – that's literally their job!"
   },
   {
     "id": 13,
@@ -197,7 +197,7 @@
     "marks": 1,
     "text": "PLA plastic used in 3D printing is biodegradable.",
     "answer": true,
-    "funFact": "â™»ï¸ PLA is made from corn starch â€“ it naturally breaks down over time!"
+    "funFact": "♻️ PLA is made from corn starch – it naturally breaks down over time!"
   },
   {
     "id": 14,
@@ -205,7 +205,7 @@
     "marks": 1,
     "text": "A breadboard REQUIRES soldering to build circuits.",
     "answer": false,
-    "funFact": "ðŸ”§ Breadboards are solder-FREE! Just push components into the holes!"
+    "funFact": "🔧 Breadboards are solder-FREE! Just push components into the holes!"
   },
   {
     "id": 15,
@@ -213,33 +213,33 @@
     "marks": 1,
     "text": "A laser cutter should be operated with the lid open for better cooling.",
     "answer": false,
-    "funFact": "ðŸ”¥ NEVER open the lid while cutting! It can cause eye damage or fire."
+    "funFact": "🔥 NEVER open the lid while cutting! It can cause eye damage or fire."
   },
   {
     "id": 16,
     "type": "match",
     "marks": 6,
-    "text": "ðŸ”— Match each component to its function!",
+    "text": "🔗 Match each component to its function!",
     "pairs": [
       {
-        "left": "ðŸ”‹ Battery",
-        "right": "âš¡ Provides Power"
+        "left": "🔋 Battery",
+        "right": "⚡ Provides Power"
       },
       {
-        "left": "ðŸ’¡ LED",
-        "right": "ðŸŒŸ Emits Light"
+        "left": "💡 LED",
+        "right": "🌟 Emits Light"
       },
       {
-        "left": "â¬œ Resistor",
-        "right": "ðŸ”½ Limits Current"
+        "left": "⚡ Resistor",
+        "right": "🔻 Limits Current"
       },
       {
-        "left": "âš™ï¸ Motor",
-        "right": "ðŸ”„ Creates Motion"
+        "left": "⚙️ Motor",
+        "right": "🔄 Creates Motion"
       },
       {
-        "left": "ðŸ”Š Buzzer",
-        "right": "ðŸ“¢ Makes Sound"
+        "left": "🔊 Buzzer",
+        "right": "📢 Makes Sound"
       }
     ]
   },
@@ -247,27 +247,27 @@
     "id": 17,
     "type": "match",
     "marks": 6,
-    "text": "ðŸ”— Match the coding concept to its meaning!",
+    "text": "🔗 Match the coding concept to its meaning!",
     "pairs": [
       {
-        "left": "ðŸ”„ Loop",
-        "right": "ðŸ” Repeat code forever"
+        "left": "🔄 Loop",
+        "right": "🔁 Repeat code forever"
       },
       {
-        "left": "ðŸ“¦ Variable",
-        "right": "ðŸ’¾ Store a value"
+        "left": "📦 Variable",
+        "right": "💾 Store a value"
       },
       {
-        "left": "ðŸ”€ If / Else",
+        "left": "🔀 If / Else",
         "right": "â“ Make a decision"
       },
       {
-        "left": "ðŸ“ž Function",
-        "right": "ðŸ“‹ Reusable block of code"
+        "left": "📞 Function",
+        "right": "📋 Reusable block of code"
       },
       {
-        "left": "ðŸ’¬ Comment",
-        "right": "ðŸ“ Note for humans only"
+        "left": "💬 Comment",
+        "right": "📝 Note for humans only"
       }
     ]
   },
@@ -275,27 +275,27 @@
     "id": 18,
     "type": "match",
     "marks": 6,
-    "text": "ðŸ”— Match the Arduino function to what it does!",
+    "text": "🔗 Match the Arduino function to what it does!",
     "pairs": [
       {
-        "left": "ðŸ“Œ pinMode()",
-        "right": "ðŸ”§ Sets pin as INPUT or OUTPUT"
+        "left": "📌 pinMode()",
+        "right": "🔧 Sets pin as INPUT or OUTPUT"
       },
       {
-        "left": "âœï¸ digitalWrite()",
-        "right": "ðŸ’¡ Sends HIGH or LOW to pin"
+        "left": "✨ï¸ digitalWrite()",
+        "right": "💡 Sends HIGH or LOW to pin"
       },
       {
-        "left": "ðŸ“– digitalRead()",
-        "right": "ðŸ‘‚ Reads button/sensor state"
+        "left": "📖 digitalRead()",
+        "right": "👂 Reads button/sensor state"
       },
       {
-        "left": "â±ï¸ delay()",
-        "right": "â¸ï¸ Waits for a given time (ms)"
+        "left": "⏱️ delay()",
+        "right": "⏳ Waits for a given time (ms)"
       },
       {
-        "left": "âš™ï¸ setup()",
-        "right": "1ï¸âƒ£ Runs ONCE at the start"
+        "left": "⚙️ setup()",
+        "right": "1️⃣ Runs ONCE at the start"
       }
     ]
   },
@@ -375,9 +375,9 @@
     "id": 22,
     "type": "calc",
     "marks": 4,
-    "emoji": "âš¡",
+    "emoji": "⚡",
     "title": "Ohm's Law Challenge!",
-    "text": "If Voltage = 9V and Resistance = 100Î©, what is the Current?",
+    "text": "If Voltage = 9V and Resistance = 100Ω, what is the Current?",
     "formula": "I = V Ã· R",
     "given": [
       {
@@ -390,7 +390,7 @@
         "symbol": "R",
         "label": "Resistance",
         "value": "100",
-        "unit": "Ohms (Î©)"
+        "unit": "Ohms (Ω)"
       }
     ],
     "find": {
@@ -411,7 +411,7 @@
     "id": 23,
     "type": "calc",
     "marks": 4,
-    "emoji": "ðŸ’¡",
+    "emoji": "💡",
     "title": "LED Power Challenge!",
     "text": "Your supply gives 5V and 100mA total. Each LED needs 20mA. How many LEDs can you light up?",
     "formula": "Count = Total mA Ã· mA per LED",
@@ -447,7 +447,7 @@
     "id": 24,
     "type": "arduino_ide",
     "marks": 5,
-    "text": "ðŸ’» Complete the Arduino code! Which function goes in the blank?",
+    "text": "💻 Complete the Arduino code! Which function goes in the blank?",
     "subtitle": "This code makes LED on pin 13 blink. Fill in the missing function name:",
     "codeLines": [
       {
@@ -504,7 +504,7 @@
     "type": "audio_id",
     "marks": 2,
     "text": "Listen to the sound. Which component makes this noise?",
-    "audio": "https://cdn.pixabay.com/download/audio/2022/03/15/audio_e607421183.mp3?filename=pop-39222.mp3",
+    "audio": "data/audio/relay_click.mp3",
     "options": [
       "Buzzer",
       "DC Motor",
@@ -518,7 +518,7 @@
     "type": "audio_id",
     "marks": 2,
     "text": "Identify this continuous whirring sound.",
-    "audio": "https://cdn.pixabay.com/download/audio/2022/01/18/audio_d0a13f69d2.mp3?filename=fun-life-112188.mp3",
+    "audio": "data/audio/dc_motor.mp3",
     "options": [
       "Capacitor charging",
       "DC Motor spinning",
@@ -532,7 +532,7 @@
     "type": "audio_id",
     "marks": 2,
     "text": "Listen to the high pitched beep. What is it?",
-    "audio": "https://cdn.pixabay.com/download/audio/2021/08/04/audio_0625c1539c.mp3?filename=success-1-6297.mp3",
+    "audio": "data/audio/buzzer_beep.mp3",
     "options": [
       "Active Buzzer",
       "Passive Buzzer",
@@ -545,8 +545,8 @@
     "id": 28,
     "type": "audio_id",
     "marks": 2,
-    "text": "What component produces a mechanical grinding or sweeping sound when moving?",
-    "audio": "https://cdn.pixabay.com/download/audio/2022/03/10/audio_c8c8a73467.mp3?filename=error-126627.mp3",
+    "text": "What component produces a mechanical sweeping sound when moving?",
+    "audio": "data/audio/servo_motor.mp3",
     "options": [
       "Servo Motor",
       "Battery",
@@ -559,7 +559,7 @@
     "id": 29,
     "type": "picto",
     "marks": 6,
-    "text": "ðŸ§© Arrange the PictoBlocks to make an LED blink!",
+    "text": "🧩 Arrange the PictoBlocks to make an LED blink!",
     "instruction": "Click blocks from the PALETTE to add them to your CODE. Get the right sequence!",
     "correctSequence": [
       "setup",
@@ -575,28 +575,28 @@
         "id": "setup",
         "label": "void setup()",
         "color": "#ff6b6b",
-        "icon": "âš™ï¸",
+        "icon": "⚙️",
         "category": "Structure"
       },
       {
         "id": "pinmode",
         "label": "pinMode(13, OUTPUT)",
         "color": "#ff9f43",
-        "icon": "ðŸ“Œ",
+        "icon": "📌",
         "category": "Setup"
       },
       {
         "id": "loop",
         "label": "void loop()",
         "color": "#48dbfb",
-        "icon": "ðŸ”„",
+        "icon": "🔄",
         "category": "Structure"
       },
       {
         "id": "high",
         "label": "digitalWrite(HIGH)",
         "color": "#feca57",
-        "icon": "ðŸ’¡",
+        "icon": "💡",
         "category": "Control"
       },
       {
@@ -610,7 +610,7 @@
         "id": "low",
         "label": "digitalWrite(LOW)",
         "color": "#ff6348",
-        "icon": "ðŸ”•",
+        "icon": "🔔",
         "category": "Control"
       },
       {
@@ -629,27 +629,27 @@
     "aiName": "VIDYA AI Bot",
     "setupText": "Our AI Bot has a tricky real-world question! Can you help it answer?",
     "text": "What happens when you connect an LED directly to a 9V battery WITHOUT a resistor?",
-    "aiHint": "ðŸ¤” Think... what does too much current do to a tiny component?",
+    "aiHint": "🤔 Think... what does too much current do to a tiny component?",
     "options": [
       {
         "text": "The LED glows extra bright forever",
-        "emoji": "âœ¨"
+        "emoji": "✨"
       },
       {
         "text": "The LED burns out instantly!",
-        "emoji": "ðŸ’¥"
+        "emoji": "💥"
       },
       {
         "text": "The LED starts blinking on its own",
-        "emoji": "ðŸ”„"
+        "emoji": "🔄"
       },
       {
         "text": "Nothing happens at all",
-        "emoji": "ðŸ˜´"
+        "emoji": "😴"
       }
     ],
     "answer": 1,
-    "explanation": "Without a resistor, too much current flows through the LED and it burns out! Always protect LEDs with a resistor! â¬œ â†’ ðŸ’¡"
+    "explanation": "Without a resistor, too much current flows through the LED and it burns out! Always protect LEDs with a resistor! ⬜ → 💡"
   },
   {
     "id": 31,

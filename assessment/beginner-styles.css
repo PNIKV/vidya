@@ -122,6 +122,322 @@ body {
   100% { transform: translateY(-100vh) scale(0); opacity: 0; }
 }
 
+/* ═══════════════════════════════════════════════
+   WORKBENCH SCENE — GRAY METAL TABLE + EQUIPMENT
+═══════════════════════════════════════════════ */
+#bg-workbench {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 300px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Left Gray Metal Table (for 3D Printer) */
+#wb-table-left {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  width: 260px;
+  height: 140px;
+  z-index: 2;
+}
+
+/* Right Gray Metal Table (for Laser Cutter) */
+#wb-table-right {
+  position: absolute;
+  bottom: 0;
+  right: 195px;
+  width: 260px;
+  height: 140px;
+  z-index: 2;
+}
+
+/* 3D Printer — sitting ON top of left table surface */
+#sprite-printer {
+  position: absolute;
+  bottom: 110px;
+  left: 85px;
+  z-index: 3;
+  animation: printerHum 3s ease-in-out infinite;
+  filter: drop-shadow(0 8px 20px rgba(6,182,212,0.45));
+}
+@keyframes printerHum {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-3px); }
+}
+
+/* Laser Cutter — sitting ON top of right table surface */
+#sprite-laser {
+  position: absolute;
+  bottom: 110px;
+  right: 245px;
+  z-index: 3;
+  animation: laserHum 4s ease-in-out infinite 0.8s;
+  filter: drop-shadow(0 8px 20px rgba(129,140,248,0.45));
+}
+@keyframes laserHum {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-4px); }
+}
+
+/* 3D Printer toolhead nozzle scanning left-right */
+.p1s-toolhead-move {
+  animation: toolheadSlide 3s ease-in-out infinite;
+  transform-origin: 65px 44px;
+}
+@keyframes toolheadSlide {
+  0%,100% { transform: translateX(-32px); }
+  50%     { transform: translateX(32px); }
+}
+.p1s-print-anim {
+  animation: printBuild 3.5s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+@keyframes printBuild {
+  0%   { opacity: 0.25; transform: scaleY(0.4); }
+  55%  { opacity: 0.9;  transform: scaleY(1); }
+  100% { opacity: 0.25; transform: scaleY(0.4); }
+}
+.hotend-heat {
+  animation: heatGlow 0.7s ease-in-out infinite alternate;
+}
+@keyframes heatGlow {
+  0%  { fill: #ef4444; }
+  100%{ fill: #fb923c; }
+}
+.p1s-status-led {
+  animation: statusBlink 1.8s ease-in-out infinite;
+}
+@keyframes statusBlink {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.25; }
+}
+.print-layer-line {
+  animation: layerBuild 3.5s linear infinite;
+}
+@keyframes layerBuild {
+  0%   { transform: translateY(2px);  opacity: 0.7; }
+  80%  { transform: translateY(-20px); opacity: 0.9; }
+  100% { transform: translateY(-22px); opacity: 0; }
+}
+
+/* Laser head scanning left-right */
+.falcon-head-move {
+  animation: laserScan 3.5s ease-in-out infinite;
+  transform-origin: 80px 40px;
+}
+@keyframes laserScan {
+  0%,100% { transform: translateX(-42px); }
+  50%     { transform: translateX(42px); }
+}
+.laser-beam {
+  animation: laserPulse 0.12s ease-in-out infinite alternate;
+}
+.laser-aura {
+  animation: laserPulse 0.12s ease-in-out infinite alternate;
+}
+@keyframes laserPulse {
+  0%  { opacity: 1; }
+  100%{ opacity: 0.4; }
+}
+.laser-spark {
+  animation: sparkFlicker 0.09s ease-in-out infinite alternate;
+}
+@keyframes sparkFlicker {
+  0%  { opacity: 1; }
+  100%{ opacity: 0.2; }
+}
+.engrave-line {
+  animation: engraveGlow 0.6s ease-in-out infinite alternate;
+}
+@keyframes engraveGlow {
+  0%  { stroke-width: 2;   opacity: 0.65; }
+  100%{ stroke-width: 4.5; opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════
+   HUMANOID ROBOT — FIXED RIGHT SIDE, DANCING
+═══════════════════════════════════════════════ */
+#sprite-humanoid {
+  position: fixed;
+  bottom: 10px;
+  right: 35px;
+  z-index: 4;
+  filter: drop-shadow(0 6px 22px rgba(6,182,212,0.55));
+  pointer-events: none;
+}
+
+/* Full body subtle sway / bob */
+#sprite-humanoid svg {
+  animation: robotBodyBob 0.9s ease-in-out infinite;
+  transform-origin: 85px 200px;
+}
+@keyframes robotBodyBob {
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  25%     { transform: translateY(-5px) rotate(-1deg); }
+  75%     { transform: translateY(-3px) rotate(1deg); }
+}
+
+/* Arc reactor pulse */
+.arc-pulse {
+  animation: arcGlow 1.2s ease-in-out infinite;
+}
+@keyframes arcGlow {
+  0%,100% { opacity: 0.95; }
+  50%     { opacity: 0.2; }
+}
+
+/* Left arm — reach up and down (dance) */
+.arm-left-dance {
+  animation: armLeftDance 1.8s ease-in-out infinite;
+  transform-origin: 29px 76px;
+}
+@keyframes armLeftDance {
+  0%,100% { transform: rotate(0deg); }
+  25%     { transform: rotate(-45deg); }
+  50%     { transform: rotate(-20deg); }
+  75%     { transform: rotate(-55deg); }
+}
+
+/* Left forearm flex */
+.forearm-left-dance {
+  animation: forearmLeftFlex 1.8s ease-in-out infinite;
+  transform-origin: 21px 111px;
+}
+@keyframes forearmLeftFlex {
+  0%,100% { transform: rotate(0deg); }
+  30%     { transform: rotate(30deg); }
+  70%     { transform: rotate(-20deg); }
+}
+
+/* Right arm — welding/waving motion */
+.arm-right-dance {
+  animation: armRightDance 1.5s ease-in-out infinite 0.4s;
+  transform-origin: 141px 76px;
+}
+@keyframes armRightDance {
+  0%,100% { transform: rotate(0deg); }
+  20%     { transform: rotate(40deg); }
+  50%     { transform: rotate(15deg); }
+  80%     { transform: rotate(50deg); }
+}
+
+/* Right forearm with tool */
+.forearm-right-dance {
+  animation: forearmRightFlex 1.5s ease-in-out infinite 0.4s;
+  transform-origin: 149px 111px;
+}
+@keyframes forearmRightFlex {
+  0%,100% { transform: rotate(0deg); }
+  40%     { transform: rotate(-35deg); }
+  70%     { transform: rotate(10deg); }
+}
+
+/* Welding arc spark */
+.weld-arc {
+  animation: weldFlash 0.2s steps(1) infinite;
+}
+@keyframes weldFlash {
+  0%,100% { opacity: 1; stroke: #fbbf24; }
+  50%     { opacity: 0; stroke: #ef4444; }
+}
+.weld-spark {
+  animation: weldSparkFlicker 0.15s ease-in-out infinite alternate;
+}
+@keyframes weldSparkFlicker {
+  0%  { opacity: 1; r: 4; fill: #fbbf24; }
+  100%{ opacity: 0.1; r: 1.5; fill: #ef4444; }
+}
+
+/* Left leg dance */
+.leg-left-dance {
+  animation: legLeftDance 0.9s ease-in-out infinite;
+  transform-origin: 64px 148px;
+}
+@keyframes legLeftDance {
+  0%,100% { transform: rotate(0deg); }
+  25%     { transform: rotate(8deg); }
+  75%     { transform: rotate(-6deg); }
+}
+
+/* Right leg dance */
+.leg-right-dance {
+  animation: legRightDance 0.9s ease-in-out infinite 0.45s;
+  transform-origin: 106px 148px;
+}
+@keyframes legRightDance {
+  0%,100% { transform: rotate(0deg); }
+  25%     { transform: rotate(-8deg); }
+  75%     { transform: rotate(6deg); }
+}
+
+/* Eye glow */
+.robot-eye-glow {
+  animation: eyeGlow 2s ease-in-out infinite;
+}
+@keyframes eyeGlow {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.2; }
+}
+/* Antenna blink */
+.antenna-blink {
+  animation: antBlink 1.1s steps(1) infinite;
+}
+@keyframes antBlink {
+  0%,100% { fill: #fbbf24; opacity: 1; }
+  50%     { fill: #ef4444; opacity: 0.4; }
+}
+/* Ear LED */
+.ear-led {
+  animation: earBlink 2s ease-in-out infinite alternate;
+}
+@keyframes earBlink {
+  0%  { opacity: 1; }
+  100%{ opacity: 0.2; }
+}
+
+/* ═══════════════════════════════════════════════
+   FLOATING ELECTRONIC SYMBOLS
+═══════════════════════════════════════════════ */
+#sprite-resistor {
+  position: absolute;
+  top: 22%;
+  left: 14%;
+  animation: floatElec1 8s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px rgba(251,191,36,0.7));
+}
+#sprite-led {
+  position: absolute;
+  top: 38%;
+  right: 22%;
+  animation: floatElec2 9s ease-in-out infinite 1.3s;
+  filter: drop-shadow(0 0 10px rgba(16,185,129,0.7));
+}
+#sprite-diode {
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  animation: floatElec3 10s ease-in-out infinite 2.5s;
+  filter: drop-shadow(0 0 10px rgba(129,140,248,0.7));
+}
+@keyframes floatElec1 {
+  0%,100% { transform: translateY(0)    rotate(0deg)   scale(1);    opacity: 0.8; }
+  25%     { transform: translateY(-22px) rotate(10deg)  scale(1.08); opacity: 1; }
+  75%     { transform: translateY(-10px) rotate(-7deg)  scale(0.94); opacity: 0.6; }
+}
+@keyframes floatElec2 {
+  0%,100% { transform: translateY(0)    rotate(0deg)   scale(1);    opacity: 0.8; }
+  33%     { transform: translateY(-26px) rotate(-12deg) scale(1.1);  opacity: 1; }
+  66%     { transform: translateY(-9px)  rotate(8deg)   scale(0.92); opacity: 0.6; }
+}
+@keyframes floatElec3 {
+  0%,100% { transform: translateY(0)    rotate(0deg)   scale(1);    opacity: 0.8; }
+  40%     { transform: translateY(-28px) rotate(14deg)  scale(1.07); opacity: 1; }
+  80%     { transform: translateY(-13px) rotate(-9deg)  scale(0.93); opacity: 0.55; }
+}
+
 /* ─── Header ─────────────────────────────────────────────── */
 .game-header {
   position: fixed;
@@ -137,6 +453,52 @@ body {
   gap: 16px;
   flex-wrap: wrap;
 }
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.btn-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.btn-home-link:hover {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(124, 58, 237, 0.4);
+}
+.btn-home-link i {
+  font-size: 1rem;
+  color: var(--accent-h);
+  transition: color 0.2s;
+}
+.btn-home-link:hover i {
+  color: #fff;
+}
+
+/* Icon Visibility & Display Fallback */
+i.fa-solid, i.fa-regular, i.fa-brands, .logo-icon {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  line-height: 1;
+}
+
 .logo {
   display: flex; align-items: center; gap: 10px;
   font-family: var(--font-game);
@@ -324,17 +686,22 @@ body {
 }
 .field-group input, .field-group select {
   width: 100%; padding: 14px 18px;
-  background: rgba(255,255,255,0.05);
+  background: rgba(15, 23, 42, 0.8);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  color: var(--text); font-family: var(--font-body); font-size: 1rem; font-weight: 600;
+  color: #ffffff; font-family: var(--font-body); font-size: 1rem; font-weight: 600;
   transition: all 0.2s;
+}
+.field-group select option {
+  background-color: #0f172a;
+  color: #ffffff;
+  padding: 10px;
 }
 .field-group input:focus, .field-group select:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(124,58,237,0.2);
-  background: rgba(124,58,237,0.05);
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.3);
+  background: rgba(15, 23, 42, 0.95);
 }
 .form-btns { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
 
@@ -485,8 +852,8 @@ body {
 
 /* ─── Match the Following ────────────────────────────────── */
 .match-area { position: relative; min-height: 200px; }
-.match-cols { display: flex; gap: 24px; align-items: flex-start; }
-.match-col  { display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.match-cols { display: flex; gap: 80px; align-items: flex-start; }
+.match-col  { display: flex; flex-direction: column; gap: 14px; flex: 1; }
 .match-col-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim); margin-bottom: 4px; text-align: center; }
 .match-item {
   padding: 14px 16px;
@@ -495,18 +862,44 @@ body {
   transition: all 0.2s; border: 2px solid transparent;
   min-height: 52px; display: flex; align-items: center; justify-content: center;
 }
-.match-left  { background: rgba(124,58,237,0.1); border-color: rgba(124,58,237,0.3); }
-.match-right { background: rgba(6,182,212,0.1);  border-color: rgba(6,182,212,0.3); }
-.match-right:hover { border-color: var(--accent); background: rgba(6,182,212,0.2); transform: scale(1.03); }
-.match-right.picked  { border-color: var(--warn); background: rgba(245,158,11,0.2); box-shadow: 0 0 12px rgba(245,158,11,0.3); animation: pulsePick 0.8s ease-in-out infinite; }
-.match-left.drop-zone:hover { border-color: var(--warn); background: rgba(245,158,11,0.1); }
-.match-item.matched { pointer-events: none; opacity: 0.85; }
-.match-left.matched  { background: rgba(16,185,129,0.15); border-color: var(--success); }
-.match-right.matched { background: rgba(16,185,129,0.15); border-color: var(--success); }
+.match-left  { background: rgba(124,58,237,0.12); border-color: rgba(124,58,237,0.4); }
+.match-right { background: rgba(6,182,212,0.12);  border-color: rgba(6,182,212,0.4); }
+.match-left:hover, .match-right:hover {
+  border-color: var(--accent);
+  background: rgba(124,58,237,0.25);
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+}
+.match-item.picked {
+  border-color: var(--warn) !important;
+  background: rgba(245,158,11,0.25) !important;
+  box-shadow: 0 0 16px rgba(245,158,11,0.5) !important;
+  animation: pulsePick 0.8s ease-in-out infinite;
+  transform: scale(1.04);
+}
+.match-item.matched {
+  cursor: pointer;
+  opacity: 0.95;
+}
+.match-item.matched:hover {
+  opacity: 1;
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 12px rgba(239,68,68,0.5);
+  transform: scale(1.02);
+}
+.match-left.matched  { background: rgba(16,185,129,0.2); border-color: var(--success); }
+.match-right.matched { background: rgba(16,185,129,0.2); border-color: var(--success); }
 .match-connector { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+.floating-match-line {
+  filter: drop-shadow(0 0 6px rgba(245,158,11,0.8));
+  animation: dashMove 0.8s linear infinite;
+}
+@keyframes dashMove {
+  to { stroke-dashoffset: -20; }
+}
 @keyframes pulsePick {
-  0%,100% { box-shadow: 0 0 12px rgba(245,158,11,0.3); }
-  50%      { box-shadow: 0 0 24px rgba(245,158,11,0.6); }
+  0%,100% { box-shadow: 0 0 12px rgba(245,158,11,0.4); transform: scale(1.03); }
+  50%      { box-shadow: 0 0 24px rgba(245,158,11,0.8); transform: scale(1.06); }
 }
 
 /* ─── Fill in the Blank – Word Bank ─────────────────────── */
@@ -823,30 +1216,101 @@ body {
   max-width: 780px;
 }
 
+/* Side Next Wrapper & Skip Button */
+.side-next-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
 .side-nav-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px solid rgba(255, 255, 255, 0.4);
   color: #fff;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 85px;
+  height: 85px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-.side-nav-btn:hover {
-  background: rgba(124, 58, 237, 0.5);
-  transform: scale(1.1);
+.side-nav-btn:hover:not(:disabled) {
+  background: rgba(124, 58, 237, 0.8);
+  border-color: var(--accent);
+  transform: scale(1.18);
+  box-shadow: 0 0 35px rgba(6, 182, 212, 0.8);
+}
+
+.side-nav-btn.next-btn:not(:disabled) {
+  background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  border: 3.5px solid #ffffff;
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.9), 0 0 50px rgba(124, 58, 237, 0.7);
+  animation: pulseNext 1.5s infinite;
+}
+
+.side-nav-btn.next-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #8b5cf6 0%, #22d3ee 100%);
+  transform: scale(1.22);
+  box-shadow: 0 0 45px rgba(6, 182, 212, 1), 0 0 60px rgba(124, 58, 237, 0.9);
 }
 
 .side-nav-btn:disabled {
-  opacity: 0.3;
+  opacity: 0.2;
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
+}
+
+.skip-btn-sm {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-dim);
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-family: var(--font-game);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.skip-btn-sm:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.results-score-bottom {
+  font-family: var(--font-game);
+  font-size: 1.4rem;
+  color: #fff;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  padding: 12px 24px;
+  border-radius: 16px;
+  display: inline-block;
+  margin: 16px 0 24px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.nav-btn-mobile.next-btn:not(:disabled),
+.nav-btn-mobile#btn-next-mobile:not(:disabled) {
+  background: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding: 16px 24px;
+  border: 2px solid rgba(255,255,255,0.6);
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.7);
+  animation: pulseNext 1.5s infinite;
+}
+
+@keyframes pulseNext {
+  0%, 100% { box-shadow: 0 0 18px rgba(6, 182, 212, 0.6); transform: scale(1); }
+  50% { box-shadow: 0 0 35px rgba(124, 58, 237, 0.9); transform: scale(1.08); }
 }
 
 .game-timer {
@@ -866,14 +1330,14 @@ body {
   justify-content: center;
 }
 
-/* Mobile adjustments */
+/* Mobile & Tablet Responsive Adjustments */
 .nav-btn-mobile {
   flex: 1;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: none;
-  padding: 12px;
-  border-radius: 10px;
+  padding: 14px;
+  border-radius: 12px;
   font-family: var(--font-game);
   font-size: 1.1rem;
   cursor: pointer;
@@ -884,36 +1348,42 @@ body {
 }
 
 @media (max-width: 900px) {
-  .side-nav-btn {
-    display: none;
+  .side-next-wrapper, .side-nav-btn {
+    display: none !important;
   }
   .nav-btn-mobile.hidden {
     display: none !important;
   }
-  .nav-btn-mobile {
+  .nav-btn-mobile, #btn-skip-mobile {
     display: block !important;
+  }
+  .q-card {
+    padding: 24px 18px;
+  }
+  .match-cols {
+    gap: 16px;
   }
 }
 
 @media (min-width: 901px) {
-  .nav-btn-mobile {
+  .nav-btn-mobile, #btn-skip-mobile {
     display: none !important;
   }
 }
 
-/* Match the following Mobile layout fix */
-@media (max-width: 600px) {
+/* Match the following Mobile & Tablet layout */
+@media (max-width: 768px) {
   .match-cols {
     flex-direction: row !important;
-    gap: 10px;
+    gap: 14px;
   }
   .match-col {
     width: 50%;
   }
   .match-item {
-    padding: 10px 5px !important;
-    font-size: 0.8rem;
-    min-height: 50px;
+    padding: 12px 8px !important;
+    font-size: 0.85rem;
+    min-height: 52px;
   }
 }
 
