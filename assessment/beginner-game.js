@@ -36,10 +36,15 @@
 
       this.timer = new GameTimer(20 * 60, () => this.finishQuest()); // 20 mins
       this.renderer = new QuestionRenderer(this);
+      this._examActive = false;
 
       this.initEvents();
       this.initBackground();
-      this.showView('landing');
+
+      // Check if there's an in-progress exam from a page refresh
+      if (!this.checkResumableExam()) {
+        this.showView('landing');
+      }
     }
 
     initEvents() {
@@ -104,6 +109,18 @@
       this.state.idx = 0;
       this.state.answers = new Array(this.questions.length).fill(null);
       this.state.score = 0;
+      this._examActive = true;
+
+      // Save exam state to sessionStorage for recovery on refresh
+      this.saveExamState();
+
+      // Warn before leaving during exam
+      this._beforeUnloadHandler = (e) => {
+        e.preventDefault();
+        e.returnValue = 'You have an exam in progress. If you leave, your answers will be auto-submitted.';
+        return e.returnValue;
+      };
+      window.addEventListener('beforeunload', this._beforeUnloadHandler);
 
       // Start Music
       this.audio.bgm.volume = 0.18;
@@ -132,6 +149,8 @@
       this.state.answers[this.state.idx] = val;
       this.updateNavButtons();
       this.evaluateCurrentAnswer();
+      // Persist answers to sessionStorage
+      this.saveExamState();
     }
 
     evaluateCurrentAnswer() {
@@ -259,6 +278,17 @@
 
     finishQuest() {
       this.timer.stop();
+      this._examActive = false;
+
+      // Clear sessionStorage exam data
+      sessionStorage.removeItem('stemquest_exam');
+
+      // Remove beforeunload warning
+      if (this._beforeUnloadHandler) {
+        window.removeEventListener('beforeunload', this._beforeUnloadHandler);
+        this._beforeUnloadHandler = null;
+      }
+
       this.showView('results');
       
       const { total } = this.calculateScore();
@@ -278,6 +308,62 @@
 
       // Trigger download immediately
       this.downloadCSV();
+    }
+
+    // ─── Exam State Persistence (sessionStorage) ──────────────
+    saveExamState() {
+      try {
+        const examState = {
+          studentData: this.state.studentData,
+          answers: this.state.answers,
+          questionIds: this.questions.map(q => q.id),
+          idx: this.state.idx,
+          startTime: this._examStartTime || Date.now()
+        };
+        this._examStartTime = examState.startTime;
+        sessionStorage.setItem('stemquest_exam', JSON.stringify(examState));
+      } catch (e) {
+        console.warn('Could not save exam state:', e);
+      }
+    }
+
+    checkResumableExam() {
+      try {
+        const saved = sessionStorage.getItem('stemquest_exam');
+        if (!saved) return false;
+
+        const examState = JSON.parse(saved);
+        if (!examState.studentData || !examState.studentData.name || !examState.questionIds) {
+          sessionStorage.removeItem('stemquest_exam');
+          return false;
+        }
+
+        // Restore student data
+        this.state.studentData = examState.studentData;
+
+        // Restore question order by matching IDs
+        const idMap = {};
+        this.questions.forEach(q => { idMap[q.id] = q; });
+        const orderedQuestions = examState.questionIds.map(id => idMap[id]).filter(Boolean);
+
+        if (orderedQuestions.length === 0) {
+          sessionStorage.removeItem('stemquest_exam');
+          return false;
+        }
+
+        this.questions = orderedQuestions;
+        this.state.answers = examState.answers || new Array(this.questions.length).fill(null);
+        this.state.idx = examState.idx || 0;
+
+        // Auto-submit: finish the quest immediately with whatever answers were recorded
+        console.log('[STEM Quest] Exam in progress detected after page refresh. Auto-submitting...');
+        this.finishQuest();
+        return true;
+      } catch (e) {
+        console.warn('Could not restore exam state:', e);
+        sessionStorage.removeItem('stemquest_exam');
+        return false;
+      }
     }
 
     downloadCSV() {
@@ -367,8 +453,427 @@
       document.body.removeChild(link);
     }
 
+    // ─── SHA-256 Teacher Login ───────────────────────────────────
+    // Password: Niktrix  →  SHA-256 hash below
+    static get TEACHER_HASH() {
+      return 'b14281344159aa5f3b2e8f314d2ca1d7da8472de8c07c55d4e42e3529b6ca890';
+    }
+
+    async sha256(text) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
     showTeacherLogin() {
-      alert("Teacher dashboard coming soon!");
+      // Build modal overlay
+      const existing = document.getElementById('teacher-login-modal');
+      if (existing) existing.remove();
+
+      const modal = document.createElement('div');
+      modal.id = 'teacher-login-modal';
+      modal.style.cssText = `
+        position:fixed;inset:0;z-index:900;background:rgba(0,0,0,0.82);
+        display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);
+      `;
+      modal.innerHTML = `
+        <div style="background:linear-gradient(135deg,#0f0f23,#1a1a3e);border:2px solid rgba(124,58,237,0.6);
+          border-radius:24px;padding:36px 40px;max-width:420px;width:90%;box-shadow:0 0 60px rgba(124,58,237,0.3);text-align:center;">
+          <div style="font-size:3rem;margin-bottom:8px;">🔐</div>
+          <h2 style="font-family:var(--font-game);color:#fff;font-size:1.6rem;margin-bottom:6px;">Teacher Access</h2>
+          <p style="color:var(--text-dim);font-size:0.9rem;margin-bottom:24px;">Enter the admin password to view the dashboard.</p>
+          <input type="password" id="teacher-modal-pass" placeholder="Password"
+            style="width:100%;padding:14px 18px;border-radius:12px;border:2px solid rgba(124,58,237,0.5);
+            background:rgba(255,255,255,0.07);color:#fff;font-size:1.1rem;font-family:var(--font-body);
+            outline:none;box-sizing:border-box;margin-bottom:16px;"
+            autofocus>
+          <p id="teacher-modal-err" style="color:#f87171;font-size:0.85rem;min-height:1.2em;margin-bottom:12px;"></p>
+          <div style="display:flex;gap:12px;justify-content:center;">
+            <button id="teacher-modal-cancel" style="padding:12px 24px;border-radius:12px;border:2px solid rgba(255,255,255,0.2);
+              background:rgba(255,255,255,0.06);color:#fff;cursor:pointer;font-family:var(--font-game);font-size:1rem;">Cancel</button>
+            <button id="teacher-modal-enter" style="padding:12px 28px;border-radius:12px;border:none;
+              background:linear-gradient(135deg,#7c3aed,#06b6d4);color:#fff;cursor:pointer;
+              font-family:var(--font-game);font-size:1rem;box-shadow:0 4px 18px rgba(124,58,237,0.4);">🔓 Enter</button>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(modal);
+
+      const passInput = document.getElementById('teacher-modal-pass');
+      const errEl = document.getElementById('teacher-modal-err');
+
+      const tryLogin = async () => {
+        const hash = await this.sha256(passInput.value);
+        if (hash === AssessmentApp.TEACHER_HASH) {
+          modal.remove();
+          this.playOK();
+          this.openTeacherDashboard();
+        } else {
+          errEl.textContent = '❌ Incorrect password. Try again.';
+          passInput.value = '';
+          passInput.focus();
+        }
+      };
+
+      document.getElementById('teacher-modal-enter').onclick = tryLogin;
+      document.getElementById('teacher-modal-cancel').onclick = () => modal.remove();
+      passInput.addEventListener('keydown', e => { if (e.key === 'Enter') tryLogin(); });
+    }
+
+    openTeacherDashboard() {
+      this.showView('teacher');
+      this.loadLeaderboard();
+      this.loadQuestionBank();
+
+      // Tab navigation
+      const btnLeaderboard = document.getElementById('btn-tnav-leaderboard') || document.getElementById('btn-tab-leaderboard');
+      const btnQbank = document.getElementById('btn-tnav-qbank') || document.getElementById('btn-tab-qbank');
+
+      btnLeaderboard?.addEventListener('click', () => {
+        document.getElementById('panel-teacher-leaderboard')?.classList.remove('hidden');
+        document.getElementById('panel-teacher-qbank')?.classList.add('hidden');
+      });
+      btnQbank?.addEventListener('click', () => {
+        document.getElementById('panel-teacher-leaderboard')?.classList.add('hidden');
+        document.getElementById('panel-teacher-qbank')?.classList.remove('hidden');
+      });
+
+      document.getElementById('btn-teacher-back')?.addEventListener('click', () => {
+        this.showView('landing');
+      });
+
+      // CSV export
+      const csvBtn = document.getElementById('btn-teacher-csv-export') || document.getElementById('btn-teacher-csv');
+      csvBtn?.addEventListener('click', async () => {
+        if (!this._leaderboardData) await this.loadLeaderboard();
+        this.exportLeaderboardCSV();
+      });
+
+      // Question Bank CSV export
+      const qbankCsvBtn = document.getElementById('btn-qbank-csv');
+      qbankCsvBtn?.addEventListener('click', () => {
+        this.exportQuestionBankCSV();
+      });
+
+      // Question Bank PDF export
+      const qbankPdfBtn = document.getElementById('btn-qbank-pdf');
+      qbankPdfBtn?.addEventListener('click', () => {
+        this.downloadQuestionBankPDF();
+      });
+    }
+
+    async loadLeaderboard() {
+      const tbody = document.getElementById('teacher-tbody');
+      if (!tbody) return;
+      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--text-dim)">Loading...</td></tr>';
+
+      // Load compiled JSON from server
+      let jsonRecords = [];
+      try {
+        const res = await fetch('./data/leaderboard-data.json');
+        if (res.ok) jsonRecords = await res.json();
+      } catch (e) {
+        console.debug('Leaderboard JSON not found, using localStorage only.');
+      }
+
+      // Merge with localStorage live results
+      const lsRecords = JSON.parse(localStorage.getItem('stemquest_results') || '[]').map(r => ({
+        date: r.date || new Date().toISOString(),
+        name: r.student?.name || 'Unknown',
+        grade: r.student?.grade || '-',
+        school: r.student?.school || '-',
+        totalScore: r.score || 0,
+        maxScore: r.maxScore || 100,
+        percentage: r.percentage || Math.round((r.score / (r.maxScore || 1)) * 100),
+        categoryScores: r.categoryBreakdown || {}
+      }));
+
+      const all = [...jsonRecords, ...lsRecords];
+      // Sort chronologically – older first
+      all.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      // Store for CSV export
+      this._leaderboardData = all;
+
+      if (all.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;padding:20px;color:var(--text-dim)">No student records found.</td></tr>';
+        return;
+      }
+
+      tbody.innerHTML = all.map((r, i) => {
+        const pct = r.percentage || 0;
+        const pctColor = pct >= 75 ? '#4ade80' : pct >= 50 ? '#fbbf24' : '#f87171';
+        let dateDisplay = r.date || '-';
+        try {
+          const d = new Date(r.date);
+          if (!isNaN(d.getTime())) {
+            dateDisplay = d.toLocaleString('en-IN', { hour12: false });
+          }
+        } catch (_) {}
+
+        return `<tr>
+          <td style="color:var(--text-dim)">${i + 1}</td>
+          <td style="color:var(--text-dim);font-size:0.85rem">${dateDisplay}</td>
+          <td style="font-weight:700;color:#fff">${r.name}</td>
+          <td style="color:var(--text-dim)">${r.grade}</td>
+          <td style="color:var(--text-dim);font-size:0.85rem;max-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.school}">${r.school}</td>
+          <td style="font-weight:700;color:var(--accent)">${r.totalScore} / ${r.maxScore}</td>
+          <td style="font-weight:800;color:${pctColor}">${pct}%</td>
+        </tr>`;
+      }).join('');
+    }
+
+    loadQuestionBank() {
+      const container = document.getElementById('teacher-qbank-container');
+      if (!container) return;
+      if (!this.questions || this.questions.length === 0) {
+        container.innerHTML = '<p style="color:var(--text-dim)">No questions available.</p>';
+        return;
+      }
+
+      const typeColors = {
+        mcq: '#818cf8', true_false: '#06b6d4', match: '#f59e0b',
+        fill_bank: '#10b981', calc: '#f43f5e', arduino_ide: '#fb923c',
+        audio_id: '#a78bfa', picto: '#34d399', ai_question: '#fbbf24', image_id: '#60a5fa'
+      };
+
+      container.innerHTML = this.questions.map((q, i) => {
+        const color = typeColors[q.type] || '#94a3b8';
+        const qText = q.text || `Question ${i + 1}`;
+        let optsHtml = '';
+        if (q.options) {
+          optsHtml = `<ol style="margin:4px 0 0 16px;padding:0;color:#94a3b8;font-size:0.82rem;">
+            ${q.options.map((o, oi) => {
+              const text = typeof o === 'object' ? o.text : o;
+              const isAns = oi === q.answer;
+              return `<li style="${isAns ? 'color:#4ade80;font-weight:700;' : ''}">${text}${isAns ? ' ✓' : ''}</li>`;
+            }).join('')}
+          </ol>`;
+        } else if (q.pairs) {
+          optsHtml = `<div style="margin-top:4px;font-size:0.82rem;color:#94a3b8;">
+            ${q.pairs.map(p => `• <b>${p.left}</b> → ${p.right}`).join('<br>')}
+          </div>`;
+        }
+        return `<div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);
+          border-radius:12px;padding:12px 16px;display:flex;align-items:flex-start;gap:12px;">
+          <div style="min-width:32px;height:32px;border-radius:50%;background:${color}22;border:2px solid ${color};
+            display:flex;align-items:center;justify-content:center;font-family:var(--font-game);
+            font-size:0.8rem;color:${color};font-weight:800;">${q.id || (i + 1)}</div>
+          <div style="flex:1;">
+            <div style="display:flex;gap:8px;align-items:center;margin-bottom:4px;flex-wrap:wrap;">
+              <span style="font-size:0.72rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+                padding:2px 10px;border-radius:12px;background:${color}22;color:${color};border:1px solid ${color}44">${q.type}</span>
+              <span style="font-size:0.72rem;color:var(--text-dim);">${q.marks || 1} mark${(q.marks || 1) > 1 ? 's' : ''}</span>
+            </div>
+            <p style="margin:0;color:#e2e8f0;font-size:0.9rem;line-height:1.4;">${qText}</p>
+            ${optsHtml}
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    exportLeaderboardCSV() {
+      const all = this._leaderboardData;
+      if (!all || all.length === 0) {
+        alert('No leaderboard data loaded yet. Please wait for the leaderboard to finish loading and try again.');
+        return;
+      }
+
+      const rows = [
+        ['"Timestamp"', '"Student Name"', '"Grade"', '"School/College"',
+         '"MCQ"', '"TF"', '"Match"', '"Fill Blank"', '"Calc"',
+         '"Arduino IDE"', '"Audio ID"', '"Picto"', '"AI Question"', '"Image ID"',
+         '"Score"', '"%"']
+      ];
+
+      all.forEach(r => {
+        const cs = r.categoryScores || {};
+        let formattedDate = r.date || '-';
+        try {
+          const d = new Date(r.date);
+          if (!isNaN(d.getTime())) {
+            formattedDate = d.toLocaleString('en-IN', { hour12: false });
+          }
+        } catch (_) {}
+
+        rows.push([
+          `"${formattedDate}"`,
+          `"${(r.name || '').replace(/"/g, '""')}"`,
+          `"${(r.grade || '').replace(/"/g, '""')}"`,
+          `"${(r.school || '').replace(/"/g, '""')}"`,
+          cs.mcq || 0,
+          cs.true_false || cs.tf || 0,
+          cs.match || 0,
+          cs.fill_bank || cs.fill_blank || 0,
+          cs.calc || 0,
+          cs.arduino_ide || 0,
+          cs.audio_id || 0,
+          cs.picto || 0,
+          cs.ai_question || 0,
+          cs.image_id || 0,
+          `"${r.totalScore || 0}/${r.maxScore || 100}"`,
+          `"${r.percentage || 0}%"`
+        ]);
+      });
+
+      const csvContent = '\uFEFF' + rows.map(row => row.join(',')).join('\r\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `STEM-Quest-Leaderboard-${new Date().toISOString().substring(0, 10)}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    exportQuestionBankCSV() {
+      if (!this.questions || this.questions.length === 0) {
+        alert('Question bank not loaded.');
+        return;
+      }
+      const rows = [['"#"',' "Type"', '"Question"', '"Options / Pairs"', '"Correct Answer"', '"Marks"']];
+      this.questions.forEach((q, i) => {
+        let opts = '';
+        let ans = '';
+        if (q.options) {
+          opts = q.options.map(o => typeof o === 'object' ? o.text : o).join(' | ');
+          if (typeof q.answer === 'number') {
+            const opt = q.options[q.answer];
+            ans = typeof opt === 'object' ? opt.text : opt;
+          } else {
+            ans = String(q.answer);
+          }
+        } else if (q.pairs) {
+          opts = q.pairs.map(p => `${p.left} -> ${p.right}`).join(' | ');
+          ans = 'All matched correctly';
+        } else if (q.answer) {
+          ans = Array.isArray(q.answer) ? q.answer.join(', ') : String(q.answer);
+        }
+        rows.push([
+          i + 1,
+          `"${q.type || ''}"`,
+          `"${(q.text || '').replace(/"/g, '""')}"`,
+          `"${opts.replace(/"/g, '""')}"`,
+          `"${ans.replace(/"/g, '""')}"`,
+          q.marks || 1
+        ]);
+      });
+
+      const csvContent = '\uFEFF' + rows.map(r => r.join(',')).join('\r\n');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `STEM-Quest-QuestionBank-${new Date().toISOString().substring(0, 10)}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    downloadQuestionBankPDF() {
+      if (!this.questions || this.questions.length === 0) {
+        alert('Question bank not loaded.');
+        return;
+      }
+
+      const typeLabels = {
+        mcq: '🔵 MCQ', multiple_choice: '🔵 MCQ',
+        true_false: '✅ True/False',
+        fill_bank: '✏️ Fill Blank', fill_in_the_blank: '✏️ Fill Blank',
+        match: '🔗 Match', match_the_following: '🔗 Match',
+        image_selection: '🖼️ Image ID', image_id: '🖼️ Image ID',
+        audio_recognition: '🔊 Audio ID', audio_id: '🔊 Audio ID',
+        calc: '🧮 Calculation', arduino_ide: '💻 Arduino IDE',
+        picto: '🎨 Pictogram', ai_question: '🤖 AI & Robotics'
+      };
+
+      const questionsHTML = this.questions.map((q, i) => {
+        const label = typeLabels[q.type] || q.type || 'STEM Question';
+        const qText = (q.text || `Question ${i + 1}`).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        
+        let mediaHtml = '';
+        const imgUrl = q.image || q.media_url;
+        if (imgUrl) {
+          mediaHtml = `<img src="${imgUrl}" style="max-height: 180px; max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #cbd5e1; object-fit: contain; display: block;" />`;
+        }
+
+        let answerHTML = '';
+        if (q.type === 'image_selection') {
+          if (q.options && q.options.length) {
+            answerHTML = '<div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">' +
+              q.options.map((opt, oi) => {
+                const isCorrect = oi === q.answer;
+                return `<div class="${isCorrect ? 'correct-ans' : 'incorrect-ans'}" style="border: 2px solid ${isCorrect ? '#16a34a' : '#e2e8f0'}; padding: 6px; border-radius: 8px; text-align:center; background:${isCorrect ? '#f0fdf4' : '#fff'}; min-width: 100px;">
+                  <img src="${opt}" style="max-height:80px; max-width: 100%; display:block; border-radius:4px; margin:0 auto 4px; object-fit: contain;" />
+                  <span style="font-size:0.75rem; font-weight: ${isCorrect ? 'bold' : 'normal'}; color: ${isCorrect ? '#16a34a' : '#64748b'}">Option ${oi + 1} ${isCorrect ? '✓' : ''}</span>
+                </div>`;
+              }).join('') + '</div>';
+          }
+        } else if (q.options && q.options.length) {
+          answerHTML = '<ol style="margin:8px 0 4px 20px;padding:0;">' +
+            q.options.map((opt, oi) => {
+              const optText = typeof opt === 'object' ? (opt.text || opt.label || '') : opt;
+              const emoji = typeof opt === 'object' && opt.emoji ? `${opt.emoji} ` : '';
+              const isCorrect = oi === q.answer;
+              return `<li class="${isCorrect ? 'correct-ans' : 'incorrect-ans'}" style="margin:4px 0; padding: 4px 8px; border-radius: 4px; ${isCorrect ? 'color: #16a34a; font-weight: bold; background-color: #f0fdf4; border: 1px solid #bbf7d0;' : 'color: #334155;'}">${emoji}${optText}${isCorrect ? ' ✓' : ''}</li>`;
+            }).join('') + '</ol>';
+        } else if (q.pairs) {
+          answerHTML = '<ul style="margin:8px 0 4px 16px; padding:0; list-style-type: none;">' +
+            q.pairs.map(p => `<li style="color:#16a34a; font-weight:bold; background-color: #f0fdf4; border: 1px solid #bbf7d0; display: inline-block; padding: 4px 12px; margin: 4px; border-radius: 6px;">${p.left} &nbsp;➔&nbsp; ${p.right}</li>`).join('') +
+            '</ul>';
+        } else if (q.answer !== undefined || q.answers !== undefined) {
+          const ansData = q.answer !== undefined ? q.answer : q.answers;
+          const correctText = Array.isArray(ansData) ? ansData.join(', ') : ansData;
+          answerHTML = `<div style="margin-top:8px; padding: 6px 12px; background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; display: inline-block; color: #16a34a; font-weight: bold;">Answer: ${correctText}</div>`;
+        }
+
+        return `
+          <div class="question-box" style="page-break-inside:avoid; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; background:#ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid #f1f5f9;padding-bottom:6px;">
+              <span style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 10px;border-radius:12px;background:#f1f5f9;color:#475569;">${label}</span>
+              <span style="font-size:0.8rem;color:#64748b;font-weight:600;">Q${i + 1} &nbsp;(${q.marks || 1} pt${(q.marks || 1) !== 1 ? 's' : ''})</span>
+            </div>
+            <p style="margin:8px 0;color:#1e293b;font-size:1rem;line-height:1.5;font-weight:600;">${qText}</p>
+            ${mediaHtml}
+            ${answerHTML}
+          </div>`;
+      }).join('');
+
+      const printDate = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
+
+      const container = document.createElement('div');
+      container.style.padding = '20px';
+      container.style.background = '#fff';
+      container.style.color = '#1e293b';
+      container.style.fontFamily = "'Inter', sans-serif";
+      
+      container.innerHTML = `
+        <div style="margin-bottom: 24px; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px;">
+          <h1 style="font-size: 2.2rem; color: #1e293b; margin-bottom: 6px; letter-spacing: -0.5px;">📚 STEM Quest — Question Bank</h1>
+          <p style="color: #64748b; font-size: 0.95rem;">Generated: ${printDate} &nbsp;|&nbsp; ${this.questions.length} Questions with highlighted answers</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          ${questionsHTML}
+        </div>
+        <p style="margin-top:40px;color:#94a3b8;font-size:0.85rem;text-align:center;border-top:1px solid #e2e8f0;padding-top:16px;">STEM Quest Question Bank &copy; ${new Date().getFullYear()} — Confidential Teacher Copy</p>
+      `;
+
+      // Use html2pdf
+      const opt = {
+        margin:       10,
+        filename:     `STEM_Quest_QuestionBank_${new Date().toISOString().substring(0, 10)}.pdf`,
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2, useCORS: true },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+
+      if (window.html2pdf) {
+        html2pdf().set(opt).from(container).save();
+      } else {
+        alert('PDF generator library not loaded. Please try again.');
+      }
     }
 
     // Cool Background Canvas
