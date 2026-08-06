@@ -1,10 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const rootDir = __dirname;
 const questionsFile = path.join(rootDir, 'assessment', 'beginner-questions.js');
 const stylesFile = path.join(rootDir, 'assessment', 'beginner-styles.css');
-const htmlFile = path.join(rootDir, 'assessment', 'beginner-demo.html');
+const htmlFile = path.join(rootDir, 'assessment', 'index.html');
 
 console.log('====================================================');
 console.log('🔍 STEM QUEST ASSESSMENT & UI INTEGRITY AUDITOR');
