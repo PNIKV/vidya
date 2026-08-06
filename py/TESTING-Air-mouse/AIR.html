@@ -4,20 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESP32 Air Mouse Dashboard</title>
+    <title>ESP32 Air Mouse Pro Dashboard & Diagnostics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0d0f14;
-            --panel-bg: rgba(22, 28, 38, 0.6);
-            --border-color: rgba(255, 255, 255, 0.08);
-            --primary-color: #4f46e5;
-            --primary-glow: rgba(79, 70, 229, 0.4);
-            --accent-color: #06b6d4;
-            --accent-glow: rgba(6, 182, 212, 0.4);
+            --bg-color: #0b0d14;
+            --panel-bg: rgba(18, 24, 38, 0.65);
+            --panel-border: rgba(255, 255, 255, 0.08);
+            --panel-glow: rgba(99, 102, 241, 0.12);
+            --primary: #6366f1;
+            --primary-glow: rgba(99, 102, 241, 0.4);
+            --accent-cyan: #06b6d4;
+            --accent-pink: #ec4899;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
             --text-main: #f3f4f6;
             --text-muted: #9ca3af;
-            --success-color: #10b981;
-            --danger-color: #ef4444;
+            --text-dark: #6b7280;
         }
 
         * {
@@ -29,107 +35,92 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
             min-height: 100vh;
             overflow-x: hidden;
             background-image:
-                radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
+                radial-gradient(at 10% 10%, rgba(99, 102, 241, 0.15) 0px, transparent 45%),
+                radial-gradient(at 90% 90%, rgba(6, 182, 212, 0.15) 0px, transparent 45%),
+                radial-gradient(at 50% 50%, rgba(236, 72, 153, 0.05) 0px, transparent 60%);
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1560px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem;
         }
 
+        /* Top Header */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--panel-border);
         }
 
-        .logo-area h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #a78bfa, #06b6d4);
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .brand-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent-cyan));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 20px var(--primary-glow);
+        }
+
+        .brand-text h1 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #a5b4fc, #38bdf8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
         }
 
-        .logo-area p {
-            font-size: 0.9rem;
+        .brand-text p {
+            font-size: 0.825rem;
             color: var(--text-muted);
         }
 
-        .controls-header {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .btn {
-            background: var(--primary-color);
-            color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px var(--primary-glow);
+        .header-actions {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px var(--primary-glow);
-            filter: brightness(1.1);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            box-shadow: none;
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: none;
-        }
-
-        .btn-danger {
-            background: var(--danger-color);
-            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
-        }
-
-        .btn-danger:hover {
-            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.5);
+            gap: 0.85rem;
         }
 
         .status-badge {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.5rem 1rem;
+            padding: 0.45rem 0.9rem;
             border-radius: 20px;
             background: rgba(239, 68, 68, 0.1);
-            border: 1px solid rgba(239, 68, 68, 0.2);
-            color: var(--danger-color);
-            font-size: 0.85rem;
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            color: var(--danger);
+            font-size: 0.825rem;
             font-weight: 600;
         }
 
         .status-badge.connected {
             background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
-            color: var(--success-color);
+            border-color: rgba(16, 185, 129, 0.25);
+            color: var(--success);
+        }
+
+        .status-badge.simulated {
+            background: rgba(245, 158, 11, 0.1);
+            border-color: rgba(245, 158, 11, 0.25);
+            color: var(--warning);
         }
 
         .status-dot {
@@ -140,147 +131,262 @@
             box-shadow: 0 0 8px currentColor;
         }
 
-        /* Grid Layout */
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 1.5rem;
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.65rem 1.25rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px var(--primary-glow);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
-        @media (max-width: 1024px) {
-            .dashboard-grid {
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--primary-glow);
+            filter: brightness(1.1);
+        }
+
+        .btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--panel-border);
+            color: var(--text-main);
+            box-shadow: none;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-danger {
+            background: var(--danger);
+            box-shadow: 0 4px 14px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, var(--accent-cyan), var(--primary));
+            box-shadow: 0 4px 14px rgba(6, 182, 212, 0.3);
+        }
+
+        /* Main Dashboard Grid */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 420px 1fr;
+            gap: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        @media (max-width: 1200px) {
+            .grid-layout {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* Panels */
-        .panel {
+        /* Glassmorphism Cards */
+        .card {
             background: var(--panel-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--panel-border);
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 1.25rem;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 1rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
         }
 
-        .panel-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--text-main);
+        .card-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 0.65rem;
         }
 
-        /* Value Cards */
-        .card-grid {
+        .card-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .card-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* Telemetry Cards Grid */
+        .metric-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.75rem;
+            gap: 0.5rem;
         }
 
-        .value-card {
+        .metric-box {
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 0.75rem;
+            border: 1px solid var(--panel-border);
+            border-radius: 10px;
+            padding: 0.65rem 0.5rem;
             text-align: center;
         }
 
-        .value-card .label {
-            font-size: 0.75rem;
+        .metric-label {
+            font-size: 0.7rem;
             color: var(--text-muted);
+            font-weight: 600;
             text-transform: uppercase;
-            margin-bottom: 0.25rem;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.2rem;
         }
 
-        .value-card .val {
-            font-family: monospace;
-            font-size: 1.1rem;
-            font-weight: bold;
+        .metric-value {
+            font-family: 'Fira Code', monospace;
+            font-size: 1rem;
+            font-weight: 600;
         }
 
-        .value-card.x .val {
-            color: #f43f5e;
+        .metric-box.x .metric-value { color: var(--accent-pink); }
+        .metric-box.y .metric-value { color: var(--success); }
+        .metric-box.z .metric-value { color: var(--accent-cyan); }
+
+        /* Push Buttons Matrix */
+        .button-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
         }
 
-        .value-card.y .val {
-            color: #10b981;
+        .btn-badge {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--panel-border);
+            border-radius: 10px;
+            padding: 0.65rem 0.5rem;
+            text-align: center;
+            transition: all 0.2s ease;
         }
 
-        .value-card.z .val {
-            color: #3b82f6;
+        .btn-badge.active {
+            background: rgba(16, 185, 129, 0.15);
+            border-color: var(--success);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
         }
 
-        /* Configuration Panel */
-        .config-group {
+        .btn-badge .name {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .btn-badge .state {
+            font-size: 0.825rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 0.2rem;
+        }
+
+        .btn-badge.active .state {
+            color: var(--success);
+        }
+
+        /* Controls Section */
+        .control-group {
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
         }
 
-        .config-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+        .slider-label {
             display: flex;
             justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-muted);
         }
 
-        .range-input {
+        .range-slider {
             -webkit-appearance: none;
             width: 100%;
             height: 6px;
             border-radius: 3px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             outline: none;
         }
 
-        .range-input::-webkit-slider-thumb {
+        .range-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             width: 18px;
             height: 18px;
             border-radius: 50%;
-            background: var(--accent-color);
+            background: var(--accent-cyan);
             cursor: pointer;
-            box-shadow: 0 0 10px var(--accent-glow);
+            box-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
             transition: transform 0.1s;
         }
 
-        .range-input::-webkit-slider-thumb:hover {
+        .range-slider::-webkit-slider-thumb:hover {
             transform: scale(1.2);
         }
 
-        /* Visualizer & Charts Area */
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        /* Live Air Pointer Playground Canvas */
+        .playground-container {
+            position: relative;
+            height: 280px;
+            background: rgba(5, 7, 13, 0.8);
+            border: 1px solid var(--panel-border);
+            border-radius: 12px;
+            overflow: hidden;
         }
 
-        .chart-container {
-            background: var(--panel-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.5rem;
-            height: 250px;
-            position: relative;
+        #pointerCanvas {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
 
-        .visualizer-container {
-            background: var(--panel-bg);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 1.5rem;
-            height: 300px;
+        .playground-overlay {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            right: 0.75rem;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            pointer-events: none;
+        }
+
+        .playground-chip {
+            background: rgba(18, 24, 38, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--panel-border);
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* 3D Visualizer & Chart Canvas */
+        .canvas-card-body {
             position: relative;
+            height: 260px;
         }
 
         canvas {
@@ -289,267 +395,475 @@
             display: block;
         }
 
-        .chart-legend {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            display: flex;
-            gap: 1rem;
-            font-size: 0.8rem;
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 0.25rem;
-        }
-
-        .legend-color {
-            width: 12px;
-            height: 4px;
-            border-radius: 2px;
-        }
-
         /* Terminal Console */
-        .console-panel {
-            grid-column: span 2;
-            background: rgba(5, 5, 5, 0.8);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+        .console-card {
+            background: rgba(5, 6, 10, 0.9);
+            border: 1px solid var(--panel-border);
+            border-radius: 16px;
             padding: 1rem;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.85rem;
-            height: 150px;
-            display: flex;
-            flex-direction: column;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.825rem;
         }
 
-        @media (max-width: 1024px) {
-            .console-panel {
-                grid-column: span 1;
-            }
-        }
-
-        .console-header {
+        .console-top {
             display: flex;
             justify-content: space-between;
-            color: var(--text-muted);
+            align-items: center;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             padding-bottom: 0.5rem;
             margin-bottom: 0.5rem;
+            color: var(--text-muted);
         }
 
-        .console-lines {
+        .console-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .console-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--panel-border);
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.725rem;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+
+        .console-pill:hover {
+            background: rgba(255, 255, 255, 0.12);
+            color: var(--text-main);
+        }
+
+        .console-output {
+            height: 140px;
             overflow-y: auto;
-            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.2rem;
+            gap: 0.25rem;
         }
 
-        .console-line {
+        .log-line { color: var(--text-muted); word-break: break-all; }
+        .log-line.sys { color: var(--accent-cyan); }
+        .log-line.out { color: var(--warning); }
+        .log-line.err { color: var(--danger); }
+        .log-line.ready { color: var(--success); }
+
+        /* Wiring Troubleshooting Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: #111522;
+            border: 1px solid var(--panel-border);
+            border-radius: 20px;
+            width: 90%;
+            max-width: 650px;
+            padding: 1.75rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 0.75rem;
+        }
+
+        .modal-header h2 {
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
             color: var(--text-muted);
-            word-break: break-all;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
-        .console-line.in {
-            color: #3b82f6;
+        .wiring-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
         }
 
-        .console-line.out {
-            color: #f59e0b;
+        .wiring-table th, .wiring-table td {
+            padding: 0.6rem 0.8rem;
+            border: 1px solid var(--panel-border);
+            text-align: left;
         }
 
-        .console-line.err {
-            color: #ef4444;
+        .wiring-table th {
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--accent-cyan);
         }
 
-        .console-line.sys {
-            color: #10b981;
+        .alert-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 10px;
+            padding: 0.85rem;
+            color: #fcd34d;
+            font-size: 0.825rem;
+            line-height: 1.4;
         }
+
+        .alert-box strong { color: var(--warning); }
     </style>
 </head>
 
 <body>
     <div class="container">
+        <!-- Top Header -->
         <header>
-            <div class="logo-area">
-                <h1>Air Mouse Calibration & Dashboard</h1>
-                <p>Interactive configuration suite for ESP32 and MPU6500</p>
+            <div class="brand">
+                <div class="brand-icon">🖱️</div>
+                <div class="brand-text">
+                    <h1>ESP32 Air Mouse Pro Suite</h1>
+                    <p>6-DOF IMU Telemetry, Motion Filtering & Hardware Diagnostics</p>
+                </div>
             </div>
-            <div class="controls-header">
+            <div class="header-actions">
                 <div class="status-badge" id="statusBadge">
                     <div class="status-dot"></div>
                     <span id="statusText">Disconnected</span>
                 </div>
-                <button class="btn" id="connectBtn">Connect Device</button>
+                <button class="btn btn-secondary" id="wiringGuideBtn">🔌 Wiring Guide</button>
+                <button class="btn btn-accent" id="connectBtn">Connect Device</button>
             </div>
         </header>
 
-        <div class="dashboard-grid">
-            <!-- Left Controls Panel -->
-            <aside class="panel">
-                <div class="panel-section">
-                    <div class="panel-title">Telemetry Overview</div>
-                    <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1rem;">
-                        <div>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-                                Accelerometer (g)</p>
-                            <div class="card-grid">
-                                <div class="value-card x">
-                                    <div class="label">X</div>
-                                    <div class="val" id="axVal">0.000</div>
-                                </div>
-                                <div class="value-card y">
-                                    <div class="label">Y</div>
-                                    <div class="val" id="ayVal">0.000</div>
-                                </div>
-                                <div class="value-card z">
-                                    <div class="label">Z</div>
-                                    <div class="val" id="azVal">0.000</div>
-                                </div>
-                            </div>
+        <!-- Main Dashboard Grid -->
+        <div class="grid-layout">
+            <!-- Left Column: Controls, Telemetry & Pointer Playground -->
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                
+                <!-- Diagnostic State Machine & Bug Analyzer Card -->
+                <div class="card" id="smCard" style="border: 1px solid rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.05);">
+                    <div class="card-header">
+                        <div class="card-title">🤖 State Machine Bug Analyzer</div>
+                        <div class="status-badge" id="smStateBadge">
+                            <div class="status-dot"></div>
+                            <span id="smStateText">INITIALIZING</span>
                         </div>
-                        <div>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;">Gyroscope
-                                (°/s)</p>
-                            <div class="card-grid">
-                                <div class="value-card x">
-                                    <div class="label">X</div>
-                                    <div class="val" id="gxVal">0.00</div>
-                                </div>
-                                <div class="value-card y">
-                                    <div class="label">Y</div>
-                                    <div class="val" id="gyVal">0.00</div>
-                                </div>
-                                <div class="value-card z">
-                                    <div class="label">Z</div>
-                                    <div class="val" id="gzVal">0.00</div>
-                                </div>
-                            </div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.65rem; font-size: 0.825rem;">
+                        <div style="color: var(--text-main); font-weight: 600;" id="smBugText">
+                            Probing I2C bus and WHO_AM_I register...
                         </div>
-                        <div
-                            style="display: flex; justify-content: space-between; font-size: 0.9rem; padding: 0.5rem 0; border-top: 1px solid var(--border-color);">
-                            <span style="color: var(--text-muted);">Sensor Temp:</span>
-                            <span id="tempVal" style="font-weight: 600;">-- °C</span>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem;">
-                            <span style="color: var(--text-muted);">Calibration Status:</span>
-                            <span id="calVal" style="font-weight: 600; color: var(--danger-color);">Not
-                                Calibrated</span>
+                        <div style="background: rgba(0, 0, 0, 0.4); border-radius: 8px; padding: 0.75rem; border: 1px solid var(--panel-border);" id="smInstructionText">
+                            Click 'Connect Device' to begin diagnostic analysis.
                         </div>
                     </div>
                 </div>
 
-                <div class="panel-section">
-                    <div class="panel-title">Controls & Calibration</div>
-                    <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1.25rem;">
-                        <button class="btn btn-secondary" style="width: 100%;" id="calibrateBtn" disabled>
-                            Calibrate IMU Offsets
-                        </button>
-                        <div class="config-group">
-                            <div class="config-label">
+                <!-- Live Pointer Playground -->
+                <div class="card">
+
+                    <div class="card-header">
+                        <div class="card-title">🎯 Air Pointer Live Playground</div>
+                        <div class="card-subtitle" id="pointerPosText">X: 0 | Y: 0</div>
+                    </div>
+                    <div class="playground-container" id="playgroundBox">
+                        <div class="playground-overlay">
+                            <div class="playground-chip" id="motionStatusChip">Motion: ACTIVE</div>
+                            <div class="playground-chip" id="modeChip">Mode: Hardware</div>
+                        </div>
+                        <canvas id="pointerCanvas"></canvas>
+                    </div>
+                </div>
+
+                <!-- Telemetry Metrics -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">📊 6-DOF Sensor Telemetry</div>
+                        <div class="card-subtitle" id="sensorTempText">Temp: -- °C</div>
+                    </div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.35rem;">ACCELEROMETER (g)</div>
+                            <div class="metric-grid">
+                                <div class="metric-box x"><div class="metric-label">X</div><div class="metric-value" id="axVal">0.000</div></div>
+                                <div class="metric-box y"><div class="metric-label">Y</div><div class="metric-value" id="ayVal">0.000</div></div>
+                                <div class="metric-box z"><div class="metric-label">Z</div><div class="metric-value" id="azVal">0.000</div></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.35rem;">GYROSCOPE (°/s)</div>
+                            <div class="metric-grid">
+                                <div class="metric-box x"><div class="metric-label">X</div><div class="metric-value" id="gxVal">0.00</div></div>
+                                <div class="metric-box y"><div class="metric-label">Y</div><div class="metric-value" id="gyVal">0.00</div></div>
+                                <div class="metric-box z"><div class="metric-label">Z</div><div class="metric-value" id="gzVal">0.00</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hardware Push Buttons Matrix -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">🔘 Hardware Push Buttons</div>
+                        <div class="card-subtitle">Active-Low Debounced Inputs</div>
+                    </div>
+                    <div class="button-matrix">
+                        <div class="btn-badge" id="btnLBadge"><div class="name">Left Click</div><div class="state" id="btnLState">RELEASED</div></div>
+                        <div class="btn-badge" id="btnRBadge"><div class="name">Right Click</div><div class="state" id="btnRState">RELEASED</div></div>
+                        <div class="btn-badge" id="btnMBadge"><div class="name">Middle Click</div><div class="state" id="btnMState">RELEASED</div></div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                        <div class="btn-badge" id="btnCBadge"><div class="name">Calib Button</div><div class="state" id="btnCState">RELEASED</div></div>
+                        <div class="btn-badge" id="btnTBadge"><div class="name">Motion Toggle</div><div class="state" id="btnTState">ACTIVE</div></div>
+                    </div>
+                </div>
+
+                <!-- Hardware Controls & Diagnostics -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">⚙️ Controls & Diagnostics</div>
+                    </div>
+                    <div class="control-group">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <button class="btn btn-secondary" id="calibrateBtn" disabled>Calibrate Zero-G</button>
+                            <button class="btn btn-secondary" id="toggleMotionBtn" disabled>Toggle Motion</button>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                            <button class="btn btn-secondary" id="scanI2CBtn" disabled>Scan I2C Pins</button>
+                            <button class="btn btn-secondary" id="resetI2CBtn" disabled>Reset Bus</button>
+                        </div>
+                        <button class="btn btn-secondary" id="toggleSimBtn" disabled>Switch to Sim Mode</button>
+
+                        <div style="margin-top: 0.5rem;">
+                            <div class="slider-label">
                                 <span>Sensitivity Multiplier</span>
-                                <span id="sensitivityVal">1.0</span>
+                                <span id="sensitivityVal">1.0x</span>
                             </div>
-                            <input type="range" class="range-input" id="sensitivitySlider" min="0.1" max="5.0"
-                                step="0.1" value="1.0" disabled>
+                            <input type="range" class="range-slider" id="sensitivitySlider" min="0.1" max="5.0" step="0.1" value="1.0" disabled>
                         </div>
                     </div>
                 </div>
-            </aside>
 
-            <!-- Right Visualization and Charts -->
-            <main class="main-content">
+            </div>
+
+            <!-- Right Column: 3D Orientation & Real-time Graphing -->
+            <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+                
                 <!-- 3D Orientation Visualizer -->
-                <div class="visualizer-container">
-                    <div class="panel-title">3D Orientation Visualizer</div>
-                    <canvas id="vizCanvas"></canvas>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">🎲 3D Orientation & Device Horizon</div>
+                        <div class="card-subtitle" id="eulerAnglesText">Pitch: 0.0° | Roll: 0.0°</div>
+                    </div>
+                    <div class="canvas-card-body">
+                        <canvas id="vizCanvas"></canvas>
+                    </div>
                 </div>
 
                 <!-- Real-time Chart -->
-                <div class="chart-container">
-                    <div class="panel-title">Sensor Activity</div>
-                    <div class="chart-legend">
-                        <div class="legend-item">
-                            <div class="legend-color" style="background:#f43f5e"></div>X Axis
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background:#10b981"></div>Y Axis
-                        </div>
-                        <div class="legend-item">
-                            <div class="legend-color" style="background:#3b82f6"></div>Z Axis
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">📈 Real-time Motion Graph</div>
+                        <div style="display: flex; gap: 0.75rem; font-size: 0.75rem;">
+                            <span style="color: var(--accent-pink);">■ X-Axis</span>
+                            <span style="color: var(--success);">■ Y-Axis</span>
+                            <span style="color: var(--accent-cyan);">■ Z-Axis</span>
                         </div>
                     </div>
-                    <canvas id="chartCanvas"></canvas>
+                    <div class="canvas-card-body">
+                        <canvas id="chartCanvas"></canvas>
+                    </div>
                 </div>
+
+            </div>
         </div>
 
-        <!-- Bottom Console Panel -->
-        <div class="console-panel">
-            <div class="console-header">
-                <span>Serial Console Logs</span>
-                <span style="cursor: pointer;" id="clearConsoleBtn">Clear</span>
-            </div>
-            <div class="console-lines" id="consoleLines">
-                <div class="console-line sys">Welcome to ESP32 Air Mouse Dashboard. Click Connect to link your device.
+        <!-- Bottom Console Terminal -->
+        <div class="console-card">
+            <div class="console-top">
+                <span>🖥️ Web Serial Diagnostic Console</span>
+                <div class="console-actions">
+                    <div class="console-pill" id="cmdScanPill">Scan Pins</div>
+                    <div class="console-pill" id="cmdHelpPill">Help</div>
+                    <div class="console-pill" id="clearConsoleBtn">Clear Console</div>
                 </div>
+            </div>
+            <div class="console-output" id="consoleOutput">
+                <div class="log-line sys">Welcome to ESP32 Air Mouse Pro Suite. Click 'Connect Device' to begin.</div>
             </div>
         </div>
     </div>
+
+    <!-- Wiring Troubleshooting Modal -->
+    <div class="modal-overlay" id="wiringModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🔌 Hardware Wiring & CS Pin Fix Guide</h2>
+                <button class="modal-close" id="closeModalBtn">&times;</button>
+            </div>
+            
+            <div class="alert-box">
+                <strong>CRITICAL HARDWARE FIX FOR GY-6500 / GY-9250 MODULES:</strong><br>
+                On GY-6500 and GY-9250 breakout boards, the <strong>CS (Chip Select) / NCS pin</strong> selects between SPI and I2C modes. If left floating or tied to GND, the chip locks into SPI mode and ignores all I2C signals, returning <code>scan_complete count: 0</code>!
+            </div>
+
+            <table class="wiring-table">
+                <thead>
+                    <tr>
+                        <th>MPU/ICM Module Pin</th>
+                        <th>ESP32 DevKit V1 Pin</th>
+                        <th>Function / Required State</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>VCC</strong></td>
+                        <td>3.3V</td>
+                        <td>Power Input (3.3V)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>GND</strong></td>
+                        <td>GND</td>
+                        <td>Ground Connection</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SDA</strong></td>
+                        <td>GPIO 21</td>
+                        <td>I2C Serial Data (Internal Pull-Up enabled)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>SCL</strong></td>
+                        <td>GPIO 22</td>
+                        <td>I2C Serial Clock (Internal Pull-Up enabled)</td>
+                    </tr>
+                    <tr>
+                        <td><strong style="color: var(--warning);">CS / NCS</strong></td>
+                        <td><strong style="color: var(--success);">3.3V</strong> (or GPIO 5)</td>
+                        <td><strong>MUST BE PULLED HIGH TO FORCE I2C MODE</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>AD0</strong></td>
+                        <td>GND (0x68) / 3.3V (0x69)</td>
+                        <td>I2C Address Selection</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="font-size: 0.8rem; color: var(--text-muted);">
+                💡 <strong>Tip:</strong> If you are unsure which GPIO pins are connected on your specific ESP32 board, click <strong>"Scan I2C Pins"</strong> on the dashboard to run the multi-header auto-scanner!
+            </div>
+        </div>
     </div>
 
     <script>
-        // Elements
+        // DOM Elements
         const connectBtn = document.getElementById('connectBtn');
+        const wiringGuideBtn = document.getElementById('wiringGuideBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const wiringModal = document.getElementById('wiringModal');
+
         const statusBadge = document.getElementById('statusBadge');
         const statusText = document.getElementById('statusText');
+
+        // State Machine Bug Analyzer Elements
+        const smCard = document.getElementById('smCard');
+        const smStateText = document.getElementById('smStateText');
+        const smBugText = document.getElementById('smBugText');
+        const smInstructionText = document.getElementById('smInstructionText');
+
+
         const axVal = document.getElementById('axVal');
         const ayVal = document.getElementById('ayVal');
         const azVal = document.getElementById('azVal');
         const gxVal = document.getElementById('gxVal');
         const gyVal = document.getElementById('gyVal');
         const gzVal = document.getElementById('gzVal');
-        const tempVal = document.getElementById('tempVal');
-        const calVal = document.getElementById('calVal');
+        const sensorTempText = document.getElementById('sensorTempText');
+        const eulerAnglesText = document.getElementById('eulerAnglesText');
+
+        const btnLBadge = document.getElementById('btnLBadge');
+        const btnLState = document.getElementById('btnLState');
+        const btnRBadge = document.getElementById('btnRBadge');
+        const btnRState = document.getElementById('btnRState');
+        const btnMBadge = document.getElementById('btnMBadge');
+        const btnMState = document.getElementById('btnMState');
+        const btnCBadge = document.getElementById('btnCBadge');
+        const btnCState = document.getElementById('btnCState');
+        const btnTBadge = document.getElementById('btnTBadge');
+        const btnTState = document.getElementById('btnTState');
+
         const calibrateBtn = document.getElementById('calibrateBtn');
+        const toggleMotionBtn = document.getElementById('toggleMotionBtn');
+        const scanI2CBtn = document.getElementById('scanI2CBtn');
+        const resetI2CBtn = document.getElementById('resetI2CBtn');
+        const toggleSimBtn = document.getElementById('toggleSimBtn');
         const sensitivitySlider = document.getElementById('sensitivitySlider');
         const sensitivityVal = document.getElementById('sensitivityVal');
-        const consoleLines = document.getElementById('consoleLines');
-        const clearConsoleBtn = document.getElementById('clearConsoleBtn');
 
-        // Serial Communication State
-        let port = null;
-        let reader = null;
-        let writer = null;
-        let isConnected = false;
+        const motionStatusChip = document.getElementById('motionStatusChip');
+        const modeChip = document.getElementById('modeChip');
+        const pointerPosText = document.getElementById('pointerPosText');
+
+        const consoleOutput = document.getElementById('consoleOutput');
+        const clearConsoleBtn = document.getElementById('clearConsoleBtn');
+        const cmdScanPill = document.getElementById('cmdScanPill');
+        const cmdHelpPill = document.getElementById('cmdHelpPill');
+
+        // Serial Stream State
+        let port = null, reader = null, writer = null;
+        let isConnected = false, isSimulated = false;
         let inputBuffer = '';
 
-        // Data History for Chart
+        // Pointer Playground State
+        const pointerCanvas = document.getElementById('pointerCanvas');
+        const pointerCtx = pointerCanvas.getContext('2d');
+        let cursorX = 0, cursorY = 0;
+
+        // Telemetry History
         const maxHistory = 100;
-        const historyData = {
-            ax: Array(maxHistory).fill(0),
-            ay: Array(maxHistory).fill(0),
-            az: Array(maxHistory).fill(0)
-        };
+        const historyData = { ax: Array(maxHistory).fill(0), ay: Array(maxHistory).fill(0), az: Array(maxHistory).fill(0) };
 
-        // 3D Visualizer State
-        let pitch = 0; // Rotations in radians
-        let roll = 0;
-        let yaw = 0;
+        // 3D Angles
+        let pitch = 0, roll = 0, yaw = 0;
 
-        // Web Serial Helpers
+        // Modal Handlers
+        wiringGuideBtn.addEventListener('click', () => wiringModal.classList.add('active'));
+        closeModalBtn.addEventListener('click', () => wiringModal.classList.remove('active'));
+        wiringModal.addEventListener('click', (e) => { if (e.target === wiringModal) wiringModal.classList.remove('active'); });
+
+        // Web Serial Console Logger
         function appendLog(text, type = 'sys') {
             const line = document.createElement('div');
-            line.className = `console-line ${type}`;
+            line.className = `log-line ${type}`;
             line.textContent = `[${new Date().toLocaleTimeString()}] ${text}`;
-            consoleLines.appendChild(line);
-            consoleLines.scrollTop = consoleLines.scrollHeight;
+            consoleOutput.appendChild(line);
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
         }
 
-        clearConsoleBtn.addEventListener('click', () => {
-            consoleLines.innerHTML = '';
-        });
+        clearConsoleBtn.addEventListener('click', () => consoleOutput.innerHTML = '');
 
         async function writeSerial(text) {
             if (!writer) return;
@@ -562,11 +876,9 @@
             }
         }
 
+        // Web Serial Connect/Disconnect
         connectBtn.addEventListener('click', async () => {
-            if (isConnected) {
-                disconnect();
-                return;
-            }
+            if (isConnected) { disconnect(); return; }
 
             if (!("serial" in navigator)) {
                 alert("Web Serial API not supported in this browser. Please use Chrome, Edge, or Opera.");
@@ -583,49 +895,40 @@
                 statusBadge.classList.add('connected');
                 statusText.textContent = 'Connected';
 
-                calibrateBtn.disabled = false;
-                sensitivitySlider.disabled = false;
+                [calibrateBtn, toggleMotionBtn, scanI2CBtn, resetI2CBtn, toggleSimBtn, sensitivitySlider].forEach(b => b.disabled = false);
 
-                appendLog('Connected to serial port.', 'sys');
+                appendLog('Connected to ESP32 Serial Port (115200 Baud).', 'ready');
 
-                // Set up reader and writer streams
                 const textDecoder = new TextDecoderStream();
-                const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
+                port.readable.pipeTo(textDecoder.writable);
                 reader = textDecoder.readable.getReader();
 
                 const textEncoder = new TextEncoderStream();
-                const writableStreamClosed = textEncoder.readable.pipeTo(port.writable);
+                textEncoder.readable.pipeTo(port.writable);
                 writer = textEncoder.writable.getWriter();
 
                 readLoop();
             } catch (err) {
-                appendLog(`Connection failed: ${err.message}`, 'err');
+                appendLog(`Connection error: ${err.message}`, 'err');
             }
         });
 
         async function disconnect() {
             if (!isConnected) return;
-
             try {
-                if (reader) {
-                    await reader.cancel();
-                }
-                if (writer) {
-                    await writer.close();
-                }
+                if (reader) await reader.cancel();
+                if (writer) await writer.close();
                 await port.close();
-            } catch (err) {
-                console.error(err);
-            }
+            } catch (err) { console.error(err); }
 
             isConnected = false;
             connectBtn.textContent = 'Connect Device';
             connectBtn.classList.remove('btn-danger');
-            statusBadge.classList.remove('connected');
+            statusBadge.classList.remove('connected', 'simulated');
             statusText.textContent = 'Disconnected';
-            calibrateBtn.disabled = true;
-            sensitivitySlider.disabled = true;
-            appendLog('Disconnected from serial port.', 'sys');
+
+            [calibrateBtn, toggleMotionBtn, scanI2CBtn, resetI2CBtn, toggleSimBtn, sensitivitySlider].forEach(b => b.disabled = true);
+            appendLog('Disconnected from Serial Port.', 'sys');
         }
 
         async function readLoop() {
@@ -633,20 +936,18 @@
                 while (isConnected) {
                     const { value, done } = await reader.read();
                     if (done) break;
-                    if (value) {
-                        handleSerialData(value);
-                    }
+                    if (value) handleSerialChunk(value);
                 }
             } catch (err) {
-                appendLog(`Read error: ${err.message}`, 'err');
+                appendLog(`Read loop failure: ${err.message}`, 'err');
                 disconnect();
             }
         }
 
-        function handleSerialData(chunk) {
+        function handleSerialChunk(chunk) {
             inputBuffer += chunk;
             const lines = inputBuffer.split('\n');
-            inputBuffer = lines.pop(); // Keep incomplete line in buffer
+            inputBuffer = lines.pop();
 
             for (const line of lines) {
                 const trimmed = line.trim();
@@ -655,7 +956,6 @@
                 try {
                     const data = JSON.parse(trimmed);
 
-                    // Check if it's a telemetry packet
                     if (data.a && data.g) {
                         const [ax, ay, az] = data.a;
                         const [gx, gy, gz] = data.g;
@@ -668,224 +968,276 @@
                         gyVal.textContent = gy.toFixed(2);
                         gzVal.textContent = gz.toFixed(2);
 
-                        if (data.temp !== undefined) {
-                            tempVal.textContent = `${data.temp.toFixed(1)} °C`;
+                        if (data.temp !== undefined) sensorTempText.textContent = `Temp: ${data.temp.toFixed(1)} °C`;
+
+                        if (data.sim !== undefined) {
+                            isSimulated = data.sim;
+                            modeChip.textContent = `Mode: ${isSimulated ? 'Simulation' : 'Hardware'}`;
+                            if (isSimulated) {
+                                statusBadge.classList.add('simulated');
+                                statusText.textContent = 'Simulated IMU';
+                                toggleSimBtn.textContent = 'Switch to Hardware Mode';
+
+                                smCard.style.borderColor = 'rgba(245, 158, 11, 0.4)';
+                                smCard.style.background = 'rgba(245, 158, 11, 0.05)';
+                                smStateText.textContent = 'SIMULATION ACTIVE';
+                                smStateText.style.color = 'var(--warning)';
+                                smBugText.textContent = 'ℹ️ Fallback Simulation Mode is active for Web Dashboard testing.';
+                                smInstructionText.innerHTML = 'Verify physical wiring (CS to 3.3V), then click <strong>"Switch to Hardware Mode"</strong>.';
+                            } else {
+                                statusBadge.classList.remove('simulated');
+                                statusText.textContent = 'Connected (HW)';
+                                toggleSimBtn.textContent = 'Switch to Sim Mode';
+
+                                smCard.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                                smCard.style.background = 'rgba(16, 185, 129, 0.05)';
+                                smStateText.textContent = 'HARDWARE OK';
+                                smStateText.style.color = 'var(--success)';
+                                smBugText.textContent = '✅ IMU Hardware detected and responding on I2C bus!';
+                                smInstructionText.textContent = 'All hardware systems operational. Keep device still to calibrate.';
+                            }
                         }
 
-                        if (data.calibrated !== undefined) {
-                            calVal.textContent = data.calibrated ? 'Calibrated' : 'Not Calibrated';
-                            calVal.style.color = data.calibrated ? 'var(--success-color)' : 'var(--danger-color)';
+                        if (data.motionActive !== undefined) {
+                            motionStatusChip.textContent = `Motion: ${data.motionActive ? 'ACTIVE' : 'PAUSED'}`;
+                            motionStatusChip.style.borderColor = data.motionActive ? 'var(--success)' : 'var(--danger)';
                         }
 
-                        // Push data to chart history
-                        historyData.ax.push(ax);
-                        historyData.ay.push(ay);
-                        historyData.az.push(az);
+                        if (data.m) {
+                            const [dx, dy] = data.m;
+                            cursorX += dx * 2;
+                            cursorY += dy * 2;
+                            cursorX = Math.max(10, Math.min(pointerCanvas.width - 10, cursorX));
+                            cursorY = Math.max(10, Math.min(pointerCanvas.height - 10, cursorY));
+                            pointerPosText.textContent = `X: ${Math.round(cursorX)} | Y: ${Math.round(cursorY)}`;
+                        }
 
-                        historyData.ax.shift();
-                        historyData.ay.shift();
-                        historyData.az.shift();
+                        if (data.btn) {
+                            updateBadge(btnLBadge, btnLState, data.btn.L === 1);
+                            updateBadge(btnRBadge, btnRState, data.btn.R === 1);
+                            updateBadge(btnMBadge, btnMState, data.btn.M === 1);
+                            updateBadge(btnCBadge, btnCState, data.btn.C === 1);
+                            updateBadge(btnTBadge, btnTState, data.btn.T === 1, 'ACTIVE', 'PAUSED');
+                        }
 
-                        // Estimate Orientation (Simple complementary filter stub / integration)
-                        // Convert gyro to rads (dt is roughly 0.01s for 100Hz)
+                        historyData.ax.push(ax); historyData.ax.shift();
+                        historyData.ay.push(ay); historyData.ay.shift();
+                        historyData.az.push(az); historyData.az.shift();
+
                         pitch += (gy * 0.01) * (Math.PI / 180);
                         roll += (gx * 0.01) * (Math.PI / 180);
                         yaw += (gz * 0.01) * (Math.PI / 180);
 
-                        // Drift compensation using Accel
                         const accelPitch = Math.atan2(-ax, Math.sqrt(ay * ay + az * az));
                         const accelRoll = Math.atan2(ay, az);
-
                         pitch = pitch * 0.95 + accelPitch * 0.05;
                         roll = roll * 0.95 + accelRoll * 0.05;
 
-                    } else {
-                        // Log status and message packets
-                        if (data.status) {
-                            appendLog(`[ESP32 STATUS] ${data.status}: ${data.message || ''}`, 'sys');
-                        } else {
-                            appendLog(trimmed, 'in');
+                        eulerAnglesText.textContent = `Pitch: ${(pitch * 180 / Math.PI).toFixed(1)}° | Roll: ${(roll * 180 / Math.PI).toFixed(1)}°`;
+
+                    } else if (data.status) {
+                        if (data.status === 'scan_complete' && data.count === 0) {
+                            smCard.style.borderColor = 'rgba(239, 68, 68, 0.5)';
+                            smCard.style.background = 'rgba(239, 68, 68, 0.08)';
+                            smStateText.textContent = 'FAULT: 0 ACK DEVICES';
+                            smStateText.style.color = 'var(--danger)';
+                            smBugText.innerHTML = '⚠️ <strong>DETECTED BUG:</strong> 0 I2C ACK Devices found! GY-6500/9250 CS pin is floating or grounded (locked in SPI mode), or SDA/SCL pins are loose.';
+                            smInstructionText.innerHTML = '<strong>REQUIRED FIX STEPS:</strong><br>1. Connect sensor <strong>CS / NCS pin to 3.3V</strong> (forces I2C mode!).<br>2. Connect VCC to 3.3V and GND to GND.<br>3. Click <strong>"Scan I2C Pins"</strong> below.';
+                        } else if (data.status === 'pin_scan_success') {
+                            smCard.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+                            smCard.style.background = 'rgba(16, 185, 129, 0.08)';
+                            smStateText.textContent = 'PIN MATCH FOUND';
+                            smStateText.style.color = 'var(--success)';
+                            smBugText.innerHTML = `✅ <strong>ACK FOUND!</strong> Sensor responded on SDA=${data.sda}, SCL=${data.scl}!`;
+                            smInstructionText.textContent = 'I2C communication verified successfully.';
                         }
+
+                        appendLog(`[ESP32 ${data.status.toUpperCase()}] ${data.message || JSON.stringify(data)}`, data.status === 'error' ? 'err' : 'sys');
+                    } else {
+                        appendLog(trimmed, 'sys');
                     }
+
                 } catch (e) {
-                    // If it isn't JSON, output as raw string log
-                    appendLog(trimmed, 'in');
+                    appendLog(trimmed, 'sys');
                 }
             }
         }
 
-        // Config controls
-        calibrateBtn.addEventListener('click', () => {
-            writeSerial('calibrate');
+        function updateBadge(badge, textElem, isDown, downText = 'PRESSED', upText = 'RELEASED') {
+            if (isDown) {
+                badge.classList.add('active');
+                textElem.textContent = downText;
+            } else {
+                badge.classList.remove('active');
+                textElem.textContent = upText;
+            }
+        }
+
+        // Action Handlers
+        calibrateBtn.addEventListener('click', () => writeSerial('calibrate'));
+        toggleMotionBtn.addEventListener('click', () => writeSerial('toggle_motion'));
+        scanI2CBtn.addEventListener('click', () => writeSerial('scan_pins'));
+        resetI2CBtn.addEventListener('click', () => writeSerial('reset_bus'));
+        cmdScanPill.addEventListener('click', () => writeSerial('scan_pins'));
+        cmdHelpPill.addEventListener('click', () => writeSerial('help'));
+
+        toggleSimBtn.addEventListener('click', () => {
+            if (isSimulated) {
+                writeSerial('mode:hw');
+            } else {
+                writeSerial('mode:sim');
+            }
         });
 
         sensitivitySlider.addEventListener('input', (e) => {
-            const val = parseFloat(e.target.value).toFixed(1);
-            sensitivityVal.textContent = val;
+            sensitivityVal.textContent = `${parseFloat(e.target.value).toFixed(1)}x`;
         });
 
         sensitivitySlider.addEventListener('change', (e) => {
-            const val = parseFloat(e.target.value).toFixed(1);
-            writeSerial(`sensitivity:${val}`);
+            writeSerial(`sensitivity:${parseFloat(e.target.value).toFixed(1)}`);
         });
 
-
-        // Canvas Rendering Loop
-        const chartCanvas = document.getElementById('chartCanvas');
-        const chartCtx = chartCanvas.getContext('2d');
-
-        const vizCanvas = document.getElementById('vizCanvas');
-        const vizCtx = vizCanvas.getContext('2d');
-
-        // Resize handlers
+        // Resize Canvas Handlers
         function resizeCanvases() {
-            chartCanvas.width = chartCanvas.parentElement.clientWidth;
-            chartCanvas.height = chartCanvas.parentElement.clientHeight - 50;
+            const pb = document.getElementById('playgroundBox');
+            pointerCanvas.width = pb.clientWidth;
+            pointerCanvas.height = pb.clientHeight;
+            cursorX = pointerCanvas.width / 2;
+            cursorY = pointerCanvas.height / 2;
 
-            vizCanvas.width = vizCanvas.parentElement.clientWidth;
-            vizCanvas.height = vizCanvas.parentElement.clientHeight - 50;
+            const vizBox = document.getElementById('vizCanvas').parentElement;
+            vizCanvas.width = vizBox.clientWidth;
+            vizCanvas.height = vizBox.clientHeight;
+
+            const chartBox = document.getElementById('chartCanvas').parentElement;
+            chartCanvas.width = chartBox.clientWidth;
+            chartCanvas.height = chartBox.clientHeight;
         }
         window.addEventListener('resize', resizeCanvases);
         setTimeout(resizeCanvases, 100);
 
-        function drawChart() {
-            const w = chartCanvas.width;
-            const h = chartCanvas.height;
+        // Render Pointer Playground
+        function drawPointerPlayground() {
+            pointerCtx.clearRect(0, 0, pointerCanvas.width, pointerCanvas.height);
 
-            chartCtx.clearRect(0, 0, w, h);
-
-            // Draw grid
-            chartCtx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
-            chartCtx.lineWidth = 1;
-            for (let i = 0; i <= 4; i++) {
-                const y = (h / 4) * i;
-                chartCtx.beginPath();
-                chartCtx.moveTo(0, y);
-                chartCtx.lineTo(w, y);
-                chartCtx.stroke();
+            // Grid lines
+            pointerCtx.strokeStyle = 'rgba(255, 255, 255, 0.04)';
+            pointerCtx.lineWidth = 1;
+            for (let x = 0; x < pointerCanvas.width; x += 30) {
+                pointerCtx.beginPath(); pointerCtx.moveTo(x, 0); pointerCtx.lineTo(x, pointerCanvas.height); pointerCtx.stroke();
+            }
+            for (let y = 0; y < pointerCanvas.height; y += 30) {
+                pointerCtx.beginPath(); pointerCtx.moveTo(0, y); pointerCtx.lineTo(pointerCanvas.width, y); pointerCtx.stroke();
             }
 
-            // Plot helper
+            // Outer ring
+            pointerCtx.strokeStyle = 'rgba(6, 182, 212, 0.6)';
+            pointerCtx.fillStyle = 'rgba(6, 182, 212, 0.2)';
+            pointerCtx.lineWidth = 2;
+            pointerCtx.beginPath();
+            pointerCtx.arc(cursorX, cursorY, 14, 0, Math.PI * 2);
+            pointerCtx.fill(); pointerCtx.stroke();
+
+            // Inner glowing dot
+            pointerCtx.fillStyle = '#ec4899';
+            pointerCtx.beginPath();
+            pointerCtx.arc(cursorX, cursorY, 4, 0, Math.PI * 2);
+            pointerCtx.fill();
+        }
+
+        // Render Dual Axis Motion Graph
+        const chartCanvas = document.getElementById('chartCanvas');
+        const chartCtx = chartCanvas.getContext('2d');
+
+        function drawChart() {
+            const w = chartCanvas.width, h = chartCanvas.height;
+            chartCtx.clearRect(0, 0, w, h);
+
+            chartCtx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+            for (let i = 0; i <= 4; i++) {
+                const y = (h / 4) * i;
+                chartCtx.beginPath(); chartCtx.moveTo(0, y); chartCtx.lineTo(w, y); chartCtx.stroke();
+            }
+
             function plotSeries(data, color) {
                 chartCtx.strokeStyle = color;
                 chartCtx.lineWidth = 2;
                 chartCtx.beginPath();
-
                 for (let i = 0; i < data.length; i++) {
                     const x = (w / (maxHistory - 1)) * i;
-                    // Scale from -2g to +2g
-                    const val = data[i];
-                    const y = (h / 2) - (val * (h / 4));
-
-                    if (i === 0) {
-                        chartCtx.moveTo(x, y);
-                    } else {
-                        chartCtx.lineTo(x, y);
-                    }
+                    const y = (h / 2) - (data[i] * (h / 4));
+                    if (i === 0) chartCtx.moveTo(x, y); else chartCtx.lineTo(x, y);
                 }
                 chartCtx.stroke();
             }
 
-            plotSeries(historyData.ax, '#f43f5e');
+            plotSeries(historyData.ax, '#ec4899');
             plotSeries(historyData.ay, '#10b981');
-            plotSeries(historyData.az, '#3b82f6');
+            plotSeries(historyData.az, '#06b6d4');
         }
 
-        // 3D Projection & Rendering
-        function drawVisualizer() {
-            const w = vizCanvas.width;
-            const h = vizCanvas.height;
+        // Render 3D Device Model
+        const vizCanvas = document.getElementById('vizCanvas');
+        const vizCtx = vizCanvas.getContext('2d');
+
+        function draw3DDevice() {
+            const w = vizCanvas.width, h = vizCanvas.height;
             vizCtx.clearRect(0, 0, w, h);
 
-            const cx = w / 2;
-            const cy = h / 2;
-            const size = 60;
-
-            // Define 3D Cube vertices
+            const cx = w / 2, cy = h / 2, size = 55;
             const vertices = [
-                [-size, -15, -size * 1.5],
-                [size, -15, -size * 1.5],
-                [size, 15, -size * 1.5],
-                [-size, 15, -size * 1.5],
-                [-size, -15, size * 1.5],
-                [size, -15, size * 1.5],
-                [size, 15, size * 1.5],
-                [-size, 15, size * 1.5]
+                [-size, -12, -size * 1.4], [size, -12, -size * 1.4],
+                [size, 12, -size * 1.4],  [-size, 12, -size * 1.4],
+                [-size, -12, size * 1.4], [size, -12, size * 1.4],
+                [size, 12, size * 1.4],   [-size, 12, size * 1.4]
             ];
 
-            // Rotate around X (pitch), Y (yaw), Z (roll)
             function rotate(x, y, z) {
-                // Roll
                 let x1 = x * Math.cos(roll) - y * Math.sin(roll);
                 let y1 = x * Math.sin(roll) + y * Math.cos(roll);
-                let z1 = z;
-
-                // Pitch
                 let x2 = x1;
-                let y2 = y1 * Math.cos(pitch) - z1 * Math.sin(pitch);
-                let z2 = y1 * Math.sin(pitch) + z1 * Math.cos(pitch);
-
-                // Yaw
+                let y2 = y1 * Math.cos(pitch) - z * Math.sin(pitch);
+                let z2 = y1 * Math.sin(pitch) + z * Math.cos(pitch);
                 let x3 = x2 * Math.cos(yaw) - z2 * Math.sin(yaw);
-                let y3 = y2;
                 let z3 = x2 * Math.sin(yaw) + z2 * Math.cos(yaw);
-
-                return [x3, y3, z3];
+                return [x3, y2, z3];
             }
 
-            // Project 3D to 2D
-            const d = 300; // perspective distance
+            const d = 280;
             const projected = vertices.map(v => {
                 const [rx, ry, rz] = rotate(v[0], v[1], v[2]);
                 const scale = d / (d + rz);
                 return [cx + rx * scale, cy + ry * scale];
             });
 
-            // Face definitions for drawing
-            const faces = [
-                [0, 1, 2, 3], // Front
-                [4, 5, 6, 7], // Back
-                [0, 1, 5, 4], // Top
-                [2, 3, 7, 6], // Bottom
-                [0, 3, 7, 4], // Left
-                [1, 2, 6, 5]  // Right
-            ];
-
-            // Draw wireframe mouse
-            vizCtx.strokeStyle = 'rgba(6, 182, 212, 0.4)';
-            vizCtx.fillStyle = 'rgba(6, 182, 212, 0.05)';
+            const faces = [[0,1,2,3], [4,5,6,7], [0,1,5,4], [2,3,7,6], [0,3,7,4], [1,2,6,5]];
+            vizCtx.strokeStyle = 'rgba(99, 102, 241, 0.6)';
+            vizCtx.fillStyle = 'rgba(99, 102, 241, 0.08)';
             vizCtx.lineWidth = 2;
 
-            faces.forEach(face => {
+            faces.forEach(f => {
                 vizCtx.beginPath();
-                vizCtx.moveTo(projected[face[0]][0], projected[face[0]][1]);
-                for (let i = 1; i < face.length; i++) {
-                    vizCtx.lineTo(projected[face[i]][0], projected[face[i]][1]);
-                }
-                vizCtx.closePath();
-                vizCtx.fill();
-                vizCtx.stroke();
+                vizCtx.moveTo(projected[f[0]][0], projected[f[0]][1]);
+                for (let i = 1; i < f.length; i++) vizCtx.lineTo(projected[f[i]][0], projected[f[i]][1]);
+                vizCtx.closePath(); vizCtx.fill(); vizCtx.stroke();
             });
 
-            // Draw heading vector
-            const [hx, hy, hz] = rotate(0, 0, -size * 2.5);
+            // Heading Vector
+            const [hx, hy, hz] = rotate(0, 0, -size * 2.2);
             const hScale = d / (d + hz);
-            vizCtx.strokeStyle = '#f43f5e';
+            vizCtx.strokeStyle = '#ec4899';
             vizCtx.lineWidth = 3;
-            vizCtx.beginPath();
-            vizCtx.moveTo(cx, cy);
-            vizCtx.lineTo(cx + hx * hScale, cy + hy * hScale);
-            vizCtx.stroke();
+            vizCtx.beginPath(); vizCtx.moveTo(cx, cy); vizCtx.lineTo(cx + hx * hScale, cy + hy * hScale); vizCtx.stroke();
         }
 
-        // Main animation loop
-        function updateLoop() {
+        // Animation Loop
+        function renderLoop() {
+            drawPointerPlayground();
             drawChart();
-            drawVisualizer();
-            requestAnimationFrame(updateLoop);
+            draw3DDevice();
+            requestAnimationFrame(renderLoop);
         }
-        updateLoop();
-
+        renderLoop();
     </script>
 </body>
 
