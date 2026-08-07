@@ -346,18 +346,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const handleAnswerSubmit = () => {
         const q = questions[currentQuestionIndex];
         let isCorrect = false;
+        let selectedOptionText = "N/A";
 
         if (q.type === 'fill_in_the_blank') {
             // Check if string matches any of acceptable answers
             isCorrect = q.answer.map(a => a.toLowerCase()).includes(currentAnswer);
+            selectedOptionText = currentAnswer || "None";
         } else if (q.type === 'match_the_following') {
             // Check mapping
             isCorrect = true;
+            let matchStrs = [];
             for (let i = 0; i < q.pairs.length; i++) {
                 if (currentAnswer[i] !== i) isCorrect = false; // Because pair.left correlates strictly to pair.right in data
+                let rIdx = currentAnswer[i];
+                matchStrs.push(`${q.pairs[i].left} -> ${rIdx !== undefined && q.pairs[rIdx] ? q.pairs[rIdx].right : "None"}`);
             }
+            selectedOptionText = matchStrs.join(' | ');
         } else {
             isCorrect = currentAnswer === q.answer;
+            selectedOptionText = q.options && currentAnswer !== null && currentAnswer !== undefined ? q.options[currentAnswer] : "None";
         }
 
         if (isCorrect) {
@@ -371,6 +378,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         answers.push({
             questionId: q.id,
+            questionText: q.text,
+            selectedOptionText: selectedOptionText,
             isCorrect: isCorrect,
             marksEarned: isCorrect ? (q.marks || 1) : 0
         });
