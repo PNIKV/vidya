@@ -609,11 +609,11 @@
                 await port.open({ baudRate: 115200 }); // Standard flashing baudrate for Optiboot/ESP
 
                 flashLog.innerHTML += "🔌 Port opened successfully.\n";
-                flashLog.innerHTML += "📥 Fetching compiled binary artifact: 'firmware/dist/firmware.bin'...\n";
+                flashLog.innerHTML += "📥 Fetching compiled binary artifact: 'firmware.bin'...\n";
 
                 // Fetching the pre-compiled binary hosted locally or on server
-                const response = await fetch('firmware/dist/firmware.bin');
-                if (!response.ok) throw new Error("Could not find precompiled file at firmware/dist/firmware.bin");
+                const response = await fetch('firmware.bin');
+                if (!response.ok) throw new Error("Could not find precompiled file at firmware.bin");
 
                 const blob = await response.blob();
                 const buffer = await blob.arrayBuffer();
