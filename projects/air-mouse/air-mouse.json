@@ -1,0 +1,82 @@
+{
+  "id": "air-mouse",
+  "title": "Air Mouse",
+  "subtitle": "Wireless BLE air mouse using ESP32 + MPU6050",
+  "level": "Advanced",
+  "color": "#6C63FF",
+  "desc": "Control your PC cursor with hand gestures using an ESP32 and MPU6050 gyroscope over Bluetooth!",
+  "fullDesc": "The Air Mouse project turns an ESP32 microcontroller and an MPU6050 6-DOF IMU into a fully wireless Bluetooth HID mouse. Tilt and rotate the device to move the cursor, press physical buttons to click. Includes a configurable web dashboard accessible over BLE serial for tuning sensitivity, deadzone, and pin assignments. All settings are stored in non-volatile flash memory.",
+  "difficulty": 4,
+  "status": "Available",
+  "tags": [
+    "ESP32",
+    "BLE",
+    "MPU6050",
+    "HID",
+    "Gesture",
+    "Wireless"
+  ],
+  "date": "2026-07-01",
+  "author": "Atul Sawant",
+  "team": [
+    {
+      "name": "Atul Sawant",
+      "role": "Trainer & Project Lead"
+    }
+  ],
+  "innovation": "Replaces a traditional mouse with a gesture-based air controller using consumer-grade IMU hardware, making cursor control hands-free and intuitive.",
+  "problemStatement": "Traditional mice require a flat surface and restrict mobility. A gyroscope-based air mouse allows control from anywhere.",
+  "solutionApproach": "Used an ESP32 as the Bluetooth HID host. The MPU6050 IMU provides raw acceleration data converted into relative mouse motion. A configurable dashboard served over BLE serial allows runtime tuning.",
+  "hardwareSpecs": {
+    "microcontroller": "ESP32 Development Board",
+    "sensor": "MPU6050 6-DOF IMU (I2C)",
+    "connectivity": "Bluetooth Low Energy (BLE HID)",
+    "buttons": "2× Push Buttons (Left/Right click, GPIO 25/26)",
+    "led": "Status LED (GPIO 2)"
+  },
+  "components": [
+    "ESP32",
+    "MPU6050 IMU",
+    "2x Push Buttons",
+    "Status LED",
+    "USB Cable",
+    "Breadboard",
+    "Jumper Wires"
+  ],
+  "componentRefs": [
+    "esp32",
+    "mpu6050",
+    "jumper-wires"
+  ],
+  "guide": [
+    "Connect MPU6050 to ESP32: SDA→GPIO21, SCL→GPIO22, VCC→3.3V, GND→GND",
+    "Wire left-click button to GPIO 25 and right-click to GPIO 26",
+    "Install required Arduino libraries: Adafruit MPU6050, Adafruit Unified Sensor, ESP32-BLE-Mouse, ArduinoJson",
+    "Upload air_mouse_firmware.ino using Arduino IDE with ESP32 board support",
+    "Pair the device with your PC via Bluetooth as \"ESP32 Air Mouse\"",
+    "Open the web dashboard (mouse_dashboard.html) to configure sensitivity and deadzone",
+    "Hold the device and tilt/rotate to move the cursor, press buttons to click"
+  ],
+  "estimatedTime": "90 minutes",
+  "prerequisites": [
+    "ESP32 Arduino setup",
+    "Basic I2C wiring",
+    "Bluetooth pairing knowledge"
+  ],
+  "liveUrl": "projects/air-mouse/mouse_dashboard.html",
+  "youtubeVideos": [],
+  "githubUrl": "",
+  "achievements": [
+    "Wireless BLE HID device",
+    "Runtime-configurable via dashboard"
+  ],
+  "keywords": [
+    "air mouse",
+    "gesture control",
+    "ESP32",
+    "MPU6050",
+    "BLE",
+    "HID",
+    "wireless mouse"
+  ]
+}

@@ -54,11 +54,18 @@ function discoverProjects() {
       console.log(`  ⚠️  Skipped "${projDir}" — no .json file found`);
       continue;
     }
-    if (jsonFiles.length > 1) {
-      console.log(`  ⚠️  "${projDir}" has ${jsonFiles.length} JSON files, using "${jsonFiles[0]}"`);
+    let selectedJson = jsonFiles.find(f => f.toLowerCase() === `${projDir.toLowerCase()}.json`);
+    if (!selectedJson) {
+      selectedJson = jsonFiles.find(f => {
+        try {
+          const content = JSON.parse(fs.readFileSync(path.join(dirFull, f), 'utf8'));
+          return !!(content.id || content.title || content.project_title);
+        } catch (e) { return false; }
+      });
     }
+    if (!selectedJson) selectedJson = jsonFiles[0];
 
-    const jsonFile = jsonFiles[0];
+    const jsonFile = selectedJson;
     const relPath = path.posix.join('projects', projDir, jsonFile);
     const absJsonPath = path.join(dirFull, jsonFile);
     const absDirPath = dirFull;
@@ -96,6 +103,7 @@ function categorizeFiles(absDirPath, relDirPath, jsonFilename) {
     firmware: [],
     bannerImages: [],
     dataVideos: [],
+    htmlFiles: [],
     image: null
   };
 
@@ -178,6 +186,11 @@ function categorizeFiles(absDirPath, relDirPath, jsonFilename) {
 
       result.codeFiles.push({ name: filename, url: relativeUrl, language: lang });
     }
+
+    // ── HTML Files (Dashboards / Live Apps) ──
+    else if (ext === '.html') {
+      result.htmlFiles.push(relativeUrl);
+    }
   }
 
   // Sort arrays for consistent output
@@ -256,6 +269,26 @@ for (const proj of discoveredProjects) {
     if (detected.bannerImages.length > 0) compiled.bannerImages = detected.bannerImages;
     if (detected.dataVideos.length > 0) compiled.dataVideos = detected.dataVideos;
 
+    // Auto-detect HTML Dashboard as liveUrl if not explicitly provided
+    if (detected.htmlFiles.length > 0) {
+      compiled.htmlDashboards = detected.htmlFiles;
+      if (!compiled.liveUrl) {
+        const bestDashboard = detected.htmlFiles.find(h => h.endsWith('livebus.html') || h.endsWith('index.html') || h.toLowerCase().includes('dashboard')) || detected.htmlFiles[0];
+        compiled.liveUrl = bestDashboard;
+      }
+    }
+
+    // Fallbacks and normalization
+    if (!compiled.id) compiled.id = proj.dirName;
+    if (!compiled.title) compiled.title = cleanData.project_title || proj.dirName.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+    if (!compiled.author && cleanData.student) compiled.author = cleanData.student;
+    if (!compiled.author && cleanData.student_name) compiled.author = Array.isArray(cleanData.student_name) ? cleanData.student_name.join(', ') : cleanData.student_name;
+    if (!compiled.desc && cleanData.abstract) compiled.desc = cleanData.abstract;
+    if (!compiled.fullDesc && cleanData.introduction) compiled.fullDesc = cleanData.introduction;
+    if (!compiled.problemStatement && cleanData.problem_statement) compiled.problemStatement = cleanData.problem_statement;
+    if (!compiled.problemStatement && cleanData.problem?.description) compiled.problemStatement = cleanData.problem.description;
+    if (!compiled.solutionApproach && cleanData.solution?.description) compiled.solutionApproach = cleanData.solution.description;
+
     compiledProjects.push(compiled);
     projectPaths.push(proj.relPath);
 
@@ -269,6 +302,7 @@ for (const proj of discoveredProjects) {
       detected.presentationPdfs.length && `${detected.presentationPdfs.length} PDFs`,
       detected.bannerImages.length && `${detected.bannerImages.length} banners`,
       detected.dataVideos.length && `${detected.dataVideos.length} videos`,
+      detected.htmlFiles.length && `${detected.htmlFiles.length} HTML dashboards`,
     ].filter(Boolean);
 
     if (counts.length > 0) {

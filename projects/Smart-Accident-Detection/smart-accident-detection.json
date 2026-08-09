@@ -1,0 +1,21 @@
+{
+  "id": "accident-detection-system",
+  "title": "Smart Accident Detection & Alert System",
+  "subtitle": "IoT-based accident detection with GPS and GSM emergency alert",
+  "level": "Intermediate",
+  "color": "#E74C3C",
+  "desc": "Automatically detect road accidents using sensors and instantly alert emergency contacts!",
+  "fullDesc": "A smart accident detection system that uses accelerometer/gyroscope sensors to detect sudden impact or abnormal vehicle movement.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "IoT",
+    "Safety",
+    "GPS",
+    "GSM",
+    "Arduino",
+    "Emergency"
+  ],
+  "date": "2026-07-08",
+  "author": "Uran Rasal"
+}

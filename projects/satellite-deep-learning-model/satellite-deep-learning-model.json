@@ -1,0 +1,54 @@
+{
+  "id": "satellite-deep-learning-model",
+  "title": "Satellite Deep Learning — Land Change Detection",
+  "subtitle": "AI model to detect land use changes from satellite imagery",
+  "level": "Advanced",
+  "color": "#2C3E50",
+  "desc": "Detect changes in land use and cover from satellite images using a deep learning model!",
+  "fullDesc": "A deep learning project that uses convolutional neural networks to analyze satellite imagery and detect changes in land use and land cover over time. Applications include monitoring deforestation, urban expansion, agricultural shifts, and environmental changes. The project demonstrates practical AI/ML techniques applied to geospatial data.",
+  "difficulty": 5,
+  "status": "Available",
+  "tags": [
+    "AI",
+    "Deep Learning",
+    "Satellite",
+    "Remote Sensing",
+    "Computer Vision",
+    "Python"
+  ],
+  "date": "2026-07-10",
+  "author": "Tinkering Lab",
+  "innovation": "Applies cutting-edge deep learning to satellite imagery analysis, making remote sensing techniques accessible to students and researchers.",
+  "problemStatement": "Monitoring land use changes at scale requires automated analysis of large satellite image datasets that manual inspection cannot handle efficiently.",
+  "solutionApproach": "Trained a convolutional neural network on paired satellite images (before/after) to classify pixel-level changes in land cover categories.",
+  "components": [
+    "Python",
+    "TensorFlow/Keras",
+    "Satellite Dataset",
+    "GPU (recommended)"
+  ],
+  "guide": [
+    "Set up Python environment with TensorFlow and required libraries",
+    "Download satellite imagery dataset",
+    "Preprocess images: normalize, crop, and split into train/test",
+    "Train the deep learning model on labeled change detection data",
+    "Evaluate model performance on test set",
+    "Run inference on new satellite image pairs to detect changes",
+    "Visualize change detection results on maps"
+  ],
+  "estimatedTime": "4+ hours",
+  "prerequisites": [
+    "Python programming",
+    "Basic ML knowledge",
+    "TensorFlow setup"
+  ],
+  "youtubeVideos": [],
+  "keywords": [
+    "satellite",
+    "deep learning",
+    "land change detection",
+    "remote sensing",
+    "computer vision",
+    "CNN"
+  ]
+}

@@ -2,10 +2,16 @@
   "id": "bus-tracking-system",
   "title": "Bus Tracking System",
   "subtitle": "Smart Bus Arrival Information Display for Rural Bus Stops",
+  "author": "Shraddha Malve",
   "student": "Shraddha Malve",
   "category": "Community Problem Solving",
   "level": "Intermediate",
-  "theme": "Smart Transportation",
+  "difficulty": 3,
+  "color": "#3B82F6",
+  "desc": "A Smart Bus Tracking and Arrival Display System using Arduino UNO and TFT display to help rural commuters track live bus timings.",
+  "fullDesc": "Many rural bus stops lack digital bus tracking systems or real-time information displays. This project builds a smart display using Arduino UNO and a 3.5-inch TFT display to show live bus numbers, destinations, and estimated arrival times at rural bus stops.",
+  "problemStatement": "Many rural bus stops do not have digital bus tracking systems like CHALO or real-time information displays. Passengers do not know which bus is arriving, its expected arrival time, or possible delays.",
+  "solutionApproach": "A Bus Tracking System is developed using an Arduino UNO and a 3.5-inch TFT Display. The display is installed at a model bus stop and shows the bus number, destination, and expected arrival time.",
   "problem": {
     "title": "Lack of Bus Tracking Information in Rural Areas",
     "description": "Many rural bus stops do not have digital bus tracking systems like CHALO or real-time information displays. Passengers do not know which bus is arriving, its expected arrival time, or possible delays. Students, workers, senior citizens, and daily commuters often spend a long time waiting at bus stops, making it difficult to manage their time and plan their journey."
@@ -45,6 +51,11 @@
     "Power Supply",
     "Bus Stop Model"
   ],
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO",
+    "display": "3.5-inch TFT Display",
+    "powerSupply": "5V DC USB"
+  },
   "benefits": [
     "Reduces waiting time at bus stops.",
     "Helps passengers manage their travel time.",

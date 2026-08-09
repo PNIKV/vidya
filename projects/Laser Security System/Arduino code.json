@@ -1,4 +1,0 @@
-{
-  "filename": "Arduino code.docx",
-  "content": "// Laser Security System\n// LDR Module (DO) -> D7\n// Active Buzzer -> D11\nint ldr = 7;\nint buzzer = 11;\nvoid setup() {\n  pinMode(ldr, INPUT);\n  pinMode(buzzer, OUTPUT);\n  digitalWrite(buzzer, LOW);   // Start with buzzer OFF\n}\nvoid loop() {\n  int sensor = digitalRead(ldr);\n  if (sensor == LOW) {\n    // Laser beam is on the LDR\n    digitalWrite(buzzer, LOW);   // Buzzer OFF\n  }\n  else {\n    // Laser beam is broken\n    digitalWrite(buzzer, HIGH);  // Buzzer ON\n  }\n  delay(50);   // Small delay for stable operation\n}"
-}

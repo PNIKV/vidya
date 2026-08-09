@@ -1,0 +1,129 @@
+{
+  "id": "gripper-robot-pictoblox",
+  "title": "Gripper Robot",
+  "subtitle": "Pick, Lift and Place Robot using Quarky & PictoBlox",
+  "level": "Intermediate",
+  "color": "#4CAF50",
+  "desc": "Build an intelligent robotic vehicle capable of picking, lifting, transporting, and placing objects using the Quarky Kit and PictoBlox.",
+  "fullDesc": "The Gripper Robot is a smart robotic vehicle developed using the Quarky Robotics Kit and PictoBlox programming software. It is equipped with a robotic gripper arm that can pick up objects, lift them, transport them safely, and place them at the desired location. This project introduces students to robotics, automation, servo motor control, obstacle detection, and autonomous navigation while developing problem-solving and engineering skills.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "Quarky",
+    "PictoBlox",
+    "Robotics",
+    "Automation",
+    "Servo Motor",
+    "STEM",
+    "AI",
+    "Education"
+  ],
+  "date": "2026-07-17",
+  "author": "Dipavalee Sudrik",
+  "team": [
+    {
+      "name": "Dipavalee Sudrik",
+      "role": "Trainer & Project Lead"
+    }
+  ],
+  "innovation": "A low-cost educational robotic arm integrated with a mobile robot that performs automated pick-and-place operations using Quarky hardware and block-based PictoBlox programming.",
+  "problemStatement": "Manual handling of small objects is repetitive, time-consuming, and prone to human error in industries, warehouses, and educational environments. Students need an affordable platform to learn robotics and industrial automation.",
+  "solutionApproach": "The robot is built using the Quarky Robotics Kit and programmed in PictoBlox. It uses servo motors to operate the robotic gripper and ultrasonic sensing for obstacle detection. The robot can move, detect objects, pick them up, transport them safely, and place them at another location.",
+  "hardwareSpecs": {
+    "microcontroller": "Quarky Controller",
+    "powerConsumption": "~250mA @ 5V",
+    "operatingVoltage": "5V DC",
+    "communicationProtocol": "USB / Bluetooth",
+    "dimensions": "Standard Quarky Gripper Robot Chassis",
+    "sensors": [
+      "Ultrasonic Sensor"
+    ],
+    "actuators": [
+      "Servo Motor (Gripper)",
+      "Servo Motor (Arm)",
+      "DC Motors"
+    ],
+    "displays": []
+  },
+  "components": [
+    "Quarky Controller",
+    "PictoBlox Software",
+    "Robotic Gripper Kit",
+    "Ultrasonic Sensor",
+    "Servo Motor x2",
+    "DC Motors",
+    "Robot Chassis",
+    "Battery Pack",
+    "USB Cable",
+    "Jumper Wires"
+  ],
+  "componentRefs": [
+    "quarky-controller",
+    "pictoblox",
+    "servo-motor",
+    "ultrasonic-sensor",
+    "robot-chassis"
+  ],
+  "guide": [
+    "Assemble the Quarky robotic chassis.",
+    "Mount the robotic gripper mechanism.",
+    "Attach the two servo motors for arm movement and gripper control.",
+    "Connect the ultrasonic sensor to the Quarky board.",
+    "Connect all motors according to the Quarky wiring guide.",
+    "Open PictoBlox Software.",
+    "Connect the Quarky board using USB or Bluetooth.",
+    "Create the block-based program for robot movement.",
+    "Program the servo motors to open and close the gripper.",
+    "Upload the program to the Quarky board.",
+    "Place an object in front of the robot.",
+    "Run the program and observe the robot picking, lifting, moving, and placing the object."
+  ],
+  "estimatedTime": "90 Minutes",
+  "prerequisites": [
+    "Basic PictoBlox Programming",
+    "Knowledge of Servo Motors",
+    "Basic Robotics Concepts",
+    "Quarky Kit Assembly"
+  ],
+  "pdf": "",
+  "ppt": "projects/level-3/gripper-robot",
+  "circuitDiagram": "",
+  "youtubeVideos": [
+    {
+      "title": "Gripper Robot using Quarky & PictoBlox",
+      "url": "https://youtu.be/MXJ5BRUqfdw?si=CGZrQoy0x5ZoCkTK"
+    }
+  ],
+  "codeFile": {
+    "language": "PictoBlox",
+    "fileName": "Gripper_Robot.sb3",
+    "description": "PictoBlox block programming file for controlling the Quarky Gripper Robot."
+  },
+  "liveUrl": "",
+  "resources": [
+    {
+      "icon": "ðŸ¤–",
+      "title": "PictoBlox Documentation",
+      "url": "https://ai.thestempedia.com/docs/pictoblox/"
+    },
+    {
+      "icon": "ðŸ“˜",
+      "title": "Quarky Documentation",
+      "url": "https://ai.thestempedia.com/docs/quarky/"
+    }
+  ],
+  "githubUrl": "",
+  "achievements": [],
+  "keywords": [
+    "Gripper Robot",
+    "Quarky",
+    "PictoBlox",
+    "Servo Motor",
+    "Robotics",
+    "Automation",
+    "Pick and Place",
+    "STEM",
+    "Educational Robot",
+    "Ultrasonic Sensor"
+  ]
+}

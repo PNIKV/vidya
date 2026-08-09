@@ -1,0 +1,114 @@
+{
+  "id": "smart-vacuum-cleaner",
+  "title": "Smart Vacuum Cleaner",
+  "subtitle": "An Arduino-Based Automatic Floor Cleaning Robot",
+  "level": "Intermediate",
+  "color": "#2E86DE",
+  "desc": "A smart robotic vacuum cleaner that automatically detects obstacles and cleans floors using an Arduino-based control system.",
+  "fullDesc": "The Smart Vacuum Cleaner is an intelligent cleaning robot designed to reduce manual effort in household and educational environments. It uses an Arduino UNO microcontroller, ultrasonic sensor for obstacle detection, motor driver for movement control, and a high-speed fan to collect dust. The robot navigates automatically, avoids obstacles, and demonstrates the practical application of embedded systems, robotics, and automation.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "Arduino",
+    "Robotics",
+    "Automation",
+    "IoT",
+    "STEM",
+    "Vacuum Cleaner"
+  ],
+  "date": "2026-08-06",
+  "author": "Umeshwari Baviskar",
+  "team": [
+    {
+      "name": "Umeshwari Baviskar",
+      "role": "Trainer & Project Mentor"
+    }
+  ],
+  "innovation": "The project combines obstacle detection with automatic floor cleaning using an Arduino-based robotic platform. It demonstrates low-cost automation suitable for STEM education.",
+  "problemStatement": "Manual floor cleaning is time-consuming and requires continuous human effort. An affordable automated cleaning solution can improve efficiency while helping students learn robotics and automation.",
+  "solutionApproach": "The robot uses an ultrasonic sensor to detect obstacles and an Arduino UNO to control movement through an L293D motor driver. A high-speed fan creates suction to collect dust while the robot automatically navigates the floor.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO",
+    "operatingVoltage": "5V DC",
+    "motorDriver": "L293D Motor Driver",
+    "sensor": "HC-SR04 Ultrasonic Sensor",
+    "communication": "HC-05 Bluetooth (Optional)",
+    "powerSupply": "7.4V Li-ion Battery Pack"
+  },
+  "components": [
+    "Arduino UNO",
+    "HC-SR04 Ultrasonic Sensor",
+    "L293D Motor Driver",
+    "2 DC Geared Motors",
+    "2 Wheels",
+    "Caster Wheel",
+    "High-Speed Vacuum Fan",
+    "Dust Collection Chamber",
+    "HC-05 Bluetooth Module (Optional)",
+    "Battery Pack",
+    "Power Switch",
+    "Jumper Wires",
+    "Chassis"
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "hc-sr04",
+    "l293d",
+    "dc-motor",
+    "hc-05"
+  ],
+  "guide": [
+    "Step 1: Assemble the chassis and mount the motors.",
+    "Step 2: Install the Arduino UNO and L293D motor driver.",
+    "Step 3: Connect the ultrasonic sensor to the Arduino.",
+    "Step 4: Install the vacuum fan and dust collection chamber.",
+    "Step 5: Connect the battery and verify all wiring.",
+    "Step 6: Upload the Arduino program.",
+    "Step 7: Test obstacle detection and automatic navigation.",
+    "Step 8: Verify the vacuum cleaning performance."
+  ],
+  "estimatedTime": "120 minutes",
+  "prerequisites": [
+    "Basic Arduino Programming",
+    "Basic Electronics",
+    "Motor Driver Connections",
+    "Sensor Interfacing"
+  ],
+  "resources": [
+    {
+      "icon": "📄",
+      "title": "Arduino UNO Documentation",
+      "url": "https://docs.arduino.cc/hardware/uno-rev3"
+    },
+    {
+      "icon": "🎥",
+      "title": "Ultrasonic Sensor Tutorial",
+      "url": "https://randomnerdtutorials.com/complete-guide-for-ultrasonic-sensor-hc-sr04/"
+    }
+  ],
+  "githubUrl": "https://github.com/your-repo/smart-vacuum-cleaner",
+  "youtubeVideos": [
+    {
+      "videoId": "",
+      "title": "Smart Vacuum Cleaner Demo",
+      "desc": "Demonstration of the Arduino-based Smart Vacuum Cleaner."
+    }
+  ],
+  "achievements": [
+    "Demonstrates robotics and automation concepts.",
+    "Suitable for STEM and Tinkering Lab exhibitions.",
+    "Low-cost educational automation project."
+  ],
+  "keywords": [
+    "Smart Vacuum Cleaner",
+    "Arduino",
+    "Robot",
+    "Automation",
+    "Cleaning Robot",
+    "Ultrasonic Sensor",
+    "L293D",
+    "STEM",
+    "Robotics",
+    "Tinkering Lab"
+  ]
+}

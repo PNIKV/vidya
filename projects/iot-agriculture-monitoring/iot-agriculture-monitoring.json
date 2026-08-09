@@ -1,0 +1,51 @@
+{
+  "desc": "Monitor soil moisture, temperature, and humidity remotely to enable smart farming decisions!",
+  "id": "iot-agriculture-monitoring",
+  "level": "Intermediate",
+  "title": "IoT Agriculture Monitoring System",
+  "fullDesc": "An IoT-based agriculture monitoring system that uses multiple sensors to track soil moisture, ambient temperature, and humidity. Helps farmers make data-driven irrigation and crop management decisions.",
+  "date": "2026-07-15",
+  "keywords": [
+    "IoT",
+    "agriculture",
+    "soil moisture",
+    "ESP32",
+    "smart farming",
+    "DHT11"
+  ],
+  "color": "#27AE60",
+  "youtubeVideos": [],
+  "difficulty": 3,
+  "tags": [
+    "IoT",
+    "Agriculture",
+    "Sensors",
+    "ESP32",
+    "STEM",
+    "Smart Farming"
+  ],
+  "prerequisites": [
+    "ESP32 Arduino setup",
+    "Basic sensor wiring",
+    "WiFi configuration"
+  ],
+  "author": "Tinkering Lab",
+  "subtitle": "Smart farm monitoring with soil moisture and weather sensors",
+  "guide": [
+    "Connect DHT11 data pin to ESP32 GPIO 4",
+    "Connect soil moisture sensor analog output to ESP32",
+    "Update WiFi credentials in code",
+    "Upload firmware",
+    "Access web dashboard at ESP32 IP address"
+  ],
+  "status": "Available",
+  "components": [
+    "ESP32",
+    "DHT11 Sensor",
+    "Soil Moisture Sensor",
+    "Jumper Wires",
+    "Breadboard",
+    "USB Cable"
+  ],
+  "estimatedTime": "90 minutes"
+}

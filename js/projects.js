@@ -138,6 +138,8 @@ async function renderProjectDetail() {
   const ytVideoCount = p.youtubeVideos?.length || 0;
   const imgCount = p.gallery?.length || 0;
   const resCount = p.resources?.length || 0;
+  const vivaList = p.vivaQuestions || p.viva_questions || [];
+  const vivaCount = vivaList.length;
 
   const hasPoster = !!p.poster || (p.posters && p.posters.length > 0);
   const hasResearch = !!p.researchPaper || (p.presentationPdfs && p.presentationPdfs.length > 0);
@@ -145,6 +147,7 @@ async function renderProjectDetail() {
   const hasComponents = (p.componentRefs && p.componentRefs.length > 0) || (p.components && p.components.length > 0);
   const hasAchievements = p.achievements && p.achievements.length > 0;
   const hasPresentationTab = hasPoster || hasResearch || hasCircuit || ytVideoCount > 0;
+  const hasLiveDashboard = !!p.liveUrl;
 
   // Custom slider for banner images
   const slideImages = p.bannerImages && p.bannerImages.length > 0
@@ -170,10 +173,23 @@ async function renderProjectDetail() {
 
   let descHtml = '';
   if (p.fullDesc) {
-    descHtml = `<div style="margin-bottom: 32px; line-height: 1.7; color: var(--text-muted);">${p.fullDesc.replaceAll('\n', '<br>')}</div>`;
+    descHtml = `<div style="margin-bottom: 32px; line-height: 1.7; color: var(--text-muted); font-size: 1.05rem;">${p.fullDesc.replaceAll('\n', '<br>')}</div>`;
   } else if (p.desc) {
-    descHtml = `<div style="margin-bottom: 32px; line-height: 1.7; color: var(--text-muted);">${p.desc}</div>`;
+    descHtml = `<div style="margin-bottom: 32px; line-height: 1.7; color: var(--text-muted); font-size: 1.05rem;">${p.desc}</div>`;
   }
+
+  const workingSteps = (p.working && p.working.length > 0)
+    ? p.working.map(w => typeof w === 'object' ? w.action : w)
+    : (p.algorithm && p.algorithm.length > 0)
+      ? p.algorithm
+      : (p.guide && p.guide.length > 0)
+        ? p.guide
+        : [];
+
+  const circuitConnObj = p.circuitConnections || p.circuit_connections;
+  const benefitsList = p.benefits || p.advantages;
+  const appsList = p.applications || p.realLifeApplications;
+  const futureList = p.futureScope || p.future_scope;
 
   container.innerHTML = `
     <!-- Header -->
@@ -187,11 +203,11 @@ async function renderProjectDetail() {
           <h1 class="pd-banner-title" style="--project-color: ${p.color || 'var(--orange)'}">${p.title}</h1>
           
           <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-            ${p.liveUrl ? `<a href="${p.liveUrl}" target="_blank" class="btn-primary" style="background: ${p.color || 'var(--orange)'}; border: none; box-shadow: 0 0 20px ${p.color || 'var(--orange)'}44; padding: 12px 24px; font-size: 0.95rem;">🚀 Launch Live Project</a>` : ''}
+            ${p.liveUrl ? `<button onclick="switchProjectTab('dashboard', document.querySelector('.pd-tab-dashboard'))" class="btn-primary" style="background: ${p.color || 'var(--orange)'}; border: none; box-shadow: 0 0 20px ${p.color || 'var(--orange)'}44; padding: 12px 24px; font-size: 0.95rem; cursor: pointer;">🚀 Launch Live Project / Dashboard</button>` : ''}
             ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" class="btn-outline" style="border-color: #fff; color: #fff; padding: 12px 24px; font-size: 0.95rem;">GitHub Repo ↗</a>` : ''}
             <div style="display: flex; gap: 12px; align-items: center;">
               <span class="pd-meta-chip">👤 ${p.author || 'Tinkering Lab'}</span>
-              <span class="pd-meta-chip">🕒 ${p.date || 'Unknown'}</span>
+              <span class="pd-meta-chip">🕒 ${p.date || '2026'}</span>
               <div class="pd-difficulty-stars" style="color: ${p.color || 'var(--orange)'}; font-size: 1.2rem; margin-left: 4px;">
                 ${'★'.repeat(p.difficulty || 1)}${'☆'.repeat(5 - (p.difficulty || 1))}
               </div>
@@ -217,7 +233,9 @@ async function renderProjectDetail() {
     <div class="pd-tabs-container">
       <div class="pd-tabs" style="overflow-x: auto; flex-wrap: nowrap; padding-bottom: 10px;">
         <button class="pd-tab active" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('overview', this)">📋 Overview</button>
+        ${hasLiveDashboard ? `<button class="pd-tab pd-tab-dashboard" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('dashboard', this)">🖥️ Live Dashboard</button>` : ''}
         ${hasPresentationTab ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('presentation', this)">📑 Presentation</button>` : ''}
+        ${vivaCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('viva', this)">❓ Viva & FAQ (${vivaCount})</button>` : ''}
         ${hasAchievements ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('achievements', this)">🏆 Achievements</button>` : ''}
         ${files3dCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('3d', this)">🖨️ 3D (${files3dCount})</button>` : ''}
         ${codeCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('code', this)">💻 Code (${codeCount})</button>` : ''}
@@ -245,16 +263,117 @@ async function renderProjectDetail() {
               </div>
             </div>
           ` : ''}
-          ${descHtml}
           
-          ${p.guide && p.guide.length > 0 ? `
-            <div class="pd-guide-section">
-              <h3 class="pd-guide-title">🛠️ Step-by-Step Guide</h3>
-              <div class="pd-guide-list">
-                ${p.guide.map((step, idx) => `
-                  <div class="pd-guide-step">
-                    <div class="pd-guide-num">${idx + 1}</div>
-                    <div class="pd-guide-text">${step}</div>
+          ${descHtml}
+
+          <!-- Working Steps Timeline -->
+          ${workingSteps.length > 0 ? `
+            <div style="margin-top: 36px; margin-bottom: 32px;">
+              <h3 style="font-size: 1.3rem; color: ${p.color || 'var(--orange)'}; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; font-family: var(--font-head);">⚙️ How It Works / Working Steps</h3>
+              <div style="display: flex; flex-direction: column; gap: 14px;">
+                ${workingSteps.map((stepText, idx) => `
+                  <div style="display: flex; align-items: flex-start; gap: 16px; background: var(--surface); padding: 16px 20px; border-radius: 12px; border: 1px solid var(--border); transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.borderColor='${p.color || 'var(--orange)'}'; this.style.transform='translateX(4px)'" onmouseout="this.style.borderColor='var(--border)'; this.style.transform='none'">
+                    <div style="background: linear-gradient(135deg, ${p.color || 'var(--orange)'}, #ff7b00); color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; flex-shrink: 0; box-shadow: 0 4px 12px ${p.color || 'var(--orange)'}44;">${idx + 1}</div>
+                    <div style="font-size: 0.98rem; line-height: 1.6; color: var(--text); padding-top: 3px;">${stepText}</div>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Circuit Connections Table -->
+          ${circuitConnObj ? `
+            <div style="margin-top: 36px; margin-bottom: 32px;">
+              <h3 style="font-size: 1.3rem; color: ${p.color || 'var(--orange)'}; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-family: var(--font-head);">🔌 Circuit Connections & Pinout</h3>
+              ${p.circuitDiagramDescription ? `<p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px; line-height: 1.6;">${p.circuitDiagramDescription}</p>` : ''}
+              <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+                  <thead>
+                    <tr style="background: var(--surface2); border-bottom: 1px solid var(--border);">
+                      <th style="padding: 12px 20px; text-align: left; color: var(--text-muted); font-weight: 600; width: 50%;">From Component / Pin</th>
+                      <th style="padding: 12px 20px; text-align: left; color: var(--text-muted); font-weight: 600; width: 50%;">To Microcontroller / Pin</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${Object.entries(circuitConnObj).map(([fromPin, toPin]) => `
+                      <tr style="border-bottom: 1px solid var(--border);">
+                        <td style="padding: 12px 20px; font-weight: 600; color: var(--text);">${fromPin}</td>
+                        <td style="padding: 12px 20px;">
+                          <span style="background: rgba(0, 212, 255, 0.1); color: #00d4ff; border: 1px solid rgba(0, 212, 255, 0.3); padding: 4px 12px; border-radius: 6px; font-weight: bold; font-family: monospace;">${toPin}</span>
+                        </td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Key Benefits -->
+          ${benefitsList && benefitsList.length > 0 ? `
+            <div style="margin-top: 36px; margin-bottom: 32px;">
+              <h3 style="font-size: 1.3rem; color: ${p.color || 'var(--orange)'}; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-family: var(--font-head);">💡 Key Benefits & Advantages</h3>
+              <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px;">
+                ${benefitsList.map(b => `
+                  <div style="background: var(--surface); padding: 14px 18px; border-radius: 12px; border-left: 4px solid ${p.color || 'var(--orange)'}; display: flex; align-items: center; gap: 12px;">
+                    <span style="font-size: 1.2rem;">✨</span>
+                    <span style="font-size: 0.95rem; font-weight: 500; color: var(--text);">${b}</span>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Real World Impact -->
+          ${p.impact ? `
+            <div style="margin-top: 36px; margin-bottom: 32px;">
+              <h3 style="font-size: 1.3rem; color: ${p.color || 'var(--orange)'}; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-family: var(--font-head);">🌱 Real-World Impact</h3>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px;">
+                ${p.impact.community ? `
+                  <div style="background: rgba(0, 212, 255, 0.05); border: 1px solid rgba(0, 212, 255, 0.3); padding: 18px; border-radius: 12px;">
+                    <div style="color: #00d4ff; font-weight: bold; font-size: 0.95rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">👥 Community Impact</div>
+                    <p style="font-size: 0.92rem; color: var(--text); line-height: 1.6; margin: 0;">${p.impact.community}</p>
+                  </div>
+                ` : ''}
+                ${p.impact.environment ? `
+                  <div style="background: rgba(0, 255, 136, 0.05); border: 1px solid rgba(0, 255, 136, 0.3); padding: 18px; border-radius: 12px;">
+                    <div style="color: #00FF88; font-weight: bold; font-size: 0.95rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">🌿 Environmental Impact</div>
+                    <p style="font-size: 0.92rem; color: var(--text); line-height: 1.6; margin: 0;">${p.impact.environment}</p>
+                  </div>
+                ` : ''}
+                ${p.impact.social ? `
+                  <div style="background: rgba(255, 165, 0, 0.05); border: 1px solid rgba(255, 165, 0, 0.3); padding: 18px; border-radius: 12px;">
+                    <div style="color: #FFA500; font-weight: bold; font-size: 0.95rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">🤝 Social Impact</div>
+                    <p style="font-size: 0.92rem; color: var(--text); line-height: 1.6; margin: 0;">${p.impact.social}</p>
+                  </div>
+                ` : ''}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Applications -->
+          ${appsList && appsList.length > 0 ? `
+            <div style="margin-top: 36px; margin-bottom: 32px;">
+              <h3 style="font-size: 1.3rem; color: ${p.color || 'var(--orange)'}; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-family: var(--font-head);">🌍 Target Applications</h3>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                ${appsList.map(app => `
+                  <span style="background: var(--surface2); color: var(--text); padding: 8px 16px; border-radius: 20px; font-size: 0.88rem; font-weight: 500; border: 1px solid var(--border); display: flex; align-items: center; gap: 6px;">
+                    📌 ${app}
+                  </span>
+                `).join('')}
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- Future Scope -->
+          ${futureList && futureList.length > 0 ? `
+            <div style="margin-top: 36px; margin-bottom: 32px;">
+              <h3 style="font-size: 1.3rem; color: ${p.color || 'var(--orange)'}; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; font-family: var(--font-head);">🚀 Future Enhancements</h3>
+              <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px;">
+                ${futureList.map(f => `
+                  <div style="background: var(--surface); padding: 14px 18px; border-radius: 10px; border: 1px dashed var(--border); display: flex; align-items: center; gap: 10px;">
+                    <span style="color: ${p.color || 'var(--orange)'};">⚡</span>
+                    <span style="font-size: 0.9rem; color: var(--text-muted);">${f}</span>
                   </div>
                 `).join('')}
               </div>
@@ -277,6 +396,54 @@ async function renderProjectDetail() {
         </div>
       </div>
     </div>
+
+    <!-- Live Dashboard Tab -->
+    ${hasLiveDashboard ? `
+      <div id="ptab-dashboard" class="pd-tab-content">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; background: var(--surface); padding: 14px 20px; border-radius: 12px; border: 1px solid var(--border); flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 1.2rem;">🖥️</span>
+              <span style="font-weight: 600; font-size: 1rem;">Live Project Dashboard</span>
+              <span style="background: rgba(0,255,136,0.15); color: #00FF88; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; border: 1px solid rgba(0,255,136,0.3);">ACTIVE</span>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center;">
+              <button onclick="const f=document.getElementById('liveDashboardIframe'); if(f) f.src=f.src;" class="btn-outline" style="padding: 8px 14px; font-size: 0.85rem; cursor:pointer;">🔄 Refresh</button>
+              <button onclick="globalThis.toggleDashboardFullscreen()" class="btn-outline" style="padding: 8px 14px; font-size: 0.85rem; cursor:pointer;">⛶ Full Screen</button>
+              <a href="${p.liveUrl}" target="_blank" class="btn-primary" style="padding: 8px 16px; font-size: 0.85rem; background: ${p.color || 'var(--orange)'}; border: none;">Open in New Tab ↗</a>
+            </div>
+          </div>
+          <div id="liveDashboardContainer" style="width: 100%; height: 750px; background: #000; border-radius: 16px; overflow: hidden; border: 1px solid var(--border); position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <iframe id="liveDashboardIframe" src="${p.liveUrl}" style="width: 100%; height: 100%; border: none;" title="Live Project Dashboard" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    ` : ''}
+
+    <!-- Viva & FAQ Tab -->
+    ${vivaCount > 0 ? `
+      <div id="ptab-viva" class="pd-tab-content">
+        <div style="max-width: 900px; margin: 0 auto;">
+          <h3 style="margin-bottom: 24px; font-size: 1.4rem; color: ${p.color || 'var(--orange)'}; display: flex; align-items: center; gap: 10px;">❓ Viva Voce Questions & Answers</h3>
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            ${vivaList.map((v, idx) => `
+              <div class="viva-accordion-card" style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; transition: border-color 0.2s;">
+                <div onclick="const a=this.nextElementSibling; const icon=this.querySelector('.viva-toggle-icon'); if(a.style.display==='none'){a.style.display='block'; icon.textContent='−';}else{a.style.display='none'; icon.textContent='+';}" style="padding: 16px 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: var(--surface2);">
+                  <div style="display: flex; align-items: center; gap: 14px;">
+                    <span style="background: ${p.color || 'var(--orange)'}; color: #fff; border-radius: 6px; padding: 4px 10px; font-weight: bold; font-size: 0.85rem;">Q${idx + 1}</span>
+                    <span style="font-weight: 600; font-size: 1rem; color: var(--text);">${v.q}</span>
+                  </div>
+                  <span class="viva-toggle-icon" style="font-size: 1.4rem; color: var(--text-muted); font-weight: bold;">+</span>
+                </div>
+                <div style="display: none; padding: 18px 24px; border-top: 1px solid var(--border); background: var(--surface); color: var(--text-muted); font-size: 0.98rem; line-height: 1.6;">
+                  <strong style="color: #00FF88;">Answer:</strong> ${v.a}
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      </div>
+    ` : ''}
     
     <!-- Unified Presentation Tab -->
     <div id="ptab-presentation" class="pd-tab-content">
@@ -824,40 +991,124 @@ function switchProjectTab(name, btn) {
   if (btn) btn.classList.add('active');
 }
 
-// Project Lightbox (Reusing existing lightbox container from sessions if possible, or handling uniquely)
-function openProjectLightbox(idx) {
+globalThis._galleryIndex = 0;
+
+globalThis.openProjectLightbox = function(idx) {
   const p = currentProject;
   if (!p || !p.gallery || !p.gallery.length) return;
 
-  lightboxIndex = idx; // using global from session.js
-  const lb = document.getElementById('lightbox');
-  if (!lb) return;
+  globalThis._galleryIndex = idx;
+  let modal = document.getElementById('projectGalleryPresentationModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'projectGalleryPresentationModal';
+    modal.style.cssText = 'position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.96); z-index:99999; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:20px; backdrop-filter:blur(10px);';
+    modal.innerHTML = `
+      <!-- Top Bar -->
+      <div style="width:100%; display:flex; justify-content:space-between; align-items:center; z-index:100001; padding: 0 10px;">
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span style="font-size:1.1rem; font-weight:bold; color:#fff;" id="pGalleryTitle"></span>
+          <span style="background:var(--surface2); color:var(--text-muted); padding:4px 10px; border-radius:12px; font-size:0.85rem;" id="pGalleryCounter"></span>
+        </div>
+        <div style="display:flex; gap:12px; align-items:center;">
+          <button onclick="globalThis.toggleGalleryFullscreen()" class="btn-outline" style="padding:6px 12px; font-size:0.85rem; border-color:rgba(255,255,255,0.3); color:#fff; cursor:pointer;" title="Full Screen">⛶ Fullscreen</button>
+          <a id="pGalleryDownload" href="" download target="_blank" class="btn-outline" style="padding:6px 12px; font-size:0.85rem; border-color:rgba(255,255,255,0.3); color:#fff; text-decoration:none;" title="Download">⬇️ Download</a>
+          <button onclick="globalThis.closeProjectLightbox()" style="background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; padding:0 8px;" title="Close (Esc)">✕</button>
+        </div>
+      </div>
 
-  lb.style.display = 'flex';
-  updateProjectLightbox(p.gallery);
-}
+      <!-- Main Image View area -->
+      <div style="flex:1; width:100%; display:flex; align-items:center; justify-content:space-between; position:relative; overflow:hidden;">
+        <button onclick="globalThis.navProjectLightbox(-1)" style="position:absolute; left:20px; z-index:100001; background:rgba(0,0,0,0.6); color:#fff; border:1px solid rgba(255,255,255,0.2); border-radius:50%; width:50px; height:50px; font-size:1.5rem; cursor:pointer; backdrop-filter:blur(4px); transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.6)'">❮</button>
+        
+        <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 20px;">
+          <img id="pGalleryImg" src="" style="max-width:92%; max-height:82vh; object-fit:contain; border-radius:12px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);" />
+          <div id="pGalleryCaption" style="margin-top:14px; color:#e0e0e0; font-size:1rem; text-align:center; max-width:800px; background:rgba(255,255,255,0.1); padding:8px 18px; border-radius:20px; backdrop-filter:blur(8px);"></div>
+        </div>
 
-function updateProjectLightbox(gallery) {
-  const img = gallery[lightboxIndex];
-  const imgEl = document.getElementById('lightboxImg');
-  const capEl = document.getElementById('lightboxCaption');
-  const cntEl = document.getElementById('lightboxCounter');
+        <button onclick="globalThis.navProjectLightbox(1)" style="position:absolute; right:20px; z-index:100001; background:rgba(0,0,0,0.6); color:#fff; border:1px solid rgba(255,255,255,0.2); border-radius:50%; width:50px; height:50px; font-size:1.5rem; cursor:pointer; backdrop-filter:blur(4px); transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.6)'">❯</button>
+      </div>
 
-  if (imgEl) imgEl.src = img.file;
-  if (capEl) capEl.textContent = img.caption || '';
-  if (cntEl) cntEl.textContent = `${lightboxIndex + 1} / ${gallery.length}`;
+      <!-- Bottom Thumbnail Strip -->
+      <div id="pGalleryThumbs" style="width:100%; display:flex; gap:10px; justify-content:center; overflow-x:auto; padding:10px 0;"></div>
+    `;
+    document.body.appendChild(modal);
 
-  // Override lightbox nav for project gallery context
-  document.querySelector('.lightbox-prev').onclick = () => projectLightboxNav(-1);
-  document.querySelector('.lightbox-next').onclick = () => projectLightboxNav(1);
-}
+    document.addEventListener('keydown', (e) => {
+      const modal = document.getElementById('projectGalleryPresentationModal');
+      if (modal && modal.style.display === 'flex') {
+        if (e.key === 'Escape') globalThis.closeProjectLightbox();
+        else if (e.key === 'ArrowLeft') globalThis.navProjectLightbox(-1);
+        else if (e.key === 'ArrowRight') globalThis.navProjectLightbox(1);
+      }
+    });
+  }
 
-function projectLightboxNav(dir) {
+  modal.style.display = 'flex';
+  globalThis.updateProjectLightboxState();
+};
+
+globalThis.updateProjectLightboxState = function() {
+  const p = currentProject;
+  if (!p || !p.gallery || !p.gallery.length) return;
+  const idx = globalThis._galleryIndex;
+  const imgData = p.gallery[idx];
+
+  const titleEl = document.getElementById('pGalleryTitle');
+  const counterEl = document.getElementById('pGalleryCounter');
+  const imgEl = document.getElementById('pGalleryImg');
+  const capEl = document.getElementById('pGalleryCaption');
+  const dlEl = document.getElementById('pGalleryDownload');
+  const thumbsEl = document.getElementById('pGalleryThumbs');
+
+  if (titleEl) titleEl.textContent = p.title;
+  if (counterEl) counterEl.textContent = `${idx + 1} / ${p.gallery.length}`;
+  if (imgEl) imgEl.src = imgData.file;
+  if (capEl) capEl.textContent = imgData.caption || p.title;
+  if (dlEl) dlEl.href = imgData.file;
+
+  if (thumbsEl) {
+    thumbsEl.innerHTML = p.gallery.map((g, i) => `
+      <img src="${g.file}" onclick="globalThis._galleryIndex=${i}; globalThis.updateProjectLightboxState();" style="width:50px; height:50px; object-fit:cover; border-radius:8px; cursor:pointer; opacity:${i === idx ? 1 : 0.4}; border: 2px solid ${i === idx ? (p.color || 'var(--orange)') : 'transparent'}; transition: all 0.2s;" />
+    `).join('');
+  }
+};
+
+globalThis.navProjectLightbox = function(dir) {
   const p = currentProject;
   if (!p || !p.gallery) return;
-  lightboxIndex = (lightboxIndex + dir + p.gallery.length) % p.gallery.length;
-  updateProjectLightbox(p.gallery);
-}
+  globalThis._galleryIndex = (globalThis._galleryIndex + dir + p.gallery.length) % p.gallery.length;
+  globalThis.updateProjectLightboxState();
+};
+
+globalThis.closeProjectLightbox = function() {
+  const modal = document.getElementById('projectGalleryPresentationModal');
+  if (modal) modal.style.display = 'none';
+  if (document.fullscreenElement) {
+    document.exitFullscreen().catch(() => {});
+  }
+};
+
+globalThis.toggleGalleryFullscreen = function() {
+  const modal = document.getElementById('projectGalleryPresentationModal');
+  if (!modal) return;
+  if (!document.fullscreenElement) {
+    if (modal.requestFullscreen) modal.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) document.exitFullscreen();
+  }
+};
+
+globalThis.toggleDashboardFullscreen = function() {
+  const container = document.getElementById('liveDashboardContainer');
+  if (!container) return;
+  if (!document.fullscreenElement) {
+    if (container.requestFullscreen) container.requestFullscreen();
+    else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
+  } else {
+    if (document.exitFullscreen) document.exitFullscreen();
+  }
+};
 
 // =============================================
 //  VS CODE SYNTAX HIGHLIGHTING (Basic)

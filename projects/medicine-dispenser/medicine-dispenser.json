@@ -1,0 +1,104 @@
+{
+  "id": "automatic-medicine-dispenser",
+  "title": "Automatic Medicine Dispenser",
+  "subtitle": "Smart Arduino-Based Medicine Reminder and Dispensing System",
+  "student": "Nikhil",
+  "category": "Healthcare Innovation",
+  "level": "Intermediate",
+  "theme": "Smart Healthcare",
+  "problem": {
+    "title": "Missed Medicines and Incorrect Dosage",
+    "description": "Many elderly people and patients forget to take their medicines on time. Missing doses or taking the wrong medicine can delay recovery and create serious health risks. Family members also find it difficult to monitor medicine schedules every day."
+  },
+  "solution": {
+    "title": "Automatic Medicine Dispenser",
+    "description": "The Automatic Medicine Dispenser is an Arduino-based smart healthcare device that reminds users to take medicine at the correct time. An RTC module keeps track of time, the LCD displays reminders, the LED and buzzer provide alerts, and a servo motor rotates the medicine tray to dispense the correct medicine automatically."
+  },
+  "working": [
+    {
+      "step": 1,
+      "action": "The user sets medicine timings using the Arduino program."
+    },
+    {
+      "step": 2,
+      "action": "The RTC module continuously tracks the current date and time."
+    },
+    {
+      "step": 3,
+      "action": "At the scheduled time, the LCD displays a reminder message."
+    },
+    {
+      "step": 4,
+      "action": "The LED starts blinking and the buzzer sounds to alert the user."
+    },
+    {
+      "step": 5,
+      "action": "The servo motor rotates the medicine tray and dispenses one dose automatically."
+    },
+    {
+      "step": 6,
+      "action": "The system waits for the next scheduled medicine time."
+    }
+  ],
+  "components": [
+    "Arduino UNO",
+    "Servo Motor",
+    "RTC Module (DS3231)",
+    "16x2 LCD Display",
+    "LED",
+    "Buzzer",
+    "Potentiometer",
+    "Breadboard",
+    "Jumper Wires",
+    "USB Cable",
+    "Medicine Tray",
+    "Power Supply"
+  ],
+  "benefits": [
+    "Ensures medicines are taken on time.",
+    "Reduces missed doses.",
+    "Dispenses the correct medicine automatically.",
+    "Helps elderly people live independently.",
+    "Reduces workload for caregivers.",
+    "Low-cost healthcare solution.",
+    "Easy to operate and maintain."
+  ],
+  "realLifeApplications": [
+    "Homes",
+    "Hospitals",
+    "Clinics",
+    "Senior Citizen Care Centers",
+    "Rehabilitation Centers",
+    "Rural Health Centers",
+    "Home Healthcare"
+  ],
+  "futureScope": [
+    "Mobile app integration.",
+    "IoT-based remote monitoring.",
+    "SMS and WhatsApp alerts for caregivers.",
+    "Voice assistant support.",
+    "AI-based personalized medicine schedules.",
+    "Cloud data storage.",
+    "Solar-powered version for rural areas.",
+    "Emergency notification system."
+  ],
+  "impact": {
+    "community": "Improves healthcare by helping people take medicines on time and reducing medication errors.",
+    "environment": "Can use energy-efficient electronics and solar power to reduce electricity consumption.",
+    "social": "Supports elderly people, improves patient safety, and reduces stress for family members and caregivers."
+  },
+  "keywords": [
+    "Automatic Medicine Dispenser",
+    "Arduino UNO",
+    "Healthcare",
+    "Servo Motor",
+    "RTC Module",
+    "LCD Display",
+    "Medicine Reminder",
+    "Smart Healthcare",
+    "IoT",
+    "Healthcare Innovation",
+    "Medication Management",
+    "Assistive Technology"
+  ]
+}

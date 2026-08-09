@@ -1,269 +1,109 @@
 [
   {
-    "id": "accident-detection-system",
-    "title": "Smart Accident Detection & Alert System",
-    "subtitle": "ESP8266 + MPU6050 based real-time accident detection",
-    "level": "Intermediate",
-    "color": "#FF3B30",
-    "desc": "Detect vehicle accidents using an IMU and instantly send emergency alerts over Wi-Fi.",
-    "fullDesc": "This project uses an ESP8266 NodeMCU and an MPU6050 IMU sensor to monitor vehicle motion in real time. The system continuously analyzes acceleration and gyroscope data to detect severe impacts, sudden orientation changes, and post-impact inactivity. Once an accident is confirmed, it activates a warning countdown allowing the driver to cancel false alarms. If no cancellation is made, the ESP8266 connects to Wi-Fi and sends an emergency notification to predefined contacts through an online service such as Telegram, Firebase, or a custom web server. The system provides a low-cost IoT-based accident detection solution for improving emergency response.",
+    "id": "air-mouse",
+    "title": "Air Mouse",
+    "subtitle": "Wireless BLE air mouse using ESP32 + MPU6050",
+    "level": "Advanced",
+    "color": "#6C63FF",
+    "desc": "Control your PC cursor with hand gestures using an ESP32 and MPU6050 gyroscope over Bluetooth!",
+    "fullDesc": "The Air Mouse project turns an ESP32 microcontroller and an MPU6050 6-DOF IMU into a fully wireless Bluetooth HID mouse. Tilt and rotate the device to move the cursor, press physical buttons to click. Includes a configurable web dashboard accessible over BLE serial for tuning sensitivity, deadzone, and pin assignments. All settings are stored in non-volatile flash memory.",
     "difficulty": 4,
     "status": "Available",
     "tags": [
-      "IoT",
-      "ESP8266",
+      "ESP32",
+      "BLE",
       "MPU6050",
-      "Accident Detection",
-      "Wi-Fi",
-      "Safety"
+      "HID",
+      "Gesture",
+      "Wireless"
     ],
-    "date": "2026-06-27",
-    "author": "Nikhil",
+    "date": "2026-07-01",
+    "author": "Atul Sawant",
     "team": [
       {
-        "name": "Sakshi Gawand",
-        "role": "Computer Trainer"
-      },
-      {
-        "name": "Sejal Patil",
-        "role": "Computer Trainer"
-      },
-      {
-        "name": "Vaidehi Gawand",
-        "role": "Intern"
-      },
-      {
-        "name": "Ritesh Gawand",
-        "role": "Intern"
+        "name": "Atul Sawant",
+        "role": "Trainer & Project Lead"
       }
     ],
-    "innovation": "A low-cost IoT-based accident detection system capable of identifying vehicle crashes using only an ESP8266 and MPU6050, without requiring expensive automotive hardware.",
-    "problemStatement": "Road accidents often delay emergency response because nearby people or family members are not immediately informed. Existing vehicle safety systems are expensive and unavailable in many two-wheelers and budget vehicles.",
-    "solutionApproach": "The ESP8266 continuously reads acceleration and gyroscope values from the MPU6050. The firmware detects high-impact acceleration, sudden orientation changes, and a period of inactivity after impact. When all conditions are satisfied, a 15-second countdown begins. If the cancel button is not pressed, the ESP8266 connects to Wi-Fi and sends an emergency alert through Telegram, Firebase, or a web server.",
+    "innovation": "Replaces a traditional mouse with a gesture-based air controller using consumer-grade IMU hardware, making cursor control hands-free and intuitive.",
+    "problemStatement": "Traditional mice require a flat surface and restrict mobility. A gyroscope-based air mouse allows control from anywhere.",
+    "solutionApproach": "Used an ESP32 as the Bluetooth HID host. The MPU6050 IMU provides raw acceleration data converted into relative mouse motion. A configurable dashboard served over BLE serial allows runtime tuning.",
     "hardwareSpecs": {
-      "microcontroller": "ESP8266 NodeMCU",
-      "powerConsumption": "~90mA @ 5V (Wi-Fi Active)",
-      "operatingVoltage": "5V USB / 3.3V Logic",
-      "communicationProtocol": "I2C (MPU6050), Wi-Fi (802.11 b/g/n)",
-      "dimensions": "Breadboard Prototype",
-      "sensors": [
-        "MPU6050 6-Axis Accelerometer & Gyroscope"
-      ],
-      "communication": [
-        "Wi-Fi HTTP Requests"
-      ]
+      "microcontroller": "ESP32 Development Board",
+      "sensor": "MPU6050 6-DOF IMU (I2C)",
+      "connectivity": "Bluetooth Low Energy (BLE HID)",
+      "buttons": "2× Push Buttons (Left/Right click, GPIO 25/26)",
+      "led": "Status LED (GPIO 2)"
     },
     "components": [
-      "ESP8266 NodeMCU",
-      "MPU6050 IMU Sensor",
+      "ESP32",
+      "MPU6050 IMU",
+      "2x Push Buttons",
+      "Status LED",
+      "USB Cable",
       "Breadboard",
-      "Jumper Wires",
-      "Micro USB Cable",
-      "Buzzer ",
-      "Push Button "
+      "Jumper Wires"
     ],
     "componentRefs": [
-      "esp8266-nodemcu",
+      "esp32",
       "mpu6050",
-      "buzzer",
-      "push-button"
+      "jumper-wires"
     ],
     "guide": [
-      "Connect MPU6050 SDA to D2 (GPIO4) and SCL to D1 (GPIO5).",
-      "Connect MPU6050 VCC to 3.3V and GND to GND.",
-      "Connect an  buzzer to D8.",
-      "Connect an cancel push button to D7 using INPUT_PULLUP.",
-      "Install Wire and MPU6050 libraries in Arduino IDE.",
-      "Enter your Wi-Fi SSID and password in the code.",
-      "Upload the sketch to ESP8266.",
-      "Open Serial Monitor at 115200 baud.",
-      "Verify accelerometer and gyroscope readings.",
-      "Test with normal movement and simulated impacts.",
-      "Confirm that emergency alerts are sent only during actual accident conditions."
+      "Connect MPU6050 to ESP32: SDA→GPIO21, SCL→GPIO22, VCC→3.3V, GND→GND",
+      "Wire left-click button to GPIO 25 and right-click to GPIO 26",
+      "Install required Arduino libraries: Adafruit MPU6050, Adafruit Unified Sensor, ESP32-BLE-Mouse, ArduinoJson",
+      "Upload air_mouse_firmware.ino using Arduino IDE with ESP32 board support",
+      "Pair the device with your PC via Bluetooth as \"ESP32 Air Mouse\"",
+      "Open the web dashboard (mouse_dashboard.html) to configure sensitivity and deadzone",
+      "Hold the device and tilt/rotate to move the cursor, press buttons to click"
     ],
-    "estimatedTime": "2-3 Hours",
+    "estimatedTime": "90 minutes",
     "prerequisites": [
-      "Basic Arduino IDE knowledge",
-      "ESP8266 Board Package Installed",
-      "Basic I2C Sensor Wiring",
-      "Wi-Fi Network"
+      "ESP32 Arduino setup",
+      "Basic I2C wiring",
+      "Bluetooth pairing knowledge"
     ],
-    "pdf": "",
-    "ppt": "",
-    "circuitDiagram": "",
-    "youtubeVideos": [
-      {
-        "title": "Smart Accident Detection System Demo",
-        "videoId": "YOUR_VIDEO_ID",
-        "desc": "Demonstration of accident detection and emergency alert notification."
-      }
-    ],
-    "liveUrl": "",
-    "resources": [
-      {
-        "icon": "📄",
-        "title": "MPU6050 Datasheet",
-        "url": "data/components/mpu6050.json"
-      },
-      {
-        "icon": "📘",
-        "title": "ESP8266 Arduino Documentation",
-        "url": "https://arduino-esp8266.readthedocs.io/"
-      }
-    ],
+    "liveUrl": "projects/air-mouse/mouse_dashboard.html",
+    "youtubeVideos": [],
     "githubUrl": "",
     "achievements": [
-      "Prototype for Smart Vehicle Safety System",
-      "Low-Cost IoT Safety Solution",
-      "Real-Time Accident Detection using ESP8266"
+      "Wireless BLE HID device",
+      "Runtime-configurable via dashboard"
     ],
     "keywords": [
-      "accident",
-      "vehicle",
-      "ESP8266",
-      "NodeMCU",
+      "air mouse",
+      "gesture control",
+      "ESP32",
       "MPU6050",
-      "IoT",
-      "emergency",
-      "Wi-Fi",
-      "sensor",
-      "Arduino",
-      "alert",
-      "safety"
+      "BLE",
+      "HID",
+      "wireless mouse"
     ],
-    "image": "projects/images/accident-detection-system.jpg",
+    "image": "projects/air-mouse/icon.png",
     "gallery": [
       {
-        "file": "projects/accident-detection-system/ADS.png",
-        "caption": "ads"
+        "file": "projects/air-mouse/banner.png",
+        "caption": "banner"
+      },
+      {
+        "file": "projects/air-mouse/icon.png",
+        "caption": "icon"
       }
     ],
     "presentationPdfs": [],
     "codeFiles": [
       {
-        "name": "ADS.ino",
-        "url": "projects/accident-detection-system/ADS.ino",
+        "name": "air_mouse_firmware.ino",
+        "url": "projects/air-mouse/air_mouse_firmware.ino",
         "language": "Arduino C++"
       }
-    ]
-  },
-  {
-    "id": "arduino-uno-countdown-timer",
-    "title": "Arduino UNO Based Countdown Timer",
-    "subtitle": "A Smart Adjustable Countdown Timer Using Arduino UNO",
-    "level": "Level 1",
-    "color": "#00B8A9",
-    "desc": "A simple countdown timer built using Arduino UNO, LCD, Rotary Encoder, LEDs, and Buzzer.",
-    "fullDesc": "This project is an Arduino UNO based countdown timer designed and tested using the Wokwi Simulator. The user can set the countdown time using a rotary encoder. The remaining time is displayed on a 16×2 I2C LCD. During the countdown, a green LED indicates that the timer is running. When the countdown reaches zero, a red LED lights up and a buzzer sounds to alert the user. This project helps students learn Arduino programming, LCD interfacing, digital electronics, and embedded systems through an interactive hands-on project.",
-    "difficulty": 2,
-    "status": "Available",
-    "tags": [
-      "Arduino",
-      "Countdown Timer",
-      "LCD",
-      "Rotary Encoder",
-      "Learning",
-      "Embedded Systems"
     ],
-    "date": "2026-07-13",
-    "author": "Sujal Prasad",
-    "team": [
-      {
-        "name": "Shreya Mishra",
-        "role": "Student Developer (Class X)"
-      },
-      {
-        "name": "Khushi Varma",
-        "role": "Student Developer (Class X)"
-      }
+    "bannerImages": [
+      "projects/air-mouse/banner.png"
     ],
-    "innovation": "A beginner-friendly adjustable countdown timer that combines a rotary encoder, LCD display, LEDs, and buzzer to create an interactive learning experience.",
-    "problemStatement": "Students often find it difficult to understand how input devices, displays, and output components work together in embedded systems. A practical project is needed to demonstrate these concepts in an easy and interactive way.",
-    "solutionApproach": "Arduino UNO controls the complete countdown process. The rotary encoder is used to set the desired time, the LCD displays the remaining countdown, the green LED indicates that the timer is running, and the red LED with buzzer provides an alert when the countdown reaches zero.",
-    "hardwareSpecs": {
-      "microcontroller": "Arduino UNO",
-      "operatingVoltage": "5V DC"
-    },
-    "components": [
-      "Arduino UNO",
-      "16×2 LCD I2C",
-      "Rotary Encoder",
-      "Green LED",
-      "Red LED",
-      "Active Buzzer",
-      "220Ω Resistor",
-      "Breadboard",
-      "Jumper Wires"
-    ],
-    "componentRefs": [
-      "arduino-uno"
-    ],
-    "guide": [
-      "Connect all components according to the circuit diagram.",
-      "Upload the Arduino code using Arduino IDE.",
-      "Rotate the encoder to set the countdown time.",
-      "Press the encoder button to start the timer.",
-      "Observe the LCD countdown, LEDs, and buzzer notification."
-    ],
-    "estimatedTime": "1 Week",
-    "prerequisites": [
-      "Basic Arduino knowledge"
-    ],
-    "resources": [
-      {
-        "icon": "💻",
-        "title": "Wokwi Project Simulation",
-        "url": "https://wokwi.com/projects/469406003391025153"
-      },
-      {
-        "icon": "🛠️",
-        "title": "Arduino IDE (Latest Version)",
-        "url": "https://www.arduino.cc/en/software"
-      }
-    ],
-    "githubUrl": "",
-    "youtubeVideos": [],
-    "achievements": [],
-    "keywords": [
-      "Arduino UNO",
-      "Countdown Timer",
-      "LCD I2C",
-      "Rotary Encoder",
-      "LED",
-      "Buzzer",
-      "Embedded Systems",
-      "Learning",
-      "Wokwi",
-      "Arduino IDE"
-    ],
-    "image": "projects/images/arduino-uno-countdown-timer.jpg",
-    "gallery": [
-      {
-        "file": "projects/Arduino UNO Based Countdown Timer/Poster 1.jpeg",
-        "caption": "poster 1"
-      },
-      {
-        "file": "projects/Arduino UNO Based Countdown Timer/Poster 2.jpeg",
-        "caption": "poster 2"
-      },
-      {
-        "file": "projects/Arduino UNO Based Countdown Timer/Poster 3.jpeg",
-        "caption": "poster 3"
-      }
-    ],
-    "presentationPdfs": [
-      {
-        "file": "projects/Arduino UNO Based Countdown Timer/Arduino-UNO-Based-Countdown-Timer finaaal.pdf",
-        "name": "Arduino-UNO-Based-Countdown-Timer finaaal.pdf",
-        "type": "pdf"
-      }
-    ],
-    "codeFiles": [
-      {
-        "name": "sketch.ino",
-        "url": "projects/Arduino UNO Based Countdown Timer/Arduino UNO Based Countdown Timer/sketch.ino",
-        "language": "Arduino C++"
-      }
+    "htmlDashboards": [
+      "projects/air-mouse/mouse_dashboard.html"
     ]
   },
   {
@@ -410,6 +250,11 @@
     ],
     "presentationPdfs": [
       {
+        "file": "projects/arduino-flight-simulator/Arduino-Based-Flight-Simulator.pdf",
+        "name": "Arduino-Based-Flight-Simulator.pdf",
+        "type": "pdf"
+      },
+      {
         "file": "projects/arduino-flight-simulator/Arduino-Based-Flight.pdf",
         "name": "Arduino-Based-Flight.pdf",
         "type": "pdf"
@@ -458,6 +303,147 @@
     "bannerImages": [
       "projects/arduino-flight-simulator/banner.png",
       "projects/arduino-flight-simulator/banner2.png"
+    ],
+    "htmlDashboards": [
+      "projects/arduino-flight-simulator/index.html"
+    ]
+  },
+  {
+    "id": "arduino-uno-countdown-timer",
+    "title": "Arduino UNO Based Countdown Timer",
+    "subtitle": "A Smart Adjustable Countdown Timer Using Arduino UNO",
+    "level": "Level 1",
+    "color": "#00B8A9",
+    "desc": "A simple countdown timer built using Arduino UNO, LCD, Rotary Encoder, LEDs, and Buzzer.",
+    "fullDesc": "This project is an Arduino UNO based countdown timer designed and tested using the Wokwi Simulator. The user can set the countdown time using a rotary encoder. The remaining time is displayed on a 16×2 I2C LCD. During the countdown, a green LED indicates that the timer is running. When the countdown reaches zero, a red LED lights up and a buzzer sounds to alert the user. This project helps students learn Arduino programming, LCD interfacing, digital electronics, and embedded systems through an interactive hands-on project.",
+    "difficulty": 2,
+    "status": "Available",
+    "tags": [
+      "Arduino",
+      "Countdown Timer",
+      "LCD",
+      "Rotary Encoder",
+      "Learning",
+      "Embedded Systems"
+    ],
+    "date": "2026-07-13",
+    "author": "Sujal Prasad",
+    "team": [
+      {
+        "name": "Shreya Mishra",
+        "role": "Student Developer (Class X)"
+      },
+      {
+        "name": "Khushi Varma",
+        "role": "Student Developer (Class X)"
+      }
+    ],
+    "innovation": "A beginner-friendly adjustable countdown timer that combines a rotary encoder, LCD display, LEDs, and buzzer to create an interactive learning experience.",
+    "problemStatement": "Students often find it difficult to understand how input devices, displays, and output components work together in embedded systems. A practical project is needed to demonstrate these concepts in an easy and interactive way.",
+    "solutionApproach": "Arduino UNO controls the complete countdown process. The rotary encoder is used to set the desired time, the LCD displays the remaining countdown, the green LED indicates that the timer is running, and the red LED with buzzer provides an alert when the countdown reaches zero.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO",
+      "operatingVoltage": "5V DC"
+    },
+    "components": [
+      "Arduino UNO",
+      "16×2 LCD I2C",
+      "Rotary Encoder",
+      "Green LED",
+      "Red LED",
+      "Active Buzzer",
+      "220Ω Resistor",
+      "Breadboard",
+      "Jumper Wires"
+    ],
+    "componentRefs": [
+      "arduino-uno"
+    ],
+    "guide": [
+      "Connect all components according to the circuit diagram.",
+      "Upload the Arduino code using Arduino IDE.",
+      "Rotate the encoder to set the countdown time.",
+      "Press the encoder button to start the timer.",
+      "Observe the LCD countdown, LEDs, and buzzer notification."
+    ],
+    "estimatedTime": "1 Week",
+    "prerequisites": [
+      "Basic Arduino knowledge"
+    ],
+    "resources": [
+      {
+        "icon": "💻",
+        "title": "Wokwi Project Simulation",
+        "url": "https://wokwi.com/projects/469406003391025153"
+      },
+      {
+        "icon": "🛠️",
+        "title": "Arduino IDE (Latest Version)",
+        "url": "https://www.arduino.cc/en/software"
+      }
+    ],
+    "githubUrl": "",
+    "youtubeVideos": [],
+    "achievements": [],
+    "keywords": [
+      "Arduino UNO",
+      "Countdown Timer",
+      "LCD I2C",
+      "Rotary Encoder",
+      "LED",
+      "Buzzer",
+      "Embedded Systems",
+      "Learning",
+      "Wokwi",
+      "Arduino IDE"
+    ],
+    "image": "projects/images/arduino-uno-countdown-timer.jpg",
+    "gallery": [
+      {
+        "file": "projects/arduino-uno-countdown-timer/Poster1.jpeg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/arduino-uno-countdown-timer/Poster2.jpeg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/arduino-uno-countdown-timer/Poster3.jpeg",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/arduino-uno-countdown-timer/Poster1.jpeg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/arduino-uno-countdown-timer/Poster2.jpeg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/arduino-uno-countdown-timer/Poster3.jpeg",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/arduino-uno-countdown-timer/Arduino-UNO-Based-Countdown-Timer finaaal.pdf",
+        "name": "Arduino-UNO-Based-Countdown-Timer finaaal.pdf",
+        "type": "pdf"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "sketch.ino",
+        "url": "projects/arduino-uno-countdown-timer/Arduino UNO Based Countdown Timer/sketch.ino",
+        "language": "Arduino C++"
+      },
+      {
+        "name": "sketch.ino",
+        "url": "projects/arduino-uno-countdown-timer/sketch.ino",
+        "language": "Arduino C++"
+      }
     ]
   },
   {
@@ -559,38 +545,46 @@
       "buzzer",
       "accessibility"
     ],
-    "image": "projects/images/assistive-tech-blind.jpg",
+    "image": "projects/assistive-tech-blind-people/icon.png",
     "gallery": [
       {
-        "file": "projects/Assistive-Tech-blind-people copy/Poster1.png",
+        "file": "projects/assistive-tech-blind-people/icon.png",
+        "caption": "icon"
+      },
+      {
+        "file": "projects/assistive-tech-blind-people/Photos.jpg",
+        "caption": "photos"
+      },
+      {
+        "file": "projects/assistive-tech-blind-people/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Assistive-Tech-blind-people copy/Poster2.png",
+        "file": "projects/assistive-tech-blind-people/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Assistive-Tech-blind-people copy/Poster3.png",
+        "file": "projects/assistive-tech-blind-people/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/Assistive-Tech-blind-people copy/Poster1.png",
+        "file": "projects/assistive-tech-blind-people/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Assistive-Tech-blind-people copy/Poster2.png",
+        "file": "projects/assistive-tech-blind-people/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Assistive-Tech-blind-people copy/Poster3.png",
+        "file": "projects/assistive-tech-blind-people/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Assistive-Tech-blind-people copy/Blind-people-Help-shoes.pdf",
+        "file": "projects/assistive-tech-blind-people/Blind-people-Help-shoes.pdf",
         "name": "Blind-people-Help-shoes.pdf",
         "type": "pdf"
       },
@@ -632,7 +626,23 @@
         "caption": "icon"
       },
       {
+        "file": "projects/automatic-school-bell-and-announcement-system/Poster 1.png",
+        "caption": "poster 1"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/Poster 2.png",
+        "caption": "poster 2"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/Poster 3.png",
+        "caption": "poster 3"
+      },
+      {
         "file": "projects/automatic-school-bell-and-announcement-system/poster1.jpg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/Poster1.png",
         "caption": "Problem Statement"
       },
       {
@@ -640,7 +650,15 @@
         "caption": "Solution & Methodology"
       },
       {
+        "file": "projects/automatic-school-bell-and-announcement-system/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
         "file": "projects/automatic-school-bell-and-announcement-system/poster3.jpg",
+        "caption": "Future Scope"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/Poster3.png",
         "caption": "Future Scope"
       }
     ],
@@ -650,15 +668,32 @@
         "caption": "Problem Statement"
       },
       {
+        "file": "projects/automatic-school-bell-and-announcement-system/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
         "file": "projects/automatic-school-bell-and-announcement-system/poster2.jpg",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
         "file": "projects/automatic-school-bell-and-announcement-system/poster3.jpg",
         "caption": "Future Scope"
+      },
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/Poster3.png",
+        "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
+      {
+        "file": "projects/automatic-school-bell-and-announcement-system/Automatic School Buzzer.pdf",
+        "name": "Automatic School Buzzer.pdf",
+        "type": "pdf"
+      },
       {
         "file": "projects/automatic-school-bell-and-announcement-system/Automatic Schoolbell.pdf",
         "name": "Automatic Schoolbell.pdf",
@@ -680,10 +715,16 @@
     "id": "bus-tracking-system",
     "title": "Bus Tracking System",
     "subtitle": "Smart Bus Arrival Information Display for Rural Bus Stops",
+    "author": "Shraddha Malve",
     "student": "Shraddha Malve",
     "category": "Community Problem Solving",
     "level": "Intermediate",
-    "theme": "Smart Transportation",
+    "difficulty": 3,
+    "color": "#3B82F6",
+    "desc": "A Smart Bus Tracking and Arrival Display System using Arduino UNO and TFT display to help rural commuters track live bus timings.",
+    "fullDesc": "Many rural bus stops lack digital bus tracking systems or real-time information displays. This project builds a smart display using Arduino UNO and a 3.5-inch TFT display to show live bus numbers, destinations, and estimated arrival times at rural bus stops.",
+    "problemStatement": "Many rural bus stops do not have digital bus tracking systems like CHALO or real-time information displays. Passengers do not know which bus is arriving, its expected arrival time, or possible delays.",
+    "solutionApproach": "A Bus Tracking System is developed using an Arduino UNO and a 3.5-inch TFT Display. The display is installed at a model bus stop and shows the bus number, destination, and expected arrival time.",
     "problem": {
       "title": "Lack of Bus Tracking Information in Rural Areas",
       "description": "Many rural bus stops do not have digital bus tracking systems like CHALO or real-time information displays. Passengers do not know which bus is arriving, its expected arrival time, or possible delays. Students, workers, senior citizens, and daily commuters often spend a long time waiting at bus stops, making it difficult to manage their time and plan their journey."
@@ -723,6 +764,11 @@
       "Power Supply",
       "Bus Stop Model"
     ],
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO",
+      "display": "3.5-inch TFT Display",
+      "powerSupply": "5V DC USB"
+    },
     "benefits": [
       "Reduces waiting time at bus stops.",
       "Helps passengers manage their travel time.",
@@ -764,85 +810,370 @@
       "Real-Time Tracking",
       "Community Solution"
     ],
-    "image": "projects/images/bus-tracking-system.jpg",
+    "image": "projects/bus-tracking/icon.png",
     "gallery": [
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System_Poster_1.jpg",
-        "caption": "bus_tracking_system_poster_1"
+        "file": "projects/bus-tracking/banner.png",
+        "caption": "banner"
       },
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System_Poster_2.jpg",
-        "caption": "bus_tracking_system_poster_2"
-      },
-      {
-        "file": "projects/Bus-tracking/Bus_Tracking_System_Poster_3.jpg",
-        "caption": "bus_tracking_system_poster_3"
-      },
-      {
-        "file": "projects/Bus-tracking/bus-dashboard.jpeg",
+        "file": "projects/bus-tracking/bus-dashboard.jpeg",
         "caption": "bus-dashboard"
       },
       {
-        "file": "projects/Bus-tracking/busdetails.jpeg",
-        "caption": "busdetails"
+        "file": "projects/bus-tracking/busdetails1.jpeg",
+        "caption": "busdetails1"
       },
       {
-        "file": "projects/Bus-tracking/stopdisplay.jpeg",
+        "file": "projects/bus-tracking/icon.png",
+        "caption": "icon"
+      },
+      {
+        "file": "projects/bus-tracking/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/bus-tracking/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/bus-tracking/Poster3.png",
+        "caption": "Future Scope"
+      },
+      {
+        "file": "projects/bus-tracking/stopdisplay.jpeg",
         "caption": "stopdisplay"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/bus-tracking/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/bus-tracking/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/bus-tracking/Poster3.png",
+        "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System(1).pdf",
-        "name": "Bus_Tracking_System(1).pdf",
+        "file": "projects/bus-tracking/Bus_Tracking_System.pdf",
+        "name": "Bus_Tracking_System.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System.pdf",
-        "name": "Bus_Tracking_System.pdf",
+        "file": "projects/bus-tracking/Bus_Tracking_System2.pdf",
+        "name": "Bus_Tracking_System2.pdf",
         "type": "pdf"
       }
+    ],
+    "codeFiles": [
+      {
+        "name": "README.md",
+        "url": "projects/bus-tracking/README.md",
+        "language": "Markdown"
+      },
+      {
+        "name": "test.ino",
+        "url": "projects/bus-tracking/test.ino",
+        "language": "Arduino C++"
+      }
+    ],
+    "bannerImages": [
+      "projects/bus-tracking/banner.png"
+    ],
+    "htmlDashboards": [
+      "projects/bus-tracking/livebus (1).html",
+      "projects/bus-tracking/livebus.html"
+    ],
+    "liveUrl": "projects/bus-tracking/livebus.html"
+  },
+  {
+    "id": "food-spoilage-detection-system",
+    "title": "Food Spoilage Detection System",
+    "subtitle": "AI & IoT based food freshness monitoring using NodeMCU",
+    "level": "Intermediate",
+    "color": "#4CAF50",
+    "desc": "Detect food spoilage using gas and color sensors in real-time.",
+    "fullDesc": "The Food Spoilage Detection System is an IoT-based project that monitors the freshness of food using the MQ135 Gas Sensor and TCS34725 Color Sensor. The NodeMCU collects sensor data and determines whether the food is fresh or spoiled. This low-cost solution helps reduce food waste and improves food safety in homes, schools, restaurants, and supermarkets.",
+    "difficulty": 4,
+    "status": "Available",
+    "tags": [
+      "IoT",
+      "Food Safety",
+      "NodeMCU",
+      "MQ135",
+      "TCS34725",
+      "Sensors"
+    ],
+    "date": "2026-08-06",
+    "author": "Anushka Hankare",
+    "team": [
+      {
+        "name": "Anushka Hankare",
+        "role": "Trainer & Project Developer"
+      }
+    ],
+    "innovation": "An affordable IoT-based system that detects food spoilage using gas concentration and color analysis, helping reduce food waste without expensive laboratory equipment.",
+    "problemStatement": "Food spoilage often goes unnoticed until it becomes unsafe to consume, leading to health risks and unnecessary food waste.",
+    "solutionApproach": "The system uses an MQ135 gas sensor to detect harmful gases released during spoilage and a TCS34725 color sensor to identify color changes in food. A NodeMCU processes the sensor data and classifies the food as Fresh or Spoiled.",
+    "hardwareSpecs": {
+      "microcontroller": "NodeMCU ESP8266",
+      "powerConsumption": "~80mA @ 5V",
+      "operatingVoltage": "5V DC",
+      "communicationProtocol": "I2C (TCS34725), Analog (MQ135)",
+      "dimensions": "Breadboard Prototype",
+      "sensors": [
+        "MQ135 Gas Sensor",
+        "TCS34725 RGB Color Sensor"
+      ],
+      "connectivity": [
+        "Wi-Fi (ESP8266)"
+      ]
+    },
+    "components": [
+      "NodeMCU ESP8266",
+      "MQ135 Gas Sensor",
+      "TCS34725 Color Sensor",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "componentRefs": [
+      "nodemcu",
+      "mq135",
+      "tcs34725",
+      "breadboard",
+      "jumper-wires"
+    ],
+    "guide": [
+      "Place the NodeMCU on the breadboard.",
+      "Connect the MQ135 sensor output to the NodeMCU analog pin (A0).",
+      "Connect the TCS34725 sensor using I2C (SDA and SCL).",
+      "Power both sensors using the NodeMCU 3.3V/5V and GND pins.",
+      "Install the required Arduino libraries for ESP8266 and TCS34725.",
+      "Upload the project code using Arduino IDE.",
+      "Monitor gas and color values through the Serial Monitor or web dashboard.",
+      "Analyze the readings to determine whether the food is Fresh or Spoiled."
+    ],
+    "estimatedTime": "120 minutes",
+    "prerequisites": [
+      "Basic Arduino IDE knowledge",
+      "Basic NodeMCU programming",
+      "Understanding of IoT sensors"
+    ],
+    "pdf": "data/Food_Spoilage_Detection_System.pdf",
+    "ppt": "projects/docs/food-spoilage-detection-system.pptx",
+    "circuitDiagram": "data/food-spoilage-circuit.jpg",
+    "youtubeVideos": [
+      {
+        "title": "Food Spoilage Detection System Demo",
+        "videoId": "",
+        "desc": "Demonstration of the Food Spoilage Detection System."
+      }
+    ],
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "MQ135 Datasheet",
+        "url": "data/components/mq135.json"
+      },
+      {
+        "icon": "📄",
+        "title": "TCS34725 Datasheet",
+        "url": "data/components/tcs34725.json"
+      },
+      {
+        "icon": "📚",
+        "title": "ESP8266 Arduino Documentation",
+        "url": "https://arduino-esp8266.readthedocs.io/"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [
+      "Developed as an IoT-based food safety project.",
+      "Designed for educational and smart kitchen applications."
+    ],
+    "keywords": [
+      "food",
+      "spoilage",
+      "food freshness",
+      "NodeMCU",
+      "ESP8266",
+      "MQ135",
+      "TCS34725",
+      "IoT",
+      "food safety",
+      "gas sensor",
+      "color sensor",
+      "smart monitoring"
+    ],
+    "image": "projects/food-spoilage-detection-system/icon.png",
+    "gallery": [
+      {
+        "file": "projects/food-spoilage-detection-system/banner.png",
+        "caption": "banner"
+      },
+      {
+        "file": "projects/food-spoilage-detection-system/banner2.png",
+        "caption": "banner2"
+      },
+      {
+        "file": "projects/food-spoilage-detection-system/icon.png",
+        "caption": "icon"
+      },
+      {
+        "file": "projects/food-spoilage-detection-system/poster1.png",
+        "caption": "Problem Statement"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/food-spoilage-detection-system/poster1.png",
+        "caption": "Problem Statement"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/food-spoilage-detection-system/Smart-Food-Spoilage-Detection-System.pdf",
+        "name": "Smart-Food-Spoilage-Detection-System.pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/docs/food-spoilage-detection-system.pptx",
+        "name": "food-spoilage-detection-system.pptx",
+        "type": "pptx"
+      }
+    ],
+    "bannerImages": [
+      "projects/food-spoilage-detection-system/banner.png",
+      "projects/food-spoilage-detection-system/banner2.png"
     ]
   },
   {
-    "id": "bus-tracking-system-at-bus-stop",
-    "title": "Bus tracking system at Bus Stop",
+    "id": "gas-detector",
+    "title": "Gas Detector",
+    "subtitle": "MQ-135 Gas and Air Quality Leakage Detection System with LCD & Buzzer Alarm",
+    "category": "Environmental & Safety Systems",
     "level": "Beginner",
-    "color": "#00D4FF",
-    "session": 10,
-    "desc": "Learn to build a Bus tracking system at Bus Stop.",
-    "fullDesc": "In this project, we will build a Bus tracking system at Bus Stop. This project will introduce you to the necessary components, coding logic, and assembly required.",
-    "components": [],
     "difficulty": 2,
-    "status": "Available",
-    "tags": [
-      "Electronics",
-      "New"
-    ],
-    "date": "2026-06-24",
+    "color": "#FF9800",
     "author": "Tinkering Lab",
-    "youtubeVideos": [],
-    "resources": [],
-    "guide": [],
-    "liveUrl": "projects/bus-tracking-system-at-bus-stop/livebus.html",
-    "image": "projects/images/bus-tracking-system-at-bus-stop.jpg",
-    "presentationPdfs": [],
-    "codeFiles": [
+    "date": "2026-08-04",
+    "desc": "Detect hazardous gas leaks and harmful air pollutants in real-time using an MQ-135 sensor, I2C LCD display, LED, and buzzer alert system.",
+    "fullDesc": "The Gas Detector project uses an MQ-135 gas sensor interfaced with an Arduino Uno to continuously monitor ambient air for hazardous gases such as ammonia, benzene, alcohol, smoke, and CO2. When gas concentrations exceed a safe threshold, the system triggers a visual LED warning, sounds an audible buzzer alert, and displays real-time status updates on a 16x2 I2C LCD screen.",
+    "problemStatement": "Gas leaks in kitchens, laboratories, and industrial environments pose severe health hazards and fire risks. Early detection of toxic or flammable gases is critical to prevent accidents.",
+    "solutionApproach": "An automated Arduino-based Gas Detection System that continuously reads analog values from an MQ-135 gas sensor, displays live concentration readings on an LCD screen, and immediately triggers visual and audible alarms if gas levels cross safe thresholds.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino Uno",
+      "sensor": "MQ-135 Gas Sensor Module",
+      "display": "16x2 LCD with I2C Backpack",
+      "actuators": "Active Buzzer & Red LED"
+    },
+    "components": [
+      "Arduino Uno",
+      "MQ-135 Gas Sensor Module",
+      "16x2 I2C LCD Display",
+      "Active Buzzer",
+      "Red LED",
+      "Jumper Wires",
+      "Breadboard",
+      "USB Cable"
+    ],
+    "circuitConnections": {
+      "MQ-135 VCC": "5V",
+      "MQ-135 GND": "GND",
+      "MQ-135 A0": "A0",
+      "LCD VCC": "5V",
+      "LCD GND": "GND",
+      "LCD SDA": "A4 (SDA)",
+      "LCD SCL": "A5 (SCL)",
+      "Buzzer (+)": "D8",
+      "Buzzer (-)": "GND",
+      "LED Anode (+)": "D9",
+      "LED Cathode (-)": "GND"
+    },
+    "circuitDiagramDescription": "The MQ-135 sensor's analog pin A0 connects to Arduino A0. The I2C LCD module connects to 5V, GND, SDA (A4), and SCL (A5). The Buzzer connects to Digital Pin D8 and GND, while the LED connects to Digital Pin D9.",
+    "working": [
       {
-        "name": "bus-tracking-system-at-bus-stop.ino",
-        "url": "projects/bus-tracking-system-at-bus-stop/code/bus-tracking-system-at-bus-stop.ino",
-        "language": "Arduino C++"
+        "step": 1,
+        "action": "The Arduino initializes the I2C 16x2 LCD and warms up the MQ-135 gas sensor for 3 seconds."
       },
       {
-        "name": "README.md",
-        "url": "projects/bus-tracking-system-at-bus-stop/README.md",
-        "language": "Markdown"
+        "step": 2,
+        "action": "The MQ-135 sensor measures ambient air quality and sends an analog gas concentration reading to pin A0."
+      },
+      {
+        "step": 3,
+        "action": "Arduino displays the real-time gas value on Row 1 of the LCD display."
+      },
+      {
+        "step": 4,
+        "action": "If the gas value exceeds the threshold (150), Arduino turns ON the Buzzer (Pin 8) and Red LED (Pin 9), displaying '!ALERT!' on the screen."
+      },
+      {
+        "step": 5,
+        "action": "If gas concentration is normal, the Buzzer and LED remain OFF, displaying 'SAFE' status."
       }
     ],
-    "firmware": [
+    "benefits": [
+      "Real-time hazard detection",
+      "Clear visual and audible alarm alerts",
+      "Easy to construct with low-cost components",
+      "Protects homes, labs, and industrial workplaces",
+      "Configurable threshold sensitivity"
+    ],
+    "applications": [
+      "Home Kitchen Safety",
+      "Chemical Laboratories",
+      "Industrial Factories",
+      "LPG & Gas Cylinder Storage",
+      "Air Quality Monitoring Stations"
+    ],
+    "futureScope": [
+      "Integrate Wi-Fi (ESP8266/ESP32) for remote smartphone notifications.",
+      "Add GSM module to send instant SMS alerts to property owners.",
+      "Connect automated gas shut-off valve relay system."
+    ],
+    "vivaQuestions": [
       {
-        "name": "bustracking.ino.with_bootloader.bin",
-        "url": "projects/bus-tracking-system-at-bus-stop/firmware/bustracking.ino.with_bootloader.bin"
+        "q": "Which sensor is used to detect gas in this project?",
+        "a": "The MQ-135 gas sensor module is used to detect gases like ammonia, smoke, benzene, and CO2."
+      },
+      {
+        "q": "Why is an I2C module used with the LCD?",
+        "a": "The I2C backpack reduces the required Arduino pins from 6 or 12 down to just 2 pins (SDA and SCL)."
+      },
+      {
+        "q": "What happens when gas levels exceed 150?",
+        "a": "The Arduino activates the Buzzer on pin 8, turns on the LED on pin 9, and displays '!ALERT!' on the LCD screen."
+      },
+      {
+        "q": "Can the threshold value be changed?",
+        "a": "Yes, the threshold variable in the Arduino sketch can be calibrated based on ambient baseline gas levels."
+      }
+    ],
+    "image": "projects/images/gas-detector.jpg",
+    "gallery": [
+      {
+        "file": "projects/gas-detector/demo.jpeg",
+        "caption": "demo"
+      },
+      {
+        "file": "projects/gas-detector/Gas Detector Poster.jpg",
+        "caption": "gas detector poster"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/gas-detector/Gas-Detector-Sensor.pdf",
+        "name": "Gas-Detector-Sensor.pdf",
+        "type": "pdf"
       }
     ]
   },
@@ -950,12 +1281,12 @@
     "liveUrl": "",
     "resources": [
       {
-        "icon": "🤖",
+        "icon": "ðŸ¤–",
         "title": "PictoBlox Documentation",
         "url": "https://ai.thestempedia.com/docs/pictoblox/"
       },
       {
-        "icon": "📘",
+        "icon": "ðŸ“˜",
         "title": "Quarky Documentation",
         "url": "https://ai.thestempedia.com/docs/quarky/"
       }
@@ -977,16 +1308,30 @@
     "image": "projects/images/gripper-robot-pictoblox.jpg",
     "gallery": [
       {
-        "file": "projects/Griper Robot/Gripper Robot Poster 1.png",
-        "caption": "gripper robot poster 1"
+        "file": "projects/gripper-robot/Poster1.png",
+        "caption": "Problem Statement"
       },
       {
-        "file": "projects/Griper Robot/Gripper Robot poster 2.png",
-        "caption": "gripper robot poster 2"
+        "file": "projects/gripper-robot/poster2.png",
+        "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Griper Robot/Gripper Robot poster 3.png",
-        "caption": "gripper robot poster 3"
+        "file": "projects/gripper-robot/poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/gripper-robot/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/gripper-robot/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/gripper-robot/poster3.png",
+        "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
@@ -994,6 +1339,105 @@
         "file": "projects/level-3/gripper-robot",
         "name": "gripper-robot",
         "type": "pptx"
+      }
+    ]
+  },
+  {
+    "desc": "Monitor soil moisture, temperature, and humidity remotely to enable smart farming decisions!",
+    "id": "iot-agriculture-monitoring",
+    "level": "Intermediate",
+    "title": "IoT Agriculture Monitoring System",
+    "fullDesc": "An IoT-based agriculture monitoring system that uses multiple sensors to track soil moisture, ambient temperature, and humidity. Helps farmers make data-driven irrigation and crop management decisions.",
+    "date": "2026-07-15",
+    "keywords": [
+      "IoT",
+      "agriculture",
+      "soil moisture",
+      "ESP32",
+      "smart farming",
+      "DHT11"
+    ],
+    "color": "#27AE60",
+    "youtubeVideos": [],
+    "difficulty": 3,
+    "tags": [
+      "IoT",
+      "Agriculture",
+      "Sensors",
+      "ESP32",
+      "STEM",
+      "Smart Farming"
+    ],
+    "prerequisites": [
+      "ESP32 Arduino setup",
+      "Basic sensor wiring",
+      "WiFi configuration"
+    ],
+    "author": "Tinkering Lab",
+    "subtitle": "Smart farm monitoring with soil moisture and weather sensors",
+    "guide": [
+      "Connect DHT11 data pin to ESP32 GPIO 4",
+      "Connect soil moisture sensor analog output to ESP32",
+      "Update WiFi credentials in code",
+      "Upload firmware",
+      "Access web dashboard at ESP32 IP address"
+    ],
+    "status": "Available",
+    "components": [
+      "ESP32",
+      "DHT11 Sensor",
+      "Soil Moisture Sensor",
+      "Jumper Wires",
+      "Breadboard",
+      "USB Cable"
+    ],
+    "estimatedTime": "90 minutes",
+    "image": "projects/images/iot-agriculture-monitoring.jpg",
+    "presentationPdfs": [
+      {
+        "file": "projects/iot-agriculture-monitoring/IoT_Agriculture_Monitoring_System.pdf",
+        "name": "IoT_Agriculture_Monitoring_System.pdf",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
+    "id": "jarakshak",
+    "title": "JalRakshak",
+    "subtitle": "Smart water conservation and quality monitoring system",
+    "level": "Intermediate",
+    "color": "#0099CC",
+    "desc": "Monitor water quality and automate conservation with smart sensors and alerts!",
+    "fullDesc": "JalRakshak is an IoT-based water monitoring and conservation system.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "IoT",
+      "Water",
+      "Environment",
+      "Sensors",
+      "Conservation"
+    ],
+    "date": "2026-07-20",
+    "author": "Tinkering Lab",
+    "image": "projects/images/jarakshak.jpg",
+    "gallery": [
+      {
+        "file": "projects/jarakshak/poster1.png",
+        "caption": "Problem Statement"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/jarakshak/poster1.png",
+        "caption": "Problem Statement"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/jarakshak/JalRakshak.pdf",
+        "name": "JalRakshak.pdf",
+        "type": "pdf"
       }
     ]
   },
@@ -1159,151 +1603,164 @@
     ]
   },
   {
-    "filename": "Arduino code.docx",
-    "content": "// Laser Security System\n// LDR Module (DO) -> D7\n// Active Buzzer -> D11\nint ldr = 7;\nint buzzer = 11;\nvoid setup() {\n  pinMode(ldr, INPUT);\n  pinMode(buzzer, OUTPUT);\n  digitalWrite(buzzer, LOW);   // Start with buzzer OFF\n}\nvoid loop() {\n  int sensor = digitalRead(ldr);\n  if (sensor == LOW) {\n    // Laser beam is on the LDR\n    digitalWrite(buzzer, LOW);   // Buzzer OFF\n  }\n  else {\n    // Laser beam is broken\n    digitalWrite(buzzer, HIGH);  // Buzzer ON\n  }\n  delay(50);   // Small delay for stable operation\n}",
-    "image": "projects/images/default.jpg",
+    "id": "laser-security-system",
+    "title": "Laser Security System",
+    "subtitle": "Embedded Security System using Laser and LDR Sensor",
+    "category": "Embedded Security System",
+    "level": "Beginner",
+    "difficulty": 2,
+    "color": "#FF4757",
+    "school": "Vidya Mandir Manda Titwala",
+    "trainer": "Sandhy Pokharkar",
+    "author": "Anuj Ide, Jay Funde, Naitik Barai, Vyas Gaykar",
+    "date": "2026-07-10",
+    "team": [
+      {
+        "name": "Anuj Ide",
+        "role": "Student"
+      },
+      {
+        "name": "Jay Funde",
+        "role": "Student"
+      },
+      {
+        "name": "Naitik Barai",
+        "role": "Student"
+      },
+      {
+        "name": "Vyas Gaykar",
+        "role": "Student"
+      }
+    ],
+    "desc": "Laser Security System uses a laser beam and an LDR sensor module to detect intrusion. When the laser beam is interrupted, the Arduino Uno activates a buzzer as an alarm.",
+    "fullDesc": "The system continuously monitors a laser beam falling on an LDR sensor module. When the beam is interrupted by any object or person, Arduino detects the change in the sensor output and activates the buzzer.",
+    "problemStatement": "Provide a low-cost laser-based intrusion detection system using Arduino Uno.",
+    "solutionApproach": "To design and implement a Laser Security System using Arduino Uno, LDR sensor module, laser module and buzzer.",
+    "objective": [
+      "Detect interruption of laser beam.",
+      "Activate buzzer when intrusion occurs.",
+      "Develop a low-cost security system.",
+      "Provide a simple and reliable security solution."
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "Arduino Uno",
+      "sensor": "LDR Sensor Module",
+      "actuator": "Active Buzzer",
+      "source": "Laser Module"
+    },
+    "components": [
+      "Arduino Uno",
+      "Laser Module",
+      "LDR Sensor Module",
+      "Active Buzzer",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "circuitConnections": {
+      "Laser Module VCC": "5V",
+      "Laser Module GND": "GND",
+      "LDR Module VCC": "5V",
+      "LDR Module GND": "GND",
+      "LDR Module DO": "D7",
+      "Buzzer (+)": "D11",
+      "Buzzer (-)": "GND"
+    },
+    "circuitDiagramDescription": "Laser beam continuously falls on the LDR sensor module. The Digital Output (DO) of the LDR module is connected to Arduino Digital Pin D7. The active buzzer is connected to Digital Pin D11 and GND. When the laser beam is interrupted, the Arduino activates the buzzer.",
+    "algorithm": [
+      "Start",
+      "Initialize Arduino pins.",
+      "Read Digital Output (DO) from LDR module.",
+      "If sensor value is HIGH (beam broken), turn ON buzzer.",
+      "Else keep buzzer OFF.",
+      "Repeat continuously."
+    ],
+    "workingPrinciple": "The laser beam continuously falls on the LDR sensor module. When the beam is present, the sensor output remains LOW and the buzzer stays OFF. If the laser beam is interrupted, the sensor output becomes HIGH. Arduino detects this change and immediately turns ON the buzzer, indicating an intrusion.",
+    "applications": [
+      "Home Security",
+      "Office Security",
+      "Museum Security",
+      "Bank Lockers",
+      "Jewellery Shops",
+      "Restricted Areas"
+    ],
+    "benefits": [
+      "Low Cost",
+      "Easy to Build",
+      "Fast Detection",
+      "Simple Circuit",
+      "Reliable Operation"
+    ],
+    "futureScope": [
+      "IoT Notification",
+      "GSM SMS Alert",
+      "Mobile App Integration",
+      "Wi-Fi Monitoring",
+      "Camera Integration"
+    ],
+    "vivaQuestions": [
+      {
+        "q": "What is an LDR?",
+        "a": "LDR is a Light Dependent Resistor used to detect light intensity."
+      },
+      {
+        "q": "Why is Arduino Uno used?",
+        "a": "Arduino reads the sensor output and controls the buzzer."
+      },
+      {
+        "q": "What happens when the laser beam is interrupted?",
+        "a": "Arduino detects the interruption and turns ON the buzzer."
+      },
+      {
+        "q": "Which pin is used for the LDR module?",
+        "a": "Digital Pin D7."
+      },
+      {
+        "q": "Which pin is used for the buzzer?",
+        "a": "Digital Pin D11."
+      }
+    ],
+    "conclusion": "The Laser Security System successfully detects intrusion by monitoring a laser beam using an LDR sensor module. When the beam is interrupted, the Arduino Uno immediately activates the buzzer, making it a simple, reliable and low-cost security solution.",
+    "image": "projects/images/laser-security-system.jpg",
     "gallery": [
       {
-        "file": "projects/Laser Security System/poster1.jpg",
+        "file": "projects/laser-security-system/Banner.png",
+        "caption": "banner"
+      },
+      {
+        "file": "projects/laser-security-system/poster1.jpg",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Laser Security System/poster2.jpg",
+        "file": "projects/laser-security-system/poster2.jpg",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Laser Security System/poster3.jpg",
+        "file": "projects/laser-security-system/poster3.jpg",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Laser Security System/Project Photos/connection.png",
+        "file": "projects/laser-security-system/Project Photos/connection.png",
         "caption": "connection"
       },
       {
-        "file": "projects/Laser Security System/Project Photos/WhatsApp Image 2026-07-15 at 3.06.20 PM.jpeg",
+        "file": "projects/laser-security-system/Project Photos/WhatsApp Image 2026-07-15 at 3.06.20 PM.jpeg",
         "caption": "whatsapp image 2026-07-15 at 3.06.20 pm"
       },
       {
-        "file": "projects/Laser Security System/Project Photos/WhatsApp Image 2026-07-15 at 3.07.44 PM (1).jpeg",
+        "file": "projects/laser-security-system/Project Photos/WhatsApp Image 2026-07-15 at 3.07.44 PM (1).jpeg",
         "caption": "whatsapp image 2026-07-15 at 3.07.44 pm (1)"
       },
       {
-        "file": "projects/Laser Security System/Project Photos/WhatsApp Image 2026-07-15 at 3.07.44 PM.jpeg",
+        "file": "projects/laser-security-system/Project Photos/WhatsApp Image 2026-07-15 at 3.07.44 PM.jpeg",
         "caption": "whatsapp image 2026-07-15 at 3.07.44 pm"
       },
       {
-        "file": "projects/Laser Security System/Project Photos/WhatsApp Image 2026-07-15 at 3.07.45 PM.jpeg",
+        "file": "projects/laser-security-system/Project Photos/WhatsApp Image 2026-07-15 at 3.07.45 PM.jpeg",
         "caption": "whatsapp image 2026-07-15 at 3.07.45 pm"
       }
     ],
     "posters": [
       {
-        "file": "projects/Laser Security System/poster1.jpg",
-        "caption": "Problem Statement"
-      },
-      {
-        "file": "projects/Laser Security System/poster2.jpg",
-        "caption": "Solution & Methodology"
-      },
-      {
-        "file": "projects/Laser Security System/poster3.jpg",
-        "caption": "Future Scope"
-      }
-    ],
-    "presentationPdfs": [
-      {
-        "file": "projects/Laser Security System/LASER SECURITY SYSTEM.pdf",
-        "name": "LASER SECURITY SYSTEM.pdf",
-        "type": "pdf"
-      }
-    ]
-  },
-  {
-    "id": "laser-security-system",
-    "title": "Laser Security System",
-    "project_title": "Laser Security System",
-    "project_category": "Embedded System / Security System",
-    "student_name": "",
-    "roll_number": "",
-    "college_name": "",
-    "department": "",
-    "date": "2026-06-26",
-    "trainer_name": "Sandhy Pokharkar",
-    "project_description": "Laser Security System is an electronic security device that uses a laser beam and an LDR (Light Dependent Resistor) to detect any interruption in the laser path. When the laser beam is interrupted by any object, the LDR senses the change in light intensity and sends the signal to Arduino Uno. Then Arduino activates a buzzer and LED as an alert indication. This system can be used for home security, object detection and intrusion alerts.",
-    "objective": [
-      "To design a simple and effective laser-based security system.",
-      "To detect any interruption in the laser beam path.",
-      "To trigger an alarm (buzzer) and visual indication (LED) when intrusion is detected.",
-      "To provide a low-cost and reliable security solution."
-    ],
-    "components": [
-      {
-        "name": "Arduino Uno",
-        "quantity": 1
-      },
-      {
-        "name": "Bread Board",
-        "quantity": 1
-      },
-      {
-        "name": "LDR Sensor",
-        "quantity": 1
-      },
-      {
-        "name": "Laser Module",
-        "quantity": 1
-      },
-      {
-        "name": "10K Resistor",
-        "quantity": 1
-      },
-      {
-        "name": "Buzzer",
-        "quantity": 1
-      },
-      {
-        "name": "LED",
-        "quantity": 1
-      },
-      {
-        "name": "Jumper Wires",
-        "quantity": "As Required"
-      }
-    ],
-    "circuit_connections": {
-      "Laser Module (+)": "5V",
-      "Laser Module (-)": "GND",
-      "LDR One Side": "5V",
-      "LDR Other Side": "A0 of Arduino",
-      "10K Resistor": "Between A0 and GND",
-      "LED (+)": "Digital Pin 8 through 220 Ohm resistor",
-      "LED (-)": "GND",
-      "Buzzer (+)": "Digital Pin 9",
-      "Buzzer (-)": "GND",
-      "Common": "All GND connections are connected together"
-    },
-    "circuit_diagram_description": "Laser module is placed facing the LDR sensor. LDR is connected to analog pin A0 using a 10K resistor as a voltage divider. LED is connected to digital pin 8 and buzzer is connected to digital pin 9 of Arduino Uno. All components share a common ground.",
-    "working_principle": [
-      "Laser beam continuously falls on the LDR sensor.",
-      "When the beam is interrupted, the resistance of the LDR changes.",
-      "Arduino detects the change in analog value.",
-      "Arduino turns ON the buzzer and LED to indicate an intrusion."
-    ],
-    "arduino_code": "int ldr = A0;\nint buzzer = 9;\nint led = 8;\nint threshold = 500;\n\nvoid setup() {\n  pinMode(buzzer, OUTPUT);\n  pinMode(led, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int value = analogRead(ldr);\n\n  if (value > threshold) {\n    digitalWrite(led, HIGH);\n    tone(buzzer, 1000);\n  } else {\n    digitalWrite(led, LOW);\n    noTone(buzzer);\n  }\n  delay(100);\n}",
-    "conclusion": "The Laser Security System successfully detects any interruption in the laser beam and provides an alert through buzzer and LED. It is simple, cost-effective and useful for home and office security applications. This project helps in understanding Arduino interfacing, LDR sensors and basic security systems.",
-    "difficulty": 1,
-    "level": "Beginner",
-    "status": "Available",
-    "desc": "Laser Security System using Arduino, LDR, and a laser module to detect intrusions.",
-    "tags": [
-      "Arduino",
-      "LDR",
-      "Laser",
-      "Security"
-    ],
-    "image": "projects/images/laser-security-system.jpg",
-    "gallery": [
-      {
         "file": "projects/laser-security-system/poster1.jpg",
         "caption": "Problem Statement"
       },
@@ -1313,28 +1770,498 @@
       },
       {
         "file": "projects/laser-security-system/poster3.jpg",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/laser-security-system/Json File.pdf",
+        "name": "Json File.pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/laser-security-system/LASER SECURITY SYSTEM.pdf",
+        "name": "LASER SECURITY SYSTEM.pdf",
+        "type": "pdf"
+      }
+    ],
+    "bannerImages": [
+      "projects/laser-security-system/Banner.png"
+    ]
+  },
+  {
+    "id": "automatic-medicine-dispenser",
+    "title": "Automatic Medicine Dispenser",
+    "subtitle": "Smart Arduino-Based Medicine Reminder and Dispensing System",
+    "student": "Nikhil",
+    "category": "Healthcare Innovation",
+    "level": "Intermediate",
+    "theme": "Smart Healthcare",
+    "problem": {
+      "title": "Missed Medicines and Incorrect Dosage",
+      "description": "Many elderly people and patients forget to take their medicines on time. Missing doses or taking the wrong medicine can delay recovery and create serious health risks. Family members also find it difficult to monitor medicine schedules every day."
+    },
+    "solution": {
+      "title": "Automatic Medicine Dispenser",
+      "description": "The Automatic Medicine Dispenser is an Arduino-based smart healthcare device that reminds users to take medicine at the correct time. An RTC module keeps track of time, the LCD displays reminders, the LED and buzzer provide alerts, and a servo motor rotates the medicine tray to dispense the correct medicine automatically."
+    },
+    "working": [
+      {
+        "step": 1,
+        "action": "The user sets medicine timings using the Arduino program."
+      },
+      {
+        "step": 2,
+        "action": "The RTC module continuously tracks the current date and time."
+      },
+      {
+        "step": 3,
+        "action": "At the scheduled time, the LCD displays a reminder message."
+      },
+      {
+        "step": 4,
+        "action": "The LED starts blinking and the buzzer sounds to alert the user."
+      },
+      {
+        "step": 5,
+        "action": "The servo motor rotates the medicine tray and dispenses one dose automatically."
+      },
+      {
+        "step": 6,
+        "action": "The system waits for the next scheduled medicine time."
+      }
+    ],
+    "components": [
+      "Arduino UNO",
+      "Servo Motor",
+      "RTC Module (DS3231)",
+      "16x2 LCD Display",
+      "LED",
+      "Buzzer",
+      "Potentiometer",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable",
+      "Medicine Tray",
+      "Power Supply"
+    ],
+    "benefits": [
+      "Ensures medicines are taken on time.",
+      "Reduces missed doses.",
+      "Dispenses the correct medicine automatically.",
+      "Helps elderly people live independently.",
+      "Reduces workload for caregivers.",
+      "Low-cost healthcare solution.",
+      "Easy to operate and maintain."
+    ],
+    "realLifeApplications": [
+      "Homes",
+      "Hospitals",
+      "Clinics",
+      "Senior Citizen Care Centers",
+      "Rehabilitation Centers",
+      "Rural Health Centers",
+      "Home Healthcare"
+    ],
+    "futureScope": [
+      "Mobile app integration.",
+      "IoT-based remote monitoring.",
+      "SMS and WhatsApp alerts for caregivers.",
+      "Voice assistant support.",
+      "AI-based personalized medicine schedules.",
+      "Cloud data storage.",
+      "Solar-powered version for rural areas.",
+      "Emergency notification system."
+    ],
+    "impact": {
+      "community": "Improves healthcare by helping people take medicines on time and reducing medication errors.",
+      "environment": "Can use energy-efficient electronics and solar power to reduce electricity consumption.",
+      "social": "Supports elderly people, improves patient safety, and reduces stress for family members and caregivers."
+    },
+    "keywords": [
+      "Automatic Medicine Dispenser",
+      "Arduino UNO",
+      "Healthcare",
+      "Servo Motor",
+      "RTC Module",
+      "LCD Display",
+      "Medicine Reminder",
+      "Smart Healthcare",
+      "IoT",
+      "Healthcare Innovation",
+      "Medication Management",
+      "Assistive Technology"
+    ],
+    "image": "projects/images/automatic-medicine-dispenser.jpg",
+    "gallery": [
+      {
+        "file": "projects/medicine-dispenser/Poster 1.png",
+        "caption": "poster 1"
+      },
+      {
+        "file": "projects/medicine-dispenser/Poster 2.png",
+        "caption": "poster 2"
+      },
+      {
+        "file": "projects/medicine-dispenser/Poster 3.png",
+        "caption": "poster 3"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/medicine-dispenser/Automatic-Medicine-Dispenser.pdf",
+        "name": "Automatic-Medicine-Dispenser.pdf",
+        "type": "pdf"
+      }
+    ],
+    "author": "Nikhil",
+    "problemStatement": "Many elderly people and patients forget to take their medicines on time. Missing doses or taking the wrong medicine can delay recovery and create serious health risks. Family members also find it difficult to monitor medicine schedules every day.",
+    "solutionApproach": "The Automatic Medicine Dispenser is an Arduino-based smart healthcare device that reminds users to take medicine at the correct time. An RTC module keeps track of time, the LCD displays reminders, the LED and buzzer provide alerts, and a servo motor rotates the medicine tray to dispense the correct medicine automatically."
+  },
+  {
+    "id": "robot-car",
+    "title": "Robot Car",
+    "subtitle": "ESP32 based smart robotic car with L298N motor control",
+    "level": "Intermediate",
+    "color": "#00D4FF",
+    "desc": "Build a wireless robot car using ESP32, motor driver and DC motors!",
+    "fullDesc": "A smart robotic car project using ESP32 microcontroller, L298N motor driver and four DC motors.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Robotics",
+      "ESP32",
+      "Motor Control",
+      "IoT"
+    ],
+    "date": "2026-06-26",
+    "author": "Atul Sawant",
+    "image": "projects/images/robot-car.jpg",
+    "gallery": [
+      {
+        "file": "projects/robot-car/poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/robot-car/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/robot-car/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/laser-security-system/poster1.jpg",
+        "file": "projects/robot-car/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/laser-security-system/poster2.jpg",
+        "file": "projects/robot-car/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/laser-security-system/poster3.jpg",
+        "file": "projects/robot-car/poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": []
+  },
+  {
+    "id": "rock-paper-scissors-pictoblox-ai",
+    "title": "Rock Paper Scissors — PictoBlox AI",
+    "subtitle": "Hand gesture recognition game powered by PictoBlox AI",
+    "level": "Beginner",
+    "color": "#FF4B8B",
+    "desc": "Play Rock Paper Scissors with your hand using AI-powered gesture recognition in PictoBlox!",
+    "fullDesc": "A fun and interactive Rock Paper Scissors game that uses PictoBlox's built-in AI machine learning extension to recognize hand gestures in real-time via webcam. Students learn about machine learning, gesture recognition, and AI by training a model to detect rock, paper, and scissors hand shapes.",
+    "difficulty": 1,
+    "status": "Available",
+    "tags": [
+      "AI",
+      "PictoBlox",
+      "Machine Learning",
+      "Gesture",
+      "Game",
+      "STEM"
+    ],
+    "date": "2026-08-01",
+    "author": "Tinkering Lab",
+    "innovation": "Introduces students to practical machine learning by having them train their own gesture recognition model in PictoBlox.",
+    "problemStatement": "Making AI and machine learning concepts accessible to young students requires hands-on, playful projects.",
+    "solutionApproach": "Used PictoBlox AI extensions to collect gesture training data (rock, paper, scissors) and train a classification model. The model is then used in a game logic block.",
+    "components": [
+      "Computer with webcam",
+      "PictoBlox Software"
+    ],
+    "guide": [
+      "Open PictoBlox and create a new project",
+      "Add the Machine Learning extension",
+      "Create classes: Rock, Paper, Scissors",
+      "Train the model using webcam captures of each gesture",
+      "Build game logic to compare your gesture with a random computer choice",
+      "Add sprites and sound for a fun user experience"
+    ],
+    "estimatedTime": "45 minutes",
+    "prerequisites": [
+      "PictoBlox installed",
+      "Basic Scratch/block coding"
+    ],
+    "youtubeVideos": [],
+    "keywords": [
+      "rock paper scissors",
+      "AI",
+      "PictoBlox",
+      "gesture recognition",
+      "machine learning",
+      "game"
+    ],
+    "image": "projects/images/rock-paper-scissors-pictoblox-ai.jpg",
+    "gallery": [
+      {
+        "file": "projects/rock-paper-scissors-pictoblox-ai/Poster1.png",
+        "caption": "Problem Statement"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/rock-paper-scissors-pictoblox-ai/Poster1.png",
+        "caption": "Problem Statement"
+      }
+    ],
+    "presentationPdfs": []
+  },
+  {
+    "id": "satellite-deep-learning-model",
+    "title": "Satellite Deep Learning — Land Change Detection",
+    "subtitle": "AI model to detect land use changes from satellite imagery",
+    "level": "Advanced",
+    "color": "#2C3E50",
+    "desc": "Detect changes in land use and cover from satellite images using a deep learning model!",
+    "fullDesc": "A deep learning project that uses convolutional neural networks to analyze satellite imagery and detect changes in land use and land cover over time. Applications include monitoring deforestation, urban expansion, agricultural shifts, and environmental changes. The project demonstrates practical AI/ML techniques applied to geospatial data.",
+    "difficulty": 5,
+    "status": "Available",
+    "tags": [
+      "AI",
+      "Deep Learning",
+      "Satellite",
+      "Remote Sensing",
+      "Computer Vision",
+      "Python"
+    ],
+    "date": "2026-07-10",
+    "author": "Tinkering Lab",
+    "innovation": "Applies cutting-edge deep learning to satellite imagery analysis, making remote sensing techniques accessible to students and researchers.",
+    "problemStatement": "Monitoring land use changes at scale requires automated analysis of large satellite image datasets that manual inspection cannot handle efficiently.",
+    "solutionApproach": "Trained a convolutional neural network on paired satellite images (before/after) to classify pixel-level changes in land cover categories.",
+    "components": [
+      "Python",
+      "TensorFlow/Keras",
+      "Satellite Dataset",
+      "GPU (recommended)"
+    ],
+    "guide": [
+      "Set up Python environment with TensorFlow and required libraries",
+      "Download satellite imagery dataset",
+      "Preprocess images: normalize, crop, and split into train/test",
+      "Train the deep learning model on labeled change detection data",
+      "Evaluate model performance on test set",
+      "Run inference on new satellite image pairs to detect changes",
+      "Visualize change detection results on maps"
+    ],
+    "estimatedTime": "4+ hours",
+    "prerequisites": [
+      "Python programming",
+      "Basic ML knowledge",
+      "TensorFlow setup"
+    ],
+    "youtubeVideos": [],
+    "keywords": [
+      "satellite",
+      "deep learning",
+      "land change detection",
+      "remote sensing",
+      "computer vision",
+      "CNN"
+    ],
+    "image": "projects/images/satellite-deep-learning-model.jpg",
+    "gallery": [
+      {
+        "file": "projects/satellite-deep-learning-model/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/satellite-deep-learning-model/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/satellite-deep-learning-model/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/satellite-deep-learning-model/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/satellite-deep-learning-model/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/satellite-deep-learning-model/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/laser-security-system/LASER SECURITY SYSTEM.pdf",
-        "name": "LASER SECURITY SYSTEM.pdf",
+        "file": "projects/satellite-deep-learning-model/Smart-Vision-Satellite.pdf",
+        "name": "Smart-Vision-Satellite.pdf",
         "type": "pdf"
+      }
+    ]
+  },
+  {
+    "//_comment1": "This is a template project file. You only need to fill in these manual fields.",
+    "//_comment2": "DO NOT manually add fields for image, bannerImage, gallery, posters, codeFiles, files3d, firmware, presentationPdfs, dataVideos.",
+    "//_comment3": "Those fields will be AUTOMATICALLY populated when you run `node js/update_projects.js`.",
+    "id": "interfacing-7-segment-display-arduino",
+    "title": "Interfacing a 7-Segment Display with Arduino Uno",
+    "subtitle": "Displaying Numbers 0–9 Using the Wokwi Simulator",
+    "level": "Level 1",
+    "color": "#0F766E",
+    "desc": "An educational Arduino project demonstrating how a Single Common Cathode 7-Segment Display is interfaced with Arduino Uno to display digits from 0 to 9 using the Wokwi Simulator.",
+    "fullDesc": "This project demonstrates the interfacing of a Single Common Cathode 7-Segment Display with an Arduino Uno using the Wokwi Simulator. It helps students understand digital outputs, circuit connections, Arduino programming, and display interfacing by displaying numbers from 0 to 9 sequentially. The project is designed for beginners and provides practical exposure to embedded systems and digital electronics without requiring physical hardware.",
+    "difficulty": 1,
+    "status": "Available",
+    "tags": [
+      "Arduino",
+      "7-Segment Display",
+      "Embedded Systems",
+      "Digital Electronics",
+      "Wokwi",
+      "Simulation",
+      "Class IX",
+      "Tech Fest"
+    ],
+    "date": "2026-07-13",
+    "author": "Sujal Prasad",
+    "team": [
+      {
+        "name": "Anushka Varma",
+        "role": "Project Lead & Embedded Systems Developer (Class IX)"
+      },
+      {
+        "name": "Muskan Vishwakarma",
+        "role": "Circuit Design & Documentation Lead (Class IX)"
+      }
+    ],
+    "innovation": "This project simplifies the understanding of digital display interfacing by using the Wokwi Simulator, allowing students to learn Arduino programming, circuit connections, and embedded systems concepts without requiring physical hardware.",
+    "problemStatement": "Students often find it difficult to understand how a 7-Segment Display communicates with a microcontroller. Learning digital electronics, Arduino programming, and circuit connections becomes challenging without practical demonstrations.",
+    "solutionApproach": "The project interfaces a Single Common Cathode 7-Segment Display with an Arduino Uno. Using Arduino digital output pins, individual display segments are controlled to sequentially display digits from 0 to 9. The Wokwi Simulator provides a safe and interactive environment for learning and experimentation.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino Uno",
+      "display": "Single Common Cathode 7-Segment Display",
+      "operatingVoltage": "5V DC",
+      "simulationPlatform": "Wokwi Simulator"
+    },
+    "components": [
+      "Arduino Uno",
+      "Single Common Cathode 7-Segment Display",
+      "Jumper Wires",
+      "USB Cable",
+      "Computer / Laptop",
+      "Wokwi Simulator"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "7-segment-display"
+    ],
+    "guide": [
+      "Connect the 7-Segment Display to the Arduino Uno according to the circuit diagram.",
+      "Connect the Common Cathode (COM) pin to GND.",
+      "Upload the Arduino program in the Wokwi Simulator.",
+      "Run the simulation.",
+      "Observe the display counting from 0 to 9.",
+      "Verify that the Decimal Point (DP) remains ON throughout the sequence."
+    ],
+    "estimatedTime": "45 Minutes",
+    "prerequisites": [
+      "Basic Knowledge of Arduino",
+      "Basic Digital Electronics",
+      "Understanding of Digital Output Pins"
+    ],
+    "resources": [
+      {
+        "icon": "🌐",
+        "title": "Wokwi Simulator",
+        "url": "https://wokwi.com/"
+      },
+      {
+        "icon": "📘",
+        "title": "Arduino Documentation",
+        "url": "https://docs.arduino.cc/"
+      }
+    ],
+    "githubUrl": "",
+    "youtubeVideos": [],
+    "achievements": [],
+    "keywords": [
+      "Arduino Uno",
+      "7 Segment Display",
+      "Common Cathode",
+      "Digital Electronics",
+      "Embedded Systems",
+      "Arduino Programming",
+      "Display Interfacing",
+      "Wokwi",
+      "Simulation",
+      "Class IX",
+      "Tech Fest",
+      "STEM Education",
+      "School Project"
+    ],
+    "image": "projects/images/interfacing-7-segment-display-arduino.jpg",
+    "gallery": [
+      {
+        "file": "projects/seven-segment-display/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/seven-segment-display/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/seven-segment-display/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/seven-segment-display/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/seven-segment-display/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/seven-segment-display/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/seven-segment-display/Interfacing-a-7-Segment-Display-with-Arduino-Uno-Final.pdf",
+        "name": "Interfacing-a-7-Segment-Display-with-Arduino-Uno-Final.pdf",
+        "type": "pdf"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "sketch.ino",
+        "url": "projects/seven-segment-display/sketch.ino",
+        "language": "Arduino C++"
       }
     ]
   },
@@ -1380,193 +2307,294 @@
         "name": "draw.ino",
         "url": "projects/sketching-live/draw.ino",
         "language": "Arduino C++"
+      },
+      {
+        "name": "drawing_test1.ino",
+        "url": "projects/sketching-live/drawing_test1.ino",
+        "language": "Arduino C++"
       }
+    ],
+    "htmlDashboards": [
+      "projects/sketching-live/index.html"
     ]
   },
   {
     "id": "accident-detection-system",
     "title": "Smart Accident Detection & Alert System",
-    "subtitle": "ESP8266 + MPU6050 based real-time accident detection",
+    "subtitle": "IoT-based accident detection with GPS and GSM emergency alert",
     "level": "Intermediate",
-    "color": "#FF3B30",
-    "desc": "Detect vehicle accidents using an IMU and instantly send emergency alerts over Wi-Fi.",
-    "fullDesc": "This project uses an ESP8266 NodeMCU and an MPU6050 IMU sensor to monitor vehicle motion in real time. The system continuously analyzes acceleration and gyroscope data to detect severe impacts, sudden orientation changes, and post-impact inactivity. Once an accident is confirmed, it activates a warning countdown allowing the driver to cancel false alarms. If no cancellation is made, the ESP8266 connects to Wi-Fi and sends an emergency notification to predefined contacts through an online service such as Telegram, Firebase, or a custom web server. The system provides a low-cost IoT-based accident detection solution for improving emergency response.",
-    "difficulty": 4,
+    "color": "#E74C3C",
+    "desc": "Automatically detect road accidents using sensors and instantly alert emergency contacts!",
+    "fullDesc": "A smart accident detection system that uses accelerometer/gyroscope sensors to detect sudden impact or abnormal vehicle movement.",
+    "difficulty": 3,
     "status": "Available",
     "tags": [
       "IoT",
-      "ESP8266",
-      "MPU6050",
-      "Accident Detection",
-      "Wi-Fi",
-      "Safety"
-    ],
-    "date": "2026-06-27",
-    "author": "Nikhil",
-    "team": [
-      {
-        "name": "Sakshi Gawand",
-        "role": "Computer Trainer"
-      },
-      {
-        "name": "Sejal Patil",
-        "role": "Computer Trainer"
-      },
-      {
-        "name": "Vaidehi Gawand",
-        "role": "Intern"
-      },
-      {
-        "name": "Ritesh Gawand",
-        "role": "Intern"
-      }
-    ],
-    "innovation": "A low-cost IoT-based accident detection system capable of identifying vehicle crashes using only an ESP8266 and MPU6050, without requiring expensive automotive hardware.",
-    "problemStatement": "Road accidents often delay emergency response because nearby people or family members are not immediately informed. Existing vehicle safety systems are expensive and unavailable in many two-wheelers and budget vehicles.",
-    "solutionApproach": "The ESP8266 continuously reads acceleration and gyroscope values from the MPU6050. The firmware detects high-impact acceleration, sudden orientation changes, and a period of inactivity after impact. When all conditions are satisfied, a 15-second countdown begins. If the cancel button is not pressed, the ESP8266 connects to Wi-Fi and sends an emergency alert through Telegram, Firebase, or a web server.",
-    "hardwareSpecs": {
-      "microcontroller": "ESP8266 NodeMCU",
-      "powerConsumption": "~90mA @ 5V (Wi-Fi Active)",
-      "operatingVoltage": "5V USB / 3.3V Logic",
-      "communicationProtocol": "I2C (MPU6050), Wi-Fi (802.11 b/g/n)",
-      "dimensions": "Breadboard Prototype",
-      "sensors": [
-        "MPU6050 6-Axis Accelerometer & Gyroscope"
-      ],
-      "communication": [
-        "Wi-Fi HTTP Requests"
-      ]
-    },
-    "components": [
-      "ESP8266 NodeMCU",
-      "MPU6050 IMU Sensor",
-      "Breadboard",
-      "Jumper Wires",
-      "Micro USB Cable",
-      "Buzzer ",
-      "Push Button "
-    ],
-    "componentRefs": [
-      "esp8266-nodemcu",
-      "mpu6050",
-      "buzzer",
-      "push-button"
-    ],
-    "guide": [
-      "Connect MPU6050 SDA to D2 (GPIO4) and SCL to D1 (GPIO5).",
-      "Connect MPU6050 VCC to 3.3V and GND to GND.",
-      "Connect an  buzzer to D8.",
-      "Connect an cancel push button to D7 using INPUT_PULLUP.",
-      "Install Wire and MPU6050 libraries in Arduino IDE.",
-      "Enter your Wi-Fi SSID and password in the code.",
-      "Upload the sketch to ESP8266.",
-      "Open Serial Monitor at 115200 baud.",
-      "Verify accelerometer and gyroscope readings.",
-      "Test with normal movement and simulated impacts.",
-      "Confirm that emergency alerts are sent only during actual accident conditions."
-    ],
-    "estimatedTime": "2-3 Hours",
-    "prerequisites": [
-      "Basic Arduino IDE knowledge",
-      "ESP8266 Board Package Installed",
-      "Basic I2C Sensor Wiring",
-      "Wi-Fi Network"
-    ],
-    "pdf": "",
-    "ppt": "",
-    "circuitDiagram": "",
-    "youtubeVideos": [
-      {
-        "title": "Smart Accident Detection System Demo",
-        "videoId": "YOUR_VIDEO_ID",
-        "desc": "Demonstration of accident detection and emergency alert notification."
-      }
-    ],
-    "liveUrl": "",
-    "resources": [
-      {
-        "icon": "📄",
-        "title": "MPU6050 Datasheet",
-        "url": "data/components/mpu6050.json"
-      },
-      {
-        "icon": "📘",
-        "title": "ESP8266 Arduino Documentation",
-        "url": "https://arduino-esp8266.readthedocs.io/"
-      }
-    ],
-    "githubUrl": "",
-    "achievements": [
-      "Prototype for Smart Vehicle Safety System",
-      "Low-Cost IoT Safety Solution",
-      "Real-Time Accident Detection using ESP8266"
-    ],
-    "keywords": [
-      "accident",
-      "vehicle",
-      "ESP8266",
-      "NodeMCU",
-      "MPU6050",
-      "IoT",
-      "emergency",
-      "Wi-Fi",
-      "sensor",
+      "Safety",
+      "GPS",
+      "GSM",
       "Arduino",
-      "alert",
-      "safety"
+      "Emergency"
     ],
+    "date": "2026-07-08",
+    "author": "Uran Rasal",
     "image": "projects/images/accident-detection-system.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "file": "projects/smart-accident-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "file": "projects/smart-accident-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "file": "projects/smart-accident-detection/poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (1).jpeg",
+        "file": "projects/smart-accident-detection/Project (1).jpeg",
         "caption": "project (1)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (2).jpeg",
+        "file": "projects/smart-accident-detection/Project (2).jpeg",
         "caption": "project (2)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (3).jpeg",
+        "file": "projects/smart-accident-detection/Project (3).jpeg",
         "caption": "project (3)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (4).jpeg",
+        "file": "projects/smart-accident-detection/Project (4).jpeg",
         "caption": "project (4)"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "file": "projects/smart-accident-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "file": "projects/smart-accident-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "file": "projects/smart-accident-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-Accident-Detection/Smart Accident Detection & Alert System.pdf",
+        "file": "projects/smart-accident-detection/Smart Accident Detection & Alert System.pdf",
         "name": "Smart Accident Detection & Alert System.pdf",
         "type": "pdf"
       }
+    ],
+    "codeFiles": [
+      {
+        "name": "AccidentDetectAlert.ino",
+        "url": "projects/smart-accident-detection/AccidentDetectAlert_Code/AccidentDetectAlert.ino",
+        "language": "Arduino C++"
+      }
     ]
+  },
+  {
+    "id": "smart-classroom",
+    "title": "Smart Classroom Energy Saver",
+    "subtitle": "Automated energy management system for smart classrooms",
+    "level": "Intermediate",
+    "color": "#F39C12",
+    "desc": "Automatically control classroom lights and fans based on occupancy and ambient light levels!",
+    "fullDesc": "The Smart Classroom Energy Saver automates lighting and ventilation control based on occupancy detection and ambient light levels.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Arduino",
+      "Automation",
+      "Energy Saving",
+      "IoT",
+      "Smart Building",
+      "STEM"
+    ],
+    "date": "2026-08-06",
+    "author": "Tinkering Lab",
+    "image": "projects/images/smart-classroom.jpg",
+    "gallery": [
+      {
+        "file": "projects/smart-classroom/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/smart-classroom/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/smart-classroom/Poster3.png",
+        "caption": "Future Scope"
+      },
+      {
+        "file": "projects/smart-classroom/Project A3 Display Board.png",
+        "caption": "project a3 display board"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/smart-classroom/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/smart-classroom/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/smart-classroom/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/smart-classroom/Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
+        "name": "Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/smart-classroom/Smart_Classroom_Energy_Saver (2).pdf",
+        "name": "Smart_Classroom_Energy_Saver (2).pdf",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
+    "id": "smart-converter-app",
+    "title": "Smart Converter App",
+    "subtitle": "Batch DOCX/PPTX to JSON/PDF file converter utility",
+    "level": "Beginner",
+    "color": "#8E44AD",
+    "desc": "A Python desktop utility to batch-convert DOCX files to JSON and PPTX files to PDF!",
+    "fullDesc": "Smart Converter App is a Python Tkinter desktop application that recursively scans a selected folder and converts all DOCX files to structured JSON and all PPTX files to PDF. It uses python-docx for DOCX parsing and win32com for PowerPoint conversion. Designed for batch processing of student project submissions.",
+    "difficulty": 2,
+    "status": "Available",
+    "tags": [
+      "Python",
+      "Utility",
+      "File Conversion",
+      "Desktop App",
+      "Automation"
+    ],
+    "date": "2026-08-01",
+    "author": "Atul Sawant",
+    "innovation": "Automates batch file conversion for processing large numbers of student document submissions, saving significant manual effort.",
+    "problemStatement": "Processing hundreds of student-submitted DOCX and PPTX files manually into usable formats is extremely time-consuming.",
+    "solutionApproach": "Built a Python Tkinter GUI app that walks the entire folder tree recursively, identifying and converting each file type. Parsed JSON content is saved with the same filename.",
+    "hardwareSpecs": {},
+    "components": [
+      "Python 3.x",
+      "python-docx library",
+      "pywin32 library",
+      "Tkinter (built-in)"
+    ],
+    "guide": [
+      "Install required Python libraries: pip install python-docx pywin32",
+      "Run the app: python smart_converter_app.py",
+      "Click \"Select Main Folder & Start\" and choose your folder",
+      "Confirm the operation in the warning dialog",
+      "Wait for conversion to complete — a summary will be shown"
+    ],
+    "estimatedTime": "15 minutes setup",
+    "prerequisites": [
+      "Python 3 installed",
+      "pip package manager",
+      "Windows (required for PPTX→PDF)"
+    ],
+    "youtubeVideos": [],
+    "keywords": [
+      "python",
+      "converter",
+      "DOCX",
+      "PPTX",
+      "PDF",
+      "JSON",
+      "utility",
+      "batch conversion",
+      "desktop app"
+    ],
+    "image": "projects/images/smart-converter-app.jpg",
+    "presentationPdfs": [],
+    "codeFiles": [
+      {
+        "name": "smart_converter_app.py",
+        "url": "projects/smart-converter-app/smart_converter_app.py",
+        "language": "Python"
+      }
+    ]
+  },
+  {
+    "id": "smart-fall-detection",
+    "title": "Smart Fall Detection System",
+    "subtitle": "IMU-based fall detection with emergency alert system",
+    "level": "Intermediate",
+    "color": "#C0392B",
+    "desc": "Detect falls automatically using an accelerometer and send instant emergency alerts!",
+    "fullDesc": "The Smart Fall Detection System uses an accelerometer/IMU to detect sudden falls in real-time.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Safety",
+      "IoT",
+      "Sensors",
+      "Arduino",
+      "Healthcare",
+      "STEM"
+    ],
+    "date": "2026-08-06",
+    "author": "Tinkering Lab",
+    "image": "projects/images/smart-fall-detection.jpg",
+    "gallery": [
+      {
+        "file": "projects/smart-fall-detection/poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/smart-fall-detection/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/smart-fall-detection/poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/smart-fall-detection/poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/smart-fall-detection/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/smart-fall-detection/poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/smart-fall-detection/Smart-fall-detection.pdf",
+        "name": "Smart-fall-detection.pdf",
+        "type": "pdf"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "fall_detection_firmware.ino",
+        "url": "projects/smart-fall-detection/fall_detection_firmware/fall_detection_firmware.ino",
+        "language": "Arduino C++"
+      }
+    ],
+    "htmlDashboards": [
+      "projects/smart-fall-detection/fall_detection_dashboard.html"
+    ],
+    "liveUrl": "projects/smart-fall-detection/fall_detection_dashboard.html"
   },
   {
     "id": "smart-bridge-flood-alert",
@@ -1661,34 +2689,51 @@
     "image": "projects/images/smart-bridge-flood-alert.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge_System_Poster1.png",
-        "caption": "smart_flood_alert_bridge_system_poster1"
+        "file": "projects/smart-flood-alert/poster1.png",
+        "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge_System_Poster2.png",
-        "caption": "smart_flood_alert_bridge_system_poster2"
+        "file": "projects/smart-flood-alert/poster2.png",
+        "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge_System_Poster3.png",
-        "caption": "smart_flood_alert_bridge_system_poster3"
+        "file": "projects/smart-flood-alert/poster3.png",
+        "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-Flood-Alert/smartbridge.jpeg",
+        "file": "projects/smart-flood-alert/smartbridge.jpeg",
         "caption": "smartbridge"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/smart-flood-alert/poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/smart-flood-alert/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/smart-flood-alert/poster3.png",
+        "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge.pdf",
+        "file": "projects/smart-flood-alert/Smart_Flood_Alert_Bridge.pdf",
         "name": "Smart_Flood_Alert_Bridge.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Smart-Flood-Alert/smart_flood_alert_bridge_System_ppt.pdf",
+        "file": "projects/smart-flood-alert/smart_flood_alert_bridge_System_ppt.pdf",
         "name": "smart_flood_alert_bridge_System_ppt.pdf",
         "type": "pdf"
       }
-    ]
+    ],
+    "author": "Anjum Shaikh",
+    "problemStatement": "During heavy rainfall, the river water level rises rapidly and floods low-level bridges. Students, office workers, emergency services, and vehicles are unable to cross the bridge safely. Many people remain stranded for hours or even days, causing delays, accidents, and disruption of essential services.",
+    "solutionApproach": "A smart bridge continuously monitors the river water level using a water level sensor. When the water reaches a dangerous level, the bridge automatically lifts upward, preventing vehicles and people from entering the flooded area. At the same time, a buzzer sounds and an LED glows to warn everyone nearby. Once the water level becomes safe, the bridge returns to its normal position."
   },
   {
     "id": "arduino-home-automation-ir-remote",
@@ -1813,22 +2858,22 @@
     "image": "projects/images/arduino-home-automation-ir-remote.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-Home-Automation/Home Automation Poster/Poster 1.png",
+        "file": "projects/smart-home-automation/Poster 1.png",
         "caption": "poster 1"
       },
       {
-        "file": "projects/Smart-Home-Automation/Home Automation Poster/Poster 2.png",
+        "file": "projects/smart-home-automation/Poster 2.png",
         "caption": "poster 2"
       },
       {
-        "file": "projects/Smart-Home-Automation/Home Automation Poster/Poster 3.png",
+        "file": "projects/smart-home-automation/Poster 3.png",
         "caption": "poster 3"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-Home-Automation/Home_Automation_Arduino_DSV_Techfest.pdf",
-        "name": "Home_Automation_Arduino_DSV_Techfest.pdf",
+        "file": "projects/smart-home-automation/Home_Automation.pdf",
+        "name": "Home_Automation.pdf",
         "type": "pdf"
       },
       {
@@ -1947,145 +2992,288 @@
     "image": "projects/images/smart-parking-system.jpg",
     "gallery": [
       {
-        "file": "projects/Smart_parking_system/Poster_1.png",
-        "caption": "poster_1"
+        "file": "projects/smart-parking-system/Poster1.png",
+        "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart_parking_system/Poster_2.png",
-        "caption": "poster_2"
+        "file": "projects/smart-parking-system/Poster2.png",
+        "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart_parking_system/Poster_3.png",
-        "caption": "poster_3"
+        "file": "projects/smart-parking-system/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/smart-parking-system/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/smart-parking-system/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/smart-parking-system/Poster3.png",
+        "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart_parking_system/PPT smart_parking_system.pdf",
+        "file": "projects/smart-parking-system/PPT smart_parking_system.pdf",
         "name": "PPT smart_parking_system.pdf",
         "type": "pdf"
       }
     ]
   },
   {
-    "id": "unihiker-k10",
-    "title": "UNIHIKER K10",
-    "subtitle": "All-in-one AI coding board with Vision, Voice & TinyML",
-    "level": "Beginner",
-    "color": "#00C2A8",
-    "desc": "One board, four AI models — face, pet, QR & motion detection out of the box!",
-    "fullDesc": "Explore a complete AI + IoT learning board built around the ESP32-S3. UNIHIKER K10 packs a 2.8\" color touchscreen, camera, microphone, speaker, and a full environmental sensor suite onto a single board — so beginners can run real vision, voice, and TinyML projects with zero extra wiring, then graduate to MicroPython and PlatformIO as their skills grow.",
-    "difficulty": 2,
+    "id": "smart-vacuum-cleaner",
+    "title": "Smart Vacuum Cleaner",
+    "subtitle": "An Arduino-Based Automatic Floor Cleaning Robot",
+    "level": "Intermediate",
+    "color": "#2E86DE",
+    "desc": "A smart robotic vacuum cleaner that automatically detects obstacles and cleans floors using an Arduino-based control system.",
+    "fullDesc": "The Smart Vacuum Cleaner is an intelligent cleaning robot designed to reduce manual effort in household and educational environments. It uses an Arduino UNO microcontroller, ultrasonic sensor for obstacle detection, motor driver for movement control, and a high-speed fan to collect dust. The robot navigates automatically, avoids obstacles, and demonstrates the practical application of embedded systems, robotics, and automation.",
+    "difficulty": 3,
     "status": "Available",
     "tags": [
-      "AI",
+      "Arduino",
+      "Robotics",
+      "Automation",
       "IoT",
-      "Vision",
-      "Voice",
-      "TinyML",
-      "ESP32"
+      "STEM",
+      "Vacuum Cleaner"
     ],
-    "date": "2026-07-04",
-    "author": "Nikhil",
+    "date": "2026-08-06",
+    "author": "Umeshwari Baviskar",
     "team": [
       {
-        "name": "Nikhil",
-        "role": "Firmware & AI Models Lead"
-      },
-      {
-        "name": "Rohan",
-        "role": "Hardware & Sensor Integration"
+        "name": "Umeshwari Baviskar",
+        "role": "Trainer & Project Mentor"
       }
     ],
-    "innovation": "A single classroom-ready board that runs offline vision AI, offline voice recognition, and on-device TinyML training — removing the need for cloud connectivity or extra modules in beginner AI education.",
-    "problemStatement": "Most AI/IoT learning kits require assembling multiple modules (camera, mic, sensors, screen) before students can even start coding, which slows down classroom adoption and increases cost and failure points.",
-    "solutionApproach": "UNIHIKER K10 integrates the camera, mic, speaker, screen, and sensors onto one ESP32-S3 board with four pre-loaded vision AI models, offline voice recognition, and TinyML support — letting students go from unboxing to a working AI demo in one sitting, using Mind+ blocks or MicroPython.",
+    "innovation": "The project combines obstacle detection with automatic floor cleaning using an Arduino-based robotic platform. It demonstrates low-cost automation suitable for STEM education.",
+    "problemStatement": "Manual floor cleaning is time-consuming and requires continuous human effort. An affordable automated cleaning solution can improve efficiency while helping students learn robotics and automation.",
+    "solutionApproach": "The robot uses an ultrasonic sensor to detect obstacles and an Arduino UNO to control movement through an L293D motor driver. A high-speed fan creates suction to collect dust while the robot automatically navigates the floor.",
     "hardwareSpecs": {
-      "microcontroller": "ESP32-S3 (dual-core)",
-      "powerConsumption": "~350–500mA @ 5V (camera + Wi-Fi active)",
-      "operatingVoltage": "5V DC (USB-C) or 3.0–6.0V DC (PH2.0 battery port)",
-      "communicationProtocol": "Wi-Fi 2.4G, Bluetooth 5.0, I2C/UART (Gravity 3-pin/4-pin, edge connectors)",
-      "dimensions": "Single-board form factor with edge connectors — approx. 70×95mm",
-      "sensors": [
-        "2MP Camera",
-        "Microphone",
-        "Temperature & Humidity",
-        "Ambient Light",
-        "Accelerometer"
-      ],
-      "displays": [
-        "2.8\" Color Touchscreen"
-      ]
+      "microcontroller": "Arduino UNO",
+      "operatingVoltage": "5V DC",
+      "motorDriver": "L293D Motor Driver",
+      "sensor": "HC-SR04 Ultrasonic Sensor",
+      "communication": "HC-05 Bluetooth (Optional)",
+      "powerSupply": "7.4V Li-ion Battery Pack"
     },
     "components": [
-      "UNIHIKER K10 Board",
-      "USB Type-C Cable",
-      "MicroSD Card (optional, for data logging)",
-      "Gravity 3-pin/4-pin Sensor Cables",
-      "3.7V LiPo Battery or 3x AA/AAA (optional, for portable power)"
+      "Arduino UNO",
+      "HC-SR04 Ultrasonic Sensor",
+      "L293D Motor Driver",
+      "2 DC Geared Motors",
+      "2 Wheels",
+      "Caster Wheel",
+      "High-Speed Vacuum Fan",
+      "Dust Collection Chamber",
+      "HC-05 Bluetooth Module (Optional)",
+      "Battery Pack",
+      "Power Switch",
+      "Jumper Wires",
+      "Chassis"
     ],
     "componentRefs": [
-      "unihiker-k10-board",
-      "usb-c-cable",
-      "microsd-card",
-      "gravity-sensor-cable"
+      "arduino-uno",
+      "hc-sr04",
+      "l293d",
+      "dc-motor",
+      "hc-05"
     ],
     "guide": [
-      "Connect UNIHIKER K10 to your computer via the USB Type-C port",
-      "Install Mind+ (or your preferred IDE) and select the UNIHIKER K10 board",
-      "Press button B on-device to cycle through built-in demo modes (voice, sensor, tutorial)",
-      "Try a pre-loaded vision model — point the camera and test Face Detection or QR Code Scanning",
-      "Wake the board by voice (\"Jarvis\" or \"Hi Telly\") and issue a spoken command",
-      "Switch to MicroPython for more control, using the on-board editor or VS Code",
-      "Connect an external Gravity sensor to the edge connector and read live values on the touchscreen"
+      "Step 1: Assemble the chassis and mount the motors.",
+      "Step 2: Install the Arduino UNO and L293D motor driver.",
+      "Step 3: Connect the ultrasonic sensor to the Arduino.",
+      "Step 4: Install the vacuum fan and dust collection chamber.",
+      "Step 5: Connect the battery and verify all wiring.",
+      "Step 6: Upload the Arduino program.",
+      "Step 7: Test obstacle detection and automatic navigation.",
+      "Step 8: Verify the vacuum cleaning performance."
     ],
-    "estimatedTime": "60 minutes",
+    "estimatedTime": "120 minutes",
     "prerequisites": [
-      "Basic block or Python coding",
-      "USB driver installation"
+      "Basic Arduino Programming",
+      "Basic Electronics",
+      "Motor Driver Connections",
+      "Sensor Interfacing"
     ],
-    "youtubeVideos": [
-      {
-        "title": "UNIHIKER K10 Unboxing & First AI Demo",
-        "videoId": "dQw4w9WgXcQ",
-        "desc": "Setting up the board and running the first vision AI model"
-      }
-    ],
-    "liveUrl": "",
     "resources": [
       {
         "icon": "📄",
-        "title": "UNIHIKER K10 Official Docs",
-        "url": "https://www.unihiker.com/wiki/K10/"
+        "title": "Arduino UNO Documentation",
+        "url": "https://docs.arduino.cc/hardware/uno-rev3"
       },
       {
-        "icon": "🛠️",
-        "title": "DFRobot Product Page",
-        "url": "https://www.dfrobot.com/product-2904.html"
-      },
-      {
-        "icon": "📚",
-        "title": "Mind+ Programming Tool",
-        "url": "https://mindplus.dfrobot.com/"
+        "icon": "🎥",
+        "title": "Ultrasonic Sensor Tutorial",
+        "url": "https://randomnerdtutorials.com/complete-guide-for-ultrasonic-sensor-hc-sr04/"
       }
     ],
-    "githubUrl": "",
+    "githubUrl": "https://github.com/your-repo/smart-vacuum-cleaner",
+    "youtubeVideos": [
+      {
+        "videoId": "",
+        "title": "Smart Vacuum Cleaner Demo",
+        "desc": "Demonstration of the Arduino-based Smart Vacuum Cleaner."
+      }
+    ],
     "achievements": [
-      "Featured in K12 STEM AI curriculum pilot",
-      "Used in school Edge AI workshop 2026"
+      "Demonstrates robotics and automation concepts.",
+      "Suitable for STEM and Tinkering Lab exhibitions.",
+      "Low-cost educational automation project."
     ],
     "keywords": [
-      "UNIHIKER",
-      "K10",
-      "ESP32-S3",
-      "AI",
-      "TinyML",
-      "vision",
-      "voice recognition",
-      "IoT",
-      "STEM"
+      "Smart Vacuum Cleaner",
+      "Arduino",
+      "Robot",
+      "Automation",
+      "Cleaning Robot",
+      "Ultrasonic Sensor",
+      "L293D",
+      "STEM",
+      "Robotics",
+      "Tinkering Lab"
     ],
-    "image": "projects/images/unihiker-k10.jpg",
+    "image": "projects/images/smart-vacuum-cleaner.jpg",
+    "gallery": [
+      {
+        "file": "projects/smart-vacuum-cleaner/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/smart-vacuum-cleaner/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/smart-vacuum-cleaner/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/smart-vacuum-cleaner/Poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/smart-vacuum-cleaner/Poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/smart-vacuum-cleaner/Poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/smart-vacuum-cleaner/Smart Vacuum.pdf",
+        "name": "Smart Vacuum.pdf",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
+    "id": "surakshapath",
+    "title": "SurakshaPath",
+    "subtitle": "Smart road safety and navigation system",
+    "level": "Intermediate",
+    "color": "#E67E22",
+    "desc": "A smart safety navigation system for road hazard detection and driver alerting!",
+    "fullDesc": "SurakshaPath is a smart road safety system designed to detect road hazards and alert drivers in real time.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "Safety",
+      "Navigation",
+      "IoT",
+      "Road Safety",
+      "Sensors"
+    ],
+    "date": "2026-07-25",
+    "author": "Tinkering Lab",
+    "image": "projects/images/surakshapath.jpg",
+    "gallery": [
+      {
+        "file": "projects/surakshapath/SurakshaPath.png",
+        "caption": "surakshapath"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/surakshapath/SurakshaPath.pdf",
+        "name": "SurakshaPath.pdf",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
+    "id": "traffic-noise-meter",
+    "title": "Traffic Noise Meter",
+    "subtitle": "Real-time traffic noise level measurement and display",
+    "level": "Beginner",
+    "color": "#1ABC9C",
+    "desc": "Measure and display real-time traffic and environmental noise levels using a sound sensor!",
+    "fullDesc": "The Traffic Noise Meter project measures ambient noise levels using a sound sensor and displays readings on an LCD.",
+    "difficulty": 2,
+    "status": "Available",
+    "tags": [
+      "Arduino",
+      "Sensors",
+      "Environment",
+      "Noise",
+      "STEM",
+      "Measurement"
+    ],
+    "date": "2026-08-04",
+    "author": "Niktrix",
+    "image": "projects/images/traffic-noise-meter.jpg",
+    "gallery": [
+      {
+        "file": "projects/traffic-noise-meter/poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/traffic-noise-meter/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/traffic-noise-meter/poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/traffic-noise-meter/poster1.png",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/traffic-noise-meter/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/traffic-noise-meter/poster3.png",
+        "caption": "Future Scope"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/traffic-noise-meter/NoiseMeter.pdf",
+        "name": "NoiseMeter.pdf",
+        "type": "pdf"
+      }
+    ]
+  },
+  {
+    "id": "unihicker",
+    "title": "Unihicker",
+    "desc": "Unihicker project",
+    "level": "Intermediate",
+    "difficulty": 3,
+    "image": "projects/images/unihicker.jpg",
     "presentationPdfs": []
   },
   {
@@ -2094,8 +3282,8 @@
     "subtitle": "Pulse-based vascular age estimation using MAX30102",
     "level": "Intermediate",
     "color": "#FF6B6B",
-    "desc": "Measure your pulse — estimate your vascular age over WiFi!",
-    "fullDesc": "Build a smart health-monitoring device that reads pulse and blood-oxygen data from a MAX30102 sensor via an ESP8266, then serves live readings and an estimated vascular age to a web dashboard over WiFi — no app installation required.",
+    "desc": "Measure your pulse â€” estimate your vascular age over WiFi!",
+    "fullDesc": "Build a smart health-monitoring device that reads pulse and blood-oxygen data from a MAX30102 sensor via an ESP8266, then serves live readings and an estimated vascular age to a web dashboard over WiFi â€” no app installation required.",
     "difficulty": 3,
     "status": "Available",
     "tags": [
@@ -2120,7 +3308,7 @@
       "powerConsumption": "~120mA @ 3.3V (active WiFi + sensor)",
       "operatingVoltage": "3.3V DC (5V via USB with onboard regulator)",
       "communicationProtocol": "I2C (MAX30102), WiFi (ESP8266 web server)",
-      "dimensions": "Breadboard prototype — 170×130mm",
+      "dimensions": "Breadboard prototype â€” 170Ã—130mm",
       "sensors": [
         "MAX30102 (Pulse & SpO2 sensor)"
       ],
@@ -2143,7 +3331,7 @@
       "breadboard"
     ],
     "guide": [
-      "Wire MAX30102 to ESP8266 via I2C: SDA→D2, SCL→D1, VCC→3.3V, GND→GND",
+      "Wire MAX30102 to ESP8266 via I2C: SDAâ†’D2, SCLâ†’D1, VCCâ†’3.3V, GNDâ†’GND",
       "Connect ESP8266 to computer via USB cable for power and programming",
       "Update Config.h with your WiFi SSID and password",
       "Install required libraries (ESP8266WiFi, MAX30102 sensor library) via Arduino IDE Library Manager",
@@ -2164,12 +3352,12 @@
     "liveUrl": "",
     "resources": [
       {
-        "icon": "📄",
+        "icon": "ðŸ“„",
         "title": "MAX30102 Datasheet",
         "url": "data/components/max30102.json"
       },
       {
-        "icon": "📚",
+        "icon": "ðŸ“š",
         "title": "ESP8266WiFi Library Docs",
         "url": "https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html"
       }
@@ -2190,30 +3378,56 @@
     "image": "projects/images/vasc-age.jpg",
     "gallery": [
       {
-        "file": "projects/VASCAGE/1.jpeg",
+        "file": "projects/vasc-age/1.jpeg",
         "caption": "1"
       },
       {
-        "file": "projects/VASCAGE/2.png",
+        "file": "projects/vasc-age/2.png",
         "caption": "2"
       },
       {
-        "file": "projects/VASCAGE/3.png",
+        "file": "projects/vasc-age/3.png",
         "caption": "3"
       },
       {
-        "file": "projects/VASCAGE/VASC_Age_Poster.png",
+        "file": "projects/vasc-age/poster1.jpeg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/vasc-age/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/vasc-age/poster3.png",
+        "caption": "Future Scope"
+      },
+      {
+        "file": "projects/vasc-age/VASC_Age_Poster.png",
         "caption": "vasc_age_poster"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/vasc-age/poster1.jpeg",
+        "caption": "Problem Statement"
+      },
+      {
+        "file": "projects/vasc-age/poster2.png",
+        "caption": "Solution & Methodology"
+      },
+      {
+        "file": "projects/vasc-age/poster3.png",
+        "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/VASCAGE/VASC_Age.pdf",
+        "file": "projects/vasc-age/VASC_Age.pdf",
         "name": "VASC_Age.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/VASCAGE/VASC_Age.pptx",
+        "file": "projects/vasc-age/VASC_Age.pptx",
         "name": "VASC_Age.pptx",
         "type": "pptx"
       }
@@ -2221,42 +3435,42 @@
     "codeFiles": [
       {
         "name": "config.h",
-        "url": "projects/VASCAGE/config.h",
+        "url": "projects/vasc-age/config.h",
         "language": "C/C++ Header"
       },
       {
         "name": "DataStore.cpp",
-        "url": "projects/VASCAGE/DataStore.cpp",
+        "url": "projects/vasc-age/DataStore.cpp",
         "language": "C++"
       },
       {
         "name": "DataStore.h",
-        "url": "projects/VASCAGE/DataStore.h",
+        "url": "projects/vasc-age/DataStore.h",
         "language": "C/C++ Header"
       },
       {
         "name": "SensorManager.cpp",
-        "url": "projects/VASCAGE/SensorManager.cpp",
+        "url": "projects/vasc-age/SensorManager.cpp",
         "language": "C++"
       },
       {
         "name": "SensorManager.h",
-        "url": "projects/VASCAGE/SensorManager.h",
+        "url": "projects/vasc-age/SensorManager.h",
         "language": "C/C++ Header"
       },
       {
         "name": "VitalSense.ino",
-        "url": "projects/VASCAGE/VitalSense.ino",
+        "url": "projects/vasc-age/VitalSense.ino",
         "language": "Arduino C++"
       },
       {
         "name": "WebManager.cpp",
-        "url": "projects/VASCAGE/WebManager.cpp",
+        "url": "projects/vasc-age/WebManager.cpp",
         "language": "C++"
       },
       {
         "name": "WebManager.h",
-        "url": "projects/VASCAGE/WebManager.h",
+        "url": "projects/vasc-age/WebManager.h",
         "language": "C/C++ Header"
       }
     ]
@@ -2344,7 +3558,7 @@
         "desc": "Demonstrating wind power generation and automatic dark-switching using the BC547"
       }
     ],
-    "liveUrl": "",
+    "liveUrl": "projects/vawt-hybrid-generator/index.html",
     "resources": [
       {
         "icon": "📄",
@@ -2481,6 +3695,9 @@
     "bannerImages": [
       "projects/vawt-hybrid-generator/banner1.jpeg",
       "projects/vawt-hybrid-generator/banner2.jpeg"
+    ],
+    "htmlDashboards": [
+      "projects/vawt-hybrid-generator/index.html"
     ]
   }
 ]

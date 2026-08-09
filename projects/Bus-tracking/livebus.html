@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Display Controller</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            --glass-bg: rgba(30, 41, 59, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-primary: #3b82f6;
+            --accent-hover: #2563eb;
+            --accent-success: #10b981;
+            --accent-success-hover: #059669;
+            --accent-danger: #ef4444;
+            --accent-danger-hover: #dc2626;
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            color: var(--text-primary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--card-shadow);
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 700;
+            font-size: 28px;
+            letter-spacing: -0.5px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .status-badge::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .status-badge.disconnected {
+            background: rgba(239, 68, 68, 0.12);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.25);
+        }
+
+        .status-badge.disconnected::before {
+            background: #ef4444;
+            box-shadow: 0 0 10px #ef4444;
+        }
+
+        .status-badge.waiting {
+            background: rgba(245, 158, 11, 0.12);
+            color: #fde047;
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            animation: pulse 1.5s infinite;
+        }
+
+        .status-badge.waiting::before {
+            background: #f59e0b;
+            box-shadow: 0 0 10px #f59e0b;
+        }
+
+        .status-badge.ready {
+            background: rgba(16, 185, 129, 0.12);
+            color: #a7f3d0;
+            border: 1px solid rgba(16, 185, 129, 0.25);
+        }
+
+        .status-badge.ready::before {
+            background: #10b981;
+            box-shadow: 0 0 10px #10b981;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+                transform: scale(0.98);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.02);
+            }
+
+            100% {
+                opacity: 0.6;
+                transform: scale(0.98);
+            }
+        }
+
+        .section {
+            background: rgba(15, 23, 42, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+            transition: border-color 0.3s ease;
+        }
+
+        .section:hover {
+            border-color: rgba(255, 255, 255, 0.08);
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #cbd5e1;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--accent-primary);
+            padding-left: 10px;
+        }
+
+        label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-top: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px 14px;
+            margin-top: 6px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 15px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            margin-top: 6px;
+            padding-left: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .input-group:focus-within {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+            background: rgba(15, 23, 42, 0.8);
+        }
+
+        .input-group span {
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .input-group input[type="text"] {
+            margin-top: 0;
+            border: none;
+            background: transparent;
+            padding-left: 6px;
+        }
+
+        .input-group input[type="text"]:focus {
+            box-shadow: none;
+            border-color: transparent;
+            background: transparent;
+        }
+
+        .color-pickers-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .color-picker-wrapper {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .color-picker-wrapper label {
+            margin-top: 0;
+            font-size: 11px;
+        }
+
+        input[type="color"] {
+            -webkit-appearance: none;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            background: none;
+            transition: transform 0.2s ease;
+        }
+
+        input[type="color"]:hover {
+            transform: scale(1.1);
+        }
+
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+
+        input[type="color"]::-webkit-color-swatch {
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 12px;
+        }
+
+        .flex-row>div {
+            flex: 1;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 15px;
+        }
+
+        .btn-connect {
+            background: var(--accent-success);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+        }
+
+        .btn-connect:hover:not(:disabled) {
+            background: var(--accent-success-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-disconnect {
+            background: var(--accent-danger);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+        }
+
+        .btn-disconnect:hover:not(:disabled) {
+            background: var(--accent-danger-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
+        }
+
+        .btn-action {
+            background: var(--accent-primary);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-action:hover:not(:disabled) {
+            background: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+        }
+
+        button:active:not(:disabled) {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            background: rgba(148, 163, 184, 0.2);
+            color: rgba(148, 163, 184, 0.4);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+
+        .console-box {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            height: 120px;
+            overflow-y: auto;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 11px;
+            padding: 12px;
+            color: #e2e8f0;
+            margin-top: 10px;
+            line-height: 1.5;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .log-line {
+            margin-bottom: 4px;
+            word-break: break-all;
+        }
+
+        .log-line.system {
+            color: #64748b;
+        }
+
+        .log-line.sent {
+            color: #38bdf8;
+        }
+
+        .log-line.received {
+            color: #34d399;
+        }
+
+        .log-line.error {
+            color: #f87171;
+        }
+
+        .console-box::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .console-box::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .console-box::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+        }
+
+        .console-box::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Queue Table & Status Styles */
+        .queue-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        .queue-table th {
+            color: var(--text-secondary);
+            font-weight: 600;
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 0.5px;
+        }
+
+        .queue-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+        }
+
+        .queue-table.active-table tbody tr:hover {
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        .status-pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .status-pill.eta {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+        }
+
+        .status-pill.soon {
+            background: rgba(245, 158, 11, 0.15);
+            color: #fbbf24;
+        }
+
+        .status-pill.arrived {
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+        }
+
+        .status-pill.waiting {
+            background: rgba(139, 92, 246, 0.15);
+            color: #a78bfa;
+            animation: pulse 1.5s infinite;
+        }
+
+        .add-bus-form {
+            background: rgba(15, 23, 42, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Bus Display Controller</h2>
+        <div class="status-container">
+            <span id="status" class="status-badge disconnected">Status: Disconnected</span>
+        </div>
+
+        <div class="flex-row" style="margin-bottom: 24px;">
+            <div><button id="btnConnect" class="btn-connect" onclick="connectSerial()">1. Connect to Arduino</button>
+            </div>
+            <div><button id="btnDisconnect" class="btn-disconnect" onclick="disconnectSerial()"
+                    disabled>Disconnect</button></div>
+        </div>
+
+        <div class="section">
+            <h3>Header & Colors</h3>
+            <div class="flex-row">
+                <div>
+                    <label>Station Name:</label>
+                    <div class="input-group">
+                        <span>STN:</span>
+                        <input type="text" id="stnName" value="IIT Market Powai stop">
+                    </div>
+                </div>
+                <div>
+                    <label>Current Time:</label>
+                    <input type="text" id="timeStr" value="12:30 PM">
+                </div>
+            </div>
+
+            <div class="color-pickers-grid">
+                <div class="color-picker-wrapper">
+                    <label>Background</label>
+                    <input type="color" id="colBg" value="#14141E">
+                </div>
+                <div class="color-picker-wrapper">
+                    <label>Header Text</label>
+                    <input type="color" id="colHdr" value="#FF8C00">
+                </div>
+                <div class="color-picker-wrapper">
+                    <label>Main Text</label>
+                    <input type="color" id="colTxt" value="#FFFFFF">
+                </div>
+                <div class="color-picker-wrapper">
+                    <label>Route Color</label>
+                    <input type="color" id="colRt" value="#FFFF00">
+                </div>
+            </div>
+            <button class="btn-action" onclick="sendConfig()">2. Update Layout & Colors</button>
+        </div>
+
+        <div class="section">
+            <h3>Live Bus Queue & Simulation</h3>
+            
+            <!-- Form to add new bus to queue -->
+            <div class="add-bus-form" style="margin-bottom: 20px;">
+                <div class="flex-row">
+                    <div>
+                        <label>Route</label>
+                        <input type="text" id="newRt" placeholder="e.g. C-11">
+                    </div>
+                    <div>
+                        <label>Destination</label>
+                        <input type="text" id="newDst" placeholder="e.g. Colaba">
+                    </div>
+                    <div>
+                        <label>ETA (min)</label>
+                        <input type="number" id="newEta" placeholder="e.g. 5">
+                    </div>
+                </div>
+                <button class="btn-action" style="margin-top: 12px; padding: 10px 16px;" onclick="addBusToQueue()">Add Bus to Queue</button>
+            </div>
+
+            <!-- Live Queue Tables -->
+            <div class="queue-container">
+                <h4 style="font-size: 14px; color: #a7f3d0; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">ACTIVE ON DISPLAY (Top 3)</h4>
+                <table class="queue-table active-table">
+                    <thead>
+                        <tr>
+                            <th>Route</th>
+                            <th>Destination</th>
+                            <th>ETA</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="activeQueueBody">
+                        <!-- Dynamic -->
+                    </tbody>
+                </table>
+
+                <h4 style="font-size: 14px; color: #94a3b8; margin-top: 20px; margin-bottom: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">UPCOMING QUEUE</h4>
+                <table class="queue-table upcoming-table">
+                    <thead>
+                        <tr>
+                            <th>Route</th>
+                            <th>Destination</th>
+                            <th>ETA</th>
+                        </tr>
+                    </thead>
+                    <tbody id="upcomingQueueBody">
+                        <!-- Dynamic -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex-row" style="margin-top: 20px;">
+                <div><button class="btn-connect" id="btnSimToggle" style="margin-top: 0;" onclick="toggleSimulation()">Start Bus Simulation</button></div>
+                <div><button class="btn-disconnect" style="margin-top: 0;" onclick="resetBusQueue()">Reset Queue to Demo</button></div>
+            </div>
+        </div>
+
+        <div class="section" style="margin-bottom: 0;">
+            <h3>System Console</h3>
+            <div id="consoleLog" class="console-box">
+                <div class="log-line system">[System] Dashboard loaded. Click 'Connect to Arduino' to start.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let port;
+        let writer;
+        let reader;
+        let keepReading = false;
+        let closedPromise = null;
+        let sendQueue = [];
+        let isSending = false;
+        let queueTimeout = null;
+        let etaInterval = null;
+        let lastSentTime = "";
+
+        function logToConsole(message, type = 'system') {
+            const consoleBox = document.getElementById('consoleLog');
+            if (!consoleBox) return;
+            const line = document.createElement('div');
+            line.className = `log-line ${type}`;
+            const time = new Date().toLocaleTimeString();
+            line.innerText = `[${time}] ${message}`;
+            consoleBox.appendChild(line);
+            consoleBox.scrollTop = consoleBox.scrollHeight;
+        }
+
+        // Connects Chrome directly to the Arduino COM port
+        async function connectSerial() {
+            try {
+                port = await navigator.serial.requestPort();
+                logToConsole("Serial port selected. Opening...", "system");
+                await port.open({ baudRate: 9600 });
+                writer = port.writable.getWriter();
+
+                const statusEl = document.getElementById('status');
+                statusEl.innerText = "Status: Connected";
+                statusEl.className = "status-badge ready";
+                document.getElementById('btnConnect').disabled = true;
+                document.getElementById('btnDisconnect').disabled = false;
+
+                // Start reading serial responses
+                keepReading = true;
+                closedPromise = readFromArduino();
+
+                // Reset queue state
+                sendQueue = [];
+                isSending = false;
+                if (queueTimeout) {
+                    clearTimeout(queueTimeout);
+                    queueTimeout = null;
+                }
+
+                logToConsole("Serial port opened successfully. Verifying connection...", "system");
+
+                // Send a ping to check if it's already booted and alive
+                setTimeout(() => {
+                    queueMessage({ type: "ping" });
+                }, 500);
+            } catch (e) {
+                console.error("Connection failed:", e);
+                logToConsole("Connection failed: " + e.message, "error");
+                alert("Connection Failed. Ensure the Arduino IDE Serial Monitor is CLOSED.");
+                resetUI();
+            }
+        }
+
+        async function disconnectSerial() {
+            keepReading = false;
+            logToConsole("Disconnecting...", "system");
+
+            if (reader) {
+                try {
+                    await reader.cancel();
+                } catch (err) {
+                    console.error("Reader cancel error:", err);
+                }
+            }
+            if (writer) {
+                try {
+                    writer.releaseLock();
+                } catch (err) {
+                    console.error("Writer release error:", err);
+                }
+                writer = null;
+            }
+            if (closedPromise) {
+                await closedPromise;
+                closedPromise = null;
+            }
+            if (port) {
+                try {
+                    await port.close();
+                } catch (err) {
+                    console.error("Port close error:", err);
+                }
+                port = null;
+            }
+            logToConsole("Disconnected successfully.", "system");
+            resetUI();
+        }
+
+        function resetUI() {
+            const statusEl = document.getElementById('status');
+            statusEl.innerText = "Status: Disconnected";
+            statusEl.className = "status-badge disconnected";
+            document.getElementById('btnConnect').disabled = false;
+            document.getElementById('btnDisconnect').disabled = true;
+            sendQueue = [];
+            isSending = false;
+            if (queueTimeout) {
+                clearTimeout(queueTimeout);
+                queueTimeout = null;
+            }
+            if (etaInterval) {
+                clearInterval(etaInterval);
+                etaInterval = null;
+            }
+            lastSentTime = "";
+        }
+
+        async function readFromArduino() {
+            while (port && port.readable && keepReading) {
+                try {
+                    const textDecoder = new TextDecoderStream();
+                    const readableStreamClosed = port.readable.pipeTo(textDecoder.writable);
+                    reader = textDecoder.readable.getReader();
+
+                    let buffer = "";
+                    try {
+                        while (keepReading) {
+                            const { value, done } = await reader.read();
+                            if (done) {
+                                break;
+                            }
+                            buffer += value;
+                            const lines = buffer.split("\n");
+                            buffer = lines.pop(); // Keep incomplete line
+
+                            for (const line of lines) {
+                                const trimmedLine = line.trim();
+                                if (trimmedLine) {
+                                    console.log("Arduino Serial:", trimmedLine);
+                                    logToConsole("Arduino: " + trimmedLine, "received");
+                                    handleArduinoOutput(trimmedLine);
+                                }
+                            }
+                        }
+                    } catch (e) {
+                        if (keepReading) {
+                            console.error("Read loop interrupted:", e);
+                            logToConsole("Read error: " + e.message, "error");
+                        }
+                    } finally {
+                        reader.releaseLock();
+                        await readableStreamClosed.catch(() => { });
+                    }
+                } catch (e) {
+                    if (keepReading) {
+                        console.error("Error setting up reader:", e);
+                        logToConsole("Reader setup error: " + e.message, "error");
+                    }
+                    break;
+                }
+            }
+        }
+
+        function handleArduinoOutput(line) {
+            const statusEl = document.getElementById('status');
+            statusEl.innerText = "Status: Connected & Ready!";
+            statusEl.className = "status-badge ready";
+
+            // Advance the message queue upon receiving response from Arduino
+            advanceQueue();
+        }
+
+        // Helper: Converts HTML hex color (#FF0000) to RGB Array [255, 0, 0] for Arduino
+        function hexToRgb(hex) {
+            let bigint = parseInt(hex.slice(1), 16);
+            return [(bigint >> 16) & 255, (bigint >> 8) & 255, bigint & 255];
+        }
+
+        function advanceQueue() {
+            if (queueTimeout) {
+                clearTimeout(queueTimeout);
+                queueTimeout = null;
+            }
+            if (isSending) {
+                sendQueue.shift();
+                isSending = false;
+                sendNextInQueue();
+            }
+        }
+
+        async function sendNextInQueue() {
+            if (sendQueue.length === 0) {
+                isSending = false;
+                return;
+            }
+
+            if (!writer) {
+                logToConsole("Cannot send: Port not writable", "error");
+                return;
+            }
+
+            isSending = true;
+            const nextData = sendQueue[0];
+            const dataString = JSON.stringify(nextData) + '\n';
+
+            try {
+                const encoder = new TextEncoder();
+                await writer.write(encoder.encode(dataString));
+                logToConsole("Sent: " + JSON.stringify(nextData), "sent");
+
+                // Set a timeout to advance the queue if Arduino fails to acknowledge within 500ms
+                if (queueTimeout) clearTimeout(queueTimeout);
+                queueTimeout = setTimeout(() => {
+                    logToConsole("Acknowledgment timeout for " + nextData.type + " packet. Advancing queue...", "system");
+                    advanceQueue();
+                }, 500);
+            } catch (e) {
+                console.error("Failed to write:", e);
+                logToConsole("Send failed: " + e.message, "error");
+                isSending = false;
+            }
+        }
+
+        // Enqueues the message and initiates transmission if idle
+        function queueMessage(jsonData) {
+            if (!writer) {
+                logToConsole("Please connect to the Arduino first!", "error");
+                alert("Please connect to the Arduino first!");
+                return;
+            }
+            sendQueue.push(jsonData);
+            if (!isSending) {
+                sendNextInQueue();
+            }
+        }
+
+        // Helper: Format system time to "HH:MM AM/PM" (IST based on user computer time)
+        function getFormattedTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            const hoursStr = String(hours).padStart(2, '0');
+            return `${hoursStr}:${minutes} ${ampm}`;
+        }
+
+        // Ticks the system clock, updates input field, and sends configuration on minute changes
+        function tickClock() {
+            const currentTimeStr = getFormattedTime();
+            const timeInput = document.getElementById('timeStr');
+            if (timeInput) {
+                timeInput.value = currentTimeStr;
+            }
+            
+            // If connected and time changed, send the updated config automatically
+            if (writer && currentTimeStr !== lastSentTime) {
+                lastSentTime = currentTimeStr;
+                sendConfig();
+            }
+        }
+
+        // Gathers layout & colors and sends to Arduino
+        function sendConfig() {
+            const configData = {
+                type: "cfg",
+                stn: "STN: " + document.getElementById('stnName').value,
+                tm: document.getElementById('timeStr').value
+            };
+
+            const colorData = {
+                type: "clr",
+                bg: hexToRgb(document.getElementById('colBg').value),
+                txt: hexToRgb(document.getElementById('colTxt').value),
+                hdr: hexToRgb(document.getElementById('colHdr').value),
+                rt: hexToRgb(document.getElementById('colRt').value),
+                grn: [50, 205, 50] // Fixed arriving soon color
+            };
+
+            queueMessage(configData);
+            queueMessage(colorData);
+        }
+
+        let busQueue = [];
+
+        const demoQueue = [
+            { rt: "545 LTD", dst: "Airoli Bus Station", eta: 4, waitingTime: 0 },
+            { rt: "525 LTD", dst: "Vashi Railway Station", eta: 8, waitingTime: 0 },
+            { rt: "525 LTD", dst: "Vashi Railway Station", eta: 23, waitingTime: 0 },
+            { rt: "545 LTD", dst: "Airoli Bus Station", eta: 24, waitingTime: 0 },
+            { rt: "A-492", dst: "Bhoomi Acres (Thane)", eta: 27, waitingTime: 0 },
+            { rt: "545 LTD", dst: "Airoli Bus Station", eta: 29, waitingTime: 0 },
+            { rt: "523LTD", dst: "Airoli Bus Station", eta: 33, waitingTime: 0 },
+            { rt: "525 LTD", dst: "Vashi Railway Station", eta: 38, waitingTime: 0 },
+            { rt: "A-492", dst: "Bhoomi Acres (Thane)", eta: 42, waitingTime: 0 },
+            { rt: "545 LTD", dst: "Airoli Bus Station", eta: 44, waitingTime: 0 },
+            { rt: "307", dst: "Vaishali Nagar (Mulund-W)", eta: 44, waitingTime: 0 },
+            { rt: "A-461", dst: "Maharana Pratap Chowk", eta: 48, waitingTime: 0 },
+            { rt: "460 LTD", dst: "Mulund Station (W)", eta: 52, waitingTime: 0 },
+            { rt: "525 LTD", dst: "Vashi Railway Station", eta: 53, waitingTime: 0 },
+            { rt: "523LTD", dst: "Airoli Bus Station", eta: 53, waitingTime: 0 },
+            { rt: "545 LTD", dst: "Airoli Bus Station", eta: 54, waitingTime: 0 },
+            { rt: "A-492", dst: "Bhoomi Acres (Thane)", eta: 57, waitingTime: 0 },
+            { rt: "A-602", dst: "Kanjurmarg Station (W)", eta: 58, waitingTime: 0 },
+            { rt: "A-461", dst: "Maharana Pratap Chowk", eta: 63, waitingTime: 0 },
+            { rt: "545 LTD", dst: "Airoli Bus Station", eta: 64, waitingTime: 0 },
+            { rt: "398 LTD", dst: "Maharana Pratap Chowk", eta: 65, waitingTime: 0 },
+            { rt: "525 LTD", dst: "Vashi Railway Station", eta: 68, waitingTime: 0 },
+            { rt: "A-602", dst: "Kanjurmarg Station (W)", eta: 68, waitingTime: 0 },
+            { rt: "522 LTD", dst: "Millennium Business Park", eta: 69, waitingTime: 0 },
+            { rt: "489LTD", dst: "Shivaji Nagar Bus Station", eta: 69, waitingTime: 0 }
+        ];
+
+        function renderQueue() {
+            const activeBody = document.getElementById('activeQueueBody');
+            const upcomingBody = document.getElementById('upcomingQueueBody');
+            
+            if (!activeBody || !upcomingBody) return;
+            
+            activeBody.innerHTML = '';
+            upcomingBody.innerHTML = '';
+            
+            // Render Active (first 3)
+            for (let i = 0; i < 3; i++) {
+                const tr = document.createElement('tr');
+                if (i < busQueue.length) {
+                    const bus = busQueue[i];
+                    let statusHtml = '';
+                    if (bus.eta > 0) {
+                        statusHtml = `<span class="status-pill eta">En Route</span>`;
+                    } else {
+                        const remainingWait = 30 - bus.waitingTime;
+                        statusHtml = `<span class="status-pill waiting">Arrived (${remainingWait}s left)</span>`;
+                    }
+                    
+                    tr.innerHTML = `
+                        <td><strong>${bus.rt}</strong></td>
+                        <td>${bus.dst}</td>
+                        <td>${bus.eta > 0 ? bus.eta + ' min' : 'Arrived'}</td>
+                        <td>${statusHtml}</td>
+                    `;
+                } else {
+                    tr.innerHTML = `
+                        <td style="color: #64748b;">-</td>
+                        <td style="color: #64748b;">-</td>
+                        <td style="color: #64748b;">-</td>
+                        <td><span class="status-pill eta" style="background: rgba(100, 116, 139, 0.1); color: #64748b;">Empty</span></td>
+                    `;
+                }
+                activeBody.appendChild(tr);
+            }
+            
+            // Render Upcoming
+            if (busQueue.length > 3) {
+                for (let i = 3; i < busQueue.length; i++) {
+                    const bus = busQueue[i];
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td><strong>${bus.rt}</strong></td>
+                        <td>${bus.dst}</td>
+                        <td>${bus.eta} min</td>
+                    `;
+                    upcomingBody.appendChild(tr);
+                }
+            } else {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td colspan="3" style="text-align: center; color: #64748b; padding: 15px;">No upcoming buses.</td>`;
+                upcomingBody.appendChild(tr);
+            }
+        }
+
+        function addBusToQueue() {
+            const rtInput = document.getElementById('newRt');
+            const dstInput = document.getElementById('newDst');
+            const etaInput = document.getElementById('newEta');
+            
+            const rt = rtInput.value.trim();
+            const dst = dstInput.value.trim();
+            const eta = parseInt(etaInput.value);
+            
+            if (!rt || !dst || isNaN(eta) || eta < 0) {
+                alert("Please enter a valid Route, Destination, and positive ETA.");
+                return;
+            }
+            
+            const newBus = { rt: rt, dst: dst, eta: eta, waitingTime: 0 };
+            busQueue.push(newBus);
+            
+            // Reset input fields
+            rtInput.value = '';
+            dstInput.value = '';
+            etaInput.value = '';
+            
+            logToConsole(`Added bus to queue: ${rt} to ${dst} (ETA: ${eta}m)`, "system");
+            renderQueue();
+            
+            // If simulation is running, transmit immediately so it reflects on screen
+            if (etaInterval) {
+                transmitCurrentBusData();
+            }
+        }
+
+        function resetBusQueue() {
+            busQueue = JSON.parse(JSON.stringify(demoQueue));
+            logToConsole("Queue reset to demo data.", "system");
+            renderQueue();
+            if (writer) {
+                transmitCurrentBusData();
+            }
+        }
+
+        // Transmits current values of bus fields to Arduino
+        function transmitCurrentBusData() {
+            for (let i = 0; i < 3; i++) {
+                if (i < busQueue.length) {
+                    const bus = busQueue[i];
+                    const busData = {
+                        type: "bus",
+                        i: i,
+                        rt: bus.rt,
+                        dst: bus.dst,
+                        eta: bus.eta
+                    };
+                    queueMessage(busData);
+                } else {
+                    const emptyData = {
+                        type: "bus",
+                        i: i,
+                        rt: "-",
+                        dst: "-",
+                        eta: 0
+                    };
+                    queueMessage(emptyData);
+                }
+            }
+        }
+
+        // Toggle Simulation
+        function toggleSimulation() {
+            const btn = document.getElementById('btnSimToggle');
+            if (etaInterval) {
+                // Stop
+                clearInterval(etaInterval);
+                etaInterval = null;
+                btn.innerText = "Start Bus Simulation";
+                btn.className = "btn-connect";
+                logToConsole("Bus simulation paused.", "system");
+            } else {
+                if (!writer) {
+                    alert("Please connect to the Arduino first!");
+                    return;
+                }
+                // Start
+                btn.innerText = "Pause Bus Simulation";
+                btn.className = "btn-disconnect";
+                logToConsole("Bus simulation started.", "system");
+                
+                // Send current state
+                transmitCurrentBusData();
+                
+                etaInterval = setInterval(() => {
+                    const activeCount = Math.min(3, busQueue.length);
+                    let removedIndices = [];
+                    
+                    for (let i = 0; i < activeCount; i++) {
+                        const bus = busQueue[i];
+                        if (bus.eta > 0) {
+                            bus.eta--;
+                        } else {
+                            // Bus has arrived, increment wait time by 5s per tick
+                            bus.waitingTime += 5;
+                            if (bus.waitingTime >= 30) {
+                                removedIndices.push(i);
+                            }
+                        }
+                    }
+                    
+                    // Remove departed buses (FIFO order - remove from back first to keep indices correct)
+                    if (removedIndices.length > 0) {
+                        removedIndices.sort((a, b) => b - a);
+                        for (const index of removedIndices) {
+                            const departedBus = busQueue.splice(index, 1)[0];
+                            logToConsole(`Bus ${departedBus.rt} to ${departedBus.dst} departed after 30s.`, "system");
+                        }
+                    }
+                    
+                    // Update display and UI
+                    transmitCurrentBusData();
+                    renderQueue();
+                    
+                    if (busQueue.length === 0) {
+                        clearInterval(etaInterval);
+                        etaInterval = null;
+                        btn.innerText = "Start Bus Simulation";
+                        btn.className = "btn-connect";
+                        logToConsole("All buses processed. Simulation finished.", "system");
+                    }
+                }, 5000);
+            }
+        }
+
+        // Initial setup
+        resetBusQueue();
+        setInterval(tickClock, 1000);
+        tickClock();
+    </script>
+
+</body>
+
+</html>

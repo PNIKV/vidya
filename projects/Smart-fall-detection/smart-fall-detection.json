@@ -1,0 +1,21 @@
+{
+  "id": "smart-fall-detection",
+  "title": "Smart Fall Detection System",
+  "subtitle": "IMU-based fall detection with emergency alert system",
+  "level": "Intermediate",
+  "color": "#C0392B",
+  "desc": "Detect falls automatically using an accelerometer and send instant emergency alerts!",
+  "fullDesc": "The Smart Fall Detection System uses an accelerometer/IMU to detect sudden falls in real-time.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "Safety",
+    "IoT",
+    "Sensors",
+    "Arduino",
+    "Healthcare",
+    "STEM"
+  ],
+  "date": "2026-08-06",
+  "author": "Tinkering Lab"
+}

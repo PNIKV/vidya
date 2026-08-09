@@ -181,3 +181,20 @@ body {
   .nav-hamburger { display: block; }
   .modal-box { padding: 24px 20px; }
 }
+
+/* Viva Voce Accordion & Project Extensions */
+.viva-accordion-card:hover {
+  border-color: var(--cyan) !important;
+}
+
+#liveDashboardContainer:fullscreen {
+  width: 100vw !important;
+  height: 100vh !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#projectGalleryPresentationModal:fullscreen #pGalleryImg {
+  max-height: 88vh !important;
+}
+

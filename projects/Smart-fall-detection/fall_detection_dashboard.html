@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GUARDIAN — Fall Detection Monitor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0F1A;
+    --bg-2:#070B13;
+    --panel:#111A2B;
+    --panel-2:#0D1524;
+    --border:#1E2A42;
+    --signal:#38E1A0;
+    --signal-dim:#1B5E48;
+    --warn:#FFB648;
+    --critical:#FF4D5E;
+    --critical-dim:#4A1620;
+    --text:#E8EEF7;
+    --text-dim:#8A99B3;
+    --text-faint:#4C5A73;
+    --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--bg); color:var(--text); font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased;}
+  body{
+    min-height:100vh;
+    background:
+      radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(56,225,160,0.07), transparent 60%),
+      var(--bg);
+    padding:28px 20px 60px;
+  }
+  .wrap{max-width:1180px; margin:0 auto;}
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; letter-spacing:-0.01em;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- Topbar ---------- */
+  .topbar{
+    display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:14px;
+    margin-bottom:22px;
+  }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-mark{
+    width:38px; height:38px; border-radius:10px;
+    background:linear-gradient(155deg, var(--signal), #1a9a6f);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 1px rgba(56,225,160,0.25), 0 8px 20px -6px rgba(56,225,160,0.5);
+  }
+  .brand-mark svg{width:20px; height:20px;}
+  .brand-text h1{font-size:20px; font-weight:700; color:var(--text);}
+  .brand-text p{font-size:11.5px; color:var(--text-dim); letter-spacing:0.06em; text-transform:uppercase; margin-top:1px;}
+
+  .status-pill{
+    display:flex; align-items:center; gap:8px;
+    background:var(--panel); border:1px solid var(--border);
+    padding:8px 14px; border-radius:999px; font-size:12.5px; color:var(--text-dim);
+  }
+  .status-dot{width:8px; height:8px; border-radius:50%; background:var(--text-faint); flex-shrink:0;}
+  .status-pill.live .status-dot{background:var(--signal); box-shadow:0 0 8px var(--signal); animation:pulseDot 1.6s infinite;}
+  .status-pill.alarm{background:var(--critical-dim); border-color:rgba(255,77,94,0.4); color:#ffc7cd;}
+  .status-pill.alarm .status-dot{background:var(--critical); box-shadow:0 0 8px var(--critical);}
+  @keyframes pulseDot{0%,100%{opacity:1;} 50%{opacity:0.4;}}
+
+  /* ---------- Control row ---------- */
+  .controls{
+    display:grid; grid-template-columns:1.1fr 1fr; gap:14px;
+    margin-bottom:18px;
+  }
+  @media(max-width:820px){ .controls{grid-template-columns:1fr;} }
+  .card{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    padding:16px 18px;
+  }
+  .card-label{font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-dim); margin-bottom:10px; font-weight:600;}
+
+  .connect-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .connect-row input{
+    flex:1; min-width:160px; background:var(--panel-2); border:1px solid var(--border);
+    color:var(--text); padding:9px 12px; border-radius:8px; font-family:'IBM Plex Mono',monospace; font-size:13px;
+  }
+  .connect-row input::placeholder{color:var(--text-faint);}
+  .connect-row input:focus{outline:none; border-color:var(--signal);}
+  .btn{
+    border:none; cursor:pointer; font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
+    padding:9px 16px; border-radius:8px; transition:transform 0.12s ease, filter 0.15s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{background:var(--signal); color:#052018;}
+  .btn-primary:hover{filter:brightness(1.08);}
+  .btn-ghost{background:transparent; border:1px solid var(--border); color:var(--text-dim);}
+  .btn-ghost:hover{color:var(--text); border-color:var(--text-faint);}
+  .btn-danger{background:var(--critical); color:#fff;}
+  .btn-danger:hover{filter:brightness(1.08);}
+  .btn-full{width:100%;}
+  .btn[disabled]{opacity:0.45; cursor:not-allowed;}
+  .connect-hint{font-size:11.5px; color:var(--text-faint); margin-top:8px; line-height:1.5;}
+
+  .mode-toggle{display:flex; gap:8px; margin-top:10px;}
+  .mode-toggle button{flex:1;}
+
+  /* Position selector */
+  .position-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+  .position-btn{
+    background:var(--panel-2); border:1px solid var(--border); border-radius:10px;
+    padding:12px 8px 10px; cursor:pointer; text-align:center; color:var(--text-dim);
+    transition:all 0.15s ease;
+  }
+  .position-btn svg{width:22px; height:22px; margin-bottom:6px; opacity:0.7;}
+  .position-btn .p-name{font-size:12.5px; font-weight:600; color:var(--text);}
+  .position-btn .p-sub{font-size:10px; color:var(--text-faint); margin-top:2px; line-height:1.3;}
+  .position-btn.active{border-color:var(--signal); background:rgba(56,225,160,0.08); box-shadow:0 0 0 1px rgba(56,225,160,0.3) inset;}
+  .position-btn.active svg{opacity:1;}
+  .position-btn.active .p-name{color:var(--signal);}
+
+  /* ---------- Monitor grid ---------- */
+  .monitor-grid{
+    display:grid; grid-template-columns:1.55fr 1fr; gap:14px; margin-bottom:22px;
+  }
+  @media(max-width:900px){ .monitor-grid{grid-template-columns:1fr;} }
+
+  .monitor-screen{
+    background:radial-gradient(ellipse at 50% 0%, #0F1B2C, var(--bg-2) 75%);
+    border:1px solid var(--border); border-radius:var(--radius);
+    position:relative; overflow:hidden;
+    box-shadow:0 0 0 1px rgba(0,0,0,0.4), inset 0 0 60px rgba(0,0,0,0.4);
+  }
+  .monitor-screen.shake{animation:screenShake 0.4s ease;}
+  @keyframes screenShake{
+    10%{transform:translate(-3px,2px);} 20%{transform:translate(3px,-2px);}
+    30%{transform:translate(-4px,0px);} 40%{transform:translate(4px,2px);}
+    50%{transform:translate(-2px,-2px);} 60%{transform:translate(2px,1px);}
+    70%{transform:translate(-1px,0px);} 100%{transform:translate(0,0);}
+  }
+  .monitor-screen::before{
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:5;
+    background:repeating-linear-gradient(180deg, rgba(255,255,255,0.018) 0px, rgba(255,255,255,0.018) 1px, transparent 1px, transparent 3px);
+  }
+  .monitor-screen.alarm-active{border-color:rgba(255,77,94,0.6); animation:screenAlarm 1s infinite;}
+  @keyframes screenAlarm{
+    0%,100%{box-shadow:0 0 0 1px rgba(255,77,94,0.15), inset 0 0 60px rgba(255,20,30,0.12);}
+    50%{box-shadow:0 0 0 1px rgba(255,77,94,0.55), inset 0 0 90px rgba(255,20,30,0.28);}
+  }
+
+  .screen-header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 18px 0; position:relative; z-index:2;
+  }
+  .screen-title{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-faint); font-weight:600;}
+  .state-readout{font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; color:var(--signal); text-align:right;}
+  .state-readout.warn{color:var(--warn);}
+  .state-readout.critical{color:var(--critical);}
+
+  .figure-stage{
+    position:relative; height:280px; display:flex; align-items:center; justify-content:center;
+    z-index:2;
+  }
+  .figure-stage svg{width:auto; height:100%; max-width:100%;}
+
+  .big-status{
+    text-align:center; padding:2px 0 6px; position:relative; z-index:2;
+  }
+  .big-status .headline{font-family:'Space Grotesk',sans-serif; font-size:22px; font-weight:700; letter-spacing:-0.01em;}
+  .big-status .sub{font-size:12px; color:var(--text-dim); margin-top:2px; font-family:'IBM Plex Mono',monospace;}
+
+  .readout-strip{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    background:var(--border); margin-top:10px; position:relative; z-index:2;
+  }
+  .readout-cell{background:var(--panel-2); padding:10px 14px;}
+  .readout-cell .rlabel{font-size:10px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.08em;}
+  .readout-cell .rvalue{font-family:'IBM Plex Mono',monospace; font-size:16px; font-weight:600; margin-top:3px; color:var(--text);}
+
+  .wave-wrap{padding:12px 18px 16px; position:relative; z-index:2;}
+  canvas{width:100%; height:74px; display:block; border-radius:8px; background:rgba(0,0,0,0.25); border:1px solid var(--border);}
+
+  .action-row{display:flex; gap:8px; padding:0 18px 18px; position:relative; z-index:2;}
+
+  /* ---------- Side panel ---------- */
+  .side-col{display:flex; flex-direction:column; gap:14px;}
+  .stat-row{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+  .stat-box{background:var(--panel-2); border:1px solid var(--border); border-radius:10px; padding:12px 10px; text-align:center;}
+  .stat-box .sval{font-family:'IBM Plex Mono',monospace; font-size:19px; font-weight:600; color:var(--signal);}
+  .stat-box .slabel{font-size:9.5px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.06em; margin-top:3px;}
+
+  .log-card{flex:1; display:flex; flex-direction:column; min-height:280px;}
+  .log-list{list-style:none; overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:8px; padding-right:2px; max-height:340px;}
+  .log-list::-webkit-scrollbar{width:5px;}
+  .log-list::-webkit-scrollbar-thumb{background:var(--border); border-radius:4px;}
+  .log-item{
+    display:flex; gap:10px; align-items:flex-start; font-size:12px; padding:8px 10px;
+    background:var(--panel-2); border-radius:8px; border-left:2px solid var(--text-faint);
+    animation:logIn 0.25s ease;
+  }
+  @keyframes logIn{ from{opacity:0; transform:translateY(-4px);} to{opacity:1; transform:translateY(0);} }
+  .log-item.warn{border-left-color:var(--warn);}
+  .log-item.critical{border-left-color:var(--critical); background:rgba(255,77,94,0.08);}
+  .log-time{color:var(--text-faint); font-family:'IBM Plex Mono',monospace; font-size:10.5px; flex-shrink:0; padding-top:1px;}
+  .log-msg{color:var(--text-dim); line-height:1.4;}
+  .log-msg b{color:var(--text); font-weight:600;}
+  .log-empty{color:var(--text-faint); font-size:12px; text-align:center; padding:30px 10px;}
+
+  /* ---------- Roadmap ---------- */
+  .section-head{margin:38px 0 16px;}
+  .section-head .eyebrow{font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--signal); font-weight:600;}
+  .section-head h2{font-size:24px; margin-top:6px;}
+  .section-head p{color:var(--text-dim); font-size:13.5px; margin-top:6px; max-width:620px; line-height:1.6;}
+
+  .roadmap-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+  @media(max-width:860px){.roadmap-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.roadmap-grid{grid-template-columns:1fr;}}
+  .rmap-card{
+    background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
+    padding:16px; transition:border-color 0.2s ease, transform 0.2s ease;
+  }
+  .rmap-card:hover{border-color:var(--signal-dim); transform:translateY(-2px);}
+  .rmap-icon{width:32px; height:32px; border-radius:8px; background:var(--panel-2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; margin-bottom:10px;}
+  .rmap-icon svg{width:17px; height:17px; color:var(--signal);}
+  .rmap-card h3{font-size:14px; font-weight:600; margin-bottom:5px;}
+  .rmap-card p{font-size:12px; color:var(--text-dim); line-height:1.55;}
+  .rmap-tag{display:inline-block; margin-top:10px; font-size:9.5px; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-faint); font-family:'IBM Plex Mono',monospace;}
+
+  footer{margin-top:40px; border-top:1px solid var(--border); padding-top:18px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;}
+  footer p{font-size:11.5px; color:var(--text-faint); line-height:1.6;}
+
+  /* ================= SVG FIGURE ANIMATIONS ================= */
+  #figureRotator{transform-box:fill-box; transform-origin:50% 92%;}
+  #figureRotator.stumble{animation:stumbleKf 0.4s ease-in-out;}
+  #figureRotator.falling{animation:fallKf 0.7s cubic-bezier(.55,.06,.68,.19) forwards;}
+  #figureRotator.impact-bounce{animation:bounceKf 0.28s ease-out;}
+  #figureRotator.fallen{transform:rotate(88deg) translateY(15px);}
+  #figureRotator.rising{animation:riseKf 0.9s ease-out forwards;}
+
+  @keyframes stumbleKf{
+    0%{transform:rotate(0deg);} 35%{transform:rotate(-6deg) translateX(-4px);}
+    70%{transform:rotate(4deg) translateX(2px);} 100%{transform:rotate(1deg);}
+  }
+  @keyframes fallKf{
+    0%{transform:rotate(1deg) translateY(0);}
+    55%{transform:rotate(62deg) translateY(6px);}
+    85%{transform:rotate(90deg) translateY(15px);}
+    100%{transform:rotate(88deg) translateY(15px);}
+  }
+  @keyframes bounceKf{
+    0%{transform:rotate(88deg) translateY(15px) scale(1);}
+    40%{transform:rotate(85deg) translateY(11px) scale(1.02,0.97);}
+    100%{transform:rotate(88deg) translateY(15px) scale(1);}
+  }
+  @keyframes riseKf{
+    0%{transform:rotate(88deg) translateY(15px);}
+    100%{transform:rotate(0deg) translateY(0);}
+  }
+
+  #armL, #armR{transform-box:fill-box;}
+  .falling #armL{transform-origin:0% 15%; animation:armFlailL 0.65s ease-in-out;}
+  .falling #armR{transform-origin:100% 15%; animation:armFlailR 0.65s ease-in-out;}
+  @keyframes armFlailL{ 0%{transform:rotate(0deg);} 40%{transform:rotate(-95deg);} 100%{transform:rotate(-25deg);} }
+  @keyframes armFlailR{ 0%{transform:rotate(0deg);} 40%{transform:rotate(70deg);} 100%{transform:rotate(20deg);} }
+
+  .shock{opacity:0; transform-box:fill-box; transform-origin:center;}
+  .impact-active .shock{animation:shockKf 0.7s ease-out forwards;}
+  .shock.s2{animation-delay:0.1s !important;}
+  @keyframes shockKf{
+    0%{opacity:0.7; transform:scale(0.2);}
+    100%{opacity:0; transform:scale(2.6);}
+  }
+
+  .dust{opacity:0; transform-box:fill-box; transform-origin:center;}
+  .impact-active .dust{animation:dustKf 0.9s ease-out forwards;}
+  @keyframes dustKf{
+    0%{opacity:0;}
+    15%{opacity:0.55;}
+    100%{opacity:0; transform:translateY(-14px) scale(1.6);}
+  }
+
+  .wear-marker{opacity:0; animation:markerPulse 1.8s infinite;}
+  .wear-marker.show{opacity:1;}
+  @keyframes markerPulse{0%,100%{opacity:0.55; filter:drop-shadow(0 0 1px var(--signal));} 50%{opacity:1; filter:drop-shadow(0 0 5px var(--signal));}}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ TOP BAR ============ -->
+  <div class="topbar">
+    <div class="brand">
+      <div class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L21 6 V12 C21 17 17 21 12 22 C7 21 3 17 3 12 V6 Z" fill="#052018"/><path d="M8.5 12.5 L11 15 L16 9" stroke="#38E1A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="brand-text">
+        <h1>GUARDIAN</h1>
+        <p>Wearable Fall Detection · ESP8266 + MPU6050</p>
+      </div>
+    </div>
+    <div class="status-pill" id="statusPill">
+      <span class="status-dot"></span>
+      <span id="statusPillText">Not connected — demo waveform running</span>
+    </div>
+  </div>
+
+  <!-- ============ CONTROLS ============ -->
+  <div class="controls">
+    <div class="card">
+      <div class="card-label">Device connection</div>
+      <div class="connect-row">
+        <input id="wsAddress" type="text" placeholder="Device IP, e.g. 192.168.1.42" class="mono">
+        <button class="btn btn-primary" id="connectBtn">Connect</button>
+        <button class="btn btn-ghost" id="demoBtn">Use Demo Mode</button>
+      </div>
+      <div class="connect-hint">Flash <b>fall_detection_firmware.ino</b> to the ESP8266, open Serial Monitor for its IP, then connect above. No hardware yet? Demo Mode simulates live sensor data.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-label">Worn on</div>
+      <div class="position-grid" id="positionGrid">
+        <div class="position-btn active" data-pos="neck">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="6" r="3.2"/><path d="M8.5 8.5c-1 2-1 4 3.5 4s4.5-2 3.5-4"/><path d="M6 21c0-4 2.7-6 6-6s6 2 6 6"/></svg>
+          <div class="p-name">Neck</div>
+          <div class="p-sub">Pendant / lanyard</div>
+        </div>
+        <div class="position-btn" data-pos="waist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="5" r="2.6"/><path d="M8 21c0-6 1-8 4-8s4 2 4 8"/><rect x="8.3" y="11.3" width="7.4" height="2.6" rx="0.8"/></svg>
+          <div class="p-name">Waist</div>
+          <div class="p-sub">Belt clip</div>
+        </div>
+        <div class="position-btn" data-pos="wrist">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="5" r="2.6"/><path d="M12 8v5" /><path d="M12 13c-3 0-4.5 1.5-4.5 4.5" /><path d="M12 13c3 0 4.5 1.5 4.5 4.5"/><rect x="5.8" y="16.2" width="3.2" height="4" rx="0.8"/></svg>
+          <div class="p-name">Wrist</div>
+          <div class="p-sub">Watch-style band</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MONITOR GRID ============ -->
+  <div class="monitor-grid">
+
+    <div class="monitor-screen" id="monitorScreen">
+      <div class="screen-header">
+        <div class="screen-title">Live vitals monitor</div>
+        <div class="state-readout" id="stateReadout">NORMAL</div>
+      </div>
+
+      <div class="figure-stage">
+        <svg viewBox="0 0 300 300" width="230">
+          <ellipse cx="150" cy="262" rx="70" ry="7" fill="rgba(0,0,0,0.35)"/>
+          <line x1="30" y1="262" x2="270" y2="262" stroke="#1E2A42" stroke-width="1.5"/>
+
+          <!-- impact shockwaves -->
+          <circle class="shock s1" cx="150" cy="220" r="20" fill="none" stroke="#FF4D5E" stroke-width="2.5"/>
+          <circle class="shock s2" cx="150" cy="220" r="20" fill="none" stroke="#FF4D5E" stroke-width="1.5"/>
+          <!-- dust puffs -->
+          <circle class="dust" cx="110" cy="235" r="6" fill="#8A99B3"/>
+          <circle class="dust" cx="190" cy="238" r="7" fill="#8A99B3"/>
+          <circle class="dust" cx="150" cy="248" r="5" fill="#8A99B3"/>
+
+          <g id="figureRotator">
+            <g id="figure">
+              <!-- legs (thigh + knee joint + shin + shoe) -->
+              <g id="legL">
+                <rect x="130" y="172" width="18" height="46" rx="8" fill="url(#pantsGrad)"/>
+                <circle cx="139" cy="219" r="7" fill="#232E42"/>
+                <rect x="132" y="219" width="14" height="39" rx="6.5" fill="url(#pantsGrad)"/>
+                <rect x="125" y="252" width="24" height="10" rx="4" fill="#12182A"/>
+              </g>
+              <g id="legR">
+                <rect x="152" y="172" width="18" height="46" rx="8" fill="url(#pantsGradDark)"/>
+                <circle cx="161" cy="219" r="7" fill="#1B2436"/>
+                <rect x="154" y="219" width="14" height="39" rx="6.5" fill="url(#pantsGradDark)"/>
+                <rect x="151" y="252" width="24" height="10" rx="4" fill="#0D1220"/>
+              </g>
+
+              <!-- torso (shirt, tapered at waist, flared at hips) -->
+              <path d="M118,100 C118,95 123,93 129,93 L171,93 C177,93 182,95 182,100
+                       L178,140 C176,150 176,160 180,172 L120,172
+                       C124,160 124,150 122,140 Z" fill="url(#torsoGrad)"/>
+              <path d="M129,93 L171,93 C171,97 165,100 150,100 C135,100 129,97 129,93 Z" fill="#1C2740"/>
+              <rect x="146" y="112" width="8" height="26" rx="2" fill="rgba(0,0,0,0.12)"/>
+
+              <!-- arms (upper arm + elbow joint + forearm + hand) -->
+              <g id="armL">
+                <rect x="102" y="98" width="15" height="38" rx="7" fill="url(#torsoGrad)"/>
+                <circle cx="109" cy="136" r="6.5" fill="#212E44"/>
+                <rect x="100" y="136" width="14" height="34" rx="7" fill="url(#headGrad)"/>
+                <ellipse cx="107" cy="175" rx="7.5" ry="8.5" fill="url(#headGrad)"/>
+              </g>
+              <g id="armR">
+                <rect x="183" y="98" width="15" height="38" rx="7" fill="url(#torsoGrad)"/>
+                <circle cx="191" cy="136" r="6.5" fill="#212E44"/>
+                <rect x="186" y="136" width="14" height="34" rx="7" fill="url(#headGrad)"/>
+                <ellipse cx="193" cy="175" rx="7.5" ry="8.5" fill="url(#headGrad)"/>
+              </g>
+
+              <!-- neck + head -->
+              <rect x="143" y="83" width="14" height="14" fill="url(#headGrad)"/>
+              <circle cx="150" cy="68" r="19" fill="url(#headGrad)"/>
+              <path d="M131,64 Q131,44 150,42 Q169,44 169,64 Q169,52 150,49 Q131,52 131,64 Z" fill="#3A2E26"/>
+              <circle cx="143.5" cy="69" r="1.6" fill="#3A2E26"/>
+              <circle cx="156.5" cy="69" r="1.6" fill="#3A2E26"/>
+              <path d="M144,77 Q150,80.5 156,77" stroke="#8A5A3F" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+
+              <!-- wear-position markers -->
+              <g class="wear-marker" id="markerNeck">
+                <path d="M144,95 Q150,109 156,95" stroke="#38E1A0" stroke-width="1.4" fill="none"/>
+                <circle cx="150" cy="111" r="5.5" fill="#38E1A0"/>
+                <circle cx="150" cy="111" r="2.2" fill="#052018"/>
+              </g>
+              <g class="wear-marker" id="markerWaist">
+                <rect x="163" y="166" width="17" height="11" rx="2.5" fill="#38E1A0"/>
+                <rect x="169.5" y="161.5" width="4" height="6" rx="1" fill="#38E1A0"/>
+                <circle cx="171.5" cy="171.5" r="1.6" fill="#052018"/>
+              </g>
+              <g class="wear-marker" id="markerWrist">
+                <rect x="184" y="168" width="18" height="7" rx="3.5" fill="#38E1A0" opacity="0.85"/>
+                <rect x="188.5" y="163" width="9" height="8" rx="1.8" fill="#38E1A0"/>
+              </g>
+            </g>
+          </g>
+
+          <defs>
+            <linearGradient id="torsoGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#3A4E6B"/><stop offset="100%" stop-color="#212E44"/>
+            </linearGradient>
+            <linearGradient id="headGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E7CBAE"/><stop offset="100%" stop-color="#C9A47F"/>
+            </linearGradient>
+            <linearGradient id="pantsGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#3A455F"/><stop offset="100%" stop-color="#242F45"/>
+            </linearGradient>
+            <linearGradient id="pantsGradDark" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#2E384F"/><stop offset="100%" stop-color="#1A2337"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <div class="big-status">
+        <div class="headline" id="bigHeadline">Monitoring</div>
+        <div class="sub" id="bigSub">All vitals nominal</div>
+      </div>
+
+      <div class="readout-strip">
+        <div class="readout-cell"><div class="rlabel">Magnitude</div><div class="rvalue" id="valMag">1.00 g</div></div>
+        <div class="readout-cell"><div class="rlabel">Tilt angle</div><div class="rvalue" id="valTilt">2°</div></div>
+        <div class="readout-cell"><div class="rlabel">Sample rate</div><div class="rvalue" id="valRate">20 Hz</div></div>
+      </div>
+
+      <div class="wave-wrap">
+        <canvas id="waveCanvas"></canvas>
+      </div>
+
+      <div class="action-row">
+        <button class="btn btn-danger" id="simulateBtn" style="flex:1;">Simulate Fall</button>
+        <button class="btn btn-ghost" id="resetBtn" style="flex:1;" disabled>Mark as OK / Reset</button>
+      </div>
+    </div>
+
+    <div class="side-col">
+      <div class="card">
+        <div class="card-label">Session</div>
+        <div class="stat-row">
+          <div class="stat-box"><div class="sval" id="statFalls">0</div><div class="slabel">Falls today</div></div>
+          <div class="stat-box"><div class="sval" id="statUptime">00:00</div><div class="slabel">Uptime</div></div>
+          <div class="stat-box"><div class="sval" id="statBattery">92%</div><div class="slabel">Battery</div></div>
+        </div>
+      </div>
+
+      <div class="card log-card">
+        <div class="card-label">Alert log</div>
+        <ul class="log-list" id="logList">
+          <li class="log-empty">No events yet — try Simulate Fall.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ ROADMAP ============ -->
+  <div class="section-head">
+    <div class="eyebrow">Where this goes next</div>
+    <h2>Built to grow into a full safety platform</h2>
+    <p>This build proves the core detection loop — accelerometer signature in, alert out. The roadmap below is what turns it from a working prototype into something a caregiver could actually rely on.</p>
+  </div>
+
+  <div class="roadmap-grid">
+    <div class="rmap-card">
+      <div class="rmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s-7-4.6-7-11a7 7 0 0 1 14 0c0 6.4-7 11-7 11z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
+      <h3>GPS + GSM module</h3>
+      <p>Add a SIM800L/NEO-6M pair so a confirmed fall sends an SMS with live coordinates straight to a caregiver — no phone or WiFi required.</p>
+      <span class="rmap-tag">Hardware</span>
+    </div>
+    <div class="rmap-card">
+      <div class="rmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h4l2-7 4 14 2-7h6"/></svg></div>
+      <h3>Heart-rate & SpO2 fusion</h3>
+      <p>Pair a MAX30102 sensor so an alert also reports whether vitals stayed stable through the fall — cutting false-alarm severity, not just count.</p>
+      <span class="rmap-tag">Sensor fusion</span>
+    </div>
+    <div class="rmap-card">
+      <div class="rmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M9 13l2 2 4-5"/></svg></div>
+      <h3>On-device ML classifier</h3>
+      <p>Replace fixed g-thresholds with a lightweight TinyML model trained on real fall vs. sit-down vs. drop-and-catch data, cutting false positives further.</p>
+      <span class="rmap-tag">Firmware</span>
+    </div>
+    <div class="rmap-card">
+      <div class="rmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 18h6"/></svg></div>
+      <h3>Companion app</h3>
+      <p>A phone app for the caregiver: push notifications, fall history, battery status, and one-tap "call now" — the dashboard's job, mobile-first.</p>
+      <span class="rmap-tag">Software</span>
+    </div>
+    <div class="rmap-card">
+      <div class="rmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+      <h3>Auto-calibrating orientation</h3>
+      <p>Use the gyroscope to auto-detect whether the device is worn on the neck, waist, or wrist and adjust axis mapping and thresholds — no manual button needed.</p>
+      <span class="rmap-tag">Firmware</span>
+    </div>
+    <div class="rmap-card">
+      <div class="rmap-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="6" y="7" width="12" height="14" rx="2"/><path d="M9 7V5a3 3 0 0 1 6 0v2"/></svg></div>
+      <h3>Cloud history & analytics</h3>
+      <p>Log every event to a small backend (Firebase/Supabase) so families and clinicians can spot patterns — time of day, frequency, recovery time — over months.</p>
+      <span class="rmap-tag">Cloud</span>
+    </div>
+  </div>
+
+  <footer>
+    <p>ESP8266 ⟷ MPU6050 over I2C (SDA→D2, SCL→D1) &nbsp;·&nbsp; Dashboard connects at <span class="mono">ws://&lt;device-ip&gt;:81</span> &nbsp;·&nbsp; Built for demoing on WiFi, designed to grow into a standalone GSM device.</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  // ---------- State ----------
+  const state = {
+    connected:false,
+    mode:'demo',              // 'demo' | 'live'
+    position:'neck',
+    fallState:'NORMAL',       // NORMAL | STUMBLE | FREEFALL | IMPACT | CONFIRMED
+    magHistory:new Array(140).fill(1.0),
+    fallsToday:0,
+    startTime:Date.now(),
+    alarmActive:false,
+    ambientPhase:0,
+    socket:null
+  };
+
+  // ---------- Elements ----------
+  const el = {
+    statusPill:document.getElementById('statusPill'),
+    statusPillText:document.getElementById('statusPillText'),
+    connectBtn:document.getElementById('connectBtn'),
+    demoBtn:document.getElementById('demoBtn'),
+    wsAddress:document.getElementById('wsAddress'),
+    positionGrid:document.getElementById('positionGrid'),
+    monitorScreen:document.getElementById('monitorScreen'),
+    stateReadout:document.getElementById('stateReadout'),
+    bigHeadline:document.getElementById('bigHeadline'),
+    bigSub:document.getElementById('bigSub'),
+    valMag:document.getElementById('valMag'),
+    valTilt:document.getElementById('valTilt'),
+    valRate:document.getElementById('valRate'),
+    figureRotator:document.getElementById('figureRotator'),
+    figure:document.getElementById('figure'),
+    simulateBtn:document.getElementById('simulateBtn'),
+    resetBtn:document.getElementById('resetBtn'),
+    statFalls:document.getElementById('statFalls'),
+    statUptime:document.getElementById('statUptime'),
+    logList:document.getElementById('logList'),
+    canvas:document.getElementById('waveCanvas'),
+    markerNeck:document.getElementById('markerNeck'),
+    markerWaist:document.getElementById('markerWaist'),
+    markerWrist:document.getElementById('markerWrist'),
+  };
+  const ctx = el.canvas.getContext('2d');
+
+  // ---------- Wear position ----------
+  function setPosition(pos){
+    state.position = pos;
+    document.querySelectorAll('.position-btn').forEach(b=>{
+      b.classList.toggle('active', b.dataset.pos === pos);
+    });
+    el.markerNeck.classList.toggle('show', pos==='neck');
+    el.markerWaist.classList.toggle('show', pos==='waist');
+    el.markerWrist.classList.toggle('show', pos==='wrist');
+  }
+  el.positionGrid.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.position-btn');
+    if(!btn) return;
+    setPosition(btn.dataset.pos);
+  });
+  setPosition('neck');
+
+  // ---------- Log ----------
+  function addLog(msg, level){
+    if(el.logList.querySelector('.log-empty')) el.logList.innerHTML = '';
+    const li = document.createElement('li');
+    li.className = 'log-item' + (level ? ' '+level : '');
+    const t = new Date();
+    const ts = t.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
+    li.innerHTML = `<span class="log-time">${ts}</span><span class="log-msg">${msg}</span>`;
+    el.logList.prepend(li);
+    while(el.logList.children.length > 30) el.logList.removeChild(el.logList.lastChild);
+  }
+
+  // ---------- Audio alarm ----------
+  let audioCtx = null;
+  let alarmTimer = null;
+  function beep(freq, duration, delay){
+    if(!audioCtx) return;
+    const t0 = audioCtx.currentTime + delay;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'square';
+    osc.frequency.setValueAtTime(freq, t0);
+    gain.gain.setValueAtTime(0, t0);
+    gain.gain.linearRampToValueAtTime(0.14, t0 + 0.02);
+    gain.gain.linearRampToValueAtTime(0, t0 + duration);
+    osc.connect(gain).connect(audioCtx.destination);
+    osc.start(t0);
+    osc.stop(t0 + duration + 0.02);
+  }
+  function startAlarm(cycles){
+    if(!audioCtx){
+      try{ audioCtx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ return; }
+    }
+    state.alarmActive = true;
+    let i = 0;
+    function cycle(){
+      if(i >= cycles || !state.alarmActive) return;
+      beep(1046, 0.16, 0);
+      beep(784, 0.16, 0.22);
+      i++;
+      alarmTimer = setTimeout(cycle, 480);
+    }
+    cycle();
+  }
+  function stopAlarm(){
+    state.alarmActive = false;
+    clearTimeout(alarmTimer);
+  }
+
+  // ---------- UI state setters ----------
+  function setReadoutState(label, cls){
+    el.stateReadout.textContent = label;
+    el.stateReadout.className = 'state-readout' + (cls?(' '+cls):'');
+  }
+  function setBig(headline, sub){
+    el.bigHeadline.textContent = headline;
+    el.bigSub.textContent = sub;
+  }
+  function setPillNormal(){
+    el.statusPill.className = 'status-pill' + (state.connected ? ' live':'');
+    el.statusPillText.textContent = state.connected
+      ? 'Live · streaming from device'
+      : 'Not connected — demo waveform running';
+  }
+  function setPillAlarm(){
+    el.statusPill.className = 'status-pill alarm';
+    el.statusPillText.textContent = 'FALL DETECTED — alert dispatched';
+  }
+
+  // ---------- Fall sequence orchestration ----------
+  let simRunning = false;
+  function triggerFallSequence(source){
+    if(simRunning) return;
+    simRunning = true;
+    el.simulateBtn.disabled = true;
+    el.resetBtn.disabled = true;
+
+    const posLabel = {neck:'neck pendant', waist:'waist clip', wrist:'wrist band'}[state.position];
+
+    // Stage 0: normal -> stumble
+    state.fallState = 'STUMBLE';
+    setReadoutState('IRREGULAR MOTION', 'warn');
+    setBig('Irregular motion', 'Checking for free-fall signature…');
+    el.figureRotator.className = 'stumble';
+    addLog(`Motion irregularity flagged (${posLabel}, ${source})`, 'warn');
+
+    setTimeout(()=>{
+      // Stage 1: free fall
+      state.fallState = 'FREEFALL';
+      setReadoutState('FREE FALL', 'warn');
+      setBig('Free fall detected', 'Acceleration magnitude near 0 g');
+      el.figureRotator.className = 'falling';
+      el.figure.classList.add('falling');
+    }, 380);
+
+    setTimeout(()=>{
+      // Stage 2: impact
+      state.fallState = 'IMPACT';
+      setReadoutState('IMPACT', 'critical');
+      setBig('Impact detected', 'Magnitude spike > 2.5 g');
+      el.figure.classList.remove('falling');
+      el.figureRotator.className = 'fallen impact-bounce';
+      el.monitorScreen.classList.add('shake');
+      const svgRoot = el.figure.closest('svg');
+      svgRoot.classList.add('impact-active');
+      startAlarm(4);
+      setTimeout(()=>el.monitorScreen.classList.remove('shake'), 420);
+    }, 1080);
+
+    setTimeout(()=>{
+      el.figureRotator.className = 'fallen';
+    }, 1370);
+
+    setTimeout(()=>{
+      // Stage 3: confirmed
+      state.fallState = 'CONFIRMED';
+      state.fallsToday++;
+      el.statFalls.textContent = state.fallsToday;
+      setReadoutState('FALL CONFIRMED', 'critical');
+      setBig('Fall confirmed', 'No movement for 1.5s — notifying contact…');
+      el.monitorScreen.classList.add('alarm-active');
+      setPillAlarm();
+      addLog(`<b>Fall confirmed</b> — device worn at ${posLabel}. Person is down and motionless.`, 'critical');
+    }, 2600);
+
+    setTimeout(()=>{
+      addLog(`Alert dispatched to emergency contact (simulated SMS + push).`, 'critical');
+      setBig('Alert sent', 'Waiting for wearer to confirm they\\'re OK');
+      el.resetBtn.disabled = false;
+      simRunning = false;
+    }, 3600);
+  }
+
+  function resetToNormal(){
+    stopAlarm();
+    const svgRoot = el.figure.closest('svg');
+    svgRoot.classList.remove('impact-active');
+    el.monitorScreen.classList.remove('alarm-active');
+    el.figureRotator.className = 'rising';
+    setPillNormal();
+    addLog('Wearer marked OK — system reset to normal monitoring.');
+    setTimeout(()=>{
+      el.figureRotator.className = '';
+      state.fallState = 'NORMAL';
+      setReadoutState('NORMAL');
+      setBig('Monitoring', 'All vitals nominal');
+      el.simulateBtn.disabled = false;
+      el.resetBtn.disabled = true;
+    }, 900);
+  }
+
+  el.simulateBtn.addEventListener('click', ()=>triggerFallSequence('simulated'));
+  el.resetBtn.addEventListener('click', resetToNormal);
+
+  // ---------- Connection ----------
+  function connectLive(){
+    const addr = el.wsAddress.value.trim();
+    if(!addr){ addLog('Enter the device IP shown in Serial Monitor first.', 'warn'); return; }
+    try{
+      const ws = new WebSocket(`ws://${addr}:81/`);
+      ws.onopen = ()=>{
+        state.connected = true; state.mode='live';
+        setPillNormal();
+        addLog(`Connected to device at ${addr}.`);
+      };
+      ws.onclose = ()=>{
+        state.connected = false;
+        setPillNormal();
+        addLog('Device connection closed — reverting to demo waveform.', 'warn');
+      };
+      ws.onerror = ()=>{
+        addLog('Could not reach device. Check IP and that both are on the same WiFi.', 'warn');
+      };
+      ws.onmessage = (evt)=>{
+        try{
+          const d = JSON.parse(evt.data);
+          pushMagnitude(d.magnitude ?? 1.0);
+          if(typeof d.ax === 'number'){
+            const tiltDeg = Math.round(Math.atan2(Math.sqrt(d.ax*d.ax+d.ay*d.ay), d.az) * 180/Math.PI);
+            el.valTilt.textContent = tiltDeg + '°';
+          }
+          if(d.fall === true) triggerFallSequence('live sensor');
+        }catch(e){}
+      };
+      state.socket = ws;
+    }catch(e){
+      addLog('Invalid address — could not open connection.', 'warn');
+    }
+  }
+  el.connectBtn.addEventListener('click', connectLive);
+  el.demoBtn.addEventListener('click', ()=>{
+    if(state.socket){ state.socket.close(); state.socket=null; }
+    state.connected = false; state.mode = 'demo';
+    setPillNormal();
+    addLog('Switched to demo mode — synthetic waveform.');
+  });
+
+  // ---------- Waveform ----------
+  function pushMagnitude(v){
+    state.magHistory.push(v);
+    state.magHistory.shift();
+    el.valMag.textContent = v.toFixed(2) + ' g';
+  }
+
+  function ambientTick(){
+    if(state.mode === 'demo' && !simRunning && state.fallState==='NORMAL'){
+      state.ambientPhase += 0.12;
+      const v = 1.0 + Math.sin(state.ambientPhase)*0.03 + (Math.random()-0.5)*0.05;
+      pushMagnitude(v);
+    } else if(simRunning){
+      // synthetic fall curve to keep waveform in sync when using Simulate button
+      let v;
+      switch(state.fallState){
+        case 'STUMBLE': v = 1.0 + (Math.random()-0.5)*0.4; break;
+        case 'FREEFALL': v = 0.15 + Math.random()*0.15; break;
+        case 'IMPACT': v = 2.6 + Math.random()*0.9; break;
+        default: v = 1.0 + (Math.random()-0.5)*0.03;
+      }
+      pushMagnitude(v);
+    }
+  }
+
+  function colorForState(){
+    if(state.fallState==='IMPACT' || state.fallState==='CONFIRMED') return '#FF4D5E';
+    if(state.fallState==='FREEFALL' || state.fallState==='STUMBLE') return '#FFB648';
+    return '#38E1A0';
+  }
+
+  function resizeCanvas(){
+    const rect = el.canvas.getBoundingClientRect();
+    el.canvas.width = rect.width * devicePixelRatio;
+    el.canvas.height = rect.height * devicePixelRatio;
+  }
+  window.addEventListener('resize', resizeCanvas);
+
+  function drawWave(){
+    const w = el.canvas.width, h = el.canvas.height;
+    ctx.clearRect(0,0,w,h);
+    const color = colorForState();
+    const data = state.magHistory;
+    const maxV = 3.2, minV = 0;
+    ctx.beginPath();
+    data.forEach((v,i)=>{
+      const x = (i/(data.length-1)) * w;
+      const norm = Math.min(1, Math.max(0, (v-minV)/(maxV-minV)));
+      const y = h - norm*h*0.86 - h*0.06;
+      if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+    });
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 2*devicePixelRatio;
+    ctx.shadowColor = color;
+    ctx.shadowBlur = 6*devicePixelRatio;
+    ctx.stroke();
+    ctx.shadowBlur = 0;
+
+    // baseline
+    ctx.beginPath();
+    const baseY = h - ((1-minV)/(maxV-minV))*h*0.86 - h*0.06;
+    ctx.moveTo(0, baseY); ctx.lineTo(w, baseY);
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  }
+
+  // ---------- Clocks ----------
+  function tickUptime(){
+    const s = Math.floor((Date.now()-state.startTime)/1000);
+    const mm = String(Math.floor(s/60)).padStart(2,'0');
+    const ss = String(s%60).padStart(2,'0');
+    el.statUptime.textContent = `${mm}:${ss}`;
+  }
+
+  resizeCanvas();
+  setInterval(ambientTick, 90);
+  setInterval(drawWave, 60);
+  setInterval(tickUptime, 1000);
+  setPillNormal();
+})();
+</script>
+</body>
+</html>
