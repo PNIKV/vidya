@@ -2734,7 +2734,11 @@
         "name": "Smart-fall-detection.pdf",
         "type": "pdf"
       }
-    ]
+    ],
+    "htmlDashboards": [
+      "projects/smart-fall-detection/fall_detection_dashboard.html"
+    ],
+    "liveUrl": "projects/smart-fall-detection/fall_detection_dashboard.html"
   },
   {
     "id": "smart-bridge-flood-alert",
