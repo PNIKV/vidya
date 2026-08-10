@@ -6,7 +6,7 @@
   "level": "Intermediate",
   "difficulty": 3,
   "color": "#00F0FF",
-  "author": "Tinkering Lab",
+  "author": "Niktrix",
   "date": "2026-08-10",
   "desc": "High-security visible light optical transmitter PWA using smartphone screen flash or flashlight torch paired with an Arduino Uno mid-bit sampling receiver.",
   "fullDesc": "The LiFi Secure Terminal is a complete Visible Light Communication (VLC) system designed for environments where Radio Frequency (RF) emissions are strictly prohibited or compromised (such as Intensive Care Units, defense command centers, aircraft cabins, and underground bunkers). The system features a mobile-first Progressive Web Application (PWA) with a camera-free optical screen flash pad and optional camera torch controller to transmit binary optical data using 10 Hz pulse duration framing (Start bit 1, 8 Data bits MSB-first, Stop bit 0). Includes doctor/ICU presets and quick chat message chips ('hello', 'how are you', 'what you see', 'STAT: ICU BED 4'). On the receiving end, an Arduino Uno with an LDR Digital Module captures light pulses using a 1.5x bit period (150 ms) mid-bit sampling technique to eliminate edge jitter and decodes real-time ASCII messages onto a 16x2 I2C LCD screen.",
@@ -91,6 +91,19 @@
     "Implement Manchester Encoding to eliminate DC bias and enable clock recovery.",
     "Add Error Detection & Correction (Reed-Solomon or CRC-8 checksums).",
     "Upgrade to array photodiode receiver for multi-color RGB wavelength division multiplexing (WDM)."
+  ],
+  "firmware": [
+    {
+      "name": "LiFi Receiver Arduino Firmware (.hex)",
+      "url": "projects/lifi-secure-terminal/lifi_receiver/build/arduino.avr.uno/lifi_receiver.ino.hex"
+    }
+  ],
+  "codeFiles": [
+    {
+      "name": "lifi_receiver.ino",
+      "language": "cpp",
+      "url": "projects/lifi-secure-terminal/lifi_receiver/lifi_receiver.ino"
+    }
   ],
   "vivaQuestions": [
     {
