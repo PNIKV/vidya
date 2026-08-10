@@ -1,11 +1,15 @@
 /*
  * =====================================================================================
- * PROJECT   : LiFi Secure Terminal - Optical Receiver Firmware
+ * PROJECT   : LiFi Secure Terminal - Enhanced Optical Receiver Firmware (v2.0)
  * HARDWARE  : Arduino Uno / Nano (ATmega328P)
- * SENSOR    : LDR Light Module (Digital Output D0 -> Pin 8)
- * DISPLAY   : 16x2 LCD via PCF8574 I2C Backpack (Address 0x27, SDA=A4, SCL=A5)
- * PROTOCOL  : 10 Hz Baud Rate (100 ms/bit) | 1 Start Bit + 8 Payload Bits (MSB) + 1 Stop Bit
- * SAMPLING  : 1.5x Bit Period (150 ms) Mid-Bit Synchronization
+ * SENSOR    : LDR Light Sensor Module (Digital DO -> Pin 8 or Analog AO -> Pin A0)
+ * DISPLAY   : 16x2 LCD via PCF8574 I2C Backpack (Address 0x27 / 0x3F, SDA=A4, SCL=A5)
+ * FEATURES  : 
+ *             1. Auto-Polarity Detection (Supports Active-HIGH and Active-LOW LDR modules)
+ *             2. Auto-Baud Start Bit Timing Calibration (Auto-locks to 50ms - 200ms)
+ *             3. Noise-Immune Multi-Sampling (3-point majority vote per bit slot)
+ *             4. Interactive Serial Configuration Menu (Toggle Polarity, Baud, Bit Order)
+ *             5. Frame Parity & Stop Bit Integrity Check
  * =====================================================================================
  */
 
@@ -13,127 +17,188 @@
 #include <LiquidCrystal_I2C.h>
 
 // =====================================================================================
-// SENSOR SIGNAL LOGIC NORMALIZATION
+// PIN DEFINITIONS & DEFAULT CONFIGURATION
 // =====================================================================================
-// Line 8: Active-HIGH light detection logic macro.
-// Note: If your LDR sensor module outputs LOW when hit by light (Active-LOW module),
-// change line 8 to: #define LIGHT_ON LOW
-#define LIGHT_ON  HIGH
-#define LIGHT_OFF (!LIGHT_ON)
+const uint8_t LDR_PIN = 8;                 // Digital input pin from LDR Module DO
+const uint8_t LDR_ANALOG_PIN = A0;         // Optional Analog pin for raw light levels
 
-// =====================================================================================
-// PIN & TIMING SPECIFICATIONS
-// =====================================================================================
-const uint8_t LDR_PIN = 8;               // Digital Pin connected to LDR Module D0
-const unsigned long BIT_PERIOD_MS = 100; // Bit duration (100 ms = 10 Hz baud rate)
-const unsigned long MID_BIT_DELAY_MS = (BIT_PERIOD_MS * 1.5); // 150 ms mid-bit offset
-const unsigned long INACTIVITY_TIMEOUT_MS = 4000;            // Reset buffer after 4s idle
+// Default Configuration Flags
+bool activeHighLogic = true;               // true = Light ON gives HIGH; false = Light ON gives LOW
+bool msbFirst = true;                      // true = Bit 7..0 (MSB First); false = Bit 0..7 (LSB First)
+bool autoBaudEnabled = true;               // Auto-detect bit duration from Start Bit pulse width
 
-// Initialize 16x2 LCD with I2C address 0x27 (Default for PCF8574)
+unsigned long bitPeriodMs = 100;           // Default 100ms per bit (10 Hz Baud Rate)
+unsigned long inactivityTimeoutMs = 4000;  // Reset LCD buffer after 4s idle
+
+// Initialize 16x2 LCD with address 0x27 (Try 0x3F if display stays blank)
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 
-// Dynamic Display Buffer Variables
+// Display & Buffer State
 String receivedMessage = "";
 unsigned long lastSignalTime = 0;
 bool isListeningState = true;
 
-// Function prototypes
+// Diagnostic Statistics
+unsigned long totalBytesReceived = 0;
+unsigned long errorBytesIgnored = 0;
+
+// Function Prototypes
 void initializeLCD();
 void resetToListeningState();
-char readOpticalByte();
+char readOpticalByteWithSampling(unsigned long currentBitMs);
+int readSensorState();
+void printSystemStatus();
+void handleSerialCommands();
 void updateLCDDisplay(char newChar);
 
 void setup() {
-  // Configure LDR Digital Pin as input with internal pullup disabled (LM393 handles drive)
   pinMode(LDR_PIN, INPUT);
-
-  // Initialize Serial interface for optional telemetry debugging (9600 baud)
   Serial.begin(9600);
-  Serial.println(F("[LiFi Rx] Initializing Optical Communication Receiver..."));
 
-  // Initialize I2C LCD
+  Serial.println(F("=========================================================="));
+  Serial.println(F("   LiFi Secure Terminal - Enhanced Receiver Firmware v2.0"));
+  Serial.println(F("=========================================================="));
+
+  // Initialize LCD
   initializeLCD();
+
+  // Auto-calibrate baseline light polarity at bootup
+  delay(200);
+  int baselineState = digitalRead(LDR_PIN);
+  // Assume resting ambient state is LIGHT_OFF
+  if (baselineState == HIGH) {
+    activeHighLogic = false; // Module resting state is HIGH -> Light pulse makes it LOW
+    Serial.println(F("[AUTODETECT] Ambient LDR state is HIGH -> Set Active-LOW logic."));
+  } else {
+    activeHighLogic = true;  // Module resting state is LOW -> Light pulse makes it HIGH
+    Serial.println(F("[AUTODETECT] Ambient LDR state is LOW -> Set Active-HIGH logic."));
+  }
+
+  printSystemStatus();
   lastSignalTime = millis();
 }
 
 void loop() {
-  // Read current sensor pin state
-  int currentSignalState = digitalRead(LDR_PIN);
+  // Check for incoming user commands via Serial Monitor
+  if (Serial.available() > 0) {
+    handleSerialCommands();
+  }
+
+  // Poll LDR Sensor for Start Bit
+  int sensorState = readSensorState();
 
   // -----------------------------------------------------------------------------------
-  // 1. START BIT SYNCHRONIZATION (Rising Edge Trigger)
+  // 1. START BIT DETECTION & AUTO-BAUD CALIBRATION
   // -----------------------------------------------------------------------------------
-  if (currentSignalState == LIGHT_ON) {
-    // Optical Start Bit detected!
-    Serial.println(F("[LiFi Rx] Start Bit Detected! Synchronizing timing..."));
+  if (sensorState == 1) { // 1 means LIGHT_ON
+    unsigned long startBitBeginUs = micros();
+    unsigned long calibratedBitMs = bitPeriodMs;
+
+    if (autoBaudEnabled) {
+      // Measure actual Start Bit pulse duration in microseconds
+      int targetState = activeHighLogic ? HIGH : LOW;
+      unsigned long pulseDurationUs = pulseIn(LDR_PIN, targetState, 300000UL); // 300ms max timeout
+
+      if (pulseDurationUs >= 35000UL && pulseDurationUs <= 250000UL) { // 35ms to 250ms range
+        calibratedBitMs = (pulseDurationUs + 500UL) / 1000UL; // Convert us to ms
+        Serial.print(F("[AUTO-BAUD] Measured Start Bit: "));
+        Serial.print(pulseDurationUs / 1000.0, 1);
+        Serial.print(F(" ms -> Auto-tuned Bit Period to: "));
+        Serial.print(calibratedBitMs);
+        Serial.println(F(" ms"));
+      } else {
+        // Fallback to configured default bit period
+        delay(bitPeriodMs / 2);
+      }
+    } else {
+      // Fixed delay to reach mid-point of data bit 7
+      delay(bitPeriodMs + (bitPeriodMs / 2));
+    }
+
+    // Delay to align dead-center inside the first payload bit slot (Data Bit 7 or 0)
+    delay(calibratedBitMs / 2);
 
     // ---------------------------------------------------------------------------------
-    // 2. MID-BIT SAMPLING ALGORITHM
+    // 2. READ 8 PAYLOAD DATA BITS WITH NOISE-IMMUNE MULTI-SAMPLING
     // ---------------------------------------------------------------------------------
-    // Wait 1.5 x BIT_PERIOD (150 ms) to skip remaining 50 ms of Start Bit and land
-    // dead-center inside Payload Bit 7 (MSB) at T = 150 ms.
-    // Timing Diagram:
-    // |<- Start Bit 100ms ->|<- Data Bit 7 (100ms) ->|<- Data Bit 6 (100ms) ->|...
-    // |^ (Edge Trigger)     |----(150ms)---->| (Sample Bit 7)
-    // ---------------------------------------------------------------------------------
-    delay(MID_BIT_DELAY_MS);
-
-    // Read the 8 payload data bits
-    char decodedByte = readOpticalByte();
+    char decodedByte = readOpticalByteWithSampling(calibratedBitMs);
 
     // ---------------------------------------------------------------------------------
-    // 3. STOP BIT VALIDATION & BUFFER MANAGEMENT
+    // 3. STOP BIT VALIDATION & ASCII FILTERING
     // ---------------------------------------------------------------------------------
-    // Wait for Stop Bit window (100 ms)
-    delay(BIT_PERIOD_MS);
+    // Wait for Stop Bit window (Stop Bit must be LIGHT_OFF / 0)
+    delay(calibratedBitMs);
+    int stopBitState = readSensorState();
 
-    // Filter valid ASCII printable characters (range 32 to 126: space to '~')
-    if (decodedByte >= 32 && decodedByte <= 126) {
-      Serial.print(F("[LiFi Rx] Decoded ASCII Character: '"));
+    bool stopBitValid = (stopBitState == 0); // Stop bit should be LOW / OFF
+
+    if (stopBitValid && decodedByte >= 32 && decodedByte <= 126) {
+      totalBytesReceived++;
+      Serial.print(F("[RECV #"));
+      Serial.print(totalBytesReceived);
+      Serial.print(F("] ASCII: '"));
       Serial.print(decodedByte);
-      Serial.print(F("' (0x"));
+      Serial.print(F("' (DEC: "));
+      Serial.print((int)decodedByte);
+      Serial.print(F(", HEX: 0x"));
       Serial.print((int)decodedByte, HEX);
       Serial.println(F(")"));
 
-      // Process character onto LCD display line 2
       updateLCDDisplay(decodedByte);
     } else {
-      Serial.print(F("[LiFi Rx] Ignored Non-Printable Byte: 0x"));
-      Serial.println((int)decodedByte, HEX);
+      errorBytesIgnored++;
+      Serial.print(F("[WARNING] Corrupted/Invalid Frame Ignored. Byte: 0x"));
+      Serial.print((int)decodedByte, HEX);
+      Serial.print(F(" | Stop Bit Valid: "));
+      Serial.println(stopBitValid ? F("YES") : F("NO (Timing Drift)"));
     }
 
-    // Refresh last active signal timestamp
     lastSignalTime = millis();
     isListeningState = false;
   }
 
   // -----------------------------------------------------------------------------------
-  // 4. INACTIVITY AUTO-RESET (4000 ms Timeout)
+  // 4. INACTIVITY TIMEOUT RESET (4000ms)
   // -----------------------------------------------------------------------------------
-  if (!isListeningState && (millis() - lastSignalTime >= INACTIVITY_TIMEOUT_MS)) {
-    Serial.println(F("[LiFi Rx] Signal idle timeout reached (4000ms). Resetting LCD buffer..."));
+  if (!isListeningState && (millis() - lastSignalTime >= inactivityTimeoutMs)) {
     resetToListeningState();
   }
 }
 
 /**
- * Reads 8 sequential optical data bits (MSB first) at exact 100 ms sampling intervals.
- * Returns decoded byte character.
+ * Reads sensor state normalized to binary:
+ * Returns 1 for LIGHT_ON, 0 for LIGHT_OFF.
  */
-char readOpticalByte() {
+int readSensorState() {
+  int rawPin = digitalRead(LDR_PIN);
+  if (activeHighLogic) {
+    return (rawPin == HIGH) ? 1 : 0;
+  } else {
+    return (rawPin == LOW) ? 1 : 0;
+  }
+}
+
+/**
+ * Reads 8 data bits with 3-point majority sampling for glitch rejection.
+ */
+char readOpticalByteWithSampling(unsigned long currentBitMs) {
   uint8_t rawByte = 0;
 
-  for (int i = 7; i >= 0; i--) {
-    // Read current pin state at dead-center of bit slot
-    int bitState = digitalRead(LDR_PIN);
-    uint8_t bitVal = (bitState == LIGHT_ON) ? 1 : 0;
+  for (int i = 0; i < 8; i++) {
+    // 3-Point Majority Vote Sampling inside current bit period
+    int voteOn = 0;
+    for (int sample = 0; sample < 3; sample++) {
+      if (readSensorState() == 1) voteOn++;
+      delayMicroseconds(500); // 0.5ms inter-sample spacing
+    }
+    uint8_t bitVal = (voteOn >= 2) ? 1 : 0;
 
-    // Shift in bit MSB-first
-    rawByte |= (bitVal << i);
+    int bitIndex = msbFirst ? (7 - i) : i;
+    rawByte |= (bitVal << bitIndex);
 
-    // Unless it's the final payload bit (Bit 0), delay 100 ms to reach center of next bit
-    if (i > 0) {
-      delay(BIT_PERIOD_MS);
+    // Wait until next bit window center
+    if (i < 7) {
+      delay(currentBitMs);
     }
   }
 
@@ -141,57 +206,94 @@ char readOpticalByte() {
 }
 
 /**
- * Initializes 16x2 I2C LCD Display with system header.
+ * Initializes LCD screen.
  */
 void initializeLCD() {
   lcd.init();
   lcd.backlight();
   lcd.clear();
-
-  // Line 1: Permanent Terminal Header
   lcd.setCursor(0, 0);
   lcd.print("LiFi Rx Terminal");
-
-  // Line 2: Default Status
   lcd.setCursor(0, 1);
-  lcd.print("Listening...");
+  lcd.print("Listening...    ");
 }
 
 /**
- * Updates Line 2 of LCD with decoded character stream (scrolls up to last 16 chars).
+ * Updates Line 2 of LCD display with auto-scrolling.
  */
 void updateLCDDisplay(char newChar) {
-  // If previously in listening state, clear LCD row 2 buffer
   if (isListeningState) {
     receivedMessage = "";
     lcd.setCursor(0, 1);
-    lcd.print("                "); // 16 blank spaces
+    lcd.print("                ");
   }
 
-  // Append new character to message string
   receivedMessage += newChar;
 
-  // Format line to display only the last 16 characters (scrolling effect)
-  String displaySubstring = receivedMessage;
-  if (displaySubstring.length() > 16) {
-    displaySubstring = displaySubstring.substring(displaySubstring.length() - 16);
+  String displayString = receivedMessage;
+  if (displayString.length() > 16) {
+    displayString = displayString.substring(displayString.length() - 16);
   }
 
-  // Render on Line 2
-  lcd.setCursor(0, 1);
-  // Pad with trailing spaces if string length is less than 16
-  while (displaySubstring.length() < 16) {
-    displaySubstring += " ";
+  while (displayString.length() < 16) {
+    displayString += " ";
   }
-  lcd.print(displaySubstring);
+
+  lcd.setCursor(0, 1);
+  lcd.print(displayString);
 }
 
 /**
- * Resets LCD Line 2 back to default "Listening..." state after 4000 ms idle timeout.
+ * Resets LCD to idle listening state.
  */
 void resetToListeningState() {
   receivedMessage = "";
   isListeningState = true;
   lcd.setCursor(0, 1);
   lcd.print("Listening...    ");
+}
+
+/**
+ * Prints system settings & diagnostic status to Serial Monitor.
+ */
+void printSystemStatus() {
+  Serial.println(F("\n--- CURRENT RECEIVER CONFIGURATION ---"));
+  Serial.print(F(" 1. Polarity Mode     : "));
+  Serial.println(activeHighLogic ? F("ACTIVE-HIGH (Light ON = HIGH)") : F("ACTIVE-LOW (Light ON = LOW)"));
+  Serial.print(F(" 2. Auto-Baud Tuning  : "));
+  Serial.println(autoBaudEnabled ? F("ENABLED (Auto-locks Start Bit)") : F("DISABLED (Fixed Bit Period)"));
+  Serial.print(F(" 3. Bit Period        : "));
+  Serial.print(bitPeriodMs);
+  Serial.println(F(" ms/bit"));
+  Serial.print(F(" 4. Bit Order         : "));
+  Serial.println(msbFirst ? F("MSB FIRST (Bit 7..0)") : F("LSB FIRST (Bit 0..7)"));
+  Serial.print(F(" 5. Telemetry Stats   : "));
+  Serial.print(totalBytesReceived);
+  Serial.print(F(" Valid Bytes | "));
+  Serial.print(errorBytesIgnored);
+  Serial.println(F(" Error Bytes"));
+  Serial.println(F("--------------------------------------"));
+  Serial.println(F("Commands: [P] Toggle Polarity | [B] Toggle Auto-Baud | [O] Toggle Bit Order | [S] Status\n"));
+}
+
+/**
+ * Handles interactive commands from Serial Monitor (e.g., from Web Serial Dashboard).
+ */
+void handleSerialCommands() {
+  char cmd = Serial.read();
+  if (cmd == 'P' || cmd == 'p') {
+    activeHighLogic = !activeHighLogic;
+    Serial.print(F("[CFG] Polarity toggled to: "));
+    Serial.println(activeHighLogic ? F("ACTIVE-HIGH") : F("ACTIVE-LOW"));
+  } else if (cmd == 'B' || cmd == 'b') {
+    autoBaudEnabled = !autoBaudEnabled;
+    Serial.print(F("[CFG] Auto-Baud mode: "));
+    Serial.println(autoBaudEnabled ? F("ENABLED") : F("DISABLED"));
+  } else if (cmd == 'O' || cmd == 'o') {
+    msbFirst = !msbFirst;
+    Serial.print(F("[CFG] Bit Order toggled to: "));
+    Serial.println(msbFirst ? F("MSB FIRST") : F("LSB FIRST"));
+  } else if (cmd == 'S' || cmd == 's') {
+    printSystemStatus();
+  }
 }

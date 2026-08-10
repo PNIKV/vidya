@@ -90,6 +90,91 @@
       cursor: pointer;
     }
 
+    .apk-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border: 1px solid #10b981;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: box-shadow 0.2s, transform 0.15s;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+    }
+    .apk-download-btn:hover {
+      box-shadow: 0 0 22px rgba(16, 185, 129, 0.6);
+      transform: translateY(-1px);
+    }
+    .apk-download-btn svg { flex-shrink: 0; }
+
+    .header-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+    /* APK info card */
+    .apk-info-card {
+      background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(5,150,105,0.04) 100%);
+      border: 1px solid #10b981;
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 0 24px rgba(16,185,129,0.12);
+    }
+    .apk-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .apk-step-num {
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #10b981;
+      color: #070B14;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .apk-step-text { font-size: 0.85rem; color: #e2e8f0; line-height: 1.5; }
+    .apk-step-text strong { color: #10b981; }
+    .apk-step-text code {
+      background: #09101F;
+      border: 1px solid #1e2d4a;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: #00f0ff;
+    }
+    .apk-file-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .apk-file-link {
+      padding: 4px 10px;
+      background: #09101F;
+      border: 1px solid #10b981;
+      border-radius: 6px;
+      color: #10b981;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .apk-file-link:hover { background: rgba(16,185,129,0.15); }
+
     /* Main Container & Responsive Grid */
     .main-container {
       flex: 1;
@@ -388,12 +473,23 @@
         </div>
       </div>
       
-      <button id="toggleTorchModeBtn" class="torch-toggle-btn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
-        </svg>
-        <span id="torchModeLabel">Torch: OFF</span>
-      </button>
+      <div class="header-actions">
+        <!-- APK Download Button -->
+        <a id="apkDownloadBtn" href="android_apk/" class="apk-download-btn" title="Download Android APK Project for Android Studio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 15V3"/><path d="M7 10l5 5 5-5"/><rect x="2" y="17" width="20" height="4" rx="1"/>
+          </svg>
+          <span>Download APK Project</span>
+        </a>
+
+        <!-- Torch Toggle -->
+        <button id="toggleTorchModeBtn" class="torch-toggle-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <span id="torchModeLabel">Torch: OFF</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -546,6 +642,69 @@
           </div>
         </section>
 
+        <!-- ARDUINO UNO RECEIVER CONFIGURATOR & SIGNAL DIAGNOSTICS -->
+        <section class="panel-card" id="arduinoConfigPanel" style="border-color: #f59e0b !important;">
+          <div class="panel-title" style="color: #f59e0b !important;">
+            <span>
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; display: inline-block; margin-right: 6px;"></span>
+              Arduino Receiver Hardware Configuration
+            </span>
+            <span style="font-size: 0.65rem; color: #f59e0b; background: rgba(245,158,11,0.15); padding: 2px 6px; border-radius: 4px;">Firmware v2.0 Config</span>
+          </div>
+
+          <div style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">
+            Fine-tune LDR module polarity, speed sync, and signal threshold for smooth, error-free optical decoding:
+          </div>
+
+          <!-- CONFIG OPTIONS GRID -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px;">
+            
+            <!-- POLARITY MODE SELECTOR -->
+            <div style="background: #09101f; padding: 10px; border-radius: 8px; border: 1px solid #1e2d4a;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #f59e0b; font-weight: bold; margin-bottom: 6px;">
+                1. LDR POLARITY MODE
+              </div>
+              <select id="arduinoPolaritySelect" style="width: 100%; background: #152238; color: #ffffff; border: 1px solid #223552; padding: 6px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;">
+                <option value="activeHigh" selected>Active-HIGH (Light ON = HIGH)</option>
+                <option value="activeLow">Active-LOW (Light ON = LOW)</option>
+              </select>
+              <div style="font-size: 0.65rem; color: #94a3b8; margin-top: 4px;">
+                If LCD displays garbled chars, switch to Active-LOW mode.
+              </div>
+            </div>
+
+            <!-- BIT ORDER SELECTOR -->
+            <div style="background: #09101f; padding: 10px; border-radius: 8px; border: 1px solid #1e2d4a;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #00f0ff; font-weight: bold; margin-bottom: 6px;">
+                2. BIT FRAMING ORDER
+              </div>
+              <select id="arduinoBitOrderSelect" style="width: 100%; background: #152238; color: #ffffff; border: 1px solid #223552; padding: 6px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;">
+                <option value="msb" selected>MSB First [Bit 7 -> 0] (Default)</option>
+                <option value="lsb">LSB First [Bit 0 -> 7]</option>
+              </select>
+              <div style="font-size: 0.65rem; color: #94a3b8; margin-top: 4px;">
+                Matches transmitter framing sequence.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- LDR HARDWARE CALIBRATION TIPS -->
+          <div style="background: rgba(16,185,129,0.08); border: 1px dashed #10b981; padding: 10px; border-radius: 8px; font-size: 0.75rem; color: #e2e8f0; line-height: 1.4;">
+            <strong style="color: #10b981;">💡 Hardware Calibration Quick Guide:</strong>
+            <ul style="margin-left: 16px; margin-top: 4px;">
+              <li><strong>Potentiometer Adjustment:</strong> Rotate the blue screw on your LDR module until the DO LED lights up ONLY when torch/screen flash hits the sensor.</li>
+              <li><strong>Ambient Light Shielding:</strong> Use a small black tube or cardboard shroud around the LDR to prevent room light noise.</li>
+              <li><strong>Auto-Baud Feature:</strong> Firmware v2.0 auto-measures the Start Bit pulse to synchronize bit timing automatically!</li>
+            </ul>
+          </div>
+
+          <!-- QUICK TEST SIGNAL BUTTON -->
+          <button id="sendTestSignalBtn" style="background: #152238; border: 1px solid #f59e0b; color: #f59e0b; padding: 8px; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span>⚡ Transmit Signal Test Pattern ("LiFi")</span>
+          </button>
+        </section>
+
         <!-- TRANSMIT BUTTON -->
         <section style="margin-top: 4px;">
           <button id="transmitBtn" class="btn-transmit">
@@ -557,7 +716,94 @@
       </div>
 
     </div>
+
+    <!-- ═══ APK ANDROID PROJECT DOWNLOAD CARD ═══ -->
+    <section class="apk-info-card" style="margin-top: 24px;" id="apkProjectCard">
+      <div class="panel-title" style="color: #10b981;">
+        <span>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block; margin-right: 6px;"></span>
+          Android Native APK Project
+        </span>
+        <span style="font-size: 0.65rem; color: #10b981; background: rgba(16,185,129,0.15); padding: 2px 8px; border-radius: 4px;">Camera2 Hardware Torch API</span>
+      </div>
+
+      <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6;">
+        The web browser's Torch API is restricted on many devices. The <strong style="color:#10b981;">native Android APK</strong> uses 
+        <code style="background:#09101F; border:1px solid #1e2d4a; border-radius:4px; padding:1px 6px; font-family:'JetBrains Mono',monospace; font-size:0.8em; color:#00f0ff;">CameraManager.setTorchMode()</code> 
+        — the same call used by system flashlight apps — giving you 100% reliable direct hardware flash control with zero browser restrictions.
+      </p>
+
+      <div class="apk-step">
+        <div class="apk-step-num">1</div>
+        <div class="apk-step-text">
+          <strong>Install Android Studio</strong> (free) from 
+          <a href="https://developer.android.com/studio" target="_blank" rel="noopener" style="color:#00f0ff;">developer.android.com/studio</a>. 
+          It includes the Android SDK and Gradle build tools automatically.
+        </div>
+      </div>
+
+      <div class="apk-step">
+        <div class="apk-step-num">2</div>
+        <div class="apk-step-text">
+          <strong>Open the APK project folder</strong> in Android Studio: 
+          <code>File → Open → android_apk/</code> (inside the <code>lifi-secure-terminal</code> project folder). 
+          Android Studio will auto-sync Gradle on first open.
+        </div>
+      </div>
+
+      <div class="apk-step">
+        <div class="apk-step-num">3</div>
+        <div class="apk-step-text">
+          <strong>Connect your Android phone</strong> via USB cable. Enable 
+          <code>Developer Options → USB Debugging</code> on your phone 
+          (tap <em>Build Number</em> 7 times in Settings → About Phone).
+        </div>
+      </div>
+
+      <div class="apk-step">
+        <div class="apk-step-num">4</div>
+        <div class="apk-step-text">
+          <strong>Build & Run:</strong> Click the green ▶ <strong>Run</strong> button in Android Studio 
+          (or press <code>Shift + F10</code>). Select your device from the list. 
+          The APK is installed and launched instantly.
+        </div>
+      </div>
+
+      <div class="apk-step">
+        <div class="apk-step-num">5</div>
+        <div class="apk-step-text">
+          <strong>Generate signed APK file</strong> to share: 
+          <code>Build → Generate Signed Bundle / APK → APK → Release</code>. 
+          The output APK will be in <code>app/release/app-release.apk</code>.
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:#10b981; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">
+          APK Project Source Files
+        </div>
+        <div class="apk-file-links">
+          <a class="apk-file-link" href="android_apk/app/src/main/java/com/lifisecure/terminal/MainActivity.java" download>MainActivity.java</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/res/layout/activity_main.xml" download>activity_main.xml</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/AndroidManifest.xml" download>AndroidManifest.xml</a>
+          <a class="apk-file-link" href="android_apk/app/build.gradle" download>app/build.gradle</a>
+          <a class="apk-file-link" href="android_apk/settings.gradle" download>settings.gradle</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/res/values/strings.xml" download>strings.xml</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/res/values/colors.xml" download>colors.xml</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/res/values/themes.xml" download>themes.xml</a>
+        </div>
+      </div>
+
+      <a href="android_apk/" class="apk-download-btn" style="align-self:flex-start;" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 15V3"/><path d="M7 10l5 5 5-5"/><rect x="2" y="17" width="20" height="4" rx="1"/>
+        </svg>
+        Open Android APK Project Folder
+      </a>
+    </section>
+
   </main>
+
 
   <!-- FULLSCREEN PULSER MODAL -->
   <div id="fullscreenFlashOverlay" class="modal-pulser-overlay hidden">

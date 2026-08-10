@@ -129,6 +129,20 @@ document.addEventListener('DOMContentLoaded', () => {
     baudDisplay.textContent = `(${baud} Hz Baud)`;
   });
 
+  // --- QUICK TEST SIGNAL BUTTON ---
+  const sendTestSignalBtn = document.getElementById('sendTestSignalBtn');
+  if (sendTestSignalBtn) {
+    sendTestSignalBtn.addEventListener('click', () => {
+      customTextInput.value = "LiFi";
+      charCounter.textContent = "4 / 64 CHARS";
+      presetBtns.forEach(b => b.classList.remove('active'));
+      if (!isTransmitting) {
+        startTransmission();
+      }
+    });
+  }
+
+
   // --- OPTIONAL TORCH TOGGLE ---
   toggleTorchModeBtn.addEventListener('click', async () => {
     if (isTorchEnabled) {
