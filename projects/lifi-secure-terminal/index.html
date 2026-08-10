@@ -13,7 +13,7 @@
   
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Embedded Self-Contained CSS Guard (Prevents Any SW Caching or Missing CSS Issues) -->
+  <!-- Embedded Self-Contained CSS Guard -->
   <style>
     /* Global Reset & Base */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,7 +28,7 @@
       line-height: 1.5;
     }
 
-    /* SVG Size Lock - Prevents Large SVGs */
+    /* SVG Size Lock */
     svg {
       width: 20px !important;
       height: 20px !important;
@@ -55,7 +55,7 @@
       align-items: center;
       justify-content: space-between;
     }
-    .brand-box { display: flex; items-center: center; gap: 10px; align-items: center; }
+    .brand-box { display: flex; align-items: center; gap: 10px; }
     .brand-icon {
       width: 36px !important; height: 36px !important;
       border-radius: 10px;
@@ -181,7 +181,7 @@
     .emitter-sub {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
-      color: #94a3b8 !important;
+      color: #cbd5e1 !important;
       position: relative; z-index: 10;
     }
 
@@ -198,7 +198,7 @@
     .canvas-title {
       position: absolute; top: 6px; left: 8px;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.6rem; color: #64748b;
+      font-size: 0.6rem; color: #94a3b8;
     }
 
     /* Telemetry Info Cards */
@@ -209,7 +209,7 @@
       border-radius: 8px;
       padding: 8px 12px;
     }
-    .telemetry-lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #64748b; }
+    .telemetry-lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #94a3b8; }
     .telemetry-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.85rem; color: #00f0ff; }
 
     .binary-log {
@@ -300,6 +300,7 @@
     /* Range Slider */
     .slider-input {
       -webkit-appearance: none;
+      appearance: none;
       width: 100%;
       height: 8px;
       background: #09101f;
@@ -308,6 +309,7 @@
     }
     .slider-input::-webkit-slider-thumb {
       -webkit-appearance: none;
+      appearance: none;
       width: 20px; height: 20px;
       border-radius: 50%;
       background: #00f0ff;
@@ -366,7 +368,6 @@
       navigator.serviceWorker.getRegistrations().then(function(registrations) {
         for (let registration of registrations) {
           registration.unregister();
-          console.log('[Service Worker] Unregistered old cached SW successfully.');
         }
       });
     }
@@ -419,7 +420,7 @@
               <div id="lcdLine2">Listening...    </div>
             </div>
           </div>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #94a3b8; text-align: center;">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #cbd5e1; text-align: center;">
             ⚡ Simulates exact live character output on the Arduino LCD screen.
           </div>
         </section>
@@ -428,7 +429,7 @@
         <section class="panel-card">
           <div class="panel-title">
             <span>Optical Light Emitter Pad</span>
-            <span id="emitterStatusBadge" style="font-size: 0.65rem; color: #94a3b8; background: #09101f; padding: 2px 6px; border-radius: 4px;">READY</span>
+            <span id="emitterStatusBadge" style="font-size: 0.65rem; color: #cbd5e1; background: #09101f; padding: 2px 6px; border-radius: 4px;">READY</span>
           </div>
 
           <div id="emitterPad" class="emitter-pad">
@@ -511,7 +512,7 @@
         <!-- CUSTOM MESSAGE INPUT -->
         <section class="panel-card">
           <div class="panel-title">
-            <span>Custom Message Input</span>
+            <label for="customTextInput" style="color: #00f0ff; cursor: pointer;">Custom Message Input</label>
             <span id="charCounter" style="color: #00f0ff;">0 / 64 CHARS</span>
           </div>
 
@@ -527,18 +528,18 @@
         <section class="panel-card">
           <div style="display: flex; justify-content: space-between; align-items: center;">
             <div>
-              <div class="panel-title" style="margin: 0;">Bit Pulse Timing</div>
-              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #94a3b8;">Transmission speed (50ms - 200ms)</div>
+              <label for="pulseTimingSlider" class="panel-title" style="margin: 0; cursor: pointer;">Bit Pulse Timing</label>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #cbd5e1;">Transmission speed (50ms - 200ms)</div>
             </div>
             <div style="text-align: right;">
               <span id="timingValueDisplay" style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.2rem; color: #00f0ff;">100</span>
-              <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #94a3b8;"> ms/bit</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #cbd5e1;"> ms/bit</span>
               <div id="baudDisplay" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #00f0ff;">(10.0 Hz Baud)</div>
             </div>
           </div>
 
           <input type="range" id="pulseTimingSlider" class="slider-input" min="50" max="200" step="5" value="100">
-          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #64748b;">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #94a3b8;">
             <span>50ms (20 Hz - High Speed)</span>
             <span>100ms (10 Hz - Default)</span>
             <span>200ms (5 Hz - High Immunity)</span>
@@ -548,7 +549,7 @@
         <!-- TRANSMIT BUTTON -->
         <section style="margin-top: 4px;">
           <button id="transmitBtn" class="btn-transmit">
-            <svg id="transmitIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
             <span id="transmitBtnText">TRANSMIT TO LCD</span>
           </button>
         </section>
@@ -567,7 +568,7 @@
           High-Brightness Screen Pulser Mode
         </div>
         <div id="overlayCharText" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; font-weight: 800; color: #ffffff; margin-bottom: 8px;">--</div>
-        <div id="overlayBitText" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #94a3b8;">
+        <div id="overlayBitText" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #cbd5e1;">
           Place Arduino LDR Sensor directly against phone screen
         </div>
       </div>

@@ -6,12 +6,38 @@
  * Operates Screen Optical Flash Emitter, Live LCD Simulator, & Hardware Torch API.
  */
 
+/**
+ * Encodes string into 10-bit frames:
+ * 1 Start Bit (HIGH = 1), 8 Data Bits (MSB first), 1 Stop Bit (LOW = 0)
+ */
+function encodeStringToBinaryFrames(text) {
+  const frames = [];
+
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i];
+    const asciiVal = char.codePointAt(0) || 0;
+
+    // Start Bit (HIGH = 1)
+    frames.push({ bit: 1, char: char, type: 'START', index: i });
+
+    // 8 Data Bits (MSB-first: Bit 7 down to Bit 0)
+    for (let bitIdx = 7; bitIdx >= 0; bitIdx--) {
+      const bitVal = (asciiVal >> bitIdx) & 1;
+      frames.push({ bit: bitVal, char: char, type: `D${bitIdx}`, index: i });
+    }
+
+    // Stop Bit (LOW = 0)
+    frames.push({ bit: 0, char: char, type: 'STOP', index: i });
+  }
+
+  return frames;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // --- DOM SELECTORS ---
   const toggleTorchModeBtn = document.getElementById('toggleTorchModeBtn');
   const torchModeLabel = document.getElementById('torchModeLabel');
 
-  const lcdLine1 = document.getElementById('lcdLine1');
   const lcdLine2 = document.getElementById('lcdLine2');
 
   const emitterPad = document.getElementById('emitterPad');
@@ -19,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const emitterPadText = document.getElementById('emitterPadText');
   const emitterStatusBadge = document.getElementById('emitterStatusBadge');
 
-  const presetBtns = document.querySelectorAll('.btn-preset');
+  const presetBtns = document.querySelectorAll('.btn-chip');
   const customTextInput = document.getElementById('customTextInput');
   const charCounter = document.getElementById('charCounter');
   const clearInputBtn = document.getElementById('clearInputBtn');
@@ -30,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const transmitBtn = document.getElementById('transmitBtn');
   const transmitBtnText = document.getElementById('transmitBtnText');
-  const transmitIcon = document.getElementById('transmitIcon');
 
   const telemetryDot = document.getElementById('telemetryDot');
   const transmissionProgressText = document.getElementById('transmissionProgressText');
@@ -63,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Waveform visualization history array
   const waveHistoryMax = 100;
-  let waveHistory = new Array(waveHistoryMax).fill(0);
+  const waveHistory = new Array(waveHistoryMax).fill(0);
 
   // --- PRESET CHIP BUTTON SELECTION ---
   presetBtns.forEach(btn => {
@@ -72,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
       presetBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
-      const msg = btn.getAttribute('data-msg');
+      const msg = btn.dataset.msg || "";
       customTextInput.value = msg;
       updateCharCounter();
     });
@@ -98,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- SPEED TUNER SLIDER HANDLER ---
   pulseTimingSlider.addEventListener('input', (e) => {
-    bitPeriodMs = parseInt(e.target.value, 10);
+    bitPeriodMs = Number.parseInt(e.target.value, 10);
     timingValueDisplay.textContent = bitPeriodMs;
     const baud = (1000 / bitPeriodMs).toFixed(1);
     baudDisplay.textContent = `(${baud} Hz Baud)`;
@@ -115,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function enableTorchHardware() {
     try {
-      if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      if (!navigator.mediaDevices?.getUserMedia) {
         alert("Torch API not supported on this browser.");
         return;
       }
@@ -125,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
       torchTrack = stream.getVideoTracks()[0];
       const capabilities = torchTrack.getCapabilities ? torchTrack.getCapabilities() : {};
 
-      if (capabilities.torch) {
+      if (capabilities?.torch) {
         isTorchEnabled = true;
         torchModeLabel.textContent = "Torch: ACTIVE";
         toggleTorchModeBtn.classList.add('active');
@@ -133,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert("Camera accessed, but flashlight torch API feature is missing.");
       }
     } catch (err) {
-      console.warn("Torch activation warning:", err);
+      console.debug("Torch activation debug:", err);
       alert("Unable to access flashlight torch. Optical Screen Flash will be used!");
     }
   }
@@ -143,7 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
       try {
         torchTrack.applyConstraints({ advanced: [{ torch: false }] });
         torchTrack.stop();
-      } catch (e) {}
+      } catch (err) {
+        console.debug("Torch stop debug:", err);
+      }
       torchTrack = null;
     }
     isTorchEnabled = false;
@@ -159,30 +186,6 @@ document.addEventListener('DOMContentLoaded', () => {
   closeOverlayBtn.addEventListener('click', () => {
     fullscreenFlashOverlay.classList.add('hidden');
   });
-
-  // --- ASCII BINARY ENCODER ENGINE ---
-  function encodeStringToBinaryFrames(text) {
-    const frames = [];
-
-    for (let i = 0; i < text.length; i++) {
-      const char = text[i];
-      const asciiVal = char.charCodeAt(0);
-
-      // Start Bit (HIGH = 1)
-      frames.push({ bit: 1, char: char, type: 'START', index: i });
-
-      // 8 Data Bits (MSB-first: Bit 7 down to Bit 0)
-      for (let bitIdx = 7; bitIdx >= 0; bitIdx--) {
-        const bitVal = (asciiVal >> bitIdx) & 1;
-        frames.push({ bit: bitVal, char: char, type: `D${bitIdx}`, index: i });
-      }
-
-      // Stop Bit (LOW = 0)
-      frames.push({ bit: 0, char: char, type: 'STOP', index: i });
-    }
-
-    return frames;
-  }
 
   // --- TRANSMISSION LOGIC ---
   transmitBtn.addEventListener('click', () => {
@@ -217,7 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
     transmitBtnText.textContent = "STOP TRANSMISSION";
 
     emitterStatusBadge.textContent = "TRANSMITTING";
-    emitterStatusBadge.className = "status-tag cyan";
+    emitterStatusBadge.style.color = "#00f0ff";
+    emitterStatusBadge.style.background = "rgba(0, 240, 255, 0.15)";
     telemetryDot.style.background = "#f59e0b";
 
     // Format 10-Bit Frame Queue display
@@ -243,9 +247,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Reset Emitter Pad
     emitterPulseGlow.style.opacity = "0";
     emitterPadText.textContent = "PLACE LDR SENSOR HERE";
-    emitterPadText.style.color = "var(--text-muted)";
+    emitterPadText.style.color = "#ffffff";
     emitterStatusBadge.textContent = "READY";
-    emitterStatusBadge.className = "status-tag";
+    emitterStatusBadge.style.color = "#94a3b8";
+    emitterStatusBadge.style.background = "#09101f";
 
     // Reset Fullscreen overlay
     fullscreenPad.style.backgroundColor = "#000000";
@@ -280,7 +285,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Telemetry UI Updates
     transmissionProgressText.textContent = `SENDING BIT ${queueIndex + 1} / ${binaryFrameQueue.length}`;
-    currentCharDisplay.textContent = `'${currentFrame.char}' (${currentFrame.char.charCodeAt(0)})`;
+    const codePoint = currentFrame.char.codePointAt(0) || 0;
+    currentCharDisplay.textContent = `'${currentFrame.char}' (${codePoint})`;
     currentBitFrameDisplay.textContent = `${currentFrame.type}: [${currentFrame.bit}]`;
 
     // 1. Update Optical Emitter Target Pad on Page
@@ -296,7 +302,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       emitterPulseGlow.style.opacity = "0";
       emitterPadText.textContent = `LOW PULSE [0]`;
-      emitterPadText.style.color = "var(--color-cyan)";
+      emitterPadText.style.color = "#00f0ff";
 
       fullscreenPad.style.backgroundColor = "#000000";
       overlayBitText.textContent = `PULSE LOW [0] - ${currentFrame.type}`;
@@ -331,7 +337,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!torchTrack) return;
     try {
       torchTrack.applyConstraints({ advanced: [{ torch: turnOn }] });
-    } catch (e) {}
+    } catch (err) {
+      console.debug("Torch constraint debug:", err);
+    }
   }
 
   // --- SIMULATED HARDWARE LCD RECEIVER UPDATER ---
