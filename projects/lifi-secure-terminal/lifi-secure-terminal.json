@@ -1,0 +1,126 @@
+{
+  "id": "lifi-secure-terminal",
+  "title": "LiFi Secure Terminal",
+  "subtitle": "Visible Light Optical Communication PWA & Arduino Receiver for EMI-Sensitive Environments",
+  "category": "Optical Communication & Defense Tech",
+  "level": "Intermediate",
+  "difficulty": 3,
+  "color": "#00F0FF",
+  "author": "Niktrix",
+  "date": "2026-08-10",
+  "desc": "High-security visible light optical transmitter PWA using smartphone screen flash or flashlight torch paired with an Arduino Uno mid-bit sampling receiver.",
+  "fullDesc": "The LiFi Secure Terminal is a complete Visible Light Communication (VLC) system designed for environments where Radio Frequency (RF) emissions are strictly prohibited or compromised (such as Intensive Care Units, defense command centers, aircraft cabins, and underground bunkers). The system features a mobile-first Progressive Web Application (PWA) with a camera-free optical screen flash pad and optional camera torch controller to transmit binary optical data using 10 Hz pulse duration framing (Start bit 1, 8 Data bits MSB-first, Stop bit 0). Includes doctor/ICU presets and quick chat message chips ('hello', 'how are you', 'what you see', 'STAT: ICU BED 4'). On the receiving end, an Arduino Uno with an LDR Digital Module captures light pulses using a 1.5x bit period (150 ms) mid-bit sampling technique to eliminate edge jitter and decodes real-time ASCII messages onto a 16x2 I2C LCD screen.",
+  "problemStatement": "Radio frequency communications (Wi-Fi, Bluetooth, Cellular) generate Electromagnetic Interference (EMI) that disrupts medical equipment in ICUs and presents severe RF signal interception risks in secure defense installations.",
+  "solutionApproach": "An optical LiFi transceiver system using light waves. The transmitter encodes custom text or medical presets into 8-bit ASCII binary frames with framing bits (Start=1, Stop=0) and modulates light pulses via smartphone screen flash or torch. The Arduino receiver detects incoming optical pulses, synchronizes on the rising edge of the Start bit, delays 150 ms to align dead-center inside the first payload bit, and samples subsequent bits every 100 ms to reconstruct ASCII characters for real-time LCD rendering.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino Uno / Nano (ATmega328P)",
+    "sensorModule": "LDR Light Dependent Resistor Sensor Module with LM393 Comparator",
+    "display": "16x2 Character LCD with PCF8574 I2C Backpack (Address 0x27)",
+    "transmitter": "Mobile Device Screen Flash / Rear Camera Flashlight",
+    "baudRate": "10 Hz (100 ms per bit)",
+    "operatingVoltage": "5V DC"
+  },
+  "components": [
+    "Arduino Uno / Nano",
+    "LDR Sensor Module with Digital Output (D0)",
+    "16x2 LCD with I2C Backpack (PCF8574)",
+    "Breadboard",
+    "Jumper Wires",
+    "Smartphone with Web Browser"
+  ],
+  "circuitConnections": {
+    "LDR Sensor VCC": "5V",
+    "LDR Sensor GND": "GND",
+    "LDR Sensor D0": "Digital Pin 8",
+    "LCD VCC": "5V",
+    "LCD GND": "GND",
+    "LCD SDA": "A4 (SDA)",
+    "LCD SCL": "A5 (SCL)"
+  },
+  "circuitDiagramDescription": "The LDR Sensor Module's digital output D0 connects to Arduino Digital Pin 8. The 16x2 I2C LCD display connects to 5V, GND, SDA (Analog Pin A4), and SCL (Analog Pin A5). Sensitivity threshold is tuned via the LM393 potentiometer on the LDR board.",
+  "working": [
+    {
+      "step": 1,
+      "action": "The user selects a medical/doctor preset ('STAT: ICU BED 4', 'BP NORMAL 120/80'), chat preset ('hello', 'how are you', 'what you see'), or types a custom message."
+    },
+    {
+      "step": 2,
+      "action": "The mobile PWA converts text payload into 8-bit ASCII binary bytes with 10-bit framing (Start Bit 1, 8 Data Bits MSB-first, Stop Bit 0)."
+    },
+    {
+      "step": 3,
+      "action": "The optical screen flash pad (or optional torch) pulses light at 100 ms per bit directly onto the LDR sensor lens."
+    },
+    {
+      "step": 4,
+      "action": "The Arduino receiver monitors Pin 8 for the rising edge of the optical Start Bit (LIGHT_ON)."
+    },
+    {
+      "step": 5,
+      "action": "Upon detecting the Start Bit, the Arduino waits 150 ms (1.5x bit period) to position the sensor reading dead-center in the middle of Data Bit 7 (MSB)."
+    },
+    {
+      "step": 6,
+      "action": "The receiver samples Data Bit 7, then loops 7 times at exact 100 ms intervals to sample Data Bits 6 through 0, assembling the byte."
+    },
+    {
+      "step": 7,
+      "action": "Valid ASCII characters (range 32 to 126) are dynamically displayed on Line 2 of the 16x2 LCD screen."
+    },
+    {
+      "step": 8,
+      "action": "If no light signal is received for 4000 ms, the system automatically resets the screen buffer back to 'Listening...'."
+    }
+  ],
+  "benefits": [
+    "Zero RF emissions - safe for ICUs and explosive zones",
+    "Camera-free screen optical flash pulser - zero browser permission popups required",
+    "Includes medical/ICU doctor presets and quick chat message chips",
+    "Mid-bit sampling eliminates timing jitter and signal edge distortion",
+    "Configurable sensor logic (supports both Active-HIGH and Active-LOW LDR modules)",
+    "Real-time 16x2 LCD receiver simulator on the webpage"
+  ],
+  "applications": [
+    "Hospitals & ICUs (Medical Telemetry Transmission)",
+    "Defense Command Centers & EMP-Hardened Bunkers",
+    "Underwater Communication Systems",
+    "Aircraft Passenger Cabins",
+    "Secure Industrial Cleanrooms"
+  ],
+  "futureScope": [
+    "Implement Manchester Encoding to eliminate DC bias and enable clock recovery.",
+    "Add Error Detection & Correction (Reed-Solomon or CRC-8 checksums).",
+    "Upgrade to array photodiode receiver for multi-color RGB wavelength division multiplexing (WDM)."
+  ],
+  "firmware": [
+    {
+      "name": "LiFi Receiver Arduino Firmware (.hex)",
+      "url": "projects/lifi-secure-terminal/lifi_receiver/build/arduino.avr.uno/lifi_receiver.ino.hex"
+    }
+  ],
+  "codeFiles": [
+    {
+      "name": "lifi_receiver.ino",
+      "language": "cpp",
+      "url": "projects/lifi-secure-terminal/lifi_receiver/lifi_receiver.ino"
+    }
+  ],
+  "vivaQuestions": [
+    {
+      "q": "Why is 1.5x bit period delay (150 ms) used after detecting the Start Bit?",
+      "a": "The 1.5x bit period delay aligns the sampling instant directly at the center of the first payload bit (100 ms start bit + 50 ms to center of first bit), preventing errors caused by edge rise-time jitter."
+    },
+    {
+      "q": "What is the role of the LM393 comparator on the LDR sensor module?",
+      "a": "The LM393 compares the analog voltage from the LDR against a potentiometer threshold to produce a clean binary digital square wave (D0 pin)."
+    },
+    {
+      "q": "How does the code handle inverted (active-LOW) light sensors?",
+      "a": "The code uses macro normalization: `#define LIGHT_ON LOW`. Changing line 8 to `#define LIGHT_ON LOW` flips all internal detection logic effortlessly."
+    },
+    {
+      "q": "What framing format is used for transmitting each ASCII character?",
+      "a": "1 Start Bit (HIGH) + 8 Data Bits (MSB-first) + 1 Stop Bit (LOW), resulting in 10 bits total per character."
+    }
+  ]
+}

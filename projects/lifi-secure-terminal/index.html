@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0f1d">
+  <title>LiFi Secure Terminal | Optical Transmitter</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&family=JetBrains+Mono:wght@500;700&family=VT323&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Embedded Self-Contained CSS Guard -->
+  <style>
+    /* Global Reset & Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Rajdhani', -apple-system, sans-serif;
+      background-color: #0a0f1d !important;
+      color: #ffffff !important;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.5;
+    }
+
+    /* SVG Size Lock */
+    svg {
+      width: 20px !important;
+      height: 20px !important;
+      max-width: 20px !important;
+      max-height: 20px !important;
+      display: inline-block !important;
+      flex-shrink: 0 !important;
+    }
+
+    /* App Header */
+    .app-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #0d1527;
+      border-bottom: 1px solid #1e2d4a;
+      padding: 12px 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand-box { display: flex; align-items: center; gap: 10px; }
+    .brand-icon {
+      width: 36px !important; height: 36px !important;
+      border-radius: 10px;
+      background: rgba(0, 240, 255, 0.15);
+      border: 1px solid #00f0ff;
+      display: flex; align-items: center; justify-content: center;
+      color: #00f0ff;
+    }
+    .brand-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #00f0ff;
+      letter-spacing: 0.05em;
+    }
+    .brand-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      color: #38bdf8;
+      letter-spacing: 0.1em;
+    }
+    
+    .torch-toggle-btn {
+      display: flex; align-items: center; gap: 6px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: #152238;
+      border: 1px solid #223552;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      cursor: pointer;
+    }
+
+    .apk-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+      border: 1px solid #10b981;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: box-shadow 0.2s, transform 0.15s;
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+    }
+    .apk-download-btn:hover {
+      box-shadow: 0 0 22px rgba(16, 185, 129, 0.6);
+      transform: translateY(-1px);
+    }
+    .apk-download-btn svg { flex-shrink: 0; }
+
+    .header-actions { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+    /* APK info card */
+    .apk-info-card {
+      background: linear-gradient(135deg, rgba(16,185,129,0.08) 0%, rgba(5,150,105,0.04) 100%);
+      border: 1px solid #10b981;
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: 0 0 24px rgba(16,185,129,0.12);
+    }
+    .apk-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .apk-step-num {
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: #10b981;
+      color: #070B14;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .apk-step-text { font-size: 0.85rem; color: #e2e8f0; line-height: 1.5; }
+    .apk-step-text strong { color: #10b981; }
+    .apk-step-text code {
+      background: #09101F;
+      border: 1px solid #1e2d4a;
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8em;
+      color: #00f0ff;
+    }
+    .apk-file-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .apk-file-link {
+      padding: 4px 10px;
+      background: #09101F;
+      border: 1px solid #10b981;
+      border-radius: 6px;
+      color: #10b981;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .apk-file-link:hover { background: rgba(16,185,129,0.15); }
+
+    /* Main Container & Responsive Grid */
+    .main-container {
+      flex: 1;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px 16px 60px 16px;
+    }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    @media (min-width: 850px) {
+      .grid-layout {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* Cards & Panels */
+    .panel-card {
+      background: #152238 !important;
+      border: 1px solid #223552 !important;
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+    .panel-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #00f0ff !important;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* LCD Screen Simulator */
+    .lcd-box {
+      background: #7ba30c !important;
+      border: 4px solid #0a0f1d;
+      border-radius: 10px;
+      padding: 14px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+    }
+    .lcd-text {
+      font-family: 'VT323', monospace;
+      font-weight: bold;
+      font-size: 1.6rem;
+      color: #0a0f1d !important;
+      letter-spacing: 0.12em;
+      line-height: 1.25;
+      white-space: pre;
+    }
+
+    /* Optical Target Emitter Pad */
+    .emitter-pad {
+      height: 110px;
+      border-radius: 10px;
+      background: #09101f;
+      border: 2px dashed #223552;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .emitter-pad:hover { border-color: #00f0ff; }
+    .emitter-glow {
+      position: absolute; inset: 0; background: #ffffff; opacity: 0; transition: opacity 0.05s;
+    }
+    .emitter-title {
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #ffffff !important;
+      position: relative; z-index: 10;
+    }
+    .emitter-sub {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      color: #cbd5e1 !important;
+      position: relative; z-index: 10;
+    }
+
+    /* Oscilloscope Canvas Box */
+    .canvas-container {
+      position: relative;
+      height: 85px;
+      background: #080d19;
+      border-radius: 8px;
+      border: 1px solid #1e2d4a;
+      overflow: hidden;
+    }
+    .canvas-container canvas { width: 100%; height: 100%; display: block; }
+    .canvas-title {
+      position: absolute; top: 6px; left: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem; color: #94a3b8;
+    }
+
+    /* Telemetry Info Cards */
+    .telemetry-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .telemetry-card {
+      background: #0d1728;
+      border: 1px solid #1e2d4a;
+      border-radius: 8px;
+      padding: 8px 12px;
+    }
+    .telemetry-lbl { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #94a3b8; }
+    .telemetry-val { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 0.85rem; color: #00f0ff; }
+
+    .binary-log {
+      background: #0d1728;
+      border: 1px solid #1e2d4a;
+      border-radius: 8px;
+      padding: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #ffffff !important;
+      height: 50px;
+      overflow-y: auto;
+      word-break: break-all;
+    }
+
+    /* Presets Section */
+    .preset-sub-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+    }
+    .preset-sub-title.amber { color: #f59e0b !important; }
+    .preset-sub-title.cyan { color: #00f0ff !important; }
+
+    .presets-flex { display: flex; flex-wrap: wrap; gap: 8px; }
+    
+    .btn-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: #0d1728;
+      border: 1px solid #223552;
+      color: #ffffff !important;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-chip:hover {
+      background: #1e2d4a;
+      border-color: #00f0ff;
+      color: #00f0ff !important;
+    }
+    .btn-chip.active {
+      background: rgba(0, 240, 255, 0.2);
+      border-color: #00f0ff;
+      color: #00f0ff !important;
+    }
+
+    .badge-tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 1px 5px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .badge-tag.rose { background: rgba(244, 63, 94, 0.25); color: #f43f5e; border: 1px solid #f43f5e; }
+    .badge-tag.emerald { background: rgba(16, 185, 129, 0.25); color: #10b981; border: 1px solid #10b981; }
+    .badge-tag.amber { background: rgba(245, 158, 11, 0.25); color: #f59e0b; border: 1px solid #f59e0b; }
+    .badge-tag.cyan { background: rgba(0, 240, 255, 0.25); color: #00f0ff; border: 1px solid #00f0ff; }
+    .badge-tag.purple { background: rgba(168, 85, 247, 0.25); color: #a855f7; border: 1px solid #a855f7; }
+
+    /* Custom Textarea */
+    .textarea-box {
+      width: 100%;
+      min-height: 85px;
+      border-radius: 10px;
+      background: #09101f !important;
+      border: 1px solid #223552 !important;
+      padding: 12px;
+      color: #ffffff !important;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      outline: none;
+      resize: none;
+    }
+    .textarea-box:focus {
+      border-color: #00f0ff !important;
+      box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    }
+
+    /* Range Slider */
+    .slider-input {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 8px;
+      background: #09101f;
+      border-radius: 4px;
+      outline: none;
+    }
+    .slider-input::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: #00f0ff;
+      cursor: pointer;
+    }
+
+    /* Transmit Button */
+    .btn-transmit {
+      width: 100%;
+      padding: 16px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00f0ff 0%, #0284c7 100%);
+      border: none;
+      color: #070b14 !important;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      box-shadow: 0 6px 20px rgba(0, 240, 255, 0.3);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+    .btn-transmit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 240, 255, 0.5); }
+    .btn-transmit.transmitting {
+      background: linear-gradient(135deg, #f43f5e 0%, #dc2626 100%);
+      color: #ffffff !important;
+      box-shadow: 0 0 25px rgba(244, 63, 94, 0.6);
+    }
+
+    /* Fullscreen Pulser Overlay Modal */
+    .modal-pulser-overlay {
+      position: fixed; inset: 0; z-index: 100;
+      background: #000000;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+    }
+    .modal-pulser-overlay.hidden { display: none !important; }
+    .modal-close {
+      position: absolute; top: 16px; right: 16px; z-index: 110;
+      padding: 8px 14px; border-radius: 8px;
+      background: #152238; border: 1px solid #223552; color: #ffffff;
+      font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; cursor: pointer;
+    }
+    .modal-pad {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background: #000000; transition: background-color 0.05s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Force Unregister Old Cached Service Workers -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(registrations) {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script>
+
+  <!-- TOP HEADER -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-box">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">LiFi Secure Terminal</div>
+          <div class="brand-sub">Optical Visible Light Data Transmitter</div>
+        </div>
+      </div>
+      
+      <div class="header-actions">
+        <!-- APK Download Button -->
+        <a id="apkDownloadBtn" href="android_apk/" class="apk-download-btn" title="Download Android APK Project for Android Studio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 15V3"/><path d="M7 10l5 5 5-5"/><rect x="2" y="17" width="20" height="4" rx="1"/>
+          </svg>
+          <span>Download APK Project</span>
+        </a>
+
+        <!-- Torch Toggle -->
+        <button id="toggleTorchModeBtn" class="torch-toggle-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+          </svg>
+          <span id="torchModeLabel">Torch: OFF</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN DASHBOARD LAYOUT -->
+  <main class="main-container">
+    <div class="grid-layout">
+
+      <!-- LEFT COLUMN: LCD Simulator & Optical Feedback -->
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+
+        <!-- ARDUINO 16x2 HARDWARE LCD SIMULATOR -->
+        <section class="panel-card">
+          <div class="panel-title">
+            <span>
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block; margin-right: 6px;"></span>
+              Arduino 16x2 LCD Output
+            </span>
+            <span style="font-size: 0.65rem; color: #10b981; background: rgba(16,185,129,0.15); padding: 2px 6px; border-radius: 4px;">Address: 0x27</span>
+          </div>
+
+          <div class="lcd-box">
+            <div class="lcd-text">
+              <div id="lcdLine1">LiFi Rx Terminal</div>
+              <div id="lcdLine2">Listening...    </div>
+            </div>
+          </div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #cbd5e1; text-align: center;">
+            ⚡ Simulates exact live character output on the Arduino LCD screen.
+          </div>
+        </section>
+
+        <!-- OPTICAL EMITTER TARGET PAD -->
+        <section class="panel-card">
+          <div class="panel-title">
+            <span>Optical Light Emitter Pad</span>
+            <span id="emitterStatusBadge" style="font-size: 0.65rem; color: #cbd5e1; background: #09101f; padding: 2px 6px; border-radius: 4px;">READY</span>
+          </div>
+
+          <div id="emitterPad" class="emitter-pad">
+            <div id="emitterPulseGlow" class="emitter-glow"></div>
+            <div id="emitterPadText" class="emitter-title">PLACE LDR SENSOR HERE</div>
+            <div class="emitter-sub">Tap for Fullscreen High-Brightness Pulser Mode</div>
+          </div>
+        </section>
+
+        <!-- OSCILLOSCOPE TELEMETRY -->
+        <section class="panel-card">
+          <div class="panel-title">
+            <span>
+              <span id="telemetryDot" style="width: 8px; height: 8px; border-radius: 50%; background: #00f0ff; display: inline-block; margin-right: 6px;"></span>
+              Oscilloscope Telemetry
+            </span>
+            <span id="transmissionProgressText" style="color: #00f0ff;">READY</span>
+          </div>
+
+          <div class="canvas-container">
+            <canvas id="waveformCanvas"></canvas>
+            <div class="canvas-label">OPTICAL SIGNAL SQUARE WAVEFORM</div>
+          </div>
+
+          <div class="telemetry-row">
+            <div class="telemetry-card">
+              <div class="telemetry-lbl">Current Char</div>
+              <div id="currentCharDisplay" class="telemetry-val">--</div>
+            </div>
+            <div class="telemetry-card">
+              <div class="telemetry-lbl">Bit Frame Packet</div>
+              <div id="currentBitFrameDisplay" class="telemetry-val" style="color: #f59e0b;">--</div>
+            </div>
+          </div>
+
+          <div>
+            <div class="telemetry-lbl" style="margin-bottom: 4px;">10-Bit Frame Queue Stream</div>
+            <div id="binaryQueueLog" class="binary-log">
+              Select preset or type custom message, then tap TRANSMIT TO LCD.
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- RIGHT COLUMN: Presets & Controls -->
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+
+        <!-- QUICK PRESET MESSAGES -->
+        <section class="panel-card">
+          <div class="panel-title" style="margin-bottom: 4px;">
+            <span>Quick Preset Messages</span>
+          </div>
+
+          <!-- Doctor Presets -->
+          <div>
+            <div class="preset-sub-title amber">🏥 Doctor & ICU Presets</div>
+            <div class="presets-flex">
+              <button class="btn-chip" data-msg="STAT: ICU BED 4"><span class="badge-tag rose">STAT</span> STAT: ICU BED 4</button>
+              <button class="btn-chip" data-msg="BP NORMAL: 120/80"><span class="badge-tag emerald">VITAL</span> BP NORMAL 120/80</button>
+              <button class="btn-chip" data-msg="PATIENT CRITICAL"><span class="badge-tag amber">ALERT</span> PATIENT CRITICAL</button>
+              <button class="btn-chip" data-msg="OXYGEN SAT 98%"><span class="badge-tag cyan">SPO2</span> OXYGEN SAT 98%</button>
+              <button class="btn-chip" data-msg="SURGEON REQUIRED"><span class="badge-tag purple">CALL</span> SURGEON REQUIRED</button>
+            </div>
+          </div>
+
+          <!-- Chat Presets -->
+          <div style="margin-top: 6px;">
+            <div class="preset-sub-title cyan">💬 Quick Chat Presets</div>
+            <div class="presets-flex">
+              <button class="btn-chip" data-msg="hello">hello</button>
+              <button class="btn-chip" data-msg="how are you">how are you</button>
+              <button class="btn-chip" data-msg="what you see">what you see</button>
+              <button class="btn-chip" data-msg="SIGNAL TEST OK">SIGNAL TEST OK</button>
+              <button class="btn-chip" data-msg="ACKNOWLEDGE RECV">ACKNOWLEDGE RECV</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- CUSTOM MESSAGE INPUT -->
+        <section class="panel-card">
+          <div class="panel-title">
+            <label for="customTextInput" style="color: #00f0ff; cursor: pointer;">Custom Message Input</label>
+            <span id="charCounter" style="color: #00f0ff;">0 / 64 CHARS</span>
+          </div>
+
+          <div style="position: relative;">
+            <textarea id="customTextInput" class="textarea-box" maxlength="64" placeholder="Type custom message to transmit to Arduino LCD screen..."></textarea>
+            <button id="clearInputBtn" style="position: absolute; top: 8px; right: 8px; background: transparent; border: none; color: #64748b; cursor: pointer; padding: 4px;" title="Clear text">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+        </section>
+
+        <!-- BIT PULSE SPEED TUNER -->
+        <section class="panel-card">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <label for="pulseTimingSlider" class="panel-title" style="margin: 0; cursor: pointer;">Bit Pulse Timing</label>
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: #cbd5e1;">Transmission speed (50ms - 200ms)</div>
+            </div>
+            <div style="text-align: right;">
+              <span id="timingValueDisplay" style="font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 1.2rem; color: #00f0ff;">100</span>
+              <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #cbd5e1;"> ms/bit</span>
+              <div id="baudDisplay" style="font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #00f0ff;">(10.0 Hz Baud)</div>
+            </div>
+          </div>
+
+          <input type="range" id="pulseTimingSlider" class="slider-input" min="50" max="200" step="5" value="100">
+          <div style="display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; color: #94a3b8;">
+            <span>50ms (20 Hz - High Speed)</span>
+            <span>100ms (10 Hz - Default)</span>
+            <span>200ms (5 Hz - High Immunity)</span>
+          </div>
+        </section>
+
+        <!-- ARDUINO UNO RECEIVER CONFIGURATOR & SIGNAL DIAGNOSTICS -->
+        <section class="panel-card" id="arduinoConfigPanel" style="border-color: #f59e0b !important;">
+          <div class="panel-title" style="color: #f59e0b !important;">
+            <span>
+              <span style="width: 8px; height: 8px; border-radius: 50%; background: #f59e0b; display: inline-block; margin-right: 6px;"></span>
+              Arduino Receiver Hardware Configuration
+            </span>
+            <span style="font-size: 0.65rem; color: #f59e0b; background: rgba(245,158,11,0.15); padding: 2px 6px; border-radius: 4px;">Firmware v2.0 Config</span>
+          </div>
+
+          <div style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">
+            Fine-tune LDR module polarity, speed sync, and signal threshold for smooth, error-free optical decoding:
+          </div>
+
+          <!-- CONFIG OPTIONS GRID -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 4px;">
+            
+            <!-- POLARITY MODE SELECTOR -->
+            <div style="background: #09101f; padding: 10px; border-radius: 8px; border: 1px solid #1e2d4a;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #f59e0b; font-weight: bold; margin-bottom: 6px;">
+                1. LDR POLARITY MODE
+              </div>
+              <select id="arduinoPolaritySelect" style="width: 100%; background: #152238; color: #ffffff; border: 1px solid #223552; padding: 6px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;">
+                <option value="activeHigh" selected>Active-HIGH (Light ON = HIGH)</option>
+                <option value="activeLow">Active-LOW (Light ON = LOW)</option>
+              </select>
+              <div style="font-size: 0.65rem; color: #94a3b8; margin-top: 4px;">
+                If LCD displays garbled chars, switch to Active-LOW mode.
+              </div>
+            </div>
+
+            <!-- BIT ORDER SELECTOR -->
+            <div style="background: #09101f; padding: 10px; border-radius: 8px; border: 1px solid #1e2d4a;">
+              <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #00f0ff; font-weight: bold; margin-bottom: 6px;">
+                2. BIT FRAMING ORDER
+              </div>
+              <select id="arduinoBitOrderSelect" style="width: 100%; background: #152238; color: #ffffff; border: 1px solid #223552; padding: 6px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;">
+                <option value="msb" selected>MSB First [Bit 7 -> 0] (Default)</option>
+                <option value="lsb">LSB First [Bit 0 -> 7]</option>
+              </select>
+              <div style="font-size: 0.65rem; color: #94a3b8; margin-top: 4px;">
+                Matches transmitter framing sequence.
+              </div>
+            </div>
+
+          </div>
+
+          <!-- LDR HARDWARE CALIBRATION TIPS -->
+          <div style="background: rgba(16,185,129,0.08); border: 1px dashed #10b981; padding: 10px; border-radius: 8px; font-size: 0.75rem; color: #e2e8f0; line-height: 1.4;">
+            <strong style="color: #10b981;">💡 Hardware Calibration Quick Guide:</strong>
+            <ul style="margin-left: 16px; margin-top: 4px;">
+              <li><strong>Potentiometer Adjustment:</strong> Rotate the blue screw on your LDR module until the DO LED lights up ONLY when torch/screen flash hits the sensor.</li>
+              <li><strong>Ambient Light Shielding:</strong> Use a small black tube or cardboard shroud around the LDR to prevent room light noise.</li>
+              <li><strong>Auto-Baud Feature:</strong> Firmware v2.0 auto-measures the Start Bit pulse to synchronize bit timing automatically!</li>
+            </ul>
+          </div>
+
+          <!-- QUICK TEST SIGNAL BUTTON -->
+          <button id="sendTestSignalBtn" style="background: #152238; border: 1px solid #f59e0b; color: #f59e0b; padding: 8px; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span>⚡ Transmit Signal Test Pattern ("LiFi")</span>
+          </button>
+        </section>
+
+        <!-- TRANSMIT BUTTON -->
+        <section style="margin-top: 4px;">
+          <button id="transmitBtn" class="btn-transmit">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <span id="transmitBtnText">TRANSMIT TO LCD</span>
+          </button>
+        </section>
+
+      </div>
+
+    </div>
+
+    <!-- ═══ APK ANDROID PROJECT DOWNLOAD CARD ═══ -->
+    <section class="apk-info-card" style="margin-top: 24px;" id="apkProjectCard">
+      <div class="panel-title" style="color: #10b981;">
+        <span>
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #10b981; display: inline-block; margin-right: 6px;"></span>
+          Android Native APK Project
+        </span>
+        <span style="font-size: 0.65rem; color: #10b981; background: rgba(16,185,129,0.15); padding: 2px 8px; border-radius: 4px;">Camera2 Hardware Torch API</span>
+      </div>
+
+      <p style="font-size: 0.82rem; color: #94a3b8; line-height: 1.6;">
+        The web browser's Torch API is restricted on many devices. The <strong style="color:#10b981;">native Android APK</strong> uses 
+        <code style="background:#09101F; border:1px solid #1e2d4a; border-radius:4px; padding:1px 6px; font-family:'JetBrains Mono',monospace; font-size:0.8em; color:#00f0ff;">CameraManager.setTorchMode()</code> 
+        — the same call used by system flashlight apps — giving you 100% reliable direct hardware flash control with zero browser restrictions.
+      </p>
+
+      <div class="apk-step">
+        <div class="apk-step-num">1</div>
+        <div class="apk-step-text">
+          <strong>Install Android Studio</strong> (free) from 
+          <a href="https://developer.android.com/studio" target="_blank" rel="noopener" style="color:#00f0ff;">developer.android.com/studio</a>. 
+          It includes the Android SDK and Gradle build tools automatically.
+        </div>
+      </div>
+
+      <div class="apk-step">
+        <div class="apk-step-num">2</div>
+        <div class="apk-step-text">
+          <strong>Open the APK project folder</strong> in Android Studio: 
+          <code>File → Open → android_apk/</code> (inside the <code>lifi-secure-terminal</code> project folder). 
+          Android Studio will auto-sync Gradle on first open.
+        </div>
+      </div>
+
+      <div class="apk-step">
+        <div class="apk-step-num">3</div>
+        <div class="apk-step-text">
+          <strong>Connect your Android phone</strong> via USB cable. Enable 
+          <code>Developer Options → USB Debugging</code> on your phone 
+          (tap <em>Build Number</em> 7 times in Settings → About Phone).
+        </div>
+      </div>
+
+      <div class="apk-step">
+        <div class="apk-step-num">4</div>
+        <div class="apk-step-text">
+          <strong>Build & Run:</strong> Click the green ▶ <strong>Run</strong> button in Android Studio 
+          (or press <code>Shift + F10</code>). Select your device from the list. 
+          The APK is installed and launched instantly.
+        </div>
+      </div>
+
+      <div class="apk-step">
+        <div class="apk-step-num">5</div>
+        <div class="apk-step-text">
+          <strong>Generate signed APK file</strong> to share: 
+          <code>Build → Generate Signed Bundle / APK → APK → Release</code>. 
+          The output APK will be in <code>app/release/app-release.apk</code>.
+        </div>
+      </div>
+
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:#10b981; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:8px;">
+          APK Project Source Files
+        </div>
+        <div class="apk-file-links">
+          <a class="apk-file-link" href="android_apk/app/src/main/java/com/lifisecure/terminal/MainActivity.java" download>MainActivity.java</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/res/layout/activity_main.xml" download>activity_main.xml</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/AndroidManifest.xml" download>AndroidManifest.xml</a>
+          <a class="apk-file-link" href="android_apk/app/build.gradle" download>app/build.gradle</a>
+          <a class="apk-file-link" href="android_apk/settings.gradle" download>settings.gradle</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/res/values/strings.xml" download>strings.xml</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/res/values/colors.xml" download>colors.xml</a>
+          <a class="apk-file-link" href="android_apk/app/src/main/res/values/themes.xml" download>themes.xml</a>
+        </div>
+      </div>
+
+      <a href="android_apk/" class="apk-download-btn" style="align-self:flex-start;" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 15V3"/><path d="M7 10l5 5 5-5"/><rect x="2" y="17" width="20" height="4" rx="1"/>
+        </svg>
+        Open Android APK Project Folder
+      </a>
+    </section>
+
+  </main>
+
+
+  <!-- FULLSCREEN PULSER MODAL -->
+  <div id="fullscreenFlashOverlay" class="modal-pulser-overlay hidden">
+    <button id="closeOverlayBtn" class="modal-close">✕ EXIT FULLSCREEN PULSER</button>
+    <div id="fullscreenPad" class="modal-pad">
+      <div style="background: rgba(7,11,20,0.9); border: 1px solid #00f0ff; border-radius: 14px; padding: 24px; text-align: center; max-width: 380px; width: 100%;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #00f0ff; font-weight: bold; text-transform: uppercase; margin-bottom: 8px;">
+          High-Brightness Screen Pulser Mode
+        </div>
+        <div id="overlayCharText" style="font-family: 'Orbitron', sans-serif; font-size: 2.5rem; font-weight: 800; color: #ffffff; margin-bottom: 8px;">--</div>
+        <div id="overlayBitText" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #cbd5e1;">
+          Place Arduino LDR Sensor directly against phone screen
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

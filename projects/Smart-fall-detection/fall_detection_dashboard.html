@@ -227,7 +227,22 @@
   footer p{font-size:11.5px; color:var(--text-faint); line-height:1.6;}
 
   /* ================= SVG FIGURE ANIMATIONS ================= */
-  #figureRotator{transform-box:fill-box; transform-origin:50% 92%;}
+  #figureRotator{transform-box:fill-box; transform-origin:50% 92%; animation:idleSway 2.6s ease-in-out infinite;}
+  @keyframes idleSway{
+    0%,100%{transform:rotate(0deg) translateY(0);}
+    25%{transform:rotate(-1.3deg) translateY(-1.5px);}
+    50%{transform:rotate(0deg) translateY(0);}
+    75%{transform:rotate(1.3deg) translateY(-1.5px);}
+  }
+  #legL, #legR{transform-box:fill-box; transform-origin:50% 3%;}
+  #figureRotator:not(.falling):not(.fallen):not(.stumble):not(.impact-bounce):not(.rising) #legL{animation:idleStepL 2.6s ease-in-out infinite;}
+  #figureRotator:not(.falling):not(.fallen):not(.stumble):not(.impact-bounce):not(.rising) #legR{animation:idleStepR 2.6s ease-in-out infinite;}
+  #figureRotator:not(.falling):not(.fallen):not(.stumble):not(.impact-bounce):not(.rising) #armL{animation:idleArmL 2.6s ease-in-out infinite;}
+  #figureRotator:not(.falling):not(.fallen):not(.stumble):not(.impact-bounce):not(.rising) #armR{animation:idleArmR 2.6s ease-in-out infinite;}
+  @keyframes idleStepL{0%,100%{transform:rotate(0deg);} 25%{transform:rotate(7deg);} 50%{transform:rotate(0deg);} 75%{transform:rotate(-5deg);}}
+  @keyframes idleStepR{0%,100%{transform:rotate(0deg);} 25%{transform:rotate(-5deg);} 50%{transform:rotate(0deg);} 75%{transform:rotate(7deg);}}
+  @keyframes idleArmL{0%,100%{transform:rotate(0deg);} 25%{transform:rotate(-9deg);} 50%{transform:rotate(0deg);} 75%{transform:rotate(9deg);}}
+  @keyframes idleArmR{0%,100%{transform:rotate(0deg);} 25%{transform:rotate(9deg);} 50%{transform:rotate(0deg);} 75%{transform:rotate(-9deg);}}
   #figureRotator.stumble{animation:stumbleKf 0.4s ease-in-out;}
   #figureRotator.falling{animation:fallKf 0.7s cubic-bezier(.55,.06,.68,.19) forwards;}
   #figureRotator.impact-bounce{animation:bounceKf 0.28s ease-out;}
@@ -254,7 +269,7 @@
     100%{transform:rotate(0deg) translateY(0);}
   }
 
-  #armL, #armR{transform-box:fill-box;}
+  #armL, #armR{transform-box:fill-box; transform-origin:50% 3%;}
   .falling #armL{transform-origin:0% 15%; animation:armFlailL 0.65s ease-in-out;}
   .falling #armR{transform-origin:100% 15%; animation:armFlailR 0.65s ease-in-out;}
   @keyframes armFlailL{ 0%{transform:rotate(0deg);} 40%{transform:rotate(-95deg);} 100%{transform:rotate(-25deg);} }
@@ -722,7 +737,7 @@
 
     setTimeout(()=>{
       addLog(`Alert dispatched to emergency contact (simulated SMS + push).`, 'critical');
-      setBig('Alert sent', 'Waiting for wearer to confirm they\\'re OK');
+      setBig('Alert sent', 'Waiting for wearer to confirm they are OK');
       el.resetBtn.disabled = false;
       simRunning = false;
     }, 3600);

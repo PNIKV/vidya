@@ -1315,3 +1315,22 @@ function renderAllStlViewers(containers) {
     });
   });
 }
+
+// =============================================
+//  FIRMWARE FLASHER ROUTER
+// =============================================
+globalThis.openRealFirmwareFlasher = function (url, boardName = '') {
+  const lcUrl = (url || '').toLowerCase();
+  const mc = (currentProject?.hardwareSpecs?.microcontroller || boardName || '').toLowerCase();
+
+  if (lcUrl.endsWith('.hex') || mc.includes('arduino') || mc.includes('atmega') || mc.includes('uno') || mc.includes('nano')) {
+    if (typeof openAvrFlasherModal === 'function') {
+      openAvrFlasherModal(url, currentProject?.title || 'Arduino Firmware');
+    } else {
+      alert('AVR Web Flasher module is loading. Please try again in a moment.');
+    }
+  } else {
+    alert('This firmware is for ESP32/ESP8266. Please use ESP Web Tools in Chrome or Edge.');
+  }
+};
+
