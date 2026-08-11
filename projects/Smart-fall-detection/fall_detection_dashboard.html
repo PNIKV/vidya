@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GUARDIAN — Fall Detection Monitor</title>
+<title>GUARDIAN — Fall Detection & Air Mouse Monitor</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -66,19 +66,19 @@
 
   /* ---------- Control row ---------- */
   .controls{
-    display:grid; grid-template-columns:1.1fr 1fr; gap:14px;
+    display:grid; grid-template-columns:1.5fr 1fr; gap:14px;
     margin-bottom:18px;
   }
-  @media(max-width:820px){ .controls{grid-template-columns:1fr;} }
+  @media(max-width:920px){ .controls{grid-template-columns:1fr;} }
   .card{
     background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);
     padding:16px 18px;
   }
   .card-label{font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-dim); margin-bottom:10px; font-weight:600;}
 
-  .connect-row{display:flex; gap:8px; flex-wrap:wrap;}
+  .connect-row{display:flex; gap:8px; flex-wrap:wrap; align-items:center;}
   .connect-row input{
-    flex:1; min-width:160px; background:var(--panel-2); border:1px solid var(--border);
+    flex:1; min-width:140px; background:var(--panel-2); border:1px solid var(--border);
     color:var(--text); padding:9px 12px; border-radius:8px; font-family:'IBM Plex Mono',monospace; font-size:13px;
   }
   .connect-row input::placeholder{color:var(--text-faint);}
@@ -86,7 +86,7 @@
   .btn{
     border:none; cursor:pointer; font-family:'Inter',sans-serif; font-weight:600; font-size:13px;
     padding:9px 16px; border-radius:8px; transition:transform 0.12s ease, filter 0.15s ease;
-    white-space:nowrap;
+    white-space:nowrap; display:inline-flex; align-items:center; justify-content:center; gap:6px;
   }
   .btn:active{transform:scale(0.97);}
   .btn-primary{background:var(--signal); color:#052018;}
@@ -99,8 +99,12 @@
   .btn[disabled]{opacity:0.45; cursor:not-allowed;}
   .connect-hint{font-size:11.5px; color:var(--text-faint); margin-top:8px; line-height:1.5;}
 
-  .mode-toggle{display:flex; gap:8px; margin-top:10px;}
-  .mode-toggle button{flex:1;}
+  .air-mouse-bar{
+    display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;
+    background:var(--panel-2); padding:10px 14px; border-radius:8px; border:1px solid var(--border);
+    font-size:12px; margin-top:12px;
+  }
+  .stat-group{display:flex; align-items:center; gap:6px;}
 
   /* Position selector */
   .position-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
@@ -167,12 +171,12 @@
   .big-status .sub{font-size:12px; color:var(--text-dim); margin-top:2px; font-family:'IBM Plex Mono',monospace;}
 
   .readout-strip{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
     background:var(--border); margin-top:10px; position:relative; z-index:2;
   }
   .readout-cell{background:var(--panel-2); padding:10px 14px;}
   .readout-cell .rlabel{font-size:10px; color:var(--text-faint); text-transform:uppercase; letter-spacing:0.08em;}
-  .readout-cell .rvalue{font-family:'IBM Plex Mono',monospace; font-size:16px; font-weight:600; margin-top:3px; color:var(--text);}
+  .readout-cell .rvalue{font-family:'IBM Plex Mono',monospace; font-size:15px; font-weight:600; margin-top:3px; color:var(--text);}
 
   .wave-wrap{padding:12px 18px 16px; position:relative; z-index:2;}
   canvas{width:100%; height:74px; display:block; border-radius:8px; background:rgba(0,0,0,0.25); border:1px solid var(--border);}
@@ -227,7 +231,8 @@
   footer p{font-size:11.5px; color:var(--text-faint); line-height:1.6;}
 
   /* ================= SVG FIGURE ANIMATIONS ================= */
-  #figureRotator{transform-box:fill-box; transform-origin:50% 92%; animation:idleSway 2.6s ease-in-out infinite;}
+  #figureRotator{transform-box:fill-box; transform-origin:50% 92%; transition:transform 0.15s ease-out;}
+  #figureRotator.idle-sway{animation:idleSway 2.6s ease-in-out infinite;}
   @keyframes idleSway{
     0%,100%{transform:rotate(0deg) translateY(0);}
     25%{transform:rotate(-1.3deg) translateY(-1.5px);}
@@ -246,7 +251,7 @@
   #figureRotator.stumble{animation:stumbleKf 0.4s ease-in-out;}
   #figureRotator.falling{animation:fallKf 0.7s cubic-bezier(.55,.06,.68,.19) forwards;}
   #figureRotator.impact-bounce{animation:bounceKf 0.28s ease-out;}
-  #figureRotator.fallen{transform:rotate(88deg) translateY(15px);}
+  #figureRotator.fallen{transform:rotate(88deg) translateY(15px) !important;}
   #figureRotator.rising{animation:riseKf 0.9s ease-out forwards;}
 
   @keyframes stumbleKf{
@@ -311,7 +316,7 @@
       </div>
       <div class="brand-text">
         <h1>GUARDIAN</h1>
-        <p>Wearable Fall Detection · ESP8266 + MPU6050</p>
+        <p>Smart Fall Detection & Air Mouse · ESP32 + MPU6050</p>
       </div>
     </div>
     <div class="status-pill" id="statusPill">
@@ -323,13 +328,45 @@
   <!-- ============ CONTROLS ============ -->
   <div class="controls">
     <div class="card">
-      <div class="card-label">Device connection</div>
-      <div class="connect-row">
-        <input id="wsAddress" type="text" placeholder="Device IP, e.g. 192.168.1.42" class="mono">
-        <button class="btn btn-primary" id="connectBtn">Connect</button>
-        <button class="btn btn-ghost" id="demoBtn">Use Demo Mode</button>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+        <div class="card-label" style="margin:0;">Device Connection</div>
+        <div style="display:flex; gap:8px;">
+          <button class="btn btn-ghost" id="testSoundBtn" style="font-size:12px; padding:5px 10px;">🔊 Test Sound</button>
+          <button class="btn btn-ghost" id="calibrateBtn" style="font-size:12px; padding:5px 10px;">🎯 Gyro Calibrate</button>
+        </div>
       </div>
-      <div class="connect-hint">Flash <b>fall_detection_firmware.ino</b> to the ESP8266, open Serial Monitor for its IP, then connect above. No hardware yet? Demo Mode simulates live sensor data.</div>
+      
+      <div class="connect-row">
+        <button class="btn btn-primary" id="connectSerialBtn">🔌 Connect Serial (SM)</button>
+        <button class="btn btn-ghost" id="connectBtBtn">📶 Connect Bluetooth (BT)</button>
+        <input id="wsAddress" type="text" placeholder="WiFi IP (e.g. 192.168.1.42)" class="mono" style="max-width:180px;">
+        <button class="btn btn-ghost" id="connectWsBtn">WS Connect</button>
+        <button class="btn btn-ghost" id="demoBtn">Demo Mode</button>
+      </div>
+
+      <div class="air-mouse-bar">
+        <div class="stat-group">
+          <span style="color:var(--text-faint);">BLE Mouse Host:</span>
+          <b id="airMouseBleStatus" style="color:var(--warn);">Waiting for Host</b>
+        </div>
+        <div class="stat-group">
+          <span style="color:var(--text-faint);">Sensor:</span>
+          <b id="airMouseStillStatus" style="color:var(--signal);">In Motion</b>
+        </div>
+        <div class="stat-group">
+          <span style="color:var(--text-faint);">Buttons:</span>
+          <b id="airMouseBtnStatus" class="mono" style="color:var(--text);">L:UP | R:UP</b>
+        </div>
+        <div class="stat-group">
+          <span style="color:var(--text-faint);">Spike Thresh:</span>
+          <input type="number" id="spikeThreshInput" value="2.2" step="0.1" min="1.2" max="5.0" class="mono" style="width:58px; background:var(--panel); border:1px solid var(--border); color:var(--text); padding:3px 6px; border-radius:4px; text-align:center;">
+          <span style="color:var(--text-faint);">g</span>
+        </div>
+      </div>
+
+      <div class="connect-hint">
+        Connect via <b>Serial Monitor (Web Serial)</b> at 115200 baud or <b>Bluetooth</b> to stream live <code>air_mouse_firmware.ino</code> telemetry. Motion spikes trigger immediate sound alarms.
+      </div>
     </div>
 
     <div class="card">
@@ -376,7 +413,7 @@
           <circle class="dust" cx="190" cy="238" r="7" fill="#8A99B3"/>
           <circle class="dust" cx="150" cy="248" r="5" fill="#8A99B3"/>
 
-          <g id="figureRotator">
+          <g id="figureRotator" class="idle-sway">
             <g id="figure">
               <!-- legs (thigh + knee joint + shin + shoe) -->
               <g id="legL">
@@ -463,8 +500,9 @@
 
       <div class="readout-strip">
         <div class="readout-cell"><div class="rlabel">Magnitude</div><div class="rvalue" id="valMag">1.00 g</div></div>
-        <div class="readout-cell"><div class="rlabel">Tilt angle</div><div class="rvalue" id="valTilt">2°</div></div>
-        <div class="readout-cell"><div class="rlabel">Sample rate</div><div class="rvalue" id="valRate">20 Hz</div></div>
+        <div class="readout-cell"><div class="rlabel">Pitch / Roll</div><div class="rvalue" id="valPitchRoll">0° / 0°</div></div>
+        <div class="readout-cell"><div class="rlabel">Tilt angle</div><div class="rvalue" id="valTilt">0°</div></div>
+        <div class="readout-cell"><div class="rlabel">Sample rate</div><div class="rvalue" id="valRate">50 Hz</div></div>
       </div>
 
       <div class="wave-wrap">
@@ -479,18 +517,18 @@
 
     <div class="side-col">
       <div class="card">
-        <div class="card-label">Session</div>
+        <div class="card-label">Session Statistics</div>
         <div class="stat-row">
           <div class="stat-box"><div class="sval" id="statFalls">0</div><div class="slabel">Falls today</div></div>
           <div class="stat-box"><div class="sval" id="statUptime">00:00</div><div class="slabel">Uptime</div></div>
-          <div class="stat-box"><div class="sval" id="statBattery">92%</div><div class="slabel">Battery</div></div>
+          <div class="stat-box"><div class="sval" id="statBattery">95%</div><div class="slabel">Battery</div></div>
         </div>
       </div>
 
       <div class="card log-card">
-        <div class="card-label">Alert log</div>
+        <div class="card-label">Alert & Telemetry Log</div>
         <ul class="log-list" id="logList">
-          <li class="log-empty">No events yet — try Simulate Fall.</li>
+          <li class="log-empty">No events yet — click "Connect Serial (SM)" to stream data.</li>
         </ul>
       </div>
     </div>
@@ -543,7 +581,7 @@
   </div>
 
   <footer>
-    <p>ESP8266 ⟷ MPU6050 over I2C (SDA→D2, SCL→D1) &nbsp;·&nbsp; Dashboard connects at <span class="mono">ws://&lt;device-ip&gt;:81</span> &nbsp;·&nbsp; Built for demoing on WiFi, designed to grow into a standalone GSM device.</p>
+    <p>ESP32 ⟷ MPU6050 over I2C &nbsp;·&nbsp; Telemetry at 115200 baud over Web Serial / Bluetooth &nbsp;·&nbsp; Compatible with <span class="mono">air_mouse_firmware.ino</span>.</p>
   </footer>
 
 </div>
@@ -553,7 +591,7 @@
   // ---------- State ----------
   const state = {
     connected:false,
-    mode:'demo',              // 'demo' | 'live'
+    mode:'demo',              // 'demo' | 'serial' | 'bluetooth' | 'ws'
     position:'neck',
     fallState:'NORMAL',       // NORMAL | STUMBLE | FREEFALL | IMPACT | CONFIRMED
     magHistory:new Array(140).fill(1.0),
@@ -561,22 +599,36 @@
     startTime:Date.now(),
     alarmActive:false,
     ambientPhase:0,
-    socket:null
+    socket:null,
+    serialPort:null,
+    serialReader:null,
+    lastSpikeTime:0,
+    sampleCount:0,
+    lastSampleRateCalc:Date.now()
   };
 
   // ---------- Elements ----------
   const el = {
     statusPill:document.getElementById('statusPill'),
     statusPillText:document.getElementById('statusPillText'),
-    connectBtn:document.getElementById('connectBtn'),
+    connectSerialBtn:document.getElementById('connectSerialBtn'),
+    connectBtBtn:document.getElementById('connectBtBtn'),
+    connectWsBtn:document.getElementById('connectWsBtn'),
     demoBtn:document.getElementById('demoBtn'),
+    testSoundBtn:document.getElementById('testSoundBtn'),
+    calibrateBtn:document.getElementById('calibrateBtn'),
     wsAddress:document.getElementById('wsAddress'),
+    airMouseBleStatus:document.getElementById('airMouseBleStatus'),
+    airMouseStillStatus:document.getElementById('airMouseStillStatus'),
+    airMouseBtnStatus:document.getElementById('airMouseBtnStatus'),
+    spikeThreshInput:document.getElementById('spikeThreshInput'),
     positionGrid:document.getElementById('positionGrid'),
     monitorScreen:document.getElementById('monitorScreen'),
     stateReadout:document.getElementById('stateReadout'),
     bigHeadline:document.getElementById('bigHeadline'),
     bigSub:document.getElementById('bigSub'),
     valMag:document.getElementById('valMag'),
+    valPitchRoll:document.getElementById('valPitchRoll'),
     valTilt:document.getElementById('valTilt'),
     valRate:document.getElementById('valRate'),
     figureRotator:document.getElementById('figureRotator'),
@@ -619,45 +671,100 @@
     const ts = t.toLocaleTimeString([], {hour:'2-digit', minute:'2-digit', second:'2-digit'});
     li.innerHTML = `<span class="log-time">${ts}</span><span class="log-msg">${msg}</span>`;
     el.logList.prepend(li);
-    while(el.logList.children.length > 30) el.logList.removeChild(el.logList.lastChild);
+    while(el.logList.children.length > 40) el.logList.removeChild(el.logList.lastChild);
   }
 
-  // ---------- Audio alarm ----------
+  // ---------- Audio alarm synthesizer (Web Audio API) ----------
   let audioCtx = null;
-  let alarmTimer = null;
-  function beep(freq, duration, delay){
-    if(!audioCtx) return;
-    const t0 = audioCtx.currentTime + delay;
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    osc.type = 'square';
-    osc.frequency.setValueAtTime(freq, t0);
-    gain.gain.setValueAtTime(0, t0);
-    gain.gain.linearRampToValueAtTime(0.14, t0 + 0.02);
-    gain.gain.linearRampToValueAtTime(0, t0 + duration);
-    osc.connect(gain).connect(audioCtx.destination);
-    osc.start(t0);
-    osc.stop(t0 + duration + 0.02);
-  }
-  function startAlarm(cycles){
+  let alarmOsc1 = null;
+  let alarmOsc2 = null;
+  let alarmGain = null;
+  let alarmInterval = null;
+
+  function initAudioContext(){
     if(!audioCtx){
-      try{ audioCtx = new (window.AudioContext||window.webkitAudioContext)(); }catch(e){ return; }
+      try{ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }catch(e){}
     }
-    state.alarmActive = true;
-    let i = 0;
-    function cycle(){
-      if(i >= cycles || !state.alarmActive) return;
-      beep(1046, 0.16, 0);
-      beep(784, 0.16, 0.22);
-      i++;
-      alarmTimer = setTimeout(cycle, 480);
+    if(audioCtx && audioCtx.state === 'suspended'){
+      audioCtx.resume();
     }
-    cycle();
   }
+
+  // Auto unlock AudioContext on any user click/press
+  ['click', 'keydown', 'touchstart'].forEach(evt => {
+    document.addEventListener(evt, initAudioContext, { passive: true });
+  });
+
+  function startAlarm(){
+    initAudioContext();
+    if(!audioCtx) return;
+    stopAlarm();
+
+    state.alarmActive = true;
+    let highTone = true;
+
+    try{
+      alarmGain = audioCtx.createGain();
+      alarmGain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+      alarmGain.connect(audioCtx.destination);
+
+      alarmOsc1 = audioCtx.createOscillator();
+      alarmOsc1.type = 'sawtooth';
+      alarmOsc1.frequency.setValueAtTime(950, audioCtx.currentTime);
+      alarmOsc1.connect(alarmGain);
+      alarmOsc1.start();
+
+      alarmOsc2 = audioCtx.createOscillator();
+      alarmOsc2.type = 'square';
+      alarmOsc2.frequency.setValueAtTime(1350, audioCtx.currentTime);
+      alarmOsc2.connect(alarmGain);
+      alarmOsc2.start();
+
+      alarmInterval = setInterval(() => {
+        if(!state.alarmActive || !audioCtx) return;
+        highTone = !highTone;
+        const f1 = highTone ? 950 : 720;
+        const f2 = highTone ? 1350 : 1080;
+        if(alarmOsc1) alarmOsc1.frequency.setValueAtTime(f1, audioCtx.currentTime);
+        if(alarmOsc2) alarmOsc2.frequency.setValueAtTime(f2, audioCtx.currentTime);
+      }, 180);
+    }catch(e){
+      console.error('Alarm start error:', e);
+    }
+  }
+
   function stopAlarm(){
     state.alarmActive = false;
-    clearTimeout(alarmTimer);
+    if(alarmInterval){
+      clearInterval(alarmInterval);
+      alarmInterval = null;
+    }
+    if(alarmOsc1){
+      try{ alarmOsc1.stop(); alarmOsc1.disconnect(); }catch(e){}
+      alarmOsc1 = null;
+    }
+    if(alarmOsc2){
+      try{ alarmOsc2.stop(); alarmOsc2.disconnect(); }catch(e){}
+      alarmOsc2 = null;
+    }
+    if(alarmGain){
+      try{ alarmGain.disconnect(); }catch(e){}
+      alarmGain = null;
+    }
   }
+
+  function testAlarmSound(){
+    initAudioContext();
+    startAlarm();
+    addLog('🔊 Alarm Sound Test started (3 second siren test)...');
+    setTimeout(() => {
+      if(state.fallState === 'NORMAL'){
+        stopAlarm();
+        addLog('🔊 Alarm Sound Test complete.');
+      }
+    }, 3000);
+  }
+  el.testSoundBtn.addEventListener('click', testAlarmSound);
 
   // ---------- UI state setters ----------
   function setReadoutState(label, cls){
@@ -668,15 +775,250 @@
     el.bigHeadline.textContent = headline;
     el.bigSub.textContent = sub;
   }
-  function setPillNormal(){
+  function setPillNormal(modeLabel){
+    const label = modeLabel || (state.mode === 'serial' ? 'Serial Monitor (SM)' : (state.mode === 'bluetooth' ? 'Bluetooth (BT)' : (state.mode === 'ws' ? 'WiFi WebSocket' : 'Demo')));
     el.statusPill.className = 'status-pill' + (state.connected ? ' live':'');
     el.statusPillText.textContent = state.connected
-      ? 'Live · streaming from device'
+      ? `Live · Streaming via ${label}`
       : 'Not connected — demo waveform running';
   }
   function setPillAlarm(){
     el.statusPill.className = 'status-pill alarm';
-    el.statusPillText.textContent = 'FALL DETECTED — alert dispatched';
+    el.statusPillText.textContent = 'FALL DETECTED — ALARM ACTIVE';
+  }
+
+  // ---------- Serial Command Transmitter ----------
+  async function sendSerialCommand(cmdObj){
+    if(state.serialPort && state.serialPort.writable){
+      try{
+        const writer = state.serialPort.writable.getWriter();
+        const str = JSON.stringify(cmdObj) + '\n';
+        await writer.write(new TextEncoder().encode(str));
+        writer.releaseLock();
+        addLog(`Sent command to device: <code>${JSON.stringify(cmdObj)}</code>`);
+      }catch(e){
+        addLog('Error sending serial command: ' + e.message, 'warn');
+      }
+    } else {
+      addLog('Connect via Serial Monitor (SM) first to send device commands.', 'warn');
+    }
+  }
+
+  el.calibrateBtn.addEventListener('click', ()=>{
+    sendSerialCommand({"cmd":"calibrate"});
+    addLog('Requested gyro calibration. Hold mouse still for 2s!');
+  });
+
+  // ---------- Web Serial API (Serial Monitor SM) ----------
+  async function connectSerial(){
+    if(!('serial' in navigator)){
+      addLog('Web Serial API is not supported in this browser. Use Chrome, Edge, or Opera.', 'warn');
+      return;
+    }
+    try{
+      state.serialPort = await navigator.serial.requestPort();
+      await state.serialPort.open({ baudRate: 115200 });
+      state.connected = true;
+      state.mode = 'serial';
+      setPillNormal('Serial Monitor (SM)');
+      addLog('Connected via Web Serial Port (115200 baud). Listening for MPU6050 telemetry...');
+      
+      // Request initial config
+      setTimeout(() => sendSerialCommand({"cmd":"getConfig"}), 300);
+
+      readSerialLoop();
+    }catch(err){
+      addLog('Serial connection cancelled or failed: ' + err.message, 'warn');
+    }
+  }
+
+  async function readSerialLoop(){
+    const textDecoder = new TextDecoderStream();
+    const readableStreamClosed = state.serialPort.readable.pipeTo(textDecoder.writable);
+    state.serialReader = textDecoder.readable.getReader();
+    let lineBuffer = '';
+    try{
+      while(true){
+        const { value, done } = await state.serialReader.read();
+        if(done) break;
+        lineBuffer += value;
+        let lines = lineBuffer.split('\n');
+        lineBuffer = lines.pop(); // keep partial line
+        for(let line of lines){
+          line = line.trim();
+          if(line.startsWith('{') && line.endsWith('}')){
+            parseFirmwareJson(line);
+          }
+        }
+      }
+    }catch(err){
+      addLog('Serial read loop interrupted: ' + err.message, 'warn');
+    }finally{
+      state.serialReader.releaseLock();
+      state.connected = false;
+      setPillNormal();
+    }
+  }
+
+  el.connectSerialBtn.addEventListener('click', connectSerial);
+
+  // ---------- Web Bluetooth / WebHID (BT) Connection ----------
+  async function connectBluetooth(){
+    addLog('Searching for Bluetooth Air Mouse / ESP32 device...');
+    try{
+      if('bluetooth' in navigator){
+        const device = await navigator.bluetooth.requestDevice({
+          acceptAllDevices: true,
+          optionalServices: ['battery_service', 'human_interface_device']
+        });
+        addLog(`Pairing with Bluetooth device: <b>${device.name || 'ESP32 Air Mouse'}</b>`);
+        state.connected = true;
+        state.mode = 'bluetooth';
+        setPillNormal('Bluetooth (BT)');
+        addLog('Bluetooth paired successfully! Note: Use "Connect Serial" on BT COM Port to read live raw telemetry stream.');
+      } else if('hid' in navigator){
+        const devices = await navigator.hid.requestDevice({ filters: [] });
+        if(devices.length > 0){
+          addLog(`Connected to Bluetooth HID device: <b>${devices[0].productName}</b>`);
+          state.connected = true;
+          state.mode = 'bluetooth';
+          setPillNormal('Bluetooth HID');
+        }
+      } else {
+        addLog('Web Bluetooth API not supported on this browser. Try Chrome/Edge, or use Web Serial on the paired BT COM Port.', 'warn');
+      }
+    }catch(e){
+      addLog('Bluetooth search info: ' + e.message + '. (Tip: On Windows, paired BT devices also show up in Connect Serial as COM ports!)', 'warn');
+    }
+  }
+  el.connectBtBtn.addEventListener('click', connectBluetooth);
+
+  // ---------- WebSocket Connection (WiFi) ----------
+  function connectWs(){
+    const addr = el.wsAddress.value.trim();
+    if(!addr){ addLog('Enter device IP address first.', 'warn'); return; }
+    try{
+      const ws = new WebSocket(`ws://${addr}:81/`);
+      ws.onopen = ()=>{
+        state.connected = true; state.mode='ws';
+        setPillNormal('WiFi WebSocket');
+        addLog(`Connected to WiFi WebSocket device at ${addr}.`);
+      };
+      ws.onclose = ()=>{
+        state.connected = false;
+        setPillNormal();
+        addLog('WebSocket connection closed.', 'warn');
+      };
+      ws.onerror = ()=>{
+        addLog('Could not reach device IP on WebSocket.', 'warn');
+      };
+      ws.onmessage = (evt)=>{
+        parseFirmwareJson(evt.data);
+      };
+      state.socket = ws;
+    }catch(e){
+      addLog('Invalid WebSocket address.', 'warn');
+    }
+  }
+  el.connectWsBtn.addEventListener('click', connectWs);
+
+  el.demoBtn.addEventListener('click', ()=>{
+    if(state.socket){ state.socket.close(); state.socket=null; }
+    if(state.serialReader){ try{ state.serialReader.cancel(); }catch(e){} }
+    state.connected = false; state.mode = 'demo';
+    setPillNormal();
+    addLog('Switched to Demo Mode — synthetic waveform running.');
+  });
+
+  // ---------- Firmware JSON Telemetry Parser ----------
+  function parseFirmwareJson(jsonStr){
+    try{
+      const d = JSON.parse(jsonStr);
+
+      // System events
+      if(d.type === 'config'){
+        addLog(`Received Device Config: Name="${d.name}", sensX=${d.sensX}, sensY=${d.sensY}, deadzone=${d.deadzone}`);
+        return;
+      }
+      if(d.type === 'ready'){
+        addLog('Device status: READY');
+        return;
+      }
+      if(d.type === 'calibrated'){
+        addLog('Gyro calibration completed successfully!');
+        return;
+      }
+      if(d.type === 'restarting'){
+        addLog('Device is restarting...', 'warn');
+        return;
+      }
+
+      // Telemetry fields: ax, ay, az, pitch, roll, yaw, connected, still, leftBtn, rightBtn
+      if(typeof d.ax === 'number' && typeof d.ay === 'number' && typeof d.az === 'number'){
+        state.sampleCount++;
+        const now = Date.now();
+        if(now - state.lastSampleRateCalc >= 1000){
+          const hz = Math.round((state.sampleCount * 1000) / (now - state.lastSampleRateCalc));
+          el.valRate.textContent = hz + ' Hz';
+          state.sampleCount = 0;
+          state.lastSampleRateCalc = now;
+        }
+
+        const mag = Math.sqrt(d.ax*d.ax + d.ay*d.ay + d.az*d.az);
+        pushMagnitude(mag);
+
+        const pitch = d.pitch ?? 0;
+        const roll = d.roll ?? 0;
+        el.valPitchRoll.textContent = `${pitch.toFixed(0)}° / ${roll.toFixed(0)}°`;
+
+        const tiltDeg = Math.round(Math.hypot(pitch, roll)) || Math.round(Math.atan2(Math.hypot(d.ax, d.ay), Math.abs(d.az)) * 180 / Math.PI);
+        el.valTilt.textContent = tiltDeg + '°';
+
+        // Rotate figure with live roll & pitch when in normal state
+        if(state.fallState === 'NORMAL'){
+          el.figureRotator.classList.remove('idle-sway');
+          el.figureRotator.style.transform = `rotate(${roll * 0.4}deg) translateY(${Math.min(15, Math.abs(pitch)*0.15)}px)`;
+        }
+
+        // Air Mouse Status Indicators
+        if(typeof d.connected === 'number'){
+          el.airMouseBleStatus.textContent = d.connected ? 'BLE Connected' : 'Waiting for Host';
+          el.airMouseBleStatus.style.color = d.connected ? 'var(--signal)' : 'var(--warn)';
+        }
+        if(typeof d.still === 'number'){
+          el.airMouseStillStatus.textContent = d.still ? 'Resting (Still)' : 'In Motion';
+          el.airMouseStillStatus.style.color = d.still ? 'var(--signal)' : 'var(--text)';
+        }
+        if(typeof d.leftBtn === 'number' && typeof d.rightBtn === 'number'){
+          el.airMouseBtnStatus.textContent = `L:${d.leftBtn ? 'DOWN':'UP'} | R:${d.rightBtn ? 'DOWN':'UP'}`;
+        }
+
+        // Automatic Spike & Fall Detection
+        checkSpikeAndFall(mag, d.ax, d.ay, d.az);
+      }
+    }catch(e){
+      // Ignore malformed serial strings
+    }
+  }
+
+  // ---------- Spike & Fall Detection Algorithm ----------
+  function checkSpikeAndFall(mag, ax, ay, az){
+    if(simRunning || state.fallState !== 'NORMAL') return;
+    const now = Date.now();
+    if(now - state.lastSpikeTime < 2500) return; // 2.5s lockout cooldown
+
+    const spikeThreshold = parseFloat(el.spikeThreshInput.value || 2.2);
+    const freefallThreshold = 0.40;
+
+    if(mag >= spikeThreshold){
+      state.lastSpikeTime = now;
+      addLog(`💥 Acceleration Spike Detected! (${mag.toFixed(2)}g >= ${spikeThreshold}g threshold)`, 'critical');
+      triggerFallSequence('live motion spike');
+    } else if(mag <= freefallThreshold){
+      state.lastSpikeTime = now;
+      addLog(`📉 Free-fall Drop Detected! (${mag.toFixed(2)}g <= ${freefallThreshold}g threshold)`, 'warn');
+      triggerFallSequence('live freefall drop');
+    }
   }
 
   // ---------- Fall sequence orchestration ----------
@@ -692,30 +1034,33 @@
     // Stage 0: normal -> stumble
     state.fallState = 'STUMBLE';
     setReadoutState('IRREGULAR MOTION', 'warn');
-    setBig('Irregular motion', 'Checking for free-fall signature…');
+    setBig('Irregular motion detected', 'Checking for free-fall / impact signature…');
     el.figureRotator.className = 'stumble';
-    addLog(`Motion irregularity flagged (${posLabel}, ${source})`, 'warn');
+    addLog(`Motion spike flagged (${posLabel}, ${source})`, 'warn');
 
     setTimeout(()=>{
       // Stage 1: free fall
       state.fallState = 'FREEFALL';
       setReadoutState('FREE FALL', 'warn');
-      setBig('Free fall detected', 'Acceleration magnitude near 0 g');
+      setBig('Free fall detected', 'Acceleration magnitude dropping near 0 g');
       el.figureRotator.className = 'falling';
       el.figure.classList.add('falling');
     }, 380);
 
     setTimeout(()=>{
-      // Stage 2: impact
+      // Stage 2: impact & loud sound alarm
       state.fallState = 'IMPACT';
-      setReadoutState('IMPACT', 'critical');
-      setBig('Impact detected', 'Magnitude spike > 2.5 g');
+      setReadoutState('IMPACT DETECTED', 'critical');
+      setBig('IMPACT DETECTED', 'Acceleration magnitude spike > 2.2 g');
       el.figure.classList.remove('falling');
       el.figureRotator.className = 'fallen impact-bounce';
       el.monitorScreen.classList.add('shake');
       const svgRoot = el.figure.closest('svg');
       svgRoot.classList.add('impact-active');
-      startAlarm(4);
+      
+      // START LOUD ALARM SOUND IMMEDIATELY
+      startAlarm();
+      
       setTimeout(()=>el.monitorScreen.classList.remove('shake'), 420);
     }, 1080);
 
@@ -729,15 +1074,15 @@
       state.fallsToday++;
       el.statFalls.textContent = state.fallsToday;
       setReadoutState('FALL CONFIRMED', 'critical');
-      setBig('Fall confirmed', 'No movement for 1.5s — notifying contact…');
+      setBig('FALL CONFIRMED — ALARM ACTIVE', 'Person is down and motionless!');
       el.monitorScreen.classList.add('alarm-active');
       setPillAlarm();
-      addLog(`<b>Fall confirmed</b> — device worn at ${posLabel}. Person is down and motionless.`, 'critical');
+      addLog(`<b>FALL CONFIRMED</b> — device worn at ${posLabel}. Alarm sounding continuously!`, 'critical');
     }, 2600);
 
     setTimeout(()=>{
-      addLog(`Alert dispatched to emergency contact (simulated SMS + push).`, 'critical');
-      setBig('Alert sent', 'Waiting for wearer to confirm they are OK');
+      addLog(`Alert notification dispatched to emergency contacts.`, 'critical');
+      setBig('EMERGENCY ALERT SENT', 'Alarm active — press "Mark as OK / Reset" to silence sound');
       el.resetBtn.disabled = false;
       simRunning = false;
     }, 3600);
@@ -748,11 +1093,12 @@
     const svgRoot = el.figure.closest('svg');
     svgRoot.classList.remove('impact-active');
     el.monitorScreen.classList.remove('alarm-active');
+    el.figureRotator.style.transform = '';
     el.figureRotator.className = 'rising';
     setPillNormal();
-    addLog('Wearer marked OK — system reset to normal monitoring.');
+    addLog('Wearer marked OK — sound alarm silenced, system reset to normal monitoring.');
     setTimeout(()=>{
-      el.figureRotator.className = '';
+      el.figureRotator.className = 'idle-sway';
       state.fallState = 'NORMAL';
       setReadoutState('NORMAL');
       setBig('Monitoring', 'All vitals nominal');
@@ -761,51 +1107,8 @@
     }, 900);
   }
 
-  el.simulateBtn.addEventListener('click', ()=>triggerFallSequence('simulated'));
+  el.simulateBtn.addEventListener('click', ()=>triggerFallSequence('simulated fall'));
   el.resetBtn.addEventListener('click', resetToNormal);
-
-  // ---------- Connection ----------
-  function connectLive(){
-    const addr = el.wsAddress.value.trim();
-    if(!addr){ addLog('Enter the device IP shown in Serial Monitor first.', 'warn'); return; }
-    try{
-      const ws = new WebSocket(`ws://${addr}:81/`);
-      ws.onopen = ()=>{
-        state.connected = true; state.mode='live';
-        setPillNormal();
-        addLog(`Connected to device at ${addr}.`);
-      };
-      ws.onclose = ()=>{
-        state.connected = false;
-        setPillNormal();
-        addLog('Device connection closed — reverting to demo waveform.', 'warn');
-      };
-      ws.onerror = ()=>{
-        addLog('Could not reach device. Check IP and that both are on the same WiFi.', 'warn');
-      };
-      ws.onmessage = (evt)=>{
-        try{
-          const d = JSON.parse(evt.data);
-          pushMagnitude(d.magnitude ?? 1.0);
-          if(typeof d.ax === 'number'){
-            const tiltDeg = Math.round(Math.atan2(Math.sqrt(d.ax*d.ax+d.ay*d.ay), d.az) * 180/Math.PI);
-            el.valTilt.textContent = tiltDeg + '°';
-          }
-          if(d.fall === true) triggerFallSequence('live sensor');
-        }catch(e){}
-      };
-      state.socket = ws;
-    }catch(e){
-      addLog('Invalid address — could not open connection.', 'warn');
-    }
-  }
-  el.connectBtn.addEventListener('click', connectLive);
-  el.demoBtn.addEventListener('click', ()=>{
-    if(state.socket){ state.socket.close(); state.socket=null; }
-    state.connected = false; state.mode = 'demo';
-    setPillNormal();
-    addLog('Switched to demo mode — synthetic waveform.');
-  });
 
   // ---------- Waveform ----------
   function pushMagnitude(v){
@@ -850,7 +1153,7 @@
     ctx.clearRect(0,0,w,h);
     const color = colorForState();
     const data = state.magHistory;
-    const maxV = 3.2, minV = 0;
+    const maxV = 3.5, minV = 0;
     ctx.beginPath();
     data.forEach((v,i)=>{
       const x = (i/(data.length-1)) * w;
@@ -865,11 +1168,11 @@
     ctx.stroke();
     ctx.shadowBlur = 0;
 
-    // baseline
+    // baseline 1.0g
     ctx.beginPath();
     const baseY = h - ((1-minV)/(maxV-minV))*h*0.86 - h*0.06;
     ctx.moveTo(0, baseY); ctx.lineTo(w, baseY);
-    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
     ctx.lineWidth = 1;
     ctx.stroke();
   }
@@ -883,8 +1186,8 @@
   }
 
   resizeCanvas();
-  setInterval(ambientTick, 90);
-  setInterval(drawWave, 60);
+  setInterval(ambientTick, 80);
+  setInterval(drawWave, 50);
   setInterval(tickUptime, 1000);
   setPillNormal();
 })();

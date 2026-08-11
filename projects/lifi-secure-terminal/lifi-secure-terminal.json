@@ -92,19 +92,6 @@
     "Add Error Detection & Correction (Reed-Solomon or CRC-8 checksums).",
     "Upgrade to array photodiode receiver for multi-color RGB wavelength division multiplexing (WDM)."
   ],
-  "firmware": [
-    {
-      "name": "LiFi Receiver Arduino Firmware (.hex)",
-      "url": "projects/lifi-secure-terminal/lifi_receiver/build/arduino.avr.uno/lifi_receiver.ino.hex"
-    }
-  ],
-  "codeFiles": [
-    {
-      "name": "lifi_receiver.ino",
-      "language": "cpp",
-      "url": "projects/lifi-secure-terminal/lifi_receiver/lifi_receiver.ino"
-    }
-  ],
   "vivaQuestions": [
     {
       "q": "Why is 1.5x bit period delay (150 ms) used after detecting the Start Bit?",
