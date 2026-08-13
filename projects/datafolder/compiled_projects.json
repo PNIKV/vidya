@@ -3339,6 +3339,13 @@
         "name": "Smart Vacuum.pdf",
         "type": "pdf"
       }
+    ],
+    "codeFiles": [
+      {
+        "name": "vacuumrobo.ino",
+        "url": "projects/smart-vacuum-cleaner/vacuumrobo.ino",
+        "language": "Arduino C++"
+      }
     ]
   },
   {
