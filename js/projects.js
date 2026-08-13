@@ -597,7 +597,14 @@ async function renderProjectDetail() {
         <div class="pd-code-list">
           ${p.firmware && p.firmware.length > 0 ? `
             <div style="margin-bottom: 24px; padding: 20px; background: rgba(0,212,255,0.05); border: 1px solid rgba(0,212,255,0.3); border-radius: 12px;">
-              <h4 style="margin-bottom: 16px; color: #00d4ff;">⚡ Pre-compiled Firmware</h4>
+              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;">
+                <h4 style="margin: 0; color: #00d4ff; font-size: 1.1rem; display: flex; align-items: center; gap: 8px;">
+                  <span>⚡ Pre-compiled Firmware & Serial Tools</span>
+                </h4>
+                <button onclick="openWebSerialMonitorModal()" class="btn-secondary" style="background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; gap: 6px;">
+                  🔌 Open Serial Monitor
+                </button>
+              </div>
               <div style="display: flex; gap: 12px; flex-wrap: wrap;">
                 ${p.firmware.map(fw => `
                   <button onclick="openRealFirmwareFlasher('${fw.url}')" class="btn-primary" style="background: #00d4ff; border: none; box-shadow: 0 0 15px rgba(0,212,255,0.4); color: #000; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer;">Flash ${fw.name || 'Firmware'}</button>
@@ -1128,10 +1135,33 @@ globalThis.highlightCode = function (code) {
 };
 
 // =============================================
-//  REAL FIRMWARE UPLOAD (esp-web-tools)
+//  REAL FIRMWARE UPLOAD (esp-web-tools) & WEB SERIAL MONITOR
 // =============================================
-globalThis.openRealFirmwareFlasher = function (filename) {
-  // 1. Inject the esp-web-tools script if it doesn't exist
+globalThis.openRealFirmwareFlasher = function (url, boardName = '') {
+  const lcUrl = (url || '').toLowerCase();
+  const mc = (currentProject?.hardwareSpecs?.microcontroller || boardName || '').toLowerCase();
+
+  // If AVR / Arduino Hex binary
+  if (lcUrl.endsWith('.hex') || mc.includes('arduino') || mc.includes('atmega') || mc.includes('uno') || mc.includes('nano')) {
+    if (typeof openAvrFlasherModal === 'function') {
+      openAvrFlasherModal(url, currentProject?.title || 'Arduino Firmware');
+    } else {
+      alert('AVR Web Flasher module is loading. Please try again in a moment.');
+    }
+    return;
+  }
+
+  // Check Web Serial API support in Chrome/Edge
+  if (!('serial' in navigator)) {
+    alert('Web Serial API is not supported in your browser.\nPlease open this webpage in Chrome or Edge desktop over HTTPS or http://localhost.');
+    return;
+  }
+
+  // Dynamic Chip Family Detection (ESP8266 vs ESP32)
+  const isESP8266 = lcUrl.includes('esp8266') || mc.includes('8266') || mc.includes('nodemcu') || mc.includes('wemos');
+  const chipFamily = isESP8266 ? "ESP8266" : "ESP32";
+
+  // 1. Inject esp-web-tools module script if not present
   if (!document.getElementById('espWebToolsScript')) {
     const script = document.createElement('script');
     script.type = 'module';
@@ -1140,15 +1170,19 @@ globalThis.openRealFirmwareFlasher = function (filename) {
     document.head.appendChild(script);
   }
 
-  // 2. Generate a dynamic manifest Blob URL for the specific firmware file
+  // 2. Resolve firmware path to absolute URL (required because manifest is a Blob URL
+  //    and relative paths won't resolve against the page origin from a blob: context)
+  const absoluteFirmwareUrl = new URL(url, window.location.href).href;
+
+  // 3. Generate dynamic manifest Blob URL for ESP Web Tools
   const manifest = {
     name: currentProject ? currentProject.title : "Firmware",
     version: "1.0.0",
     builds: [
       {
-        chipFamily: "ESP32",
+        chipFamily: chipFamily,
         parts: [
-          { path: filename, offset: 0 } // Standard offset for full ESP32 binaries
+          { path: absoluteFirmwareUrl, offset: 0 } // Absolute URL for reliable download
         ]
       }
     ]
@@ -1156,23 +1190,35 @@ globalThis.openRealFirmwareFlasher = function (filename) {
   const blob = new Blob([JSON.stringify(manifest)], { type: 'application/json' });
   const manifestUrl = URL.createObjectURL(blob);
 
-  // 3. Inject modal if it doesn't exist
+  // 3. Inject Flasher Modal HTML
   if (!document.getElementById('firmwareModalOverlay')) {
     const modalHtml = `
       <div class="firmware-modal-overlay" id="firmwareModalOverlay">
         <div class="firmware-modal">
           <div class="firmware-header">
-            <h3>⚡ Upload Firmware via Web Serial</h3>
+            <h3 id="fwModalTitle">⚡ Flash Firmware via Web Serial</h3>
             <button class="firmware-close" onclick="closeFirmwareModal()">✕</button>
           </div>
-          <div class="firmware-body" style="text-align: center; padding: 40px 20px;">
-            <p class="firmware-instructions" style="margin-bottom: 30px;">
-              Connect your ESP32 board via USB. Click the button below, select your device's COM port, and the browser will natively erase and flash the <b id="fwFileName"></b> binary.
-            </p>
-            <div id="espInstallContainer" style="display: flex; justify-content: center; min-height: 50px;">
-              <!-- Web Install Button goes here -->
+          <div class="firmware-body" style="text-align: center; padding: 24px 20px;">
+            <div style="background: rgba(0, 212, 255, 0.08); border: 1px solid rgba(0, 212, 255, 0.3); padding: 14px; border-radius: 10px; margin-bottom: 20px; font-size: 0.85rem; color: #a5f3fc; text-align: left; line-height: 1.5;">
+              ℹ️ <b>Quick Flashing Guide:</b><br>
+              1. Connect your <b>${chipFamily}</b> board via USB.<br>
+              2. Close any open Serial Monitor tools in Arduino IDE.<br>
+              3. Unplug any wires connected to <b>RX (GPIO3)</b> during flashing.<br>
+              4. Click <b>INSTALL / CONNECT</b> below and select your board's COM port.
             </div>
-            <p style="margin-top: 30px; font-size: 0.85rem; color: var(--text-dim);">Powered by ESP Web Tools. Requires Chrome/Edge desktop.</p>
+            <p class="firmware-instructions" style="margin-bottom: 20px; font-weight: 600;">
+              Firmware File: <b id="fwFileName" style="color: #00d4ff;"></b>
+            </p>
+            <div id="espInstallContainer" style="display: flex; justify-content: center; min-height: 60px; align-items: center;">
+              <!-- Web Install Button dynamically rendered -->
+            </div>
+            <div style="margin-top: 24px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
+              <button onclick="openWebSerialMonitorModal()" class="btn-secondary" style="padding: 10px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: bold; cursor: pointer; background: #1e293b; color: #38bdf8; border: 1px solid #0284c7; display: flex; align-items: center; gap: 6px;">
+                🔌 Open Live Serial Monitor
+              </button>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.78rem; color: var(--text-dim);">Powered by ESP Web Tools • Native Chrome/Edge WebSerial</p>
           </div>
         </div>
       </div>
@@ -1180,11 +1226,13 @@ globalThis.openRealFirmwareFlasher = function (filename) {
     document.body.insertAdjacentHTML('beforeend', modalHtml);
   }
 
-  document.getElementById('fwFileName').textContent = filename;
+  const fileNameOnly = url.split('/').pop() || url;
+  document.getElementById('fwFileName').textContent = fileNameOnly;
+  document.getElementById('fwModalTitle').textContent = `⚡ Flash ${chipFamily} Firmware`;
 
-  // 4. Inject the Web Component dynamically to pick up the new manifest URL
+  // 4. Inject Install Button Component
   const container = document.getElementById('espInstallContainer');
-  container.innerHTML = ''; // clear previous
+  container.innerHTML = '';
   const installButton = document.createElement('esp-web-install-button');
   installButton.setAttribute('manifest', manifestUrl);
   container.appendChild(installButton);
@@ -1197,6 +1245,205 @@ globalThis.closeFirmwareModal = function () {
   const overlay = document.getElementById('firmwareModalOverlay');
   if (overlay) overlay.classList.remove('active');
 };
+
+// =============================================
+//  WEB SERIAL MONITOR MODULE (Live Console & Control)
+// =============================================
+let serialPort = null;
+let serialReader = null;
+let isSerialConnected = false;
+let autoScrollSerial = true;
+
+globalThis.openWebSerialMonitorModal = function() {
+  if (!('serial' in navigator)) {
+    alert('Web Serial API is not supported in this browser.\nPlease use Chrome or Edge desktop over HTTPS or http://localhost.');
+    return;
+  }
+
+  if (!document.getElementById('serialMonitorOverlay')) {
+    const html = `
+      <div class="firmware-modal-overlay" id="serialMonitorOverlay">
+        <div class="firmware-modal" style="max-width: 850px; width: 95%;">
+          <div class="firmware-header">
+            <h3>🔌 Live Web Serial Monitor & Telemetry</h3>
+            <button class="firmware-close" onclick="closeSerialMonitorModal()">✕</button>
+          </div>
+          <div class="firmware-body" style="padding: 20px;">
+            <!-- Serial Control Bar -->
+            <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; background: rgba(0,0,0,0.3); padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08);">
+              <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <button id="serialConnectBtn" onclick="toggleWebSerialConnection()" style="background: #10b981; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                  🔌 Connect Serial
+                </button>
+                <select id="serialBaudRate" style="background: #0f172a; color: #f8fafc; border: 1px solid #334155; padding: 8px; border-radius: 8px; font-size: 0.85rem;">
+                  <option value="115200" selected>115200 Baud (ESP8266/ESP32)</option>
+                  <option value="9600">9600 Baud</option>
+                  <option value="57600">57600 Baud</option>
+                  <option value="74880">74880 Baud (ESP Boot)</option>
+                  <option value="230400">230400 Baud</option>
+                </select>
+                <span id="serialStatusBadge" style="padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; background: #334155; color: #94a3b8;">
+                  DISCONNECTED
+                </span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 10px;">
+                <label style="font-size: 0.8rem; color: #94a3b8; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+                  <input type="checkbox" id="serialAutoScroll" checked onchange="autoScrollSerial = this.checked"> Auto-Scroll
+                </label>
+                <button onclick="clearSerialConsole()" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; cursor: pointer;">
+                  🗑️ Clear
+                </button>
+              </div>
+            </div>
+
+            <!-- Terminal Output Console -->
+            <pre id="serialTerminalLog" style="height: 350px; background: #0a0f1d; color: #38bdf8; padding: 14px; border-radius: 10px; overflow-y: auto; font-family: 'SF Mono', Consolas, monospace; font-size: 0.85rem; line-height: 1.4; border: 1px solid #1e293b; text-align: left; white-space: pre-wrap; word-break: break-all;">Select a COM port and click 'Connect Serial' to stream live telemetry logs...\n</pre>
+
+            <!-- Serial Input Bar -->
+            <div style="display: flex; gap: 8px; margin-top: 14px;">
+              <input type="text" id="serialSendInput" placeholder="Type serial command here..." onkeypress="if(event.key==='Enter') sendSerialCommand()" style="flex: 1; background: #0f172a; color: #fff; border: 1px solid #334155; padding: 10px 14px; border-radius: 8px; font-size: 0.85rem;">
+              <select id="serialLineEnding" style="background: #0f172a; color: #94a3b8; border: 1px solid #334155; padding: 8px; border-radius: 8px; font-size: 0.8rem;">
+                <option value="both">Both NL & CR (\r\n)</option>
+                <option value="nl">Newline (\n)</option>
+                <option value="none">No ending</option>
+              </select>
+              <button onclick="sendSerialCommand()" style="background: #0284c7; color: #fff; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer;">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', html);
+  }
+
+  const overlay = document.getElementById('serialMonitorOverlay');
+  overlay.classList.add('active');
+};
+
+globalThis.closeSerialMonitorModal = function() {
+  const overlay = document.getElementById('serialMonitorOverlay');
+  if (overlay) overlay.classList.remove('active');
+};
+
+globalThis.toggleWebSerialConnection = async function() {
+  if (isSerialConnected) {
+    await disconnectWebSerial();
+  } else {
+    await connectWebSerial();
+  }
+};
+
+globalThis.connectWebSerial = async function() {
+  try {
+    const baudRate = parseInt(document.getElementById('serialBaudRate').value) || 115200;
+    serialPort = await navigator.serial.requestPort();
+    await serialPort.open({ baudRate: baudRate });
+
+    isSerialConnected = true;
+    updateSerialUI(true);
+    appendSerialLog(`\n[WEB SERIAL] Connected successfully at ${baudRate} baud.\n`);
+
+    readSerialLoop();
+  } catch (err) {
+    console.error("Serial Connection Error:", err);
+    appendSerialLog(`\n[WEB SERIAL ERROR] ${err.message || err}\n`);
+  }
+};
+
+globalThis.disconnectWebSerial = async function() {
+  try {
+    if (serialReader) {
+      await serialReader.cancel();
+      serialReader = null;
+    }
+    if (serialPort) {
+      await serialPort.close();
+      serialPort = null;
+    }
+  } catch (err) {
+    console.error("Disconnect Error:", err);
+  } finally {
+    isSerialConnected = false;
+    updateSerialUI(false);
+    appendSerialLog(`\n[WEB SERIAL] Disconnected.\n`);
+  }
+};
+
+async function readSerialLoop() {
+  const textDecoder = new TextDecoderStream();
+  const readableStreamClosed = serialPort.readable.pipeTo(textDecoder.writable);
+  serialReader = textDecoder.readable.getReader();
+
+  try {
+    while (true) {
+      const { value, done } = await serialReader.read();
+      if (done) {
+        serialReader.releaseLock();
+        break;
+      }
+      if (value) {
+        appendSerialLog(value);
+      }
+    }
+  } catch (err) {
+    console.error("Serial Read Error:", err);
+  }
+}
+
+globalThis.sendSerialCommand = async function() {
+  const input = document.getElementById('serialSendInput');
+  const ending = document.getElementById('serialLineEnding').value;
+  let text = input.value;
+  if (!text || !serialPort || !isSerialConnected) return;
+
+  if (ending === 'both') text += '\r\n';
+  else if (ending === 'nl') text += '\n';
+
+  const textEncoder = new TextEncoderStream();
+  const writableStreamClosed = textEncoder.readable.pipeTo(serialPort.writable);
+  const writer = textEncoder.writable.getWriter();
+
+  await writer.write(text);
+  writer.releaseLock();
+
+  appendSerialLog(`> ${input.value}\n`);
+  input.value = '';
+};
+
+globalThis.clearSerialConsole = function() {
+  const term = document.getElementById('serialTerminalLog');
+  if (term) term.textContent = '[Console Cleared]\n';
+};
+
+function appendSerialLog(text) {
+  const term = document.getElementById('serialTerminalLog');
+  if (!term) return;
+  term.textContent += text;
+  if (autoScrollSerial) {
+    term.scrollTop = term.scrollHeight;
+  }
+}
+
+function updateSerialUI(connected) {
+  const btn = document.getElementById('serialConnectBtn');
+  const badge = document.getElementById('serialStatusBadge');
+  if (connected) {
+    btn.innerText = '🔌 Disconnect';
+    btn.style.background = '#ef4444';
+    badge.innerText = 'CONNECTED';
+    badge.style.background = 'rgba(16, 185, 129, 0.2)';
+    badge.style.color = '#10b981';
+  } else {
+    btn.innerText = '🔌 Connect Serial';
+    btn.style.background = '#10b981';
+    badge.innerText = 'DISCONNECTED';
+    badge.style.background = '#334155';
+    badge.style.color = '#94a3b8';
+  }
+}
+
 
 // =============================================
 //  STL VIEWER INITIALIZATION
@@ -1316,21 +1563,5 @@ function renderAllStlViewers(containers) {
   });
 }
 
-// =============================================
-//  FIRMWARE FLASHER ROUTER
-// =============================================
-globalThis.openRealFirmwareFlasher = function (url, boardName = '') {
-  const lcUrl = (url || '').toLowerCase();
-  const mc = (currentProject?.hardwareSpecs?.microcontroller || boardName || '').toLowerCase();
-
-  if (lcUrl.endsWith('.hex') || mc.includes('arduino') || mc.includes('atmega') || mc.includes('uno') || mc.includes('nano')) {
-    if (typeof openAvrFlasherModal === 'function') {
-      openAvrFlasherModal(url, currentProject?.title || 'Arduino Firmware');
-    } else {
-      alert('AVR Web Flasher module is loading. Please try again in a moment.');
-    }
-  } else {
-    alert('This firmware is for ESP32/ESP8266. Please use ESP Web Tools in Chrome or Edge.');
-  }
-};
+// End of projects.js
 
