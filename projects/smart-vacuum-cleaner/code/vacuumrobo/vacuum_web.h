@@ -1,19 +1,21 @@
-// comment for this is vacum robot car code
+// Smart Vacuum Cleaner Robot - Web Interface & PROGMEM HTML Dashboard
+
 #ifndef VACUUM_WEB_H
 #define VACUUM_WEB_H
 
 #include <Arduino.h>
 
-// --- HTML / CSS / JS WEB DASHBOARD ---
+// HTML5 + CSS3 + Vanilla JavaScript Web Dashboard stored in flash PROGMEM
 const char INDEX_HTML[] PROGMEM = R"rawliteral(
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Smart Vacuum Cleaner Robot</title>
+    <title>Smart Vacuum Cleaner Control Panel</title>
     <style>
         :root {
+            /* DARK THEME (DEFAULT) */
             --bg-color: #0b1329;
             --card-bg: #142242;
             --card-border: rgba(255, 255, 255, 0.08);
@@ -21,19 +23,46 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
             --accent-glow: rgba(0, 210, 255, 0.4);
             --success: #10b981;
             --success-glow: rgba(16, 185, 129, 0.4);
+            --warning: #f59e0b;
             --danger: #ef4444;
+            --danger-glow: rgba(239, 68, 68, 0.4);
             --text: #f1f5f9;
             --subtext: #94a3b8;
+            --gauge-bg: #1e293b;
+            --joystick-bg: radial-gradient(circle, #101c38 0%, #0a1020 100%);
+            --joystick-border: rgba(0, 210, 255, 0.35);
+            --badge-bg: rgba(255, 255, 255, 0.06);
+        }
+
+        [data-theme="light"] {
+            /* LIGHT THEME */
+            --bg-color: #f1f5f9;
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 0, 0, 0.08);
+            --accent: #0284c7;
+            --accent-glow: rgba(2, 132, 199, 0.25);
+            --success: #059669;
+            --success-glow: rgba(5, 150, 105, 0.25);
+            --warning: #d97706;
+            --danger: #dc2626;
+            --danger-glow: rgba(220, 38, 38, 0.25);
+            --text: #0f172a;
+            --subtext: #64748b;
+            --gauge-bg: #e2e8f0;
+            --joystick-bg: radial-gradient(circle, #f8fafc 0%, #e2e8f0 100%);
+            --joystick-border: rgba(2, 132, 199, 0.4);
+            --badge-bg: rgba(0, 0, 0, 0.05);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, sans-serif;
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
@@ -47,26 +76,46 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
         }
 
         header {
-            text-align: center;
-            margin-bottom: 1.2rem;
             width: 100%;
             max-width: 900px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            padding: 0.5rem 0;
         }
 
-        header h1 {
-            font-size: 1.7rem;
+        .header-title h1 {
+            font-size: 1.6rem;
             color: var(--accent);
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 0.6rem;
             text-shadow: 0 0 12px var(--accent-glow);
         }
 
-        header p {
-            font-size: 0.85rem;
+        .header-title p {
+            font-size: 0.82rem;
             color: var(--subtext);
-            margin-top: 0.3rem;
+            margin-top: 0.2rem;
+        }
+
+        .theme-toggle-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text);
+            padding: 0.55rem 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .theme-toggle-btn:hover {
+            border-color: var(--accent);
         }
 
         .dashboard-grid {
@@ -87,7 +136,7 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
             background: var(--card-bg);
             border-radius: 20px;
             padding: 1.3rem;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
             border: 1px solid var(--card-border);
             display: flex;
             flex-direction: column;
@@ -97,40 +146,33 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
 
         .card-title {
             width: 100%;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 0.95rem;
+            font-weight: 700;
             color: var(--subtext);
             margin-bottom: 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        /* VACUUM AIR PUMP RELAY CARD */
-        .relay-container {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-        }
-
+        /* VACUUM RELAY CARD */
         .relay-btn {
             width: 100%;
             padding: 1.2rem;
             border-radius: 16px;
             border: 2px solid var(--card-border);
-            background: #1e293b;
+            background: var(--gauge-bg);
             color: var(--text);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 0.8rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .relay-btn.active {
@@ -140,22 +182,40 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
             color: #ffffff;
         }
 
-        .relay-status-pill {
+        .status-pill {
             font-size: 0.75rem;
             padding: 4px 10px;
             border-radius: 20px;
-            background: rgba(255,255,255,0.1);
+            background: var(--badge-bg);
             color: var(--subtext);
-            text-transform: uppercase;
+            font-weight: 600;
             letter-spacing: 0.5px;
         }
 
-        .relay-btn.active .relay-status-pill {
-            background: rgba(255,255,255,0.25);
-            color: #ffffff;
+        /* OBSTACLE ALERT BANNER */
+        .obstacle-banner {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid var(--danger);
+            border-radius: 12px;
+            color: var(--danger);
+            font-weight: bold;
+            font-size: 0.85rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            animation: pulseAlert 1.5s infinite;
+        }
+        @keyframes pulseAlert {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
-        /* VIRTUAL JOYSTICK CANVAS */
+        /* LARGE PRECISION JOYSTICK */
         .joystick-card {
             display: flex;
             flex-direction: column;
@@ -165,49 +225,52 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
 
         .joystick-wrapper {
             position: relative;
-            width: 220px;
-            height: 220px;
+            width: 300px;
+            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
             touch-action: none;
+            margin: 0.5rem 0;
         }
 
         #joystickCanvas {
-            width: 220px;
-            height: 220px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
-            background: radial-gradient(circle, #101c38 0%, #0a1020 100%);
-            border: 3px solid rgba(0, 210, 255, 0.3);
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.8), 0 0 15px rgba(0, 210, 255, 0.1);
+            background: var(--joystick-bg);
+            border: 3px solid var(--joystick-border);
+            box-shadow: inset 0 0 25px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow);
             cursor: pointer;
         }
 
-        .speed-gauge {
+        /* SPEED GAUGE & DUAL MOTOR METERS */
+        .speed-gauge-section {
             width: 100%;
-            margin-top: 1.2rem;
+            margin-top: 1rem;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.75rem;
         }
 
         .speed-header {
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
+            font-weight: 600;
             color: var(--subtext);
         }
 
-        .speed-bar-bg {
+        .progress-bar-bg {
             width: 100%;
-            height: 10px;
-            background: #1e293b;
+            height: 12px;
+            background: var(--gauge-bg);
             border-radius: 10px;
             overflow: hidden;
             border: 1px solid var(--card-border);
         }
 
-        .speed-bar-fill {
+        .progress-bar-fill {
             height: 100%;
             width: 0%;
             background: linear-gradient(90deg, #00d2ff 0%, #3b82f6 100%);
@@ -215,7 +278,31 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
             transition: width 0.1s linear;
         }
 
-        /* DIAGNOSTICS LIST */
+        .dual-motor-meters {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            width: 100%;
+            margin-top: 0.2rem;
+        }
+
+        .motor-meter {
+            background: var(--badge-bg);
+            padding: 0.6rem;
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .motor-meter-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--subtext);
+        }
+
+        /* DIAGNOSTICS & TELEMETRY LIST */
         .diag-list {
             width: 100%;
             list-style: none;
@@ -236,82 +323,136 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
 
         .diag-label { color: var(--subtext); }
         .diag-val { font-weight: 600; font-family: "SF Mono", Consolas, monospace; }
-        
+
         .badge {
-            padding: 3px 8px;
+            padding: 4px 10px;
             border-radius: 6px;
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
         }
         .badge-cyan { background: rgba(0, 210, 255, 0.15); color: var(--accent); border: 1px solid rgba(0, 210, 255, 0.3); }
         .badge-green { background: rgba(16, 185, 129, 0.15); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.3); }
+        .badge-danger { background: rgba(239, 68, 68, 0.15); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-warning { background: rgba(245, 158, 11, 0.15); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.3); }
 
-        .chassis-info {
+        .chassis-footer {
             width: 100%;
-            margin-top: 0.8rem;
+            margin-top: 1rem;
             padding: 0.75rem;
-            background: rgba(0, 210, 255, 0.05);
+            background: var(--badge-bg);
             border-radius: 10px;
-            border: 1px dashed rgba(0, 210, 255, 0.2);
+            border: 1px dashed var(--card-border);
             font-size: 0.78rem;
             color: var(--subtext);
             text-align: center;
         }
-        .chassis-info a { color: var(--accent); text-decoration: none; font-weight: bold; }
+        .chassis-footer a { color: var(--accent); text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>🧹 Smart Vacuum Robot</h1>
-        <p>Thingiverse 5116129 Body • ESP8266 WiFi Remote Joystick</p>
+        <div class="header-title">
+            <h1>🧹 Smart Vacuum Robot</h1>
+            <p>Thingiverse 5116129 Body • Multi-WiFi & Precision Control</p>
+        </div>
+        <button class="theme-toggle-btn" onclick="toggleTheme()">
+            <span id="themeIcon">🌙</span>
+            <span id="themeText">Dark Mode</span>
+        </button>
     </header>
 
     <div class="dashboard-grid">
-        
-        <!-- VACUUM AIR PUMP RELAY CONTROL -->
+
+        <!-- AIR PUMP SUCTION RELAY -->
         <div class="card">
             <div class="card-title">
                 <span>Air Pump Suction</span>
-                <span class="relay-status-pill" id="pumpPill">STANDBY</span>
+                <span class="status-pill" id="pumpPill">STANDBY</span>
             </div>
-            <div class="relay-container">
-                <button class="relay-btn" id="vacuumToggleBtn" onclick="toggleVacuumPump()">
-                    <span id="pumpIcon">🌀</span>
-                    <span id="pumpBtnText">START VACUUM PUMP</span>
-                </button>
-            </div>
+            <button class="relay-btn" id="vacuumToggleBtn" onclick="toggleVacuumPump()">
+                <span id="pumpIcon">🌀</span>
+                <span id="pumpBtnText">START VACUUM PUMP</span>
+            </button>
         </div>
 
-        <!-- SMOOTH VIRTUAL TOUCH JOYSTICK -->
-        <div class="card joystick-card">
+        <!-- DUAL ULTRASONIC SENSORS MONITOR -->
+        <div class="card">
             <div class="card-title">
-                <span>Joystick Drive Control</span>
+                <span>Ultrasonic Sensors (Auto-Detect)</span>
+                <span class="badge badge-cyan" id="obstacleStatusBadge">CLEAR</span>
+            </div>
+
+            <div class="obstacle-banner" id="obstacleBanner">
+                <span>⚠️ OBSTACLE DETECTED! FORWARD MOTION INHIBITED</span>
+            </div>
+
+            <ul class="diag-list">
+                <li class="diag-item">
+                    <span class="diag-label">Sensor 1 (Front Left):</span>
+                    <span class="badge badge-cyan" id="sensor1Badge">Connecting...</span>
+                </li>
+                <li class="diag-item">
+                    <span class="diag-label">Sensor 2 (Front Right):</span>
+                    <span class="badge badge-cyan" id="sensor2Badge">Connecting...</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- HIGH-PRECISION 300px JOYSTICK -->
+        <div class="card joystick-card" style="grid-column: 1 / -1;">
+            <div class="card-title">
+                <span>Precision Joystick Drive Control (Deadman Switch)</span>
                 <span id="actionBadge" class="badge badge-cyan">STOPPED</span>
             </div>
             
             <div class="joystick-wrapper">
-                <canvas id="joystickCanvas" width="220" height="220"></canvas>
+                <canvas id="joystickCanvas" width="300" height="300"></canvas>
             </div>
 
-            <div class="speed-gauge">
+            <div class="speed-gauge-section">
                 <div class="speed-header">
-                    <span>Motor Power (Proportional)</span>
+                    <span>Overall Power Displacement</span>
                     <span id="speedGaugeText">0% (PWM 0)</span>
                 </div>
-                <div class="speed-bar-bg">
-                    <div class="speed-bar-fill" id="speedBarFill"></div>
+                <div class="progress-bar-bg">
+                    <div class="progress-bar-fill" id="speedBarFill"></div>
+                </div>
+
+                <div class="dual-motor-meters">
+                    <div class="motor-meter">
+                        <div class="motor-meter-header">
+                            <span>Left Motor</span>
+                            <span id="leftMotorVal">PWM 0</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="leftMotorFill"></div>
+                        </div>
+                    </div>
+                    <div class="motor-meter">
+                        <div class="motor-meter-header">
+                            <span>Right Motor</span>
+                            <span id="rightMotorVal">PWM 0</span>
+                        </div>
+                        <div class="progress-bar-bg">
+                            <div class="progress-bar-fill" id="rightMotorFill"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- SYSTEM DIAGNOSTICS CARD -->
+        <!-- SYSTEM DIAGNOSTICS & RESET REASON CARD -->
         <div class="card" style="grid-column: 1 / -1;">
             <div class="card-title">
-                <span>System Diagnostics & Network Telemetry</span>
+                <span>System Telemetry & Hardware Diagnostics</span>
                 <span class="badge badge-green" id="mdnsBadge">vacuum.local</span>
             </div>
             <ul class="diag-list">
+                <li class="diag-item">
+                    <span class="diag-label">ESP8266 Reset Reason:</span>
+                    <span class="diag-val" style="color: var(--warning);" id="resetReasonVal">Fetching...</span>
+                </li>
                 <li class="diag-item">
                     <span class="diag-label">WiFi Connection Mode:</span>
                     <span class="diag-val" id="wifiMode">Initializing...</span>
@@ -329,10 +470,6 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
                     <span class="diag-val" id="rssiVal">- dBm</span>
                 </li>
                 <li class="diag-item">
-                    <span class="diag-label">Vacuum Relay State:</span>
-                    <span class="diag-val" id="relayStateVal">OFF</span>
-                </li>
-                <li class="diag-item">
                     <span class="diag-label">Joystick Vector (X, Y):</span>
                     <span class="diag-val" id="vectorVal">(0, 0)</span>
                 </li>
@@ -346,18 +483,40 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
                 </li>
             </ul>
 
-            <div class="chassis-info">
-                Robot Chassis Model: <strong>Marcus Lanzoni 3D Vacuum Body</strong> (<a href="https://www.thingiverse.com/thing:5116129" target="_blank">Thingiverse #5116129</a>)
+            <div class="chassis-footer">
+                Chassis 3D Reference: <strong>Marcus Lanzoni Vacuum Cleaner</strong> (<a href="https://www.thingiverse.com/thing:5116129" target="_blank">Thingiverse #5116129</a>)
             </div>
         </div>
     </div>
 
     <script>
-        let vacuumActive = false;
-        let lastSendTime = 0;
-        const SEND_INTERVAL = 50; // send command every 50ms during drag
+        // --- THEME SWITCHER (DARK / LIGHT) ---
+        let currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateThemeUI();
+
+        function toggleTheme() {
+            currentTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            localStorage.setItem('theme', currentTheme);
+            updateThemeUI();
+            drawJoystick();
+        }
+
+        function updateThemeUI() {
+            const icon = document.getElementById('themeIcon');
+            const text = document.getElementById('themeText');
+            if (currentTheme === 'light') {
+                icon.innerText = '☀️';
+                text.innerText = 'Light Mode';
+            } else {
+                icon.innerText = '🌙';
+                text.innerText = 'Dark Mode';
+            }
+        }
 
         // --- VACUUM RELAY TOGGLE ---
+        let vacuumActive = false;
         function toggleVacuumPump() {
             vacuumActive = !vacuumActive;
             updateVacuumUI(vacuumActive);
@@ -382,57 +541,65 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
             }
         }
 
-        // --- VIRTUAL JOYSTICK CANVAS ---
+        // --- ENLARGED 300px PRECISION JOYSTICK DRIVE ---
         const canvas = document.getElementById('joystickCanvas');
         const ctx = canvas.getContext('2d');
         const width = canvas.width;
         const height = canvas.height;
         const centerX = width / 2;
         const centerY = height / 2;
-        const maxRadius = 75; // outer ring boundary
+        const maxRadius = 110;  // enlarged boundary radius
+        const deadZone = 12;     // 10% deadzone radius
 
         let stickX = centerX;
         let stickY = centerY;
         let isDragging = false;
+        let lastSendTime = 0;
+        const SEND_INTERVAL = 40; // 40ms stream interval (~25Hz)
 
         function drawJoystick() {
             ctx.clearRect(0, 0, width, height);
 
-            // Draw Base Outer Ring
+            const isLight = (currentTheme === 'light');
+            const primaryColor = isLight ? '#0284c7' : '#00d2ff';
+            const ringColor = isLight ? 'rgba(2, 132, 199, 0.3)' : 'rgba(0, 210, 255, 0.3)';
+            const knobFill = isDragging ? primaryColor : (isLight ? '#94a3b8' : '#334155');
+
+            // Draw Outer Ring Boundary
             ctx.beginPath();
             ctx.arc(centerX, centerY, maxRadius, 0, Math.PI * 2);
-            ctx.strokeStyle = 'rgba(0, 210, 255, 0.3)';
-            ctx.lineWidth = 4;
+            ctx.strokeStyle = ringColor;
+            ctx.lineWidth = 5;
             ctx.stroke();
 
-            // Draw Inner Target Grid
+            // Draw Deadzone Center Ring
             ctx.beginPath();
-            ctx.arc(centerX, centerY, 25, 0, Math.PI * 2);
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.08)';
+            ctx.arc(centerX, centerY, deadZone, 0, Math.PI * 2);
+            ctx.strokeStyle = isLight ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.1)';
             ctx.lineWidth = 2;
             ctx.stroke();
 
-            // Draw Connecting Drag Line if moving
+            // Draw Vector Drag Line
             if (isDragging) {
                 ctx.beginPath();
                 ctx.moveTo(centerX, centerY);
                 ctx.lineTo(stickX, stickY);
-                ctx.strokeStyle = 'rgba(0, 210, 255, 0.6)';
-                ctx.lineWidth = 3;
+                ctx.strokeStyle = primaryColor;
+                ctx.lineWidth = 4;
                 ctx.stroke();
             }
 
-            // Draw Stick Knob
+            // Draw Knob
             ctx.beginPath();
-            ctx.arc(stickX, stickY, 28, 0, Math.PI * 2);
-            ctx.fillStyle = isDragging ? '#00d2ff' : '#334155';
-            ctx.shadowColor = isDragging ? 'rgba(0, 210, 255, 0.8)' : 'transparent';
-            ctx.shadowBlur = isDragging ? 18 : 0;
+            ctx.arc(stickX, stickY, 36, 0, Math.PI * 2); // 36px knob
+            ctx.fillStyle = knobFill;
+            ctx.shadowColor = isDragging ? primaryColor : 'transparent';
+            ctx.shadowBlur = isDragging ? 22 : 0;
             ctx.fill();
             ctx.strokeStyle = '#ffffff';
-            ctx.lineWidth = 3;
+            ctx.lineWidth = 3.5;
             ctx.stroke();
-            ctx.shadowBlur = 0; // reset
+            ctx.shadowBlur = 0;
         }
 
         function handlePointerMove(clientX, clientY) {
@@ -450,19 +617,27 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
             stickX = centerX + dx;
             stickY = centerY + dy;
 
-            // Normalized X and Y (-100 to 100)
-            // Note: Invert Y so up is positive forward
+            // Vector math (-100 to +100)
             let normX = Math.round((dx / maxRadius) * 100);
-            let normY = Math.round((-dy / maxRadius) * 100);
+            let normY = Math.round((-dy / maxRadius) * 100); // Invert Y so up is positive
 
-            // Calculate Speed proportional to displacement distance
-            let speedPercent = Math.round((distance / maxRadius) * 100);
-            let speedPWM = Math.round((distance / maxRadius) * 255);
+            // Deadman Switch / Deadzone Check
+            let speedPercent = 0;
+            let speedPWM = 0;
+
+            if (distance > deadZone) {
+                // Map displacement cleanly starting from 50 PWM up to 255 PWM!
+                let ratio = (distance - deadZone) / (maxRadius - deadZone);
+                speedPercent = Math.round(ratio * 100);
+                speedPWM = Math.round(50 + ratio * (255 - 50));
+            } else {
+                normX = 0;
+                normY = 0;
+            }
 
             updateSpeedDisplay(speedPercent, speedPWM, normX, normY);
             drawJoystick();
 
-            // Send throttle control request
             const now = Date.now();
             if (now - lastSendTime > SEND_INTERVAL) {
                 lastSendTime = now;
@@ -496,10 +671,10 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
 
         function sendJoystickVector(x, y, speed) {
             fetch(`/control?x=${x}&y=${y}&speed=${speed}`)
-                .catch(err => console.error("Joystick Command Error", err));
+                .catch(err => console.error("Joystick Send Error", err));
         }
 
-        // Pointer / Touch / Mouse Event Listeners
+        // Pointer Event Listeners (Mouse & Touch)
         canvas.addEventListener('mousedown', (e) => {
             isDragging = true;
             handlePointerMove(e.clientX, e.clientY);
@@ -531,18 +706,60 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
             if (isDragging) resetJoystick();
         });
 
-        // --- STATUS POLLING ---
+        // --- SYSTEM STATUS TELEMETRY POLLING ---
         function pollStatus() {
             fetch('/status')
                 .then(res => res.json())
                 .then(data => {
-                    document.getElementById('wifiMode').innerText = data.wifi_mode;
-                    document.getElementById('ipAddr').innerText = data.ip;
-                    document.getElementById('rssiVal').innerText = data.rssi + ' dBm';
-                    document.getElementById('relayStateVal').innerText = data.vacuum_status;
-                    document.getElementById('uptimeVal').innerText = data.uptime + ' s';
-                    document.getElementById('heapVal').innerText = Math.round(data.free_heap / 1024) + ' KB';
-                    
+                    document.getElementById('resetReasonVal').innerText = data.reset_reason || 'Normal Boot';
+                    document.getElementById('wifiMode').innerText = data.wifi_mode || '-';
+                    document.getElementById('ipAddr').innerText = data.ip || '-';
+                    document.getElementById('rssiVal').innerText = (data.rssi || 0) + ' dBm';
+                    document.getElementById('uptimeVal').innerText = (data.uptime || 0) + ' s';
+                    document.getElementById('heapVal').innerText = Math.round((data.free_heap || 0) / 1024) + ' KB';
+
+                    // Update Motor Meters
+                    if (typeof data.left_motor_pwm !== 'undefined') {
+                        document.getElementById('leftMotorVal').innerText = `PWM ${data.left_motor_pwm}`;
+                        document.getElementById('leftMotorFill').style.width = `${Math.round((data.left_motor_pwm / 255) * 100)}%`;
+                    }
+                    if (typeof data.right_motor_pwm !== 'undefined') {
+                        document.getElementById('rightMotorVal').innerText = `PWM ${data.right_motor_pwm}`;
+                        document.getElementById('rightMotorFill').style.width = `${Math.round((data.right_motor_pwm / 255) * 100)}%`;
+                    }
+
+                    // Update Dual Ultrasonic Sensors Status
+                    const s1Badge = document.getElementById('sensor1Badge');
+                    if (data.sensor1_connected) {
+                        s1Badge.innerText = `${data.sensor1_dist_cm} cm`;
+                        s1Badge.className = 'badge badge-green';
+                    } else {
+                        s1Badge.innerText = 'NOT CONNECTED';
+                        s1Badge.className = 'badge badge-warning';
+                    }
+
+                    const s2Badge = document.getElementById('sensor2Badge');
+                    if (data.sensor2_connected) {
+                        s2Badge.innerText = `${data.sensor2_dist_cm} cm`;
+                        s2Badge.className = 'badge badge-green';
+                    } else {
+                        s2Badge.innerText = 'NOT CONNECTED';
+                        s2Badge.className = 'badge badge-warning';
+                    }
+
+                    // Obstacle Alert Banner
+                    const obsBanner = document.getElementById('obstacleBanner');
+                    const obsStatusBadge = document.getElementById('obstacleStatusBadge');
+                    if (data.obstacle_detected) {
+                        obsBanner.style.display = 'flex';
+                        obsStatusBadge.innerText = 'OBSTACLE NEAR';
+                        obsStatusBadge.className = 'badge badge-danger';
+                    } else {
+                        obsBanner.style.display = 'none';
+                        obsStatusBadge.innerText = 'CLEAR';
+                        obsStatusBadge.className = 'badge badge-cyan';
+                    }
+
                     if (typeof data.vacuum_relay !== 'undefined') {
                         updateVacuumUI(data.vacuum_relay);
                     }
@@ -551,11 +768,14 @@ const char INDEX_HTML[] PROGMEM = R"rawliteral(
         }
 
         drawJoystick();
-        setInterval(pollStatus, 1500);
+        setInterval(pollStatus, 1200);
         pollStatus();
     </script>
 </body>
 </html>
 )rawliteral";
+
+void initWebServer();
+void updateWebServer();
 
 #endif // VACUUM_WEB_H
