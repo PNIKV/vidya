@@ -810,63 +810,63 @@
       "Real-Time Tracking",
       "Community Solution"
     ],
-    "image": "projects/Bus-tracking/icon.png",
+    "image": "projects/bus-tracking/icon.png",
     "gallery": [
       {
-        "file": "projects/Bus-tracking/banner.png",
+        "file": "projects/bus-tracking/banner.png",
         "caption": "banner"
       },
       {
-        "file": "projects/Bus-tracking/bus-dashboard.jpeg",
+        "file": "projects/bus-tracking/bus-dashboard.jpeg",
         "caption": "bus-dashboard"
       },
       {
-        "file": "projects/Bus-tracking/busdetails1.jpeg",
+        "file": "projects/bus-tracking/busdetails1.jpeg",
         "caption": "busdetails1"
       },
       {
-        "file": "projects/Bus-tracking/icon.png",
+        "file": "projects/bus-tracking/icon.png",
         "caption": "icon"
       },
       {
-        "file": "projects/Bus-tracking/Poster1.png",
+        "file": "projects/bus-tracking/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Bus-tracking/Poster2.png",
+        "file": "projects/bus-tracking/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Bus-tracking/Poster3.png",
+        "file": "projects/bus-tracking/Poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Bus-tracking/stopdisplay.jpeg",
+        "file": "projects/bus-tracking/stopdisplay.jpeg",
         "caption": "stopdisplay"
       }
     ],
     "posters": [
       {
-        "file": "projects/Bus-tracking/Poster1.png",
+        "file": "projects/bus-tracking/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Bus-tracking/Poster2.png",
+        "file": "projects/bus-tracking/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Bus-tracking/Poster3.png",
+        "file": "projects/bus-tracking/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System.pdf",
+        "file": "projects/bus-tracking/Bus_Tracking_System.pdf",
         "name": "Bus_Tracking_System.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System2.pdf",
+        "file": "projects/bus-tracking/Bus_Tracking_System2.pdf",
         "name": "Bus_Tracking_System2.pdf",
         "type": "pdf"
       }
@@ -874,23 +874,23 @@
     "codeFiles": [
       {
         "name": "README.md",
-        "url": "projects/Bus-tracking/README.md",
+        "url": "projects/bus-tracking/README.md",
         "language": "Markdown"
       },
       {
         "name": "test.ino",
-        "url": "projects/Bus-tracking/test.ino",
+        "url": "projects/bus-tracking/test.ino",
         "language": "Arduino C++"
       }
     ],
     "bannerImages": [
-      "projects/Bus-tracking/banner.png"
+      "projects/bus-tracking/banner.png"
     ],
     "htmlDashboards": [
-      "projects/Bus-tracking/livebus (1).html",
-      "projects/Bus-tracking/livebus.html"
+      "projects/bus-tracking/livebus (1).html",
+      "projects/bus-tracking/livebus.html"
     ],
-    "liveUrl": "projects/Bus-tracking/livebus.html"
+    "liveUrl": "projects/bus-tracking/livebus.html"
   },
   {
     "id": "food-spoilage-detection-system",
@@ -1161,23 +1161,23 @@
     "image": "projects/images/gas-detector.jpg",
     "gallery": [
       {
-        "file": "projects/Gas-Detector/demo.jpeg",
+        "file": "projects/gas-detector/demo.jpeg",
         "caption": "demo"
       },
       {
-        "file": "projects/Gas-Detector/poster1.jpg",
+        "file": "projects/gas-detector/poster1.jpg",
         "caption": "Problem Statement"
       }
     ],
     "posters": [
       {
-        "file": "projects/Gas-Detector/poster1.jpg",
+        "file": "projects/gas-detector/poster1.jpg",
         "caption": "Problem Statement"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Gas-Detector/Gas-Detector-Sensor.pdf",
+        "file": "projects/gas-detector/Gas-Detector-Sensor.pdf",
         "name": "Gas-Detector-Sensor.pdf",
         "type": "pdf"
       }
@@ -1429,19 +1429,19 @@
     "image": "projects/images/jarakshak.jpg",
     "gallery": [
       {
-        "file": "projects/JaRakshak/poster1.png",
+        "file": "projects/jarakshak/poster1.png",
         "caption": "Problem Statement"
       }
     ],
     "posters": [
       {
-        "file": "projects/JaRakshak/poster1.png",
+        "file": "projects/jarakshak/poster1.png",
         "caption": "Problem Statement"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/JaRakshak/JalRakshak.pdf",
+        "file": "projects/jarakshak/JalRakshak.pdf",
         "name": "JalRakshak.pdf",
         "type": "pdf"
       }
@@ -2104,29 +2104,29 @@
     "image": "projects/images/robot-car.jpg",
     "gallery": [
       {
-        "file": "projects/Robot-Car/poster1.png",
+        "file": "projects/robot-car/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Robot-Car/poster2.png",
+        "file": "projects/robot-car/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Robot-Car/poster3.png",
+        "file": "projects/robot-car/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/Robot-Car/poster1.png",
+        "file": "projects/robot-car/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Robot-Car/poster2.png",
+        "file": "projects/robot-car/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Robot-Car/poster3.png",
+        "file": "projects/robot-car/poster3.png",
         "caption": "Future Scope"
       }
     ],
@@ -2506,51 +2506,51 @@
     "image": "projects/images/accident-detection-system.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "file": "projects/smart-accident-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "file": "projects/smart-accident-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "file": "projects/smart-accident-detection/poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (1).jpeg",
+        "file": "projects/smart-accident-detection/Project (1).jpeg",
         "caption": "project (1)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (2).jpeg",
+        "file": "projects/smart-accident-detection/Project (2).jpeg",
         "caption": "project (2)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (3).jpeg",
+        "file": "projects/smart-accident-detection/Project (3).jpeg",
         "caption": "project (3)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (4).jpeg",
+        "file": "projects/smart-accident-detection/Project (4).jpeg",
         "caption": "project (4)"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "file": "projects/smart-accident-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "file": "projects/smart-accident-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "file": "projects/smart-accident-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-Accident-Detection/Smart Accident Detection & Alert System.pdf",
+        "file": "projects/smart-accident-detection/Smart Accident Detection & Alert System.pdf",
         "name": "Smart Accident Detection & Alert System.pdf",
         "type": "pdf"
       }
@@ -2558,7 +2558,7 @@
     "codeFiles": [
       {
         "name": "AccidentDetectAlert.ino",
-        "url": "projects/Smart-Accident-Detection/AccidentDetectAlert_Code/AccidentDetectAlert.ino",
+        "url": "projects/smart-accident-detection/AccidentDetectAlert_Code/AccidentDetectAlert.ino",
         "language": "Arduino C++"
       }
     ]
@@ -2586,44 +2586,44 @@
     "image": "projects/images/smart-classroom.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-classroom/Poster1.png",
+        "file": "projects/smart-classroom/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-classroom/Poster2.png",
+        "file": "projects/smart-classroom/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-classroom/Poster3.png",
+        "file": "projects/smart-classroom/Poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-classroom/Project A3 Display Board.png",
+        "file": "projects/smart-classroom/Project A3 Display Board.png",
         "caption": "project a3 display board"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-classroom/Poster1.png",
+        "file": "projects/smart-classroom/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-classroom/Poster2.png",
+        "file": "projects/smart-classroom/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-classroom/Poster3.png",
+        "file": "projects/smart-classroom/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-classroom/Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
+        "file": "projects/smart-classroom/Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
         "name": "Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Smart-classroom/Smart_Classroom_Energy_Saver (2).pdf",
+        "file": "projects/smart-classroom/Smart_Classroom_Energy_Saver (2).pdf",
         "name": "Smart_Classroom_Energy_Saver (2).pdf",
         "type": "pdf"
       }
@@ -2716,35 +2716,35 @@
     "image": "projects/images/smart-fall-detection.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-fall-detection/poster1.png",
+        "file": "projects/smart-fall-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-fall-detection/poster2.png",
+        "file": "projects/smart-fall-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-fall-detection/poster3.png",
+        "file": "projects/smart-fall-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-fall-detection/poster1.png",
+        "file": "projects/smart-fall-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-fall-detection/poster2.png",
+        "file": "projects/smart-fall-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-fall-detection/poster3.png",
+        "file": "projects/smart-fall-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-fall-detection/Smart-fall-detection.pdf",
+        "file": "projects/smart-fall-detection/Smart-fall-detection.pdf",
         "name": "Smart-fall-detection.pdf",
         "type": "pdf"
       }
@@ -2752,14 +2752,14 @@
     "codeFiles": [
       {
         "name": "air_mouse_firmware.ino",
-        "url": "projects/Smart-fall-detection/air_mouse_firmware.ino",
+        "url": "projects/smart-fall-detection/air_mouse_firmware.ino",
         "language": "Arduino C++"
       }
     ],
     "htmlDashboards": [
-      "projects/Smart-fall-detection/fall_detection_dashboard.html"
+      "projects/smart-fall-detection/fall_detection_dashboard.html"
     ],
-    "liveUrl": "projects/Smart-fall-detection/fall_detection_dashboard.html"
+    "liveUrl": "projects/smart-fall-detection/fall_detection_dashboard.html"
   },
   {
     "id": "smart-bridge-flood-alert",
@@ -2854,44 +2854,44 @@
     "image": "projects/images/smart-bridge-flood-alert.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-Flood-Alert/poster1.png",
+        "file": "projects/smart-flood-alert/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster2.png",
+        "file": "projects/smart-flood-alert/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster3.png",
+        "file": "projects/smart-flood-alert/poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-Flood-Alert/smartbridge.jpeg",
+        "file": "projects/smart-flood-alert/smartbridge.jpeg",
         "caption": "smartbridge"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-Flood-Alert/poster1.png",
+        "file": "projects/smart-flood-alert/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster2.png",
+        "file": "projects/smart-flood-alert/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster3.png",
+        "file": "projects/smart-flood-alert/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge.pdf",
+        "file": "projects/smart-flood-alert/Smart_Flood_Alert_Bridge.pdf",
         "name": "Smart_Flood_Alert_Bridge.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Smart-Flood-Alert/smart_flood_alert_bridge_System_ppt.pdf",
+        "file": "projects/smart-flood-alert/smart_flood_alert_bridge_System_ppt.pdf",
         "name": "smart_flood_alert_bridge_System_ppt.pdf",
         "type": "pdf"
       }
@@ -3194,22 +3194,25 @@
   {
     "id": "smart-vacuum-cleaner",
     "title": "Smart Vacuum Cleaner",
-    "subtitle": "An Arduino-Based Automatic Floor Cleaning Robot",
+    "subtitle": "ESP8266 & WiFi Joystick Controlled Cleaning Robot with Relay Air Pump",
     "level": "Intermediate",
-    "color": "#2E86DE",
-    "desc": "A smart robotic vacuum cleaner that automatically detects obstacles and cleans floors using an Arduino-based control system.",
-    "fullDesc": "The Smart Vacuum Cleaner is an intelligent cleaning robot designed to reduce manual effort in household and educational environments. It uses an Arduino UNO microcontroller, ultrasonic sensor for obstacle detection, motor driver for movement control, and a high-speed fan to collect dust. The robot navigates automatically, avoids obstacles, and demonstrates the practical application of embedded systems, robotics, and automation.",
+    "color": "#00D2FF",
+    "desc": "A smart robotic vacuum cleaner powered by ESP8266 WiFi NodeMCU, featuring a 5V Relay Air Pump switch, proportional Virtual Touch Joystick navigation, dual STA/AP modes, and mDNS web dashboard.",
+    "fullDesc": "The Smart Vacuum Cleaner Robot is built upon the popular 3D printable chassis designed by Marcus Lanzoni (Thingiverse #5116129). Powered by an ESP8266 NodeMCU microcontroller, the robot connects seamlessly via local WiFi (STA mode) or creates its own Access Point (VacuumBot-AP). Users can control the robot in real-time through an interactive web dashboard accessed at http://vacuum.local/ or IP address. The web app features a smooth 2D Virtual Joystick where motor speed increases proportionally as the stick is pushed further out from center, along with a dedicated relay switch for the vacuum suction air pump and detailed live JSON diagnostic telemetry.",
     "difficulty": 3,
     "status": "Available",
     "tags": [
-      "Arduino",
+      "ESP8266",
+      "WiFi Joystick",
+      "Relay Control",
       "Robotics",
       "Automation",
       "IoT",
+      "Thingiverse 5116129",
       "STEM",
       "Vacuum Cleaner"
     ],
-    "date": "2026-08-06",
+    "date": "2026-08-13",
     "author": "Umeshwari Baviskar",
     "team": [
       {
@@ -3217,66 +3220,68 @@
         "role": "Trainer & Project Mentor"
       }
     ],
-    "innovation": "The project combines obstacle detection with automatic floor cleaning using an Arduino-based robotic platform. It demonstrates low-cost automation suitable for STEM education.",
-    "problemStatement": "Manual floor cleaning is time-consuming and requires continuous human effort. An affordable automated cleaning solution can improve efficiency while helping students learn robotics and automation.",
-    "solutionApproach": "The robot uses an ultrasonic sensor to detect obstacles and an Arduino UNO to control movement through an L293D motor driver. A high-speed fan creates suction to collect dust while the robot automatically navigates the floor.",
+    "innovation": "Combines a 3D printed vacuum chassis (Thingiverse #5116129) with ESP8266 WiFi remote control, smooth touch virtual joystick vector steering, proportional displacement speed scaling, relay air pump switching, and mDNS zero-configuration web access.",
+    "problemStatement": "Manual cleaning robots often lack intuitive remote control and telemetry visibility. Providing a smooth touch joystick interface with variable speed and dedicated relay suction pump control makes floor cleaning educational and highly efficient.",
+    "solutionApproach": "An ESP8266 NodeMCU controls an L298N/L293D motor driver and a 5V/12V relay module connected to a high-speed vacuum suction air pump. The onboard web server renders a smooth HTML5 Canvas Virtual Joystick that maps 2D touch vectors directly to differential motor speeds, while serving rich JSON diagnostics at /status.",
     "hardwareSpecs": {
-      "microcontroller": "Arduino UNO",
+      "microcontroller": "ESP8266 NodeMCU / WeMos D1 Mini",
       "operatingVoltage": "5V DC",
-      "motorDriver": "L293D Motor Driver",
-      "sensor": "HC-SR04 Ultrasonic Sensor",
-      "communication": "HC-05 Bluetooth (Optional)",
-      "powerSupply": "7.4V Li-ion Battery Pack"
+      "motorDriver": "L298N / L293D Motor Driver",
+      "vacuumPumpRelay": "5V 1-Channel Optocoupler Relay Module (GPIO2 / D4)",
+      "vacuumPump": "12V High-Speed DC Suction Fan / Air Pump",
+      "chassisModel": "Marcus Lanzoni 3D Vacuum Robot (Thingiverse 5116129)",
+      "communication": "WiFi 802.11 b/g/n (STA + Soft-AP fallback), mDNS (vacuum.local)",
+      "powerSupply": "7.4V - 11.1V Li-ion / LiPo Battery Pack"
     },
     "components": [
-      "Arduino UNO",
-      "HC-SR04 Ultrasonic Sensor",
-      "L293D Motor Driver",
-      "2 DC Geared Motors",
-      "2 Wheels",
-      "Caster Wheel",
-      "High-Speed Vacuum Fan",
-      "Dust Collection Chamber",
-      "HC-05 Bluetooth Module (Optional)",
-      "Battery Pack",
+      "ESP8266 NodeMCU Microcontroller",
+      "3D Printed Vacuum Chassis (Thingiverse #5116129 by Marcus Lanzoni)",
+      "5V 1-Channel Relay Module (Air Pump Switch)",
+      "12V DC High-Speed Air Vacuum Pump / Fan",
+      "L298N / L293D Motor Driver",
+      "2 N20 / TT DC Geared Motors",
+      "2 Drive Wheels & Caster Wheel",
+      "Dust Collection Filter Chamber",
+      "7.4V / 11.1V Rechargeable LiPo Battery",
       "Power Switch",
-      "Jumper Wires",
-      "Chassis"
+      "Jumper Wires & Hardware Fasteners"
     ],
     "componentRefs": [
-      "arduino-uno",
-      "hc-sr04",
-      "l293d",
+      "esp8266",
+      "relay-module",
+      "l298n",
       "dc-motor",
-      "hc-05"
+      "vacuum-pump"
     ],
     "guide": [
-      "Step 1: Assemble the chassis and mount the motors.",
-      "Step 2: Install the Arduino UNO and L293D motor driver.",
-      "Step 3: Connect the ultrasonic sensor to the Arduino.",
-      "Step 4: Install the vacuum fan and dust collection chamber.",
-      "Step 5: Connect the battery and verify all wiring.",
-      "Step 6: Upload the Arduino program.",
-      "Step 7: Test obstacle detection and automatic navigation.",
-      "Step 8: Verify the vacuum cleaning performance."
+      "Step 1: 3D print the Marcus Lanzoni chassis components (Thingiverse #5116129).",
+      "Step 2: Assemble the drive motors, wheels, caster wheel, and dust filtration chamber.",
+      "Step 3: Connect the 5V Relay module signal pin to ESP8266 D4 (GPIO2) to trigger the vacuum air pump.",
+      "Step 4: Wire the L298N motor driver inputs to ESP8266 D1, D2, D6, D7, D5 (ENA), D8 (ENB).",
+      "Step 5: Connect the battery pack power distribution to the motor driver, relay, and ESP8266 VIN pin.",
+      "Step 6: Open vacuumrobo.ino in Arduino IDE with ESP8266 board support installed.",
+      "Step 7: Upload the code and open Serial Monitor at 115200 baud.",
+      "Step 8: Connect your phone or laptop to WiFi 'STEM' or 'VacuumBot-AP' (Password: 12345678).",
+      "Step 9: Open browser and navigate to http://vacuum.local/ or IP address.",
+      "Step 10: Toggle the Vacuum Air Pump Relay ON and use the Virtual Joystick to clean!"
     ],
     "estimatedTime": "120 minutes",
     "prerequisites": [
-      "Basic Arduino Programming",
-      "Basic Electronics",
-      "Motor Driver Connections",
-      "Sensor Interfacing"
+      "ESP8266 Arduino Core setup",
+      "Basic Electronics & Relay Wiring",
+      "3D Printing & Mechanical Assembly",
+      "WiFi Network Configuration"
     ],
     "resources": [
       {
-        "icon": "📄",
-        "title": "Arduino UNO Documentation",
-        "url": "https://docs.arduino.cc/hardware/uno-rev3"
+        "icon": "🌐",
+        "title": "Thingiverse 5116129 - Vacuum Robot Chassis",
+        "url": "https://www.thingiverse.com/thing:5116129"
       },
       {
-        "icon": "🎥",
-        "title": "Ultrasonic Sensor Tutorial",
-        "url": "https://randomnerdtutorials.com/complete-guide-for-ultrasonic-sensor-hc-sr04/"
+        "icon": "📄",
+        "title": "ESP8266 NodeMCU Documentation",
+        "url": "https://esp8266.github.io/Arduino/versions/2.0.0/doc/reference.html"
       }
     ],
     "githubUrl": "https://github.com/your-repo/smart-vacuum-cleaner",
@@ -3284,25 +3289,26 @@
       {
         "videoId": "",
         "title": "Smart Vacuum Cleaner Demo",
-        "desc": "Demonstration of the Arduino-based Smart Vacuum Cleaner."
+        "desc": "Demonstration of the ESP8266 WiFi Smart Vacuum Cleaner with Relay Pump & Virtual Joystick."
       }
     ],
     "achievements": [
-      "Demonstrates robotics and automation concepts.",
-      "Suitable for STEM and Tinkering Lab exhibitions.",
-      "Low-cost educational automation project."
+      "3D Printed Robotics Integration (Thingiverse #5116129).",
+      "Proportional Virtual Touch Joystick navigation.",
+      "High-power Relay Suction Air Pump switching.",
+      "mDNS Zero-Config Web Dashboard & JSON Telemetry API."
     ],
     "keywords": [
       "Smart Vacuum Cleaner",
-      "Arduino",
+      "ESP8266",
+      "WiFi Joystick",
+      "Relay Control",
+      "Vacuum Pump",
+      "Thingiverse 5116129",
+      "Marcus Lanzoni",
       "Robot",
       "Automation",
-      "Cleaning Robot",
-      "Ultrasonic Sensor",
-      "L293D",
-      "STEM",
-      "Robotics",
-      "Tinkering Lab"
+      "STEM"
     ],
     "image": "projects/images/smart-vacuum-cleaner.jpg",
     "gallery": [
@@ -3342,9 +3348,60 @@
     ],
     "codeFiles": [
       {
+        "name": "vacuum_config.h",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuum_config.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "vacuum_motors.cpp",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuum_motors.cpp",
+        "language": "C++"
+      },
+      {
+        "name": "vacuum_motors.h",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuum_motors.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "vacuum_sensors.cpp",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuum_sensors.cpp",
+        "language": "C++"
+      },
+      {
+        "name": "vacuum_sensors.h",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuum_sensors.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "vacuum_web.cpp",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuum_web.cpp",
+        "language": "C++"
+      },
+      {
+        "name": "vacuum_web.h",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuum_web.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "vacuum_wifi.cpp",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuum_wifi.cpp",
+        "language": "C++"
+      },
+      {
+        "name": "vacuum_wifi.h",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuum_wifi.h",
+        "language": "C/C++ Header"
+      },
+      {
         "name": "vacuumrobo.ino",
-        "url": "projects/smart-vacuum-cleaner/vacuumrobo.ino",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/vacuumrobo.ino",
         "language": "Arduino C++"
+      }
+    ],
+    "firmware": [
+      {
+        "name": "vacuumrobo.ino.bin",
+        "url": "projects/smart-vacuum-cleaner/code/vacuumrobo/build/esp8266.esp8266.generic/vacuumrobo.ino.bin"
       }
     ]
   },
@@ -3370,13 +3427,13 @@
     "image": "projects/images/surakshapath.jpg",
     "gallery": [
       {
-        "file": "projects/SurakshaPath/SurakshaPath.png",
+        "file": "projects/surakshapath/SurakshaPath.png",
         "caption": "surakshapath"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/SurakshaPath/SurakshaPath.pdf",
+        "file": "projects/surakshapath/SurakshaPath.pdf",
         "name": "SurakshaPath.pdf",
         "type": "pdf"
       }
