@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rain Gate Console</title>
+<style>
+  :root{
+    --bg: #0d151d;
+    --panel: #131f29;
+    --panel-2: #17242f;
+    --line: #223243;
+    --text: #e7edf2;
+    --muted: #7c8fa0;
+    --rain: #49b8e0;
+    --rain-dim: #2a5f74;
+    --wet: #f0a63c;
+    --wet-dim: #6b4a1c;
+    --good: #4fd18b;
+    --bad: #e0625a;
+    --mono: ui-monospace, "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+    --sans: -apple-system, "Segoe UI", "Inter", Roboto, sans-serif;
+  }
+  *{ box-sizing:border-box; }
+  body{
+    margin:0;
+    background: radial-gradient(1200px 800px at 15% -10%, #10222c 0%, var(--bg) 55%);
+    color: var(--text);
+    font-family: var(--sans);
+    padding: 28px 20px 60px;
+  }
+  .wrap{ max-width: 1040px; margin: 0 auto; }
+
+  header{
+    display:flex; align-items:baseline; justify-content:space-between;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 16px; margin-bottom: 22px;
+    flex-wrap: wrap; gap: 10px;
+  }
+  .title{ font-weight: 700; letter-spacing: 0.5px; font-size: 22px; text-transform: uppercase; }
+  .title span{ color: var(--rain); }
+  .subtitle{ color: var(--muted); font-size: 12.5px; margin-top: 4px; }
+
+  .conn{ display:flex; align-items:center; gap:10px; }
+  .dot{ width:9px; height:9px; border-radius:50%; background:#4a5b6c; }
+  .dot.live{ background: var(--good); box-shadow: 0 0 8px var(--good); }
+  button{ font-family: var(--sans); }
+  #connBtn{
+    background: var(--rain); color: #06222c; border:none; font-weight:700;
+    padding: 9px 16px; border-radius: 6px; cursor:pointer; font-size: 13px; letter-spacing: 0.3px;
+  }
+  #connBtn:hover{ filter: brightness(1.08); }
+  #connBtn.disconnect{ background: var(--panel-2); color: var(--text); border:1px solid var(--line); }
+  #connLabel{ font-size: 12px; color: var(--muted); font-family: var(--mono); }
+
+  .grid{ display:grid; grid-template-columns: 220px 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  @media (max-width: 800px){ .grid{ grid-template-columns: 1fr; } }
+
+  .panel{ background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px; }
+  .label{ font-size: 10.5px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; font-weight: 600; }
+
+  /* Rain gauge tube */
+  .gauge-panel{ display:flex; flex-direction:column; align-items:center; }
+  .tube-holder{ position: relative; width: 70px; height: 190px; }
+  .tube-bg{ width: 100%; height: 100%; border-radius: 14px; background: var(--panel-2); border: 1px solid var(--line); overflow: hidden; position: relative; }
+  .tube-fill{ position:absolute; bottom:0; left:0; width:100%; background: linear-gradient(180deg, var(--rain), var(--rain-dim)); transition: height 220ms ease, background 300ms ease; height: 5%; }
+  .tube-fill.wet{ background: linear-gradient(180deg, var(--wet), var(--wet-dim)); }
+  .rain-value{ font-family: var(--mono); font-size: 28px; font-weight: 600; margin-top: 14px; }
+  .rain-caption{ color: var(--muted); font-size: 11px; margin-top: 2px; }
+  .status-pill{ margin-top: 12px; padding: 5px 14px; border-radius: 20px; font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 1px; background: var(--panel-2); color: var(--rain); border: 1px solid var(--rain-dim); }
+  .status-pill.wet{ color: var(--wet); border-color: var(--wet-dim); background: #241a0c; }
+
+  /* Servo dials */
+  .servo-panel{ display:flex; flex-direction:column; gap: 14px; }
+  .servo-row{ display:flex; align-items:center; gap: 14px; }
+  .servo-info{ font-family: var(--mono); flex:1; }
+  .servo-name{ font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; display:flex; justify-content:space-between; align-items:center; }
+  .servo-angle{ font-size: 22px; font-weight: 600; }
+  .en-toggle{ display:flex; align-items:center; gap:5px; font-size: 10px; color: var(--muted); text-transform:none; letter-spacing:0; }
+  .en-toggle input{ accent-color: var(--good); }
+
+  /* Mode panel */
+  .mode-panel{ display:flex; flex-direction:column; }
+  .mode-switch{ display:flex; border: 1px solid var(--line); border-radius: 8px; overflow:hidden; margin-bottom: 14px; }
+  .mode-switch button{ flex:1; padding: 9px 0; background: var(--panel-2); color: var(--muted); border:none; cursor:pointer; font-size: 12.5px; font-weight:700; letter-spacing:0.5px; }
+  .mode-switch button.active{ background: var(--rain); color: #06222c; }
+  .manual-slider{ margin-bottom: 12px; }
+  .manual-slider .row-label{ display:flex; justify-content:space-between; font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-bottom: 4px; }
+  input[type=range]{ width:100%; accent-color: var(--rain); }
+  input[type=range]:disabled{ opacity: 0.35; }
+
+  /* Config panel (full width) */
+  .config-panel{ margin-bottom: 16px; }
+  .config-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 800px){ .config-grid{ grid-template-columns: 1fr 1fr; } }
+  .cfg-item .row-label{ display:flex; justify-content:space-between; font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-bottom: 6px; }
+  .cfg-item .row-label b{ color: var(--text); font-size: 13px; }
+  .config-actions{ display:flex; gap:10px; margin-top: 18px; }
+  .config-actions button{
+    flex:1; padding: 10px; border-radius: 6px; cursor:pointer; font-size: 12.5px; font-weight: 700; letter-spacing: 0.3px; border: 1px solid var(--line);
+  }
+  #saveBtn{ background: var(--good); color: #06291a; border:none; }
+  #resetBtn{ background: var(--panel-2); color: var(--bad); }
+  .hint{ color: var(--muted); font-size: 11.5px; margin-top: 14px; line-height:1.5; }
+
+  .row2{ display:grid; grid-template-columns: 1fr 260px; gap:16px; }
+  @media (max-width: 800px){ .row2{ grid-template-columns: 1fr; } }
+  .spark-holder{ height: 100px; }
+  #sparkline{ width:100%; height:100%; display:block; }
+
+  #log{ font-family: var(--mono); font-size: 11.5px; color: var(--muted); background: var(--panel-2); border:1px solid var(--line); border-radius: 8px; height: 140px; overflow-y: auto; padding: 10px 12px; margin-top: 4px; }
+  #log div.wet-line{ color: var(--wet); }
+  #log div.dry-line{ color: var(--rain); }
+  #log div.sys-line{ color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div>
+      <div class="title">RAIN <span>GATE</span> CONSOLE</div>
+      <div class="subtitle">Live telemetry &amp; control &middot; Arduino Uno &middot; 2&times; Servo &middot; Rain Sensor</div>
+    </div>
+    <div class="conn">
+      <span id="connLabel">not connected</span>
+      <span class="dot" id="connDot"></span>
+      <button id="connBtn">Connect Device</button>
+    </div>
+  </header>
+
+  <div class="grid">
+    <div class="panel gauge-panel">
+      <div class="label">Rain Sensor</div>
+      <div class="tube-holder">
+        <div class="tube-bg"><div class="tube-fill" id="tubeFill"></div></div>
+      </div>
+      <div class="rain-value" id="rainValue">--</div>
+      <div class="rain-caption">analog reading &middot; 0&ndash;1023</div>
+      <div class="status-pill" id="statusPill">DRY</div>
+    </div>
+
+    <div class="panel servo-panel">
+      <div class="label">Servo Position</div>
+      <div class="servo-row">
+        <div class="servo-info">
+          <div class="servo-name">
+            <span>Servo 1 &middot; Pin 9</span>
+            <label class="en-toggle"><input type="checkbox" id="en1" checked> auto</label>
+          </div>
+          <div class="servo-angle"><span id="angle1">0</span>&deg;</div>
+        </div>
+      </div>
+      <div class="servo-row">
+        <div class="servo-info">
+          <div class="servo-name">
+            <span>Servo 2 &middot; Pin 10</span>
+            <label class="en-toggle"><input type="checkbox" id="en2" checked> auto</label>
+          </div>
+          <div class="servo-angle"><span id="angle2">0</span>&deg;</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel mode-panel">
+      <div class="label">Control Mode</div>
+      <div class="mode-switch">
+        <button id="modeAutoBtn" class="active">AUTO</button>
+        <button id="modeManualBtn">MANUAL</button>
+      </div>
+      <div class="manual-slider">
+        <div class="row-label"><span>Servo 1 angle</span><span id="manual1Value">0&deg;</span></div>
+        <input type="range" id="manual1" min="0" max="180" value="0" disabled>
+      </div>
+      <div class="manual-slider">
+        <div class="row-label"><span>Servo 2 angle</span><span id="manual2Value">0&deg;</span></div>
+        <input type="range" id="manual2" min="0" max="180" value="0" disabled>
+      </div>
+      <div class="hint">In MANUAL mode auto-triggering pauses &mdash; drag a slider to drive that servo directly.</div>
+    </div>
+  </div>
+
+  <div class="panel config-panel">
+    <div class="label">Auto Trigger Settings</div>
+    <div class="config-grid">
+      <div class="cfg-item">
+        <div class="row-label"><span>Wet trip point</span><b id="threshValue">100</b></div>
+        <input type="range" id="threshSlider" min="0" max="1023" value="100">
+      </div>
+      <div class="cfg-item">
+        <div class="row-label"><span>Hysteresis gap</span><b id="hystValue">50</b></div>
+        <input type="range" id="hystSlider" min="0" max="300" value="50">
+      </div>
+      <div class="cfg-item">
+        <div class="row-label"><span>Wet angle</span><b id="wetAngleValue">90&deg;</b></div>
+        <input type="range" id="wetAngleSlider" min="0" max="180" value="90">
+      </div>
+      <div class="cfg-item">
+        <div class="row-label"><span>Dry angle</span><b id="dryAngleValue">0&deg;</b></div>
+        <input type="range" id="dryAngleSlider" min="0" max="180" value="0">
+      </div>
+    </div>
+    <div class="config-actions">
+      <button id="saveBtn">Save to Arduino (EEPROM)</button>
+      <button id="resetBtn">Reset to Defaults</button>
+    </div>
+    <div class="hint">
+      Reading falls below the trip point &rarr; WET &rarr; servos move to the wet angle.
+      It has to rise past <b>trip point + hysteresis</b> before it's called DRY again &mdash; that gap stops
+      the servo chattering when the reading sits right on the edge. Sliders apply immediately; use
+      <b>Save to Arduino</b> to make them survive a power cycle.
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="panel">
+      <div class="label">Reading History</div>
+      <div class="spark-holder"><canvas id="sparkline"></canvas></div>
+    </div>
+    <div class="panel">
+      <div class="label">Event Log</div>
+      <div id="log"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+let port, reader, writer, keepReading = false;
+let readBuffer = "";
+const history = [];
+const MAX_HISTORY = 120;
+let currentThreshold = 100;
+let suppressEcho = false; // avoid re-sending a command while applying a value that just arrived from the device
+
+const connBtn = document.getElementById('connBtn');
+const connLabel = document.getElementById('connLabel');
+const connDot = document.getElementById('connDot');
+const rainValueEl = document.getElementById('rainValue');
+const tubeFill = document.getElementById('tubeFill');
+const statusPill = document.getElementById('statusPill');
+const angle1El = document.getElementById('angle1');
+const angle2El = document.getElementById('angle2');
+const en1 = document.getElementById('en1');
+const en2 = document.getElementById('en2');
+const modeAutoBtn = document.getElementById('modeAutoBtn');
+const modeManualBtn = document.getElementById('modeManualBtn');
+const manual1 = document.getElementById('manual1');
+const manual2 = document.getElementById('manual2');
+const manual1Value = document.getElementById('manual1Value');
+const manual2Value = document.getElementById('manual2Value');
+const threshSlider = document.getElementById('threshSlider');
+const threshValue = document.getElementById('threshValue');
+const hystSlider = document.getElementById('hystSlider');
+const hystValue = document.getElementById('hystValue');
+const wetAngleSlider = document.getElementById('wetAngleSlider');
+const wetAngleValue = document.getElementById('wetAngleValue');
+const dryAngleSlider = document.getElementById('dryAngleSlider');
+const dryAngleValue = document.getElementById('dryAngleValue');
+const logEl = document.getElementById('log');
+const canvas = document.getElementById('sparkline');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas(){
+  canvas.width = canvas.clientWidth * devicePixelRatio;
+  canvas.height = canvas.clientHeight * devicePixelRatio;
+}
+window.addEventListener('resize', () => { resizeCanvas(); drawSparkline(); });
+
+function drawSparkline(){
+  const w = canvas.width, h = canvas.height;
+  ctx.clearRect(0,0,w,h);
+  if(history.length < 2) return;
+  ctx.beginPath();
+  ctx.strokeStyle = '#49b8e0';
+  ctx.lineWidth = 2 * devicePixelRatio;
+  history.forEach((v, i) => {
+    const x = (i / (MAX_HISTORY-1)) * w;
+    const y = h - (v/1023) * h;
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  });
+  ctx.stroke();
+
+  const ty = h - (currentThreshold/1023) * h;
+  ctx.beginPath();
+  ctx.strokeStyle = 'rgba(240,166,60,0.6)';
+  ctx.setLineDash([4,4]);
+  ctx.lineWidth = 1 * devicePixelRatio;
+  ctx.moveTo(0, ty); ctx.lineTo(w, ty);
+  ctx.stroke();
+  ctx.setLineDash([]);
+}
+
+function logEvent(text, cls){
+  const line = document.createElement('div');
+  if(cls) line.className = cls;
+  const t = new Date().toLocaleTimeString();
+  line.textContent = `[${t}] ${text}`;
+  logEl.prepend(line);
+  while(logEl.childNodes.length > 60) logEl.removeChild(logEl.lastChild);
+}
+
+async function sendCmd(cmd){
+  if(!writer){ logEvent('Connect the device first.', 'sys-line'); return; }
+  await writer.write(cmd + '\n');
+}
+
+// --- UI -> Arduino ---
+threshSlider.addEventListener('input', () => { threshValue.textContent = threshSlider.value; });
+threshSlider.addEventListener('change', () => sendCmd(`THRESH,${threshSlider.value}`));
+
+hystSlider.addEventListener('input', () => { hystValue.textContent = hystSlider.value; });
+hystSlider.addEventListener('change', () => sendCmd(`HYST,${hystSlider.value}`));
+
+wetAngleSlider.addEventListener('input', () => { wetAngleValue.textContent = wetAngleSlider.value + '\u00b0'; });
+wetAngleSlider.addEventListener('change', () => sendCmd(`WETANGLE,${wetAngleSlider.value}`));
+
+dryAngleSlider.addEventListener('input', () => { dryAngleValue.textContent = dryAngleSlider.value + '\u00b0'; });
+dryAngleSlider.addEventListener('change', () => sendCmd(`DRYANGLE,${dryAngleSlider.value}`));
+
+en1.addEventListener('change', () => sendCmd(`ENABLE,1,${en1.checked ? 1 : 0}`));
+en2.addEventListener('change', () => sendCmd(`ENABLE,2,${en2.checked ? 1 : 0}`));
+
+modeAutoBtn.addEventListener('click', () => setMode(true, true));
+modeManualBtn.addEventListener('click', () => setMode(false, true));
+
+function setMode(auto, send){
+  modeAutoBtn.classList.toggle('active', auto);
+  modeManualBtn.classList.toggle('active', !auto);
+  manual1.disabled = auto;
+  manual2.disabled = auto;
+  if(send) sendCmd(`MODE,${auto ? 'AUTO' : 'MANUAL'}`);
+}
+
+manual1.addEventListener('input', () => { manual1Value.textContent = manual1.value + '\u00b0'; });
+manual1.addEventListener('change', () => sendCmd(`SERVO,1,${manual1.value}`));
+manual2.addEventListener('input', () => { manual2Value.textContent = manual2.value + '\u00b0'; });
+manual2.addEventListener('change', () => sendCmd(`SERVO,2,${manual2.value}`));
+
+document.getElementById('saveBtn').addEventListener('click', () => {
+  sendCmd('SAVE');
+  logEvent('Settings saved to EEPROM \u2014 will persist after power off', 'sys-line');
+});
+document.getElementById('resetBtn').addEventListener('click', () => {
+  sendCmd('RESET');
+  logEvent('Reset to factory defaults (send Save to make it permanent)', 'sys-line');
+});
+
+// --- Arduino -> UI ---
+let lastStatus = null;
+
+function handleLine(line){
+  line = line.trim();
+  if(!line.startsWith('DATA,')) return;
+  const p = line.split(',');
+  if(p.length < 12) return;
+
+  const rain      = parseInt(p[1], 10);
+  const a1        = parseInt(p[2], 10);
+  const a2        = parseInt(p[3], 10);
+  const status    = p[4];
+  const thresh    = parseInt(p[5], 10);
+  const hyst      = parseInt(p[6], 10);
+  const wetAngle  = parseInt(p[7], 10);
+  const dryAngle  = parseInt(p[8], 10);
+  const mode      = p[9];
+  const enabled1  = p[10] === '1';
+  const enabled2  = p[11] === '1';
+
+  rainValueEl.textContent = isNaN(rain) ? '--' : rain;
+  const pct = isNaN(rain) ? 0 : Math.max(2, Math.min(100, 100 - (rain/1023)*100));
+  tubeFill.style.height = pct + '%';
+
+  const wet = status === 'WET';
+  tubeFill.classList.toggle('wet', wet);
+  statusPill.classList.toggle('wet', wet);
+  statusPill.textContent = wet ? 'WET \u2014 GATE OPEN' : 'DRY \u2014 IDLE';
+
+  angle1El.textContent = isNaN(a1) ? 0 : a1;
+  angle2El.textContent = isNaN(a2) ? 0 : a2;
+
+  if(!document.activeElement || document.activeElement.id !== 'threshSlider'){
+    if(!isNaN(thresh)){ currentThreshold = thresh; threshSlider.value = thresh; threshValue.textContent = thresh; }
+  }
+  if(!document.activeElement || document.activeElement.id !== 'hystSlider'){
+    if(!isNaN(hyst)){ hystSlider.value = hyst; hystValue.textContent = hyst; }
+  }
+  if(!document.activeElement || document.activeElement.id !== 'wetAngleSlider'){
+    if(!isNaN(wetAngle)){ wetAngleSlider.value = wetAngle; wetAngleValue.textContent = wetAngle + '\u00b0'; }
+  }
+  if(!document.activeElement || document.activeElement.id !== 'dryAngleSlider'){
+    if(!isNaN(dryAngle)){ dryAngleSlider.value = dryAngle; dryAngleValue.textContent = dryAngle + '\u00b0'; }
+  }
+  en1.checked = enabled1;
+  en2.checked = enabled2;
+
+  const autoNow = mode === 'AUTO';
+  if((autoNow && !modeAutoBtn.classList.contains('active')) || (!autoNow && !modeManualBtn.classList.contains('active'))){
+    setMode(autoNow, false);
+  }
+  if(document.activeElement !== manual1 && !isNaN(a1)){ manual1.value = a1; manual1Value.textContent = a1 + '\u00b0'; }
+  if(document.activeElement !== manual2 && !isNaN(a2)){ manual2.value = a2; manual2Value.textContent = a2 + '\u00b0'; }
+
+  if(!isNaN(rain)){
+    history.push(rain);
+    if(history.length > MAX_HISTORY) history.shift();
+    drawSparkline();
+  }
+
+  if(status !== lastStatus){
+    lastStatus = status;
+    logEvent(wet ? `Water detected (${rain}) \u2014 servos moving to ${wetAngle}\u00b0` : `Dry (${rain}) \u2014 servos returning to ${dryAngle}\u00b0`,
+              wet ? 'wet-line' : 'dry-line');
+  }
+}
+
+async function connectSerial(){
+  if(!('serial' in navigator)){
+    alert('Web Serial API is not supported in this browser. Use Chrome or Edge on desktop.');
+    return;
+  }
+  try{
+    port = await navigator.serial.requestPort();
+    await port.open({ baudRate: 9600 });
+
+    const textDecoder = new TextDecoderStream();
+    port.readable.pipeTo(textDecoder.writable);
+    reader = textDecoder.readable.getReader();
+
+    const textEncoder = new TextEncoderStream();
+    textEncoder.readable.pipeTo(port.writable);
+    writer = textEncoder.writable.getWriter();
+
+    keepReading = true;
+    connLabel.textContent = 'connected';
+    connDot.classList.add('live');
+    connBtn.textContent = 'Disconnect';
+    connBtn.classList.add('disconnect');
+    logEvent('Serial connected at 9600 baud', 'sys-line');
+    readLoop();
+  }catch(err){
+    logEvent('Connection failed: ' + err.message, 'sys-line');
+  }
+}
+
+async function readLoop(){
+  while(keepReading){
+    try{
+      const { value, done } = await reader.read();
+      if(done) break;
+      readBuffer += value;
+      let idx;
+      while((idx = readBuffer.indexOf('\n')) >= 0){
+        const line = readBuffer.slice(0, idx);
+        readBuffer = readBuffer.slice(idx+1);
+        handleLine(line);
+      }
+    }catch(err){
+      logEvent('Read error: ' + err.message, 'sys-line');
+      break;
+    }
+  }
+}
+
+async function disconnectSerial(){
+  keepReading = false;
+  try{ if(reader){ await reader.cancel(); reader.releaseLock(); } }catch(e){}
+  try{ if(writer){ writer.releaseLock(); } }catch(e){}
+  try{ if(port){ await port.close(); } }catch(e){}
+  connLabel.textContent = 'not connected';
+  connDot.classList.remove('live');
+  connBtn.textContent = 'Connect Device';
+  connBtn.classList.remove('disconnect');
+  logEvent('Serial disconnected', 'sys-line');
+}
+
+connBtn.addEventListener('click', () => { if(keepReading) disconnectSerial(); else connectSerial(); });
+
+resizeCanvas();
+drawSparkline();
+</script>
+</body>
+</html>
