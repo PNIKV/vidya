@@ -46,23 +46,22 @@
     "displays": []
   },
   "components": [
-    "Quarky Controller",
-    "PictoBlox Software",
-    "Robotic Gripper Kit",
-    "Ultrasonic Sensor",
-    "Servo Motor x2",
-    "DC Motors",
+    "Arduino Uno / Quarky Controller",
+    "2x SG90 Servo Motors (Gripper Mechanism)",
+    "2x DC Geared Motors",
+    "HC-SR04 Ultrasonic Sensor",
     "Robot Chassis",
     "Battery Pack",
-    "USB Cable",
-    "Jumper Wires"
+    "Jumper Wires",
+    "USB Cable"
   ],
   "componentRefs": [
-    "quarky-controller",
-    "pictoblox",
+    "arduino-uno",
     "servo-motor",
-    "ultrasonic-sensor",
-    "robot-chassis"
+    "dc-motor",
+    "hc-sr04",
+    "jumper-wires",
+    "usb-cable"
   ],
   "guide": [
     "Assemble the Quarky robotic chassis.",

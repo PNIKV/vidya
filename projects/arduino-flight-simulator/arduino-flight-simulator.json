@@ -39,13 +39,11 @@
   },
   "components": [
     "Arduino UNO",
-    "Dual Joystick Module (x2)",
+    "Dual-Axis Joystick Module (x2)",
     "Jumper Wires",
     "USB Cable",
-    "Laptop / PC",
     "3D Printed Controller Box",
-    "Arduino IDE",
-    "Flight Simulator Software / Web Simulator"
+    "Arduino IDE"
   ],
   "componentRefs": [
     "arduino-uno",

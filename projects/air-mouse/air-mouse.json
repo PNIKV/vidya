@@ -35,18 +35,21 @@
     "led": "Status LED (GPIO 2)"
   },
   "components": [
-    "ESP32",
-    "MPU6050 IMU",
-    "2x Push Buttons",
+    "ESP32 Development Board",
+    "MPU6050 6-Axis IMU Sensor",
+    "2x Tactile Push Buttons",
     "Status LED",
-    "USB Cable",
     "Breadboard",
-    "Jumper Wires"
+    "Jumper Wires",
+    "USB Cable"
   ],
   "componentRefs": [
     "esp32",
     "mpu6050",
-    "jumper-wires"
+    "led",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
   ],
   "guide": [
     "Connect MPU6050 to ESP32: SDA→GPIO21, SCL→GPIO22, VCC→3.3V, GND→GND",

@@ -16,5 +16,33 @@
     "Sensors"
   ],
   "date": "2026-07-25",
-  "author": "Tinkering Lab"
+  "author": "Tinkering Lab",
+  "components": [
+    "ESP32 / Arduino UNO",
+    "HC-SR04 Ultrasonic Distance Sensor",
+    "TCRT5000 IR Hazard Surface Sensor",
+    "5V Active Buzzer",
+    "16x2 I2C LCD Display",
+    "Breadboard",
+    "Jumper Wires",
+    "USB Cable"
+  ],
+  "componentRefs": [
+    "esp32",
+    "arduino-uno",
+    "hc-sr04",
+    "ir-sensor",
+    "buzzer",
+    "16x2-lcd",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "ESP32 / Arduino UNO",
+    "obstacleSensor": "HC-SR04 Ultrasonic Rangefinder (2cm–400cm)",
+    "roadHazardSensor": "TCRT5000 Reflective Optical Sensor",
+    "display": "16x2 Character LCD via I2C",
+    "operatingVoltage": "5V DC"
+  }
 }

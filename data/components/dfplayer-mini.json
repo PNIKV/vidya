@@ -1,0 +1,34 @@
+{
+  "id": "dfplayer-mini",
+  "name": "DFPlayer Mini MP3 Player",
+  "fullName": "DFPlayer Mini Embedded MP3 Audio Player Module with MicroSD Slot",
+  "category": "Audio & Sound",
+  "color": "#F59E0B",
+  "tagline": "Standalone MP3/WAV audio decoder with onboard 3W amplifier and serial UART control",
+  "description": "The DFPlayer Mini is a compact and low-cost MP3 audio playback module that connects directly to a speaker. It supports FAT16 and FAT32 microSD cards (up to 32GB) and decodes MP3 and WAV files with 24-bit DAC output. Controlled via simple UART serial commands (9600 baud).",
+  "specs": {
+    "supportedFormats": "MP3, WAV, WMA (sampling rates 8kHz to 48kHz)",
+    "operatingVoltage": "3.3V to 5V DC (optimal 4.2V–5V)",
+    "dacOutput": "24-bit DAC, Dynamic Range 90dB, SNR 85dB",
+    "onboardAmp": "3W mono speaker output (can drive 4Ω/8Ω speaker directly)",
+    "storage": "MicroSD TF Card up to 32GB (FAT16/FAT32)",
+    "communication": "UART Serial (9600 bps, 8-N-1)"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "Power", "desc": "3.3V–5V DC Power Input", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "RX", "name": "UART RX", "desc": "Serial command input from microcontroller TX (add 1kΩ resistor for 5V boards)", "color": "#3B82F6" },
+    { "pin": "TX", "name": "UART TX", "desc": "Serial feedback output to microcontroller RX", "color": "#10B981" },
+    { "pin": "SPK_1, SPK_2", "name": "Speaker Pins", "desc": "Direct connection to 4Ω–8Ω speaker (up to 3W)", "color": "#F59E0B" },
+    { "pin": "BUSY", "name": "Busy State", "desc": "LOW during playback, HIGH when idle", "color": "#8B5CF6" }
+  ],
+  "wiringNote": "Always insert a 1kΩ series resistor between Arduino TX (5V) and DFPlayer RX pin (3.3V logic) to prevent serial data corruption and audible popping noise.",
+  "libraryName": "DFRobotDFPlayerMini (by DFRobot)",
+  "codeSnippet": "#include <SoftwareSerial.h>\n#include <DFRobotDFPlayerMini.h>\nSoftwareSerial mySoftwareSerial(10, 11); // RX, TX\nDFRobotDFPlayerMini myDFPlayer;\nvoid setup() {\n  mySoftwareSerial.begin(9600);\n  myDFPlayer.begin(mySoftwareSerial);\n  myDFPlayer.volume(25); // 0-30\n  myDFPlayer.play(1);    // Play /mp3/0001.mp3\n}",
+  "commonMistakes": [
+    "Not naming files with 4 digits inside an 'mp3' folder (e.g., /mp3/0001.mp3)",
+    "Omitting the 1kΩ series resistor on RX line causing loud buzzing/reboots",
+    "Powering from USB while driving high speaker volumes without sufficient current"
+  ],
+  "usedInProjects": ["automatic-school-bell-and-announcement-system", "medicine-dispenser"]
+}

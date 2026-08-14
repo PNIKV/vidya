@@ -43,20 +43,23 @@
   },
   "components": [
     "Arduino UNO",
-    "4×4 Matrix Keypad",
-    "Servo Motor (SG90)",
-    "16×2 LCD Display",
-    "Jumper Wires",
-    "USB Cable",
+    "4x4 Matrix Keypad",
+    "SG90 Micro Servo Motor",
+    "16x2 I2C LCD Display",
+    "Active Buzzer",
     "Breadboard",
-    "Arduino IDE"
+    "Jumper Wires",
+    "USB Cable"
   ],
   "componentRefs": [
     "arduino-uno",
     "matrix-keypad",
     "servo-motor",
     "16x2-lcd",
-    "jumper-wires"
+    "buzzer",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
   ],
   "guide": [
     "Connect the 4×4 Matrix Keypad to the Arduino digital pins.",

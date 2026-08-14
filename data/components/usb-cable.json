@@ -1,0 +1,28 @@
+{
+  "id": "usb-cable",
+  "name": "USB Data & Power Cable",
+  "fullName": "High-Speed USB Data Transmission & Power Supply Cable",
+  "category": "Cables & Connectors",
+  "color": "#64748B",
+  "tagline": "Connects microcontroller boards to computers for programming, serial debugging, and 5V power",
+  "description": "High-quality shielded USB data and power cable. Features dual power lines (VBUS & GND) and twisted pair differential data lines (D+ & D-) supporting full-speed UART serial programming and high-current power delivery without voltage drops.",
+  "specs": {
+    "voltageRating": "5V DC (up to 3A current capacity)",
+    "dataTransferRate": "USB 2.0 Full Speed (480 Mbps)",
+    "connectors": "Type-A to Type-B (Arduino UNO), Micro-USB, or Type-C",
+    "shielding": "Braided aluminum foil shielding against EMI interference"
+  },
+  "pinout": [
+    { "pin": "Pin 1", "name": "VBUS (+5V)", "desc": "5V power line", "color": "#EF4444" },
+    { "pin": "Pin 2", "name": "Data- (D-)", "desc": "Differential serial data negative", "color": "#FFFFFF" },
+    { "pin": "Pin 3", "name": "Data+ (D+)", "desc": "Differential serial data positive", "color": "#10B981" },
+    { "pin": "Pin 4", "name": "GND", "desc": "Ground line", "color": "#1E293B" }
+  ],
+  "wiringNote": "Ensure you are using a 4-wire data cable (not a 2-wire charge-only cable) when flashing code or opening serial monitors.",
+  "libraryName": "No library required",
+  "codeSnippet": "// Plug into PC USB Port and select matching COM port in Arduino IDE",
+  "commonMistakes": [
+    "Using a charge-only cable that lacks D+ and D- wires (board powers on but COM port is missing in Device Manager)"
+  ],
+  "usedInProjects": ["arduino-flight-simulator", "arduino-uno-countdown-timer", "vasc-age", "bus-tracking"]
+}

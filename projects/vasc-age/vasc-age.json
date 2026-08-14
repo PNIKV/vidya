@@ -39,18 +39,19 @@
     ]
   },
   "components": [
-    "ESP8266",
-    "MAX30102 Pulse Oximeter Sensor",
+    "ESP8266 (Wemos D1 Mini / NodeMCU)",
+    "MAX30102 High-Sensitivity Pulse Oximeter Sensor",
+    "Breadboard",
     "Jumper Wires",
-    "USB Cable",
-    "Breadboard"
+    "USB Cable"
   ],
   "componentRefs": [
     "esp8266",
+    "nodemcu",
     "max30102",
+    "breadboard",
     "jumper-wires",
-    "usb-cable",
-    "breadboard"
+    "usb-cable"
   ],
   "guide": [
     "Wire MAX30102 to ESP8266 via I2C: SDAâ†’D2, SCLâ†’D1, VCCâ†’3.3V, GNDâ†’GND",

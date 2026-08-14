@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const vm = require('node:vm');
 
 const rootDir = path.resolve(__dirname, '..');
 const testsDir = path.join(rootDir, 'assessment', 'data', 'tests');
@@ -7,14 +8,15 @@ const outputFile = path.join(rootDir, 'assessment', 'data', 'leaderboard-data.js
 const questionsFile = path.join(rootDir, 'assessment', 'beginner-questions.js');
 
 // Load Questions Meta
-let questionsMap = new Map();
+const questionsMap = new Map();
 if (fs.existsSync(questionsFile)) {
   const code = fs.readFileSync(questionsFile, 'utf8');
-  const window = {};
+  const sandbox = { window: {} };
   try {
-    eval(code);
-    if (Array.isArray(window.BEGINNER_QUESTIONS)) {
-      window.BEGINNER_QUESTIONS.forEach(q => {
+    vm.createContext(sandbox);
+    vm.runInContext(code, sandbox, { timeout: 1000 });
+    if (Array.isArray(sandbox.window?.BEGINNER_QUESTIONS)) {
+      sandbox.window.BEGINNER_QUESTIONS.forEach(q => {
         questionsMap.set(Number(q.id), {
           id: Number(q.id),
           type: q.type || 'mcq',
@@ -32,8 +34,7 @@ function parseCSVLine(line) {
   const result = [];
   let current = '';
   let inQuotes = false;
-  for (let i = 0; i < line.length; i++) {
-    const char = line[i];
+  for (const char of line) {
     if (char === '"') {
       inQuotes = !inQuotes;
     } else if (char === ',' && !inQuotes) {
@@ -61,91 +62,8 @@ function extractDate(filename, filePath) {
   return d.toISOString().split('T')[0];
 }
 
-function parseCSVFile(filePath) {
-  const filename = path.basename(filePath);
-  const content = fs.readFileSync(filePath, 'utf8');
-  const lines = content.split(/\r?\n/).filter(l => l.trim().length > 0);
-  if (lines.length === 0) return null;
-
-  const header = lines[0];
-  const dateStr = extractDate(filename, filePath);
-
-  // Format 2: Single-row wide format (Name,Grade,School/College,Q1...Q50,Total Score,Percentage)
-  if (header.includes('School/College') || (header.startsWith('Name') && header.includes('Q1'))) {
-    const dataLine = lines[1];
-    if (!dataLine) return null;
-    const cols = parseCSVLine(dataLine);
-
-    const name = cols[0] || 'Unknown';
-    const grade = cols[1] || 'Unspecified';
-    const school = cols[2] || 'Unspecified';
-
-    const categoryScores = {
-      mcq: 0,
-      true_false: 0,
-      match: 0,
-      fill_bank: 0,
-      calc: 0,
-      arduino_ide: 0,
-      audio_id: 0,
-      picto: 0,
-      ai_question: 0,
-      image_id: 0
-    };
-
-    let calculatedTotal = 0;
-    let calculatedMax = 0;
-
-    for (let qNum = 1; qNum <= 50; qNum++) {
-      const qMeta = questionsMap.get(qNum) || { type: 'mcq', marks: 1 };
-      calculatedMax += qMeta.marks;
-
-      const cellVal = cols[qNum + 2] !== undefined ? cols[qNum + 2] : '0';
-      let earned = 0;
-
-      if (!isNaN(cellVal) && cellVal.trim() !== '') {
-        earned = parseFloat(cellVal);
-      } else if (cellVal.toLowerCase() === 'true' || cellVal.toLowerCase() === 'yes') {
-        earned = qMeta.marks;
-      } else if (cellVal.toLowerCase() === 'false' || cellVal.toLowerCase() === 'no') {
-        earned = 0;
-      } else {
-        earned = cellVal.length > 0 ? 1 : 0;
-      }
-
-      if (categoryScores[qMeta.type] !== undefined) {
-        categoryScores[qMeta.type] += earned;
-      } else {
-        categoryScores.mcq += earned;
-      }
-      calculatedTotal += earned;
-    }
-
-    const fileTotal = cols[53] ? parseFloat(cols[53]) : calculatedTotal;
-    const filePct = cols[54] ? parseFloat(cols[54].replace('%', '')) : Math.round((fileTotal / (calculatedMax || 100)) * 100);
-
-    return {
-      filename,
-      date: dateStr,
-      name,
-      grade,
-      school,
-      categoryScores,
-      totalScore: fileTotal,
-      maxScore: calculatedMax || 100,
-      percentage: filePct
-    };
-  }
-
-  // Format 1 & 3: Multi-row detailed format (Student Name,Grade,School,Q#,Type...)
-  let name = '';
-  let grade = '';
-  let school = '';
-  let fileTotal = null;
-  let fileMax = null;
-  let filePct = null;
-
-  const categoryScores = {
+function createCategoryScores() {
+  return {
     mcq: 0,
     true_false: 0,
     match: 0,
@@ -157,7 +75,72 @@ function parseCSVFile(filePath) {
     ai_question: 0,
     image_id: 0
   };
+}
 
+function parseWideFormatCSV(filename, filePath, lines, dateStr) {
+  const dataLine = lines[1];
+  if (!dataLine) return null;
+  const cols = parseCSVLine(dataLine);
+
+  const name = cols[0] || 'Unknown';
+  const grade = cols[1] || 'Unspecified';
+  const school = cols[2] || 'Unspecified';
+
+  const categoryScores = createCategoryScores();
+  let calculatedTotal = 0;
+  let calculatedMax = 0;
+
+  for (let qNum = 1; qNum <= 50; qNum++) {
+    const qMeta = questionsMap.get(qNum) || { type: 'mcq', marks: 1 };
+    calculatedMax += qMeta.marks;
+
+    const cellVal = cols[qNum + 2] !== undefined ? cols[qNum + 2] : '0';
+    let earned = 0;
+
+    const trimmed = cellVal.trim();
+    if (trimmed !== '' && !Number.isNaN(Number(trimmed))) {
+      earned = Number.parseFloat(trimmed);
+    } else if (trimmed.toLowerCase() === 'true' || trimmed.toLowerCase() === 'yes') {
+      earned = qMeta.marks;
+    } else if (trimmed.toLowerCase() === 'false' || trimmed.toLowerCase() === 'no') {
+      earned = 0;
+    } else {
+      earned = trimmed.length > 0 ? 1 : 0;
+    }
+
+    if (categoryScores[qMeta.type] !== undefined) {
+      categoryScores[qMeta.type] += earned;
+    } else {
+      categoryScores.mcq += earned;
+    }
+    calculatedTotal += earned;
+  }
+
+  const fileTotal = cols[53] ? Number.parseFloat(cols[53]) : calculatedTotal;
+  const filePct = cols[54] ? Number.parseFloat(cols[54].replace('%', '')) : Math.round((fileTotal / (calculatedMax || 100)) * 100);
+
+  return {
+    filename,
+    date: dateStr,
+    name,
+    grade,
+    school,
+    categoryScores,
+    totalScore: fileTotal,
+    maxScore: calculatedMax || 100,
+    percentage: filePct
+  };
+}
+
+function parseMultiRowCSV(filename, filePath, lines, dateStr) {
+  let name = '';
+  let grade = '';
+  let school = '';
+  let fileTotal = null;
+  let fileMax = null;
+  let filePct = null;
+
+  const categoryScores = createCategoryScores();
   let calculatedTotal = 0;
   let calculatedMax = 0;
 
@@ -178,33 +161,43 @@ function parseCSVFile(filePath) {
     if (row[3] === 'TOTAL' || row[0] === 'TOTAL') {
       const earnedIdx = row.length - 2;
       const maxIdx = row.length - 1;
-      if (!isNaN(row[earnedIdx])) fileTotal = parseFloat(row[earnedIdx]);
-      if (!isNaN(row[maxIdx])) fileMax = parseFloat(row[maxIdx]);
+      const earnedVal = Number.parseFloat(row[earnedIdx]);
+      const maxVal = Number.parseFloat(row[maxIdx]);
+      if (!Number.isNaN(earnedVal)) fileTotal = earnedVal;
+      if (!Number.isNaN(maxVal)) fileMax = maxVal;
       continue;
     }
 
     if (row.join(',').includes('Score %')) {
       const pctCell = row.find(c => c.includes('%'));
       if (pctCell) {
-        filePct = parseFloat(pctCell.replace('%', ''));
+        filePct = Number.parseFloat(pctCell.replace('%', ''));
       }
       continue;
     }
 
     const qType = (row[4] || row[5] || 'mcq').toLowerCase().trim();
-    const earned = parseFloat(row[7] || row[6] || '0') || 0;
-    const maxMarks = parseFloat(row[8] || row[7] || '1') || 1;
+    const earned = Number.parseFloat(row[7] || row[6] || '0') || 0;
+    const maxMarks = Number.parseFloat(row[8] || row[7] || '1') || 1;
 
     calculatedTotal += earned;
     calculatedMax += maxMarks;
 
-    const normType = categoryScores[qType] !== undefined ? qType : (categoryScores[qType.replace('_', '')] !== undefined ? qType.replace('_', '') : 'mcq');
+    let normType = 'mcq';
+    if (categoryScores[qType] !== undefined) {
+      normType = qType;
+    } else {
+      const altType = qType.replace('_', '');
+      if (categoryScores[altType] !== undefined) {
+        normType = altType;
+      }
+    }
     categoryScores[normType] += earned;
   }
 
   const finalTotal = fileTotal !== null ? fileTotal : calculatedTotal;
   const finalMax = fileMax !== null ? fileMax : (calculatedMax || 100);
-  const finalPct = (filePct !== null && !isNaN(filePct)) ? filePct : Math.round((finalTotal / (finalMax || 1)) * 100);
+  const finalPct = (filePct !== null && !Number.isNaN(filePct)) ? filePct : Math.round((finalTotal / (finalMax || 1)) * 100);
 
   return {
     filename,
@@ -217,6 +210,22 @@ function parseCSVFile(filePath) {
     maxScore: finalMax,
     percentage: finalPct
   };
+}
+
+function parseCSVFile(filePath) {
+  const filename = path.basename(filePath);
+  const content = fs.readFileSync(filePath, 'utf8');
+  const lines = content.split(/\r?\n/).filter(l => l.trim().length > 0);
+  if (lines.length === 0) return null;
+
+  const header = lines[0];
+  const dateStr = extractDate(filename, filePath);
+
+  if (header.includes('School/College') || (header.startsWith('Name') && header.includes('Q1'))) {
+    return parseWideFormatCSV(filename, filePath, lines, dateStr);
+  }
+
+  return parseMultiRowCSV(filename, filePath, lines, dateStr);
 }
 
 function runCompiler() {

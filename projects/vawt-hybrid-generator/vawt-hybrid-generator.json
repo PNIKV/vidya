@@ -39,22 +39,23 @@
     ]
   },
   "components": [
-    "Dynamo Motor (DC Generator)",
+    "Dynamo DC Generator Motor",
+    "LDR Light Sensor Module",
     "BC547 NPN Transistor",
-    "100kΩ Resistor",
-    "LDR Sensor",
-    "DC Battery (3.7V or 9V)",
-    "Savonius or Darrieus Rotor blades",
-    "1N4007 Diode (for battery charging protection)",
-    "Breadboard and Jumper wires",
-    "Structural frame base"
+    "100k Ohm Resistor",
+    "1N4007 Diode",
+    "3.7V / 9V DC Battery",
+    "Status LEDs",
+    "Savonius Rotor Blades",
+    "Breadboard",
+    "Jumper Wires"
   ],
   "componentRefs": [
-    "dynamo-motor",
-    "bc547-transistor",
-    "resistor-100k",
+    "dc-motor",
     "ldr-sensor",
-    "dc-battery"
+    "led",
+    "breadboard",
+    "jumper-wires"
   ],
   "guide": [
     "Assemble the vertical rotor blades onto the central shaft and couple it directly to the axle of the DC dynamo motor.",

@@ -1,0 +1,30 @@
+{
+  "id": "ldr-sensor",
+  "name": "LDR Light Sensor Module",
+  "fullName": "Light Dependent Resistor (Photoresistor) Module with LM393 Comparator",
+  "category": "Optical Sensors",
+  "color": "#FBBF24",
+  "tagline": "Ambient light intensity detector with digital threshold trigger and analog output",
+  "description": "The LDR Sensor module uses a Cadmium Sulfide (CdS) photoresistor whose electrical resistance decreases with increasing incident light levels. Paired with an onboard LM393 comparator and trimmer potentiometer, it outputs both analog light level voltages and a digital light/dark switching trigger.",
+  "specs": {
+    "operatingVoltage": "3.3V to 5V DC",
+    "spectralPeak": "540 nm (visible light sensitivity matching human eye)",
+    "lightResistance": "10kΩ to 20kΩ (at 10 lux)",
+    "darkResistance": "1MΩ to 2MΩ (in complete darkness)",
+    "outputs": "Analog Voltage (AO) & Digital Switch Output (DO)"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "Power", "desc": "3.3V to 5V DC power supply", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "DO", "name": "Digital Out", "desc": "Digital high/low threshold output", "color": "#10B981" },
+    { "pin": "AO", "name": "Analog Out", "desc": "Continuous analog light voltage (0–5V)", "color": "#FBBF24" }
+  ],
+  "wiringNote": "Use the onboard potentiometer to set the trigger threshold for day/night switching or optical data reception.",
+  "libraryName": "Built-in analogRead / digitalRead",
+  "codeSnippet": "const int ldrPin = A0;\nvoid setup() { Serial.begin(9600); }\nvoid loop() {\n  int lightVal = analogRead(ldrPin);\n  Serial.print(\"Light Level: \"); Serial.println(lightVal);\n  delay(200);\n}",
+  "commonMistakes": [
+    "Placing module in shadowed enclosures causing false dark triggers",
+    "Confusing Active-HIGH vs Active-LOW comparator logic"
+  ],
+  "usedInProjects": ["lifi-secure-terminal", "laser-security-system", "vawt-hybrid-generator", "smart-classroom"]
+}

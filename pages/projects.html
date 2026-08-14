@@ -1,44 +1,87 @@
 <div id="page-projects" class="page active">
-  <div class="page-inner">
-    <div class="page-hero projects-hero">
-      <div class="projects-hero-badge">🚀 MAKER LAB</div>
-      <h1>Projects Gallery</h1>
-      <p>These are YOUR projects. Design, build, present — and download the files to make your own.</p>
+  <div class="page-inner projects-page-inner">
+
+    <!-- SINGLE-ROW COMPACT HEADER: Title + Tools merged into one tight bar -->
+    <div class="projects-toolbar">
+      <div class="projects-toolbar-left">
+        <span class="projects-toolbar-badge">🚀 MAKER LAB</span>
+        <h1 class="projects-toolbar-title">Projects <span class="projects-toolbar-count-inline" id="projectsCountInline"></span></h1>
+      </div>
+      <div class="projects-toolbar-actions">
+        <button onclick="openDriversModal()" class="toolbar-action-btn toolbar-btn-drivers" title="Download CH340 / CP210x USB Drivers">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Drivers</span>
+        </button>
+        <button onclick="openWebSerialMonitorModal()" class="toolbar-action-btn toolbar-btn-serial" title="Open Web Serial Monitor & Telemetry Console">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          <span>Serial Monitor</span>
+        </button>
+      </div>
     </div>
 
-    <!-- FILTER BAR -->
-    <div class="projects-filter-bar" id="projectsFilterBar" style="flex-wrap: wrap;">
-      <div class="projects-search-wrap" style="flex: 1; min-width: 250px;">
+    <!-- SEARCH + FILTERS (full-width, compact) -->
+    <div class="projects-filter-bar" id="projectsFilterBar">
+      <div class="projects-search-wrap">
         <span class="search-icon">🔍</span>
         <input type="text" id="projectSearchInput" class="projects-search"
-          placeholder="Search by title, description, keywords..." aria-label="Search Projects" oninput="filterProjects()" />
+          placeholder="Search projects, sensors, microcontrollers..." aria-label="Search Projects" oninput="filterProjects()" />
       </div>
-
-      <div class="projects-dropdowns" style="display: flex; gap: 12px; flex-wrap: wrap;">
-        <select id="filterDifficulty" class="projects-select" onchange="filterProjects()" aria-label="Filter by Difficulty"
-          style="padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-family: inherit;">
-          <option value="all">All Difficulties</option>
-          <option value="1">⭐ 1 Star</option>
-          <option value="2">⭐⭐ 2 Stars</option>
-          <option value="3">⭐⭐⭐ 3 Stars</option>
-          <option value="4">⭐⭐⭐⭐ 4 Stars</option>
-          <option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+      <div class="projects-dropdowns">
+        <select id="filterDifficulty" class="projects-select" onchange="filterProjects()" aria-label="Filter by Difficulty">
+          <option value="all">All Levels</option>
+          <option value="1">⭐ Beginner</option>
+          <option value="2">⭐⭐ Easy</option>
+          <option value="3">⭐⭐⭐ Intermediate</option>
+          <option value="4">⭐⭐⭐⭐ Advanced</option>
+          <option value="5">⭐⭐⭐⭐⭐ Expert</option>
         </select>
-
-        <select id="filterMicrocontroller" class="projects-select" onchange="filterProjects()" aria-label="Filter by Microcontroller"
-          style="padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-family: inherit;">
-          <option value="all">All Microcontrollers</option>
+        <select id="filterMicrocontroller" class="projects-select" onchange="filterProjects()" aria-label="Filter by Microcontroller">
+          <option value="all">All Boards</option>
         </select>
-
-        <select id="filterComponent" class="projects-select" onchange="filterProjects()" aria-label="Filter by Component"
-          style="padding: 10px 16px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-family: inherit;">
+        <select id="filterComponent" class="projects-select" onchange="filterProjects()" aria-label="Filter by Component">
           <option value="all">All Components</option>
         </select>
       </div>
     </div>
 
     <div class="projects-count" id="projectsCount"></div>
-    <div class="projects-grid" id="projectsGrid"></div>
+    <div class="projects-grid" id="projectsGrid">
+      <div class="projects-empty"><div class="projects-empty-icon">⏳</div><h3>Loading Projects...</h3></div>
+    </div>
   </div>
 </div>
-<!-- </body> 
+
+<script>
+// Failsafe: if renderProjects hasn't populated the grid within 2s, retry
+(function projectsFailsafe() {
+  var attempts = 0;
+  var maxAttempts = 5;
+  function tryRender() {
+    attempts++;
+    var grid = document.getElementById('projectsGrid');
+    if (!grid) return;
+    // Check if grid still has the loading placeholder or is empty
+    var hasCards = grid.querySelector('.project-card');
+    if (hasCards) return; // Already rendered, nothing to do
+    
+    console.log('[projects-failsafe] Attempt ' + attempts + ' — grid has no cards yet');
+    
+    if (typeof renderProjects === 'function') {
+      console.log('[projects-failsafe] Calling renderProjects(), PROJECTS length=' + (typeof PROJECTS !== 'undefined' ? PROJECTS.length : 'undefined'));
+      try {
+        renderProjects();
+      } catch(e) {
+        console.error('[projects-failsafe] renderProjects() threw:', e);
+        grid.innerHTML = '<div class="projects-empty" style="color:#ff6b6b"><div class="projects-empty-icon">⚠️</div><h3>Error Loading Projects</h3><p style="font-size:0.8rem;color:#aaa;word-break:break-all">' + e.message + '</p></div>';
+      }
+    } else {
+      console.warn('[projects-failsafe] renderProjects not defined yet');
+    }
+    
+    if (attempts < maxAttempts) {
+      setTimeout(tryRender, 1500);
+    }
+  }
+  setTimeout(tryRender, 800);
+})();
+</script>

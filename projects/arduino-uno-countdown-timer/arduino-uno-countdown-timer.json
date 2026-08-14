@@ -37,17 +37,25 @@
   },
   "components": [
     "Arduino UNO",
-    "16×2 LCD I2C",
-    "Rotary Encoder",
+    "16x2 LCD with I2C Backpack",
+    "KY-040 Rotary Encoder",
+    "Active Buzzer",
     "Green LED",
     "Red LED",
-    "Active Buzzer",
-    "220Ω Resistor",
+    "220 Ohm Resistors",
     "Breadboard",
-    "Jumper Wires"
+    "Jumper Wires",
+    "USB Cable"
   ],
   "componentRefs": [
-    "arduino-uno"
+    "arduino-uno",
+    "16x2-lcd",
+    "rotary-encoder",
+    "buzzer",
+    "led",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
   ],
   "guide": [
     "Connect all components according to the circuit diagram.",

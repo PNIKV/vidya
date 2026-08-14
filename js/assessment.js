@@ -332,9 +332,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Simple shuffle for col2 to make it a game
-        for (let i = col2.children.length; i >= 0; i--) { // Simple UI shuffle for display only — not a security context, Math.random() is appropriate here
-            const randomChild = col2.children[Math.floor(Math.random() * (i + 1))];
-            if (randomChild) col2.appendChild(randomChild);
+        const children = Array.from(col2.children);
+        for (let i = children.length - 1; i > 0; i--) {
+            const j = window.crypto?.getRandomValues ? (window.crypto.getRandomValues(new Uint32Array(1))[0] % (i + 1)) : Math.floor(Math.random() * (i + 1));
+            col2.appendChild(children[j]);
         }
 
         container.appendChild(col1);
@@ -342,38 +343,39 @@ document.addEventListener('DOMContentLoaded', () => {
         interactionArea.appendChild(container);
     };
 
+    function evaluateQuestionAnswer(q, answerVal) {
+        if (q.type === 'fill_in_the_blank') {
+            const isCorrect = Array.isArray(q.answer) && q.answer.map(a => a.toLowerCase()).includes(answerVal);
+            return { isCorrect, selectedOptionText: answerVal || "None" };
+        }
+        if (q.type === 'match_the_following') {
+            let isCorrect = true;
+            const matchStrs = (q.pairs || []).map((pair, i) => {
+                if (answerVal?.[i] !== i) isCorrect = false;
+                const rIdx = answerVal?.[i];
+                const rightVal = (rIdx !== undefined && q.pairs[rIdx]) ? q.pairs[rIdx].right : "None";
+                return `${pair.left} -> ${rightVal}`;
+            });
+            return { isCorrect, selectedOptionText: matchStrs.join(' | ') };
+        }
+        const isCorrect = answerVal === q.answer;
+        const selectedOptionText = q.options && answerVal !== null && answerVal !== undefined ? q.options[answerVal] : "None";
+        return { isCorrect, selectedOptionText };
+    }
+
     // --- Flow ---
     const handleAnswerSubmit = () => {
         const q = questions[currentQuestionIndex];
-        let isCorrect = false;
-        let selectedOptionText = "N/A";
-
-        if (q.type === 'fill_in_the_blank') {
-            // Check if string matches any of acceptable answers
-            isCorrect = q.answer.map(a => a.toLowerCase()).includes(currentAnswer);
-            selectedOptionText = currentAnswer || "None";
-        } else if (q.type === 'match_the_following') {
-            // Check mapping
-            isCorrect = true;
-            let matchStrs = [];
-            for (let i = 0; i < q.pairs.length; i++) {
-                if (currentAnswer[i] !== i) isCorrect = false; // Because pair.left correlates strictly to pair.right in data
-                let rIdx = currentAnswer[i];
-                matchStrs.push(`${q.pairs[i].left} -> ${rIdx !== undefined && q.pairs[rIdx] ? q.pairs[rIdx].right : "None"}`);
-            }
-            selectedOptionText = matchStrs.join(' | ');
-        } else {
-            isCorrect = currentAnswer === q.answer;
-            selectedOptionText = q.options && currentAnswer !== null && currentAnswer !== undefined ? q.options[currentAnswer] : "None";
-        }
+        const { isCorrect, selectedOptionText } = evaluateQuestionAnswer(q, currentAnswer);
+        const marks = q.marks || 1;
 
         if (isCorrect) {
-            score += (q.marks || 1);
+            score += marks;
             sfxCorrect.currentTime = 0;
-            sfxCorrect.play().catch(e => { });
+            sfxCorrect.play().catch(() => { });
         } else {
             sfxWrong.currentTime = 0;
-            sfxWrong.play().catch(e => { });
+            sfxWrong.play().catch(() => { });
         }
 
         answers.push({
@@ -381,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
             questionText: q.text,
             selectedOptionText: selectedOptionText,
             isCorrect: isCorrect,
-            marksEarned: isCorrect ? (q.marks || 1) : 0
+            marksEarned: isCorrect ? marks : 0
         });
     };
 
@@ -565,10 +567,12 @@ document.addEventListener('DOMContentLoaded', () => {
             let formattedDate = r.date;
             try {
                 const d = new Date(r.date);
-                if (!isNaN(d.getTime())) {
+                if (!Number.isNaN(d.getTime())) {
                     formattedDate = d.toLocaleString('en-IN', { hour12: false });
                 }
-            } catch (_) { }
+            } catch (err) {
+                console.debug('Date format fallback:', err);
+            }
 
             return `<div style="padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.1)">
                 <strong style="color:#fff">${i + 1}. ${r.name}</strong>
@@ -595,10 +599,12 @@ document.addEventListener('DOMContentLoaded', () => {
             let formattedDate = r.date;
             try {
                 const d = new Date(r.date);
-                if (!isNaN(d.getTime())) {
+                if (!Number.isNaN(d.getTime())) {
                     formattedDate = d.toLocaleString('en-IN', { hour12: false });
                 }
-            } catch (_) { }
+            } catch (err) {
+                console.debug('Date format fallback:', err);
+            }
 
             rows.push([
                 `"${formattedDate}"`,
@@ -668,7 +674,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         break;
                     }
                 }
-            } catch (_) { /* try next path */ }
+            } catch (err) {
+                console.debug('Failed to fetch question bank at', path, err);
+            }
         }
 
         if (qs.length === 0) {
@@ -741,7 +749,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else if (q.answer) {
                     ans = Array.isArray(q.answer) ? q.answer.join(', ') : String(q.answer);
                 }
-                rows.push([i + 1, `"${q.type}"`, `"${q.text.replace(/"/g, '""')}"`, `"${opts.replace(/"/g, '""')}"`, `"${ans.replace(/"/g, '""')}"`, q.marks || 1]);
+                rows.push([
+                    i + 1,
+                    `"${q.type}"`,
+                    `"${q.text.replaceAll('"', '""')}"`,
+                    `"${opts.replaceAll('"', '""')}"`,
+                    `"${ans.replaceAll('"', '""')}"`,
+                    q.marks || 1
+                ]);
             });
             const csv = '\uFEFF' + rows.map(r => r.join(',')).join('\r\n');
             const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
@@ -760,74 +775,75 @@ document.addEventListener('DOMContentLoaded', () => {
             generateQuestionBankPDF(qs, "STEM Quest — Baseline Question Bank");
         });
     }
+});
 
-    function generateQuestionBankPDF(questions, title) {
-        const typeLabels = {
-            multiple_choice: '🔵 MCQ',
-            true_false: '✅ True/False',
-            fill_in_the_blank: '✏️ Fill Blank',
-            match_the_following: '🔗 Match',
-            image_selection: '🖼️ Image ID',
-            audio_recognition: '🔊 Audio ID',
-            mcq: '🔵 MCQ',
-            match: '🔗 Match',
-            audio_id: '🔊 Audio ID',
-            image_id: '🖼️ Image ID'
-        };
+function generateQuestionBankPDF(questions, title) {
+    const typeLabels = {
+        multiple_choice: '🔵 MCQ',
+        true_false: '✅ True/False',
+        fill_in_the_blank: '✏️ Fill Blank',
+        match_the_following: '🔗 Match',
+        image_selection: '🖼️ Image ID',
+        audio_recognition: '🔊 Audio ID',
+        mcq: '🔵 MCQ',
+        match: '🔗 Match',
+        audio_id: '🔊 Audio ID',
+        image_id: '🖼️ Image ID'
+    };
 
-        const questionsHTML = questions.map((q, i) => {
-            const label = typeLabels[q.type] || q.type || 'STEM Question';
-            const qText = (q.text || `Question ${i + 1}`).replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    const questionsHTML = questions.map((q, i) => {
+        const label = typeLabels[q.type] || q.type || 'STEM Question';
+        const qText = (q.text || `Question ${i + 1}`).replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
-            let mediaHtml = '';
-            const imgUrl = q.image || q.media_url;
-            if (imgUrl) {
-                mediaHtml = `<img src="${imgUrl}" style="max-height: 180px; max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #cbd5e1; object-fit: contain; display: block;" />`;
-            }
+        let mediaHtml = '';
+        const imgUrl = q.image || q.media_url;
+        if (imgUrl) {
+            mediaHtml = `<img src="${imgUrl}" style="max-height: 180px; max-width: 100%; border-radius: 8px; margin: 10px 0; border: 1px solid #cbd5e1; object-fit: contain; display: block;" />`;
+        }
 
-            let answerHTML = '';
-            if (q.type === 'image_selection') {
-                if (q.options && q.options.length) {
-                    answerHTML = '<div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">' +
-                        q.options.map((opt, oi) => {
-                            const isCorrect = oi === q.answer;
-                            return `<div class="${isCorrect ? 'correct-ans' : 'incorrect-ans'}" style="border: 2px solid ${isCorrect ? '#16a34a' : '#e2e8f0'}; padding: 6px; border-radius: 8px; text-align:center; background:${isCorrect ? '#f0fdf4' : '#fff'}; min-width: 100px;">
-                                <img src="${opt}" style="max-height:80px; max-width: 100%; display:block; border-radius:4px; margin: 0 auto 4px; object-fit: contain;" />
-                                <span style="font-size:0.75rem; font-weight: ${isCorrect ? 'bold' : 'normal'}; color: ${isCorrect ? '#16a34a' : '#64748b'}">Option ${oi + 1} ${isCorrect ? '✓' : ''}</span>
-                            </div>`;
-                        }).join('') + '</div>';
-                }
-            } else if (q.options && q.options.length) {
-                answerHTML = '<ol style="margin:8px 0 4px 20px;padding:0;">' +
+        let answerHTML = '';
+        if (q.type === 'image_selection') {
+            if (q.options?.length) {
+                answerHTML = '<div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">' +
                     q.options.map((opt, oi) => {
-                        const optText = typeof opt === 'object' ? (opt.text || opt.label || '') : opt;
                         const isCorrect = oi === q.answer;
-                        return `<li class="${isCorrect ? 'correct-ans' : 'incorrect-ans'}" style="margin:4px 0; padding: 4px 8px; border-radius: 4px; ${isCorrect ? 'color: #16a34a !important; font-weight: bold !important; background-color: #f0fdf4 !important; border: 1px solid #bbf7d0 !important;' : 'color: #334155;'}">${optText}${isCorrect ? ' ✓' : ''}</li>`;
-                    }).join('') + '</ol>';
-            } else if (q.pairs) {
-                answerHTML = '<ul style="margin:8px 0 4px 16px; padding:0; list-style-type: none;">' +
-                    q.pairs.map(p => `<li style="color:#16a34a; font-weight:bold; background-color: #f0fdf4; border: 1px solid #bbf7d0; display: inline-block; padding: 4px 12px; margin: 4px; border-radius: 6px;">${p.left} &nbsp;➔&nbsp; ${p.right}</li>`).join('') +
-                    '</ul>';
-            } else if (q.answer !== undefined) {
-                const correctText = Array.isArray(q.answer) ? q.answer.join(', ') : q.answer;
-                answerHTML = `<div style="margin-top:8px; padding: 6px 12px; background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; display: inline-block; color: #16a34a; font-weight: bold;">Answer: ${correctText}</div>`;
+                        return `<div class="${isCorrect ? 'correct-ans' : 'incorrect-ans'}" style="border: 2px solid ${isCorrect ? '#16a34a' : '#e2e8f0'}; padding: 6px; border-radius: 8px; text-align:center; background:${isCorrect ? '#f0fdf4' : '#fff'}; min-width: 100px;">
+                            <img src="${opt}" style="max-height:80px; max-width: 100%; display:block; border-radius:4px; margin: 0 auto 4px; object-fit: contain;" />
+                            <span style="font-size:0.75rem; font-weight: ${isCorrect ? 'bold' : 'normal'}; color: ${isCorrect ? '#16a34a' : '#64748b'}">Option ${oi + 1} ${isCorrect ? '✓' : ''}</span>
+                        </div>`;
+                    }).join('') + '</div>';
             }
+        } else if (q.options?.length) {
+            answerHTML = '<ol style="margin:8px 0 4px 20px;padding:0;">' +
+                q.options.map((opt, oi) => {
+                    const optText = typeof opt === 'object' ? (opt.text || opt.label || '') : opt;
+                    const isCorrect = oi === q.answer;
+                    return `<li class="${isCorrect ? 'correct-ans' : 'incorrect-ans'}" style="margin:4px 0; padding: 4px 8px; border-radius: 4px; ${isCorrect ? 'color: #16a34a !important; font-weight: bold !important; background-color: #f0fdf4 !important; border: 1px solid #bbf7d0 !important;' : 'color: #334155;'}">${optText}${isCorrect ? ' ✓' : ''}</li>`;
+                }).join('') + '</ol>';
+        } else if (q.pairs) {
+            answerHTML = '<ul style="margin:8px 0 4px 16px; padding:0; list-style-type: none;">' +
+                q.pairs.map(p => `<li style="color:#16a34a; font-weight:bold; background-color: #f0fdf4; border: 1px solid #bbf7d0; display: inline-block; padding: 4px 12px; margin: 4px; border-radius: 6px;">${p.left} &nbsp;➔&nbsp; ${p.right}</li>`).join('') +
+                '</ul>';
+        } else if (q.answer !== undefined) {
+            const correctText = Array.isArray(q.answer) ? q.answer.join(', ') : q.answer;
+            answerHTML = `<div style="margin-top:8px; padding: 6px 12px; background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; display: inline-block; color: #16a34a; font-weight: bold;">Answer: ${correctText}</div>`;
+        }
 
-            return `
-                <div class="question-box" style="page-break-inside:avoid; break-inside: avoid; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; background:#ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid #f1f5f9;padding-bottom:6px;">
-                        <span style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 10px;border-radius:12px;background:#f1f5f9;color:#475569;">${label}</span>
-                        <span style="font-size:0.8rem;color:#64748b;font-weight:600;">Q${i + 1} &nbsp;(${q.marks || 1} pt${(q.marks || 1) !== 1 ? 's' : ''})</span>
-                    </div>
-                    <p style="margin:8px 0;color:#1e293b;font-size:1rem;line-height:1.5;font-weight:600;">${qText}</p>
-                    ${mediaHtml}
-                    ${answerHTML}
-                </div>`;
-        }).join('');
+        return `
+            <div class="question-box" style="page-break-inside:avoid; break-inside: avoid; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; background:#ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;border-bottom:1px solid #f1f5f9;padding-bottom:6px;">
+                    <span style="font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 10px;border-radius:12px;background:#f1f5f9;color:#475569;">${label}</span>
+                    <span style="font-size:0.8rem;color:#64748b;font-weight:600;">Q${i + 1} &nbsp;(${q.marks || 1} pt${(q.marks || 1) !== 1 ? 's' : ''})</span>
+                </div>
+                <p style="margin:8px 0;color:#1e293b;font-size:1rem;line-height:1.5;font-weight:600;">${qText}</p>
+                ${mediaHtml}
+                ${answerHTML}
+            </div>`;
+    }).join('');
 
-        const printDate = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
+    const printDate = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
 
-        const html = `<!DOCTYPE html>
+    const html = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -870,15 +886,11 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 </html>`;
 
-        const win = window.open('', '_blank');
-        if (!win) {
-            alert('Pop-up blocked! Please allow pop-ups for this site, then try again.');
-            return;
-        }
-        win.document.write(html);
-        win.document.close();
-        win.addEventListener('load', () => setTimeout(() => win.print(), 600));
+    const win = window.open('', '_blank');
+    if (!win) {
+        alert('Pop-up blocked! Please allow pop-ups for this site, then try again.');
+        return;
     }
+    win.document.documentElement.innerHTML = html;
+    setTimeout(() => win.print(), 600);
 }
-
-);

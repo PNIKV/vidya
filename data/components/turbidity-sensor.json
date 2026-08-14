@@ -1,0 +1,31 @@
+{
+  "id": "turbidity-sensor",
+  "name": "Turbidity Sensor",
+  "fullName": "Optical Water Turbidity and Clarity Detection Sensor Module",
+  "category": "Water Quality Sensors",
+  "color": "#0284C7",
+  "tagline": "Measures total suspended solids (TSS) and water clarity using optical transmittance",
+  "description": "The Turbidity Sensor utilizes an optical light transmitter and receiver to measure the scattering and transmittance of light through water. When suspended particles or contaminants are present, light transmission decreases, producing a lower analog voltage that correlates with NTU (Nephelometric Turbidity Units).",
+  "specs": {
+    "operatingVoltage": "5V DC",
+    "operatingCurrent": "40mA (max)",
+    "responseSpeed": "< 500ms",
+    "measuringRange": "0 to 3000 NTU (clean to highly turbid)",
+    "outputType": "Analog Voltage (0–4.5V) and Digital Threshold Trigger (DO)",
+    "operatingTemperature": "5°C to 90°C"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "Power", "desc": "5V DC power supply", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "AOUT", "name": "Analog Out", "desc": "Analog voltage proportional to water clarity (4.1V+ = clean water)", "color": "#0284C7" },
+    { "pin": "DOUT", "name": "Digital Out", "desc": "Digital high/low alert threshold output", "color": "#10B981" }
+  ],
+  "wiringNote": "Only immerse the lower optical probe into water; do not submerge the probe's top wire connection or adapter PCB.",
+  "libraryName": "Built-in analogRead",
+  "codeSnippet": "const int turbPin = A0;\nvoid setup() { Serial.begin(9600); }\nvoid loop() {\n  int sensorVal = analogRead(turbPin);\n  float voltage = sensorVal * (5.0 / 1024.0);\n  Serial.print(\"Turbidity Voltage: \"); Serial.print(voltage); Serial.println(\" V\");\n  delay(500);\n}",
+  "commonMistakes": [
+    "Submerging entire probe including top plastic sealing head",
+    "Reading raw values without voltage-to-NTU calibration formula"
+  ],
+  "usedInProjects": ["jarakshak"]
+}

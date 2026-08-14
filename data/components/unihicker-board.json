@@ -1,0 +1,31 @@
+{
+  "id": "unihicker-board",
+  "name": "UNIHIKER Single Board Computer",
+  "fullName": "UNIHIKER IoT Single Board Computer with 2.8-inch Color Touchscreen",
+  "category": "Single Board Computers",
+  "color": "#10B981",
+  "tagline": "Linux-based single board computer with touchscreen, light sensor, accelerometer, and microphone",
+  "description": "UNIHIKER is a single-board computer that brings you brand new experience for learning and coding in Python. Built with a 2.8-inch color touchscreen, Wi-Fi, Bluetooth, light sensor, accelerometer, gyroscope, microphone, and co-processor (GD32VF103), it can run desktop Python libraries directly while interfacing with physical pins.",
+  "specs": {
+    "cpu": "Quad-Core ARM Cortex-A35 (up to 1.2 GHz)",
+    "coprocessor": "GD32VF103 RISC-V 108MHz MCU",
+    "ram": "512MB DDR3",
+    "storage": "16GB eMMC Flash (Debian Linux OS)",
+    "display": "2.8-inch 240x320 color touchscreen",
+    "connectivity": "Wi-Fi 2.4GHz 802.11 b/g/n, Bluetooth 4.0, USB Type-C",
+    "onboardSensors": "Light Sensor, 6-Axis IMU (Accelerometer & Gyroscope), Microphone, Buzzer",
+    "expansion": "Edge connector (compatible with micro:bit ecosystem), Gravity 3-pin & 4-pin ports"
+  },
+  "pinout": [
+    { "pin": "USB-C", "name": "Power & Programming", "desc": "5V 2A power input and virtual network programming interface (http://10.1.2.3)", "color": "#10B981" },
+    { "pin": "P0–P20", "name": "Edge Connector Pins", "desc": "GPIO, ADC, PWM, I2C, SPI expansion pins", "color": "#3B82F6" }
+  ],
+  "wiringNote": "Plug in via USB-C to PC and connect to web IDE at http://10.1.2.3 or via VS Code Remote SSH.",
+  "libraryName": "unihiker (Python pip package)",
+  "codeSnippet": "from unihiker import GUI\nimport time\ngui = GUI()\ngui.draw_text(x=120, y=100, text='Hello UNIHIKER!', origin='center', color='blue')\nwhile True:\n    time.sleep(1)",
+  "commonMistakes": [
+    "Underpowering from low-current USB ports (requires minimum 5V 1.5A supply)",
+    "Forgetting to set correct screen orientation parameters in Python GUI script"
+  ],
+  "usedInProjects": ["unihicker"]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "ir-receiver",
+  "name": "IR Receiver Sensor",
+  "fullName": "TSOP1738 / VS1838B 38kHz Infrared Remote Receiver Module",
+  "category": "Communication & Sensors",
+  "color": "#8B5CF6",
+  "tagline": "Demodulates 38kHz infrared pulsed signals from handheld remote controls",
+  "description": "The TSOP1738 / VS1838B is a miniaturized receiver for infrared remote control systems. It integrates a PIN diode, preamplifier, and bandpass filter tuned to 38 kHz to demodulate infrared codes from consumer remotes (NEC, Sony, RC5) into clean digital pulses.",
+  "specs": {
+    "carrierFrequency": "38 kHz",
+    "supplyVoltage": "2.7V to 5.5V DC",
+    "supplyCurrent": "0.4mA to 1.5mA (low power)",
+    "transmissionDistance": "Up to 15–18 meters (line-of-sight)",
+    "protocols": ["NEC", "Sony SIRC", "Philips RC5/RC6", "Samsung"]
+  },
+  "pinout": [
+    { "pin": "OUT / S", "name": "Signal", "desc": "Demodulated digital pulse stream to microcontroller", "color": "#8B5CF6" },
+    { "pin": "GND / -", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "VCC / +", "name": "Power", "desc": "3.3V or 5V DC power supply", "color": "#EF4444" }
+  ],
+  "wiringNote": "Add a 100uF decoupling capacitor across VCC and GND if your circuit suffers from motor noise.",
+  "libraryName": "IRremote (by shirriff / z3t0 / Armin Joachimsmeyer)",
+  "codeSnippet": "#include <IRremote.h>\nconst int recvPin = 11;\nvoid setup() {\n  Serial.begin(9600);\n  IrReceiver.begin(recvPin, ENABLE_LED_FEEDBACK);\n}\nvoid loop() {\n  if (IrReceiver.decode()) {\n    Serial.println(IrReceiver.decodedIRData.decodedRawData, HEX);\n    IrReceiver.resume();\n  }\n}",
+  "commonMistakes": [
+    "Reversing VCC and GND pins (check manufacturer pinout as some modules swap VCC and Signal)",
+    "Using blocking delays in loop() that miss incoming IR pulse trains"
+  ],
+  "usedInProjects": ["smart-home-automation"]
+}

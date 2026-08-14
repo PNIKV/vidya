@@ -1,4 +1,4 @@
-const BUILD_TIMESTAMP = '2026-07-13T10:14Z';
+const BUILD_TIMESTAMP = '2026-08-15T00:00Z';
 const CACHE_NAME = `vidya-steam-${BUILD_TIMESTAMP}`;
 
 // Assets to pre-cache on install

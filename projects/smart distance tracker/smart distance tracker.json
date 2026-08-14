@@ -1,0 +1,155 @@
+{
+  "id": "smart-distance-tracker",
+  "title": "Smart Precision Distance Tracker",
+  "subtitle": "High-Precision Time-of-Flight Laser Rangefinder with KY-008 Targeting & Web Dashboard",
+  "category": "Precision Instrumentation & IoT",
+  "level": "Intermediate",
+  "difficulty": 3,
+  "color": "#38D996",
+  "author": "Nikhil Patil",
+  "date": "2026-08-12",
+  "team": [
+    {
+      "name": "Nikhil Patil",
+      "role": "Embedded Systems & Precision Instrumentation Developer"
+    }
+  ],
+  "desc": "Millimeter-accuracy laser distance measuring tool using VL53L0X Time-of-Flight sensor, KY-008 targeting laser, SH1106 OLED, and an ESP8266 live web dashboard.",
+  "fullDesc": "The Smart Precision Distance Tracker is an IoT-enabled, optical distance measurement tool designed for engineering surveying, architectural dimensioning, indoor robotic localization, and industrial automation where conventional ultrasonic or mechanical tape measurements fail due to beam dispersion or physical constraints.\n\nPowered by an ESP8266 (Wemos D1 Mini), the device integrates a VL53L0X Time-of-Flight (ToF) laser rangefinder module that measures the exact transit time of sub-nanosecond photon pulses (940nm VCSEL) reflected from surfaces up to 2 meters away with 1 mm resolution. A co-axial KY-008 650nm visible targeting laser is switched via an onboard NPN transistor driver strictly during active measurement, ensuring high safety with zero risk of continuous laser exposure.\n\nReadings are displayed locally in real time on a crisp 1.3-inch SH1106 I2C OLED screen and simultaneously broadcast to an embedded web dashboard hosted directly on the ESP8266 over Wi-Fi (with mDNS support at `http://distsensor.local` and standalone AP fallback `DistSensor-Setup`). The dashboard provides live graphs, multi-unit conversions (mm, cm, inch, m), and a 'Hold to Measure' trigger with an automatic safety heartbeat timeout.",
+  "innovation": "Combines photon Time-of-Flight laser telemetry with co-axial visible targeting and an embedded zero-latency WebSocket/HTTP web dashboard. Features safety heartbeat interlocks so the targeting laser instantly turns off if the operator disconnects or closes the browser tab.",
+  "problemStatement": "Traditional ultrasonic distance sensors (e.g., HC-SR04) suffer from wide beam divergence (15° cone), acoustic reflection dead-zones, and ambient temperature/humidity drift, making precise, narrow-aperture distance measurements impossible. Mechanical tape measures are limited by physical access and cannot stream digital telemetry to remote computers.",
+  "solutionApproach": "A sub-nanosecond photon Time-of-Flight (ToF) measurement engine using a 940nm Class 1 VCSEL laser inside the VL53L0X sensor. The Wemos D1 Mini samples distance at 10 Hz over I2C, updates the 1.3-inch SH1106 OLED display, and streams JSON data to connected devices via an asynchronous web server. A KY-008 visible red laser provides visual aiming feedback only while the physical push button or web trigger is actively depressed.",
+  "hardwareSpecs": {
+    "microcontroller": "Wemos D1 Mini (ESP8266, 80/160 MHz, 4MB Flash)",
+    "sensorModule": "VL53L0X Time-of-Flight (ToF) Distance Sensor (940nm VCSEL)",
+    "aimingLaser": "KY-008 650nm 5mW Red Dot Laser Diode Module",
+    "display": "1.3-inch SH1106 OLED 128x64 Monochrome Screen (I2C 0x3C)",
+    "wireless": "802.11 b/g/n Wi-Fi with mDNS (http://distsensor.local)",
+    "measurementRange": "30 mm to 2000 mm (2 meters)",
+    "resolution": "1 mm",
+    "refreshRate": "10 Hz (100 ms interval)",
+    "operatingVoltage": "3.3V / 5V DC via USB-C or LiPo Battery"
+  },
+  "components": [
+    "Wemos D1 Mini (ESP8266)",
+    "VL53L0X Time-of-Flight Sensor Module",
+    "KY-008 650nm Laser Diode Module",
+    "1.3-inch SH1106 128x64 I2C OLED Display",
+    "Tactile Push Button",
+    "2N2222 NPN Transistor",
+    "1k Ohm Resistor",
+    "Half-Size Breadboard",
+    "Jumper Wires"
+  ],
+  "componentRefs": [
+    "esp8266-d1-mini",
+    "vl53l0x",
+    "laser-module",
+    "oled-0-96",
+    "breadboard",
+    "jumper-wires"
+  ],
+  "circuitConnections": {
+    "VL53L0X VCC": "Wemos 3V3",
+    "VL53L0X GND": "Wemos GND (G)",
+    "VL53L0X SDA": "Wemos D2 (GPIO4)",
+    "VL53L0X SCL": "Wemos D1 (GPIO5)",
+    "SH1106 OLED VCC": "Wemos 3V3",
+    "SH1106 OLED GND": "Wemos GND (G)",
+    "SH1106 OLED SDA": "Wemos D2 (GPIO4 - shared I2C bus)",
+    "SH1106 OLED SCL": "Wemos D1 (GPIO5 - shared I2C bus)",
+    "Push Button Leg 1": "Wemos D6 (GPIO12 - Internal Pullup)",
+    "Push Button Leg 2": "Wemos GND (G)",
+    "Laser Control (Base)": "Wemos D7 (GPIO13) via 1kΩ resistor to Transistor Base",
+    "Laser Collector": "KY-008 Laser Negative (-)",
+    "Laser Emitter": "Wemos GND",
+    "Laser VCC (+)": "Wemos 3V3 / 5V"
+  },
+  "circuitDiagramDescription": "The VL53L0X sensor and 1.3\" SH1106 OLED share the I2C bus on GPIO4 (SDA/D2) and GPIO5 (SCL/D1). The momentary push button connects between D6 (GPIO12) and GND. GPIO13 (D7) drives the base of a 2N2222 NPN transistor through a 1kΩ resistor to safely switch the KY-008 laser module without overloading the ESP8266 GPIO current limits.",
+  "working": [
+    {
+      "step": 1,
+      "action": "At boot, the ESP8266 initializes the I2C bus, configures the VL53L0X ToF sensor, starts the SH1106 OLED screen, connects to Wi-Fi, and spins up the web server."
+    },
+    {
+      "step": 2,
+      "action": "When the user presses the physical push button or holds the 'Hold to Measure' button on the web dashboard, the laser controller triggers GPIO13 HIGH."
+    },
+    {
+      "step": 3,
+      "action": "The KY-008 red laser illuminates the exact target point, providing visual aiming confirmation."
+    },
+    {
+      "step": 4,
+      "action": "The VL53L0X emits invisible 940nm photon pulses and precisely measures the round-trip flight time to calculate millimeter-accurate distance."
+    },
+    {
+      "step": 5,
+      "action": "The measurement engine formats the distance into millimeters, centimeters, inches, and meters, and updates the local OLED display at 10 Hz."
+    },
+    {
+      "step": 6,
+      "action": "Connected web clients polling the `/data` endpoint receive real-time JSON packets to animate the gauge, chart history, and update numerical metrics."
+    },
+    {
+      "step": 7,
+      "action": "When the button is released or if the web client drops its heartbeat for over 1000 ms, the laser is instantly extinguished for eye safety."
+    }
+  ],
+  "benefits": [
+    "High optical precision (1 mm resolution) unaffected by surface color or acoustic absorption",
+    "Co-axial red laser targeting with fail-safe automatic shutoff",
+    "Zero app install required - works on any phone, tablet, or laptop browser via Wi-Fi",
+    "Dual interface: Instant local 1.3\" OLED screen + cloudless self-hosted Web Dashboard",
+    "Multi-unit instantaneous readout (mm, cm, in, m)",
+    "Fallback Access Point (AP) mode when local Wi-Fi router is unavailable"
+  ],
+  "applications": [
+    "Architectural Room Dimensioning & Floorplan Mapping",
+    "Robotic Autonomous Navigation & Obstacle Clearance Sensing",
+    "Industrial Liquid Level & Solid Silo Height Monitoring",
+    "Drone Altitude Precision Ground Proximity Detection",
+    "Physics Laboratory Velocity and Position Tracking Experiments"
+  ],
+  "futureScope": [
+    "Add Bluetooth BLE telemetry for integration with CAD drawing software.",
+    "Implement area and volume calculation modes with 3D coordinate triangulation.",
+    "Upgrade to VL53L5CX 8x8 multizone ToF array sensor for mini-LiDAR 3D point cloud generation."
+  ],
+  "vivaQuestions": [
+    {
+      "q": "How does a Time-of-Flight (ToF) sensor differ from an ultrasonic distance sensor?",
+      "a": "Ultrasonic sensors emit 40 kHz sound waves (~343 m/s) with a wide 15° cone subject to air temperature and surface angle. ToF sensors use speed-of-light photon pulses (300,000 km/s) with a tight optical beam, providing millimeter precision regardless of target reflectivity or acoustic absorbing materials."
+    },
+    {
+      "q": "Why is a transistor driver used for the KY-008 laser module instead of direct GPIO drive?",
+      "a": "The ESP8266 GPIO pins are rated for a maximum of 12 mA source current. Laser diode modules can draw 25–40 mA under continuous operation, risking GPIO burn-out without an NPN transistor or MOSFET driver."
+    },
+    {
+      "q": "What is the role of mDNS (multicast DNS) in this project?",
+      "a": "mDNS allows connected client devices on the same Wi-Fi network to navigate to http://distsensor.local in their web browsers without needing to find or remember the ESP8266's dynamic local IP address."
+    },
+    {
+      "q": "What safety mechanism prevents the targeting laser from staying on indefinitely?",
+      "a": "The firmware implements a dual interlock: momentary physical button detection and a 1000 ms web heartbeat timeout. If the browser tab crashes or network drops, the laser automatically turns OFF."
+    }
+  ],
+  "tags": [
+    "ESP8266",
+    "Laser",
+    "Time-of-Flight",
+    "VL53L0X",
+    "OLED",
+    "Web Dashboard",
+    "Precision Measurement"
+  ],
+  "keywords": [
+    "distance tracker",
+    "laser rangefinder",
+    "tof sensor",
+    "vl53l0x",
+    "esp8266",
+    "sh1106 oled",
+    "precision distance measurement"
+  ]
+}

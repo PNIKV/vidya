@@ -38,15 +38,14 @@
   ],
   "components": [
     "Arduino UNO",
-    "Water Level Sensor",
-    "Servo Motor",
-    "Buzzer",
-    "LED",
-    "Jumper Wires",
+    "Submersible Water Level Depth Sensor",
+    "SG90 Micro Servo Motor (Bridge Barrier)",
+    "5V Active Buzzer",
+    "Green & Red Status LEDs",
     "Breadboard",
+    "Jumper Wires",
     "USB Cable",
-    "Power Supply",
-    "Bridge Model"
+    "Bridge Diorama Model"
   ],
   "benefits": [
     "Prevents accidents during floods.",
@@ -87,5 +86,22 @@
     "Safety",
     "IoT",
     "Community Innovation"
-  ]
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "water-level-sensor",
+    "servo-motor",
+    "buzzer",
+    "led",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO (ATmega328P)",
+    "waterSensor": "Analog Submersible Water Level Depth Sensor (0–40mm immersion)",
+    "barrierActuator": "SG90 9g Micro Servo Motor (0° Safe Open / 90° Danger Closed)",
+    "alarmOutputs": "5V Active Buzzer + Red/Green Traffic Light LEDs",
+    "operatingVoltage": "5V DC"
+  }
 }

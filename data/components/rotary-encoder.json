@@ -1,0 +1,30 @@
+{
+  "id": "rotary-encoder",
+  "name": "Rotary Encoder Module",
+  "fullName": "KY-040 Incremental 360-Degree Rotary Encoder Module with Pushbutton",
+  "category": "Input Devices",
+  "color": "#6366F1",
+  "tagline": "Continuous 360-degree digital dial for menus, timers, and precision navigation",
+  "description": "The KY-040 rotary encoder is an incremental electro-mechanical device that converts the angular position or motion of a shaft into a sequence of digital 2-phase quadrature pulses (CLK and DT). Unlike potentiometers, it can rotate continuously without physical stops and includes a momentary push switch.",
+  "specs": {
+    "operatingVoltage": "3.3V to 5V DC",
+    "pulsesPerRotation": "20 pulses per 360° rotation (with tactile detents)",
+    "lifeCycle": "30,000+ cycles minimum",
+    "switchType": "Integrated momentary tactile push button (SW)"
+  },
+  "pinout": [
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "+", "name": "Power", "desc": "3.3V or 5V DC power supply", "color": "#EF4444" },
+    { "pin": "SW", "name": "Push Switch", "desc": "Active-LOW push button output", "color": "#F59E0B" },
+    { "pin": "DT", "name": "Data Pin", "desc": "Phase B quadrature output", "color": "#10B981" },
+    { "pin": "CLK", "name": "Clock Pin", "desc": "Phase A quadrature output (trigger pin)", "color": "#3B82F6" }
+  ],
+  "wiringNote": "Connect CLK to an external interrupt pin (e.g. Arduino Pin 2 or 3) for jitter-free rotary tracking.",
+  "libraryName": "Encoder (by Paul Stoffregen) or custom interrupt ISR",
+  "codeSnippet": "const int clkPin = 2, dtPin = 3, swPin = 4;\nint counter = 0, lastClk;\nvoid setup() {\n  pinMode(clkPin, INPUT); pinMode(dtPin, INPUT); pinMode(swPin, INPUT_PULLUP);\n  lastClk = digitalRead(clkPin);\n  Serial.begin(9600);\n}\nvoid loop() {\n  int currentClk = digitalRead(clkPin);\n  if (currentClk != lastClk && currentClk == 1) {\n    if (digitalRead(dtPin) != currentClk) counter++; else counter--;\n    Serial.print(\"Counter: \"); Serial.println(counter);\n  }\n  lastClk = currentClk;\n}",
+  "commonMistakes": [
+    "Polling without hardware interrupts or proper debouncing causing missed ticks",
+    "Reversing CLK and DT pins causing counter to increment in reverse direction"
+  ],
+  "usedInProjects": ["arduino-uno-countdown-timer"]
+}

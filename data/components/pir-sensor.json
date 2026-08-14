@@ -1,0 +1,30 @@
+{
+  "id": "pir-sensor",
+  "name": "PIR Motion Sensor",
+  "fullName": "HC-SR501 Pyroelectric Passive Infrared Motion Sensor Module",
+  "category": "Sensors",
+  "color": "#F59E0B",
+  "tagline": "Detects infrared body heat emissions to sense human/animal movement",
+  "description": "The HC-SR501 PIR sensor detects infrared radiation emitted by warm moving bodies. It features a Fresnel lens that splits the detection field into optical zones, paired with a BISS0001 processing IC with adjustable delay time and sensitivity potentiometers.",
+  "specs": {
+    "operatingVoltage": "4.5V to 20V DC (onboard 3.3V regulator)",
+    "outputLevel": "3.3V High / 0V Low TTL Logic",
+    "detectionRange": "3 to 7 meters (adjustable via Sx potentiometer)",
+    "detectionAngle": "< 100° cone angle with Fresnel lens",
+    "delayTime": "0.3 seconds to 5 minutes (adjustable via Tx potentiometer)",
+    "triggerMode": "L (single trigger) or H (repeat trigger) via jumper"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "Power", "desc": "4.5V to 20V DC supply input", "color": "#EF4444" },
+    { "pin": "OUT", "name": "Signal", "desc": "3.3V HIGH when motion detected, 0V LOW when idle", "color": "#10B981" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" }
+  ],
+  "wiringNote": "Allow a 30 to 60 second warm-up period after powering on before reading reliable motion pulses.",
+  "libraryName": "Built-in digitalRead",
+  "codeSnippet": "const int pirPin = 2;\nvoid setup() {\n  pinMode(pirPin, INPUT);\n  Serial.begin(9600);\n}\nvoid loop() {\n  if (digitalRead(pirPin) == HIGH) {\n    Serial.println(\"Motion Detected!\");\n  }\n  delay(200);\n}",
+  "commonMistakes": [
+    "Reading sensor during its initial 60s warm-up calibration cycle",
+    "Pointing directly at air conditioners, heaters, or sunlight which trigger false positives"
+  ],
+  "usedInProjects": ["smart-classroom", "laser-security-system"]
+}

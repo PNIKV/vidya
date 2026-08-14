@@ -1,0 +1,30 @@
+{
+  "id": "joystick-module",
+  "name": "Dual-Axis Joystick Module",
+  "fullName": "KY-023 Dual-Axis PS2 Thumb Joystick Module with Push Button",
+  "category": "Input Devices",
+  "color": "#F59E0B",
+  "tagline": "Analog 2-axis (X/Y) thumb controller with momentary integrated tactile push button",
+  "description": "The Dual-Axis Joystick module contains two 10kΩ potentiometers placed perpendicularly (one for X-axis, one for Y-axis) and a central momentary push button. Moving the stick outputs continuous analog voltages (0V to 5V) centered at 2.5V.",
+  "specs": {
+    "operatingVoltage": "3.3V to 5V DC",
+    "potentiometers": "Dual 10kΩ linear potentiometers (X and Y axes)",
+    "pushSwitch": "Tactile switch triggered by pressing the stick straight down (Z-axis)",
+    "outputs": "Analog X, Analog Y, Digital Switch (SW)"
+  },
+  "pinout": [
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "+5V / VCC", "name": "Power", "desc": "3.3V or 5V DC power supply", "color": "#EF4444" },
+    { "pin": "VRx", "name": "X-Axis", "desc": "Analog output voltage for horizontal axis (0–1023)", "color": "#3B82F6" },
+    { "pin": "VRy", "name": "Y-Axis", "desc": "Analog output voltage for vertical axis (0–1023)", "color": "#10B981" },
+    { "pin": "SW", "name": "Switch", "desc": "Pushbutton output (active-LOW with pull-up resistor)", "color": "#F59E0B" }
+  ],
+  "wiringNote": "Use internal pull-up on the Arduino pin connected to SW (`pinMode(swPin, INPUT_PULLUP)`).",
+  "libraryName": "Built-in analogRead / digitalRead",
+  "codeSnippet": "const int xPin = A0, yPin = A1, swPin = 2;\nvoid setup() {\n  pinMode(swPin, INPUT_PULLUP);\n  Serial.begin(9600);\n}\nvoid loop() {\n  int xVal = analogRead(xPin);\n  int yVal = analogRead(yPin);\n  int btn = digitalRead(swPin);\n  Serial.print(\"X: \"); Serial.print(xVal); Serial.print(\" | Y: \"); Serial.println(yVal);\n  delay(100);\n}",
+  "commonMistakes": [
+    "Expecting exact 512 center reading without software deadband calibration (natural joystick resting center varies ~490–530)",
+    "Forgetting pull-up resistor on the SW switch pin"
+  ],
+  "usedInProjects": ["arduino-flight-simulator"]
+}

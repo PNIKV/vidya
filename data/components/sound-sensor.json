@@ -1,0 +1,30 @@
+{
+  "id": "sound-sensor",
+  "name": "Sound Sensor Module",
+  "fullName": "High-Sensitivity Microphone Sound Level Detection Module (LM393)",
+  "category": "Acoustic Sensors",
+  "color": "#06B6D4",
+  "tagline": "Acoustic sensor with analog amplitude output and digital sound threshold trigger",
+  "description": "The Sound Sensor module uses an electret condenser microphone paired with an LM393 comparator and internal audio preamplifier. It outputs both a continuous analog voltage proportional to sound volume (AO) and a digital high/low trigger (DO) when volume exceeds the potentiometer threshold.",
+  "specs": {
+    "operatingVoltage": "3.3V to 5V DC",
+    "microphoneType": "Electret Condenser Microphone (50 Hz to 20 kHz)",
+    "outputs": "Dual Output: Analog (AO raw signal) and Digital (DO threshold pulse)",
+    "sensitivity": "Adjustable via onboard multiturn precision potentiometer",
+    "comparator": "LM393 high-speed voltage comparator"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "Power", "desc": "3.3V to 5V DC power supply", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "DO", "name": "Digital Out", "desc": "Active-LOW / HIGH pulse when sound exceeds threshold", "color": "#10B981" },
+    { "pin": "AO", "name": "Analog Out", "desc": "Real-time analog audio waveform voltage (0–5V)", "color": "#06B6D4" }
+  ],
+  "wiringNote": "For measuring continuous decibel noise levels, read the AO pin via analogRead() and compute peak-to-peak amplitude over a 50ms sampling window.",
+  "libraryName": "Built-in analogRead / digitalRead",
+  "codeSnippet": "const int soundAnalogPin = A0;\nvoid setup() { Serial.begin(9600); }\nvoid loop() {\n  unsigned int sample;\n  unsigned long startMillis = millis();\n  unsigned int signalMax = 0, signalMin = 1024;\n  while (millis() - startMillis < 50) {\n    sample = analogRead(soundAnalogPin);\n    if (sample < 1024) {\n      if (sample > signalMax) signalMax = sample;\n      if (sample < signalMin) signalMin = sample;\n    }\n  }\n  int peakToPeak = signalMax - signalMin;\n  Serial.print(\"Noise Amplitude: \"); Serial.println(peakToPeak);\n}",
+  "commonMistakes": [
+    "Reading only single analogRead() points without window sampling (audio is an AC sine wave centered at ~2.5V)",
+    "Using digital output DO expecting precise decibel values"
+  ],
+  "usedInProjects": ["traffic-noise-meter", "smart-classroom"]
+}

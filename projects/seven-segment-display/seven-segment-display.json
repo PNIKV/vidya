@@ -45,14 +45,17 @@
   "components": [
     "Arduino Uno",
     "Single Common Cathode 7-Segment Display",
+    "7x 220 Ohm Resistors",
+    "Breadboard",
     "Jumper Wires",
-    "USB Cable",
-    "Computer / Laptop",
-    "Wokwi Simulator"
+    "USB Cable"
   ],
   "componentRefs": [
     "arduino-uno",
-    "7-segment-display"
+    "7-segment-display",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
   ],
   "guide": [
     "Connect the 7-Segment Display to the Arduino Uno according to the circuit diagram.",

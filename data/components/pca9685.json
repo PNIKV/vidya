@@ -1,0 +1,34 @@
+{
+  "id": "pca9685",
+  "name": "PCA9685 16-Channel PWM Driver",
+  "fullName": "PCA9685 16-Channel 12-Bit I2C PWM Servo & LED Driver Board",
+  "category": "Motor Drivers & Controllers",
+  "color": "#F97316",
+  "tagline": "Hardware 16-channel 12-bit PWM generator over I2C with zero microcontroller CPU overhead",
+  "description": "The PCA9685 is an I2C-bus controlled 16-channel LED and servo driver. Each of the 16 outputs has its own 12-bit resolution (4096 steps) PWM controller operating at a configurable frequency from 24 Hz to 1526 Hz. It completely offloads timing-critical pulse generation from the main CPU, enabling smooth multi-servo robotic platforms (hexapods, quadrupeds, robotic arms).",
+  "specs": {
+    "operatingVoltage": "Logic: 3.3V–5V DC, Servo Bus: 5V–6V high current",
+    "resolution": "12-bit (4096 individual pulse steps)",
+    "channels": "16 independent PWM outputs with 3-pin standard servo headers (Signal, V+, GND)",
+    "interface": "I2C (Default Address 0x40, configurable up to 0x7F with solder jumpers)",
+    "frequency": "24 Hz to 1526 Hz (typical 50 Hz for analog/digital RC servos)",
+    "protection": "Reverse polarity protection on terminal power block, 1000uF capacitor slot"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "Logic Power", "desc": "3.3V or 5V logic power from microcontroller", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "Logic and power ground reference", "color": "#1E293B" },
+    { "pin": "SCL", "name": "I2C Clock", "desc": "I2C clock line", "color": "#8B5CF6" },
+    { "pin": "SDA", "name": "I2C Data", "desc": "I2C data line", "color": "#8B5CF6" },
+    { "pin": "OE", "name": "Output Enable", "desc": "Active-LOW global output disable (internally pulled down)", "color": "#10B981" },
+    { "pin": "V+ (Terminal)", "name": "Servo Power", "desc": "Dedicated high-current 5V–6V battery / UBEC power for servos", "color": "#EF4444" }
+  ],
+  "wiringNote": "Always power servos via the blue screw terminals with a dedicated 5V 3A+ power supply. Never draw servo power from the Arduino 5V pin.",
+  "libraryName": "Adafruit PWM Servo Driver Library (by Adafruit)",
+  "codeSnippet": "#include <Wire.h>\n#include <Adafruit_PWMServoDriver.h>\nAdafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver(0x40);\nvoid setup() {\n  pwm.begin();\n  pwm.setPWMFreq(50); // 50Hz for standard RC servos\n}\nvoid loop() {\n  pwm.setPWM(0, 0, 375); // Center channel 0 servo at ~90 deg\n  delay(1000);\n}",
+  "commonMistakes": [
+    "Supplying logic 5V to screw terminals without external battery (servos will twitch or reset MCU)",
+    "Forgetting common ground between external UBEC/battery and microcontroller",
+    "Setting PWM frequency too high (>60Hz) for standard analog hobby servos"
+  ],
+  "usedInProjects": ["crabrobot", "gripper-robot"]
+}

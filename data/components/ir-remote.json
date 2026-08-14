@@ -1,0 +1,27 @@
+{
+  "id": "ir-remote",
+  "name": "IR Remote Control",
+  "fullName": "21-Key NEC Protocol Infrared Handheld Remote Controller",
+  "category": "Input & Controllers",
+  "color": "#F43F5E",
+  "tagline": "Wireless infrared keypad for home automation and remote robotic steering",
+  "description": "A compact 21-key wireless infrared remote controller emitting 38kHz modulated light pulses encoded with the industry-standard NEC protocol. Powered by a CR2025 coin cell, it transmits unique 32-bit hex command codes for each button.",
+  "specs": {
+    "carrierFrequency": "38 kHz",
+    "encodingProtocol": "NEC (32-bit: 8-bit address, 8-bit inverted address, 8-bit command, 8-bit inverted command)",
+    "operatingVoltage": "3V DC (CR2025/CR2032 Coin Cell)",
+    "buttons": "21 Momentary Dome Keys",
+    "effectiveDistance": "8 meters line-of-sight"
+  },
+  "pinout": [
+    { "pin": "IR LED", "name": "940nm Emitter", "desc": "Front-facing infrared diode transmitting modulated codes", "color": "#F43F5E" }
+  ],
+  "wiringNote": "Wireless standalone transmitter. Remember to remove the transparent battery insulation tab before first use.",
+  "libraryName": "IRremote",
+  "codeSnippet": "// Codes decoded by IRremote:\n// Power: 0xFFA25D | Mode: 0xFF629D | Mute: 0xFFE21D | 1: 0xFF30CF",
+  "commonMistakes": [
+    "Depleted coin cell battery causing intermittent packet transmission",
+    "Blocking line-of-sight path between remote and IR receiver"
+  ],
+  "usedInProjects": ["smart-home-automation"]
+}

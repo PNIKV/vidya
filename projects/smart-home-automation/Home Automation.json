@@ -40,22 +40,22 @@
   },
   "components": [
     "Arduino UNO",
-    "IR Receiver Sensor",
-    "IR Remote Control",
-    "1-Channel Relay Module",
+    "TSOP1738 / VS1838B IR Receiver Sensor",
+    "21-Key IR Remote Control",
+    "5V 1-Channel Relay Module",
+    "Lamp Holder & AC Bulb",
+    "Breadboard",
     "Jumper Wires",
-    "Lamp Holder",
-    "AC Bulb",
-    "USB Cable",
-    "Breadboard (Optional)",
-    "Arduino IDE"
+    "USB Cable"
   ],
   "componentRefs": [
     "arduino-uno",
     "ir-receiver",
     "ir-remote",
     "relay-module",
-    "jumper-wires"
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
   ],
   "guide": [
     "Connect the IR Receiver VCC to Arduino 5V.",

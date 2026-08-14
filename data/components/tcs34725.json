@@ -1,0 +1,33 @@
+{
+  "id": "tcs34725",
+  "name": "TCS34725 RGB Color Sensor",
+  "fullName": "TCS34725 High-Precision I2C RGB Color Sensor with IR Blocking Filter",
+  "category": "Optical Sensors",
+  "color": "#EC4899",
+  "tagline": "Professional RGB and clear light sensor with onboard white illumination LED",
+  "description": "The TCS34725 is a digital color sensor that integrates an RGB photodiode array with an IR blocking filter. It accurately measures Red, Green, Blue, and Clear (lux) light intensities without optical interference from infrared ambient heat sources.",
+  "specs": {
+    "operatingVoltage": "3.3V to 5V DC (onboard 3.3V regulator and level shifting)",
+    "dynamicRange": "3,800,000:1",
+    "interface": "I2C (Fixed Address: 0x29)",
+    "colorChannels": "Red, Green, Blue, Clear (ambient light)",
+    "illumination": "Onboard 4150°K neutral white LED with LED enable pin (LED / INT)",
+    "irFilter": "Integrated IR blocking filter minimizes IR spectral component"
+  },
+  "pinout": [
+    { "pin": "VIN", "name": "Power", "desc": "3.3V to 5V DC power supply", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "SCL", "name": "I2C Clock", "desc": "I2C serial clock line", "color": "#8B5CF6" },
+    { "pin": "SDA", "name": "I2C Data", "desc": "I2C serial data line", "color": "#8B5CF6" },
+    { "pin": "LED", "name": "LED Control", "desc": "Pull LOW to turn OFF the onboard white LED", "color": "#10B981" },
+    { "pin": "INT", "name": "Interrupt", "desc": "Programmable color threshold interrupt output", "color": "#F59E0B" }
+  ],
+  "wiringNote": "Keep target object 1–3 cm away from the sensor aperture for optimal color recognition.",
+  "libraryName": "Adafruit TCS34725 (by Adafruit)",
+  "codeSnippet": "#include <Wire.h>\n#include \"Adafruit_TCS34725.h\"\nAdafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);\nvoid setup() {\n  Serial.begin(9600);\n  if (tcs.begin()) Serial.println(\"TCS34725 Ready!\");\n}\nvoid loop() {\n  uint16_t r, g, b, c;\n  tcs.getRawData(&r, &g, &b, &c);\n  Serial.print(\"R: \"); Serial.print(r); Serial.print(\" G: \"); Serial.print(g); Serial.print(\" B: \"); Serial.println(b);\n  delay(200);\n}",
+  "commonMistakes": [
+    "Placing target object too far away (>5 cm) causing ambient shadows to distort readings",
+    "Confusing TCS34725 (I2C) with TCS3200 (Frequency pulse output)"
+  ],
+  "usedInProjects": ["food-spoilage-detection-system"]
+}

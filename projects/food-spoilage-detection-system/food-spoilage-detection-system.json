@@ -44,7 +44,7 @@
   "components": [
     "NodeMCU ESP8266",
     "MQ135 Gas Sensor",
-    "TCS34725 Color Sensor",
+    "TCS34725 RGB Color Sensor",
     "Breadboard",
     "Jumper Wires",
     "USB Cable"
@@ -54,7 +54,8 @@
     "mq135",
     "tcs34725",
     "breadboard",
-    "jumper-wires"
+    "jumper-wires",
+    "usb-cable"
   ],
   "guide": [
     "Place the NodeMCU on the breadboard.",

@@ -20,12 +20,16 @@
   "innovation": "Automates batch file conversion for processing large numbers of student document submissions, saving significant manual effort.",
   "problemStatement": "Processing hundreds of student-submitted DOCX and PPTX files manually into usable formats is extremely time-consuming.",
   "solutionApproach": "Built a Python Tkinter GUI app that walks the entire folder tree recursively, identifying and converting each file type. Parsed JSON content is saved with the same filename.",
-  "hardwareSpecs": {},
+  "hardwareSpecs": {
+    "targetPlatform": "Windows 10 / 11 / Linux",
+    "runtime": "Python 3.8+ Multi-threaded Engine",
+    "supportedConversions": "DOCX to JSON & PPTX to PDF Batch Automation"
+  },
   "components": [
-    "Python 3.x",
-    "python-docx library",
-    "pywin32 library",
-    "Tkinter (built-in)"
+    "Python 3.x Environment",
+    "python-docx Word Processing Library",
+    "pywin32 Windows Office API",
+    "Tkinter GUI Framework"
   ],
   "guide": [
     "Install required Python libraries: pip install python-docx pywin32",
@@ -51,5 +55,8 @@
     "utility",
     "batch conversion",
     "desktop app"
+  ],
+  "componentRefs": [
+    "raspberrypi-5"
   ]
 }

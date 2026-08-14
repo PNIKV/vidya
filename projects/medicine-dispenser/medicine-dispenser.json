@@ -42,16 +42,14 @@
   ],
   "components": [
     "Arduino UNO",
-    "Servo Motor",
-    "RTC Module (DS3231)",
-    "16x2 LCD Display",
-    "LED",
-    "Buzzer",
-    "Potentiometer",
+    "DS3231 RTC Module",
+    "SG90 Micro Servo Motor",
+    "16x2 I2C LCD Display",
+    "Active Buzzer",
+    "Status LEDs",
     "Breadboard",
     "Jumper Wires",
     "USB Cable",
-    "Medicine Tray",
     "Power Supply"
   ],
   "benefits": [
@@ -100,5 +98,23 @@
     "Healthcare Innovation",
     "Medication Management",
     "Assistive Technology"
-  ]
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "rtc-ds3231",
+    "servo-motor",
+    "16x2-lcd",
+    "buzzer",
+    "led",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO (ATmega328P)",
+    "realTimeClock": "DS3231 High-Precision I2C RTC with CR2032 Battery Backup",
+    "dispenserMotor": "SG90 9g Micro Servo Motor (Compartment Rotation)",
+    "display": "16x2 Character LCD (I2C Backpack)",
+    "operatingVoltage": "5V DC"
+  }
 }
