@@ -1,6 +1,8 @@
 /*
   ============================================================================
-  Distance Sensor Dashboard  —  Wemos D1 Mini (ESP8266) + VL53L0X
+  Smart Distance Tracker
+  By Usha Muneppa & Prem Sharma
+  Wemos D1 Mini (ESP8266) + VL53L0X + KY-008 Laser + 1.3" SH1106 OLED
   ============================================================================
   WHAT THIS DOES
   - Reads distance from a VL53L0X ToF sensor
@@ -9,19 +11,30 @@
         (b) the "Hold to Measure" button on the web dashboard is held
   - While active, it measures continuously and streams the live value
     to a self-hosted web dashboard (works on phone/laptop, same WiFi)
+  - Shows live distance, laser status, and IP on a 1.3" OLED display
   - Laser auto-shuts-off if the web page disappears (crashed tab, closed
     browser, etc.) so it can never get stuck on.
 
+  COMPONENTS
+  - ESP8266 D1 Mini
+  - VL53L0X Time-of-Flight sensor module
+  - KY-008 650nm laser module
+  - Push button
+  - 1.3" SH1106 OLED display (I2C, address 0x3C)
+
   LIBRARIES REQUIRED (Arduino Library Manager)
   - "Adafruit VL53L0X"   (installs "Adafruit BusIO" as a dependency)
+  - "U8g2"               (for SH1106 OLED display)
   - ESP8266 board core (adds ESP8266WiFi / ESP8266WebServer / ESP8266mDNS)
 
   WIRING (Wemos D1 Mini)
   - VL53L0X   VCC -> 3V3      GND -> G
               SDA -> D2       SCL -> D1
+  - SH1106    VCC -> 3V3      GND -> G
+    OLED      SDA -> D2       SCL -> D1   (shares I2C bus with VL53L0X)
   - Button:   one leg -> D6   other leg -> G   (internal pull-up, no resistor
   needed)
-  - Laser:    D7 -> transistor/MOSFET driver -> laser module
+  - Laser:    D7 -> transistor/MOSFET driver -> KY-008 laser module
               (DO NOT wire a laser diode module straight to the GPIO pin if it
                draws more than ~12 mA. Use an NPN transistor, e.g. 2N2222 /
                S8050, or a logic-level MOSFET: D7 -> 1k resistor -> base/gate,
@@ -38,8 +51,8 @@
 #include <ESP8266WebServer.h>
 #include <ESP8266WiFi.h>
 #include <ESP8266mDNS.h>
+#include <U8g2lib.h>
 #include <Wire.h>
-
 
 // ---------------------------------------------------------------------------
 // Pin mapping (Wemos D1 Mini silkscreen labels)
@@ -65,6 +78,9 @@ const char *AP_PASS = "12345678";
 // ---------------------------------------------------------------------------
 Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 ESP8266WebServer server(80);
+
+// 1.3" SH1106 OLED (I2C, same bus as VL53L0X, address 0x3C)
+U8G2_SH1106_128X64_NONAME_F_HW_I2C oled(U8G2_R0, /* reset=*/ U8X8_PIN_NONE);
 
 bool sensorOnline = false;
 bool laserOn = false;
@@ -395,6 +411,66 @@ void handleMeasurement() {
 }
 
 // ===========================================================================
+// OLED display update
+// ===========================================================================
+void updateDisplay() {
+  oled.clearBuffer();
+
+  // Title bar
+  oled.setFont(u8g2_font_7x13B_tr);
+  oled.drawStr(4, 12, "DIST TRACKER");
+
+  // Laser status indicator (top-right)
+  if (laserOn) {
+    oled.drawStr(98, 12, "[ON]");
+  } else {
+    oled.drawStr(93, 12, "[OFF]");
+  }
+
+  // Divider line
+  oled.drawHLine(0, 15, 128);
+
+  if (laserOn && distanceValid) {
+    // Large distance value in mm
+    char buf[16];
+    snprintf(buf, sizeof(buf), "%u mm", distanceMM);
+    oled.setFont(u8g2_font_logisoso20_tr);
+    // Center the text
+    int w = oled.getStrWidth(buf);
+    oled.drawStr((128 - w) / 2, 42, buf);
+
+    // Distance in cm below
+    char cmBuf[16];
+    float cm = distanceMM / 10.0;
+    dtostrf(cm, 4, 1, cmBuf);
+    strcat(cmBuf, " cm");
+    oled.setFont(u8g2_font_7x13_tr);
+    w = oled.getStrWidth(cmBuf);
+    oled.drawStr((128 - w) / 2, 57, cmBuf);
+  } else if (laserOn && !distanceValid) {
+    oled.setFont(u8g2_font_logisoso20_tr);
+    oled.drawStr(16, 42, "OOR");
+    oled.setFont(u8g2_font_7x13_tr);
+    oled.drawStr(20, 57, "Out of range");
+  } else {
+    oled.setFont(u8g2_font_7x13_tr);
+    oled.drawStr(12, 38, "Press button");
+    oled.drawStr(20, 52, "to measure");
+  }
+
+  // Bottom bar: IP address
+  oled.drawHLine(0, 55, 128);
+  oled.setFont(u8g2_font_5x8_tr);
+  String ip = WiFi.status() == WL_CONNECTED
+    ? WiFi.localIP().toString()
+    : WiFi.softAPIP().toString();
+  String ipLine = "IP: " + ip;
+  oled.drawStr(2, 64, ipLine.c_str());
+
+  oled.sendBuffer();
+}
+
+// ===========================================================================
 // Setup / Loop
 // ===========================================================================
 void setup() {
@@ -408,6 +484,18 @@ void setup() {
   digitalWrite(LASER_PIN, LOW);
 
   Wire.begin(SDA_PIN, SCL_PIN);
+
+  // Initialize OLED display
+  oled.begin();
+  oled.setContrast(200);
+  oled.clearBuffer();
+  oled.setFont(u8g2_font_7x13B_tr);
+  oled.drawStr(10, 28, "Smart Distance");
+  oled.drawStr(30, 44, "Tracker");
+  oled.setFont(u8g2_font_5x8_tr);
+  oled.drawStr(14, 60, "Usha M. & Prem S.");
+  oled.sendBuffer();
+  delay(1500);
 
   Serial.print(F("Initializing VL53L0X... "));
   if (lox.begin()) {
@@ -438,6 +526,7 @@ void loop() {
 
   handleButton();
   handleMeasurement();
+  updateDisplay();
 
   // If the sensor failed to init at boot, retry occasionally without
   // blocking the rest of the loop.
