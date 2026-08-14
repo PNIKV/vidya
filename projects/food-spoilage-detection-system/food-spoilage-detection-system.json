@@ -1,0 +1,122 @@
+{
+  "id": "food-spoilage-detection-system",
+  "title": "Food Spoilage Detection System",
+  "subtitle": "AI & IoT based food freshness monitoring using NodeMCU",
+  "level": "Intermediate",
+  "color": "#4CAF50",
+  "desc": "Detect food spoilage using gas and color sensors in real-time.",
+  "fullDesc": "The Food Spoilage Detection System is an IoT-based project that monitors the freshness of food using the MQ135 Gas Sensor and TCS34725 Color Sensor. The NodeMCU collects sensor data and determines whether the food is fresh or spoiled. This low-cost solution helps reduce food waste and improves food safety in homes, schools, restaurants, and supermarkets.",
+  "difficulty": 4,
+  "status": "Available",
+  "tags": [
+    "IoT",
+    "Food Safety",
+    "NodeMCU",
+    "MQ135",
+    "TCS34725",
+    "Sensors"
+  ],
+  "date": "2026-08-06",
+  "author": "Anushka Hankare",
+  "team": [
+    {
+      "name": "Anushka Hankare",
+      "role": "Trainer & Project Developer"
+    }
+  ],
+  "innovation": "An affordable IoT-based system that detects food spoilage using gas concentration and color analysis, helping reduce food waste without expensive laboratory equipment.",
+  "problemStatement": "Food spoilage often goes unnoticed until it becomes unsafe to consume, leading to health risks and unnecessary food waste.",
+  "solutionApproach": "The system uses an MQ135 gas sensor to detect harmful gases released during spoilage and a TCS34725 color sensor to identify color changes in food. A NodeMCU processes the sensor data and classifies the food as Fresh or Spoiled.",
+  "hardwareSpecs": {
+    "microcontroller": "NodeMCU ESP8266",
+    "powerConsumption": "~80mA @ 5V",
+    "operatingVoltage": "5V DC",
+    "communicationProtocol": "I2C (TCS34725), Analog (MQ135)",
+    "dimensions": "Breadboard Prototype",
+    "sensors": [
+      "MQ135 Gas Sensor",
+      "TCS34725 RGB Color Sensor"
+    ],
+    "connectivity": [
+      "Wi-Fi (ESP8266)"
+    ]
+  },
+  "components": [
+    "NodeMCU ESP8266",
+    "MQ135 Gas Sensor",
+    "TCS34725 Color Sensor",
+    "Breadboard",
+    "Jumper Wires",
+    "USB Cable"
+  ],
+  "componentRefs": [
+    "nodemcu",
+    "mq135",
+    "tcs34725",
+    "breadboard",
+    "jumper-wires"
+  ],
+  "guide": [
+    "Place the NodeMCU on the breadboard.",
+    "Connect the MQ135 sensor output to the NodeMCU analog pin (A0).",
+    "Connect the TCS34725 sensor using I2C (SDA and SCL).",
+    "Power both sensors using the NodeMCU 3.3V/5V and GND pins.",
+    "Install the required Arduino libraries for ESP8266 and TCS34725.",
+    "Upload the project code using Arduino IDE.",
+    "Monitor gas and color values through the Serial Monitor or web dashboard.",
+    "Analyze the readings to determine whether the food is Fresh or Spoiled."
+  ],
+  "estimatedTime": "120 minutes",
+  "prerequisites": [
+    "Basic Arduino IDE knowledge",
+    "Basic NodeMCU programming",
+    "Understanding of IoT sensors"
+  ],
+  "pdf": "data/Food_Spoilage_Detection_System.pdf",
+  "ppt": "projects/docs/food-spoilage-detection-system.pptx",
+  "circuitDiagram": "data/food-spoilage-circuit.jpg",
+  "youtubeVideos": [
+    {
+      "title": "Food Spoilage Detection System Demo",
+      "videoId": "",
+      "desc": "Demonstration of the Food Spoilage Detection System."
+    }
+  ],
+  "liveUrl": "",
+  "resources": [
+    {
+      "icon": "📄",
+      "title": "MQ135 Datasheet",
+      "url": "data/components/mq135.json"
+    },
+    {
+      "icon": "📄",
+      "title": "TCS34725 Datasheet",
+      "url": "data/components/tcs34725.json"
+    },
+    {
+      "icon": "📚",
+      "title": "ESP8266 Arduino Documentation",
+      "url": "https://arduino-esp8266.readthedocs.io/"
+    }
+  ],
+  "githubUrl": "",
+  "achievements": [
+    "Developed as an IoT-based food safety project.",
+    "Designed for educational and smart kitchen applications."
+  ],
+  "keywords": [
+    "food",
+    "spoilage",
+    "food freshness",
+    "NodeMCU",
+    "ESP8266",
+    "MQ135",
+    "TCS34725",
+    "IoT",
+    "food safety",
+    "gas sensor",
+    "color sensor",
+    "smart monitoring"
+  ]
+}

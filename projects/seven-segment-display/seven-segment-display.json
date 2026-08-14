@@ -1,0 +1,101 @@
+{
+  "//_comment1": "This is a template project file. You only need to fill in these manual fields.",
+  "//_comment2": "DO NOT manually add fields for image, bannerImage, gallery, posters, codeFiles, files3d, firmware, presentationPdfs, dataVideos.",
+  "//_comment3": "Those fields will be AUTOMATICALLY populated when you run `node js/update_projects.js`.",
+  "id": "interfacing-7-segment-display-arduino",
+  "title": "Interfacing a 7-Segment Display with Arduino Uno",
+  "subtitle": "Displaying Numbers 0–9 Using the Wokwi Simulator",
+  "level": "Level 1",
+  "color": "#0F766E",
+  "desc": "An educational Arduino project demonstrating how a Single Common Cathode 7-Segment Display is interfaced with Arduino Uno to display digits from 0 to 9 using the Wokwi Simulator.",
+  "fullDesc": "This project demonstrates the interfacing of a Single Common Cathode 7-Segment Display with an Arduino Uno using the Wokwi Simulator. It helps students understand digital outputs, circuit connections, Arduino programming, and display interfacing by displaying numbers from 0 to 9 sequentially. The project is designed for beginners and provides practical exposure to embedded systems and digital electronics without requiring physical hardware.",
+  "difficulty": 1,
+  "status": "Available",
+  "tags": [
+    "Arduino",
+    "7-Segment Display",
+    "Embedded Systems",
+    "Digital Electronics",
+    "Wokwi",
+    "Simulation",
+    "Class IX",
+    "Tech Fest"
+  ],
+  "date": "2026-07-13",
+  "author": "Sujal Prasad",
+  "team": [
+    {
+      "name": "Anushka Varma",
+      "role": "Project Lead & Embedded Systems Developer (Class IX)"
+    },
+    {
+      "name": "Muskan Vishwakarma",
+      "role": "Circuit Design & Documentation Lead (Class IX)"
+    }
+  ],
+  "innovation": "This project simplifies the understanding of digital display interfacing by using the Wokwi Simulator, allowing students to learn Arduino programming, circuit connections, and embedded systems concepts without requiring physical hardware.",
+  "problemStatement": "Students often find it difficult to understand how a 7-Segment Display communicates with a microcontroller. Learning digital electronics, Arduino programming, and circuit connections becomes challenging without practical demonstrations.",
+  "solutionApproach": "The project interfaces a Single Common Cathode 7-Segment Display with an Arduino Uno. Using Arduino digital output pins, individual display segments are controlled to sequentially display digits from 0 to 9. The Wokwi Simulator provides a safe and interactive environment for learning and experimentation.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino Uno",
+    "display": "Single Common Cathode 7-Segment Display",
+    "operatingVoltage": "5V DC",
+    "simulationPlatform": "Wokwi Simulator"
+  },
+  "components": [
+    "Arduino Uno",
+    "Single Common Cathode 7-Segment Display",
+    "Jumper Wires",
+    "USB Cable",
+    "Computer / Laptop",
+    "Wokwi Simulator"
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "7-segment-display"
+  ],
+  "guide": [
+    "Connect the 7-Segment Display to the Arduino Uno according to the circuit diagram.",
+    "Connect the Common Cathode (COM) pin to GND.",
+    "Upload the Arduino program in the Wokwi Simulator.",
+    "Run the simulation.",
+    "Observe the display counting from 0 to 9.",
+    "Verify that the Decimal Point (DP) remains ON throughout the sequence."
+  ],
+  "estimatedTime": "45 Minutes",
+  "prerequisites": [
+    "Basic Knowledge of Arduino",
+    "Basic Digital Electronics",
+    "Understanding of Digital Output Pins"
+  ],
+  "resources": [
+    {
+      "icon": "🌐",
+      "title": "Wokwi Simulator",
+      "url": "https://wokwi.com/"
+    },
+    {
+      "icon": "📘",
+      "title": "Arduino Documentation",
+      "url": "https://docs.arduino.cc/"
+    }
+  ],
+  "githubUrl": "",
+  "youtubeVideos": [],
+  "achievements": [],
+  "keywords": [
+    "Arduino Uno",
+    "7 Segment Display",
+    "Common Cathode",
+    "Digital Electronics",
+    "Embedded Systems",
+    "Arduino Programming",
+    "Display Interfacing",
+    "Wokwi",
+    "Simulation",
+    "Class IX",
+    "Tech Fest",
+    "STEM Education",
+    "School Project"
+  ]
+}

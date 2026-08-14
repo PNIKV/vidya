@@ -11,4 +11,4 @@ node_compat = true
 
 [vars]
 # Add your Discord Webhook URL here
-DISCORD_WEBHOOK_URL = ""
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1533413070343241738/qzrUbXiDkzEU0YOZotATVsr8MUJnwLqOMG3ZV37ZVZ3zs1H_rHGsUB0bRZakWoSPnoFj"

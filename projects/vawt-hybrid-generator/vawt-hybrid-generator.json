@@ -74,13 +74,7 @@
   "pdf": "data/Siddharth_STEAM_V1.pdf",
   "ppt": "projects/docs/vawt-smart-presentation.pptx",
   "circuitDiagram": "data/vawt-transistor-circuit.jpg",
-  "youtubeVideos": [
-    {
-      "title": "Smart VAWT Project Demo",
-      "videoId": "dQw4w9WgXcQ",
-      "desc": "Demonstrating wind power generation and automatic dark-switching using the BC547"
-    }
-  ],
+  "youtubeVideos": [],
   "liveUrl": "",
   "resources": [
     {

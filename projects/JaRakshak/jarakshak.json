@@ -1,0 +1,20 @@
+{
+  "id": "jarakshak",
+  "title": "JalRakshak",
+  "subtitle": "Smart water conservation and quality monitoring system",
+  "level": "Intermediate",
+  "color": "#0099CC",
+  "desc": "Monitor water quality and automate conservation with smart sensors and alerts!",
+  "fullDesc": "JalRakshak is an IoT-based water monitoring and conservation system.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "IoT",
+    "Water",
+    "Environment",
+    "Sensors",
+    "Conservation"
+  ],
+  "date": "2026-07-20",
+  "author": "Tinkering Lab"
+}

@@ -1,0 +1,55 @@
+{
+  "id": "smart-converter-app",
+  "title": "Smart Converter App",
+  "subtitle": "Batch DOCX/PPTX to JSON/PDF file converter utility",
+  "level": "Beginner",
+  "color": "#8E44AD",
+  "desc": "A Python desktop utility to batch-convert DOCX files to JSON and PPTX files to PDF!",
+  "fullDesc": "Smart Converter App is a Python Tkinter desktop application that recursively scans a selected folder and converts all DOCX files to structured JSON and all PPTX files to PDF. It uses python-docx for DOCX parsing and win32com for PowerPoint conversion. Designed for batch processing of student project submissions.",
+  "difficulty": 2,
+  "status": "Available",
+  "tags": [
+    "Python",
+    "Utility",
+    "File Conversion",
+    "Desktop App",
+    "Automation"
+  ],
+  "date": "2026-08-01",
+  "author": "Atul Sawant",
+  "innovation": "Automates batch file conversion for processing large numbers of student document submissions, saving significant manual effort.",
+  "problemStatement": "Processing hundreds of student-submitted DOCX and PPTX files manually into usable formats is extremely time-consuming.",
+  "solutionApproach": "Built a Python Tkinter GUI app that walks the entire folder tree recursively, identifying and converting each file type. Parsed JSON content is saved with the same filename.",
+  "hardwareSpecs": {},
+  "components": [
+    "Python 3.x",
+    "python-docx library",
+    "pywin32 library",
+    "Tkinter (built-in)"
+  ],
+  "guide": [
+    "Install required Python libraries: pip install python-docx pywin32",
+    "Run the app: python smart_converter_app.py",
+    "Click \"Select Main Folder & Start\" and choose your folder",
+    "Confirm the operation in the warning dialog",
+    "Wait for conversion to complete — a summary will be shown"
+  ],
+  "estimatedTime": "15 minutes setup",
+  "prerequisites": [
+    "Python 3 installed",
+    "pip package manager",
+    "Windows (required for PPTX→PDF)"
+  ],
+  "youtubeVideos": [],
+  "keywords": [
+    "python",
+    "converter",
+    "DOCX",
+    "PPTX",
+    "PDF",
+    "JSON",
+    "utility",
+    "batch conversion",
+    "desktop app"
+  ]
+}

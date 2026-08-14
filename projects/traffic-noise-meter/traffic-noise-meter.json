@@ -1,0 +1,21 @@
+{
+  "id": "traffic-noise-meter",
+  "title": "Traffic Noise Meter",
+  "subtitle": "Real-time traffic noise level measurement and display",
+  "level": "Beginner",
+  "color": "#1ABC9C",
+  "desc": "Measure and display real-time traffic and environmental noise levels using a sound sensor!",
+  "fullDesc": "The Traffic Noise Meter project measures ambient noise levels using a sound sensor and displays readings on an LCD.",
+  "difficulty": 2,
+  "status": "Available",
+  "tags": [
+    "Arduino",
+    "Sensors",
+    "Environment",
+    "Noise",
+    "STEM",
+    "Measurement"
+  ],
+  "date": "2026-08-04",
+  "author": "Niktrix"
+}

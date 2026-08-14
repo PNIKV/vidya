@@ -1,0 +1,19 @@
+{
+  "id": "robot-car",
+  "title": "Robot Car",
+  "subtitle": "ESP32 based smart robotic car with L298N motor control",
+  "level": "Intermediate",
+  "color": "#00D4FF",
+  "desc": "Build a wireless robot car using ESP32, motor driver and DC motors!",
+  "fullDesc": "A smart robotic car project using ESP32 microcontroller, L298N motor driver and four DC motors.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "Robotics",
+    "ESP32",
+    "Motor Control",
+    "IoT"
+  ],
+  "date": "2026-06-26",
+  "author": "Atul Sawant"
+}

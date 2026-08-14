@@ -1,0 +1,21 @@
+{
+  "id": "smart-classroom",
+  "title": "Smart Classroom Energy Saver",
+  "subtitle": "Automated energy management system for smart classrooms",
+  "level": "Intermediate",
+  "color": "#F39C12",
+  "desc": "Automatically control classroom lights and fans based on occupancy and ambient light levels!",
+  "fullDesc": "The Smart Classroom Energy Saver automates lighting and ventilation control based on occupancy detection and ambient light levels.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "Arduino",
+    "Automation",
+    "Energy Saving",
+    "IoT",
+    "Smart Building",
+    "STEM"
+  ],
+  "date": "2026-08-06",
+  "author": "Tinkering Lab"
+}

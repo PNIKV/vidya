@@ -1,84 +1,119 @@
 {
   "id": "laser-security-system",
   "title": "Laser Security System",
-  "project_title": "Laser Security System",
-  "project_category": "Embedded System / Security System",
-  "student_name": "",
-  "roll_number": "",
-  "college_name": "",
-  "department": "",
-  "date": "2026-06-26",
-  "trainer_name": "Sandhy Pokharkar",
-  "project_description": "Laser Security System is an electronic security device that uses a laser beam and an LDR (Light Dependent Resistor) to detect any interruption in the laser path. When the laser beam is interrupted by any object, the LDR senses the change in light intensity and sends the signal to Arduino Uno. Then Arduino activates a buzzer and LED as an alert indication. This system can be used for home security, object detection and intrusion alerts.",
-  "objective": [
-    "To design a simple and effective laser-based security system.",
-    "To detect any interruption in the laser beam path.",
-    "To trigger an alarm (buzzer) and visual indication (LED) when intrusion is detected.",
-    "To provide a low-cost and reliable security solution."
-  ],
-  "components": [
+  "subtitle": "Embedded Security System using Laser and LDR Sensor",
+  "category": "Embedded Security System",
+  "level": "Beginner",
+  "difficulty": 2,
+  "color": "#FF4757",
+  "school": "Vidya Mandir Manda Titwala",
+  "trainer": "Sandhy Pokharkar",
+  "author": "Anuj Ide, Jay Funde, Naitik Barai, Vyas Gaykar",
+  "date": "2026-07-10",
+  "team": [
     {
-      "name": "Arduino Uno",
-      "quantity": 1
+      "name": "Anuj Ide",
+      "role": "Student"
     },
     {
-      "name": "Bread Board",
-      "quantity": 1
+      "name": "Jay Funde",
+      "role": "Student"
     },
     {
-      "name": "LDR Sensor",
-      "quantity": 1
+      "name": "Naitik Barai",
+      "role": "Student"
     },
     {
-      "name": "Laser Module",
-      "quantity": 1
-    },
-    {
-      "name": "10K Resistor",
-      "quantity": 1
-    },
-    {
-      "name": "Buzzer",
-      "quantity": 1
-    },
-    {
-      "name": "LED",
-      "quantity": 1
-    },
-    {
-      "name": "Jumper Wires",
-      "quantity": "As Required"
+      "name": "Vyas Gaykar",
+      "role": "Student"
     }
   ],
-  "circuit_connections": {
-    "Laser Module (+)": "5V",
-    "Laser Module (-)": "GND",
-    "LDR One Side": "5V",
-    "LDR Other Side": "A0 of Arduino",
-    "10K Resistor": "Between A0 and GND",
-    "LED (+)": "Digital Pin 8 through 220 Ohm resistor",
-    "LED (-)": "GND",
-    "Buzzer (+)": "Digital Pin 9",
-    "Buzzer (-)": "GND",
-    "Common": "All GND connections are connected together"
-  },
-  "circuit_diagram_description": "Laser module is placed facing the LDR sensor. LDR is connected to analog pin A0 using a 10K resistor as a voltage divider. LED is connected to digital pin 8 and buzzer is connected to digital pin 9 of Arduino Uno. All components share a common ground.",
-  "working_principle": [
-    "Laser beam continuously falls on the LDR sensor.",
-    "When the beam is interrupted, the resistance of the LDR changes.",
-    "Arduino detects the change in analog value.",
-    "Arduino turns ON the buzzer and LED to indicate an intrusion."
+  "desc": "Laser Security System uses a laser beam and an LDR sensor module to detect intrusion. When the laser beam is interrupted, the Arduino Uno activates a buzzer as an alarm.",
+  "fullDesc": "The system continuously monitors a laser beam falling on an LDR sensor module. When the beam is interrupted by any object or person, Arduino detects the change in the sensor output and activates the buzzer.",
+  "problemStatement": "Provide a low-cost laser-based intrusion detection system using Arduino Uno.",
+  "solutionApproach": "To design and implement a Laser Security System using Arduino Uno, LDR sensor module, laser module and buzzer.",
+  "objective": [
+    "Detect interruption of laser beam.",
+    "Activate buzzer when intrusion occurs.",
+    "Develop a low-cost security system.",
+    "Provide a simple and reliable security solution."
   ],
-  "arduino_code": "int ldr = A0;\nint buzzer = 9;\nint led = 8;\nint threshold = 500;\n\nvoid setup() {\n  pinMode(buzzer, OUTPUT);\n  pinMode(led, OUTPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int value = analogRead(ldr);\n\n  if (value > threshold) {\n    digitalWrite(led, HIGH);\n    tone(buzzer, 1000);\n  } else {\n    digitalWrite(led, LOW);\n    noTone(buzzer);\n  }\n  delay(100);\n}",
-  "conclusion": "The Laser Security System successfully detects any interruption in the laser beam and provides an alert through buzzer and LED. It is simple, cost-effective and useful for home and office security applications. This project helps in understanding Arduino interfacing, LDR sensors and basic security systems.",
-  "difficulty": 1,
-  "level": "Beginner",
-  "status": "Available",
-  "desc": "Laser Security System using Arduino, LDR, and a laser module to detect intrusions.",
-  "tags": [
-    "Arduino",
-    "LDR",
-    "Laser",
-    "Security"
-  ]
+  "hardwareSpecs": {
+    "microcontroller": "Arduino Uno",
+    "sensor": "LDR Sensor Module",
+    "actuator": "Active Buzzer",
+    "source": "Laser Module"
+  },
+  "components": [
+    "Arduino Uno",
+    "Laser Module",
+    "LDR Sensor Module",
+    "Active Buzzer",
+    "Jumper Wires",
+    "USB Cable"
+  ],
+  "circuitConnections": {
+    "Laser Module VCC": "5V",
+    "Laser Module GND": "GND",
+    "LDR Module VCC": "5V",
+    "LDR Module GND": "GND",
+    "LDR Module DO": "D7",
+    "Buzzer (+)": "D11",
+    "Buzzer (-)": "GND"
+  },
+  "circuitDiagramDescription": "Laser beam continuously falls on the LDR sensor module. The Digital Output (DO) of the LDR module is connected to Arduino Digital Pin D7. The active buzzer is connected to Digital Pin D11 and GND. When the laser beam is interrupted, the Arduino activates the buzzer.",
+  "algorithm": [
+    "Start",
+    "Initialize Arduino pins.",
+    "Read Digital Output (DO) from LDR module.",
+    "If sensor value is HIGH (beam broken), turn ON buzzer.",
+    "Else keep buzzer OFF.",
+    "Repeat continuously."
+  ],
+  "workingPrinciple": "The laser beam continuously falls on the LDR sensor module. When the beam is present, the sensor output remains LOW and the buzzer stays OFF. If the laser beam is interrupted, the sensor output becomes HIGH. Arduino detects this change and immediately turns ON the buzzer, indicating an intrusion.",
+  "applications": [
+    "Home Security",
+    "Office Security",
+    "Museum Security",
+    "Bank Lockers",
+    "Jewellery Shops",
+    "Restricted Areas"
+  ],
+  "benefits": [
+    "Low Cost",
+    "Easy to Build",
+    "Fast Detection",
+    "Simple Circuit",
+    "Reliable Operation"
+  ],
+  "futureScope": [
+    "IoT Notification",
+    "GSM SMS Alert",
+    "Mobile App Integration",
+    "Wi-Fi Monitoring",
+    "Camera Integration"
+  ],
+  "vivaQuestions": [
+    {
+      "q": "What is an LDR?",
+      "a": "LDR is a Light Dependent Resistor used to detect light intensity."
+    },
+    {
+      "q": "Why is Arduino Uno used?",
+      "a": "Arduino reads the sensor output and controls the buzzer."
+    },
+    {
+      "q": "What happens when the laser beam is interrupted?",
+      "a": "Arduino detects the interruption and turns ON the buzzer."
+    },
+    {
+      "q": "Which pin is used for the LDR module?",
+      "a": "Digital Pin D7."
+    },
+    {
+      "q": "Which pin is used for the buzzer?",
+      "a": "Digital Pin D11."
+    }
+  ],
+  "conclusion": "The Laser Security System successfully detects intrusion by monitoring a laser beam using an LDR sensor module. When the beam is interrupted, the Arduino Uno immediately activates the buzzer, making it a simple, reliable and low-cost security solution."
 }

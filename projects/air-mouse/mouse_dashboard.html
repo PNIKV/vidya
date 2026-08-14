@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Air Mouse Control Panel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #0b0e1a;
+    --panel:     #141833;
+    --panel-2:   #1b2044;
+    --line:      #272d54;
+    --text:      #e7e9f5;
+    --text-dim:  #8b91b8;
+    --brand:     #7c83fb;
+    --brand-2:   #4c53c4;
+    --ok:        #4ade80;
+    --ok-dim:    #1f4a34;
+    --warn:      #fbbf24;
+    --danger:    #f87171;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background:
+      radial-gradient(circle at 20% -10%, rgba(124,131,251,0.12), transparent 45%),
+      var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 16px 60px;
+  }
+
+  header {
+    width: 100%;
+    max-width: 880px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+  }
+
+  .titleBlock h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    letter-spacing: 0.2px;
+  }
+
+  .titleBlock .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+
+  .connectRow { display: flex; align-items: center; gap: 12px; }
+
+  #connectBtn {
+    padding: 11px 22px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    background: var(--brand);
+    color: #0b0e1a;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background 0.15s ease;
+  }
+  #connectBtn:hover { background: #8f95ff; }
+  #connectBtn:active { transform: scale(0.97); }
+  #connectBtn:disabled { background: var(--panel-2); color: var(--text-dim); cursor: default; }
+
+  .statusPill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    background: var(--panel);
+    border: 1px solid var(--line);
+    padding: 8px 14px;
+    border-radius: 999px;
+  }
+
+  .dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--text-dim);
+    box-shadow: 0 0 0 rgba(0,0,0,0);
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+  }
+  .dot.live { background: var(--ok); box-shadow: 0 0 8px 1px rgba(74,222,128,0.7); }
+  .dot.blink { animation: blinkDot 1s ease-in-out infinite; }
+  @keyframes blinkDot { 0%,100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+  main {
+    width: 100%;
+    max-width: 880px;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 720px) { main { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px;
+  }
+
+  /* ---------- Mouse stage ---------- */
+  .stageCard { display: flex; flex-direction: column; align-items: center; }
+
+  .stage {
+    width: 220px;
+    height: 240px;
+    perspective: 900px;
+    margin: 6px 0 10px;
+  }
+
+  .floatWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: floatUpDown 3.2s ease-in-out infinite;
+  }
+  @keyframes floatUpDown {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  #mouse3d {
+    width: 150px;
+    transform-style: preserve-3d;
+    transition: transform 0.05s linear;
+    filter: drop-shadow(0 22px 26px rgba(0,0,0,0.55));
+  }
+
+  .btnLeft, .btnRight { transition: fill 0.08s ease; }
+  .btnLeft.pressed, .btnRight.pressed { fill: #4c53c4; }
+
+  .ledDot { transition: fill 0.15s ease, opacity 0.15s ease; }
+
+  .stillBadge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+    margin-top: 4px;
+  }
+  .stillBadge.active { color: var(--ok); border-color: var(--ok-dim); }
+
+  /* ---------- Info grid ---------- */
+  .infoPanel {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px 18px;
+    margin-top: 18px;
+  }
+  .infoBox {
+    background: var(--panel-2);
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+  .infoLabel {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+  }
+  .infoValue {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 4px;
+  }
+
+  /* ---------- Tabs ---------- */
+  .tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 18px;
+    background: var(--panel-2);
+    padding: 4px;
+    border-radius: 10px;
+    width: fit-content;
+  }
+  .tabBtn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-dim);
+    cursor: pointer;
+  }
+  .tabBtn.active { background: var(--brand); color: #0b0e1a; }
+
+  .tabPanel { display: none; }
+  .tabPanel.active { display: block; }
+
+  .fieldRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .fieldRow:last-of-type { border-bottom: none; }
+
+  .fieldLabel { display: flex; flex-direction: column; gap: 2px; }
+  .fieldLabel span.name { font-size: 13.5px; font-weight: 500; }
+  .fieldLabel span.hint { font-size: 11.5px; color: var(--text-dim); }
+
+  input[type="text"], input[type="number"] {
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--panel-2);
+    border: 1px solid var(--line);
+    color: var(--text);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 13px;
+    width: 92px;
+  }
+  input[type="text"] { width: 170px; }
+  input[type="text"]:focus, input[type="number"]:focus { outline: 2px solid var(--brand); outline-offset: 1px; }
+
+  input[type="range"] {
+    accent-color: var(--brand);
+    width: 130px;
+  }
+
+  .sliderVal {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    color: var(--text-dim);
+    min-width: 34px;
+    text-align: right;
+  }
+
+  .actionRow {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 18px;
+  }
+
+  .btn {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 9px;
+    border: 1px solid var(--line);
+    background: var(--panel-2);
+    color: var(--text);
+    cursor: pointer;
+  }
+  .btn:hover { border-color: var(--brand); }
+  .btn.primary { background: var(--brand); color: #0b0e1a; border: none; }
+  .btn.primary:hover { background: #8f95ff; }
+  .btn.danger { color: var(--danger); }
+  .btn:disabled { opacity: 0.45; cursor: default; }
+
+  .toast {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 12px;
+    min-height: 16px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="titleBlock">
+    <div class="eyebrow">MPU6050 · ESP32 · BLE</div>
+    <h1>Air Mouse Control Panel</h1>
+  </div>
+  <div class="connectRow">
+    <div class="statusPill"><span class="dot" id="statusDot"></span><span id="status">Not connected</span></div>
+    <button id="connectBtn">Connect to ESP32</button>
+  </div>
+</header>
+
+<main>
+  <!-- ---------- Mouse visual ---------- -->
+  <div class="card stageCard">
+    <div class="stage">
+      <div class="floatWrapper">
+        <div id="mouse3d">
+          <svg viewBox="0 0 150 220" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#8388f5"/>
+                <stop offset="100%" stop-color="#4348a8"/>
+              </linearGradient>
+              <linearGradient id="btnGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#9297ff"/>
+                <stop offset="100%" stop-color="#5a5fca"/>
+              </linearGradient>
+            </defs>
+
+            <!-- body -->
+            <path d="M75 6 C120 6 140 45 140 95 C140 150 122 214 75 214 C28 214 10 150 10 95 C10 45 30 6 75 6 Z"
+                  fill="url(#bodyGrad)" stroke="#2c2f78" stroke-width="2"/>
+
+            <!-- left / right button halves -->
+            <path id="btnLeft" class="btnLeft" d="M75 8 C50 8 33 24 27 52 L73 58 Z" fill="url(#btnGrad)" opacity="0.9"/>
+            <path id="btnRight" class="btnRight" d="M75 8 C100 8 117 24 123 52 L77 58 Z" fill="url(#btnGrad)" opacity="0.9"/>
+
+            <!-- seam -->
+            <line x1="75" y1="8" x2="75" y2="58" stroke="#2c2f78" stroke-width="2"/>
+            <path d="M27 52 L123 52" stroke="#2c2f78" stroke-width="2" fill="none"/>
+
+            <!-- scroll wheel -->
+            <rect x="68" y="24" width="14" height="26" rx="6" fill="#20244f" stroke="#12143080" stroke-width="1"/>
+            <rect x="71" y="29" width="8" height="4" rx="2" fill="#5a5fca"/>
+            <rect x="71" y="36" width="8" height="4" rx="2" fill="#5a5fca"/>
+
+            <!-- side button -->
+            <rect x="8" y="90" width="8" height="22" rx="4" fill="#343a86"/>
+
+            <!-- connection LED -->
+            <circle id="ledDot" class="ledDot" cx="75" cy="80" r="6" fill="#3a3f78"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="stillBadge" id="stillBadge">MOTION ACTIVE</div>
+  </div>
+
+  <!-- ---------- Right column ---------- -->
+  <div>
+    <div class="card">
+      <div class="tabs">
+        <button class="tabBtn active" data-tab="live">Live Readout</button>
+        <button class="tabBtn" data-tab="settings">Settings</button>
+      </div>
+
+      <!-- Live tab -->
+      <div class="tabPanel active" id="tab-live">
+        <div class="infoPanel">
+          <div class="infoBox"><div class="infoLabel">PITCH</div><div class="infoValue" id="pitchVal">0.0</div></div>
+          <div class="infoBox"><div class="infoLabel">ROLL</div><div class="infoValue" id="rollVal">0.0</div></div>
+          <div class="infoBox"><div class="infoLabel">YAW</div><div class="infoValue" id="yawVal">0.0</div></div>
+          <div class="infoBox"><div class="infoLabel">ACC X</div><div class="infoValue" id="axVal">0.0</div></div>
+          <div class="infoBox"><div class="infoLabel">ACC Y</div><div class="infoValue" id="ayVal">0.0</div></div>
+          <div class="infoBox"><div class="infoLabel">ACC Z</div><div class="infoValue" id="azVal">0.0</div></div>
+        </div>
+        <div class="actionRow">
+          <button class="btn primary" id="calibrateBtn" disabled>Calibrate now</button>
+        </div>
+        <div class="toast" id="liveToast">Keep the mouse still for ~2s after connecting — it calibrates automatically on boot.</div>
+      </div>
+
+      <!-- Settings tab -->
+      <div class="tabPanel" id="tab-settings">
+        <div class="fieldRow">
+          <div class="fieldLabel"><span class="name">Device name</span><span class="hint">Requires a device restart to apply</span></div>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <input type="text" id="nameInput" placeholder="ESP32 Air Mouse">
+          </div>
+        </div>
+        <div class="fieldRow">
+          <div class="fieldLabel"><span class="name">Sensitivity X</span><span class="hint">Left / right cursor speed</span></div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <input type="range" id="sensXSlider" min="0.5" max="8" step="0.1" value="2.5">
+            <span class="sliderVal" id="sensXVal">2.5</span>
+          </div>
+        </div>
+        <div class="fieldRow">
+          <div class="fieldLabel"><span class="name">Sensitivity Y</span><span class="hint">Up / down cursor speed</span></div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <input type="range" id="sensYSlider" min="0.5" max="8" step="0.1" value="2.5">
+            <span class="sliderVal" id="sensYVal">2.5</span>
+          </div>
+        </div>
+        <div class="fieldRow">
+          <div class="fieldLabel"><span class="name">Deadzone</span><span class="hint">Ignores rotation below this, cuts idle jitter</span></div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <input type="range" id="deadzoneSlider" min="0" max="3" step="0.05" value="0.5">
+            <span class="sliderVal" id="deadzoneVal">0.5</span>
+          </div>
+        </div>
+        <div class="fieldRow">
+          <div class="fieldLabel"><span class="name">Left click pin</span><span class="hint">ESP32 GPIO, active-low button</span></div>
+          <input type="number" id="leftPinInput" value="25">
+        </div>
+        <div class="fieldRow">
+          <div class="fieldLabel"><span class="name">Right click pin</span><span class="hint">ESP32 GPIO, active-low button</span></div>
+          <input type="number" id="rightPinInput" value="26">
+        </div>
+        <div class="fieldRow">
+          <div class="fieldLabel"><span class="name">Status LED pin</span><span class="hint">Blinks while pairing, solid when connected</span></div>
+          <input type="number" id="ledPinInput" value="2">
+        </div>
+
+        <div class="actionRow">
+          <button class="btn primary" id="applyBtn" disabled>Apply settings</button>
+          <button class="btn" id="saveNameBtn" disabled>Save name &amp; restart</button>
+          <button class="btn danger" id="resetBtn" disabled>Reset to defaults</button>
+        </div>
+        <div class="toast" id="settingsToast">Settings shown are firmware defaults until the device is connected.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+  // ---------- Element refs ----------
+  const connectBtn = document.getElementById("connectBtn");
+  const statusText  = document.getElementById("status");
+  const statusDot   = document.getElementById("statusDot");
+  const mouseEl     = document.getElementById("mouse3d");
+  const ledDot      = document.getElementById("ledDot");
+  const btnLeftEl   = document.getElementById("btnLeft");
+  const btnRightEl  = document.getElementById("btnRight");
+  const stillBadge  = document.getElementById("stillBadge");
+
+  const pitchVal = document.getElementById("pitchVal");
+  const rollVal  = document.getElementById("rollVal");
+  const yawVal   = document.getElementById("yawVal");
+  const axVal    = document.getElementById("axVal");
+  const ayVal    = document.getElementById("ayVal");
+  const azVal    = document.getElementById("azVal");
+
+  const calibrateBtn = document.getElementById("calibrateBtn");
+  const applyBtn      = document.getElementById("applyBtn");
+  const saveNameBtn   = document.getElementById("saveNameBtn");
+  const resetBtn       = document.getElementById("resetBtn");
+
+  const nameInput      = document.getElementById("nameInput");
+  const sensXSlider    = document.getElementById("sensXSlider");
+  const sensYSlider    = document.getElementById("sensYSlider");
+  const deadzoneSlider = document.getElementById("deadzoneSlider");
+  const sensXVal       = document.getElementById("sensXVal");
+  const sensYVal       = document.getElementById("sensYVal");
+  const deadzoneVal    = document.getElementById("deadzoneVal");
+  const leftPinInput   = document.getElementById("leftPinInput");
+  const rightPinInput  = document.getElementById("rightPinInput");
+  const ledPinInput    = document.getElementById("ledPinInput");
+  const settingsToast  = document.getElementById("settingsToast");
+  const liveToast      = document.getElementById("liveToast");
+
+  // ---------- Firmware defaults (dashboard always opens on these) ----------
+  const DEFAULTS = { name: "ESP32 Air Mouse", sensX: 2.5, sensY: 2.5, deadzone: 0.5, leftPin: 25, rightPin: 26, ledPin: 2 };
+  applyConfigToUI(DEFAULTS);
+
+  // ---------- Tabs ----------
+  document.querySelectorAll(".tabBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll(".tabBtn").forEach(b => b.classList.remove("active"));
+      document.querySelectorAll(".tabPanel").forEach(p => p.classList.remove("active"));
+      btn.classList.add("active");
+      document.getElementById("tab-" + btn.dataset.tab).classList.add("active");
+    });
+  });
+
+  // ---------- Slider readouts ----------
+  sensXSlider.addEventListener("input", () => sensXVal.textContent = sensXSlider.value);
+  sensYSlider.addEventListener("input", () => sensYVal.textContent = sensYSlider.value);
+  deadzoneSlider.addEventListener("input", () => deadzoneVal.textContent = deadzoneSlider.value);
+
+  function applyConfigToUI(cfg) {
+    nameInput.value = cfg.name;
+    sensXSlider.value = cfg.sensX; sensXVal.textContent = cfg.sensX;
+    sensYSlider.value = cfg.sensY; sensYVal.textContent = cfg.sensY;
+    deadzoneSlider.value = cfg.deadzone; deadzoneVal.textContent = cfg.deadzone;
+    leftPinInput.value = cfg.leftPin;
+    rightPinInput.value = cfg.rightPin;
+    ledPinInput.value = cfg.ledPin;
+  }
+
+  // ---------- Serial connection ----------
+  let port, writer, reader;
+  let connected = false;
+
+  connectBtn.addEventListener("click", connectToESP32);
+
+  async function connectToESP32() {
+    if (!("serial" in navigator)) {
+      alert("Web Serial not supported. Please use Google Chrome or Microsoft Edge.");
+      return;
+    }
+    try {
+      port = await navigator.serial.requestPort();
+      await port.open({ baudRate: 115200 });
+
+      statusText.textContent = "Connected. Waiting for data...";
+      statusDot.classList.add("blink");
+      connectBtn.disabled = true;
+      setControlsEnabled(true);
+
+      const encoder = new TextEncoderStream();
+      encoder.readable.pipeTo(port.writable);
+      writer = encoder.writable.getWriter();
+
+      const textDecoder = new TextDecoderStream();
+      port.readable.pipeTo(textDecoder.writable);
+      reader = textDecoder.readable.getReader();
+
+      // ask the firmware what it's currently configured to
+      setTimeout(() => sendCommand({ cmd: "getConfig" }), 400);
+
+      let buffer = "";
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buffer += value;
+        let newlineIndex;
+        while ((newlineIndex = buffer.indexOf("\n")) >= 0) {
+          const line = buffer.slice(0, newlineIndex).trim();
+          buffer = buffer.slice(newlineIndex + 1);
+          if (line.length > 0) handleIncomingLine(line);
+        }
+      }
+    } catch (error) {
+      statusText.textContent = "Connection failed: " + error.message;
+      statusDot.classList.remove("live", "blink");
+      connectBtn.disabled = false;
+      setControlsEnabled(false);
+    }
+  }
+
+  function setControlsEnabled(enabled) {
+    calibrateBtn.disabled = !enabled;
+    applyBtn.disabled = !enabled;
+    saveNameBtn.disabled = !enabled;
+    resetBtn.disabled = !enabled;
+  }
+
+  async function sendCommand(obj) {
+    if (!writer) return;
+    await writer.write(JSON.stringify(obj) + "\n");
+  }
+
+  calibrateBtn.addEventListener("click", () => {
+    liveToast.textContent = "Calibrating — keep the mouse still...";
+    sendCommand({ cmd: "calibrate" });
+  });
+
+  applyBtn.addEventListener("click", () => {
+    sendCommand({ cmd: "setSensitivity", x: parseFloat(sensXSlider.value), y: parseFloat(sensYSlider.value) });
+    sendCommand({ cmd: "setDeadzone", value: parseFloat(deadzoneSlider.value) });
+    sendCommand({ cmd: "setButtons", left: parseInt(leftPinInput.value), right: parseInt(rightPinInput.value) });
+    sendCommand({ cmd: "setLed", pin: parseInt(ledPinInput.value) });
+    settingsToast.textContent = "Settings sent to the device.";
+  });
+
+  saveNameBtn.addEventListener("click", () => {
+    const name = nameInput.value.trim() || DEFAULTS.name;
+    settingsToast.textContent = "Saving name — device will restart...";
+    sendCommand({ cmd: "setName", value: name });
+  });
+
+  resetBtn.addEventListener("click", () => {
+    settingsToast.textContent = "Resetting to defaults — device will restart...";
+    sendCommand({ cmd: "resetDefaults" });
+  });
+
+  // ---------- Incoming data ----------
+  function handleIncomingLine(line) {
+    if (!line.startsWith("{")) return;
+    try {
+      const data = JSON.parse(line);
+      if (data.type === "config") {
+        applyConfigToUI(data);
+        settingsToast.textContent = "Loaded current device settings.";
+      } else if (data.type === "calibrated") {
+        liveToast.textContent = "Calibration complete.";
+      } else if (data.type === "restarting") {
+        statusText.textContent = "Device restarting...";
+        statusDot.classList.remove("live");
+        statusDot.classList.add("blink");
+      } else if (data.type === "ready") {
+        liveToast.textContent = "Device booted — calibrating automatically, keep it still.";
+      } else if (data.type === "error") {
+        settingsToast.textContent = "Device error: " + data.message;
+      } else if ("pitch" in data) {
+        updateDashboard(data);
+      }
+    } catch (e) {
+      // partial/corrupt line, skip it
+    }
+  }
+
+  function updateDashboard(data) {
+    const pitch = data.pitch || 0;
+    const roll  = data.roll  || 0;
+    const yaw   = data.yaw   || 0;
+
+    mouseEl.style.transform = `rotateX(${pitch}deg) rotateY(${yaw}deg) rotateZ(${roll}deg)`;
+
+    pitchVal.textContent = pitch.toFixed(1);
+    rollVal.textContent  = roll.toFixed(1);
+    yawVal.textContent   = yaw.toFixed(1);
+    axVal.textContent    = (data.ax || 0).toFixed(2);
+    ayVal.textContent    = (data.ay || 0).toFixed(2);
+    azVal.textContent    = (data.az || 0).toFixed(2);
+
+    const isConnected = !!data.connected;
+    if (isConnected) {
+      statusText.textContent = "Connected — BLE host paired";
+      statusDot.classList.remove("blink");
+      statusDot.classList.add("live");
+      ledDot.setAttribute("fill", "#4ade80");
+    } else {
+      statusText.textContent = "Connected to ESP32 — waiting for BLE host";
+      statusDot.classList.remove("live");
+      statusDot.classList.add("blink");
+      ledDot.setAttribute("fill", "#3a3f78");
+    }
+
+    btnLeftEl.classList.toggle("pressed", !!data.leftBtn);
+    btnRightEl.classList.toggle("pressed", !!data.rightBtn);
+
+    if (data.still) {
+      stillBadge.textContent = "STILL — DRIFT LOCKED";
+      stillBadge.classList.add("active");
+    } else {
+      stillBadge.textContent = "MOTION ACTIVE";
+      stillBadge.classList.remove("active");
+    }
+  }
+
+  navigator.serial && navigator.serial.addEventListener("disconnect", () => {
+    statusText.textContent = "Device disconnected";
+    statusDot.classList.remove("live", "blink");
+    connectBtn.disabled = false;
+    setControlsEnabled(false);
+  });
+</script>
+
+</body>
+</html>

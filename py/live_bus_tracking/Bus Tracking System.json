@@ -1,0 +1,89 @@
+{
+    "id": "bus-tracking-system",
+    "title": "Bus Tracking System",
+    "subtitle": "Smart Bus Arrival Information Display for Rural Bus Stops",
+    "student": "Shraddha Malve",
+    "category": "Community Problem Solving",
+    "level": "Intermediate",
+    "theme": "Smart Transportation",
+    "problem": {
+        "title": "Lack of Bus Tracking Information in Rural Areas",
+        "description": "Many rural bus stops do not have digital bus tracking systems like CHALO or real-time information displays. Passengers do not know which bus is arriving, its expected arrival time, or possible delays. Students, workers, senior citizens, and daily commuters often spend a long time waiting at bus stops, making it difficult to manage their time and plan their journey."
+    },
+    "solution": {
+        "title": "Smart Bus Tracking System",
+        "description": "A Bus Tracking System is developed using an Arduino UNO and a 3.5-inch TFT Display. The display is installed at a model bus stop and shows the bus number, destination, and expected arrival time. This provides passengers with clear and timely information, helping them plan their travel more efficiently. In a real-world implementation, the display can receive live data from a GPS-enabled bus tracking system."
+    },
+    "working": [
+        {
+            "step": 1,
+            "action": "The TFT display shows a list of buses arriving at the nearest bus stop."
+        },
+        {
+            "step": 2,
+            "action": "Each bus is displayed with its route number, destination, and estimated arrival time."
+        },
+        {
+            "step": 3,
+            "action": "Passengers check the display before boarding the bus."
+        },
+        {
+            "step": 4,
+            "action": "The displayed information helps passengers plan their journey and reduces unnecessary waiting."
+        },
+        {
+            "step": 5,
+            "action": "In future, the system can be connected to GPS and the Internet for real-time bus tracking."
+        }
+    ],
+    "components": [
+        "Arduino UNO",
+        "3.5-inch TFT Display",
+        "USB Cable",
+        "Jumper Wires",
+        "Breadboard (if required)",
+        "Power Supply",
+        "Bus Stop Model"
+    ],
+    "benefits": [
+        "Reduces waiting time at bus stops.",
+        "Helps passengers manage their travel time.",
+        "Provides bus arrival information at rural bus stops.",
+        "Supports students, workers, senior citizens, and daily commuters.",
+        "Improves convenience and confidence while using public transport.",
+        "Can be upgraded into a real-time smart transportation system."
+    ],
+    "realLifeApplications": [
+        "Rural bus stops",
+        "Village transportation",
+        "School and college bus stops",
+        "Small towns without digital transport systems",
+        "Public transport information displays",
+        "Smart village initiatives"
+    ],
+    "futureScope": [
+        "Integrate GPS for live bus location tracking.",
+        "Connect to the Internet for real-time updates.",
+        "Display bus delays and cancellation alerts.",
+        "Provide voice announcements for visually impaired passengers.",
+        "Develop a mobile application connected to the display.",
+        "Power the system using solar energy for remote locations."
+    ],
+    "impact": {
+        "community": "Makes public transportation more accessible, reliable, and convenient for rural communities.",
+        "environment": "Encourages the use of public transport, reducing private vehicle usage and fuel consumption.",
+        "social": "Improves travel planning and saves time for students, workers, and other daily commuters."
+    },
+    "keywords": [
+        "Bus Tracking System",
+        "Arduino UNO",
+        "TFT Display",
+        "Smart Bus Stop",
+        "Public Transport",
+        "Rural Innovation",
+        "Smart Village",
+        "GPS",
+        "Real-Time Tracking",
+        "Community Solution"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "LiFi Secure Terminal",
+  "short_name": "LiFi Terminal",
+  "description": "High-security visible light communication optical transmitter PWA for EMI-sensitive environments.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#030712",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><polygon points='50,15 25,60 55,60 45,85 75,40 45,40' fill='%2300f0ff'/></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230f172a'/><polygon points='50,15 25,60 55,60 45,85 75,40 45,40' fill='%2300f0ff'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}

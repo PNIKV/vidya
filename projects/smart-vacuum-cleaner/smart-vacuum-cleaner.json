@@ -1,0 +1,120 @@
+{
+  "id": "smart-vacuum-cleaner",
+  "title": "Smart Vacuum Cleaner",
+  "subtitle": "ESP8266 & WiFi Joystick Controlled Cleaning Robot with Relay Air Pump",
+  "level": "Intermediate",
+  "color": "#00D2FF",
+  "desc": "A smart robotic vacuum cleaner powered by ESP8266 WiFi NodeMCU, featuring a 5V Relay Air Pump switch, proportional Virtual Touch Joystick navigation, dual STA/AP modes, and mDNS web dashboard.",
+  "fullDesc": "The Smart Vacuum Cleaner Robot is built upon the popular 3D printable chassis designed by Marcus Lanzoni (Thingiverse #5116129). Powered by an ESP8266 NodeMCU microcontroller, the robot connects seamlessly via local WiFi (STA mode) or creates its own Access Point (VacuumBot-AP). Users can control the robot in real-time through an interactive web dashboard accessed at http://vacuum.local/ or IP address. The web app features a smooth 2D Virtual Joystick where motor speed increases proportionally as the stick is pushed further out from center, along with a dedicated relay switch for the vacuum suction air pump and detailed live JSON diagnostic telemetry.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "ESP8266",
+    "WiFi Joystick",
+    "Relay Control",
+    "Robotics",
+    "Automation",
+    "IoT",
+    "Thingiverse 5116129",
+    "STEM",
+    "Vacuum Cleaner"
+  ],
+  "date": "2026-08-13",
+  "author": "Umeshwari Baviskar",
+  "team": [
+    {
+      "name": "Umeshwari Baviskar",
+      "role": "Trainer & Project Mentor"
+    }
+  ],
+  "innovation": "Combines a 3D printed vacuum chassis (Thingiverse #5116129) with ESP8266 WiFi remote control, smooth touch virtual joystick vector steering, proportional displacement speed scaling, relay air pump switching, and mDNS zero-configuration web access.",
+  "problemStatement": "Manual cleaning robots often lack intuitive remote control and telemetry visibility. Providing a smooth touch joystick interface with variable speed and dedicated relay suction pump control makes floor cleaning educational and highly efficient.",
+  "solutionApproach": "An ESP8266 NodeMCU controls an L298N/L293D motor driver and a 5V/12V relay module connected to a high-speed vacuum suction air pump. The onboard web server renders a smooth HTML5 Canvas Virtual Joystick that maps 2D touch vectors directly to differential motor speeds, while serving rich JSON diagnostics at /status.",
+  "hardwareSpecs": {
+    "microcontroller": "ESP8266 NodeMCU / WeMos D1 Mini",
+    "operatingVoltage": "5V DC",
+    "motorDriver": "L298N / L293D Motor Driver",
+    "vacuumPumpRelay": "5V 1-Channel Optocoupler Relay Module (GPIO2 / D4)",
+    "vacuumPump": "12V High-Speed DC Suction Fan / Air Pump",
+    "chassisModel": "Marcus Lanzoni 3D Vacuum Robot (Thingiverse 5116129)",
+    "communication": "WiFi 802.11 b/g/n (STA + Soft-AP fallback), mDNS (vacuum.local)",
+    "powerSupply": "7.4V - 11.1V Li-ion / LiPo Battery Pack"
+  },
+  "components": [
+    "ESP8266 NodeMCU Microcontroller",
+    "3D Printed Vacuum Chassis (Thingiverse #5116129 by Marcus Lanzoni)",
+    "5V 1-Channel Relay Module (Air Pump Switch)",
+    "12V DC High-Speed Air Vacuum Pump / Fan",
+    "L298N / L293D Motor Driver",
+    "2 N20 / TT DC Geared Motors",
+    "2 Drive Wheels & Caster Wheel",
+    "Dust Collection Filter Chamber",
+    "7.4V / 11.1V Rechargeable LiPo Battery",
+    "Power Switch",
+    "Jumper Wires & Hardware Fasteners"
+  ],
+  "componentRefs": [
+    "esp8266",
+    "relay-module",
+    "l298n",
+    "dc-motor",
+    "vacuum-pump"
+  ],
+  "guide": [
+    "Step 1: 3D print the Marcus Lanzoni chassis components (Thingiverse #5116129).",
+    "Step 2: Assemble the drive motors, wheels, caster wheel, and dust filtration chamber.",
+    "Step 3: Connect the 5V Relay module signal pin to ESP8266 D4 (GPIO2) to trigger the vacuum air pump.",
+    "Step 4: Wire the L298N motor driver inputs to ESP8266 D1, D2, D6, D7, D5 (ENA), D8 (ENB).",
+    "Step 5: Connect the battery pack power distribution to the motor driver, relay, and ESP8266 VIN pin.",
+    "Step 6: Open vacuumrobo.ino in Arduino IDE with ESP8266 board support installed.",
+    "Step 7: Upload the code and open Serial Monitor at 115200 baud.",
+    "Step 8: Connect your phone or laptop to WiFi 'STEM' or 'VacuumBot-AP' (Password: 12345678).",
+    "Step 9: Open browser and navigate to http://vacuum.local/ or IP address.",
+    "Step 10: Toggle the Vacuum Air Pump Relay ON and use the Virtual Joystick to clean!"
+  ],
+  "estimatedTime": "120 minutes",
+  "prerequisites": [
+    "ESP8266 Arduino Core setup",
+    "Basic Electronics & Relay Wiring",
+    "3D Printing & Mechanical Assembly",
+    "WiFi Network Configuration"
+  ],
+  "resources": [
+    {
+      "icon": "🌐",
+      "title": "Thingiverse 5116129 - Vacuum Robot Chassis",
+      "url": "https://www.thingiverse.com/thing:5116129"
+    },
+    {
+      "icon": "📄",
+      "title": "ESP8266 NodeMCU Documentation",
+      "url": "https://esp8266.github.io/Arduino/versions/2.0.0/doc/reference.html"
+    }
+  ],
+  "githubUrl": "https://github.com/your-repo/smart-vacuum-cleaner",
+  "youtubeVideos": [
+    {
+      "videoId": "",
+      "title": "Smart Vacuum Cleaner Demo",
+      "desc": "Demonstration of the ESP8266 WiFi Smart Vacuum Cleaner with Relay Pump & Virtual Joystick."
+    }
+  ],
+  "achievements": [
+    "3D Printed Robotics Integration (Thingiverse #5116129).",
+    "Proportional Virtual Touch Joystick navigation.",
+    "High-power Relay Suction Air Pump switching.",
+    "mDNS Zero-Config Web Dashboard & JSON Telemetry API."
+  ],
+  "keywords": [
+    "Smart Vacuum Cleaner",
+    "ESP8266",
+    "WiFi Joystick",
+    "Relay Control",
+    "Vacuum Pump",
+    "Thingiverse 5116129",
+    "Marcus Lanzoni",
+    "Robot",
+    "Automation",
+    "STEM"
+  ]
+}

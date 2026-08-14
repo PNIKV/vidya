@@ -1,0 +1,20 @@
+{
+  "id": "surakshapath",
+  "title": "SurakshaPath",
+  "subtitle": "Smart road safety and navigation system",
+  "level": "Intermediate",
+  "color": "#E67E22",
+  "desc": "A smart safety navigation system for road hazard detection and driver alerting!",
+  "fullDesc": "SurakshaPath is a smart road safety system designed to detect road hazards and alert drivers in real time.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "Safety",
+    "Navigation",
+    "IoT",
+    "Road Safety",
+    "Sensors"
+  ],
+  "date": "2026-07-25",
+  "author": "Tinkering Lab"
+}

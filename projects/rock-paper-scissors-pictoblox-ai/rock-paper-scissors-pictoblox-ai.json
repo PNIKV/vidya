@@ -1,0 +1,50 @@
+{
+  "id": "rock-paper-scissors-pictoblox-ai",
+  "title": "Rock Paper Scissors — PictoBlox AI",
+  "subtitle": "Hand gesture recognition game powered by PictoBlox AI",
+  "level": "Beginner",
+  "color": "#FF4B8B",
+  "desc": "Play Rock Paper Scissors with your hand using AI-powered gesture recognition in PictoBlox!",
+  "fullDesc": "A fun and interactive Rock Paper Scissors game that uses PictoBlox's built-in AI machine learning extension to recognize hand gestures in real-time via webcam. Students learn about machine learning, gesture recognition, and AI by training a model to detect rock, paper, and scissors hand shapes.",
+  "difficulty": 1,
+  "status": "Available",
+  "tags": [
+    "AI",
+    "PictoBlox",
+    "Machine Learning",
+    "Gesture",
+    "Game",
+    "STEM"
+  ],
+  "date": "2026-08-01",
+  "author": "Tinkering Lab",
+  "innovation": "Introduces students to practical machine learning by having them train their own gesture recognition model in PictoBlox.",
+  "problemStatement": "Making AI and machine learning concepts accessible to young students requires hands-on, playful projects.",
+  "solutionApproach": "Used PictoBlox AI extensions to collect gesture training data (rock, paper, scissors) and train a classification model. The model is then used in a game logic block.",
+  "components": [
+    "Computer with webcam",
+    "PictoBlox Software"
+  ],
+  "guide": [
+    "Open PictoBlox and create a new project",
+    "Add the Machine Learning extension",
+    "Create classes: Rock, Paper, Scissors",
+    "Train the model using webcam captures of each gesture",
+    "Build game logic to compare your gesture with a random computer choice",
+    "Add sprites and sound for a fun user experience"
+  ],
+  "estimatedTime": "45 minutes",
+  "prerequisites": [
+    "PictoBlox installed",
+    "Basic Scratch/block coding"
+  ],
+  "youtubeVideos": [],
+  "keywords": [
+    "rock paper scissors",
+    "AI",
+    "PictoBlox",
+    "gesture recognition",
+    "machine learning",
+    "game"
+  ]
+}

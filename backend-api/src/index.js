@@ -57,20 +57,27 @@ export default {
                 // Send to Discord
                 if (env.DISCORD_WEBHOOK_URL) {
                     const discordPayload = {
-                        content: `**New Assessment Submitted!**\n**Student:** ${body.student.name} (${body.student.grade}, ${body.student.school})\n**Score:** ${body.score} / ${body.totalQuestions}`,
+                        content: `**New Assessment Submitted!**\n**Student:** ${body.student?.name || 'Unknown'} (${body.student?.grade || 'N/A'}, ${body.student?.school || 'N/A'})\n**Score:** ${body.score} / ${body.totalQuestions}`,
                         embeds: [{
                             title: "Answer Sheet Details",
-                            description: body.answers.map(a => 
-                                `Q: ${a.questionText}\nAns: ${a.selectedOptionText} ${a.isCorrect ? '✅' : '❌'}`
-                            ).join('\n\n').substring(0, 4000) // Discord embed limits
+                            description: (body.answers && body.answers.length > 0) ? body.answers.map(a => 
+                                `Q: ${a.questionText || 'N/A'}\nAns: ${a.selectedOptionText || 'N/A'} ${a.isCorrect ? '✅' : '❌'}`
+                            ).join('\n\n').substring(0, 4000) : "No answers provided"
                         }]
                     };
 
-                    await fetch(env.DISCORD_WEBHOOK_URL, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(discordPayload)
-                    });
+                    try {
+                        const discordRes = await fetch(env.DISCORD_WEBHOOK_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(discordPayload)
+                        });
+                        if (!discordRes.ok) {
+                            console.error("Discord webhook failed:", discordRes.status, await discordRes.text());
+                        }
+                    } catch (err) {
+                        console.error("Error sending to Discord webhook:", err);
+                    }
                 }
 
                 return new Response(JSON.stringify({ success: true, message: "Assessment stored and sent to Discord" }), {

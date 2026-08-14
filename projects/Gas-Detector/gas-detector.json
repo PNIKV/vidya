@@ -1,0 +1,104 @@
+{
+  "id": "gas-detector",
+  "title": "Gas Detector",
+  "subtitle": "MQ-135 Gas and Air Quality Leakage Detection System with LCD & Buzzer Alarm",
+  "category": "Environmental & Safety Systems",
+  "level": "Beginner",
+  "difficulty": 2,
+  "color": "#FF9800",
+  "author": "Tinkering Lab",
+  "date": "2026-08-04",
+  "desc": "Detect hazardous gas leaks and harmful air pollutants in real-time using an MQ-135 sensor, I2C LCD display, LED, and buzzer alert system.",
+  "fullDesc": "The Gas Detector project uses an MQ-135 gas sensor interfaced with an Arduino Uno to continuously monitor ambient air for hazardous gases such as ammonia, benzene, alcohol, smoke, and CO2. When gas concentrations exceed a safe threshold, the system triggers a visual LED warning, sounds an audible buzzer alert, and displays real-time status updates on a 16x2 I2C LCD screen.",
+  "problemStatement": "Gas leaks in kitchens, laboratories, and industrial environments pose severe health hazards and fire risks. Early detection of toxic or flammable gases is critical to prevent accidents.",
+  "solutionApproach": "An automated Arduino-based Gas Detection System that continuously reads analog values from an MQ-135 gas sensor, displays live concentration readings on an LCD screen, and immediately triggers visual and audible alarms if gas levels cross safe thresholds.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino Uno",
+    "sensor": "MQ-135 Gas Sensor Module",
+    "display": "16x2 LCD with I2C Backpack",
+    "actuators": "Active Buzzer & Red LED"
+  },
+  "components": [
+    "Arduino Uno",
+    "MQ-135 Gas Sensor Module",
+    "16x2 I2C LCD Display",
+    "Active Buzzer",
+    "Red LED",
+    "Jumper Wires",
+    "Breadboard",
+    "USB Cable"
+  ],
+  "circuitConnections": {
+    "MQ-135 VCC": "5V",
+    "MQ-135 GND": "GND",
+    "MQ-135 A0": "A0",
+    "LCD VCC": "5V",
+    "LCD GND": "GND",
+    "LCD SDA": "A4 (SDA)",
+    "LCD SCL": "A5 (SCL)",
+    "Buzzer (+)": "D8",
+    "Buzzer (-)": "GND",
+    "LED Anode (+)": "D9",
+    "LED Cathode (-)": "GND"
+  },
+  "circuitDiagramDescription": "The MQ-135 sensor's analog pin A0 connects to Arduino A0. The I2C LCD module connects to 5V, GND, SDA (A4), and SCL (A5). The Buzzer connects to Digital Pin D8 and GND, while the LED connects to Digital Pin D9.",
+  "working": [
+    {
+      "step": 1,
+      "action": "The Arduino initializes the I2C 16x2 LCD and warms up the MQ-135 gas sensor for 3 seconds."
+    },
+    {
+      "step": 2,
+      "action": "The MQ-135 sensor measures ambient air quality and sends an analog gas concentration reading to pin A0."
+    },
+    {
+      "step": 3,
+      "action": "Arduino displays the real-time gas value on Row 1 of the LCD display."
+    },
+    {
+      "step": 4,
+      "action": "If the gas value exceeds the threshold (150), Arduino turns ON the Buzzer (Pin 8) and Red LED (Pin 9), displaying '!ALERT!' on the screen."
+    },
+    {
+      "step": 5,
+      "action": "If gas concentration is normal, the Buzzer and LED remain OFF, displaying 'SAFE' status."
+    }
+  ],
+  "benefits": [
+    "Real-time hazard detection",
+    "Clear visual and audible alarm alerts",
+    "Easy to construct with low-cost components",
+    "Protects homes, labs, and industrial workplaces",
+    "Configurable threshold sensitivity"
+  ],
+  "applications": [
+    "Home Kitchen Safety",
+    "Chemical Laboratories",
+    "Industrial Factories",
+    "LPG & Gas Cylinder Storage",
+    "Air Quality Monitoring Stations"
+  ],
+  "futureScope": [
+    "Integrate Wi-Fi (ESP8266/ESP32) for remote smartphone notifications.",
+    "Add GSM module to send instant SMS alerts to property owners.",
+    "Connect automated gas shut-off valve relay system."
+  ],
+  "vivaQuestions": [
+    {
+      "q": "Which sensor is used to detect gas in this project?",
+      "a": "The MQ-135 gas sensor module is used to detect gases like ammonia, smoke, benzene, and CO2."
+    },
+    {
+      "q": "Why is an I2C module used with the LCD?",
+      "a": "The I2C backpack reduces the required Arduino pins from 6 or 12 down to just 2 pins (SDA and SCL)."
+    },
+    {
+      "q": "What happens when gas levels exceed 150?",
+      "a": "The Arduino activates the Buzzer on pin 8, turns on the LED on pin 9, and displays '!ALERT!' on the LCD screen."
+    },
+    {
+      "q": "Can the threshold value be changed?",
+      "a": "Yes, the threshold variable in the Arduino sketch can be calibrated based on ambient baseline gas levels."
+    }
+  ]
+}
