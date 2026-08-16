@@ -170,15 +170,39 @@ function filterProjects() {
 // =============================================
 
 function openProject(id) {
-  currentProject = PROJECTS.find(p => p.id === id);
-  if (!currentProject) return;
+  globalThis.currentProject = PROJECTS.find(p => p.id === id);
+  if (!globalThis.currentProject) return;
   showPage('project-detail', id);
 }
 
 async function renderProjectDetail() {
-  const p = currentProject;
+  let p = globalThis.currentProject || currentProject;
+  if (!p && typeof PROJECTS !== 'undefined' && PROJECTS && PROJECTS.length > 0) {
+    const pathParts = globalThis.location.pathname.split('/').filter(Boolean);
+    const projId = pathParts.at(-1);
+    if (projId && projId !== 'project') {
+      p = PROJECTS.find(item => item.id === projId);
+      if (p) {
+        globalThis.currentProject = p;
+        currentProject = p;
+      }
+    }
+  }
+
   const container = document.getElementById('projectDetailContent');
   if (!container) return;
+
+  if (!p) {
+    console.warn('[renderProjectDetail] No project found for rendering detail view');
+    container.innerHTML = `
+      <div style="text-align: center; padding: 100px 20px;">
+        <h2 style="color: var(--orange); margin-bottom: 12px; font-family: var(--font-head);">Project Not Found</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">We couldn't locate the requested project data.</p>
+        <button onclick="showPage('projects')" class="btn-primary">← Back to Projects Gallery</button>
+      </div>
+    `;
+    return;
+  }
 
   const files3dCount = p.files3d?.length || 0;
   const codeCount = p.codeFiles?.length || 0;
@@ -726,10 +750,12 @@ async function renderProjectDetail() {
     <div id="ptab-gallery" class="pd-tab-content">
       ${imgCount === 0 ? renderProjectEmptyState('🖼️', 'No Gallery Images Yet', 'Photos of the project will appear here.') : `
         <div class="gallery-grid">
-          ${p.gallery.map((img, i) => `
+          ${p.gallery.map((img, i) => {
+            const imgSrc = globalThis.getAppPath ? globalThis.getAppPath(img.file) : img.file;
+            return `
             <div class="gallery-item" onclick="openProjectLightbox(${i})">
               <div class="gallery-img-wrap">
-                <img src="${img.file}" alt="${img.caption || ''}" class="gallery-img" loading="lazy" 
+                <img src="${imgSrc}" alt="${img.caption || ''}" class="gallery-img" loading="lazy" 
                   onerror="this.parentElement.innerHTML='<div class=&quot;gallery-img-missing&quot;><span>🖼️</span><small>Missing Image</small></div>'" />
                 <div class="gallery-overlay"><span class="gallery-zoom">🔍</span></div>
               </div>
@@ -738,7 +764,8 @@ async function renderProjectDetail() {
                 <p>${img.caption || ''}</p>
               </div>
             </div>
-          `).join('')}
+          `;
+          }).join('')}
         </div>
       `}
     </div>
@@ -848,10 +875,11 @@ globalThis.openFullscreenMedia = function (url, type) {
   }
 
   const content = document.getElementById('mediaFullscreenContent');
+  const fullUrl = globalThis.getAppPath ? globalThis.getAppPath(url) : url;
   if (type === 'img') {
-    content.innerHTML = `<img src="${url}" style="max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />`;
+    content.innerHTML = `<img src="${fullUrl}" style="max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />`;
   } else if (type === 'pdf') {
-    content.innerHTML = `<iframe src="${url}#toolbar=0&navpanes=0&view=Fit" style="width:100%; height:100%; border:none; border-radius:8px; background:white;"></iframe>`;
+    content.innerHTML = `<iframe src="${fullUrl}#toolbar=0&navpanes=0&view=Fit" style="width:100%; height:100%; border:none; border-radius:8px; background:white;"></iframe>`;
   }
 
   modal.style.display = 'flex';
@@ -934,7 +962,8 @@ async function loadComponentCards(project) {
     const componentData = await Promise.all(
       refs.map(async (refId) => {
         try {
-          const res = await fetch(`data/components/${refId}.json`);
+          const compUrl = globalThis.getAppPath ? globalThis.getAppPath(`data/components/${refId}.json`) : `data/components/${refId}.json`;
+          const res = await fetch(compUrl);
           if (!res.ok) return null;
           return await res.json();
         } catch (e) {
@@ -1014,7 +1043,7 @@ async function loadComponentCards(project) {
               ${(() => {
           return comp.libraryName ? `<div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">📦 Library: ${comp.libraryName}</div>` : '';
         })()}
-              <pre style="background: #1e1e1e; color: #d4d4d4; padding: 16px; border-radius: 8px; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; max-height: 250px; overflow-y: auto;">${comp.codeSnippet.replaceAll('\\n', '\n')}</pre>
+              <pre style="background: #1e1e1e; color: #d4d4d4; padding: 16px; border-radius: 8px; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; max-height: 250px; overflow-y: auto;">${comp.codeSnippet.replaceAll(String.raw`\n`, '\n')}</pre>
             </div>
           ` : ''}
 
@@ -1070,12 +1099,24 @@ globalThis.switchProjectTab = function(name, btn) {
       targetBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
     } catch (e) {}
   }
+
+  // Smoothly scroll the page up so the project banner moves up and the active tab content is brought into full view
+  const topNav = document.querySelector('.pd-top-navbar');
+  const targetElement = tab || topNav;
+  if (targetElement) {
+    const navOffset = 130; // Main navbar + sticky HUD bar clearance
+    const elementTop = targetElement.getBoundingClientRect().top + globalThis.scrollY;
+    globalThis.scrollTo({
+      top: Math.max(0, elementTop - navOffset),
+      behavior: 'smooth'
+    });
+  }
 };
 
 globalThis._galleryIndex = 0;
 
 globalThis.openProjectLightbox = function(idx) {
-  const p = currentProject;
+  const p = globalThis.currentProject || currentProject;
   if (!p || !p.gallery || !p.gallery.length) return;
 
   globalThis._galleryIndex = idx;
@@ -1103,7 +1144,7 @@ globalThis.openProjectLightbox = function(idx) {
         <button onclick="globalThis.navProjectLightbox(-1)" style="position:absolute; left:20px; z-index:100001; background:rgba(0,0,0,0.6); color:#fff; border:1px solid rgba(255,255,255,0.2); border-radius:50%; width:50px; height:50px; font-size:1.5rem; cursor:pointer; backdrop-filter:blur(4px); transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.6)'">❮</button>
         
         <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 20px;">
-          <img id="pGalleryImg" src="" style="max-width:92%; max-height:82vh; object-fit:contain; border-radius:12px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);" />
+          <img id="pGalleryImg" src="" style="max-width:92%; max-height:84vh; width:auto; height:auto; object-fit:contain; border-radius:12px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);" />
           <div id="pGalleryCaption" style="margin-top:14px; color:#e0e0e0; font-size:1rem; text-align:center; max-width:800px; background:rgba(255,255,255,0.1); padding:8px 18px; border-radius:20px; backdrop-filter:blur(8px);"></div>
         </div>
 
@@ -1130,10 +1171,11 @@ globalThis.openProjectLightbox = function(idx) {
 };
 
 globalThis.updateProjectLightboxState = function() {
-  const p = currentProject;
+  const p = globalThis.currentProject || currentProject;
   if (!p || !p.gallery || !p.gallery.length) return;
   const idx = globalThis._galleryIndex;
   const imgData = p.gallery[idx];
+  if (!imgData) return;
 
   const titleEl = document.getElementById('pGalleryTitle');
   const counterEl = document.getElementById('pGalleryCounter');
@@ -1142,21 +1184,26 @@ globalThis.updateProjectLightboxState = function() {
   const dlEl = document.getElementById('pGalleryDownload');
   const thumbsEl = document.getElementById('pGalleryThumbs');
 
+  const resolvedUrl = globalThis.getAppPath ? globalThis.getAppPath(imgData.file) : imgData.file;
+
   if (titleEl) titleEl.textContent = p.title;
   if (counterEl) counterEl.textContent = `${idx + 1} / ${p.gallery.length}`;
-  if (imgEl) imgEl.src = imgData.file;
+  if (imgEl) imgEl.src = resolvedUrl;
   if (capEl) capEl.textContent = imgData.caption || p.title;
-  if (dlEl) dlEl.href = imgData.file;
+  if (dlEl) dlEl.href = resolvedUrl;
 
   if (thumbsEl) {
-    thumbsEl.innerHTML = p.gallery.map((g, i) => `
-      <img src="${g.file}" onclick="globalThis._galleryIndex=${i}; globalThis.updateProjectLightboxState();" style="width:50px; height:50px; object-fit:cover; border-radius:8px; cursor:pointer; opacity:${i === idx ? 1 : 0.4}; border: 2px solid ${i === idx ? (p.color || 'var(--orange)') : 'transparent'}; transition: all 0.2s;" />
-    `).join('');
+    thumbsEl.innerHTML = p.gallery.map((g, i) => {
+      const thumbUrl = globalThis.getAppPath ? globalThis.getAppPath(g.file) : g.file;
+      return `
+        <img src="${thumbUrl}" onclick="globalThis._galleryIndex=${i}; globalThis.updateProjectLightboxState();" style="width:50px; height:50px; object-fit:cover; border-radius:8px; cursor:pointer; opacity:${i === idx ? 1 : 0.4}; border: 2px solid ${i === idx ? (p.color || 'var(--orange)') : 'transparent'}; transition: all 0.2s;" />
+      `;
+    }).join('');
   }
 };
 
 globalThis.navProjectLightbox = function(dir) {
-  const p = currentProject;
+  const p = globalThis.currentProject || currentProject;
   if (!p || !p.gallery) return;
   globalThis._galleryIndex = (globalThis._galleryIndex + dir + p.gallery.length) % p.gallery.length;
   globalThis.updateProjectLightboxState();
@@ -1175,8 +1222,8 @@ globalThis.toggleGalleryFullscreen = function() {
   if (!modal) return;
   if (!document.fullscreenElement) {
     if (modal.requestFullscreen) modal.requestFullscreen();
-  } else {
-    if (document.exitFullscreen) document.exitFullscreen();
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
   }
 };
 
@@ -1186,8 +1233,8 @@ globalThis.toggleDashboardFullscreen = function() {
   if (!document.fullscreenElement) {
     if (container.requestFullscreen) container.requestFullscreen();
     else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
-  } else {
-    if (document.exitFullscreen) document.exitFullscreen();
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
   }
 };
 
@@ -1196,11 +1243,11 @@ globalThis.toggleDashboardFullscreen = function() {
 // =============================================
 globalThis.highlightCode = function (code) {
   let highlighted = code
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
     .replace(/\b(int|float|double|char|void|bool|String|auto)\b/g, '<span class="type">$1</span>')
     .replace(/\b(if|else|for|while|return|break|continue|switch|case|default|class|struct)\b/g, '<span class="keyword">$1</span>')
     .replace(/\b(true|false|null|NULL)\b/g, '<span class="keyword">$1</span>')
-    .replace(/\b([A-Za-z0-9_]+)\s*\(/g, '<span class="function">$1</span>(')
+    .replace(/\b(\w+)\s*\(/g, '<span class="function">$1</span>(')
     .replace(/("[^"]*")/g, '<span class="string">$1</span>')
     .replace(/(\b\d+(\.\d+)?\b)/g, '<span class="number">$1</span>')
     .replace(/(\/\/[^\n]*)/g, '<span class="comment">$1</span>')

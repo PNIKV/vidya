@@ -18,8 +18,9 @@ async function showPage(name, pathParam = null) {
 
   // Fetch HTML view and inject
   try {
-    const res = await fetch(`pages/${name}.html`);
-    if (!res.ok) throw new Error(`Page not found: pages/${name}.html`);
+    const pageUrl = globalThis.getAppPath ? globalThis.getAppPath(`pages/${name}.html`) : `pages/${name}.html`;
+    const res = await fetch(pageUrl);
+    if (!res.ok) throw new Error(`Page not found: ${pageUrl}`);
     const html = await res.text();
     document.getElementById('app-root').innerHTML = html;
 

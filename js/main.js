@@ -7,8 +7,9 @@ async function loadSessions() {
     for (const [grade, files] of Object.entries(SITE.sessions)) {
       if (Array.isArray(files)) {
         for (const file of files) {
+          const sessionUrl = globalThis.getAppPath ? globalThis.getAppPath(file) : file;
           promises.push(
-            fetch(file)
+            fetch(sessionUrl)
               .then(res => {
                 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
                 return res.json();
@@ -27,7 +28,8 @@ async function loadSessions() {
 }
 
 async function loadProjects() {
-  const filePath = SITE?.projects_file || 'projects/datafolder/compiled_projects.json';
+  const rawPath = SITE?.projects_file || 'projects/datafolder/compiled_projects.json';
+  const filePath = globalThis.getAppPath ? globalThis.getAppPath(rawPath) : rawPath;
   console.log('[loadProjects] Fetching:', filePath);
   try {
     const res = await fetch(filePath);
@@ -86,7 +88,8 @@ function resolveInitialRoute() {
 async function init() {
   console.log('[init] START — loading site.json...');
   try {
-    const siteRes = await fetch('data/site.json');
+    const siteUrl = globalThis.getAppPath ? globalThis.getAppPath('data/site.json') : 'data/site.json';
+    const siteRes = await fetch(siteUrl);
     console.log('[init] site.json response:', siteRes.status, siteRes.ok);
     SITE = await siteRes.json(); // NOSONAR
   } catch (e) {
