@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vertical Axis Wind Turbine — Live Monitor</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js" onerror="console.warn('Chart.js failed to load from CDN — dashboard will run without the live chart.')"></script>
+<style>
+  :root{
+    --bg:#0b0e13;
+    --bg-panel:#141a22;
+    --bg-panel-2:#0f141b;
+    --road:#22262c;
+    --road-edge:#3a3f46;
+    --road-line:#e7e7e2;
+    --sky-1:#0b0e13;
+    --sky-2:#151c26;
+    --accent-amber:#ffb454;
+    --accent-amber-dim:#7a5a2c;
+    --accent-cyan:#4fd1c5;
+    --accent-cyan-dim:#245a56;
+    --text:#e8ecf1;
+    --text-dim:#8b95a1;
+    --border:#242a33;
+    --off:#3a4149;
+    --grass:#141d16;
+    --danger:#e2665f;
+  }
+  html[data-theme="light"]{
+    --bg:#eef1f5;
+    --bg-panel:#ffffff;
+    --bg-panel-2:#f4f6f9;
+    --road:#4a5058;
+    --road-edge:#2c3036;
+    --road-line:#f6f6f2;
+    --sky-1:#cfe0ee;
+    --sky-2:#eef1f5;
+    --accent-amber:#c9791f;
+    --accent-amber-dim:#e9c496;
+    --accent-cyan:#0e8f86;
+    --accent-cyan-dim:#a9ded9;
+    --text:#161a20;
+    --text-dim:#5b6472;
+    --border:#d9dee5;
+    --off:#c3cad2;
+    --grass:#cfe0c9;
+    --danger:#b3382f;
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    transition:background .35s ease,color .35s ease;
+    padding-bottom:48px;
+  }
+  .mono{font-family:ui-monospace,SFMono-Regular,Consolas,"Roboto Mono",monospace;}
+
+  /* ---------- HEADER / SCENE ---------- */
+  .scene-wrap{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    background:linear-gradient(180deg,var(--sky-1) 0%,var(--sky-2) 70%);
+    border-bottom:1px solid var(--border);
+  }
+  .topbar{
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    padding:22px 28px 6px 28px;
+    position:relative;
+    z-index:5;
+  }
+  .title-block .eyebrow{
+    font-size:11px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--accent-amber);
+    margin:0 0 6px 0;
+    font-weight:700;
+  }
+  .title-block h1{
+    margin:0;
+    font-size:clamp(22px,3.4vw,36px);
+    letter-spacing:.02em;
+    text-transform:uppercase;
+    font-weight:800;
+  }
+  .title-block .sub{
+    margin:6px 0 0 0;
+    color:var(--text-dim);
+    font-size:13px;
+    max-width:480px;
+  }
+  .top-controls{
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  button.pill{
+    border:1px solid var(--border);
+    background:var(--bg-panel);
+    color:var(--text);
+    padding:9px 16px;
+    border-radius:6px;
+    font-size:12.5px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    font-weight:700;
+    cursor:pointer;
+    transition:border-color .2s, transform .1s, background .2s;
+    white-space:nowrap;
+  }
+  button.pill:hover{border-color:var(--accent-cyan);}
+  button.pill:active{transform:translateY(1px);}
+  button.pill.active{background:var(--accent-cyan); color:#04211f; border-color:var(--accent-cyan);}
+  button.theme-toggle{
+    width:40px;height:40px;padding:0;
+    display:flex;align-items:center;justify-content:center;
+    border-radius:8px;font-size:16px;
+  }
+
+  svg#scene{ display:block; width:100%; height:auto; }
+
+  .status-strip{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    padding:10px 28px 16px 28px;
+    flex-wrap:wrap;
+    font-size:12.5px;
+    color:var(--text-dim);
+  }
+  .status-strip .dot{
+    width:8px;height:8px;border-radius:50%;
+    display:inline-block;margin-right:6px;
+    background:var(--off);
+  }
+  .status-strip .dot.live{background:var(--accent-cyan); box-shadow:0 0 8px var(--accent-cyan);}
+  .status-strip b{color:var(--text);}
+
+  /* ---------- DASHBOARD ---------- */
+  .dash{
+    max-width:1180px;
+    margin:0 auto;
+    padding:28px;
+  }
+  .section-label{
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    font-weight:700;
+    margin:0 0 14px 2px;
+  }
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:14px;
+    margin-bottom:28px;
+  }
+  .card{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:16px 18px;
+    position:relative;
+    overflow:hidden;
+  }
+  .card .label{
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--text-dim);
+    font-weight:700;
+    margin:0 0 8px 0;
+  }
+  .card .value{
+    font-size:30px;
+    font-weight:700;
+    line-height:1;
+  }
+  .card .unit{
+    font-size:13px;
+    color:var(--text-dim);
+    margin-left:4px;
+    font-weight:600;
+  }
+  .card .bar-track{
+    margin-top:12px;
+    height:5px;
+    border-radius:3px;
+    background:var(--off);
+    overflow:hidden;
+  }
+  .card .bar-fill{
+    height:100%;
+    width:0%;
+    background:var(--accent-cyan);
+    transition:width .5s ease;
+  }
+  .card.accent-amber .bar-fill{background:var(--accent-amber);}
+  .card.light-card .value{display:flex; align-items:center; gap:10px;}
+  .bulb-indicator{
+    width:16px;height:16px;border-radius:50%;
+    background:var(--off);
+    box-shadow:none;
+    transition:background .2s, box-shadow .2s;
+  }
+  .bulb-indicator.on{
+    background:var(--accent-amber);
+    box-shadow:0 0 14px 3px var(--accent-amber);
+  }
+
+  .panel{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:18px 20px 8px 20px;
+    margin-bottom:28px;
+  }
+  .panel-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:6px;
+  }
+  .panel-head .section-label{margin:0;}
+  .panel-head .legend{
+    font-size:11px;
+    color:var(--text-dim);
+    display:flex;
+    gap:14px;
+  }
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:9px;height:9px;border-radius:2px;display:inline-block;}
+
+  .console{
+    background:var(--bg-panel-2);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:14px 16px;
+    font-size:11.5px;
+    color:var(--text-dim);
+    height:110px;
+    overflow-y:auto;
+  }
+  .console div{white-space:pre-wrap; word-break:break-all; margin-bottom:2px;}
+  .console div.err{color:var(--danger);}
+
+  .foot-note{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+    font-size:11.5px;
+    color:var(--text-dim);
+    line-height:1.6;
+  }
+  code{
+    background:var(--bg-panel-2);
+    padding:1px 6px;
+    border-radius:4px;
+    font-size:11px;
+  }
+
+  @media (max-width:640px){
+    .topbar{flex-direction:column; gap:14px;}
+    .top-controls{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+<div class="scene-wrap">
+  <div class="topbar">
+    <div class="title-block">
+      <p class="eyebrow">Roadside Kinetic Energy Harvester</p>
+      <h1>Vertical Axis Wind Turbine</h1>
+      <p class="sub">Airflow from passing traffic spins the roadside turbine, driving three dynamos that charge the streetlight bank in real time.</p>
+    </div>
+    <div class="top-controls">
+      <button class="pill" id="connectBtn">Connect Serial</button>
+      <button class="pill" id="simBtn">Simulate</button>
+      <button class="theme-toggle pill" id="themeBtn" title="Toggle theme">🌙</button>
+    </div>
+  </div>
+
+  <svg id="scene" viewBox="0 0 1180 300" preserveAspectRatio="xMidYMax meet" xmlns="http://www.w3.org/2000/svg">
+    <!-- grass -->
+    <rect x="0" y="150" width="1180" height="150" fill="var(--grass)"></rect>
+
+    <!-- road -->
+    <rect x="0" y="185" width="1180" height="95" fill="var(--road)"></rect>
+    <rect x="0" y="185" width="1180" height="3" fill="var(--road-edge)"></rect>
+    <rect x="0" y="277" width="1180" height="3" fill="var(--road-edge)"></rect>
+
+    <!-- lane divider dashes -->
+    <g id="laneDashes" fill="var(--road-line)" opacity="0.85"></g>
+
+    <!-- road divider platform holding turbine -->
+    <rect x="500" y="150" width="70" height="35" fill="var(--road-edge)"></rect>
+    <rect x="495" y="145" width="80" height="8" rx="2" fill="var(--road-edge)"></rect>
+
+    <!-- streetlight pole -->
+    <g id="streetlight">
+      <rect x="628" y="60" width="5" height="125" fill="var(--road-edge)"></rect>
+      <path d="M630 60 L672 60 L672 68 L630 68 Z" fill="var(--road-edge)"></path>
+      <circle id="bulbGlow" cx="668" cy="70" r="26" fill="var(--accent-amber)" opacity="0"></circle>
+      <circle id="bulbCore" cx="668" cy="70" r="7" fill="var(--off)"></circle>
+    </g>
+
+    <!-- turbine -->
+    <g id="turbineBase">
+      <rect x="530" y="70" width="6" height="80" fill="var(--road-edge)"></rect>
+      <g id="turbineRotor" transform="translate(533,68)">
+        <ellipse cx="0" cy="0" rx="34" ry="10" fill="none" stroke="var(--accent-cyan)" stroke-width="3"></ellipse>
+        <ellipse cx="0" cy="0" rx="34" ry="10" fill="none" stroke="var(--accent-cyan)" stroke-width="3" transform="rotate(60)"></ellipse>
+        <ellipse cx="0" cy="0" rx="34" ry="10" fill="none" stroke="var(--accent-cyan)" stroke-width="3" transform="rotate(120)"></ellipse>
+        <circle cx="0" cy="0" r="4" fill="var(--accent-cyan)"></circle>
+      </g>
+    </g>
+
+    <!-- car (single template, JS clones/animates via transform) -->
+    <g id="car" transform="translate(-140,222)">
+      <rect x="0" y="0" width="86" height="26" rx="7" fill="var(--accent-amber)"></rect>
+      <rect x="14" y="-14" width="46" height="18" rx="6" fill="var(--accent-amber)"></rect>
+      <rect x="18" y="-11" width="16" height="11" rx="2" fill="var(--sky-2)" opacity="0.6"></rect>
+      <rect x="38" y="-11" width="16" height="11" rx="2" fill="var(--sky-2)" opacity="0.6"></rect>
+      <circle cx="18" cy="27" r="8" fill="#111417"></circle>
+      <circle cx="68" cy="27" r="8" fill="#111417"></circle>
+      <circle cx="18" cy="27" r="3" fill="var(--road-line)"></circle>
+      <circle cx="68" cy="27" r="3" fill="var(--road-line)"></circle>
+    </g>
+  </svg>
+
+  <div class="status-strip mono">
+    <span><span class="dot" id="liveDot"></span><b id="connState">Disconnected</b></span>
+    <span>RPM <b id="miniRpm">0.0</b></span>
+    <span>Voltage <b id="miniVolt">0.00</b> V</span>
+    <span>Power <b id="miniPower">0.00</b> W</span>
+    <span>Light <b id="miniLight">OFF</b></span>
+  </div>
+</div>
+
+<div class="dash">
+
+  <p class="section-label">Generator Output</p>
+  <div class="grid">
+    <div class="card">
+      <p class="label">RPM</p>
+      <div class="value" id="valRpm">0.0<span class="unit">rpm</span></div>
+      <div class="bar-track"><div class="bar-fill" id="barRpm"></div></div>
+    </div>
+    <div class="card">
+      <p class="label">Voltage</p>
+      <div class="value" id="valVolt">0.00<span class="unit">V</span></div>
+      <div class="bar-track"><div class="bar-fill" id="barVolt"></div></div>
+    </div>
+    <div class="card">
+      <p class="label">Current</p>
+      <div class="value" id="valCurr">0.000<span class="unit">A</span></div>
+      <div class="bar-track"><div class="bar-fill" id="barCurr"></div></div>
+    </div>
+    <div class="card accent-amber">
+      <p class="label">Power</p>
+      <div class="value" id="valPower">0.00<span class="unit">W</span></div>
+      <div class="bar-track"><div class="bar-fill" id="barPower"></div></div>
+    </div>
+  </div>
+
+  <p class="section-label">Environment &amp; Streetlight</p>
+  <div class="grid">
+    <div class="card">
+      <p class="label">Temperature</p>
+      <div class="value" id="valTemp">0.0<span class="unit">°C</span></div>
+      <div class="bar-track"><div class="bar-fill" id="barTemp"></div></div>
+    </div>
+    <div class="card">
+      <p class="label">Humidity</p>
+      <div class="value" id="valHum">0.0<span class="unit">%</span></div>
+      <div class="bar-track"><div class="bar-fill" id="barHum"></div></div>
+    </div>
+    <div class="card light-card">
+      <p class="label">Light</p>
+      <div class="value"><span class="bulb-indicator" id="bulbCardIndicator"></span><span id="valLight">OFF</span></div>
+    </div>
+    <div class="card">
+      <p class="label">Spin Threshold</p>
+      <div class="value">1.00<span class="unit">V</span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <p class="section-label">Power &amp; Voltage — Last 60 Readings</p>
+      <div class="legend">
+        <span><i style="background:var(--accent-amber)"></i>Power (W)</span>
+        <span><i style="background:var(--accent-cyan)"></i>Voltage (V)</span>
+      </div>
+    </div>
+    <canvas id="chart" height="90"></canvas>
+  </div>
+
+  <div class="panel">
+    <p class="section-label">Raw Serial Feed</p>
+    <div class="console mono" id="console"></div>
+  </div>
+
+</div>
+
+<p class="foot-note">
+  Click <b>Connect Serial</b> to pair with the Arduino over the Web Serial API (Chrome or Edge, 9600 baud) and stream live <code>{"rpm":..,"voltage":..,"current":..,"power":..,"temp":..,"humidity":..,"light":".."}</code> readings from the sketch. No hardware nearby? Click <b>Simulate</b> to preview the dashboard with generated data.
+</p>
+
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+
+  /* ---------------- THEME ---------------- */
+  const themeBtn = $('themeBtn');
+  function setTheme(t){
+    document.documentElement.setAttribute('data-theme', t);
+    themeBtn.textContent = t === 'light' ? '☀️' : '🌙';
+  }
+  let currentTheme = 'dark';
+  setTheme(currentTheme);
+  themeBtn.addEventListener('click', ()=>{
+    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    setTheme(currentTheme);
+  });
+
+  /* ---------------- LANE DASHES ---------------- */
+  const laneGroup = $('laneDashes');
+  let dashXOffset = 0;
+  const DASH_W = 34, DASH_GAP = 26, DASH_Y = 230, DASH_H = 4;
+  function buildDashes(){
+    laneGroup.innerHTML = '';
+    const total = DASH_W + DASH_GAP;
+    const count = Math.ceil(1180 / total) + 2;
+    for(let i=0;i<count;i++){
+      const r = document.createElementNS('http://www.w3.org/2000/svg','rect');
+      r.setAttribute('x', i*total);
+      r.setAttribute('y', DASH_Y);
+      r.setAttribute('width', DASH_W);
+      r.setAttribute('height', DASH_H);
+      laneGroup.appendChild(r);
+    }
+  }
+  buildDashes();
+
+  /* ---------------- CAR ---------------- */
+  const car = $('car');
+  let carX = -140;
+  let carSpeed = 2.6; // px per frame baseline
+
+  /* ---------------- TURBINE + STREETLIGHT ---------------- */
+  const turbineRotor = $('turbineRotor');
+  const bulbGlow = $('bulbGlow');
+  const bulbCore = $('bulbCore');
+  const bulbCardIndicator = $('bulbCardIndicator');
+  let rotorAngle = 0;
+  let rotorDegPerFrame = 0.4; // idle drift
+  let wasGenerating = false;
+  let blinkTimer = null;
+
+  function setBulb(on){
+    bulbCore.setAttribute('fill', on ? 'var(--accent-amber)' : 'var(--off)');
+    bulbGlow.setAttribute('opacity', on ? '0.55' : '0');
+    bulbCardIndicator.classList.toggle('on', on);
+  }
+
+  function playStartupBlink(){
+    let count = 0;
+    let on = false;
+    if(blinkTimer) clearInterval(blinkTimer);
+    blinkTimer = setInterval(()=>{
+      on = !on;
+      setBulb(on);
+      count++;
+      if(count >= 8){ // 4 blinks = 8 toggles
+        clearInterval(blinkTimer);
+        setBulb(true);
+      }
+    }, 150);
+  }
+
+  function updateStreetlightFromData(lightOn){
+    if(lightOn && !wasGenerating){
+      playStartupBlink();
+    } else if(!lightOn){
+      if(blinkTimer) clearInterval(blinkTimer);
+      setBulb(false);
+    } else {
+      if(!blinkTimer) setBulb(true);
+    }
+    wasGenerating = lightOn;
+  }
+
+  /* ---------------- ANIMATION LOOP ---------------- */
+  function animate(){
+    // car movement, loop across scene width
+    carX += carSpeed;
+    if(carX > 1180 + 100) carX = -140;
+    car.setAttribute('transform', `translate(${carX},222)`);
+
+    // turbine rotation, speed follows currentRPM (mapped, with idle minimum)
+    rotorAngle = (rotorAngle + rotorDegPerFrame) % 360;
+    turbineRotor.setAttribute('transform', `translate(533,68) rotate(${rotorAngle})`);
+
+    // lane dashes scroll opposite direction slightly for depth (subtle)
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+
+  /* ---------------- CHART (optional — degrades gracefully if CDN blocked) ---------------- */
+  let chart = null;
+  if(typeof Chart !== 'undefined'){
+    const ctx = $('chart').getContext('2d');
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [],
+        datasets: [
+          {
+            label: 'Power (W)',
+            data: [],
+            borderColor: getComputedStyle(document.documentElement).getPropertyValue('--accent-amber'),
+            backgroundColor: 'transparent',
+            tension: 0.35,
+            pointRadius: 0,
+            borderWidth: 2,
+            yAxisID: 'y'
+          },
+          {
+            label: 'Voltage (V)',
+            data: [],
+            borderColor: getComputedStyle(document.documentElement).getPropertyValue('--accent-cyan'),
+            backgroundColor: 'transparent',
+            tension: 0.35,
+            pointRadius: 0,
+            borderWidth: 2,
+            yAxisID: 'y1'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        animation: false,
+        interaction: { intersect:false, mode:'index' },
+        plugins: { legend: { display:false } },
+        scales: {
+          x: { display:false },
+          y: { position:'left', ticks:{ color: '#8b95a1', font:{size:10} }, grid:{ color:'rgba(128,128,128,0.08)' } },
+          y1:{ position:'right', ticks:{ color: '#8b95a1', font:{size:10} }, grid:{ display:false } }
+        }
+      }
+    });
+  } else {
+    const chartEl = $('chart');
+    if(chartEl && chartEl.parentElement){
+      chartEl.parentElement.innerHTML += '<p style="font-size:11.5px;color:var(--text-dim);margin:6px 0 4px 0;">Chart library failed to load (no internet access to the CDN). The rest of the dashboard, including Connect Serial, still works normally.</p>';
+    }
+  }
+
+  function pushChartPoint(power, voltage){
+    if(!chart) return;
+    const labels = chart.data.labels;
+    labels.push('');
+    chart.data.datasets[0].data.push(power);
+    chart.data.datasets[1].data.push(voltage);
+    if(labels.length > 60){
+      labels.shift();
+      chart.data.datasets[0].data.shift();
+      chart.data.datasets[1].data.shift();
+    }
+    chart.update('none');
+  }
+
+  /* ---------------- CONSOLE ---------------- */
+  const consoleEl = $('console');
+  function logLine(text, isErr){
+    const d = document.createElement('div');
+    if(isErr) d.className = 'err';
+    d.textContent = text;
+    consoleEl.appendChild(d);
+    consoleEl.scrollTop = consoleEl.scrollHeight;
+    while(consoleEl.children.length > 80){ consoleEl.removeChild(consoleEl.firstChild); }
+  }
+
+  /* ---------------- DASHBOARD UPDATE ---------------- */
+  const MAX_RPM = 200, MAX_VOLT = 12, MAX_CURR = 2, MAX_POWER = 20, MAX_TEMP = 50, MAX_HUM = 100;
+
+  function clampPct(v, max){ return Math.max(0, Math.min(100, (v/max)*100)); }
+
+  function updateDashboard(d){
+    // Safety-net dead-band: matches the firmware fix. Guards against any
+    // stray noisy line still showing a fake non-zero reading.
+    let rpm = d.rpm, voltage = d.voltage, current = d.current, power = d.power;
+    if (voltage < 0.15) voltage = 0;
+    if (Math.abs(current) < 0.05) current = 0;
+    if (voltage === 0) power = 0;
+
+    $('valRpm').innerHTML = rpm.toFixed(1) + '<span class="unit">rpm</span>';
+    $('valVolt').innerHTML = voltage.toFixed(2) + '<span class="unit">V</span>';
+    $('valCurr').innerHTML = current.toFixed(3) + '<span class="unit">A</span>';
+    $('valPower').innerHTML = power.toFixed(2) + '<span class="unit">W</span>';
+    $('valTemp').innerHTML = d.temp.toFixed(1) + '<span class="unit">°C</span>';
+    $('valHum').innerHTML = d.humidity.toFixed(1) + '<span class="unit">%</span>';
+    $('valLight').textContent = d.light;
+
+    $('barRpm').style.width = clampPct(rpm, MAX_RPM) + '%';
+    $('barVolt').style.width = clampPct(voltage, MAX_VOLT) + '%';
+    $('barCurr').style.width = clampPct(current, MAX_CURR) + '%';
+    $('barPower').style.width = clampPct(power, MAX_POWER) + '%';
+    $('barTemp').style.width = clampPct(d.temp, MAX_TEMP) + '%';
+    $('barHum').style.width = clampPct(d.humidity, MAX_HUM) + '%';
+
+    $('miniRpm').textContent = rpm.toFixed(1);
+    $('miniVolt').textContent = voltage.toFixed(2);
+    $('miniPower').textContent = power.toFixed(2);
+    $('miniLight').textContent = d.light;
+
+    // turbine spin speed follows rpm (idle drift floor so it never looks fully dead)
+    rotorDegPerFrame = Math.max(0.4, rpm * 0.12);
+    // car speed subtly follows rpm too (more wind => more traffic-driven feel), clamped
+    carSpeed = Math.max(1.6, Math.min(6, 1.6 + rpm * 0.02));
+
+    updateStreetlightFromData(d.light === 'ON');
+    pushChartPoint(power, voltage);
+  }
+
+  /* ---------------- SIMULATE MODE ---------------- */
+  let simInterval = null;
+  let simT = 0;
+  function simulateStep(){
+    simT += 1;
+    // ramps generation up and down like wind gusts from passing traffic
+    const gust = Math.max(0, Math.sin(simT/18) * 1.4 + Math.sin(simT/5)*0.3);
+    const rpm = Math.max(0, gust * 70 + (Math.random()*4-2));
+    const voltage = Math.max(0, gust * 3.6 + (Math.random()*0.15));
+    const current = Math.max(0, voltage * 0.14 + (Math.random()*0.02));
+    const power = current * voltage;
+    const temp = 27 + Math.sin(simT/40)*3;
+    const humidity = 55 + Math.sin(simT/33)*10;
+    const light = voltage > 1.0 ? 'ON' : 'OFF';
+
+    const data = { rpm, voltage, current, power, temp, humidity, light };
+    updateDashboard(data);
+    logLine(JSON.stringify({
+      rpm:+rpm.toFixed(1), voltage:+voltage.toFixed(2), current:+current.toFixed(3),
+      power:+power.toFixed(2), temp:+temp.toFixed(1), humidity:+humidity.toFixed(1), light
+    }));
+  }
+
+  const simBtn = $('simBtn');
+  simBtn.addEventListener('click', ()=>{
+    if(simInterval){
+      clearInterval(simInterval);
+      simInterval = null;
+      simBtn.classList.remove('active');
+      simBtn.textContent = 'Simulate';
+      setConnState('Disconnected', false);
+      return;
+    }
+    if(port){ // stop real connection if active
+      disconnectSerial();
+    }
+    simInterval = setInterval(simulateStep, 400);
+    simBtn.classList.add('active');
+    simBtn.textContent = 'Stop Simulation';
+    setConnState('Simulating', true);
+  });
+
+  /* ---------------- WEB SERIAL ---------------- */
+  const connectBtn = $('connectBtn');
+  let port = null, reader = null, keepReading = false;
+
+  function setConnState(text, live){
+    $('connState').textContent = text;
+    $('liveDot').classList.toggle('live', live);
+  }
+
+  function isInIframe(){
+    try{ return window.self !== window.top; }catch(e){ return true; }
+  }
+
+  async function connectSerial(){
+    if(!('serial' in navigator)){
+      if(isInIframe()){
+        logLine('Web Serial is blocked here because this page is running inside an embedded preview (iframe) — browsers only allow serial access to a top-level page. Download this HTML file and open it directly in Chrome or Edge (not inside a preview panel), then click Connect Serial again. Simulate mode still works fine in here.', true);
+      } else {
+        logLine('Web Serial API not available in this browser. It only works in Chrome or Edge (desktop) over HTTPS or a local file. Use Simulate instead.', true);
+      }
+      return;
+    }
+    if(simInterval){ clearInterval(simInterval); simInterval=null; simBtn.classList.remove('active'); simBtn.textContent='Simulate'; }
+    try{
+      port = await navigator.serial.requestPort();
+      await port.open({ baudRate: 9600 });
+      keepReading = true;
+      connectBtn.textContent = 'Disconnect';
+      connectBtn.classList.add('active');
+      setConnState('Connected', true);
+      logLine('Serial port opened at 9600 baud.');
+      readLoop();
+    }catch(err){
+      if(isInIframe()){
+        logLine('Connection failed (' + err.message + '). This usually means serial access is blocked because the page is embedded in a preview. Open the downloaded HTML file directly in Chrome/Edge and try again.', true);
+      } else {
+        logLine('Connection failed: ' + err.message, true);
+      }
+    }
+  }
+
+  async function readLoop(){
+    const textDecoder = new TextDecoderStream();
+    const readableClosed = port.readable.pipeTo(textDecoder.writable);
+    reader = textDecoder.readable.getReader();
+    let buffer = '';
+    try{
+      while(keepReading){
+        const { value, done } = await reader.read();
+        if(done) break;
+        if(value){
+          buffer += value;
+          let idx;
+          while((idx = buffer.indexOf('\n')) >= 0){
+            const line = buffer.slice(0, idx).trim();
+            buffer = buffer.slice(idx+1);
+            if(line.length){
+              handleLine(line);
+            }
+          }
+        }
+      }
+    }catch(err){
+      logLine('Read error: ' + err.message, true);
+    }finally{
+      reader.releaseLock();
+    }
+  }
+
+  function handleLine(line){
+    logLine(line);
+    try{
+      const d = JSON.parse(line);
+      if(typeof d.rpm === 'number' || typeof d.voltage === 'number'){
+        updateDashboard({
+          rpm: d.rpm || 0,
+          voltage: d.voltage || 0,
+          current: d.current || 0,
+          power: d.power || 0,
+          temp: d.temp || 0,
+          humidity: d.humidity || 0,
+          light: d.light || 'OFF'
+        });
+      }
+    }catch(e){
+      // status lines like {"status":"..."} or partial/garbled lines — just log, don't crash
+    }
+  }
+
+  async function disconnectSerial(){
+    keepReading = false;
+    try{ if(reader) await reader.cancel(); }catch(e){}
+    try{ if(port) await port.close(); }catch(e){}
+    port = null; reader = null;
+    connectBtn.textContent = 'Connect Serial';
+    connectBtn.classList.remove('active');
+    setConnState('Disconnected', false);
+    setBulb(false);
+    logLine('Serial port closed.');
+  }
+
+  connectBtn.addEventListener('click', ()=>{
+    if(port){ disconnectSerial(); }
+    else{ connectSerial(); }
+  });
+
+  if(!('serial' in navigator)){
+    connectBtn.title = 'Web Serial API unavailable in this environment — use Simulate instead';
+  }
+
+  // seed the chart with a flat baseline so it isn't empty on load
+  for(let i=0;i<20;i++){ pushChartPoint(0,0); }
+})();
+</script>
+
+</body>
+</html>

@@ -850,63 +850,63 @@
       "jumper-wires",
       "usb-cable"
     ],
-    "image": "projects/Bus-tracking/icon.png",
+    "image": "projects/bus-tracking/icon.png",
     "gallery": [
       {
-        "file": "projects/Bus-tracking/banner.png",
+        "file": "projects/bus-tracking/banner.png",
         "caption": "banner"
       },
       {
-        "file": "projects/Bus-tracking/bus-dashboard.jpeg",
+        "file": "projects/bus-tracking/bus-dashboard.jpeg",
         "caption": "bus-dashboard"
       },
       {
-        "file": "projects/Bus-tracking/busdetails1.jpeg",
+        "file": "projects/bus-tracking/busdetails1.jpeg",
         "caption": "busdetails1"
       },
       {
-        "file": "projects/Bus-tracking/icon.png",
+        "file": "projects/bus-tracking/icon.png",
         "caption": "icon"
       },
       {
-        "file": "projects/Bus-tracking/Poster1.png",
+        "file": "projects/bus-tracking/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Bus-tracking/Poster2.png",
+        "file": "projects/bus-tracking/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Bus-tracking/Poster3.png",
+        "file": "projects/bus-tracking/Poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Bus-tracking/stopdisplay.jpeg",
+        "file": "projects/bus-tracking/stopdisplay.jpeg",
         "caption": "stopdisplay"
       }
     ],
     "posters": [
       {
-        "file": "projects/Bus-tracking/Poster1.png",
+        "file": "projects/bus-tracking/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Bus-tracking/Poster2.png",
+        "file": "projects/bus-tracking/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Bus-tracking/Poster3.png",
+        "file": "projects/bus-tracking/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System.pdf",
+        "file": "projects/bus-tracking/Bus_Tracking_System.pdf",
         "name": "Bus_Tracking_System.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System2.pdf",
+        "file": "projects/bus-tracking/Bus_Tracking_System2.pdf",
         "name": "Bus_Tracking_System2.pdf",
         "type": "pdf"
       }
@@ -914,23 +914,23 @@
     "codeFiles": [
       {
         "name": "README.md",
-        "url": "projects/Bus-tracking/README.md",
+        "url": "projects/bus-tracking/README.md",
         "language": "Markdown"
       },
       {
         "name": "test.ino",
-        "url": "projects/Bus-tracking/test.ino",
+        "url": "projects/bus-tracking/test.ino",
         "language": "Arduino C++"
       }
     ],
     "bannerImages": [
-      "projects/Bus-tracking/banner.png"
+      "projects/bus-tracking/banner.png"
     ],
     "htmlDashboards": [
-      "projects/Bus-tracking/livebus (1).html",
-      "projects/Bus-tracking/livebus.html"
+      "projects/bus-tracking/livebus (1).html",
+      "projects/bus-tracking/livebus.html"
     ],
-    "liveUrl": "projects/Bus-tracking/livebus.html"
+    "liveUrl": "projects/bus-tracking/livebus.html"
   },
   {
     "id": "crabrobot",
@@ -1372,23 +1372,23 @@
     "image": "projects/images/gas-detector.jpg",
     "gallery": [
       {
-        "file": "projects/Gas-Detector/demo.jpeg",
+        "file": "projects/gas-detector/demo.jpeg",
         "caption": "demo"
       },
       {
-        "file": "projects/Gas-Detector/poster1.jpg",
+        "file": "projects/gas-detector/poster1.jpg",
         "caption": "Problem Statement"
       }
     ],
     "posters": [
       {
-        "file": "projects/Gas-Detector/poster1.jpg",
+        "file": "projects/gas-detector/poster1.jpg",
         "caption": "Problem Statement"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Gas-Detector/Gas-Detector-Sensor.pdf",
+        "file": "projects/gas-detector/Gas-Detector-Sensor.pdf",
         "name": "Gas-Detector-Sensor.pdf",
         "type": "pdf"
       }
@@ -1683,19 +1683,19 @@
     "image": "projects/images/jarakshak.jpg",
     "gallery": [
       {
-        "file": "projects/JaRakshak/poster1.png",
+        "file": "projects/jarakshak/poster1.png",
         "caption": "Problem Statement"
       }
     ],
     "posters": [
       {
-        "file": "projects/JaRakshak/poster1.png",
+        "file": "projects/jarakshak/poster1.png",
         "caption": "Problem Statement"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/JaRakshak/JalRakshak.pdf",
+        "file": "projects/jarakshak/JalRakshak.pdf",
         "name": "JalRakshak.pdf",
         "type": "pdf"
       }
@@ -1703,7 +1703,7 @@
     "codeFiles": [
       {
         "name": "code.ino",
-        "url": "projects/JaRakshak/code.ino",
+        "url": "projects/jarakshak/code.ino",
         "language": "Arduino C++"
       }
     ]
@@ -2428,6 +2428,157 @@
     "solutionApproach": "The Automatic Medicine Dispenser is an Arduino-based smart healthcare device that reminds users to take medicine at the correct time. An RTC module keeps track of time, the LCD displays reminders, the LED and buzzer provide alerts, and a servo motor rotates the medicine tray to dispense the correct medicine automatically."
   },
   {
+    "id": "RFID ATTENDANCE SYSTEM",
+    "title": "RFID ATTENDANCE SYSTEM Identification",
+    "subtitle": "Presented monitoring system",
+    "level": "Intermediate",
+    "color": "#FF6B35",
+    "desc": "Build a smart attendance system that identifies people instantly using RFID tags!",
+    "fullDesc": "Build a functional RFID-based Attendance System using an MFRC522 RFID reader module coupled with an ESP8266 microcontroller to identify and log attendance in real time. A 16x2 LCD display shows live status and identification results, while a buzzer and LED provide instant audio-visual feedback for each scan, giving a complete low-cost identification and monitoring solution.",
+    "difficulty": 3,
+    "status": "Available",
+    "tags": [
+      "ESP8266",
+      "RFID",
+      "Attendance System",
+      "IoT",
+      "LCD Display"
+    ],
+    "date": "2026-06-26",
+    "author": "Nikhil Patil",
+    "team": [
+      {
+        "name": "ALOK GHEWANDE",
+        "role": "Leader and Project Lead"
+      }
+    ],
+    "innovation": "A low-cost, student-built RFID attendance and identification system with real-time status display and audio-visual feedback using an ESP8266-based sensor suite.",
+    "problemStatement": "Manual attendance systems are time-consuming and error-prone, and commercial RFID identification kits are expensive with little scope for student learning and customization.",
+    "solutionApproach": "Used an MFRC522 RFID reader module connected to an ESP8266 to scan RFID tags and identify individuals in real time. A 16x2 LCD display shows scan status and identification results instantly. A buzzer provides audio confirmation of a successful or failed scan, while an LED indicator shows live system status. The ESP8266 processes all tag data and can log or transmit attendance records over Wi-Fi.",
+    "hardwareSpecs": {
+      "microcontroller": "ESP8266 (NodeMCU)",
+      "powerConsumption": "~80mA @ 3.3V (control circuit)",
+      "operatingVoltage": "3.3V DC (via USB/regulator)",
+      "communicationProtocol": "SPI (RC522) + Serial UART (9600 baud) + I2C (LCD, optional)",
+      "dimensions": "Custom enclosure — compact tabletop unit",
+      "sensors": [
+        "RC522 RFID Reader Module",
+        "RFID Tags"
+      ],
+      "displays": [
+        "LCD Display 16x2"
+      ]
+    },
+    "components": [
+      "ESP8266",
+      "RC522",
+      "LCD Display 16x2",
+      "RFID Tags",
+      "Breadboard",
+      "LED Light",
+      "Buzzer",
+      "Jumper Wires"
+    ],
+    "componentRefs": [
+      "esp8266",
+      "rc522",
+      "lcd-16x2",
+      "rfid-tags",
+      "breadboard",
+      "led",
+      "buzzer",
+      "jumper-wires"
+    ],
+    "guide": [
+      "Mount the RC522 RFID reader module, LCD display, LED, and buzzer on a breadboard or custom base",
+      "Connect the RC522 SDA, SCK, MOSI, MISO, and RST pins to the ESP8266 SPI pins",
+      "Wire the RC522 3.3V and GND pins to the ESP8266 power rails",
+      "Connect the 16x2 LCD display to the ESP8266 (via I2C module or direct data pins)",
+      "Wire the LED (with resistor) to a free ESP8266 digital pin to indicate scan status",
+      "Wire the buzzer to a free ESP8266 digital pin for audio feedback",
+      "Connect all jumper wires securely and double-check the SPI wiring",
+      "Open Arduino IDE and install the ESP8266 board package along with the MFRC522 and LCD libraries",
+      "Paste the provided sketch and update it with your RFID tag UIDs and names",
+      "Upload the sketch to the ESP8266",
+      "Open Serial Monitor at 9600 baud to view scan logs and debug output",
+      "Scan an RFID tag near the RC522 reader and verify the LCD shows the identification result",
+      "Confirm the LED and buzzer trigger correctly for valid and invalid tag scans",
+      "Optionally connect the ESP8266 to Wi-Fi to log attendance records remotely"
+    ],
+    "estimatedTime": "100 minutes",
+    "prerequisites": [
+      "Basic Arduino/ESP8266 wiring",
+      "Arduino IDE installed",
+      "Familiarity with Serial Monitor",
+      "Basic understanding of SPI communication"
+    ],
+    "pdf": "",
+    "ppt": "projects/level-3/rfid-attendance-system",
+    "circuitDiagram": "",
+    "youtubeVideos": [],
+    "liveUrl": "",
+    "resources": [
+      {
+        "icon": "📄",
+        "title": "MFRC522 Library Documentation",
+        "url": "https://github.com/miguelbalboa/rfid"
+      },
+      {
+        "icon": "📚",
+        "title": "ESP8266 Arduino Core Documentation",
+        "url": "https://arduino-esp8266.readthedocs.io/en/latest/"
+      },
+      {
+        "icon": "🖥️",
+        "title": "LiquidCrystal I2C Library Guide",
+        "url": "https://github.com/johnrickman/LiquidCrystal_I2C"
+      }
+    ],
+    "githubUrl": "",
+    "achievements": [],
+    "keywords": [
+      "RFID attendance system",
+      "RC522",
+      "ESP8266",
+      "RFID tags",
+      "LCD 16x2",
+      "identification system",
+      "attendance monitoring",
+      "buzzer",
+      "IoT"
+    ],
+    "image": "projects/images/RFID ATTENDANCE SYSTEM.jpg",
+    "gallery": [
+      {
+        "file": "projects/RFID/Poster.png",
+        "caption": "Problem Statement"
+      }
+    ],
+    "posters": [
+      {
+        "file": "projects/RFID/Poster.png",
+        "caption": "Problem Statement"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/RFID/RFID Smart Access & Attendance System.pdf",
+        "name": "RFID Smart Access & Attendance System.pdf",
+        "type": "pdf"
+      },
+      {
+        "file": "projects/RFID/RFID Smart Access & Attendance System.pptx",
+        "name": "RFID Smart Access & Attendance System.pptx",
+        "type": "pptx"
+      },
+      {
+        "file": "projects/level-3/rfid-attendance-system",
+        "name": "rfid-attendance-system",
+        "type": "pptx"
+      }
+    ]
+  },
+  {
     "id": "robot-car",
     "title": "Robot Car",
     "subtitle": "ESP32 based smart robotic car with L298N motor control",
@@ -2473,29 +2624,29 @@
     "image": "projects/images/robot-car.jpg",
     "gallery": [
       {
-        "file": "projects/Robot-Car/poster1.png",
+        "file": "projects/robot-car/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Robot-Car/poster2.png",
+        "file": "projects/robot-car/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Robot-Car/poster3.png",
+        "file": "projects/robot-car/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/Robot-Car/poster1.png",
+        "file": "projects/robot-car/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Robot-Car/poster2.png",
+        "file": "projects/robot-car/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Robot-Car/poster3.png",
+        "file": "projects/robot-car/poster3.png",
         "caption": "Future Scope"
       }
     ],
@@ -3090,51 +3241,51 @@
     "image": "projects/images/accident-detection-system.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "file": "projects/smart-accident-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "file": "projects/smart-accident-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "file": "projects/smart-accident-detection/poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (1).jpeg",
+        "file": "projects/smart-accident-detection/Project (1).jpeg",
         "caption": "project (1)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (2).jpeg",
+        "file": "projects/smart-accident-detection/Project (2).jpeg",
         "caption": "project (2)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (3).jpeg",
+        "file": "projects/smart-accident-detection/Project (3).jpeg",
         "caption": "project (3)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (4).jpeg",
+        "file": "projects/smart-accident-detection/Project (4).jpeg",
         "caption": "project (4)"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "file": "projects/smart-accident-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "file": "projects/smart-accident-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "file": "projects/smart-accident-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-Accident-Detection/Smart Accident Detection & Alert System.pdf",
+        "file": "projects/smart-accident-detection/Smart Accident Detection & Alert System.pdf",
         "name": "Smart Accident Detection & Alert System.pdf",
         "type": "pdf"
       }
@@ -3142,7 +3293,7 @@
     "codeFiles": [
       {
         "name": "AccidentDetectAlert.ino",
-        "url": "projects/Smart-Accident-Detection/AccidentDetectAlert_Code/AccidentDetectAlert.ino",
+        "url": "projects/smart-accident-detection/AccidentDetectAlert_Code/AccidentDetectAlert.ino",
         "language": "Arduino C++"
       }
     ]
@@ -3197,44 +3348,44 @@
     "image": "projects/images/smart-classroom.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-classroom/Poster1.png",
+        "file": "projects/smart-classroom/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-classroom/Poster2.png",
+        "file": "projects/smart-classroom/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-classroom/Poster3.png",
+        "file": "projects/smart-classroom/Poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-classroom/Project A3 Display Board.png",
+        "file": "projects/smart-classroom/Project A3 Display Board.png",
         "caption": "project a3 display board"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-classroom/Poster1.png",
+        "file": "projects/smart-classroom/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-classroom/Poster2.png",
+        "file": "projects/smart-classroom/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-classroom/Poster3.png",
+        "file": "projects/smart-classroom/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-classroom/Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
+        "file": "projects/smart-classroom/Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
         "name": "Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Smart-classroom/Smart_Classroom_Energy_Saver (2).pdf",
+        "file": "projects/smart-classroom/Smart_Classroom_Energy_Saver (2).pdf",
         "name": "Smart_Classroom_Energy_Saver (2).pdf",
         "type": "pdf"
       }
@@ -3361,35 +3512,35 @@
     "image": "projects/images/smart-fall-detection.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-fall-detection/poster1.png",
+        "file": "projects/smart-fall-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-fall-detection/poster2.png",
+        "file": "projects/smart-fall-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-fall-detection/poster3.png",
+        "file": "projects/smart-fall-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-fall-detection/poster1.png",
+        "file": "projects/smart-fall-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-fall-detection/poster2.png",
+        "file": "projects/smart-fall-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-fall-detection/poster3.png",
+        "file": "projects/smart-fall-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-fall-detection/Smart-fall-detection.pdf",
+        "file": "projects/smart-fall-detection/Smart-fall-detection.pdf",
         "name": "Smart-fall-detection.pdf",
         "type": "pdf"
       }
@@ -3397,14 +3548,14 @@
     "codeFiles": [
       {
         "name": "air_mouse_firmware.ino",
-        "url": "projects/Smart-fall-detection/air_mouse_firmware.ino",
+        "url": "projects/smart-fall-detection/air_mouse_firmware.ino",
         "language": "Arduino C++"
       }
     ],
     "htmlDashboards": [
-      "projects/Smart-fall-detection/fall_detection_dashboard.html"
+      "projects/smart-fall-detection/fall_detection_dashboard.html"
     ],
-    "liveUrl": "projects/Smart-fall-detection/fall_detection_dashboard.html"
+    "liveUrl": "projects/smart-fall-detection/fall_detection_dashboard.html"
   },
   {
     "id": "smart-bridge-flood-alert",
@@ -3515,44 +3666,44 @@
     "image": "projects/images/smart-bridge-flood-alert.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-Flood-Alert/poster1.png",
+        "file": "projects/smart-flood-alert/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster2.png",
+        "file": "projects/smart-flood-alert/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster3.png",
+        "file": "projects/smart-flood-alert/poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-Flood-Alert/smartbridge.jpeg",
+        "file": "projects/smart-flood-alert/smartbridge.jpeg",
         "caption": "smartbridge"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-Flood-Alert/poster1.png",
+        "file": "projects/smart-flood-alert/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster2.png",
+        "file": "projects/smart-flood-alert/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster3.png",
+        "file": "projects/smart-flood-alert/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge.pdf",
+        "file": "projects/smart-flood-alert/Smart_Flood_Alert_Bridge.pdf",
         "name": "Smart_Flood_Alert_Bridge.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Smart-Flood-Alert/smart_flood_alert_bridge_System_ppt.pdf",
+        "file": "projects/smart-flood-alert/smart_flood_alert_bridge_System_ppt.pdf",
         "name": "smart_flood_alert_bridge_System_ppt.pdf",
         "type": "pdf"
       }
@@ -3560,14 +3711,14 @@
     "codeFiles": [
       {
         "name": "rain_servo_control_v2.ino",
-        "url": "projects/Smart-Flood-Alert/rain_servo_control_v2/rain_servo_control_v2.ino",
+        "url": "projects/smart-flood-alert/rain_servo_control_v2/rain_servo_control_v2.ino",
         "language": "Arduino C++"
       }
     ],
     "htmlDashboards": [
-      "projects/Smart-Flood-Alert/rain_servo_dashboard_v2.html"
+      "projects/smart-flood-alert/rain_servo_dashboard_v2.html"
     ],
-    "liveUrl": "projects/Smart-Flood-Alert/rain_servo_dashboard_v2.html",
+    "liveUrl": "projects/smart-flood-alert/rain_servo_dashboard_v2.html",
     "author": "Anjum Shaikh",
     "problemStatement": "During heavy rainfall, the river water level rises rapidly and floods low-level bridges. Students, office workers, emergency services, and vehicles are unable to cross the bridge safely. Many people remain stranded for hours or even days, causing delays, accidents, and disruption of essential services.",
     "solutionApproach": "A smart bridge continuously monitors the river water level using a water level sensor. When the water reaches a dangerous level, the bridge automatically lifts upward, preventing vehicles and people from entering the flooded area. At the same time, a buzzer sounds and an LED glows to warn everyone nearby. Once the water level becomes safe, the bridge returns to its normal position."
@@ -4128,13 +4279,13 @@
     "image": "projects/images/surakshapath.jpg",
     "gallery": [
       {
-        "file": "projects/SurakshaPath/SurakshaPath.png",
+        "file": "projects/surakshapath/SurakshaPath.png",
         "caption": "surakshapath"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/SurakshaPath/SurakshaPath.pdf",
+        "file": "projects/surakshapath/SurakshaPath.pdf",
         "name": "SurakshaPath.pdf",
         "type": "pdf"
       }
@@ -4142,7 +4293,7 @@
     "codeFiles": [
       {
         "name": "code.ino",
-        "url": "projects/SurakshaPath/code.ino",
+        "url": "projects/surakshapath/code.ino",
         "language": "Arduino C++"
       }
     ]
