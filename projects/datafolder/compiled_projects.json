@@ -850,63 +850,63 @@
       "jumper-wires",
       "usb-cable"
     ],
-    "image": "projects/bus-tracking/icon.png",
+    "image": "projects/Bus-tracking/icon.png",
     "gallery": [
       {
-        "file": "projects/bus-tracking/banner.png",
+        "file": "projects/Bus-tracking/banner.png",
         "caption": "banner"
       },
       {
-        "file": "projects/bus-tracking/bus-dashboard.jpeg",
+        "file": "projects/Bus-tracking/bus-dashboard.jpeg",
         "caption": "bus-dashboard"
       },
       {
-        "file": "projects/bus-tracking/busdetails1.jpeg",
+        "file": "projects/Bus-tracking/busdetails1.jpeg",
         "caption": "busdetails1"
       },
       {
-        "file": "projects/bus-tracking/icon.png",
+        "file": "projects/Bus-tracking/icon.png",
         "caption": "icon"
       },
       {
-        "file": "projects/bus-tracking/Poster1.png",
+        "file": "projects/Bus-tracking/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/bus-tracking/Poster2.png",
+        "file": "projects/Bus-tracking/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/bus-tracking/Poster3.png",
+        "file": "projects/Bus-tracking/Poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/bus-tracking/stopdisplay.jpeg",
+        "file": "projects/Bus-tracking/stopdisplay.jpeg",
         "caption": "stopdisplay"
       }
     ],
     "posters": [
       {
-        "file": "projects/bus-tracking/Poster1.png",
+        "file": "projects/Bus-tracking/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/bus-tracking/Poster2.png",
+        "file": "projects/Bus-tracking/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/bus-tracking/Poster3.png",
+        "file": "projects/Bus-tracking/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/bus-tracking/Bus_Tracking_System.pdf",
+        "file": "projects/Bus-tracking/Bus_Tracking_System.pdf",
         "name": "Bus_Tracking_System.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/bus-tracking/Bus_Tracking_System2.pdf",
+        "file": "projects/Bus-tracking/Bus_Tracking_System2.pdf",
         "name": "Bus_Tracking_System2.pdf",
         "type": "pdf"
       }
@@ -914,23 +914,23 @@
     "codeFiles": [
       {
         "name": "README.md",
-        "url": "projects/bus-tracking/README.md",
+        "url": "projects/Bus-tracking/README.md",
         "language": "Markdown"
       },
       {
         "name": "test.ino",
-        "url": "projects/bus-tracking/test.ino",
+        "url": "projects/Bus-tracking/test.ino",
         "language": "Arduino C++"
       }
     ],
     "bannerImages": [
-      "projects/bus-tracking/banner.png"
+      "projects/Bus-tracking/banner.png"
     ],
     "htmlDashboards": [
-      "projects/bus-tracking/livebus (1).html",
-      "projects/bus-tracking/livebus.html"
+      "projects/Bus-tracking/livebus (1).html",
+      "projects/Bus-tracking/livebus.html"
     ],
-    "liveUrl": "projects/bus-tracking/livebus.html"
+    "liveUrl": "projects/Bus-tracking/livebus.html"
   },
   {
     "id": "crabrobot",
@@ -1372,23 +1372,23 @@
     "image": "projects/images/gas-detector.jpg",
     "gallery": [
       {
-        "file": "projects/gas-detector/demo.jpeg",
+        "file": "projects/Gas-Detector/demo.jpeg",
         "caption": "demo"
       },
       {
-        "file": "projects/gas-detector/poster1.jpg",
+        "file": "projects/Gas-Detector/poster1.jpg",
         "caption": "Problem Statement"
       }
     ],
     "posters": [
       {
-        "file": "projects/gas-detector/poster1.jpg",
+        "file": "projects/Gas-Detector/poster1.jpg",
         "caption": "Problem Statement"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/gas-detector/Gas-Detector-Sensor.pdf",
+        "file": "projects/Gas-Detector/Gas-Detector-Sensor.pdf",
         "name": "Gas-Detector-Sensor.pdf",
         "type": "pdf"
       }
@@ -1683,21 +1683,28 @@
     "image": "projects/images/jarakshak.jpg",
     "gallery": [
       {
-        "file": "projects/jarakshak/poster1.png",
+        "file": "projects/JaRakshak/poster1.png",
         "caption": "Problem Statement"
       }
     ],
     "posters": [
       {
-        "file": "projects/jarakshak/poster1.png",
+        "file": "projects/JaRakshak/poster1.png",
         "caption": "Problem Statement"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/jarakshak/JalRakshak.pdf",
+        "file": "projects/JaRakshak/JalRakshak.pdf",
         "name": "JalRakshak.pdf",
         "type": "pdf"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "code.ino",
+        "url": "projects/JaRakshak/code.ino",
+        "language": "Arduino C++"
       }
     ]
   },
@@ -2062,6 +2069,23 @@
         "file": "projects/laser-security-system/LASER SECURITY SYSTEM.pdf",
         "name": "LASER SECURITY SYSTEM.pdf",
         "type": "pdf"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "config_html.h",
+        "url": "projects/laser-security-system/config_html.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "dashboard_html.h",
+        "url": "projects/laser-security-system/dashboard_html.h",
+        "language": "C/C++ Header"
+      },
+      {
+        "name": "laser_security_bridgev3.ino",
+        "url": "projects/laser-security-system/laser_security_bridgev3.ino",
+        "language": "Arduino C++"
       }
     ],
     "bannerImages": [
@@ -2449,29 +2473,29 @@
     "image": "projects/images/robot-car.jpg",
     "gallery": [
       {
-        "file": "projects/robot-car/poster1.png",
+        "file": "projects/Robot-Car/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/robot-car/poster2.png",
+        "file": "projects/Robot-Car/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/robot-car/poster3.png",
+        "file": "projects/Robot-Car/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/robot-car/poster1.png",
+        "file": "projects/Robot-Car/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/robot-car/poster2.png",
+        "file": "projects/Robot-Car/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/robot-car/poster3.png",
+        "file": "projects/Robot-Car/poster3.png",
         "caption": "Future Scope"
       }
     ],
@@ -3066,51 +3090,51 @@
     "image": "projects/images/accident-detection-system.jpg",
     "gallery": [
       {
-        "file": "projects/smart-accident-detection/poster1.png",
+        "file": "projects/Smart-Accident-Detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/smart-accident-detection/poster2.png",
+        "file": "projects/Smart-Accident-Detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/smart-accident-detection/poster3.png",
+        "file": "projects/Smart-Accident-Detection/poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/smart-accident-detection/Project (1).jpeg",
+        "file": "projects/Smart-Accident-Detection/Project (1).jpeg",
         "caption": "project (1)"
       },
       {
-        "file": "projects/smart-accident-detection/Project (2).jpeg",
+        "file": "projects/Smart-Accident-Detection/Project (2).jpeg",
         "caption": "project (2)"
       },
       {
-        "file": "projects/smart-accident-detection/Project (3).jpeg",
+        "file": "projects/Smart-Accident-Detection/Project (3).jpeg",
         "caption": "project (3)"
       },
       {
-        "file": "projects/smart-accident-detection/Project (4).jpeg",
+        "file": "projects/Smart-Accident-Detection/Project (4).jpeg",
         "caption": "project (4)"
       }
     ],
     "posters": [
       {
-        "file": "projects/smart-accident-detection/poster1.png",
+        "file": "projects/Smart-Accident-Detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/smart-accident-detection/poster2.png",
+        "file": "projects/Smart-Accident-Detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/smart-accident-detection/poster3.png",
+        "file": "projects/Smart-Accident-Detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/smart-accident-detection/Smart Accident Detection & Alert System.pdf",
+        "file": "projects/Smart-Accident-Detection/Smart Accident Detection & Alert System.pdf",
         "name": "Smart Accident Detection & Alert System.pdf",
         "type": "pdf"
       }
@@ -3118,7 +3142,7 @@
     "codeFiles": [
       {
         "name": "AccidentDetectAlert.ino",
-        "url": "projects/smart-accident-detection/AccidentDetectAlert_Code/AccidentDetectAlert.ino",
+        "url": "projects/Smart-Accident-Detection/AccidentDetectAlert_Code/AccidentDetectAlert.ino",
         "language": "Arduino C++"
       }
     ]
@@ -3173,44 +3197,44 @@
     "image": "projects/images/smart-classroom.jpg",
     "gallery": [
       {
-        "file": "projects/smart-classroom/Poster1.png",
+        "file": "projects/Smart-classroom/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/smart-classroom/Poster2.png",
+        "file": "projects/Smart-classroom/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/smart-classroom/Poster3.png",
+        "file": "projects/Smart-classroom/Poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/smart-classroom/Project A3 Display Board.png",
+        "file": "projects/Smart-classroom/Project A3 Display Board.png",
         "caption": "project a3 display board"
       }
     ],
     "posters": [
       {
-        "file": "projects/smart-classroom/Poster1.png",
+        "file": "projects/Smart-classroom/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/smart-classroom/Poster2.png",
+        "file": "projects/Smart-classroom/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/smart-classroom/Poster3.png",
+        "file": "projects/Smart-classroom/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/smart-classroom/Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
+        "file": "projects/Smart-classroom/Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
         "name": "Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/smart-classroom/Smart_Classroom_Energy_Saver (2).pdf",
+        "file": "projects/Smart-classroom/Smart_Classroom_Energy_Saver (2).pdf",
         "name": "Smart_Classroom_Energy_Saver (2).pdf",
         "type": "pdf"
       }
@@ -3337,35 +3361,35 @@
     "image": "projects/images/smart-fall-detection.jpg",
     "gallery": [
       {
-        "file": "projects/smart-fall-detection/poster1.png",
+        "file": "projects/Smart-fall-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/smart-fall-detection/poster2.png",
+        "file": "projects/Smart-fall-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/smart-fall-detection/poster3.png",
+        "file": "projects/Smart-fall-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/smart-fall-detection/poster1.png",
+        "file": "projects/Smart-fall-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/smart-fall-detection/poster2.png",
+        "file": "projects/Smart-fall-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/smart-fall-detection/poster3.png",
+        "file": "projects/Smart-fall-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/smart-fall-detection/Smart-fall-detection.pdf",
+        "file": "projects/Smart-fall-detection/Smart-fall-detection.pdf",
         "name": "Smart-fall-detection.pdf",
         "type": "pdf"
       }
@@ -3373,14 +3397,14 @@
     "codeFiles": [
       {
         "name": "air_mouse_firmware.ino",
-        "url": "projects/smart-fall-detection/air_mouse_firmware.ino",
+        "url": "projects/Smart-fall-detection/air_mouse_firmware.ino",
         "language": "Arduino C++"
       }
     ],
     "htmlDashboards": [
-      "projects/smart-fall-detection/fall_detection_dashboard.html"
+      "projects/Smart-fall-detection/fall_detection_dashboard.html"
     ],
-    "liveUrl": "projects/smart-fall-detection/fall_detection_dashboard.html"
+    "liveUrl": "projects/Smart-fall-detection/fall_detection_dashboard.html"
   },
   {
     "id": "smart-bridge-flood-alert",
@@ -3491,44 +3515,44 @@
     "image": "projects/images/smart-bridge-flood-alert.jpg",
     "gallery": [
       {
-        "file": "projects/smart-flood-alert/poster1.png",
+        "file": "projects/Smart-Flood-Alert/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/smart-flood-alert/poster2.png",
+        "file": "projects/Smart-Flood-Alert/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/smart-flood-alert/poster3.png",
+        "file": "projects/Smart-Flood-Alert/poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/smart-flood-alert/smartbridge.jpeg",
+        "file": "projects/Smart-Flood-Alert/smartbridge.jpeg",
         "caption": "smartbridge"
       }
     ],
     "posters": [
       {
-        "file": "projects/smart-flood-alert/poster1.png",
+        "file": "projects/Smart-Flood-Alert/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/smart-flood-alert/poster2.png",
+        "file": "projects/Smart-Flood-Alert/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/smart-flood-alert/poster3.png",
+        "file": "projects/Smart-Flood-Alert/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/smart-flood-alert/Smart_Flood_Alert_Bridge.pdf",
+        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge.pdf",
         "name": "Smart_Flood_Alert_Bridge.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/smart-flood-alert/smart_flood_alert_bridge_System_ppt.pdf",
+        "file": "projects/Smart-Flood-Alert/smart_flood_alert_bridge_System_ppt.pdf",
         "name": "smart_flood_alert_bridge_System_ppt.pdf",
         "type": "pdf"
       }
@@ -3536,14 +3560,14 @@
     "codeFiles": [
       {
         "name": "rain_servo_control_v2.ino",
-        "url": "projects/smart-flood-alert/rain_servo_control_v2/rain_servo_control_v2.ino",
+        "url": "projects/Smart-Flood-Alert/rain_servo_control_v2/rain_servo_control_v2.ino",
         "language": "Arduino C++"
       }
     ],
     "htmlDashboards": [
-      "projects/smart-flood-alert/rain_servo_dashboard_v2.html"
+      "projects/Smart-Flood-Alert/rain_servo_dashboard_v2.html"
     ],
-    "liveUrl": "projects/smart-flood-alert/rain_servo_dashboard_v2.html",
+    "liveUrl": "projects/Smart-Flood-Alert/rain_servo_dashboard_v2.html",
     "author": "Anjum Shaikh",
     "problemStatement": "During heavy rainfall, the river water level rises rapidly and floods low-level bridges. Students, office workers, emergency services, and vehicles are unable to cross the bridge safely. Many people remain stranded for hours or even days, causing delays, accidents, and disruption of essential services.",
     "solutionApproach": "A smart bridge continuously monitors the river water level using a water level sensor. When the water reaches a dangerous level, the bridge automatically lifts upward, preventing vehicles and people from entering the flooded area. At the same time, a buzzer sounds and an LED glows to warn everyone nearby. Once the water level becomes safe, the bridge returns to its normal position."
@@ -4104,15 +4128,22 @@
     "image": "projects/images/surakshapath.jpg",
     "gallery": [
       {
-        "file": "projects/surakshapath/SurakshaPath.png",
+        "file": "projects/SurakshaPath/SurakshaPath.png",
         "caption": "surakshapath"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/surakshapath/SurakshaPath.pdf",
+        "file": "projects/SurakshaPath/SurakshaPath.pdf",
         "name": "SurakshaPath.pdf",
         "type": "pdf"
+      }
+    ],
+    "codeFiles": [
+      {
+        "name": "code.ino",
+        "url": "projects/SurakshaPath/code.ino",
+        "language": "Arduino C++"
       }
     ]
   },
@@ -4224,7 +4255,27 @@
       "operatingVoltage": "5V DC via USB-C"
     },
     "image": "projects/images/unihicker.jpg",
-    "presentationPdfs": []
+    "gallery": [
+      {
+        "file": "projects/unihicker/Poster 1.jpg",
+        "caption": "poster 1"
+      },
+      {
+        "file": "projects/unihicker/Poster 2.jpg",
+        "caption": "poster 2"
+      },
+      {
+        "file": "projects/unihicker/Poster 3.jpg",
+        "caption": "poster 3"
+      }
+    ],
+    "presentationPdfs": [
+      {
+        "file": "projects/unihicker/UNIHIKER K10 PPT.pptx",
+        "name": "UNIHIKER K10 PPT.pptx",
+        "type": "pptx"
+      }
+    ]
   },
   {
     "id": "vasc-age",
