@@ -28,25 +28,37 @@
 
 
 // --- Board Architecture & Wi-Fi Library Detection ---
-#if defined(ARDUINO_UNOR4_WIFI) || __has_include(<WiFiS3.h>)
-#include <WiFiS3.h>
-#elif defined(ESP32) || __has_include(<WiFi.h>)
-#include <WiFi.h>
-#elif defined(ESP8266) || __has_include(<ESP8266WiFi.h>)
-#include <ESP8266WiFi.h>
+#if defined(ARDUINO_UNOR4_WIFI) || defined(ARDUINO_ARCH_UNOR4)
+  #include <WiFiS3.h>
+#elif defined(ESP32) || defined(ARDUINO_ARCH_ESP32)
+  #include <WiFi.h>
+  #include <WiFiClient.h>
+  #include <WiFiServer.h>
+#elif defined(ESP8266) || defined(ARDUINO_ARCH_ESP8266)
+  #include <ESP8266WiFi.h>
+#elif defined(ARDUINO_ARCH_RP2040)
+  #include <WiFi.h>
+#elif !defined(__AVR__) && __has_include(<WiFiS3.h>)
+  #include <WiFiS3.h>
+#elif !defined(__AVR__) && __has_include(<WiFi.h>)
+  #include <WiFi.h>
+#elif !defined(__AVR__) && __has_include(<ESP8266WiFi.h>)
+  #include <ESP8266WiFi.h>
 #else
-#error                                                                         \
-    "Board selection mismatch! In Arduino IDE, go to Tools > Board > Arduino UNO R4 Boards and select 'Arduino UNO R4 WiFi'."
+  #error "Board Selection Mismatch! The selected board (e.g. Arduino Uno AVR R3) does not have built-in Wi-Fi hardware. In Arduino IDE, go to Tools > Board and select your Wi-Fi board: 'Arduino UNO R4 WiFi' (under Arduino UNO R4 Boards), 'ESP32 Dev Module', or 'NodeMCU v1.0 (ESP-12E Module)'."
 #endif
 
 #if __has_include(<ESPmDNS.h>)
-#include <ESPmDNS.h>
-#define HAS_MDNS 1
+  #include <ESPmDNS.h>
+  #define HAS_MDNS 1
 #elif __has_include(<ESP8266mDNS.h>)
-#include <ESP8266mDNS.h>
-#define HAS_MDNS 1
+  #include <ESP8266mDNS.h>
+  #define HAS_MDNS 1
+#elif __has_include(<ArduinoMDNS.h>)
+  #include <ArduinoMDNS.h>
+  #define HAS_MDNS 1
 #else
-#define HAS_MDNS 0
+  #define HAS_MDNS 0
 #endif
 
 // --- Network Configuration ---
@@ -1263,8 +1275,10 @@ void setup() {
   presetStand();
   Serial.println("[PCA9685] Driver initialized at 50Hz. Initial pose: STAND.");
 
-// Configure Wi-Fi Hostname for UNO R4 WiFi
-#if defined(ARDUINO_UNOR4_WIFI) || __has_include(<WiFiS3.h>)
+  // Configure Wi-Fi Hostname
+#if defined(ESP8266) || defined(ARDUINO_ARCH_ESP8266)
+  WiFi.hostname(mdnsHost);
+#elif defined(ARDUINO_UNOR4_WIFI) || defined(ESP32) || defined(ARDUINO_ARCH_UNOR4) || defined(ARDUINO_ARCH_ESP32)
   WiFi.setHostname(mdnsHost);
 #endif
 
