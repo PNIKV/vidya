@@ -45,15 +45,17 @@
   "components": [
     "Arduino UNO",
     "HC-SR04 Ultrasonic Sensor",
-    "5V Buzzer",
-    "9V Battery or Power Source",
+    "5V Active Buzzer",
     "Breadboard",
-    "Jumper wires"
+    "Jumper Wires",
+    "9V Battery / Power Supply"
   ],
   "componentRefs": [
-    "hc-sr04",
     "arduino-uno",
-    "buzzer"
+    "hc-sr04",
+    "buzzer",
+    "breadboard",
+    "jumper-wires"
   ],
   "guide": [
     "Connect Ultrasonic Sensor: VCC to Arduino 5V, GND to GND, Trig to D2, and Echo to D3",

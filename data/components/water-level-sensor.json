@@ -1,0 +1,29 @@
+{
+  "id": "water-level-sensor",
+  "name": "Water Level Depth Sensor",
+  "fullName": "Analog Submersible Liquid Depth & Water Level Detection Sensor Module",
+  "category": "Sensors",
+  "color": "#0EA5E9",
+  "tagline": "Measures water depth and liquid level through parallel trace resistance",
+  "description": "The Water Level Sensor module consists of a series of exposed parallel conductive copper traces. When submerged, water conducts current between adjacent traces, varying the output analog voltage proportionally to water depth and immersion level.",
+  "specs": {
+    "operatingVoltage": "3.3V to 5V DC",
+    "operatingCurrent": "< 20mA",
+    "detectionArea": "40mm × 16mm",
+    "outputType": "Analog Voltage (0V to ~3.5V)",
+    "operatingTemperature": "10°C to 30°C"
+  },
+  "pinout": [
+    { "pin": "VCC / +", "name": "Power", "desc": "3.3V to 5V DC power supply", "color": "#EF4444" },
+    { "pin": "GND / -", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "S / OUT", "name": "Signal", "desc": "Analog output voltage proportional to water level", "color": "#0EA5E9" }
+  ],
+  "wiringNote": "Only submerge the sensor up to the top mark of the parallel traces; never immerse the top connector pins or header.",
+  "libraryName": "Built-in analogRead",
+  "codeSnippet": "const int waterLevelPin = A0;\nvoid setup() { Serial.begin(9600); }\nvoid loop() {\n  int level = analogRead(waterLevelPin);\n  Serial.print(\"Water Level ADC: \"); Serial.println(level);\n  if (level > 400) Serial.println(\"⚠️ FLOOD LEVEL ALERT!\");\n  delay(500);\n}",
+  "commonMistakes": [
+    "Submerging the entire module header in water",
+    "Continuous powering causing trace electrolysis corrosion (power via GPIO pin only when reading)"
+  ],
+  "usedInProjects": ["smart-flood-alert", "jarakshak"]
+}

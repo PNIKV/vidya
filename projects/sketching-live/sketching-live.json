@@ -7,10 +7,10 @@
   "desc": "Sketch on your browser and display it live on a physical TFT screen over USB!",
   "fullDesc": "Draw on a digital canvas and watch your art render live on a physical TFT LCD display! Paint Connect Studio Pro connects to your hardware over Web Serial, using custom Run-Length Encoding (RLE) to stream paint commands directly to an ESP32 or Arduino. Choose from various tools, shapes, colors, and line thicknesses.",
   "components": [
-    "Web Browser with Web Serial API support",
-    "ESP32 or Arduino microcontroller",
-    "TFT LCD Display (e.g. ILI9488/ILI9341)",
-    "USB Data Cable"
+    "ESP32 / Arduino Microcontroller",
+    "3.5-inch Color TFT LCD Touch Display",
+    "USB Data Cable",
+    "Web Browser with Web Serial API"
   ],
   "difficulty": 4,
   "status": "Available",
@@ -32,5 +32,11 @@
     "Select your device's COM port",
     "Use tools, colors, and shapes to sketch on the canvas",
     "Watch your artwork sync live to the hardware display!"
+  ],
+  "componentRefs": [
+    "esp32",
+    "arduino-uno",
+    "tft-display",
+    "usb-cable"
   ]
 }

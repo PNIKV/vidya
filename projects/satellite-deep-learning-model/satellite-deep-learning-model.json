@@ -22,10 +22,10 @@
   "problemStatement": "Monitoring land use changes at scale requires automated analysis of large satellite image datasets that manual inspection cannot handle efficiently.",
   "solutionApproach": "Trained a convolutional neural network on paired satellite images (before/after) to classify pixel-level changes in land cover categories.",
   "components": [
-    "Python",
-    "TensorFlow/Keras",
-    "Satellite Dataset",
-    "GPU (recommended)"
+    "Workstation / Cloud GPU Platform",
+    "Python 3.10+ Environment",
+    "TensorFlow / PyTorch Neural Framework",
+    "Multispectral Satellite Dataset"
   ],
   "guide": [
     "Set up Python environment with TensorFlow and required libraries",
@@ -50,5 +50,13 @@
     "remote sensing",
     "computer vision",
     "CNN"
-  ]
+  ],
+  "componentRefs": [
+    "raspberrypi-5"
+  ],
+  "hardwareSpecs": {
+    "platform": "High-Performance GPU Workstation / Cloud Compute",
+    "neuralArchitecture": "Convolutional Neural Network (CNN / U-Net Segmentation)",
+    "dataSources": "Sentinel-2 / Landsat-8 Multispectral Satellite Earth Imagery"
+  }
 }

@@ -22,8 +22,8 @@
   "problemStatement": "Making AI and machine learning concepts accessible to young students requires hands-on, playful projects.",
   "solutionApproach": "Used PictoBlox AI extensions to collect gesture training data (rock, paper, scissors) and train a classification model. The model is then used in a game logic block.",
   "components": [
-    "Computer with webcam",
-    "PictoBlox Software"
+    "Computer / Laptop with HD Webcam",
+    "PictoBlox AI Vision Software with Hand Tracking Extension"
   ],
   "guide": [
     "Open PictoBlox and create a new project",
@@ -46,5 +46,13 @@
     "gesture recognition",
     "machine learning",
     "game"
-  ]
+  ],
+  "componentRefs": [
+    "raspberrypi-5"
+  ],
+  "hardwareSpecs": {
+    "processingUnit": "Host PC / Laptop / Raspberry Pi 5",
+    "videoCapture": "HD 720p/1080p Optical Webcam",
+    "aiModel": "Machine Learning Hand Gesture Recognition (Rock/Paper/Scissors classification)"
+  }
 }

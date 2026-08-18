@@ -1,0 +1,31 @@
+{
+  "id": "rtc-ds3231",
+  "name": "DS3231 RTC Module",
+  "fullName": "DS3231 Extremely Accurate I2C Real-Time Clock (RTC) with TCXO & Battery Backup",
+  "category": "Clocks & Timing",
+  "color": "#6366F1",
+  "tagline": "Temperature-compensated real-time clock maintaining time with ±2ppm accuracy",
+  "description": "The DS3231 is a low-cost, extremely accurate I2C real-time clock (RTC) with an integrated temperature-compensated crystal oscillator (TCXO) and crystal. Includes a battery input (CR2032/LIR2032) to keep track of seconds, minutes, hours, day, date, month, and year even when main circuit power is disconnected.",
+  "specs": {
+    "operatingVoltage": "3.3V to 5.5V DC",
+    "accuracy": "±2ppm from 0°C to +40°C (less than 1 minute per year drift)",
+    "batteryBackup": "CR2032 Coin Cell (typically lasts 5+ years)",
+    "interface": "I2C (Fixed Address 0x68)",
+    "features": "Two programmable time-of-day alarms, 32.768 kHz square-wave output, onboard 32KB EEPROM (AT24C32)"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "Power", "desc": "3.3V to 5V DC power supply", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "SDA", "name": "I2C Data", "desc": "I2C serial data line", "color": "#8B5CF6" },
+    { "pin": "SCL", "name": "I2C Clock", "desc": "I2C serial clock line", "color": "#8B5CF6" },
+    { "pin": "SQW", "name": "Square Wave", "desc": "Programmable interrupt / square wave output", "color": "#10B981" }
+  ],
+  "wiringNote": "If using standard disposable CR2032 coin cells (non-rechargeable), remove or disable the onboard charging diode/resistor circuit on cheap clone modules.",
+  "libraryName": "RTClib (by Adafruit)",
+  "codeSnippet": "#include <Wire.h>\n#include \"RTClib.h\"\nRTC_DS3231 rtc;\nvoid setup() {\n  Serial.begin(9600);\n  if (!rtc.begin()) { Serial.println(\"RTC not found!\"); while(1); }\n}\nvoid loop() {\n  DateTime now = rtc.now();\n  Serial.print(now.hour()); Serial.print(\":\"); Serial.print(now.minute()); Serial.print(\":\"); Serial.println(now.second());\n  delay(1000);\n}",
+  "commonMistakes": [
+    "Inserting a dead or missing coin cell battery",
+    "Setting time inside loop() instead of setup() (causes time to reset every second)"
+  ],
+  "usedInProjects": ["medicine-dispenser", "automatic-school-bell-and-announcement-system"]
+}

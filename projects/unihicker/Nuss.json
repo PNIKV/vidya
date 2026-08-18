@@ -3,5 +3,22 @@
   "title": "Unihicker",
   "desc": "Unihicker project",
   "level": "Intermediate",
-  "difficulty": 3
+  "difficulty": 3,
+  "components": [
+    "UNIHIKER Single Board Computer with 2.8-inch Touchscreen",
+    "USB Type-C Cable",
+    "Gravity Sensor Interface Cables"
+  ],
+  "componentRefs": [
+    "unihicker-board",
+    "usb-cable"
+  ],
+  "hardwareSpecs": {
+    "cpu": "Quad-Core ARM Cortex-A35 (up to 1.2GHz)",
+    "coprocessor": "GD32VF103 RISC-V 108MHz MCU",
+    "screen": "2.8-inch 240x320 Color Touchscreen Display",
+    "memory": "512MB DDR3 RAM + 16GB eMMC Flash (Debian Linux)",
+    "connectivity": "2.4GHz Wi-Fi 802.11 b/g/n & Bluetooth 4.0",
+    "operatingVoltage": "5V DC via USB-C"
+  }
 }

@@ -1,0 +1,32 @@
+{
+  "id": "tft-display",
+  "name": "3.5\" TFT LCD Touch Display",
+  "fullName": "3.5-inch 480x320 SPI / 8-Bit Parallel Color TFT LCD Shield with Touchscreen",
+  "category": "Displays",
+  "color": "#3B82F6",
+  "tagline": "High-resolution full-color graphical display shield with resistive touch support",
+  "description": "A 3.5-inch color TFT display with 480x320 pixel resolution capable of rendering 65,000+ vibrant colors, graphical UI dashboards, route maps, and real-time telemetry. Built with an ILI9486 / ILI9488 controller and an integrated SD card slot.",
+  "specs": {
+    "screenSize": "3.5 inch diagonal",
+    "resolution": "480 × 320 pixels (RGB 65K colors)",
+    "driverIC": "ILI9486 / ILI9488 / ST7796",
+    "operatingVoltage": "3.3V to 5V DC (onboard LDO and logic level converters)",
+    "touchController": "XPT2046 4-wire resistive touch controller",
+    "interfaces": "8-bit parallel (Uno shield) or 4-wire High-Speed SPI"
+  },
+  "pinout": [
+    { "pin": "LCD_CS", "name": "Chip Select", "desc": "LCD SPI/Parallel Chip Select", "color": "#3B82F6" },
+    { "pin": "LCD_CD / RS", "name": "Command/Data", "desc": "Register select pin", "color": "#10B981" },
+    { "pin": "LCD_WR", "name": "Write Strobe", "desc": "Write clock strobe", "color": "#F59E0B" },
+    { "pin": "LCD_RD", "name": "Read Strobe", "desc": "Read clock strobe", "color": "#8B5CF6" },
+    { "pin": "LCD_D0–D7", "name": "Data Bus", "desc": "8-bit parallel data lines", "color": "#6366F1" }
+  ],
+  "wiringNote": "Plug directly onto Arduino UNO header as a shield or wire SPI lines (MOSI, MISO, SCK, CS, DC).",
+  "libraryName": "MCUFRIEND_kbv / TFT_eSPI / Adafruit_GFX",
+  "codeSnippet": "#include <Adafruit_GFX.h>\n#include <MCUFRIEND_kbv.h>\nMCUFRIEND_kbv tft;\nvoid setup() {\n  uint16_t ID = tft.readID();\n  tft.begin(ID);\n  tft.setRotation(1);\n  tft.fillScreen(0x0000); // Black\n  tft.setTextColor(0xFFFF); // White\n  tft.setTextSize(2);\n  tft.setCursor(20, 30);\n  tft.println(\"BUS TRACKING SYSTEM\");\n}\nvoid loop() {}",
+  "commonMistakes": [
+    "Using slow bit-bang software SPI instead of hardware SPI",
+    "Forgetting to read and pass the correct LCD Driver ID in tft.begin(ID)"
+  ],
+  "usedInProjects": ["bus-tracking", "sketching-live"]
+}

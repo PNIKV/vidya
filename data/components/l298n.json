@@ -1,0 +1,37 @@
+{
+  "id": "l298n",
+  "name": "L298N Motor Driver",
+  "fullName": "L298N Dual H-Bridge High-Power DC & Stepper Motor Driver Module",
+  "category": "Motor Drivers",
+  "color": "#DC2626",
+  "tagline": "Dual H-Bridge driver capable of bidirectional speed control for two DC motors or one stepper",
+  "description": "The L298N Motor Driver module contains an ST L298N dual full-bridge driver chip with onboard 5V regulator and heat sink. It can independently control the direction and speed (via PWM) of two DC motors (up to 2A per channel) or drive a 4-wire bipolar stepper motor.",
+  "specs": {
+    "driverChip": "L298N Dual H-Bridge IC with flyback diodes",
+    "motorSupplyVoltage": "5V to 35V DC",
+    "logicVoltage": "5V DC",
+    "continuousCurrent": "2A per channel (3A peak)",
+    "onboardRegulator": "78M05 5V regulator (active when jumper 5V-EN is closed, input <= 12V)",
+    "maxPower": "25W"
+  },
+  "pinout": [
+    { "pin": "12V", "name": "Motor Power", "desc": "External 7.4V–12V DC power for motors", "color": "#EF4444" },
+    { "pin": "GND", "name": "Power Ground", "desc": "Common Ground shared with Arduino", "color": "#1E293B" },
+    { "pin": "5V", "name": "5V Logic", "desc": "5V output (if 5V enable jumper ON) or 5V input (if jumper OFF)", "color": "#F59E0B" },
+    { "pin": "ENA", "name": "Speed Motor A", "desc": "PWM pin for speed control of Motor A", "color": "#10B981" },
+    { "pin": "IN1, IN2", "name": "Dir Motor A", "desc": "Direction control inputs for Motor A", "color": "#3B82F6" },
+    { "pin": "IN3, IN4", "name": "Dir Motor B", "desc": "Direction control inputs for Motor B", "color": "#8B5CF6" },
+    { "pin": "ENB", "name": "Speed Motor B", "desc": "PWM pin for speed control of Motor B", "color": "#EC4899" },
+    { "pin": "OUT1, OUT2", "name": "Motor A Terminals", "desc": "Screw terminals to Motor A", "color": "#64748B" },
+    { "pin": "OUT3, OUT4", "name": "Motor B Terminals", "desc": "Screw terminals to Motor B", "color": "#64748B" }
+  ],
+  "wiringNote": "Always connect the GND pin of the L298N to the Arduino GND pin (Common Ground) or control signals will fail.",
+  "libraryName": "No external library required (uses analogWrite for PWM and digitalWrite for direction)",
+  "codeSnippet": "const int in1 = 4, in2 = 5, ena = 3;\nvoid setup() {\n  pinMode(in1, OUTPUT); pinMode(in2, OUTPUT); pinMode(ena, OUTPUT);\n}\nvoid loop() {\n  digitalWrite(in1, HIGH); digitalWrite(in2, LOW);\n  analogWrite(ena, 200); // Forward @ speed 200/255\n  delay(2000);\n  digitalWrite(in1, LOW); digitalWrite(in2, LOW); // Stop\n  delay(1000);\n}",
+  "commonMistakes": [
+    "Leaving the 5V-EN jumper installed when powering with >12V (overheats onboard regulator)",
+    "Forgetting common ground with the microcontroller",
+    "Shorting motor output terminals together"
+  ],
+  "usedInProjects": ["robot-car", "smart-vacuum-cleaner", "gripper-robot"]
+}

@@ -6,7 +6,16 @@
   "session": 30,
   "desc": "Learn to build a Automatic School Bell and Announcement System.",
   "fullDesc": "In this project, we will build a Automatic School Bell and Announcement System. This project will introduce you to the necessary components, coding logic, and assembly required.",
-  "components": [],
+  "components": [
+    "Arduino UNO R4 WiFi",
+    "DFPlayer Mini MP3 Player Module",
+    "MicroSD Card (with Announcement Tracks)",
+    "3W / 5W Audio Speaker",
+    "1k Ohm Resistor",
+    "Breadboard",
+    "Jumper Wires",
+    "5V Power Supply"
+  ],
   "difficulty": 2,
   "status": "Coming Soon",
   "tags": [
@@ -17,5 +26,19 @@
   "author": "Tinkering Lab",
   "youtubeVideos": [],
   "resources": [],
-  "guide": []
+  "guide": [],
+  "componentRefs": [
+    "arduino-uno",
+    "dfplayer-mini",
+    "breadboard",
+    "jumper-wires"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO R4 WiFi (Renesas RA4M1 48MHz Cortex-M4 + ESP32-S3 WiFi)",
+    "audioDecoder": "DFPlayer Mini Embedded MP3/WAV Decoder",
+    "speaker": "3W 8 Ohm Mono Speaker / PA System Line Out",
+    "operatingVoltage": "5V DC",
+    "storage": "MicroSD Card (FAT32, /mp3/0001.mp3 to /mp3/0016.mp3)",
+    "timeSync": "NTP Client over Wi-Fi with persistent RA4M1 onboard RTC"
+  }
 }

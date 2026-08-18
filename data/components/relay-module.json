@@ -1,0 +1,35 @@
+{
+  "id": "relay-module",
+  "name": "5V Relay Module",
+  "fullName": "1-Channel / 4-Channel 5V Optocoupler Relay Module",
+  "category": "Actuators & Power Switching",
+  "color": "#3B82F6",
+  "tagline": "Electromechanical switch for safely controlling high-voltage AC/DC appliances",
+  "description": "A 5V relay module allows microcontrollers (Arduino, ESP32, Raspberry Pi) to switch high-voltage and high-current electrical appliances (up to 250V AC @ 10A / 30V DC @ 10A) through optical isolation (optocoupler), safeguarding low-voltage logic circuits from electrical noise and voltage spikes.",
+  "specs": {
+    "operatingVoltage": "5V DC",
+    "triggerCurrent": "15–20mA per channel",
+    "maxSwitchingVoltage": "250V AC / 30V DC",
+    "maxSwitchingCurrent": "10A",
+    "isolation": "Optocoupler isolation (EL817 / PC817)",
+    "triggerLogic": "Active-LOW (typical) or Active-HIGH jumper selectable",
+    "indicator": "Status LEDs for Power (Red) and Relay State (Green/Blue)"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "VCC", "desc": "5V DC Power Input", "color": "#EF4444" },
+    { "pin": "GND", "name": "GND", "desc": "Ground reference", "color": "#1E293B" },
+    { "pin": "IN", "name": "Signal", "desc": "Digital trigger input from microcontroller", "color": "#3B82F6" },
+    { "pin": "NO", "name": "Normally Open", "desc": "Connected to COM only when relay is energized (triggered)", "color": "#10B981" },
+    { "pin": "COM", "name": "Common", "desc": "Main terminal connected to the load power source", "color": "#F59E0B" },
+    { "pin": "NC", "name": "Normally Closed", "desc": "Connected to COM when relay is idle/de-energized", "color": "#6366F1" }
+  ],
+  "wiringNote": "Always wire the hot (live) AC wire through COM and NO. Never route neutral through the relay.",
+  "libraryName": "No external library needed (standard digitalWrite)",
+  "codeSnippet": "const int relayPin = 7;\nvoid setup() {\n  pinMode(relayPin, OUTPUT);\n  digitalWrite(relayPin, HIGH); // Relay OFF (Active-LOW)\n}\nvoid loop() {\n  digitalWrite(relayPin, LOW);  // Turn ON appliance\n  delay(2000);\n  digitalWrite(relayPin, HIGH); // Turn OFF appliance\n  delay(2000);\n}",
+  "commonMistakes": [
+    "Connecting AC mains without proper insulating enclosure",
+    "Assuming Active-HIGH when many modules are Active-LOW (LOW = ON)",
+    "Powering multiple relays directly from Arduino 5V pin causing brownout resets"
+  ],
+  "usedInProjects": ["smart-home-automation", "smart-vacuum-cleaner", "jarakshak", "smart-classroom"]
+}

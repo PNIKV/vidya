@@ -36,18 +36,21 @@
       "led": "Status LED (GPIO 2)"
     },
     "components": [
-      "ESP32",
-      "MPU6050 IMU",
-      "2x Push Buttons",
+      "ESP32 Development Board",
+      "MPU6050 6-Axis IMU Sensor",
+      "2x Tactile Push Buttons",
       "Status LED",
-      "USB Cable",
       "Breadboard",
-      "Jumper Wires"
+      "Jumper Wires",
+      "USB Cable"
     ],
     "componentRefs": [
       "esp32",
       "mpu6050",
-      "jumper-wires"
+      "led",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
     ],
     "guide": [
       "Connect MPU6050 to ESP32: SDA→GPIO21, SCL→GPIO22, VCC→3.3V, GND→GND",
@@ -147,13 +150,11 @@
     },
     "components": [
       "Arduino UNO",
-      "Dual Joystick Module (x2)",
+      "Dual-Axis Joystick Module (x2)",
       "Jumper Wires",
       "USB Cable",
-      "Laptop / PC",
       "3D Printed Controller Box",
-      "Arduino IDE",
-      "Flight Simulator Software / Web Simulator"
+      "Arduino IDE"
     ],
     "componentRefs": [
       "arduino-uno",
@@ -347,17 +348,25 @@
     },
     "components": [
       "Arduino UNO",
-      "16×2 LCD I2C",
-      "Rotary Encoder",
+      "16x2 LCD with I2C Backpack",
+      "KY-040 Rotary Encoder",
+      "Active Buzzer",
       "Green LED",
       "Red LED",
-      "Active Buzzer",
-      "220Ω Resistor",
+      "220 Ohm Resistors",
       "Breadboard",
-      "Jumper Wires"
+      "Jumper Wires",
+      "USB Cable"
     ],
     "componentRefs": [
-      "arduino-uno"
+      "arduino-uno",
+      "16x2-lcd",
+      "rotary-encoder",
+      "buzzer",
+      "led",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
     ],
     "guide": [
       "Connect all components according to the circuit diagram.",
@@ -493,15 +502,17 @@
     "components": [
       "Arduino UNO",
       "HC-SR04 Ultrasonic Sensor",
-      "5V Buzzer",
-      "9V Battery or Power Source",
+      "5V Active Buzzer",
       "Breadboard",
-      "Jumper wires"
+      "Jumper Wires",
+      "9V Battery / Power Supply"
     ],
     "componentRefs": [
-      "hc-sr04",
       "arduino-uno",
-      "buzzer"
+      "hc-sr04",
+      "buzzer",
+      "breadboard",
+      "jumper-wires"
     ],
     "guide": [
       "Connect Ultrasonic Sensor: VCC to Arduino 5V, GND to GND, Trig to D2, and Echo to D3",
@@ -603,7 +614,16 @@
     "session": 30,
     "desc": "Learn to build a Automatic School Bell and Announcement System.",
     "fullDesc": "In this project, we will build a Automatic School Bell and Announcement System. This project will introduce you to the necessary components, coding logic, and assembly required.",
-    "components": [],
+    "components": [
+      "Arduino UNO R4 WiFi",
+      "DFPlayer Mini MP3 Player Module",
+      "MicroSD Card (with Announcement Tracks)",
+      "3W / 5W Audio Speaker",
+      "1k Ohm Resistor",
+      "Breadboard",
+      "Jumper Wires",
+      "5V Power Supply"
+    ],
     "difficulty": 2,
     "status": "Coming Soon",
     "tags": [
@@ -615,6 +635,20 @@
     "youtubeVideos": [],
     "resources": [],
     "guide": [],
+    "componentRefs": [
+      "arduino-uno",
+      "dfplayer-mini",
+      "breadboard",
+      "jumper-wires"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO R4 WiFi (Renesas RA4M1 48MHz Cortex-M4 + ESP32-S3 WiFi)",
+      "audioDecoder": "DFPlayer Mini Embedded MP3/WAV Decoder",
+      "speaker": "3W 8 Ohm Mono Speaker / PA System Line Out",
+      "operatingVoltage": "5V DC",
+      "storage": "MicroSD Card (FAT32, /mp3/0001.mp3 to /mp3/0016.mp3)",
+      "timeSync": "NTP Client over Wi-Fi with persistent RA4M1 onboard RTC"
+    },
     "image": "projects/automatic-school-bell-and-announcement-system/icon.png",
     "gallery": [
       {
@@ -757,12 +791,11 @@
     ],
     "components": [
       "Arduino UNO",
-      "3.5-inch TFT Display",
-      "USB Cable",
+      "3.5-inch Color TFT LCD Touch Shield",
+      "Breadboard",
       "Jumper Wires",
-      "Breadboard (if required)",
-      "Power Supply",
-      "Bus Stop Model"
+      "USB Cable",
+      "5V Power Supply"
     ],
     "hardwareSpecs": {
       "microcontroller": "Arduino UNO",
@@ -810,63 +843,70 @@
       "Real-Time Tracking",
       "Community Solution"
     ],
-    "image": "projects/Bus-tracking/icon.png",
+    "componentRefs": [
+      "arduino-uno",
+      "tft-display",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
+    "image": "projects/bus-tracking/icon.png",
     "gallery": [
       {
-        "file": "projects/Bus-tracking/banner.png",
+        "file": "projects/bus-tracking/banner.png",
         "caption": "banner"
       },
       {
-        "file": "projects/Bus-tracking/bus-dashboard.jpeg",
+        "file": "projects/bus-tracking/bus-dashboard.jpeg",
         "caption": "bus-dashboard"
       },
       {
-        "file": "projects/Bus-tracking/busdetails1.jpeg",
+        "file": "projects/bus-tracking/busdetails1.jpeg",
         "caption": "busdetails1"
       },
       {
-        "file": "projects/Bus-tracking/icon.png",
+        "file": "projects/bus-tracking/icon.png",
         "caption": "icon"
       },
       {
-        "file": "projects/Bus-tracking/Poster1.png",
+        "file": "projects/bus-tracking/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Bus-tracking/Poster2.png",
+        "file": "projects/bus-tracking/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Bus-tracking/Poster3.png",
+        "file": "projects/bus-tracking/Poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Bus-tracking/stopdisplay.jpeg",
+        "file": "projects/bus-tracking/stopdisplay.jpeg",
         "caption": "stopdisplay"
       }
     ],
     "posters": [
       {
-        "file": "projects/Bus-tracking/Poster1.png",
+        "file": "projects/bus-tracking/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Bus-tracking/Poster2.png",
+        "file": "projects/bus-tracking/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Bus-tracking/Poster3.png",
+        "file": "projects/bus-tracking/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System.pdf",
+        "file": "projects/bus-tracking/Bus_Tracking_System.pdf",
         "name": "Bus_Tracking_System.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Bus-tracking/Bus_Tracking_System2.pdf",
+        "file": "projects/bus-tracking/Bus_Tracking_System2.pdf",
         "name": "Bus_Tracking_System2.pdf",
         "type": "pdf"
       }
@@ -874,23 +914,183 @@
     "codeFiles": [
       {
         "name": "README.md",
-        "url": "projects/Bus-tracking/README.md",
+        "url": "projects/bus-tracking/README.md",
         "language": "Markdown"
       },
       {
         "name": "test.ino",
-        "url": "projects/Bus-tracking/test.ino",
+        "url": "projects/bus-tracking/test.ino",
         "language": "Arduino C++"
       }
     ],
     "bannerImages": [
-      "projects/Bus-tracking/banner.png"
+      "projects/bus-tracking/banner.png"
     ],
     "htmlDashboards": [
-      "projects/Bus-tracking/livebus (1).html",
-      "projects/Bus-tracking/livebus.html"
+      "projects/bus-tracking/livebus (1).html",
+      "projects/bus-tracking/livebus.html"
     ],
-    "liveUrl": "projects/Bus-tracking/livebus.html"
+    "liveUrl": "projects/bus-tracking/livebus.html"
+  },
+  {
+    "id": "crabrobot",
+    "title": "Crab Robot 8-DOF Biomimetic Explorer",
+    "subtitle": "8-Servo Wi-Fi Quadruped Walker with Multi-Directional Crab Gaits & Web Controller",
+    "category": "Biomimetic Robotics & Kinematics",
+    "level": "Advanced",
+    "difficulty": 4,
+    "color": "#FF6B35",
+    "author": "Nikhil Patil",
+    "date": "2026-08-14",
+    "team": [
+      {
+        "name": "Nikhil Patil",
+        "role": "Robotics & Kinematics Engineer"
+      }
+    ],
+    "desc": "8-degree-of-freedom biomimetic crab robot equipped with PCA9685 PWM driver and Wi-Fi web controller to navigate narrow, rough terrains inaccessible to wheeled rovers or aerial drones.",
+    "fullDesc": "The Crab Robot 8-DOF Biomimetic Explorer is an agile, multi-legged mobile robotic platform designed for extreme search-and-rescue, structural pipeline inspection, and hazardous terrain reconnaissance.\n\nIn disaster zones, collapsed structures, or narrow conduits, conventional wheeled/tracked rovers frequently get stuck, overturned, or high-centered on loose rubble. Meanwhile, aerial drones cannot operate due to destructive rotor downwash, battery constraints, and confined clearance limits. The Crab Robot solves this with an 8-servo bio-inspired quadruped architecture (2 degrees of freedom per leg: Hip rotation and Knee extension) capable of high-mobility lateral crab-crawling, pivot turns, obstacle stepping, and low-profile crawling.\n\nControlled by an Arduino UNO R4 WiFi (with cross-compatibility for ESP32 and ESP8266) interfaced to an I2C PCA9685 16-Channel 12-bit PWM servo controller, the robot runs a self-hosted responsive Web GUI. Operators can steer using a virtual joystick, trigger predefined cinematic gaits (Crab Strafe, Forward Crawl, Wave, Dance, Pushups, Sit/Stand), fine-tune individual servo trim angles, and execute custom action sequences in real time.",
+    "innovation": "Biomimetic 8-DOF kinematic coordination with omnidirectional crab-strafing gait algorithms. Employs PCA9685 hardware I2C PWM offloading to guarantee microsecond-accurate servo pulse stability while the microcontroller runs an asynchronous Wi-Fi web server.",
+    "problemStatement": "Standard wheeled rovers and aerial drones cannot access confined, rough, rubble-strewn, or low-clearance spaces. Wheeled vehicles get stuck or high-centered on uneven obstacles, while aerial drones generate dangerous rotor downwash and cannot operate in cramped collapsed structures or narrow pipeline crevices.",
+    "solutionApproach": "An 8-Servo biomimetic quadruped crab robot with 2 DOF per leg (Hip & Knee) driven by a PCA9685 16-Channel 12-bit I2C PWM driver and Arduino UNO R4 WiFi / ESP32. It employs bio-inspired kinematics gaits (crab strafing, forward crawl, pivoting, wave, dance) that lift and plant individual feet over obstacles, enabling navigation through irregular, restricted terrains where wheels or propellers fail.",
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO R4 WiFi (or ESP32 / ESP8266)",
+      "servoDriver": "PCA9685 16-Channel 12-bit PWM I2C Module (Address 0x40)",
+      "actuators": "8 x SG90 / MG90S Micro Servos (4 Hip Yaw + 4 Knee Pitch)",
+      "powerSupply": "7.4V 2S LiPo Battery with 5V 3A+ UBEC / DC-DC Buck Converter",
+      "wireless": "802.11 b/g/n Wi-Fi with mDNS (http://crabrobot.local)",
+      "pwmFrequency": "50 Hz (20 ms period, 150-600 pulse width count)",
+      "operatingVoltage": "Logic 3.3V/5V, Servo Bus 5V-6V High Current"
+    },
+    "components": [
+      "Arduino UNO R4 WiFi (or ESP32/ESP8266)",
+      "PCA9685 16-Channel 12-bit PWM Servo Driver",
+      "8 x MG90S Metal Gear Micro Servos",
+      "3D-Printed / Acrylic Crab Robot Chassis",
+      "5V 3A UBEC Voltage Regulator",
+      "7.4V 2S LiPo Battery",
+      "Jumper Wires"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "esp32",
+      "pca9685",
+      "servo-motor",
+      "jumper-wires"
+    ],
+    "circuitConnections": {
+      "PCA9685 VCC (Logic)": "Arduino 5V",
+      "PCA9685 GND": "Arduino GND & Battery GND (Common Ground)",
+      "PCA9685 SDA": "Arduino SDA (Pin A4 or dedicated SDA)",
+      "PCA9685 SCL": "Arduino SCL (Pin A5 or dedicated SCL)",
+      "PCA9685 V+ (Servo Power)": "External 5V 3A UBEC Power (+)",
+      "PCA9685 GND (Terminal)": "External 5V 3A UBEC Power (-)",
+      "Servo Ch 0": "Front-Left Hip (FL-Hip)",
+      "Servo Ch 1": "Front-Left Knee (FL-Knee)",
+      "Servo Ch 2": "Front-Right Hip (FR-Hip)",
+      "Servo Ch 3": "Front-Right Knee (FR-Knee)",
+      "Servo Ch 4": "Rear-Left Hip (RL-Hip)",
+      "Servo Ch 5": "Rear-Left Knee (RL-Knee)",
+      "Servo Ch 6": "Rear-Right Hip (RR-Hip)",
+      "Servo Ch 7": "Rear-Right Knee (RR-Knee)"
+    },
+    "circuitDiagramDescription": "The PCA9685 servo driver interfaces with the Arduino via I2C (SDA/SCL). Dedicated 5V 3A+ high-current power is fed directly into the PCA9685 screw terminals to supply the 8 servos independently from the microcontroller logic, preventing voltage dips and brownout resets.",
+    "working": [
+      {
+        "step": 1,
+        "action": "On power-up, the Arduino establishes an I2C connection with the PCA9685, initializes all 8 servos to their default neutral 90° stance angles, and starts the Wi-Fi AP / Station network."
+      },
+      {
+        "step": 2,
+        "action": "The operator opens `http://crabrobot.local` on a smartphone or computer to view the graphical touch dashboard."
+      },
+      {
+        "step": 3,
+        "action": "When a directional command (Forward, Backward, Crab Left, Crab Right) is sent, the gait engine decomposes movement into synchronized leg-lift, swing, and stance phases."
+      },
+      {
+        "step": 4,
+        "action": "During lateral crab-walking, diagonal pairs of legs lift their knees, swing their hips outward, plant down, and pull the robot's center of gravity sideways."
+      },
+      {
+        "step": 5,
+        "action": "The smoothMoveAll interpolation function increments servo positions in micro-steps with configurable millisecond delays, eliminating jerky mechanical stress."
+      },
+      {
+        "step": 6,
+        "action": "Special action sequences (Wave, Dance, Pushup, Sit, Stand) can be triggered with one click, executing fluid multi-joint kinematic choreography."
+      },
+      {
+        "step": 7,
+        "action": "Individual servo trim offsets can be saved from the web interface to calibrate physical linkage misalignment without re-flashing firmware."
+      }
+    ],
+    "benefits": [
+      "Navigates confined, irregular crevices and high-clearance obstacles where cars get stuck and drones crash",
+      "True biomimetic lateral crab strafe enables sideways maneuvering through narrow gaps without turning body axis",
+      "Dedicated PCA9685 PWM offloading prevents servo jitter and eliminates microcontroller CPU load",
+      "Self-hosted browser UI with virtual joystick - zero software or mobile app installation required",
+      "Multi-platform firmware compatible with Arduino UNO R4 WiFi, ESP32, and ESP8266",
+      "Onboard calibration menu allows live servo angle trim adjustments"
+    ],
+    "applications": [
+      "Disaster Search & Rescue in Collapsed Rubble and Confined Spaces",
+      "Industrial Pipeline, Duct, and Conduit Inspection",
+      "Hazardous Chemical & Explosive Ordnance Reconnaissance",
+      "STEM Robotics Education & Bio-Inspired Kinematics Research",
+      "Planetary Surface Exploration of Rocky, Unstructured Terrains"
+    ],
+    "futureScope": [
+      "Integrate an ESP32-CAM or FPV camera module for real-time video streaming to the web dashboard.",
+      "Add ultrasonic / ToF distance sensors for autonomous obstacle clearance and terrain mapping.",
+      "Implement full 12-DOF 3-joint inverse kinematics legs for continuous climbing and self-leveling on steep inclines."
+    ],
+    "vivaQuestions": [
+      {
+        "q": "Why is a PCA9685 PWM driver module used instead of driving servos directly from Arduino pins?",
+        "a": "Driving 8 servos directly from Arduino timers causes timing jitter, limits available GPIOs, and risks board damage due to high servo stall currents. The PCA9685 has an onboard clock and generates 16 independent 12-bit hardware PWM signals over just two I2C pins (SDA/SCL)."
+      },
+      {
+        "q": "Why is common ground essential between the external servo power supply and the Arduino?",
+        "a": "Without a shared common reference ground between the battery/UBEC and the microcontroller, the PWM control signal voltages on the servo signal pins cannot be correctly referenced, causing erratic servo twitching or communication loss."
+      },
+      {
+        "q": "What is the advantage of a quadruped crab gait over a traditional 2-wheel rover?",
+        "a": "Wheeled vehicles require contiguous flat surfaces and easily get stuck or high-centered on rocks and rubble. A biomimetic quadruped can step over obstacles, lift isolated feet out of holes, and strafe sideways through narrow gaps without needing turning radius."
+      },
+      {
+        "q": "How does smoothMoveAll prevent mechanical damage to servo gears?",
+        "a": "Instead of commanding an immediate 90-degree step that creates massive current spikes and gear shock, smoothMoveAll interpolates positions degree-by-degree with small time delays, ensuring smooth acceleration and deceleration."
+      }
+    ],
+    "tags": [
+      "Robotics",
+      "Arduino UNO R4 WiFi",
+      "ESP32",
+      "PCA9685",
+      "Servos",
+      "Biomimetic",
+      "Quadruped",
+      "Web Controller"
+    ],
+    "keywords": [
+      "crab robot",
+      "spider robot",
+      "quadruped",
+      "8 servo robot",
+      "pca9685",
+      "arduino uno r4 wifi",
+      "biomimetic walking robot"
+    ],
+    "image": "projects/images/crabrobot.jpg",
+    "presentationPdfs": [],
+    "codeFiles": [
+      {
+        "name": "crabrobot.ino",
+        "url": "projects/crabrobot/crabrobot.ino",
+        "language": "Arduino C++"
+      }
+    ]
   },
   {
     "id": "food-spoilage-detection-system",
@@ -938,7 +1138,7 @@
     "components": [
       "NodeMCU ESP8266",
       "MQ135 Gas Sensor",
-      "TCS34725 Color Sensor",
+      "TCS34725 RGB Color Sensor",
       "Breadboard",
       "Jumper Wires",
       "USB Cable"
@@ -948,7 +1148,8 @@
       "mq135",
       "tcs34725",
       "breadboard",
-      "jumper-wires"
+      "jumper-wires",
+      "usb-cable"
     ],
     "guide": [
       "Place the NodeMCU on the breadboard.",
@@ -1158,26 +1359,36 @@
         "a": "Yes, the threshold variable in the Arduino sketch can be calibrated based on ambient baseline gas levels."
       }
     ],
+    "componentRefs": [
+      "arduino-uno",
+      "mq135",
+      "16x2-lcd",
+      "buzzer",
+      "led",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
     "image": "projects/images/gas-detector.jpg",
     "gallery": [
       {
-        "file": "projects/Gas-Detector/demo.jpeg",
+        "file": "projects/gas-detector/demo.jpeg",
         "caption": "demo"
       },
       {
-        "file": "projects/Gas-Detector/poster1.jpg",
+        "file": "projects/gas-detector/poster1.jpg",
         "caption": "Problem Statement"
       }
     ],
     "posters": [
       {
-        "file": "projects/Gas-Detector/poster1.jpg",
+        "file": "projects/gas-detector/poster1.jpg",
         "caption": "Problem Statement"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Gas-Detector/Gas-Detector-Sensor.pdf",
+        "file": "projects/gas-detector/Gas-Detector-Sensor.pdf",
         "name": "Gas-Detector-Sensor.pdf",
         "type": "pdf"
       }
@@ -1231,23 +1442,22 @@
       "displays": []
     },
     "components": [
-      "Quarky Controller",
-      "PictoBlox Software",
-      "Robotic Gripper Kit",
-      "Ultrasonic Sensor",
-      "Servo Motor x2",
-      "DC Motors",
+      "Arduino Uno / Quarky Controller",
+      "2x SG90 Servo Motors (Gripper Mechanism)",
+      "2x DC Geared Motors",
+      "HC-SR04 Ultrasonic Sensor",
       "Robot Chassis",
       "Battery Pack",
-      "USB Cable",
-      "Jumper Wires"
+      "Jumper Wires",
+      "USB Cable"
     ],
     "componentRefs": [
-      "quarky-controller",
-      "pictoblox",
+      "arduino-uno",
       "servo-motor",
-      "ultrasonic-sensor",
-      "robot-chassis"
+      "dc-motor",
+      "hc-sr04",
+      "jumper-wires",
+      "usb-cable"
     ],
     "guide": [
       "Assemble the Quarky robotic chassis.",
@@ -1390,14 +1600,29 @@
     ],
     "status": "Available",
     "components": [
-      "ESP32",
-      "DHT11 Sensor",
-      "Soil Moisture Sensor",
-      "Jumper Wires",
+      "ESP32 Development Board",
+      "DHT11 Temperature & Humidity Sensor",
+      "Capacitive Soil Moisture Sensor",
       "Breadboard",
+      "Jumper Wires",
       "USB Cable"
     ],
     "estimatedTime": "90 minutes",
+    "componentRefs": [
+      "esp32",
+      "dht11",
+      "soil-moisture-sensor",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "ESP32 (Dual-Core 240MHz, 802.11 b/g/n Wi-Fi & Bluetooth)",
+      "temperatureSensor": "DHT11 Digital Temp & Humidity (0-50°C, 20-90% RH)",
+      "moistureSensor": "Capacitive Analog Soil Moisture Sensor",
+      "operatingVoltage": "3.3V / 5V DC",
+      "wireless": "Wi-Fi MQTT / HTTP cloud telemetry"
+    },
     "image": "projects/images/iot-agriculture-monitoring.jpg",
     "presentationPdfs": [
       {
@@ -1426,22 +1651,51 @@
     ],
     "date": "2026-07-20",
     "author": "Tinkering Lab",
+    "components": [
+      "ESP32 Development Board",
+      "Analog Turbidity Sensor Module",
+      "Water Level Depth Sensor",
+      "12V DC Solenoid Water Valve",
+      "5V Optocoupled Relay Module",
+      "16x2 I2C LCD Display",
+      "Active Buzzer",
+      "Breadboard",
+      "Jumper Wires"
+    ],
+    "componentRefs": [
+      "esp32",
+      "turbidity-sensor",
+      "water-level-sensor",
+      "relay-module",
+      "16x2-lcd",
+      "buzzer",
+      "breadboard",
+      "jumper-wires"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "ESP32 (240MHz Wi-Fi & Bluetooth)",
+      "waterQualitySensor": "Optical Analog Turbidity Sensor (0–3000 NTU)",
+      "waterLevelSensor": "Submersible Parallel Trace Depth Sensor",
+      "valveActuator": "12V Solenoid Valve via 5V Relay Module",
+      "display": "16x2 Character LCD with I2C Backpack",
+      "operatingVoltage": "5V Logic / 12V Valve Power"
+    },
     "image": "projects/images/jarakshak.jpg",
     "gallery": [
       {
-        "file": "projects/JaRakshak/poster1.png",
+        "file": "projects/jarakshak/poster1.png",
         "caption": "Problem Statement"
       }
     ],
     "posters": [
       {
-        "file": "projects/JaRakshak/poster1.png",
+        "file": "projects/jarakshak/poster1.png",
         "caption": "Problem Statement"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/JaRakshak/JalRakshak.pdf",
+        "file": "projects/jarakshak/JalRakshak.pdf",
         "name": "JalRakshak.pdf",
         "type": "pdf"
       }
@@ -1492,20 +1746,23 @@
     },
     "components": [
       "Arduino UNO",
-      "4×4 Matrix Keypad",
-      "Servo Motor (SG90)",
-      "16×2 LCD Display",
-      "Jumper Wires",
-      "USB Cable",
+      "4x4 Matrix Keypad",
+      "SG90 Micro Servo Motor",
+      "16x2 I2C LCD Display",
+      "Active Buzzer",
       "Breadboard",
-      "Arduino IDE"
+      "Jumper Wires",
+      "USB Cable"
     ],
     "componentRefs": [
       "arduino-uno",
       "matrix-keypad",
       "servo-motor",
       "16x2-lcd",
-      "jumper-wires"
+      "buzzer",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
     ],
     "guide": [
       "Connect the 4×4 Matrix Keypad to the Arduino digital pins.",
@@ -1649,16 +1906,22 @@
       "Provide a simple and reliable security solution."
     ],
     "hardwareSpecs": {
-      "microcontroller": "Arduino Uno",
+      "microcontroller": "Arduino Uno (ATmega328P)",
       "sensor": "LDR Sensor Module",
       "actuator": "Active Buzzer",
-      "source": "Laser Module"
+      "source": "Laser Module",
+      "laserEmitter": "KY-008 650nm 5mW Red Dot Laser Diode",
+      "opticalReceiver": "LDR Photoresistor Module with LM393 Comparator",
+      "alarmOutput": "5V Active Buzzer and High-Brightness Red LED",
+      "operatingVoltage": "5V DC"
     },
     "components": [
       "Arduino Uno",
-      "Laser Module",
-      "LDR Sensor Module",
+      "KY-008 Laser Transmitter Module",
+      "LDR Light Sensor Module",
       "Active Buzzer",
+      "Red LED",
+      "Breadboard",
       "Jumper Wires",
       "USB Cable"
     ],
@@ -1726,6 +1989,16 @@
       }
     ],
     "conclusion": "The Laser Security System successfully detects intrusion by monitoring a laser beam using an LDR sensor module. When the beam is interrupted, the Arduino Uno immediately activates the buzzer, making it a simple, reliable and low-cost security solution.",
+    "componentRefs": [
+      "arduino-uno",
+      "laser-module",
+      "ldr-sensor",
+      "buzzer",
+      "led",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
     "image": "projects/images/laser-security-system.jpg",
     "gallery": [
       {
@@ -1803,12 +2076,19 @@
     "level": "Intermediate",
     "difficulty": 3,
     "color": "#00F0FF",
-    "author": "Niktrix",
+    "author": "Nikhil Patil",
     "date": "2026-08-10",
-    "desc": "High-security visible light optical transmitter PWA using smartphone screen flash or flashlight torch paired with an Arduino Uno mid-bit sampling receiver.",
-    "fullDesc": "The LiFi Secure Terminal is a complete Visible Light Communication (VLC) system designed for environments where Radio Frequency (RF) emissions are strictly prohibited or compromised (such as Intensive Care Units, defense command centers, aircraft cabins, and underground bunkers). The system features a mobile-first Progressive Web Application (PWA) with a camera-free optical screen flash pad and optional camera torch controller to transmit binary optical data using 10 Hz pulse duration framing (Start bit 1, 8 Data bits MSB-first, Stop bit 0). Includes doctor/ICU presets and quick chat message chips ('hello', 'how are you', 'what you see', 'STAT: ICU BED 4'). On the receiving end, an Arduino Uno with an LDR Digital Module captures light pulses using a 1.5x bit period (150 ms) mid-bit sampling technique to eliminate edge jitter and decodes real-time ASCII messages onto a 16x2 I2C LCD screen.",
-    "problemStatement": "Radio frequency communications (Wi-Fi, Bluetooth, Cellular) generate Electromagnetic Interference (EMI) that disrupts medical equipment in ICUs and presents severe RF signal interception risks in secure defense installations.",
-    "solutionApproach": "An optical LiFi transceiver system using light waves. The transmitter encodes custom text or medical presets into 8-bit ASCII binary frames with framing bits (Start=1, Stop=0) and modulates light pulses via smartphone screen flash or torch. The Arduino receiver detects incoming optical pulses, synchronizes on the rising edge of the Start bit, delays 150 ms to align dead-center inside the first payload bit, and samples subsequent bits every 100 ms to reconstruct ASCII characters for real-time LCD rendering.",
+    "team": [
+      {
+        "name": "Nikhil Patil",
+        "role": "Lead Hardware & Optical Systems Developer"
+      }
+    ],
+    "desc": "High-security visible light optical transmitter PWA using smartphone screen flash paired with an Arduino Uno mid-bit sampling receiver for RF-free data transmission.",
+    "fullDesc": "The LiFi Secure Terminal is a complete Visible Light Communication (VLC) transmission and reception system designed for critical environments where Radio Frequency (RF) emissions are strictly prohibited or susceptible to electromagnetic interference (EMI)—including Hospital Intensive Care Units (ICUs), defense command centers, aircraft cabins, explosive gas storage facilities, and underground bunkers.\n\nThe system features a mobile-first Progressive Web Application (PWA) with a camera-free optical screen flash pad and camera torch controller that transmits binary optical data using 10 Hz pulse duration framing (Start bit 1, 8 Data bits MSB-first, Stop bit 0). It includes instant medical/doctor telemetry presets and quick chat message chips.\n\nOn the receiving end, an Arduino Uno / Nano paired with an LM393 LDR Optical Sensor captures incoming light pulses using a 1.5x bit period (150 ms) mid-bit sampling technique to completely eliminate timing jitter, decodes real-time ASCII characters, and renders live scrolling text on a 16x2 I2C LCD screen.",
+    "innovation": "Eliminates radio wave vulnerabilities using optical spectrum data modulation. Utilizes mid-bit 1.5x sampling delay with 3-point majority voting to reject ambient light optical noise without needing expensive laser transceivers.",
+    "problemStatement": "Standard radio frequency communications (Wi-Fi, Bluetooth, 4G/5G, Zigbee) emit Electromagnetic Interference (EMI) that can disrupt sensitive medical telemetry in ICUs and present severe eavesdropping risks in RF-restricted defense and industrial installations.",
+    "solutionApproach": "An optical LiFi transceiver utilizing visible light photons. The transmitter encodes text or telemetry presets into 8-bit ASCII binary frames with framing bits (Start=1, Stop=0) and modulates light pulses via smartphone screen flash or torch at 100ms per bit. The Arduino receiver detects incoming optical pulses, synchronizes on the rising edge of the Start bit, delays 150 ms to align dead-center inside the first payload bit, and samples subsequent bits every 100 ms to reconstruct ASCII characters for real-time LCD rendering.",
     "hardwareSpecs": {
       "microcontroller": "Arduino Uno / Nano (ATmega328P)",
       "sensorModule": "LDR Light Dependent Resistor Sensor Module with LM393 Comparator",
@@ -1818,94 +2098,118 @@
       "operatingVoltage": "5V DC"
     },
     "components": [
-      "Arduino Uno / Nano",
-      "LDR Sensor Module with Digital Output (D0)",
-      "16x2 LCD with I2C Backpack (PCF8574)",
-      "Breadboard",
+      "Arduino Uno / Nano (ATmega328P)",
+      "LDR Optical Sensor Module with Digital Output (DO)",
+      "16x2 Character LCD with PCF8574 I2C Backpack",
+      "Solderless Breadboard",
       "Jumper Wires",
-      "Smartphone with Web Browser"
+      "Smartphone Web Transmitter"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "ldr-sensor",
+      "16x2-lcd",
+      "breadboard",
+      "jumper-wires"
     ],
     "circuitConnections": {
-      "LDR Sensor VCC": "5V",
-      "LDR Sensor GND": "GND",
-      "LDR Sensor D0": "Digital Pin 8",
-      "LCD VCC": "5V",
-      "LCD GND": "GND",
-      "LCD SDA": "A4 (SDA)",
-      "LCD SCL": "A5 (SCL)"
+      "LDR Sensor VCC": "Arduino 5V",
+      "LDR Sensor GND": "Arduino GND",
+      "LDR Sensor DO": "Arduino Digital Pin 8",
+      "LCD VCC": "Arduino 5V",
+      "LCD GND": "Arduino GND",
+      "LCD SDA": "Arduino Analog Pin A4 (SDA)",
+      "LCD SCL": "Arduino Analog Pin A5 (SCL)"
     },
-    "circuitDiagramDescription": "The LDR Sensor Module's digital output D0 connects to Arduino Digital Pin 8. The 16x2 I2C LCD display connects to 5V, GND, SDA (Analog Pin A4), and SCL (Analog Pin A5). Sensitivity threshold is tuned via the LM393 potentiometer on the LDR board.",
+    "circuitDiagramDescription": "The LDR Sensor Module digital output DO connects to Arduino Digital Pin 8. The 16x2 I2C LCD display connects to 5V, GND, SDA (Analog Pin A4), and SCL (Analog Pin A5). Light sensitivity threshold is calibrated using the onboard multiturn potentiometer on the LM393 comparator board.",
     "working": [
       {
         "step": 1,
-        "action": "The user selects a medical/doctor preset ('STAT: ICU BED 4', 'BP NORMAL 120/80'), chat preset ('hello', 'how are you', 'what you see'), or types a custom message."
+        "action": "The operator opens the LiFi Secure Terminal PWA on a smartphone, selects a quick medical preset ('STAT: ICU BED 4', 'BP NORMAL 120/80') or enters a custom secure message."
       },
       {
         "step": 2,
-        "action": "The mobile PWA converts text payload into 8-bit ASCII binary bytes with 10-bit framing (Start Bit 1, 8 Data Bits MSB-first, Stop Bit 0)."
+        "action": "The PWA converts each ASCII character into an 8-bit binary byte and packages it into a 10-bit optical frame: 1 Start Bit (HIGH), 8 Data Bits (MSB-first), and 1 Stop Bit (LOW)."
       },
       {
         "step": 3,
-        "action": "The optical screen flash pad (or optional torch) pulses light at 100 ms per bit directly onto the LDR sensor lens."
+        "action": "The screen optical pad pulses white (LIGHT_ON) and black (LIGHT_OFF) at 100 ms per bit directly focused onto the LDR sensor."
       },
       {
         "step": 4,
-        "action": "The Arduino receiver monitors Pin 8 for the rising edge of the optical Start Bit (LIGHT_ON)."
+        "action": "The Arduino receiver continuously monitors Digital Pin 8 for the rising edge transition of the optical Start Bit."
       },
       {
         "step": 5,
-        "action": "Upon detecting the Start Bit, the Arduino waits 150 ms (1.5x bit period) to position the sensor reading dead-center in the middle of Data Bit 7 (MSB)."
+        "action": "Upon detecting the Start Bit, the firmware delays 150 ms (1.5x bit period) to position the sensor reading dead-center in the middle of Data Bit 7 (MSB)."
       },
       {
         "step": 6,
-        "action": "The receiver samples Data Bit 7, then loops 7 times at exact 100 ms intervals to sample Data Bits 6 through 0, assembling the byte."
+        "action": "The receiver samples Data Bit 7 using 3-point majority voting, then steps 7 times at exact 100 ms intervals to sample Data Bits 6 through 0, assembling the complete byte."
       },
       {
         "step": 7,
-        "action": "Valid ASCII characters (range 32 to 126) are dynamically displayed on Line 2 of the 16x2 LCD screen."
+        "action": "Valid ASCII characters (range 32 to 126) are validated against the Stop Bit and printed dynamically on Line 2 of the 16x2 I2C LCD."
       },
       {
         "step": 8,
-        "action": "If no light signal is received for 4000 ms, the system automatically resets the screen buffer back to 'Listening...'."
+        "action": "If no optical pulse is detected for 4000 ms, the system automatically resets the screen buffer back to 'Listening...'."
       }
     ],
     "benefits": [
-      "Zero RF emissions - safe for ICUs and explosive zones",
+      "Zero RF emissions - 100% safe for ICUs, aircraft cabins, and explosive chemical storage",
       "Camera-free screen optical flash pulser - zero browser permission popups required",
       "Includes medical/ICU doctor presets and quick chat message chips",
-      "Mid-bit sampling eliminates timing jitter and signal edge distortion",
+      "Mid-bit 1.5x sampling eliminates timing jitter and signal edge distortion",
       "Configurable sensor logic (supports both Active-HIGH and Active-LOW LDR modules)",
-      "Real-time 16x2 LCD receiver simulator on the webpage"
+      "Real-time 16x2 LCD receiver simulator on the web dashboard"
     ],
     "applications": [
-      "Hospitals & ICUs (Medical Telemetry Transmission)",
+      "Hospitals & ICUs (Interference-Free Patient Telemetry)",
       "Defense Command Centers & EMP-Hardened Bunkers",
-      "Underwater Communication Systems",
-      "Aircraft Passenger Cabins",
-      "Secure Industrial Cleanrooms"
+      "Underwater Submersible Communication Systems",
+      "Aircraft Passenger Cabins & Avionics Bays",
+      "Hazardous Petrochemical Refineries & Cleanrooms"
     ],
     "futureScope": [
-      "Implement Manchester Encoding to eliminate DC bias and enable clock recovery.",
-      "Add Error Detection & Correction (Reed-Solomon or CRC-8 checksums).",
-      "Upgrade to array photodiode receiver for multi-color RGB wavelength division multiplexing (WDM)."
+      "Implement Manchester Encoding to eliminate DC bias and enable dynamic clock recovery.",
+      "Add Forward Error Correction (Reed-Solomon or CRC-8 checksums) for packet verification.",
+      "Upgrade to RGB Photodiode arrays for multi-wavelength Division Multiplexing (WDM) at >1 Mbps."
     ],
     "vivaQuestions": [
       {
-        "q": "Why is 1.5x bit period delay (150 ms) used after detecting the Start Bit?",
+        "q": "Why is a 1.5x bit period delay (150 ms) used after detecting the Start Bit?",
         "a": "The 1.5x bit period delay aligns the sampling instant directly at the center of the first payload bit (100 ms start bit + 50 ms to center of first bit), preventing errors caused by edge rise-time jitter."
       },
       {
         "q": "What is the role of the LM393 comparator on the LDR sensor module?",
-        "a": "The LM393 compares the analog voltage from the LDR against a potentiometer threshold to produce a clean binary digital square wave (D0 pin)."
+        "a": "The LM393 compares the analog voltage from the photoresistor against a preset potentiometer reference threshold to produce a clean binary digital square wave (DO pin)."
       },
       {
         "q": "How does the code handle inverted (active-LOW) light sensors?",
-        "a": "The code uses macro normalization: `#define LIGHT_ON LOW`. Changing line 8 to `#define LIGHT_ON LOW` flips all internal detection logic effortlessly."
+        "a": "The firmware contains an auto-polarity calibration routine in setup() that reads resting ambient state and configures activeHighLogic dynamically."
       },
       {
         "q": "What framing format is used for transmitting each ASCII character?",
         "a": "1 Start Bit (HIGH) + 8 Data Bits (MSB-first) + 1 Stop Bit (LOW), resulting in 10 bits total per character."
       }
+    ],
+    "tags": [
+      "LiFi",
+      "Optical Communication",
+      "Arduino",
+      "LCD Display",
+      "PWA",
+      "Sensors"
+    ],
+    "keywords": [
+      "lifi",
+      "visible light communication",
+      "vlc",
+      "arduino",
+      "ldr sensor",
+      "optical data transmission",
+      "mid-bit sampling"
     ],
     "image": "projects/images/lifi-secure-terminal.jpg",
     "presentationPdfs": [],
@@ -1984,16 +2288,14 @@
     ],
     "components": [
       "Arduino UNO",
-      "Servo Motor",
-      "RTC Module (DS3231)",
-      "16x2 LCD Display",
-      "LED",
-      "Buzzer",
-      "Potentiometer",
+      "DS3231 RTC Module",
+      "SG90 Micro Servo Motor",
+      "16x2 I2C LCD Display",
+      "Active Buzzer",
+      "Status LEDs",
       "Breadboard",
       "Jumper Wires",
       "USB Cable",
-      "Medicine Tray",
       "Power Supply"
     ],
     "benefits": [
@@ -2043,6 +2345,24 @@
       "Medication Management",
       "Assistive Technology"
     ],
+    "componentRefs": [
+      "arduino-uno",
+      "rtc-ds3231",
+      "servo-motor",
+      "16x2-lcd",
+      "buzzer",
+      "led",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "realTimeClock": "DS3231 High-Precision I2C RTC with CR2032 Battery Backup",
+      "dispenserMotor": "SG90 9g Micro Servo Motor (Compartment Rotation)",
+      "display": "16x2 Character LCD (I2C Backpack)",
+      "operatingVoltage": "5V DC"
+    },
     "image": "projects/images/automatic-medicine-dispenser.jpg",
     "gallery": [
       {
@@ -2101,32 +2421,57 @@
     ],
     "date": "2026-06-26",
     "author": "Atul Sawant",
+    "components": [
+      "ESP32 Development Board",
+      "L298N Dual H-Bridge Motor Driver",
+      "4x TT DC Geared Motors & Wheels",
+      "HC-SR04 Ultrasonic Sensor",
+      "SG90 Micro Servo",
+      "4WD Robot Car Acrylic Chassis Kit",
+      "7.4V / 11.1V Rechargeable Battery Pack",
+      "Jumper Wires"
+    ],
+    "componentRefs": [
+      "esp32",
+      "l298n",
+      "dc-motor",
+      "hc-sr04",
+      "servo-motor",
+      "jumper-wires"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "ESP32 (Dual-Core 240MHz, Wi-Fi Web Controller & BLE)",
+      "motorDriver": "L298N Dual Full H-Bridge (2A continuous per channel)",
+      "motors": "4x TT DC Geared Motors (1:48 reduction ratio)",
+      "radarSensor": "HC-SR04 Ultrasonic Rangefinder mounted on SG90 Pan Servo",
+      "powerSupply": "7.4V–11.1V Li-ion Battery Pack"
+    },
     "image": "projects/images/robot-car.jpg",
     "gallery": [
       {
-        "file": "projects/Robot-Car/poster1.png",
+        "file": "projects/robot-car/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Robot-Car/poster2.png",
+        "file": "projects/robot-car/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Robot-Car/poster3.png",
+        "file": "projects/robot-car/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/Robot-Car/poster1.png",
+        "file": "projects/robot-car/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Robot-Car/poster2.png",
+        "file": "projects/robot-car/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Robot-Car/poster3.png",
+        "file": "projects/robot-car/poster3.png",
         "caption": "Future Scope"
       }
     ],
@@ -2156,8 +2501,8 @@
     "problemStatement": "Making AI and machine learning concepts accessible to young students requires hands-on, playful projects.",
     "solutionApproach": "Used PictoBlox AI extensions to collect gesture training data (rock, paper, scissors) and train a classification model. The model is then used in a game logic block.",
     "components": [
-      "Computer with webcam",
-      "PictoBlox Software"
+      "Computer / Laptop with HD Webcam",
+      "PictoBlox AI Vision Software with Hand Tracking Extension"
     ],
     "guide": [
       "Open PictoBlox and create a new project",
@@ -2181,6 +2526,14 @@
       "machine learning",
       "game"
     ],
+    "componentRefs": [
+      "raspberrypi-5"
+    ],
+    "hardwareSpecs": {
+      "processingUnit": "Host PC / Laptop / Raspberry Pi 5",
+      "videoCapture": "HD 720p/1080p Optical Webcam",
+      "aiModel": "Machine Learning Hand Gesture Recognition (Rock/Paper/Scissors classification)"
+    },
     "image": "projects/images/rock-paper-scissors-pictoblox-ai.jpg",
     "gallery": [
       {
@@ -2220,10 +2573,10 @@
     "problemStatement": "Monitoring land use changes at scale requires automated analysis of large satellite image datasets that manual inspection cannot handle efficiently.",
     "solutionApproach": "Trained a convolutional neural network on paired satellite images (before/after) to classify pixel-level changes in land cover categories.",
     "components": [
-      "Python",
-      "TensorFlow/Keras",
-      "Satellite Dataset",
-      "GPU (recommended)"
+      "Workstation / Cloud GPU Platform",
+      "Python 3.10+ Environment",
+      "TensorFlow / PyTorch Neural Framework",
+      "Multispectral Satellite Dataset"
     ],
     "guide": [
       "Set up Python environment with TensorFlow and required libraries",
@@ -2249,6 +2602,14 @@
       "computer vision",
       "CNN"
     ],
+    "componentRefs": [
+      "raspberrypi-5"
+    ],
+    "hardwareSpecs": {
+      "platform": "High-Performance GPU Workstation / Cloud Compute",
+      "neuralArchitecture": "Convolutional Neural Network (CNN / U-Net Segmentation)",
+      "dataSources": "Sentinel-2 / Landsat-8 Multispectral Satellite Earth Imagery"
+    },
     "image": "projects/images/satellite-deep-learning-model.jpg",
     "gallery": [
       {
@@ -2333,14 +2694,17 @@
     "components": [
       "Arduino Uno",
       "Single Common Cathode 7-Segment Display",
+      "7x 220 Ohm Resistors",
+      "Breadboard",
       "Jumper Wires",
-      "USB Cable",
-      "Computer / Laptop",
-      "Wokwi Simulator"
+      "USB Cable"
     ],
     "componentRefs": [
       "arduino-uno",
-      "7-segment-display"
+      "7-segment-display",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
     ],
     "guide": [
       "Connect the 7-Segment Display to the Arduino Uno according to the circuit diagram.",
@@ -2439,10 +2803,10 @@
     "desc": "Sketch on your browser and display it live on a physical TFT screen over USB!",
     "fullDesc": "Draw on a digital canvas and watch your art render live on a physical TFT LCD display! Paint Connect Studio Pro connects to your hardware over Web Serial, using custom Run-Length Encoding (RLE) to stream paint commands directly to an ESP32 or Arduino. Choose from various tools, shapes, colors, and line thicknesses.",
     "components": [
-      "Web Browser with Web Serial API support",
-      "ESP32 or Arduino microcontroller",
-      "TFT LCD Display (e.g. ILI9488/ILI9341)",
-      "USB Data Cable"
+      "ESP32 / Arduino Microcontroller",
+      "3.5-inch Color TFT LCD Touch Display",
+      "USB Data Cable",
+      "Web Browser with Web Serial API"
     ],
     "difficulty": 4,
     "status": "Available",
@@ -2465,6 +2829,12 @@
       "Use tools, colors, and shapes to sketch on the canvas",
       "Watch your artwork sync live to the hardware display!"
     ],
+    "componentRefs": [
+      "esp32",
+      "arduino-uno",
+      "tft-display",
+      "usb-cable"
+    ],
     "image": "projects/images/sketching-live.jpg",
     "presentationPdfs": [],
     "codeFiles": [
@@ -2481,6 +2851,170 @@
     ],
     "htmlDashboards": [
       "projects/sketching-live/index.html"
+    ]
+  },
+  {
+    "id": "smart-distance-tracker",
+    "title": "Smart Precision Distance Tracker",
+    "subtitle": "High-Precision Time-of-Flight Laser Rangefinder with KY-008 Targeting & Web Dashboard",
+    "category": "Precision Instrumentation & IoT",
+    "level": "Intermediate",
+    "difficulty": 3,
+    "color": "#38D996",
+    "author": "Nikhil Patil",
+    "date": "2026-08-12",
+    "team": [
+      {
+        "name": "Nikhil Patil",
+        "role": "Embedded Systems & Precision Instrumentation Developer"
+      }
+    ],
+    "desc": "Millimeter-accuracy laser distance measuring tool using VL53L0X Time-of-Flight sensor, KY-008 targeting laser, SH1106 OLED, and an ESP8266 live web dashboard.",
+    "fullDesc": "The Smart Precision Distance Tracker is an IoT-enabled, optical distance measurement tool designed for engineering surveying, architectural dimensioning, indoor robotic localization, and industrial automation where conventional ultrasonic or mechanical tape measurements fail due to beam dispersion or physical constraints.\n\nPowered by an ESP8266 (Wemos D1 Mini), the device integrates a VL53L0X Time-of-Flight (ToF) laser rangefinder module that measures the exact transit time of sub-nanosecond photon pulses (940nm VCSEL) reflected from surfaces up to 2 meters away with 1 mm resolution. A co-axial KY-008 650nm visible targeting laser is switched via an onboard NPN transistor driver strictly during active measurement, ensuring high safety with zero risk of continuous laser exposure.\n\nReadings are displayed locally in real time on a crisp 1.3-inch SH1106 I2C OLED screen and simultaneously broadcast to an embedded web dashboard hosted directly on the ESP8266 over Wi-Fi (with mDNS support at `http://distsensor.local` and standalone AP fallback `DistSensor-Setup`). The dashboard provides live graphs, multi-unit conversions (mm, cm, inch, m), and a 'Hold to Measure' trigger with an automatic safety heartbeat timeout.",
+    "innovation": "Combines photon Time-of-Flight laser telemetry with co-axial visible targeting and an embedded zero-latency WebSocket/HTTP web dashboard. Features safety heartbeat interlocks so the targeting laser instantly turns off if the operator disconnects or closes the browser tab.",
+    "problemStatement": "Traditional ultrasonic distance sensors (e.g., HC-SR04) suffer from wide beam divergence (15° cone), acoustic reflection dead-zones, and ambient temperature/humidity drift, making precise, narrow-aperture distance measurements impossible. Mechanical tape measures are limited by physical access and cannot stream digital telemetry to remote computers.",
+    "solutionApproach": "A sub-nanosecond photon Time-of-Flight (ToF) measurement engine using a 940nm Class 1 VCSEL laser inside the VL53L0X sensor. The Wemos D1 Mini samples distance at 10 Hz over I2C, updates the 1.3-inch SH1106 OLED display, and streams JSON data to connected devices via an asynchronous web server. A KY-008 visible red laser provides visual aiming feedback only while the physical push button or web trigger is actively depressed.",
+    "hardwareSpecs": {
+      "microcontroller": "Wemos D1 Mini (ESP8266, 80/160 MHz, 4MB Flash)",
+      "sensorModule": "VL53L0X Time-of-Flight (ToF) Distance Sensor (940nm VCSEL)",
+      "aimingLaser": "KY-008 650nm 5mW Red Dot Laser Diode Module",
+      "display": "1.3-inch SH1106 OLED 128x64 Monochrome Screen (I2C 0x3C)",
+      "wireless": "802.11 b/g/n Wi-Fi with mDNS (http://distsensor.local)",
+      "measurementRange": "30 mm to 2000 mm (2 meters)",
+      "resolution": "1 mm",
+      "refreshRate": "10 Hz (100 ms interval)",
+      "operatingVoltage": "3.3V / 5V DC via USB-C or LiPo Battery"
+    },
+    "components": [
+      "Wemos D1 Mini (ESP8266)",
+      "VL53L0X Time-of-Flight Sensor Module",
+      "KY-008 650nm Laser Diode Module",
+      "1.3-inch SH1106 128x64 I2C OLED Display",
+      "Tactile Push Button",
+      "2N2222 NPN Transistor",
+      "1k Ohm Resistor",
+      "Half-Size Breadboard",
+      "Jumper Wires"
+    ],
+    "componentRefs": [
+      "esp8266-d1-mini",
+      "vl53l0x",
+      "laser-module",
+      "oled-0-96",
+      "breadboard",
+      "jumper-wires"
+    ],
+    "circuitConnections": {
+      "VL53L0X VCC": "Wemos 3V3",
+      "VL53L0X GND": "Wemos GND (G)",
+      "VL53L0X SDA": "Wemos D2 (GPIO4)",
+      "VL53L0X SCL": "Wemos D1 (GPIO5)",
+      "SH1106 OLED VCC": "Wemos 3V3",
+      "SH1106 OLED GND": "Wemos GND (G)",
+      "SH1106 OLED SDA": "Wemos D2 (GPIO4 - shared I2C bus)",
+      "SH1106 OLED SCL": "Wemos D1 (GPIO5 - shared I2C bus)",
+      "Push Button Leg 1": "Wemos D6 (GPIO12 - Internal Pullup)",
+      "Push Button Leg 2": "Wemos GND (G)",
+      "Laser Control (Base)": "Wemos D7 (GPIO13) via 1kΩ resistor to Transistor Base",
+      "Laser Collector": "KY-008 Laser Negative (-)",
+      "Laser Emitter": "Wemos GND",
+      "Laser VCC (+)": "Wemos 3V3 / 5V"
+    },
+    "circuitDiagramDescription": "The VL53L0X sensor and 1.3\" SH1106 OLED share the I2C bus on GPIO4 (SDA/D2) and GPIO5 (SCL/D1). The momentary push button connects between D6 (GPIO12) and GND. GPIO13 (D7) drives the base of a 2N2222 NPN transistor through a 1kΩ resistor to safely switch the KY-008 laser module without overloading the ESP8266 GPIO current limits.",
+    "working": [
+      {
+        "step": 1,
+        "action": "At boot, the ESP8266 initializes the I2C bus, configures the VL53L0X ToF sensor, starts the SH1106 OLED screen, connects to Wi-Fi, and spins up the web server."
+      },
+      {
+        "step": 2,
+        "action": "When the user presses the physical push button or holds the 'Hold to Measure' button on the web dashboard, the laser controller triggers GPIO13 HIGH."
+      },
+      {
+        "step": 3,
+        "action": "The KY-008 red laser illuminates the exact target point, providing visual aiming confirmation."
+      },
+      {
+        "step": 4,
+        "action": "The VL53L0X emits invisible 940nm photon pulses and precisely measures the round-trip flight time to calculate millimeter-accurate distance."
+      },
+      {
+        "step": 5,
+        "action": "The measurement engine formats the distance into millimeters, centimeters, inches, and meters, and updates the local OLED display at 10 Hz."
+      },
+      {
+        "step": 6,
+        "action": "Connected web clients polling the `/data` endpoint receive real-time JSON packets to animate the gauge, chart history, and update numerical metrics."
+      },
+      {
+        "step": 7,
+        "action": "When the button is released or if the web client drops its heartbeat for over 1000 ms, the laser is instantly extinguished for eye safety."
+      }
+    ],
+    "benefits": [
+      "High optical precision (1 mm resolution) unaffected by surface color or acoustic absorption",
+      "Co-axial red laser targeting with fail-safe automatic shutoff",
+      "Zero app install required - works on any phone, tablet, or laptop browser via Wi-Fi",
+      "Dual interface: Instant local 1.3\" OLED screen + cloudless self-hosted Web Dashboard",
+      "Multi-unit instantaneous readout (mm, cm, in, m)",
+      "Fallback Access Point (AP) mode when local Wi-Fi router is unavailable"
+    ],
+    "applications": [
+      "Architectural Room Dimensioning & Floorplan Mapping",
+      "Robotic Autonomous Navigation & Obstacle Clearance Sensing",
+      "Industrial Liquid Level & Solid Silo Height Monitoring",
+      "Drone Altitude Precision Ground Proximity Detection",
+      "Physics Laboratory Velocity and Position Tracking Experiments"
+    ],
+    "futureScope": [
+      "Add Bluetooth BLE telemetry for integration with CAD drawing software.",
+      "Implement area and volume calculation modes with 3D coordinate triangulation.",
+      "Upgrade to VL53L5CX 8x8 multizone ToF array sensor for mini-LiDAR 3D point cloud generation."
+    ],
+    "vivaQuestions": [
+      {
+        "q": "How does a Time-of-Flight (ToF) sensor differ from an ultrasonic distance sensor?",
+        "a": "Ultrasonic sensors emit 40 kHz sound waves (~343 m/s) with a wide 15° cone subject to air temperature and surface angle. ToF sensors use speed-of-light photon pulses (300,000 km/s) with a tight optical beam, providing millimeter precision regardless of target reflectivity or acoustic absorbing materials."
+      },
+      {
+        "q": "Why is a transistor driver used for the KY-008 laser module instead of direct GPIO drive?",
+        "a": "The ESP8266 GPIO pins are rated for a maximum of 12 mA source current. Laser diode modules can draw 25–40 mA under continuous operation, risking GPIO burn-out without an NPN transistor or MOSFET driver."
+      },
+      {
+        "q": "What is the role of mDNS (multicast DNS) in this project?",
+        "a": "mDNS allows connected client devices on the same Wi-Fi network to navigate to http://distsensor.local in their web browsers without needing to find or remember the ESP8266's dynamic local IP address."
+      },
+      {
+        "q": "What safety mechanism prevents the targeting laser from staying on indefinitely?",
+        "a": "The firmware implements a dual interlock: momentary physical button detection and a 1000 ms web heartbeat timeout. If the browser tab crashes or network drops, the laser automatically turns OFF."
+      }
+    ],
+    "tags": [
+      "ESP8266",
+      "Laser",
+      "Time-of-Flight",
+      "VL53L0X",
+      "OLED",
+      "Web Dashboard",
+      "Precision Measurement"
+    ],
+    "keywords": [
+      "distance tracker",
+      "laser rangefinder",
+      "tof sensor",
+      "vl53l0x",
+      "esp8266",
+      "sh1106 oled",
+      "precision distance measurement"
+    ],
+    "image": "projects/images/smart-distance-tracker.jpg",
+    "presentationPdfs": [],
+    "codeFiles": [
+      {
+        "name": "sdt.ino",
+        "url": "projects/smart distance tracker/sdt/sdt.ino",
+        "language": "Arduino C++"
+      }
     ]
   },
   {
@@ -2503,54 +3037,80 @@
     ],
     "date": "2026-07-08",
     "author": "Uran Rasal",
+    "components": [
+      "ESP8266 NodeMCU",
+      "MPU6050 6-Axis Accelerometer & Gyroscope",
+      "Tactile Cancel Push Button",
+      "Active Buzzer",
+      "Status LED",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "componentRefs": [
+      "nodemcu",
+      "mpu6050",
+      "buzzer",
+      "led",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "ESP8266 NodeMCU (80MHz Wi-Fi SoC)",
+      "imuSensor": "MPU6050 6-Axis Motion Tracking (3-Axis Accelerometer + 3-Axis Gyroscope)",
+      "alarm": "5V Audible Buzzer & High-Intensity Alert LED",
+      "wirelessNotification": "Telegram Bot API / Firebase Emergency SMS Alert over Wi-Fi",
+      "operatingVoltage": "5V USB / 3.3V Logic"
+    },
     "image": "projects/images/accident-detection-system.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "file": "projects/smart-accident-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "file": "projects/smart-accident-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "file": "projects/smart-accident-detection/poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (1).jpeg",
+        "file": "projects/smart-accident-detection/Project (1).jpeg",
         "caption": "project (1)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (2).jpeg",
+        "file": "projects/smart-accident-detection/Project (2).jpeg",
         "caption": "project (2)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (3).jpeg",
+        "file": "projects/smart-accident-detection/Project (3).jpeg",
         "caption": "project (3)"
       },
       {
-        "file": "projects/Smart-Accident-Detection/Project (4).jpeg",
+        "file": "projects/smart-accident-detection/Project (4).jpeg",
         "caption": "project (4)"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-Accident-Detection/poster1.png",
+        "file": "projects/smart-accident-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster2.png",
+        "file": "projects/smart-accident-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Accident-Detection/poster3.png",
+        "file": "projects/smart-accident-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-Accident-Detection/Smart Accident Detection & Alert System.pdf",
+        "file": "projects/smart-accident-detection/Smart Accident Detection & Alert System.pdf",
         "name": "Smart Accident Detection & Alert System.pdf",
         "type": "pdf"
       }
@@ -2558,7 +3118,7 @@
     "codeFiles": [
       {
         "name": "AccidentDetectAlert.ino",
-        "url": "projects/Smart-Accident-Detection/AccidentDetectAlert_Code/AccidentDetectAlert.ino",
+        "url": "projects/smart-accident-detection/AccidentDetectAlert_Code/AccidentDetectAlert.ino",
         "language": "Arduino C++"
       }
     ]
@@ -2583,47 +3143,74 @@
     ],
     "date": "2026-08-06",
     "author": "Tinkering Lab",
+    "components": [
+      "Arduino UNO",
+      "HC-SR501 PIR Motion Sensor",
+      "LDR Light Sensor Module",
+      "5V 2-Channel Relay Module (Lights & Fans)",
+      "16x2 I2C LCD Display",
+      "Breadboard",
+      "Jumper Wires",
+      "5V Power Supply"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "pir-sensor",
+      "ldr-sensor",
+      "relay-module",
+      "16x2-lcd",
+      "breadboard",
+      "jumper-wires"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "occupancyDetection": "HC-SR501 Passive Infrared Motion Detector (100° cone, 7m range)",
+      "ambientLightSensor": "LDR Photoresistor Module with LM393 Comparator",
+      "relayController": "5V 2-Channel Optocoupled Relay (250V AC 10A rating)",
+      "display": "16x2 Character LCD via I2C PCF8574 Backpack",
+      "operatingVoltage": "5V DC"
+    },
     "image": "projects/images/smart-classroom.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-classroom/Poster1.png",
+        "file": "projects/smart-classroom/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-classroom/Poster2.png",
+        "file": "projects/smart-classroom/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-classroom/Poster3.png",
+        "file": "projects/smart-classroom/Poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-classroom/Project A3 Display Board.png",
+        "file": "projects/smart-classroom/Project A3 Display Board.png",
         "caption": "project a3 display board"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-classroom/Poster1.png",
+        "file": "projects/smart-classroom/Poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-classroom/Poster2.png",
+        "file": "projects/smart-classroom/Poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-classroom/Poster3.png",
+        "file": "projects/smart-classroom/Poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-classroom/Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
+        "file": "projects/smart-classroom/Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
         "name": "Smart Classroom Energy Saver Tech Fest 2026Presentation (1).pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Smart-classroom/Smart_Classroom_Energy_Saver (2).pdf",
+        "file": "projects/smart-classroom/Smart_Classroom_Energy_Saver (2).pdf",
         "name": "Smart_Classroom_Energy_Saver (2).pdf",
         "type": "pdf"
       }
@@ -2651,12 +3238,16 @@
     "innovation": "Automates batch file conversion for processing large numbers of student document submissions, saving significant manual effort.",
     "problemStatement": "Processing hundreds of student-submitted DOCX and PPTX files manually into usable formats is extremely time-consuming.",
     "solutionApproach": "Built a Python Tkinter GUI app that walks the entire folder tree recursively, identifying and converting each file type. Parsed JSON content is saved with the same filename.",
-    "hardwareSpecs": {},
+    "hardwareSpecs": {
+      "targetPlatform": "Windows 10 / 11 / Linux",
+      "runtime": "Python 3.8+ Multi-threaded Engine",
+      "supportedConversions": "DOCX to JSON & PPTX to PDF Batch Automation"
+    },
     "components": [
-      "Python 3.x",
-      "python-docx library",
-      "pywin32 library",
-      "Tkinter (built-in)"
+      "Python 3.x Environment",
+      "python-docx Word Processing Library",
+      "pywin32 Windows Office API",
+      "Tkinter GUI Framework"
     ],
     "guide": [
       "Install required Python libraries: pip install python-docx pywin32",
@@ -2682,6 +3273,9 @@
       "utility",
       "batch conversion",
       "desktop app"
+    ],
+    "componentRefs": [
+      "raspberrypi-5"
     ],
     "image": "projects/images/smart-converter-app.jpg",
     "presentationPdfs": [],
@@ -2713,38 +3307,65 @@
     ],
     "date": "2026-08-06",
     "author": "Tinkering Lab",
+    "components": [
+      "ESP32 / ESP8266 NodeMCU",
+      "MPU6050 6-Axis IMU Accelerometer",
+      "Active Buzzer",
+      "Emergency Cancel Push Button",
+      "Status LED",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "componentRefs": [
+      "esp32",
+      "nodemcu",
+      "mpu6050",
+      "buzzer",
+      "led",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "ESP32 / ESP8266 NodeMCU Wi-Fi SoC",
+      "imuSensor": "MPU6050 6-Axis Accelerometer (±2g, ±4g, ±8g, ±16g scale)",
+      "fallAlgorithm": "Dual-phase impact shock + inactivity posture angle detection",
+      "wirelessAlert": "Wi-Fi Cloud Telemetry / Emergency Push Notification",
+      "operatingVoltage": "3.3V / 5V DC"
+    },
     "image": "projects/images/smart-fall-detection.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-fall-detection/poster1.png",
+        "file": "projects/smart-fall-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-fall-detection/poster2.png",
+        "file": "projects/smart-fall-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-fall-detection/poster3.png",
+        "file": "projects/smart-fall-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-fall-detection/poster1.png",
+        "file": "projects/smart-fall-detection/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-fall-detection/poster2.png",
+        "file": "projects/smart-fall-detection/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-fall-detection/poster3.png",
+        "file": "projects/smart-fall-detection/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-fall-detection/Smart-fall-detection.pdf",
+        "file": "projects/smart-fall-detection/Smart-fall-detection.pdf",
         "name": "Smart-fall-detection.pdf",
         "type": "pdf"
       }
@@ -2752,14 +3373,14 @@
     "codeFiles": [
       {
         "name": "air_mouse_firmware.ino",
-        "url": "projects/Smart-fall-detection/air_mouse_firmware.ino",
+        "url": "projects/smart-fall-detection/air_mouse_firmware.ino",
         "language": "Arduino C++"
       }
     ],
     "htmlDashboards": [
-      "projects/Smart-fall-detection/fall_detection_dashboard.html"
+      "projects/smart-fall-detection/fall_detection_dashboard.html"
     ],
-    "liveUrl": "projects/Smart-fall-detection/fall_detection_dashboard.html"
+    "liveUrl": "projects/smart-fall-detection/fall_detection_dashboard.html"
   },
   {
     "id": "smart-bridge-flood-alert",
@@ -2801,15 +3422,14 @@
     ],
     "components": [
       "Arduino UNO",
-      "Water Level Sensor",
-      "Servo Motor",
-      "Buzzer",
-      "LED",
-      "Jumper Wires",
+      "Submersible Water Level Depth Sensor",
+      "SG90 Micro Servo Motor (Bridge Barrier)",
+      "5V Active Buzzer",
+      "Green & Red Status LEDs",
       "Breadboard",
+      "Jumper Wires",
       "USB Cable",
-      "Power Supply",
-      "Bridge Model"
+      "Bridge Diorama Model"
     ],
     "benefits": [
       "Prevents accidents during floods.",
@@ -2851,47 +3471,64 @@
       "IoT",
       "Community Innovation"
     ],
+    "componentRefs": [
+      "arduino-uno",
+      "water-level-sensor",
+      "servo-motor",
+      "buzzer",
+      "led",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "Arduino UNO (ATmega328P)",
+      "waterSensor": "Analog Submersible Water Level Depth Sensor (0–40mm immersion)",
+      "barrierActuator": "SG90 9g Micro Servo Motor (0° Safe Open / 90° Danger Closed)",
+      "alarmOutputs": "5V Active Buzzer + Red/Green Traffic Light LEDs",
+      "operatingVoltage": "5V DC"
+    },
     "image": "projects/images/smart-bridge-flood-alert.jpg",
     "gallery": [
       {
-        "file": "projects/Smart-Flood-Alert/poster1.png",
+        "file": "projects/smart-flood-alert/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster2.png",
+        "file": "projects/smart-flood-alert/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster3.png",
+        "file": "projects/smart-flood-alert/poster3.png",
         "caption": "Future Scope"
       },
       {
-        "file": "projects/Smart-Flood-Alert/smartbridge.jpeg",
+        "file": "projects/smart-flood-alert/smartbridge.jpeg",
         "caption": "smartbridge"
       }
     ],
     "posters": [
       {
-        "file": "projects/Smart-Flood-Alert/poster1.png",
+        "file": "projects/smart-flood-alert/poster1.png",
         "caption": "Problem Statement"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster2.png",
+        "file": "projects/smart-flood-alert/poster2.png",
         "caption": "Solution & Methodology"
       },
       {
-        "file": "projects/Smart-Flood-Alert/poster3.png",
+        "file": "projects/smart-flood-alert/poster3.png",
         "caption": "Future Scope"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/Smart-Flood-Alert/Smart_Flood_Alert_Bridge.pdf",
+        "file": "projects/smart-flood-alert/Smart_Flood_Alert_Bridge.pdf",
         "name": "Smart_Flood_Alert_Bridge.pdf",
         "type": "pdf"
       },
       {
-        "file": "projects/Smart-Flood-Alert/smart_flood_alert_bridge_System_ppt.pdf",
+        "file": "projects/smart-flood-alert/smart_flood_alert_bridge_System_ppt.pdf",
         "name": "smart_flood_alert_bridge_System_ppt.pdf",
         "type": "pdf"
       }
@@ -2899,14 +3536,14 @@
     "codeFiles": [
       {
         "name": "rain_servo_control_v2.ino",
-        "url": "projects/Smart-Flood-Alert/rain_servo_control_v2/rain_servo_control_v2.ino",
+        "url": "projects/smart-flood-alert/rain_servo_control_v2/rain_servo_control_v2.ino",
         "language": "Arduino C++"
       }
     ],
     "htmlDashboards": [
-      "projects/Smart-Flood-Alert/rain_servo_dashboard_v2.html"
+      "projects/smart-flood-alert/rain_servo_dashboard_v2.html"
     ],
-    "liveUrl": "projects/Smart-Flood-Alert/rain_servo_dashboard_v2.html",
+    "liveUrl": "projects/smart-flood-alert/rain_servo_dashboard_v2.html",
     "author": "Anjum Shaikh",
     "problemStatement": "During heavy rainfall, the river water level rises rapidly and floods low-level bridges. Students, office workers, emergency services, and vehicles are unable to cross the bridge safely. Many people remain stranded for hours or even days, causing delays, accidents, and disruption of essential services.",
     "solutionApproach": "A smart bridge continuously monitors the river water level using a water level sensor. When the water reaches a dangerous level, the bridge automatically lifts upward, preventing vehicles and people from entering the flooded area. At the same time, a buzzer sounds and an LED glows to warn everyone nearby. Once the water level becomes safe, the bridge returns to its normal position."
@@ -2953,22 +3590,22 @@
     },
     "components": [
       "Arduino UNO",
-      "IR Receiver Sensor",
-      "IR Remote Control",
-      "1-Channel Relay Module",
+      "TSOP1738 / VS1838B IR Receiver Sensor",
+      "21-Key IR Remote Control",
+      "5V 1-Channel Relay Module",
+      "Lamp Holder & AC Bulb",
+      "Breadboard",
       "Jumper Wires",
-      "Lamp Holder",
-      "AC Bulb",
-      "USB Cable",
-      "Breadboard (Optional)",
-      "Arduino IDE"
+      "USB Cable"
     ],
     "componentRefs": [
       "arduino-uno",
       "ir-receiver",
       "ir-remote",
       "relay-module",
-      "jumper-wires"
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
     ],
     "guide": [
       "Connect the IR Receiver VCC to Arduino 5V.",
@@ -3102,17 +3739,20 @@
     },
     "components": [
       "Arduino UNO",
-      "IR Sensor ×6",
-      "Servo Motor ×1",
-      "16×2 LCD Display",
+      "6x TCRT5000 / LM393 IR Obstacle Sensors",
+      "SG90 Micro Servo Motor (Boom Barrier)",
+      "16x2 I2C LCD Display",
+      "Breadboard",
       "Jumper Wires",
-      "3D Printed Cars ×6"
+      "3D Printed Car Models"
     ],
     "componentRefs": [
       "arduino-uno",
       "ir-sensor",
       "servo-motor",
-      "lcd-16x2"
+      "16x2-lcd",
+      "breadboard",
+      "jumper-wires"
     ],
     "guide": [
       "Connect each IR sensor OUT pin to Arduino digital pins D2–D7; VCC to 5V, GND to GND",
@@ -3246,23 +3886,21 @@
     },
     "components": [
       "ESP8266 NodeMCU Microcontroller",
-      "3D Printed Vacuum Chassis (Thingiverse #5116129 by Marcus Lanzoni)",
       "5V 1-Channel Relay Module (Air Pump Switch)",
-      "12V DC High-Speed Air Vacuum Pump / Fan",
-      "L298N / L293D Motor Driver",
-      "2 N20 / TT DC Geared Motors",
-      "2 Drive Wheels & Caster Wheel",
-      "Dust Collection Filter Chamber",
-      "7.4V / 11.1V Rechargeable LiPo Battery",
-      "Power Switch",
-      "Jumper Wires & Hardware Fasteners"
+      "12V High-Speed DC Suction Fan / Vacuum Pump",
+      "L298N Motor Driver",
+      "2x N20 / TT DC Geared Motors",
+      "3D-Printed Vacuum Chassis",
+      "7.4V/11.1V LiPo Battery",
+      "Jumper Wires"
     ],
     "componentRefs": [
       "esp8266",
+      "nodemcu",
       "relay-module",
       "l298n",
       "dc-motor",
-      "vacuum-pump"
+      "jumper-wires"
     ],
     "guide": [
       "Step 1: 3D print the Marcus Lanzoni chassis components (Thingiverse #5116129).",
@@ -3435,16 +4073,44 @@
     ],
     "date": "2026-07-25",
     "author": "Tinkering Lab",
+    "components": [
+      "ESP32 / Arduino UNO",
+      "HC-SR04 Ultrasonic Distance Sensor",
+      "TCRT5000 IR Hazard Surface Sensor",
+      "5V Active Buzzer",
+      "16x2 I2C LCD Display",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "componentRefs": [
+      "esp32",
+      "arduino-uno",
+      "hc-sr04",
+      "ir-sensor",
+      "buzzer",
+      "16x2-lcd",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "ESP32 / Arduino UNO",
+      "obstacleSensor": "HC-SR04 Ultrasonic Rangefinder (2cm–400cm)",
+      "roadHazardSensor": "TCRT5000 Reflective Optical Sensor",
+      "display": "16x2 Character LCD via I2C",
+      "operatingVoltage": "5V DC"
+    },
     "image": "projects/images/surakshapath.jpg",
     "gallery": [
       {
-        "file": "projects/SurakshaPath/SurakshaPath.png",
+        "file": "projects/surakshapath/SurakshaPath.png",
         "caption": "surakshapath"
       }
     ],
     "presentationPdfs": [
       {
-        "file": "projects/SurakshaPath/SurakshaPath.pdf",
+        "file": "projects/surakshapath/SurakshaPath.pdf",
         "name": "SurakshaPath.pdf",
         "type": "pdf"
       }
@@ -3470,6 +4136,33 @@
     ],
     "date": "2026-08-04",
     "author": "Niktrix",
+    "components": [
+      "Arduino Uno",
+      "High-Sensitivity LM393 Sound Sensor Module",
+      "16x2 I2C LCD Display",
+      "RGB Status LEDs",
+      "Active Buzzer",
+      "Breadboard",
+      "Jumper Wires",
+      "USB Cable"
+    ],
+    "componentRefs": [
+      "arduino-uno",
+      "sound-sensor",
+      "16x2-lcd",
+      "led",
+      "buzzer",
+      "breadboard",
+      "jumper-wires",
+      "usb-cable"
+    ],
+    "hardwareSpecs": {
+      "microcontroller": "Arduino Uno (ATmega328P)",
+      "microphoneSensor": "Electret Condenser Microphone with LM393 Dual Output",
+      "display": "16x2 Character LCD via I2C PCF8574 Backpack",
+      "alertIndicators": "Tri-color Traffic Noise LEDs (Green < 55dB, Yellow 55-75dB, Red > 75dB)",
+      "operatingVoltage": "5V DC"
+    },
     "image": "projects/images/traffic-noise-meter.jpg",
     "gallery": [
       {
@@ -3513,6 +4206,23 @@
     "desc": "Unihicker project",
     "level": "Intermediate",
     "difficulty": 3,
+    "components": [
+      "UNIHIKER Single Board Computer with 2.8-inch Touchscreen",
+      "USB Type-C Cable",
+      "Gravity Sensor Interface Cables"
+    ],
+    "componentRefs": [
+      "unihicker-board",
+      "usb-cable"
+    ],
+    "hardwareSpecs": {
+      "cpu": "Quad-Core ARM Cortex-A35 (up to 1.2GHz)",
+      "coprocessor": "GD32VF103 RISC-V 108MHz MCU",
+      "screen": "2.8-inch 240x320 Color Touchscreen Display",
+      "memory": "512MB DDR3 RAM + 16GB eMMC Flash (Debian Linux)",
+      "connectivity": "2.4GHz Wi-Fi 802.11 b/g/n & Bluetooth 4.0",
+      "operatingVoltage": "5V DC via USB-C"
+    },
     "image": "projects/images/unihicker.jpg",
     "presentationPdfs": []
   },
@@ -3557,18 +4267,19 @@
       ]
     },
     "components": [
-      "ESP8266",
-      "MAX30102 Pulse Oximeter Sensor",
+      "ESP8266 (Wemos D1 Mini / NodeMCU)",
+      "MAX30102 High-Sensitivity Pulse Oximeter Sensor",
+      "Breadboard",
       "Jumper Wires",
-      "USB Cable",
-      "Breadboard"
+      "USB Cable"
     ],
     "componentRefs": [
       "esp8266",
+      "nodemcu",
       "max30102",
+      "breadboard",
       "jumper-wires",
-      "usb-cable",
-      "breadboard"
+      "usb-cable"
     ],
     "guide": [
       "Wire MAX30102 to ESP8266 via I2C: SDAâ†’D2, SCLâ†’D1, VCCâ†’3.3V, GNDâ†’GND",
@@ -3756,22 +4467,23 @@
       ]
     },
     "components": [
-      "Dynamo Motor (DC Generator)",
+      "Dynamo DC Generator Motor",
+      "LDR Light Sensor Module",
       "BC547 NPN Transistor",
-      "100kΩ Resistor",
-      "LDR Sensor",
-      "DC Battery (3.7V or 9V)",
-      "Savonius or Darrieus Rotor blades",
-      "1N4007 Diode (for battery charging protection)",
-      "Breadboard and Jumper wires",
-      "Structural frame base"
+      "100k Ohm Resistor",
+      "1N4007 Diode",
+      "3.7V / 9V DC Battery",
+      "Status LEDs",
+      "Savonius Rotor Blades",
+      "Breadboard",
+      "Jumper Wires"
     ],
     "componentRefs": [
-      "dynamo-motor",
-      "bc547-transistor",
-      "resistor-100k",
+      "dc-motor",
       "ldr-sensor",
-      "dc-battery"
+      "led",
+      "breadboard",
+      "jumper-wires"
     ],
     "guide": [
       "Assemble the vertical rotor blades onto the central shaft and couple it directly to the axle of the DC dynamo motor.",

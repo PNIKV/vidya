@@ -18,12 +18,13 @@ async function showPage(name, pathParam = null) {
 
   // Fetch HTML view and inject
   try {
-    const res = await fetch(`pages/${name}.html`);
-    if (!res.ok) throw new Error('Page not found');
+    const pageUrl = globalThis.getAppPath ? globalThis.getAppPath(`pages/${name}.html`) : `pages/${name}.html`;
+    const res = await fetch(pageUrl);
+    if (!res.ok) throw new Error(`Page not found: ${pageUrl}`);
     const html = await res.text();
     document.getElementById('app-root').innerHTML = html;
 
-    runPageLogic(name);
+    await runPageLogic(name);
   } catch (err) {
     console.error("Error in showPage:", err);
     document.getElementById('app-root').innerHTML = '<div class="page active"><div class="page-inner"><h1>404 - Page Not Found</h1></div></div>';
@@ -32,12 +33,12 @@ async function showPage(name, pathParam = null) {
   globalThis.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function runPageLogic(name) {
+async function runPageLogic(name) {
   if (name === 'home') renderHome();
   else if (name === 'sessions') renderSessionsList();
   else if (name === 'session-detail') renderSessionDetail();
-  else if (name === 'projects') renderProjects();
-  else if (name === 'project-detail') renderProjectDetail();
+  else if (name === 'projects') await renderProjects();
+  else if (name === 'project-detail') await renderProjectDetail();
   else if (name === 'about') renderAbout();
   else if (name === 'whiteboard' && globalThis.initWhiteboard) globalThis.initWhiteboard();
 }

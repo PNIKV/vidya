@@ -17,5 +17,32 @@
     "STEM"
   ],
   "date": "2026-08-06",
-  "author": "Tinkering Lab"
+  "author": "Tinkering Lab",
+  "components": [
+    "ESP32 / ESP8266 NodeMCU",
+    "MPU6050 6-Axis IMU Accelerometer",
+    "Active Buzzer",
+    "Emergency Cancel Push Button",
+    "Status LED",
+    "Breadboard",
+    "Jumper Wires",
+    "USB Cable"
+  ],
+  "componentRefs": [
+    "esp32",
+    "nodemcu",
+    "mpu6050",
+    "buzzer",
+    "led",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "ESP32 / ESP8266 NodeMCU Wi-Fi SoC",
+    "imuSensor": "MPU6050 6-Axis Accelerometer (±2g, ±4g, ±8g, ±16g scale)",
+    "fallAlgorithm": "Dual-phase impact shock + inactivity posture angle detection",
+    "wirelessAlert": "Wi-Fi Cloud Telemetry / Emergency Push Notification",
+    "operatingVoltage": "3.3V / 5V DC"
+  }
 }

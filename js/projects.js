@@ -2,10 +2,13 @@
 //  PROJECTS GALLERY
 // =============================================
 
-let tagsInitialized = false;
-
 function initProjectFilters() {
-  if (tagsInitialized || typeof PROJECTS === 'undefined' || !PROJECTS) return;
+  if (typeof PROJECTS === 'undefined' || !PROJECTS || PROJECTS.length === 0) return;
+  const mcSelect = document.getElementById('filterMicrocontroller');
+  const compSelect = document.getElementById('filterComponent');
+  if (!mcSelect || !compSelect) return;
+  if (mcSelect.children.length > 1 && compSelect.children.length > 1) return;
+
   const mcSet = new Set();
   const compSet = new Set();
 
@@ -18,99 +21,144 @@ function initProjectFilters() {
     }
   });
 
-  const mcSelect = document.getElementById('filterMicrocontroller');
-  if (mcSelect) {
-    Array.from(mcSet).sort((a, b) => a.localeCompare(b)).forEach(mc => {
-      mcSelect.innerHTML += `<option value="${mc}">${mc}</option>`;
-    });
-  }
-
-  const compSelect = document.getElementById('filterComponent');
-  if (compSelect) {
-    Array.from(compSet).sort((a, b) => a.localeCompare(b)).forEach(c => {
-      compSelect.innerHTML += `<option value="${c}">${c}</option>`;
-    });
-  }
-
-  tagsInitialized = true;
-}
-
-function renderProjects() {
-  initProjectFilters();
-  const grid = document.getElementById('projectsGrid');
-  const countEl = document.getElementById('projectsCount');
-  if (!grid) return;
-
-  if (typeof PROJECTS === 'undefined' || !PROJECTS?.length) {
-    grid.innerHTML = `<div class="projects-empty"><div class="projects-empty-icon">📂</div><h3>No Projects Found</h3></div>`;
-    if (countEl) countEl.textContent = '0 Projects';
-    return;
-  }
-
-  const searchInput = document.getElementById('projectSearchInput');
-  const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
-
-  const diffSelect = document.getElementById('filterDifficulty');
-  const diffVal = diffSelect ? diffSelect.value : 'all';
-
-  const mcSelect = document.getElementById('filterMicrocontroller');
-  const mcVal = mcSelect ? mcSelect.value : 'all';
-
-  const compSelect = document.getElementById('filterComponent');
-  const compVal = compSelect ? compSelect.value : 'all';
-
-  let filtered = PROJECTS.filter(p => {
-    // Search match
-    const searchString = `${p.id} ${p.title} ${p.subtitle || ''} ${p.desc || ''} ${p.fullDesc || ''}`.toLowerCase();
-    const matchesSearch = searchTerm === '' || searchString.includes(searchTerm);
-
-    const matchesDiff = diffVal === 'all' || p.difficulty == diffVal;
-
-    const matchesMc = mcVal === 'all' || (p.hardwareSpecs && p.hardwareSpecs.microcontroller === mcVal);
-
-    const matchesComp = compVal === 'all' || p.componentRefs?.includes(compVal);
-
-    return matchesSearch && matchesDiff && matchesMc && matchesComp;
+  mcSelect.innerHTML = '<option value="all">All Boards</option>';
+  Array.from(mcSet).sort((a, b) => a.localeCompare(b)).forEach(mc => {
+    mcSelect.innerHTML += `<option value="${mc}">${mc}</option>`;
   });
 
-  if (countEl) {
-    countEl.textContent = `Showing ${filtered.length} Project${filtered.length === 1 ? '' : 's'}`;
-  }
+  compSelect.innerHTML = '<option value="all">All Components</option>';
+  Array.from(compSet).sort((a, b) => a.localeCompare(b)).forEach(c => {
+    compSelect.innerHTML += `<option value="${c}">${c}</option>`;
+  });
+}
 
-  if (filtered.length === 0) {
-    grid.innerHTML = `<div class="projects-empty"><div class="projects-empty-icon">🔍</div><h3>No Matches</h3><p>Try adjusting your filters or search term.</p></div>`;
+async function renderProjects() {
+  console.log('[renderProjects] START — PROJECTS type:', typeof PROJECTS, ', length:', (typeof PROJECTS !== 'undefined' && PROJECTS) ? PROJECTS.length : 'N/A');
+  const grid = document.getElementById('projectsGrid');
+  const countEl = document.getElementById('projectsCount');
+  if (!grid) {
+    console.warn('[renderProjects] ABORT — #projectsGrid not found in DOM');
     return;
   }
 
-  grid.innerHTML = filtered.map(p => `
-    <div class="project-card" onclick="openProject('${p.id}')" style="--card-glow: ${p.color || 'var(--orange)'}33">
-      <div class="project-img-wrap">
-        <img src="${p.image || ''}" alt="${p.title}" onerror="this.src='icons/vidya-logo.png'; this.classList.add('fallback-img')" class="project-img" />
-        <div class="project-img-overlay"></div>
-      </div>
-      
-      <div class="project-body">
-        <div class="project-body-top">
-          <span class="project-level level-${p.level || 'Beginner'}">${p.level || 'Beginner'}</span>
+  try {
+    // Step 1: If PROJECTS is empty, try to fetch it
+    if (typeof PROJECTS === 'undefined' || !PROJECTS || PROJECTS.length === 0) {
+      console.log('[renderProjects] PROJECTS is empty, attempting fallback fetch...');
+      grid.innerHTML = `<div class="projects-empty"><div class="projects-empty-icon">⏳</div><h3>Loading Projects...</h3></div>`;
+      if (countEl) countEl.textContent = 'Loading...';
+
+      try {
+        const res = await fetch('projects/datafolder/compiled_projects.json');
+        console.log('[renderProjects] Fallback fetch status:', res.status, res.ok);
+        if (res.ok) {
+          const data = await res.json();
+          console.log('[renderProjects] Fallback fetch got', Array.isArray(data) ? data.length : 'non-array', 'items');
+          if (data && Array.isArray(data) && data.length > 0) {
+            PROJECTS.length = 0;
+            data.forEach(p => PROJECTS.push(p));
+          }
+        }
+      } catch (fetchErr) {
+        console.error('[renderProjects] Fallback fetch FAILED:', fetchErr);
+      }
+    }
+
+    // Step 2: Initialize filters (with safety wrapper)
+    try {
+      initProjectFilters();
+    } catch (filterErr) {
+      console.error('[renderProjects] initProjectFilters() threw:', filterErr);
+    }
+
+    // Step 3: Check if we have projects after loading
+    if (!PROJECTS || PROJECTS.length === 0) {
+      console.warn('[renderProjects] PROJECTS still empty after fallback fetch');
+      grid.innerHTML = `<div class="projects-empty"><div class="projects-empty-icon">📂</div><h3>No Projects Found</h3><p style="color:var(--text-dim);font-size:0.85rem">Check browser console for errors</p></div>`;
+      if (countEl) countEl.textContent = '0 Projects';
+      return;
+    }
+
+    console.log('[renderProjects] Rendering', PROJECTS.length, 'projects...');
+
+    // Step 4: Get filter values
+    const searchInput = document.getElementById('projectSearchInput');
+    const searchTerm = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    const diffSelect = document.getElementById('filterDifficulty');
+    const diffVal = diffSelect ? diffSelect.value : 'all';
+
+    const mcSelect = document.getElementById('filterMicrocontroller');
+    const mcVal = mcSelect ? mcSelect.value : 'all';
+
+    const compSelect = document.getElementById('filterComponent');
+    const compVal = compSelect ? compSelect.value : 'all';
+
+    // Step 5: Filter projects
+    let filtered = PROJECTS.filter(p => {
+      const searchString = `${p.id || ''} ${p.title || ''} ${p.subtitle || ''} ${p.desc || ''} ${p.fullDesc || ''}`.toLowerCase();
+      const matchesSearch = searchTerm === '' || searchString.includes(searchTerm);
+      const matchesDiff = diffVal === 'all' || p.difficulty == diffVal;
+      const matchesMc = mcVal === 'all' || (p.hardwareSpecs && p.hardwareSpecs.microcontroller === mcVal);
+      const matchesComp = compVal === 'all' || (p.componentRefs && p.componentRefs.includes(compVal));
+      return matchesSearch && matchesDiff && matchesMc && matchesComp;
+    });
+
+    console.log('[renderProjects] Filtered down to', filtered.length, 'projects');
+
+    // Step 6: Update counts
+    if (countEl) {
+      countEl.textContent = `Showing ${filtered.length} Project${filtered.length === 1 ? '' : 's'}`;
+    }
+    const inlineCount = document.getElementById('projectsCountInline');
+    if (inlineCount) {
+      inlineCount.textContent = `(${filtered.length})`;
+    }
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `<div class="projects-empty"><div class="projects-empty-icon">🔍</div><h3>No Matches</h3><p>Try adjusting your filters or search term.</p></div>`;
+      return;
+    }
+
+    // Step 7: Build card HTML (with null-safe access)
+    grid.innerHTML = filtered.map(p => `
+      <div class="project-card" onclick="openProject('${p.id || ''}')" style="--card-glow: ${p.color || 'var(--orange)'}33">
+        <div class="project-img-wrap">
+          <img src="${p.image || ''}" alt="${p.title || 'Project'}" onerror="this.src='icons/vidya-logo.png'; this.classList.add('fallback-img')" class="project-img" />
+          <div class="project-img-overlay"></div>
         </div>
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
         
-        <div class="project-difficulty-wrap">
-          <span class="project-difficulty-label">Diff</span>
-          <div class="project-difficulty-bars">
-            ${[1, 2, 3, 4, 5].map(n => `<div class="difficulty-bar ${n <= (p.difficulty || 1) ? 'filled' : ''}" style="--bar-color: ${p.color || 'var(--orange)'}"></div>`).join('')}
+        <div class="project-body">
+          <div class="project-body-top">
+            <span class="project-level level-${p.level || 'Beginner'}">${p.level || 'Beginner'}</span>
+          </div>
+          <h3>${p.title || 'Untitled Project'}</h3>
+          <p>${p.desc || p.subtitle || 'No description available'}</p>
+          
+          <div class="project-difficulty-wrap">
+            <span class="project-difficulty-label">Diff</span>
+            <div class="project-difficulty-bars">
+              ${[1, 2, 3, 4, 5].map(n => `<div class="difficulty-bar ${n <= (p.difficulty || 1) ? 'filled' : ''}" style="--bar-color: ${p.color || 'var(--orange)'}"></div>`).join('')}
+            </div>
           </div>
         </div>
-      </div>
-      
-      <div class="project-card-footer">
-        <div class="project-card-meta">
+        
+        <div class="project-card-footer">
+          <div class="project-card-meta">
+          </div>
+          <button class="project-card-open" style="background-color: ${p.color || 'var(--orange)'};" onclick="event.stopPropagation();openProject('${p.id || ''}')">Open ↗</button>
         </div>
-        <button class="project-card-open" style="background-color: ${p.color || 'var(--orange)'};" onclick="event.stopPropagation();openProject('${p.id}')">Open ↗</button>
       </div>
-    </div>
-  `).join('');
+    `).join('');
+
+    console.log('[renderProjects] DONE — injected', filtered.length, 'cards into grid');
+
+  } catch (err) {
+    console.error('[renderProjects] FATAL ERROR:', err);
+    if (grid) {
+      grid.innerHTML = `<div class="projects-empty" style="color:#ff6b6b"><div class="projects-empty-icon">⚠️</div><h3>Error Loading Projects</h3><p style="font-size:0.85rem;color:#aaa;word-break:break-all">${err.message}</p></div>`;
+    }
+  }
 }
 
 function filterProjects() {
@@ -122,15 +170,39 @@ function filterProjects() {
 // =============================================
 
 function openProject(id) {
-  currentProject = PROJECTS.find(p => p.id === id);
-  if (!currentProject) return;
+  globalThis.currentProject = PROJECTS.find(p => p.id === id);
+  if (!globalThis.currentProject) return;
   showPage('project-detail', id);
 }
 
 async function renderProjectDetail() {
-  const p = currentProject;
+  let p = globalThis.currentProject || currentProject;
+  if (!p && typeof PROJECTS !== 'undefined' && PROJECTS && PROJECTS.length > 0) {
+    const pathParts = globalThis.location.pathname.split('/').filter(Boolean);
+    const projId = pathParts.at(-1);
+    if (projId && projId !== 'project') {
+      p = PROJECTS.find(item => item.id === projId);
+      if (p) {
+        globalThis.currentProject = p;
+        currentProject = p;
+      }
+    }
+  }
+
   const container = document.getElementById('projectDetailContent');
   if (!container) return;
+
+  if (!p) {
+    console.warn('[renderProjectDetail] No project found for rendering detail view');
+    container.innerHTML = `
+      <div style="text-align: center; padding: 100px 20px;">
+        <h2 style="color: var(--orange); margin-bottom: 12px; font-family: var(--font-head);">Project Not Found</h2>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">We couldn't locate the requested project data.</p>
+        <button onclick="showPage('projects')" class="btn-primary">← Back to Projects Gallery</button>
+      </div>
+    `;
+    return;
+  }
 
   const files3dCount = p.files3d?.length || 0;
   const codeCount = p.codeFiles?.length || 0;
@@ -192,23 +264,55 @@ async function renderProjectDetail() {
   const futureList = p.futureScope || p.future_scope;
 
   container.innerHTML = `
-    <!-- Header -->
+    <!-- Top Sticky Navigation & Action Bar -->
+    <div class="pd-top-navbar">
+      <div class="pd-top-navbar-inner">
+        <!-- Back Button -->
+        <button class="pd-back" onclick="showPage('projects')">
+          <span class="pd-back-arrow">←</span> <span class="pd-back-text">Back</span>
+        </button>
+
+        <!-- Tabs Nav filling horizontal space beside Back button -->
+        <div class="pd-tabs" id="projectTopTabs">
+          <button class="pd-tab active" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('overview', this)">📋 Overview</button>
+          ${hasLiveDashboard ? `<button class="pd-tab pd-tab-dashboard" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('dashboard', this)">🖥️ Live Dashboard</button>` : ''}
+          ${hasPresentationTab ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('presentation', this)">📑 Presentation</button>` : ''}
+          ${vivaCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('viva', this)">❓ Viva & FAQ (${vivaCount})</button>` : ''}
+          ${hasAchievements ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('achievements', this)">🏆 Achievements</button>` : ''}
+          ${files3dCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('3d', this)">🖨️ 3D (${files3dCount})</button>` : ''}
+          ${codeCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('code', this)">💻 Code (${codeCount})</button>` : ''}
+          ${dataVideoCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('videos', this)">🎬 Videos (${dataVideoCount})</button>` : ''}
+          ${imgCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('gallery', this)">🖼️ Gallery (${imgCount})</button>` : ''}
+          <button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('resources', this)">🔗 Resources & Components</button>
+        </div>
+
+        <!-- Quick Hardware Action Tools -->
+        <div class="pd-top-tools">
+          <button onclick="openDriversModal()" class="pd-nav-tool-btn pd-tool-drivers" title="Download CH340 / CP210x USB Drivers">
+            <span>💾</span> <span class="tool-text">Drivers</span>
+          </button>
+          <button onclick="openWebSerialMonitorModal()" class="pd-nav-tool-btn pd-tool-serial" title="Open Web Serial Monitor">
+            <span>🔌</span> <span class="tool-text">Serial Monitor</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Banner & Hero Header -->
     <div class="pd-header" style="position:relative; overflow:hidden;">
-      <button class="pd-back" onclick="showPage('projects')" style="position:relative; z-index:10;">← Back to Projects</button>
-      
       <div class="pd-banner" style="background: #000; position:relative;">
         ${bannerContent}
         <div class="pd-banner-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background: linear-gradient(to top, #0d0f1a, transparent); z-index:1;"></div>
         <div class="pd-banner-content" style="z-index:2;">
           <h1 class="pd-banner-title" style="--project-color: ${p.color || 'var(--orange)'}">${p.title}</h1>
           
-          <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
-            ${p.liveUrl ? `<button onclick="switchProjectTab('dashboard', document.querySelector('.pd-tab-dashboard'))" class="btn-primary" style="background: ${p.color || 'var(--orange)'}; border: none; box-shadow: 0 0 20px ${p.color || 'var(--orange)'}44; padding: 12px 24px; font-size: 0.95rem; cursor: pointer;">🚀 Launch Live Project / Dashboard</button>` : ''}
-            ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" class="btn-outline" style="border-color: #fff; color: #fff; padding: 12px 24px; font-size: 0.95rem;">GitHub Repo ↗</a>` : ''}
-            <div style="display: flex; gap: 12px; align-items: center;">
+          <div style="display: flex; gap: 14px; align-items: center; flex-wrap: wrap;">
+            ${p.liveUrl ? `<button onclick="switchProjectTab('dashboard', document.querySelector('.pd-tab-dashboard'))" class="btn-primary" style="background: ${p.color || 'var(--orange)'}; border: none; box-shadow: 0 0 20px ${p.color || 'var(--orange)'}44; padding: 10px 20px; font-size: 0.92rem; cursor: pointer;">🚀 Launch Live Project</button>` : ''}
+            ${p.githubUrl ? `<a href="${p.githubUrl}" target="_blank" class="btn-outline" style="border-color: #fff; color: #fff; padding: 10px 20px; font-size: 0.92rem;">GitHub Repo ↗</a>` : ''}
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
               <span class="pd-meta-chip">👤 ${p.author || 'Tinkering Lab'}</span>
               <span class="pd-meta-chip">🕒 ${p.date || '2026'}</span>
-              <div class="pd-difficulty-stars" style="color: ${p.color || 'var(--orange)'}; font-size: 1.2rem; margin-left: 4px;">
+              <div class="pd-difficulty-stars" style="color: ${p.color || 'var(--orange)'}; font-size: 1.1rem; margin-left: 2px;">
                 ${'★'.repeat(p.difficulty || 1)}${'☆'.repeat(5 - (p.difficulty || 1))}
               </div>
             </div>
@@ -216,32 +320,16 @@ async function renderProjectDetail() {
         </div>
       </div>
       
-      <div class="pd-team-section" style="margin-bottom: 32px; display: flex; gap: 24px; align-items: center; flex-wrap: wrap;">
+      <div class="pd-team-section" style="margin-bottom: 24px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap;">
         ${(p.team || []).length > 0 ? p.team.map(member => `
           <div class="pd-team-member" style="display: flex; align-items: center; gap: 10px;">
-            <div class="pd-team-avatar" style="width: 40px; height: 40px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-weight: bold; border: 2px solid ${p.color || 'var(--orange)'};">${member.name.substring(0, 2).toUpperCase()}</div>
+            <div class="pd-team-avatar" style="width: 38px; height: 38px; border-radius: 50%; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.85rem; border: 2px solid ${p.color || 'var(--orange)'};">${member.name.substring(0, 2).toUpperCase()}</div>
             <div>
-              <div style="font-weight: bold; font-size: 0.95rem;">${member.name}</div>
-              <div style="font-size: 0.8rem; color: var(--text-muted);">${member.role}</div>
+              <div style="font-weight: bold; font-size: 0.92rem;">${member.name}</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">${member.role}</div>
             </div>
           </div>
         `).join('') : ''}
-      </div>
-    </div>
-
-    <!-- Tabs Nav -->
-    <div class="pd-tabs-container">
-      <div class="pd-tabs" style="overflow-x: auto; flex-wrap: nowrap; padding-bottom: 10px;">
-        <button class="pd-tab active" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('overview', this)">📋 Overview</button>
-        ${hasLiveDashboard ? `<button class="pd-tab pd-tab-dashboard" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('dashboard', this)">🖥️ Live Dashboard</button>` : ''}
-        ${hasPresentationTab ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('presentation', this)">📑 Presentation</button>` : ''}
-        ${vivaCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('viva', this)">❓ Viva & FAQ (${vivaCount})</button>` : ''}
-        ${hasAchievements ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('achievements', this)">🏆 Achievements</button>` : ''}
-        ${files3dCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('3d', this)">🖨️ 3D (${files3dCount})</button>` : ''}
-        ${codeCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('code', this)">💻 Code (${codeCount})</button>` : ''}
-        ${dataVideoCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('videos', this)">🎬 Videos (${dataVideoCount})</button>` : ''}
-        ${imgCount > 0 ? `<button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('gallery', this)">🖼️ Gallery (${imgCount})</button>` : ''}
-        <button class="pd-tab" style="--project-color: ${p.color || 'var(--orange)'}" onclick="switchProjectTab('resources', this)">🔗 Resources & Components</button>
       </div>
     </div>
 
@@ -662,10 +750,12 @@ async function renderProjectDetail() {
     <div id="ptab-gallery" class="pd-tab-content">
       ${imgCount === 0 ? renderProjectEmptyState('🖼️', 'No Gallery Images Yet', 'Photos of the project will appear here.') : `
         <div class="gallery-grid">
-          ${p.gallery.map((img, i) => `
+          ${p.gallery.map((img, i) => {
+            const imgSrc = globalThis.getAppPath ? globalThis.getAppPath(img.file) : img.file;
+            return `
             <div class="gallery-item" onclick="openProjectLightbox(${i})">
               <div class="gallery-img-wrap">
-                <img src="${img.file}" alt="${img.caption || ''}" class="gallery-img" loading="lazy" 
+                <img src="${imgSrc}" alt="${img.caption || ''}" class="gallery-img" loading="lazy" 
                   onerror="this.parentElement.innerHTML='<div class=&quot;gallery-img-missing&quot;><span>🖼️</span><small>Missing Image</small></div>'" />
                 <div class="gallery-overlay"><span class="gallery-zoom">🔍</span></div>
               </div>
@@ -674,7 +764,8 @@ async function renderProjectDetail() {
                 <p>${img.caption || ''}</p>
               </div>
             </div>
-          `).join('')}
+          `;
+          }).join('')}
         </div>
       `}
     </div>
@@ -784,10 +875,11 @@ globalThis.openFullscreenMedia = function (url, type) {
   }
 
   const content = document.getElementById('mediaFullscreenContent');
+  const fullUrl = globalThis.getAppPath ? globalThis.getAppPath(url) : url;
   if (type === 'img') {
-    content.innerHTML = `<img src="${url}" style="max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />`;
+    content.innerHTML = `<img src="${fullUrl}" style="max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />`;
   } else if (type === 'pdf') {
-    content.innerHTML = `<iframe src="${url}#toolbar=0&navpanes=0&view=Fit" style="width:100%; height:100%; border:none; border-radius:8px; background:white;"></iframe>`;
+    content.innerHTML = `<iframe src="${fullUrl}#toolbar=0&navpanes=0&view=Fit" style="width:100%; height:100%; border:none; border-radius:8px; background:white;"></iframe>`;
   }
 
   modal.style.display = 'flex';
@@ -870,7 +962,8 @@ async function loadComponentCards(project) {
     const componentData = await Promise.all(
       refs.map(async (refId) => {
         try {
-          const res = await fetch(`data/components/${refId}.json`);
+          const compUrl = globalThis.getAppPath ? globalThis.getAppPath(`data/components/${refId}.json`) : `data/components/${refId}.json`;
+          const res = await fetch(compUrl);
           if (!res.ok) return null;
           return await res.json();
         } catch (e) {
@@ -950,7 +1043,7 @@ async function loadComponentCards(project) {
               ${(() => {
           return comp.libraryName ? `<div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 8px;">📦 Library: ${comp.libraryName}</div>` : '';
         })()}
-              <pre style="background: #1e1e1e; color: #d4d4d4; padding: 16px; border-radius: 8px; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; max-height: 250px; overflow-y: auto;">${comp.codeSnippet.replaceAll('\\n', '\n')}</pre>
+              <pre style="background: #1e1e1e; color: #d4d4d4; padding: 16px; border-radius: 8px; overflow-x: auto; font-size: 0.8rem; line-height: 1.5; max-height: 250px; overflow-y: auto;">${comp.codeSnippet.replaceAll(String.raw`\n`, '\n')}</pre>
             </div>
           ` : ''}
 
@@ -989,19 +1082,41 @@ function renderProjectEmptyState(icon, title, desc) {
   `;
 }
 
-function switchProjectTab(name, btn) {
+globalThis.switchProjectTab = function(name, btn) {
   document.querySelectorAll('.pd-tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.pd-tab').forEach(t => t.classList.remove('active'));
 
   const tab = document.getElementById('ptab-' + name);
-  if (tab) tab.classList.add('active');
-  if (btn) btn.classList.add('active');
-}
+  if (tab) {
+    tab.classList.add('active');
+  }
+
+  // Find matching button element
+  const targetBtn = btn || document.querySelector(`.pd-tab[onclick*="'${name}'"]`);
+  if (targetBtn) {
+    targetBtn.classList.add('active');
+    try {
+      targetBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    } catch (e) {}
+  }
+
+  // Smoothly scroll the page up so the project banner moves up and the active tab content is brought into full view
+  const topNav = document.querySelector('.pd-top-navbar');
+  const targetElement = tab || topNav;
+  if (targetElement) {
+    const navOffset = 130; // Main navbar + sticky HUD bar clearance
+    const elementTop = targetElement.getBoundingClientRect().top + globalThis.scrollY;
+    globalThis.scrollTo({
+      top: Math.max(0, elementTop - navOffset),
+      behavior: 'smooth'
+    });
+  }
+};
 
 globalThis._galleryIndex = 0;
 
 globalThis.openProjectLightbox = function(idx) {
-  const p = currentProject;
+  const p = globalThis.currentProject || currentProject;
   if (!p || !p.gallery || !p.gallery.length) return;
 
   globalThis._galleryIndex = idx;
@@ -1029,7 +1144,7 @@ globalThis.openProjectLightbox = function(idx) {
         <button onclick="globalThis.navProjectLightbox(-1)" style="position:absolute; left:20px; z-index:100001; background:rgba(0,0,0,0.6); color:#fff; border:1px solid rgba(255,255,255,0.2); border-radius:50%; width:50px; height:50px; font-size:1.5rem; cursor:pointer; backdrop-filter:blur(4px); transition:background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(0,0,0,0.6)'">❮</button>
         
         <div style="width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; padding: 20px;">
-          <img id="pGalleryImg" src="" style="max-width:92%; max-height:82vh; object-fit:contain; border-radius:12px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);" />
+          <img id="pGalleryImg" src="" style="max-width:92%; max-height:84vh; width:auto; height:auto; object-fit:contain; border-radius:12px; box-shadow: 0 20px 50px rgba(0,0,0,0.8); transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);" />
           <div id="pGalleryCaption" style="margin-top:14px; color:#e0e0e0; font-size:1rem; text-align:center; max-width:800px; background:rgba(255,255,255,0.1); padding:8px 18px; border-radius:20px; backdrop-filter:blur(8px);"></div>
         </div>
 
@@ -1056,10 +1171,11 @@ globalThis.openProjectLightbox = function(idx) {
 };
 
 globalThis.updateProjectLightboxState = function() {
-  const p = currentProject;
+  const p = globalThis.currentProject || currentProject;
   if (!p || !p.gallery || !p.gallery.length) return;
   const idx = globalThis._galleryIndex;
   const imgData = p.gallery[idx];
+  if (!imgData) return;
 
   const titleEl = document.getElementById('pGalleryTitle');
   const counterEl = document.getElementById('pGalleryCounter');
@@ -1068,21 +1184,26 @@ globalThis.updateProjectLightboxState = function() {
   const dlEl = document.getElementById('pGalleryDownload');
   const thumbsEl = document.getElementById('pGalleryThumbs');
 
+  const resolvedUrl = globalThis.getAppPath ? globalThis.getAppPath(imgData.file) : imgData.file;
+
   if (titleEl) titleEl.textContent = p.title;
   if (counterEl) counterEl.textContent = `${idx + 1} / ${p.gallery.length}`;
-  if (imgEl) imgEl.src = imgData.file;
+  if (imgEl) imgEl.src = resolvedUrl;
   if (capEl) capEl.textContent = imgData.caption || p.title;
-  if (dlEl) dlEl.href = imgData.file;
+  if (dlEl) dlEl.href = resolvedUrl;
 
   if (thumbsEl) {
-    thumbsEl.innerHTML = p.gallery.map((g, i) => `
-      <img src="${g.file}" onclick="globalThis._galleryIndex=${i}; globalThis.updateProjectLightboxState();" style="width:50px; height:50px; object-fit:cover; border-radius:8px; cursor:pointer; opacity:${i === idx ? 1 : 0.4}; border: 2px solid ${i === idx ? (p.color || 'var(--orange)') : 'transparent'}; transition: all 0.2s;" />
-    `).join('');
+    thumbsEl.innerHTML = p.gallery.map((g, i) => {
+      const thumbUrl = globalThis.getAppPath ? globalThis.getAppPath(g.file) : g.file;
+      return `
+        <img src="${thumbUrl}" onclick="globalThis._galleryIndex=${i}; globalThis.updateProjectLightboxState();" style="width:50px; height:50px; object-fit:cover; border-radius:8px; cursor:pointer; opacity:${i === idx ? 1 : 0.4}; border: 2px solid ${i === idx ? (p.color || 'var(--orange)') : 'transparent'}; transition: all 0.2s;" />
+      `;
+    }).join('');
   }
 };
 
 globalThis.navProjectLightbox = function(dir) {
-  const p = currentProject;
+  const p = globalThis.currentProject || currentProject;
   if (!p || !p.gallery) return;
   globalThis._galleryIndex = (globalThis._galleryIndex + dir + p.gallery.length) % p.gallery.length;
   globalThis.updateProjectLightboxState();
@@ -1101,8 +1222,8 @@ globalThis.toggleGalleryFullscreen = function() {
   if (!modal) return;
   if (!document.fullscreenElement) {
     if (modal.requestFullscreen) modal.requestFullscreen();
-  } else {
-    if (document.exitFullscreen) document.exitFullscreen();
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
   }
 };
 
@@ -1112,8 +1233,8 @@ globalThis.toggleDashboardFullscreen = function() {
   if (!document.fullscreenElement) {
     if (container.requestFullscreen) container.requestFullscreen();
     else if (container.webkitRequestFullscreen) container.webkitRequestFullscreen();
-  } else {
-    if (document.exitFullscreen) document.exitFullscreen();
+  } else if (document.exitFullscreen) {
+    document.exitFullscreen();
   }
 };
 
@@ -1122,11 +1243,11 @@ globalThis.toggleDashboardFullscreen = function() {
 // =============================================
 globalThis.highlightCode = function (code) {
   let highlighted = code
-    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;')
     .replace(/\b(int|float|double|char|void|bool|String|auto)\b/g, '<span class="type">$1</span>')
     .replace(/\b(if|else|for|while|return|break|continue|switch|case|default|class|struct)\b/g, '<span class="keyword">$1</span>')
     .replace(/\b(true|false|null|NULL)\b/g, '<span class="keyword">$1</span>')
-    .replace(/\b([A-Za-z0-9_]+)\s*\(/g, '<span class="function">$1</span>(')
+    .replace(/\b(\w+)\s*\(/g, '<span class="function">$1</span>(')
     .replace(/("[^"]*")/g, '<span class="string">$1</span>')
     .replace(/(\b\d+(\.\d+)?\b)/g, '<span class="number">$1</span>')
     .replace(/(\/\/[^\n]*)/g, '<span class="comment">$1</span>')
@@ -1327,6 +1448,84 @@ globalThis.closeSerialMonitorModal = function() {
   if (overlay) overlay.classList.remove('active');
 };
 
+// =============================================
+//  USB DRIVERS DOWNLOAD MODAL
+// =============================================
+globalThis.openDriversModal = function() {
+  if (!document.getElementById('driversModalOverlay')) {
+    const html = `
+      <div class="firmware-modal-overlay" id="driversModalOverlay">
+        <div class="firmware-modal" style="max-width: 720px; width: 95%;">
+          <div class="firmware-header" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(16, 185, 129, 0.1));">
+            <h3 style="display: flex; align-items: center; gap: 10px; margin: 0; font-size: 1.25rem;">
+              <span>💾</span> USB Microcontroller Drivers & Troubleshooting
+            </h3>
+            <button class="firmware-close" onclick="closeDriversModal()">✕</button>
+          </div>
+          <div class="firmware-body" style="padding: 24px;">
+            <p style="color: var(--text-muted); font-size: 0.95rem; margin-top: 0; margin-bottom: 20px; line-height: 1.6;">
+              If your PC does not recognize your Arduino, NodeMCU, or ESP32 board in the Serial Monitor or IDE, install the required USB-to-UART bridge driver below:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-bottom: 24px;">
+              <!-- Driver 1: CH340 -->
+              <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.borderColor='#3b82f6'" onmouseout="this.style.borderColor='var(--border)'">
+                <div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <strong style="color: #60a5fa; font-size: 1.05rem;">CH340 / CH341 Driver</strong>
+                    <span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: bold;">v3.4 (Windows)</span>
+                  </div>
+                  <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+                    For Arduino Uno / Nano (CH340 chip), NodeMCU V3, Wemos D1 Mini clone boards.
+                  </p>
+                </div>
+                <a href="data/drivers/CH34x_Install_Windows_v3_4.EXE" download class="btn-primary" style="text-align: center; text-decoration: none; padding: 10px 16px; font-size: 0.9rem; background: #2563eb; border: none; border-radius: 8px; color: #fff; font-weight: 600; display: block;">
+                  ⬇️ Download CH340 Driver (243 KB)
+                </a>
+              </div>
+
+              <!-- Driver 2: CP210x -->
+              <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s;" onmouseover="this.style.borderColor='#10b981'" onmouseout="this.style.borderColor='var(--border)'">
+                <div>
+                  <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                    <strong style="color: #34d399; font-size: 1.05rem;">Silicon Labs CP210x VCP</strong>
+                    <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: bold;">x64 (Windows)</span>
+                  </div>
+                  <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5; margin-bottom: 16px;">
+                    For ESP32 NodeMCU, ESP-WROOM-32, NodeMCU V2 (CP2102 chip), and official boards.
+                  </p>
+                </div>
+                <a href="data/drivers/CP210xVCPInstaller_x64.exe" download class="btn-primary" style="text-align: center; text-decoration: none; padding: 10px 16px; font-size: 0.9rem; background: #059669; border: none; border-radius: 8px; color: #fff; font-weight: 600; display: block;">
+                  ⬇️ Download CP210x Driver (1.0 MB)
+                </a>
+              </div>
+            </div>
+
+            <!-- Quick Troubleshooting Steps -->
+            <div style="background: var(--surface2); padding: 16px 20px; border-radius: 10px; border-left: 4px solid #f59e0b;">
+              <strong style="color: #f59e0b; font-size: 0.95rem; display: block; margin-bottom: 6px;">💡 Hardware Troubleshooting Tips:</strong>
+              <ul style="margin: 0; padding-left: 20px; color: var(--text); font-size: 0.88rem; line-height: 1.6;">
+                <li>Always use a <strong>4-wire USB data cable</strong> (avoid charging-only 2-wire cables).</li>
+                <li>After installing, un-plug and re-plug your microcontroller USB cable.</li>
+                <li>Click <strong>🔌 Serial Monitor</strong> on the top bar to verify live communication!</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', html);
+  }
+
+  const overlay = document.getElementById('driversModalOverlay');
+  if (overlay) overlay.classList.add('active');
+};
+
+globalThis.closeDriversModal = function() {
+  const overlay = document.getElementById('driversModalOverlay');
+  if (overlay) overlay.classList.remove('active');
+};
+
 globalThis.toggleWebSerialConnection = async function() {
   if (isSerialConnected) {
     await disconnectWebSerial();
@@ -1337,7 +1536,7 @@ globalThis.toggleWebSerialConnection = async function() {
 
 globalThis.connectWebSerial = async function() {
   try {
-    const baudRate = parseInt(document.getElementById('serialBaudRate').value) || 115200;
+    const baudRate = Number.parseInt(document.getElementById('serialBaudRate').value, 10) || 115200;
     serialPort = await navigator.serial.requestPort();
     await serialPort.open({ baudRate: baudRate });
 
@@ -1373,7 +1572,7 @@ globalThis.disconnectWebSerial = async function() {
 
 async function readSerialLoop() {
   const textDecoder = new TextDecoderStream();
-  const readableStreamClosed = serialPort.readable.pipeTo(textDecoder.writable);
+  serialPort.readable.pipeTo(textDecoder.writable).catch(() => {});
   serialReader = textDecoder.readable.getReader();
 
   try {
@@ -1402,7 +1601,7 @@ globalThis.sendSerialCommand = async function() {
   else if (ending === 'nl') text += '\n';
 
   const textEncoder = new TextEncoderStream();
-  const writableStreamClosed = textEncoder.readable.pipeTo(serialPort.writable);
+  textEncoder.readable.pipeTo(serialPort.writable).catch(() => {});
   const writer = textEncoder.writable.getWriter();
 
   await writer.write(text);

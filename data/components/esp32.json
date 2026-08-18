@@ -1,0 +1,34 @@
+{
+  "id": "esp32",
+  "name": "ESP32 Dev Board",
+  "fullName": "ESP32 NodeMCU Wi-Fi & Dual-Mode Bluetooth 30-Pin / 38-Pin Development Board",
+  "category": "Microcontroller",
+  "color": "#E11D48",
+  "tagline": "Dual-Core 240MHz SoC with built-in Wi-Fi, Bluetooth BLE, and hardware crypto accelerators",
+  "description": "The ESP32 is a powerful microcontroller board based on the Espressif ESP-WROOM-32 module. With dual Xtensa 32-bit LX6 CPU cores operating up to 240 MHz, integrated 802.11 b/g/n Wi-Fi, and Bluetooth 4.2 / BLE, it is ideal for advanced IoT, machine learning edge computing, and robotics.",
+  "specs": {
+    "microcontroller": "Tensilica Xtensa Dual-Core 32-bit LX6 microprocessor",
+    "clockSpeed": "Up to 240 MHz (600 DMIPS)",
+    "operatingVoltage": "3.3V DC (5V via USB Micro-B / USB-C)",
+    "wireless": "Wi-Fi 802.11 b/g/n (up to 150 Mbps) + Bluetooth v4.2 BR/EDR and BLE",
+    "sram": "520 KB internal SRAM",
+    "flashMemory": "4MB / 8MB SPI Flash",
+    "gpio": "36 GPIO pins with capacitive touch, 12-bit ADC, 8-bit DAC, I2C, SPI, UART, PWM"
+  },
+  "pinout": [
+    { "pin": "3V3", "name": "3.3V Out", "desc": "Regulated 3.3V output (max 500mA)", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "Common Ground pins", "color": "#1E293B" },
+    { "pin": "VIN / 5V", "name": "Power In", "desc": "5V power input from external supply or USB", "color": "#EF4444" },
+    { "pin": "GPIO21", "name": "SDA", "desc": "Default I2C Data line", "color": "#8B5CF6" },
+    { "pin": "GPIO22", "name": "SCL", "desc": "Default I2C Clock line", "color": "#8B5CF6" },
+    { "pin": "GPIO1 / GPIO3", "name": "TX0 / RX0", "desc": "Primary UART serial programming pins", "color": "#3B82F6" }
+  ],
+  "wiringNote": "All GPIO pins operate at 3.3V logic levels. Do NOT connect 5V signals directly to ESP32 pins without logic level converters.",
+  "libraryName": "ESP32 Board Package by Espressif",
+  "codeSnippet": "#include <WiFi.h>\nvoid setup() {\n  Serial.begin(115200);\n  WiFi.begin(\"SSID\", \"PASSWORD\");\n  while (WiFi.status() != WL_CONNECTED) { delay(500); Serial.print(\".\"); }\n  Serial.println(\"\\nWiFi Connected! IP: \" + WiFi.localIP().toString());\n}\nvoid loop() {}",
+  "commonMistakes": [
+    "Applying 5V directly to GPIO pins (ESP32 is NOT 5V tolerant)",
+    "Using strapping pins (GPIO 0, 2, 12, 15) for normal peripherals causing boot failures"
+  ],
+  "usedInProjects": ["air-mouse", "iot-agriculture-monitoring", "robot-car", "smart-accident-detection", "smart-fall-detection"]
+}

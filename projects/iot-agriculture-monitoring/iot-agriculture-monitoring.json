@@ -40,12 +40,27 @@
   ],
   "status": "Available",
   "components": [
-    "ESP32",
-    "DHT11 Sensor",
-    "Soil Moisture Sensor",
-    "Jumper Wires",
+    "ESP32 Development Board",
+    "DHT11 Temperature & Humidity Sensor",
+    "Capacitive Soil Moisture Sensor",
     "Breadboard",
+    "Jumper Wires",
     "USB Cable"
   ],
-  "estimatedTime": "90 minutes"
+  "estimatedTime": "90 minutes",
+  "componentRefs": [
+    "esp32",
+    "dht11",
+    "soil-moisture-sensor",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "ESP32 (Dual-Core 240MHz, 802.11 b/g/n Wi-Fi & Bluetooth)",
+    "temperatureSensor": "DHT11 Digital Temp & Humidity (0-50°C, 20-90% RH)",
+    "moistureSensor": "Capacitive Analog Soil Moisture Sensor",
+    "operatingVoltage": "3.3V / 5V DC",
+    "wireless": "Wi-Fi MQTT / HTTP cloud telemetry"
+  }
 }

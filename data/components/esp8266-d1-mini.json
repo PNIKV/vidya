@@ -1,0 +1,36 @@
+{
+  "id": "esp8266-d1-mini",
+  "name": "Wemos D1 Mini (ESP8266)",
+  "fullName": "Wemos D1 Mini ESP8266 Wi-Fi Development Board",
+  "category": "Microcontroller",
+  "color": "#38D996",
+  "tagline": "Miniature breadboard-friendly 80MHz/160MHz Wi-Fi microcontroller board",
+  "description": "The Wemos D1 Mini is a compact, breadboard-friendly IoT board based on the ESP8266EX chip. It features 11 digital I/O pins, 1 analog input (0–3.2V), integrated 802.11 b/g/n Wi-Fi, 4MB Flash memory, and a micro-USB/Type-C interface with CH340 / CP2104 USB-to-UART chip.",
+  "specs": {
+    "microcontroller": "ESP8266EX 32-bit RISC CPU (Tensilica L106)",
+    "clockSpeed": "80 MHz / 160 MHz",
+    "flashMemory": "4 MB (32 Mbit)",
+    "operatingVoltage": "3.3V DC (5V input via USB)",
+    "wireless": "802.11 b/g/n Wi-Fi (STA, AP, STA+AP modes, WPA/WPA2)",
+    "digitalPins": "11 (all support PWM, Interrupts, I2C, and One-Wire except D0)",
+    "analogPins": "1 (10-bit ADC, max 3.2V input)"
+  },
+  "pinout": [
+    { "pin": "5V", "name": "5V In/Out", "desc": "5V from USB or external 5V input", "color": "#EF4444" },
+    { "pin": "3V3", "name": "3.3V Out", "desc": "Regulated 3.3V output (max 500mA)", "color": "#EF4444" },
+    { "pin": "G", "name": "GND", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "D1", "name": "GPIO5 (SCL)", "desc": "Default I2C Clock", "color": "#8B5CF6" },
+    { "pin": "D2", "name": "GPIO4 (SDA)", "desc": "Default I2C Data", "color": "#8B5CF6" },
+    { "pin": "D6", "name": "GPIO12", "desc": "General GPIO with internal pull-up", "color": "#10B981" },
+    { "pin": "D7", "name": "GPIO13", "desc": "General GPIO / SPI MOSI", "color": "#3B82F6" },
+    { "pin": "A0", "name": "ADC0", "desc": "Analog input (0–3.2V max)", "color": "#F59E0B" }
+  ],
+  "wiringNote": "D1 is SCL and D2 is SDA. Always keep logic levels at 3.3V.",
+  "libraryName": "ESP8266 Board Core for Arduino IDE",
+  "codeSnippet": "#include <ESP8266WiFi.h>\nvoid setup() {\n  Serial.begin(115200);\n  WiFi.begin(\"SSID\", \"PASS\");\n}\nvoid loop() {}",
+  "commonMistakes": [
+    "Applying 5V directly to GPIO pins (board is 3.3V logic)",
+    "Connecting analog signals higher than 3.2V to A0 pin"
+  ],
+  "usedInProjects": ["smart distance tracker", "vasc-age", "smart-vacuum-cleaner"]
+}

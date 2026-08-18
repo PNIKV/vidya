@@ -39,16 +39,22 @@
     "Provide a simple and reliable security solution."
   ],
   "hardwareSpecs": {
-    "microcontroller": "Arduino Uno",
+    "microcontroller": "Arduino Uno (ATmega328P)",
     "sensor": "LDR Sensor Module",
     "actuator": "Active Buzzer",
-    "source": "Laser Module"
+    "source": "Laser Module",
+    "laserEmitter": "KY-008 650nm 5mW Red Dot Laser Diode",
+    "opticalReceiver": "LDR Photoresistor Module with LM393 Comparator",
+    "alarmOutput": "5V Active Buzzer and High-Brightness Red LED",
+    "operatingVoltage": "5V DC"
   },
   "components": [
     "Arduino Uno",
-    "Laser Module",
-    "LDR Sensor Module",
+    "KY-008 Laser Transmitter Module",
+    "LDR Light Sensor Module",
     "Active Buzzer",
+    "Red LED",
+    "Breadboard",
     "Jumper Wires",
     "USB Cable"
   ],
@@ -115,5 +121,15 @@
       "a": "Digital Pin D11."
     }
   ],
-  "conclusion": "The Laser Security System successfully detects intrusion by monitoring a laser beam using an LDR sensor module. When the beam is interrupted, the Arduino Uno immediately activates the buzzer, making it a simple, reliable and low-cost security solution."
+  "conclusion": "The Laser Security System successfully detects intrusion by monitoring a laser beam using an LDR sensor module. When the beam is interrupted, the Arduino Uno immediately activates the buzzer, making it a simple, reliable and low-cost security solution.",
+  "componentRefs": [
+    "arduino-uno",
+    "laser-module",
+    "ldr-sensor",
+    "buzzer",
+    "led",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
+  ]
 }

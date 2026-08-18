@@ -44,12 +44,11 @@
   ],
   "components": [
     "Arduino UNO",
-    "3.5-inch TFT Display",
-    "USB Cable",
+    "3.5-inch Color TFT LCD Touch Shield",
+    "Breadboard",
     "Jumper Wires",
-    "Breadboard (if required)",
-    "Power Supply",
-    "Bus Stop Model"
+    "USB Cable",
+    "5V Power Supply"
   ],
   "hardwareSpecs": {
     "microcontroller": "Arduino UNO",
@@ -96,5 +95,12 @@
     "GPS",
     "Real-Time Tracking",
     "Community Solution"
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "tft-display",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
   ]
 }

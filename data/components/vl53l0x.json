@@ -1,0 +1,35 @@
+{
+  "id": "vl53l0x",
+  "name": "VL53L0X Laser ToF Sensor",
+  "fullName": "VL53L0X FlightSense Time-of-Flight (ToF) Laser Ranging Sensor Module",
+  "category": "Precision Sensors",
+  "color": "#06B6D4",
+  "tagline": "Sub-nanosecond photon Time-of-Flight laser rangefinder with millimeter precision",
+  "description": "The VL53L0X is a high-precision laser-ranging sensor based on ST's FlightSense technology. Unlike conventional optical sensors that measure reflected light intensity, the VL53L0X measures the exact flight time of 940nm VCSEL photon pulses to achieve millimeter resolution (up to 2 meters) immune to target color and surface reflectance.",
+  "specs": {
+    "operatingVoltage": "2.8V to 5V DC (onboard regulator & level shifter)",
+    "laserType": "940nm Class 1 VCSEL (eye-safe invisible laser)",
+    "measurementRange": "30mm to 2000mm (2 meters)",
+    "resolution": "1 mm",
+    "interface": "I2C (Default Address: 0x29)",
+    "samplingRate": "Up to 50 Hz (20ms timing budget)",
+    "fieldOfView": "25° cone"
+  },
+  "pinout": [
+    { "pin": "VIN", "name": "Power", "desc": "3.3V to 5V DC power supply", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "SCL", "name": "I2C Clock", "desc": "I2C serial clock line (Arduino A5 / ESP8266 D1)", "color": "#8B5CF6" },
+    { "pin": "SDA", "name": "I2C Data", "desc": "I2C serial data line (Arduino A4 / ESP8266 D2)", "color": "#8B5CF6" },
+    { "pin": "XSHUT", "name": "Shutdown", "desc": "Active-LOW enable pin for changing I2C address dynamically", "color": "#F59E0B" },
+    { "pin": "GPIO1", "name": "Interrupt", "desc": "Programmable threshold interrupt output", "color": "#10B981" }
+  ],
+  "wiringNote": "Shares the standard I2C bus. If using multiple VL53L0X sensors on one board, use the XSHUT pins to initialize them sequentially with unique I2C addresses.",
+  "libraryName": "Adafruit VL53L0X (by Adafruit) or Pololu VL53L0X",
+  "codeSnippet": "#include <Wire.h>\n#include \"Adafruit_VL53L0X.h\"\nAdafruit_VL53L0X lox = Adafruit_VL53L0X();\nvoid setup() {\n  Serial.begin(115200);\n  if (!lox.begin()) { Serial.println(\"VL53L0X failed!\"); while(1); }\n}\nvoid loop() {\n  VL53L0X_RangingMeasurementData_t measure;\n  lox.rangingTest(&measure, false);\n  if (measure.RangeStatus != 4) {\n    Serial.print(\"Distance (mm): \"); Serial.println(measure.RangeMilliMeter);\n  }\n  delay(100);\n}",
+  "commonMistakes": [
+    "Leaving protective orange sticker on sensor lens during operation",
+    "Measuring beyond 2 meters without high-accuracy long-range profile",
+    "Exposing sensor to extreme direct sunlight without sunshade"
+  ],
+  "usedInProjects": ["smart distance tracker"]
+}

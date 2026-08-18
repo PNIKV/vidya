@@ -100,5 +100,15 @@
       "q": "Can the threshold value be changed?",
       "a": "Yes, the threshold variable in the Arduino sketch can be calibrated based on ambient baseline gas levels."
     }
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "mq135",
+    "16x2-lcd",
+    "buzzer",
+    "led",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
   ]
 }

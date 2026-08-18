@@ -17,5 +17,31 @@
     "Emergency"
   ],
   "date": "2026-07-08",
-  "author": "Uran Rasal"
+  "author": "Uran Rasal",
+  "components": [
+    "ESP8266 NodeMCU",
+    "MPU6050 6-Axis Accelerometer & Gyroscope",
+    "Tactile Cancel Push Button",
+    "Active Buzzer",
+    "Status LED",
+    "Breadboard",
+    "Jumper Wires",
+    "USB Cable"
+  ],
+  "componentRefs": [
+    "nodemcu",
+    "mpu6050",
+    "buzzer",
+    "led",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "ESP8266 NodeMCU (80MHz Wi-Fi SoC)",
+    "imuSensor": "MPU6050 6-Axis Motion Tracking (3-Axis Accelerometer + 3-Axis Gyroscope)",
+    "alarm": "5V Audible Buzzer & High-Intensity Alert LED",
+    "wirelessNotification": "Telegram Bot API / Firebase Emergency SMS Alert over Wi-Fi",
+    "operatingVoltage": "5V USB / 3.3V Logic"
+  }
 }

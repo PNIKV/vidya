@@ -15,5 +15,30 @@
     "IoT"
   ],
   "date": "2026-06-26",
-  "author": "Atul Sawant"
+  "author": "Atul Sawant",
+  "components": [
+    "ESP32 Development Board",
+    "L298N Dual H-Bridge Motor Driver",
+    "4x TT DC Geared Motors & Wheels",
+    "HC-SR04 Ultrasonic Sensor",
+    "SG90 Micro Servo",
+    "4WD Robot Car Acrylic Chassis Kit",
+    "7.4V / 11.1V Rechargeable Battery Pack",
+    "Jumper Wires"
+  ],
+  "componentRefs": [
+    "esp32",
+    "l298n",
+    "dc-motor",
+    "hc-sr04",
+    "servo-motor",
+    "jumper-wires"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "ESP32 (Dual-Core 240MHz, Wi-Fi Web Controller & BLE)",
+    "motorDriver": "L298N Dual Full H-Bridge (2A continuous per channel)",
+    "motors": "4x TT DC Geared Motors (1:48 reduction ratio)",
+    "radarSensor": "HC-SR04 Ultrasonic Rangefinder mounted on SG90 Pan Servo",
+    "powerSupply": "7.4V–11.1V Li-ion Battery Pack"
+  }
 }

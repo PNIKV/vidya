@@ -1,0 +1,35 @@
+{
+  "id": "nodemcu",
+  "name": "NodeMCU ESP8266",
+  "fullName": "NodeMCU ESP8266 Wi-Fi CP2102 / CH340 Development Board",
+  "category": "Microcontroller",
+  "color": "#38D996",
+  "tagline": "Open-source IoT development board with integrated Wi-Fi and breadboard headers",
+  "description": "NodeMCU is an open-source firmware and development kit that helps you to prototype your IoT products with Lua or Arduino C++. Built on the ESP-12E module, it exposes full GPIOs, SPI, UART, I2C, and analog ADC pins with onboard 3.3V voltage regulator and USB-to-UART bridge.",
+  "specs": {
+    "microcontroller": "Tensilica 32-bit RISC CPU Xtensa LX106",
+    "clockSpeed": "80 MHz / 160 MHz",
+    "flashMemory": "4 MB SPI Flash",
+    "operatingVoltage": "3.3V DC (5V USB / VIN power input)",
+    "wireless": "802.11 b/g/n Wi-Fi with WPA/WPA2 security",
+    "analogPins": "1 (10-bit ADC, 0–3.2V input range)",
+    "digitalPins": "13 GPIO pins"
+  },
+  "pinout": [
+    { "pin": "VIN", "name": "5V In", "desc": "External 5V–9V power input", "color": "#EF4444" },
+    { "pin": "3V3", "name": "3.3V Out", "desc": "Regulated 3.3V output", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "Ground pins", "color": "#1E293B" },
+    { "pin": "D1 (GPIO5)", "name": "SCL", "desc": "Default I2C Clock", "color": "#8B5CF6" },
+    { "pin": "D2 (GPIO4)", "name": "SDA", "desc": "Default I2C Data", "color": "#8B5CF6" },
+    { "pin": "D3–D8", "name": "GPIO", "desc": "General digital I/O with PWM", "color": "#10B981" },
+    { "pin": "A0", "name": "ADC0", "desc": "Analog input (0–3.2V)", "color": "#F59E0B" }
+  ],
+  "wiringNote": "Do not connect 5V logic signals directly to NodeMCU GPIOs (use level shifters or voltage dividers).",
+  "libraryName": "ESP8266 Board Core for Arduino IDE",
+  "codeSnippet": "#include <ESP8266WiFi.h>\nvoid setup() {\n  Serial.begin(115200);\n  WiFi.begin(\"SSID\", \"PASS\");\n}\nvoid loop() {}",
+  "commonMistakes": [
+    "Placing module on metal breadboard surfaces causing shorts",
+    "Exceeding 12mA sink/source per GPIO pin"
+  ],
+  "usedInProjects": ["food-spoilage-detection-system", "smart-accident-detection", "smart-vacuum-cleaner", "vasc-age"]
+}

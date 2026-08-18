@@ -1,0 +1,29 @@
+{
+  "id": "matrix-keypad",
+  "name": "4x4 Matrix Keypad",
+  "fullName": "4x4 Matrix 16-Button Membrane / Tactile Keypad Module",
+  "category": "Input Devices",
+  "color": "#6366F1",
+  "tagline": "16-button alphanumeric input matrix using multiplexed row/column scanning",
+  "description": "The 4x4 Matrix Keypad provides 16 momentary buttons organized in 4 rows and 4 columns (digits 0-9, *, #, and letters A-D). By multiplexing rows and columns, it uses only 8 GPIO pins on a microcontroller instead of 16 individual lines.",
+  "specs": {
+    "keys": "16 keys (0–9, A–D, *, #)",
+    "matrixLayout": "4 Rows × 4 Columns",
+    "operatingVoltage": "3.3V–5V DC",
+    "contactRating": "35V DC, 100mA",
+    "contactResistance": "10Ω to 500Ω",
+    "interface": "8-pin female header connector"
+  },
+  "pinout": [
+    { "pin": "R1–R4 (Pins 1–4)", "name": "Row Pins", "desc": "Rows 1 through 4 connected to digital I/O", "color": "#6366F1" },
+    { "pin": "C1–C4 (Pins 5–8)", "name": "Column Pins", "desc": "Columns 1 through 4 connected to digital I/O", "color": "#10B981" }
+  ],
+  "wiringNote": "Use the Arduino Keypad library which handles debouncing and row-column scanning automatically.",
+  "libraryName": "Keypad (by Mark Stanley, Alexander Brevig)",
+  "codeSnippet": "#include <Keypad.h>\nconst byte ROWS = 4, COLS = 4;\nchar keys[ROWS][COLS] = {\n  {'1','2','3','A'}, {'4','5','6','B'}, {'7','8','9','C'}, {'*','0','#','D'}\n};\nbyte rowPins[ROWS] = {9, 8, 7, 6};\nbyte colPins[COLS] = {5, 4, 3, 2};\nKeypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);\nvoid setup() { Serial.begin(9600); }\nvoid loop() {\n  char customKey = keypad.getKey();\n  if (customKey) Serial.println(customKey);\n}",
+  "commonMistakes": [
+    "Wiring row and column pins in reverse order",
+    "Using pins 0 and 1 (UART TX/RX) for keypad lines"
+  ],
+  "usedInProjects": ["keypad-door-lock"]
+}

@@ -1,0 +1,151 @@
+{
+  "id": "crabrobot",
+  "title": "Crab Robot 8-DOF Biomimetic Explorer",
+  "subtitle": "8-Servo Wi-Fi Quadruped Walker with Multi-Directional Crab Gaits & Web Controller",
+  "category": "Biomimetic Robotics & Kinematics",
+  "level": "Advanced",
+  "difficulty": 4,
+  "color": "#FF6B35",
+  "author": "Nikhil Patil",
+  "date": "2026-08-14",
+  "team": [
+    {
+      "name": "Nikhil Patil",
+      "role": "Robotics & Kinematics Engineer"
+    }
+  ],
+  "desc": "8-degree-of-freedom biomimetic crab robot equipped with PCA9685 PWM driver and Wi-Fi web controller to navigate narrow, rough terrains inaccessible to wheeled rovers or aerial drones.",
+  "fullDesc": "The Crab Robot 8-DOF Biomimetic Explorer is an agile, multi-legged mobile robotic platform designed for extreme search-and-rescue, structural pipeline inspection, and hazardous terrain reconnaissance.\n\nIn disaster zones, collapsed structures, or narrow conduits, conventional wheeled/tracked rovers frequently get stuck, overturned, or high-centered on loose rubble. Meanwhile, aerial drones cannot operate due to destructive rotor downwash, battery constraints, and confined clearance limits. The Crab Robot solves this with an 8-servo bio-inspired quadruped architecture (2 degrees of freedom per leg: Hip rotation and Knee extension) capable of high-mobility lateral crab-crawling, pivot turns, obstacle stepping, and low-profile crawling.\n\nControlled by an Arduino UNO R4 WiFi (with cross-compatibility for ESP32 and ESP8266) interfaced to an I2C PCA9685 16-Channel 12-bit PWM servo controller, the robot runs a self-hosted responsive Web GUI. Operators can steer using a virtual joystick, trigger predefined cinematic gaits (Crab Strafe, Forward Crawl, Wave, Dance, Pushups, Sit/Stand), fine-tune individual servo trim angles, and execute custom action sequences in real time.",
+  "innovation": "Biomimetic 8-DOF kinematic coordination with omnidirectional crab-strafing gait algorithms. Employs PCA9685 hardware I2C PWM offloading to guarantee microsecond-accurate servo pulse stability while the microcontroller runs an asynchronous Wi-Fi web server.",
+  "problemStatement": "Standard wheeled rovers and aerial drones cannot access confined, rough, rubble-strewn, or low-clearance spaces. Wheeled vehicles get stuck or high-centered on uneven obstacles, while aerial drones generate dangerous rotor downwash and cannot operate in cramped collapsed structures or narrow pipeline crevices.",
+  "solutionApproach": "An 8-Servo biomimetic quadruped crab robot with 2 DOF per leg (Hip & Knee) driven by a PCA9685 16-Channel 12-bit I2C PWM driver and Arduino UNO R4 WiFi / ESP32. It employs bio-inspired kinematics gaits (crab strafing, forward crawl, pivoting, wave, dance) that lift and plant individual feet over obstacles, enabling navigation through irregular, restricted terrains where wheels or propellers fail.",
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO R4 WiFi (or ESP32 / ESP8266)",
+    "servoDriver": "PCA9685 16-Channel 12-bit PWM I2C Module (Address 0x40)",
+    "actuators": "8 x SG90 / MG90S Micro Servos (4 Hip Yaw + 4 Knee Pitch)",
+    "powerSupply": "7.4V 2S LiPo Battery with 5V 3A+ UBEC / DC-DC Buck Converter",
+    "wireless": "802.11 b/g/n Wi-Fi with mDNS (http://crabrobot.local)",
+    "pwmFrequency": "50 Hz (20 ms period, 150-600 pulse width count)",
+    "operatingVoltage": "Logic 3.3V/5V, Servo Bus 5V-6V High Current"
+  },
+  "components": [
+    "Arduino UNO R4 WiFi (or ESP32/ESP8266)",
+    "PCA9685 16-Channel 12-bit PWM Servo Driver",
+    "8 x MG90S Metal Gear Micro Servos",
+    "3D-Printed / Acrylic Crab Robot Chassis",
+    "5V 3A UBEC Voltage Regulator",
+    "7.4V 2S LiPo Battery",
+    "Jumper Wires"
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "esp32",
+    "pca9685",
+    "servo-motor",
+    "jumper-wires"
+  ],
+  "circuitConnections": {
+    "PCA9685 VCC (Logic)": "Arduino 5V",
+    "PCA9685 GND": "Arduino GND & Battery GND (Common Ground)",
+    "PCA9685 SDA": "Arduino SDA (Pin A4 or dedicated SDA)",
+    "PCA9685 SCL": "Arduino SCL (Pin A5 or dedicated SCL)",
+    "PCA9685 V+ (Servo Power)": "External 5V 3A UBEC Power (+)",
+    "PCA9685 GND (Terminal)": "External 5V 3A UBEC Power (-)",
+    "Servo Ch 0": "Front-Left Hip (FL-Hip)",
+    "Servo Ch 1": "Front-Left Knee (FL-Knee)",
+    "Servo Ch 2": "Front-Right Hip (FR-Hip)",
+    "Servo Ch 3": "Front-Right Knee (FR-Knee)",
+    "Servo Ch 4": "Rear-Left Hip (RL-Hip)",
+    "Servo Ch 5": "Rear-Left Knee (RL-Knee)",
+    "Servo Ch 6": "Rear-Right Hip (RR-Hip)",
+    "Servo Ch 7": "Rear-Right Knee (RR-Knee)"
+  },
+  "circuitDiagramDescription": "The PCA9685 servo driver interfaces with the Arduino via I2C (SDA/SCL). Dedicated 5V 3A+ high-current power is fed directly into the PCA9685 screw terminals to supply the 8 servos independently from the microcontroller logic, preventing voltage dips and brownout resets.",
+  "working": [
+    {
+      "step": 1,
+      "action": "On power-up, the Arduino establishes an I2C connection with the PCA9685, initializes all 8 servos to their default neutral 90° stance angles, and starts the Wi-Fi AP / Station network."
+    },
+    {
+      "step": 2,
+      "action": "The operator opens `http://crabrobot.local` on a smartphone or computer to view the graphical touch dashboard."
+    },
+    {
+      "step": 3,
+      "action": "When a directional command (Forward, Backward, Crab Left, Crab Right) is sent, the gait engine decomposes movement into synchronized leg-lift, swing, and stance phases."
+    },
+    {
+      "step": 4,
+      "action": "During lateral crab-walking, diagonal pairs of legs lift their knees, swing their hips outward, plant down, and pull the robot's center of gravity sideways."
+    },
+    {
+      "step": 5,
+      "action": "The smoothMoveAll interpolation function increments servo positions in micro-steps with configurable millisecond delays, eliminating jerky mechanical stress."
+    },
+    {
+      "step": 6,
+      "action": "Special action sequences (Wave, Dance, Pushup, Sit, Stand) can be triggered with one click, executing fluid multi-joint kinematic choreography."
+    },
+    {
+      "step": 7,
+      "action": "Individual servo trim offsets can be saved from the web interface to calibrate physical linkage misalignment without re-flashing firmware."
+    }
+  ],
+  "benefits": [
+    "Navigates confined, irregular crevices and high-clearance obstacles where cars get stuck and drones crash",
+    "True biomimetic lateral crab strafe enables sideways maneuvering through narrow gaps without turning body axis",
+    "Dedicated PCA9685 PWM offloading prevents servo jitter and eliminates microcontroller CPU load",
+    "Self-hosted browser UI with virtual joystick - zero software or mobile app installation required",
+    "Multi-platform firmware compatible with Arduino UNO R4 WiFi, ESP32, and ESP8266",
+    "Onboard calibration menu allows live servo angle trim adjustments"
+  ],
+  "applications": [
+    "Disaster Search & Rescue in Collapsed Rubble and Confined Spaces",
+    "Industrial Pipeline, Duct, and Conduit Inspection",
+    "Hazardous Chemical & Explosive Ordnance Reconnaissance",
+    "STEM Robotics Education & Bio-Inspired Kinematics Research",
+    "Planetary Surface Exploration of Rocky, Unstructured Terrains"
+  ],
+  "futureScope": [
+    "Integrate an ESP32-CAM or FPV camera module for real-time video streaming to the web dashboard.",
+    "Add ultrasonic / ToF distance sensors for autonomous obstacle clearance and terrain mapping.",
+    "Implement full 12-DOF 3-joint inverse kinematics legs for continuous climbing and self-leveling on steep inclines."
+  ],
+  "vivaQuestions": [
+    {
+      "q": "Why is a PCA9685 PWM driver module used instead of driving servos directly from Arduino pins?",
+      "a": "Driving 8 servos directly from Arduino timers causes timing jitter, limits available GPIOs, and risks board damage due to high servo stall currents. The PCA9685 has an onboard clock and generates 16 independent 12-bit hardware PWM signals over just two I2C pins (SDA/SCL)."
+    },
+    {
+      "q": "Why is common ground essential between the external servo power supply and the Arduino?",
+      "a": "Without a shared common reference ground between the battery/UBEC and the microcontroller, the PWM control signal voltages on the servo signal pins cannot be correctly referenced, causing erratic servo twitching or communication loss."
+    },
+    {
+      "q": "What is the advantage of a quadruped crab gait over a traditional 2-wheel rover?",
+      "a": "Wheeled vehicles require contiguous flat surfaces and easily get stuck or high-centered on rocks and rubble. A biomimetic quadruped can step over obstacles, lift isolated feet out of holes, and strafe sideways through narrow gaps without needing turning radius."
+    },
+    {
+      "q": "How does smoothMoveAll prevent mechanical damage to servo gears?",
+      "a": "Instead of commanding an immediate 90-degree step that creates massive current spikes and gear shock, smoothMoveAll interpolates positions degree-by-degree with small time delays, ensuring smooth acceleration and deceleration."
+    }
+  ],
+  "tags": [
+    "Robotics",
+    "Arduino UNO R4 WiFi",
+    "ESP32",
+    "PCA9685",
+    "Servos",
+    "Biomimetic",
+    "Quadruped",
+    "Web Controller"
+  ],
+  "keywords": [
+    "crab robot",
+    "spider robot",
+    "quadruped",
+    "8 servo robot",
+    "pca9685",
+    "arduino uno r4 wifi",
+    "biomimetic walking robot"
+  ]
+}

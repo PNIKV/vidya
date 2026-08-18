@@ -1,0 +1,29 @@
+{
+  "id": "7-segment-display",
+  "name": "7-Segment Display",
+  "fullName": "1-Digit / 4-Digit Common Cathode / Anode 7-Segment LED Display",
+  "category": "Displays",
+  "color": "#EF4444",
+  "tagline": "Classic numerical LED display for numbers, counters, and digital clocks",
+  "description": "A 7-segment display consists of 7 individual LED segments arranged in a figure-8 pattern (labeled A through G) plus an optional decimal point (DP). Lighting specific segment combinations renders digits 0 through 9 and basic hexadecimal characters.",
+  "specs": {
+    "digitHeight": "0.56 inch (14.2mm standard)",
+    "configuration": "Common Cathode (CC) or Common Anode (CA)",
+    "forwardVoltage": "1.8V to 2.2V per LED segment",
+    "forwardCurrent": "15mA to 20mA per segment (requires current limiting resistors 220Ω–330Ω)",
+    "emittedColor": "Bright Red / Green / Blue / Amber"
+  },
+  "pinout": [
+    { "pin": "A, B, C, D, E, F, G", "name": "Segments", "desc": "Individual LED anodes (for Common Cathode) or cathodes (for Common Anode)", "color": "#EF4444" },
+    { "pin": "DP", "name": "Decimal Point", "desc": "Decimal point LED pin", "color": "#F59E0B" },
+    { "pin": "COM (Pins 3 & 8)", "name": "Common Pin", "desc": "Connected to GND (Common Cathode) or 5V (Common Anode)", "color": "#1E293B" }
+  ],
+  "wiringNote": "Always place a 220Ω to 330Ω current limiting resistor in series with each segment line to prevent burning the LEDs.",
+  "libraryName": "SevSeg (by Dean Reading) or direct GPIO array control",
+  "codeSnippet": "byte digits[10] = {\n  0b00111111, // 0\n  0b00000110, // 1\n  0b01011011, // 2\n  0b01001111, // 3\n  0b01100110, // 4\n  0b01101101, // 5\n  0b01111101, // 6\n  0b00000111, // 7\n  0b01111111, // 8\n  0b01101111  // 9\n};",
+  "commonMistakes": [
+    "Connecting directly to 5V without 220Ω current limiting resistors",
+    "Confusing Common Cathode (active-HIGH) with Common Anode (active-LOW) display types"
+  ],
+  "usedInProjects": ["seven-segment-display", "arduino-uno-countdown-timer"]
+}

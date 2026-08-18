@@ -17,5 +17,32 @@
     "Measurement"
   ],
   "date": "2026-08-04",
-  "author": "Niktrix"
+  "author": "Niktrix",
+  "components": [
+    "Arduino Uno",
+    "High-Sensitivity LM393 Sound Sensor Module",
+    "16x2 I2C LCD Display",
+    "RGB Status LEDs",
+    "Active Buzzer",
+    "Breadboard",
+    "Jumper Wires",
+    "USB Cable"
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "sound-sensor",
+    "16x2-lcd",
+    "led",
+    "buzzer",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "Arduino Uno (ATmega328P)",
+    "microphoneSensor": "Electret Condenser Microphone with LM393 Dual Output",
+    "display": "16x2 Character LCD via I2C PCF8574 Backpack",
+    "alertIndicators": "Tri-color Traffic Noise LEDs (Green < 55dB, Yellow 55-75dB, Red > 75dB)",
+    "operatingVoltage": "5V DC"
+  }
 }

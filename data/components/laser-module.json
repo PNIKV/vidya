@@ -1,0 +1,30 @@
+{
+  "id": "laser-module",
+  "name": "KY-008 Laser Transmitter",
+  "fullName": "KY-008 650nm 5mW Red Dot Laser Diode Transmitter Module",
+  "category": "Optical & Laser",
+  "color": "#DC2626",
+  "tagline": "Co-axial red laser diode emitter for tripwires, targeting, and optical communications",
+  "description": "The KY-008 laser transmitter module emits a concentrated 650nm red laser beam dot. It consists of a 5mW laser diode housed in a brass cylinder with built-in current limiting resistor. Used for laser tripwire security barriers, optical alignment, and targeting.",
+  "specs": {
+    "operatingVoltage": "5V DC",
+    "wavelength": "650 nm (Visible Red)",
+    "outputPower": "5 mW (Class 3R)",
+    "operatingCurrent": "< 40 mA",
+    "beamType": "Dot / Point beam focus",
+    "dimensions": "15mm × 24mm"
+  },
+  "pinout": [
+    { "pin": "Signal (S)", "name": "5V Control", "desc": "Digital HIGH turns laser ON, LOW turns laser OFF", "color": "#DC2626" },
+    { "pin": "GND (-)", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "NC (Middle)", "name": "No Connection", "desc": "Unused pin on 3-pin headers", "color": "#94A3B8" }
+  ],
+  "wiringNote": "Do not power laser diodes directly from low-current MCU GPIOs (>12mA) without a switching transistor (2N2222/S8050).",
+  "libraryName": "Built-in digitalWrite",
+  "codeSnippet": "const int laserPin = 13;\nvoid setup() { pinMode(laserPin, OUTPUT); }\nvoid loop() {\n  digitalWrite(laserPin, HIGH); // Laser ON\n  delay(1000);\n  digitalWrite(laserPin, LOW);  // Laser OFF\n  delay(1000);\n}",
+  "commonMistakes": [
+    "Pointing directly into human or animal eyes (dangerous eye hazard)",
+    "Driving continuous laser power without proper transistor driver"
+  ],
+  "usedInProjects": ["laser-security-system", "smart distance tracker"]
+}

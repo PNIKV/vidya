@@ -41,17 +41,20 @@
   },
   "components": [
     "Arduino UNO",
-    "IR Sensor ×6",
-    "Servo Motor ×1",
-    "16×2 LCD Display",
+    "6x TCRT5000 / LM393 IR Obstacle Sensors",
+    "SG90 Micro Servo Motor (Boom Barrier)",
+    "16x2 I2C LCD Display",
+    "Breadboard",
     "Jumper Wires",
-    "3D Printed Cars ×6"
+    "3D Printed Car Models"
   ],
   "componentRefs": [
     "arduino-uno",
     "ir-sensor",
     "servo-motor",
-    "lcd-16x2"
+    "16x2-lcd",
+    "breadboard",
+    "jumper-wires"
   ],
   "guide": [
     "Connect each IR sensor OUT pin to Arduino digital pins D2–D7; VCC to 5V, GND to GND",

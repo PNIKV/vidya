@@ -16,5 +16,34 @@
     "Conservation"
   ],
   "date": "2026-07-20",
-  "author": "Tinkering Lab"
+  "author": "Tinkering Lab",
+  "components": [
+    "ESP32 Development Board",
+    "Analog Turbidity Sensor Module",
+    "Water Level Depth Sensor",
+    "12V DC Solenoid Water Valve",
+    "5V Optocoupled Relay Module",
+    "16x2 I2C LCD Display",
+    "Active Buzzer",
+    "Breadboard",
+    "Jumper Wires"
+  ],
+  "componentRefs": [
+    "esp32",
+    "turbidity-sensor",
+    "water-level-sensor",
+    "relay-module",
+    "16x2-lcd",
+    "buzzer",
+    "breadboard",
+    "jumper-wires"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "ESP32 (240MHz Wi-Fi & Bluetooth)",
+    "waterQualitySensor": "Optical Analog Turbidity Sensor (0–3000 NTU)",
+    "waterLevelSensor": "Submersible Parallel Trace Depth Sensor",
+    "valveActuator": "12V Solenoid Valve via 5V Relay Module",
+    "display": "16x2 Character LCD with I2C Backpack",
+    "operatingVoltage": "5V Logic / 12V Valve Power"
+  }
 }

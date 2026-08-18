@@ -42,23 +42,21 @@
   },
   "components": [
     "ESP8266 NodeMCU Microcontroller",
-    "3D Printed Vacuum Chassis (Thingiverse #5116129 by Marcus Lanzoni)",
     "5V 1-Channel Relay Module (Air Pump Switch)",
-    "12V DC High-Speed Air Vacuum Pump / Fan",
-    "L298N / L293D Motor Driver",
-    "2 N20 / TT DC Geared Motors",
-    "2 Drive Wheels & Caster Wheel",
-    "Dust Collection Filter Chamber",
-    "7.4V / 11.1V Rechargeable LiPo Battery",
-    "Power Switch",
-    "Jumper Wires & Hardware Fasteners"
+    "12V High-Speed DC Suction Fan / Vacuum Pump",
+    "L298N Motor Driver",
+    "2x N20 / TT DC Geared Motors",
+    "3D-Printed Vacuum Chassis",
+    "7.4V/11.1V LiPo Battery",
+    "Jumper Wires"
   ],
   "componentRefs": [
     "esp8266",
+    "nodemcu",
     "relay-module",
     "l298n",
     "dc-motor",
-    "vacuum-pump"
+    "jumper-wires"
   ],
   "guide": [
     "Step 1: 3D print the Marcus Lanzoni chassis components (Thingiverse #5116129).",

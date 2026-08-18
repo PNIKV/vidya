@@ -1,0 +1,28 @@
+{
+  "id": "soil-moisture-sensor",
+  "name": "Soil Moisture Sensor",
+  "fullName": "Capacitive / Resistive Soil Moisture Detection Sensor Module",
+  "category": "Environmental Sensors",
+  "color": "#84CC16",
+  "tagline": "Measures volumetric water content and soil hydration levels for smart irrigation",
+  "description": "Soil moisture sensors measure the dielectric permittivity or electrical resistance between two probes inserted into soil. Capacitive models prevent electrode corrosion and provide stable analog voltage readings corresponding to dry, optimal, or waterlogged soil conditions.",
+  "specs": {
+    "operatingVoltage": "3.3V to 5.5V DC",
+    "outputVoltage": "0V to 3.0V DC analog output",
+    "sensorType": "Corrosion-resistant capacitive / resistive probe",
+    "operatingCurrent": "5mA (ultra low power)"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "Power", "desc": "3.3V to 5V DC power supply", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "AOUT", "name": "Analog Out", "desc": "Analog voltage reading corresponding to soil moisture", "color": "#84CC16" }
+  ],
+  "wiringNote": "Calibrate in air (100% dry) and in water (100% wet) to map raw ADC readings to percentage values.",
+  "libraryName": "Built-in analogRead",
+  "codeSnippet": "const int soilPin = A0;\nvoid setup() { Serial.begin(9600); }\nvoid loop() {\n  int val = analogRead(soilPin);\n  int moisturePct = map(val, 700, 300, 0, 100); // calibrate values\n  Serial.print(\"Soil Moisture: \"); Serial.print(moisturePct); Serial.println(\"%\");\n  delay(1000);\n}",
+  "commonMistakes": [
+    "Submerging the top electronic circuitry header into water (only the probe blades should enter soil)",
+    "Using resistive sensors continuously powered without duty-cycling (causes rapid electrolysis corrosion)"
+  ],
+  "usedInProjects": ["iot-agriculture-monitoring"]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "ir-sensor",
+  "name": "IR Obstacle Sensor",
+  "fullName": "Infrared Proximity & Obstacle Detection Sensor Module (LM393)",
+  "category": "Sensors",
+  "color": "#10B981",
+  "tagline": "Reflective infrared sensor for obstacle detection, line tracking, and object proximity",
+  "description": "The IR Obstacle Sensor module features an infrared emitter LED and a photodiode receiver paired with an LM393 comparator. When an object enters the detection beam, emitted infrared light bounces back and is detected, bringing the Digital Output pin LOW.",
+  "specs": {
+    "operatingVoltage": "3.3V–5V DC",
+    "detectionRange": "2cm to 30cm (adjustable via onboard potentiometer)",
+    "detectionAngle": "35° cone",
+    "comparatorIC": "LM393 high-precision voltage comparator",
+    "outputType": "Digital Switching Output (0 / 1) and Analog Raw Output (on 4-pin versions)",
+    "responseSpeed": "< 10 microseconds"
+  },
+  "pinout": [
+    { "pin": "VCC", "name": "Power", "desc": "3.3V to 5V DC supply", "color": "#EF4444" },
+    { "pin": "GND", "name": "Ground", "desc": "0V reference ground", "color": "#1E293B" },
+    { "pin": "OUT / DO", "name": "Digital Out", "desc": "LOW when obstacle is detected, HIGH when clear", "color": "#10B981" }
+  ],
+  "wiringNote": "Use the onboard multiturn potentiometer to adjust sensitivity based on ambient light conditions.",
+  "libraryName": "Built-in digitalRead (no library required)",
+  "codeSnippet": "const int irPin = 2;\nvoid setup() {\n  pinMode(irPin, INPUT);\n  Serial.begin(9600);\n}\nvoid loop() {\n  if (digitalRead(irPin) == LOW) {\n    Serial.println(\"Obstacle Detected!\");\n  }\n  delay(100);\n}",
+  "commonMistakes": [
+    "Placing sensor under direct strong sunlight (sunlight contains heavy IR noise)",
+    "Using on pure matte black surfaces (black absorbs IR light and may not reflect)",
+    "Over-tightening the sensitivity screw causing the sensor to stay triggered continuously"
+  ],
+  "usedInProjects": ["smart-parking-system", "robot-car", "surakshapath", "smart-classroom"]
+}

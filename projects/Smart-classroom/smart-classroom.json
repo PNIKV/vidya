@@ -17,5 +17,32 @@
     "STEM"
   ],
   "date": "2026-08-06",
-  "author": "Tinkering Lab"
+  "author": "Tinkering Lab",
+  "components": [
+    "Arduino UNO",
+    "HC-SR501 PIR Motion Sensor",
+    "LDR Light Sensor Module",
+    "5V 2-Channel Relay Module (Lights & Fans)",
+    "16x2 I2C LCD Display",
+    "Breadboard",
+    "Jumper Wires",
+    "5V Power Supply"
+  ],
+  "componentRefs": [
+    "arduino-uno",
+    "pir-sensor",
+    "ldr-sensor",
+    "relay-module",
+    "16x2-lcd",
+    "breadboard",
+    "jumper-wires"
+  ],
+  "hardwareSpecs": {
+    "microcontroller": "Arduino UNO (ATmega328P)",
+    "occupancyDetection": "HC-SR501 Passive Infrared Motion Detector (100° cone, 7m range)",
+    "ambientLightSensor": "LDR Photoresistor Module with LM393 Comparator",
+    "relayController": "5V 2-Channel Optocoupled Relay (250V AC 10A rating)",
+    "display": "16x2 Character LCD via I2C PCF8574 Backpack",
+    "operatingVoltage": "5V DC"
+  }
 }
