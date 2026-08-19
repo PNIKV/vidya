@@ -3402,9 +3402,9 @@
       }
     ],
     "htmlDashboards": [
-      "projects/Smart-fall-detection/fall_detection_dashboard.html"
+      "projects/Smart-fall-detection/index.html"
     ],
-    "liveUrl": "projects/Smart-fall-detection/fall_detection_dashboard.html"
+    "liveUrl": "projects/Smart-fall-detection/index.html"
   },
   {
     "id": "smart-bridge-flood-alert",
