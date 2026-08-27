@@ -1,0 +1,121 @@
+{
+  "id": "RFID ATTENDANCE SYSTEM",
+  "title": "RFID ATTENDANCE SYSTEM Identification",
+  "subtitle": "Presented monitoring system",
+  "level": "Intermediate",
+  "color": "#FF6B35",
+  "desc": "Build a smart attendance system that identifies people instantly using RFID tags!",
+  "fullDesc": "Build a functional RFID-based Attendance System using an MFRC522 RFID reader module coupled with an ESP8266 microcontroller to identify and log attendance in real time. A 16x2 LCD display shows live status and identification results, while a buzzer and LED provide instant audio-visual feedback for each scan, giving a complete low-cost identification and monitoring solution.",
+  "difficulty": 3,
+  "status": "Available",
+  "tags": [
+    "ESP8266",
+    "RFID",
+    "Attendance System",
+    "IoT",
+    "LCD Display"
+  ],
+  "date": "2026-06-26",
+  "author": "Nikhil Patil",
+  "team": [
+    {
+      "name": "ALOK GHEWANDE",
+      "role": "Leader and Project Lead"
+    }
+  ],
+  "innovation": "A low-cost, student-built RFID attendance and identification system with real-time status display and audio-visual feedback using an ESP8266-based sensor suite.",
+  "problemStatement": "Manual attendance systems are time-consuming and error-prone, and commercial RFID identification kits are expensive with little scope for student learning and customization.",
+  "solutionApproach": "Used an MFRC522 RFID reader module connected to an ESP8266 to scan RFID tags and identify individuals in real time. A 16x2 LCD display shows scan status and identification results instantly. A buzzer provides audio confirmation of a successful or failed scan, while an LED indicator shows live system status. The ESP8266 processes all tag data and can log or transmit attendance records over Wi-Fi.",
+  "hardwareSpecs": {
+    "microcontroller": "ESP8266 (NodeMCU)",
+    "powerConsumption": "~80mA @ 3.3V (control circuit)",
+    "operatingVoltage": "3.3V DC (via USB/regulator)",
+    "communicationProtocol": "SPI (RC522) + Serial UART (9600 baud) + I2C (LCD, optional)",
+    "dimensions": "Custom enclosure — compact tabletop unit",
+    "sensors": [
+      "RC522 RFID Reader Module",
+      "RFID Tags"
+    ],
+    "displays": [
+      "LCD Display 16x2"
+    ]
+  },
+  "components": [
+    "ESP8266",
+    "RC522",
+    "LCD Display 16x2",
+    "RFID Tags",
+    "Breadboard",
+    "LED Light",
+    "Buzzer",
+    "Jumper Wires"
+  ],
+  "componentRefs": [
+    "esp8266",
+    "rc522",
+    "lcd-16x2",
+    "rfid-tags",
+    "breadboard",
+    "led",
+    "buzzer",
+    "jumper-wires"
+  ],
+  "guide": [
+    "Mount the RC522 RFID reader module, LCD display, LED, and buzzer on a breadboard or custom base",
+    "Connect the RC522 SDA, SCK, MOSI, MISO, and RST pins to the ESP8266 SPI pins",
+    "Wire the RC522 3.3V and GND pins to the ESP8266 power rails",
+    "Connect the 16x2 LCD display to the ESP8266 (via I2C module or direct data pins)",
+    "Wire the LED (with resistor) to a free ESP8266 digital pin to indicate scan status",
+    "Wire the buzzer to a free ESP8266 digital pin for audio feedback",
+    "Connect all jumper wires securely and double-check the SPI wiring",
+    "Open Arduino IDE and install the ESP8266 board package along with the MFRC522 and LCD libraries",
+    "Paste the provided sketch and update it with your RFID tag UIDs and names",
+    "Upload the sketch to the ESP8266",
+    "Open Serial Monitor at 9600 baud to view scan logs and debug output",
+    "Scan an RFID tag near the RC522 reader and verify the LCD shows the identification result",
+    "Confirm the LED and buzzer trigger correctly for valid and invalid tag scans",
+    "Optionally connect the ESP8266 to Wi-Fi to log attendance records remotely"
+  ],
+  "estimatedTime": "100 minutes",
+  "prerequisites": [
+    "Basic Arduino/ESP8266 wiring",
+    "Arduino IDE installed",
+    "Familiarity with Serial Monitor",
+    "Basic understanding of SPI communication"
+  ],
+  "pdf": "",
+  "ppt": "projects/level-3/rfid-attendance-system",
+  "circuitDiagram": "",
+  "youtubeVideos": [],
+  "liveUrl": "",
+  "resources": [
+    {
+      "icon": "📄",
+      "title": "MFRC522 Library Documentation",
+      "url": "https://github.com/miguelbalboa/rfid"
+    },
+    {
+      "icon": "📚",
+      "title": "ESP8266 Arduino Core Documentation",
+      "url": "https://arduino-esp8266.readthedocs.io/en/latest/"
+    },
+    {
+      "icon": "🖥️",
+      "title": "LiquidCrystal I2C Library Guide",
+      "url": "https://github.com/johnrickman/LiquidCrystal_I2C"
+    }
+  ],
+  "githubUrl": "",
+  "achievements": [],
+  "keywords": [
+    "RFID attendance system",
+    "RC522",
+    "ESP8266",
+    "RFID tags",
+    "LCD 16x2",
+    "identification system",
+    "attendance monitoring",
+    "buzzer",
+    "IoT"
+  ]
+}
