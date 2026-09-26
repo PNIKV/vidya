@@ -61,91 +61,8 @@ function extractDate(filename, filePath) {
   return d.toISOString().split('T')[0];
 }
 
-function parseCSVFile(filePath) {
-  const filename = path.basename(filePath);
-  const content = fs.readFileSync(filePath, 'utf8');
-  const lines = content.split(/\r?\n/).filter(l => l.trim().length > 0);
-  if (lines.length === 0) return null;
-
-  const header = lines[0];
-  const dateStr = extractDate(filename, filePath);
-
-  // Format 2: Single-row wide format (Name,Grade,School/College,Q1...Q50,Total Score,Percentage)
-  if (header.includes('School/College') || (header.startsWith('Name') && header.includes('Q1'))) {
-    const dataLine = lines[1];
-    if (!dataLine) return null;
-    const cols = parseCSVLine(dataLine);
-
-    const name = cols[0] || 'Unknown';
-    const grade = cols[1] || 'Unspecified';
-    const school = cols[2] || 'Unspecified';
-
-    const categoryScores = {
-      mcq: 0,
-      true_false: 0,
-      match: 0,
-      fill_bank: 0,
-      calc: 0,
-      arduino_ide: 0,
-      audio_id: 0,
-      picto: 0,
-      ai_question: 0,
-      image_id: 0
-    };
-
-    let calculatedTotal = 0;
-    let calculatedMax = 0;
-
-    for (let qNum = 1; qNum <= 50; qNum++) {
-      const qMeta = questionsMap.get(qNum) || { type: 'mcq', marks: 1 };
-      calculatedMax += qMeta.marks;
-
-      const cellVal = cols[qNum + 2] !== undefined ? cols[qNum + 2] : '0';
-      let earned = 0;
-
-      if (!isNaN(cellVal) && cellVal.trim() !== '') {
-        earned = parseFloat(cellVal);
-      } else if (cellVal.toLowerCase() === 'true' || cellVal.toLowerCase() === 'yes') {
-        earned = qMeta.marks;
-      } else if (cellVal.toLowerCase() === 'false' || cellVal.toLowerCase() === 'no') {
-        earned = 0;
-      } else {
-        earned = cellVal.length > 0 ? 1 : 0;
-      }
-
-      if (categoryScores[qMeta.type] !== undefined) {
-        categoryScores[qMeta.type] += earned;
-      } else {
-        categoryScores.mcq += earned;
-      }
-      calculatedTotal += earned;
-    }
-
-    const fileTotal = cols[53] ? parseFloat(cols[53]) : calculatedTotal;
-    const filePct = cols[54] ? parseFloat(cols[54].replace('%', '')) : Math.round((fileTotal / (calculatedMax || 100)) * 100);
-
-    return {
-      filename,
-      date: dateStr,
-      name,
-      grade,
-      school,
-      categoryScores,
-      totalScore: fileTotal,
-      maxScore: calculatedMax || 100,
-      percentage: filePct
-    };
-  }
-
-  // Format 1 & 3: Multi-row detailed format (Student Name,Grade,School,Q#,Type...)
-  let name = '';
-  let grade = '';
-  let school = '';
-  let fileTotal = null;
-  let fileMax = null;
-  let filePct = null;
-
-  const categoryScores = {
+function createCategoryScores() {
+  return {
     mcq: 0,
     true_false: 0,
     match: 0,
@@ -157,7 +74,135 @@ function parseCSVFile(filePath) {
     ai_question: 0,
     image_id: 0
   };
+}
 
+function parseWideFormatCSV(filename, filePath, lines, dateStr) {
+  const header = lines[0];
+  const headers = parseCSVLine(header);
+
+  // Find column indices based on header names (with length guard to prevent matching question text)
+  const nameIdx = headers.findIndex(h => {
+    const lh = h.toLowerCase().trim();
+    return (lh.includes('name') || lh.includes('student')) && lh.length < 25;
+  });
+  const gradeIdx = headers.findIndex(h => {
+    const lh = h.toLowerCase().trim();
+    return lh.includes('grade') && lh.length < 20;
+  });
+  const schoolIdx = headers.findIndex(h => {
+    const lh = h.toLowerCase().trim();
+    return (lh.includes('school') || lh.includes('college')) && lh.length < 30;
+  });
+  const q1Idx = headers.findIndex(h => {
+    const lh = h.toLowerCase().trim();
+    return lh.startsWith('q1:') || lh.startsWith('q1 ') || lh === 'q1';
+  });
+  const totalIdx = headers.findIndex(h => {
+    const lh = h.toLowerCase().trim();
+    return (lh.includes('total score') || lh.includes('total') || lh.includes('score') || lh.includes('points')) && lh.length < 20;
+  });
+  const pctIdx = headers.findIndex(h => {
+    const lh = h.toLowerCase().trim();
+    return (lh.includes('percentage') || lh.includes('%') || lh.includes('pct')) && lh.length < 20;
+  });
+
+  // Fallbacks if not found
+  const finalNameIdx = nameIdx !== -1 ? nameIdx : 1;
+  const finalGradeIdx = gradeIdx !== -1 ? gradeIdx : 2;
+  const finalSchoolIdx = schoolIdx !== -1 ? schoolIdx : 3;
+  const finalQ1Idx = q1Idx !== -1 ? q1Idx : 4;
+  const finalTotalIdx = totalIdx !== -1 ? totalIdx : (finalQ1Idx + 50);
+  const finalPctIdx = pctIdx !== -1 ? pctIdx : (finalTotalIdx + 1);
+
+  const records = [];
+
+  for (let i = 1; i < lines.length; i++) {
+    const cols = parseCSVLine(lines[i]);
+    if (cols.length <= Math.max(finalNameIdx, finalGradeIdx, finalSchoolIdx)) {
+      continue;
+    }
+
+    const firstVal = cols[0] ? cols[0].trim().toLowerCase() : '';
+    const nameVal = cols[finalNameIdx] ? cols[finalNameIdx].trim() : '';
+
+    // Skip header, Max Marks, or Summary/Benchmark rows
+    if (!nameVal || 
+        nameVal.toLowerCase().includes('benchmark') || 
+        nameVal.toLowerCase().includes('max marks') || 
+        nameVal.toLowerCase().includes('summary') || 
+        nameVal.toLowerCase().includes('class average') ||
+        firstVal.includes('summary') || 
+        firstVal.includes('total') || 
+        firstVal.includes('timestamp') || 
+        firstVal.includes('max marks') ||
+        cols.join(',').toLowerCase().includes('max marks per question')
+    ) {
+      continue;
+    }
+
+    const name = nameVal || 'Unknown';
+    const grade = cols[finalGradeIdx] || 'Unspecified';
+    const school = cols[finalSchoolIdx] || 'Unspecified';
+
+    const categoryScores = createCategoryScores();
+    let calculatedTotal = 0;
+    let calculatedMax = 0;
+
+    for (let qNum = 1; qNum <= 50; qNum++) {
+      const qMeta = questionsMap.get(qNum) || { type: 'mcq', marks: 1 };
+      calculatedMax += qMeta.marks;
+
+      const colIndex = finalQ1Idx + qNum - 1;
+      const cellVal = cols[colIndex] !== undefined ? cols[colIndex] : '0';
+      let earned = 0;
+
+      const trimmed = cellVal.trim();
+      if (trimmed !== '' && !Number.isNaN(Number(trimmed))) {
+        earned = Number.parseFloat(trimmed);
+      } else if (trimmed.toLowerCase() === 'true' || trimmed.toLowerCase() === 'yes') {
+        earned = qMeta.marks;
+      } else if (trimmed.toLowerCase() === 'false' || trimmed.toLowerCase() === 'no') {
+        earned = 0;
+      } else {
+        earned = trimmed.length > 0 ? 1 : 0;
+      }
+
+      if (categoryScores[qMeta.type] !== undefined) {
+        categoryScores[qMeta.type] += earned;
+      } else {
+        categoryScores.mcq += earned;
+      }
+      calculatedTotal += earned;
+    }
+
+    const fileTotal = cols[finalTotalIdx] ? Number.parseFloat(cols[finalTotalIdx]) : calculatedTotal;
+    const filePct = cols[finalPctIdx] ? Number.parseFloat(cols[finalPctIdx].replace('%', '')) : Math.round((fileTotal / (calculatedMax || 100)) * 100);
+
+    records.push({
+      filename,
+      date: dateStr,
+      name,
+      grade,
+      school,
+      categoryScores,
+      totalScore: fileTotal,
+      maxScore: calculatedMax || 100,
+      percentage: filePct
+    });
+  }
+
+  return records;
+}
+
+function parseMultiRowCSV(filename, filePath, lines, dateStr) {
+  let name = '';
+  let grade = '';
+  let school = '';
+  let fileTotal = null;
+  let fileMax = null;
+  let filePct = null;
+
+  const categoryScores = createCategoryScores();
   let calculatedTotal = 0;
   let calculatedMax = 0;
 
@@ -219,6 +264,23 @@ function parseCSVFile(filePath) {
   };
 }
 
+function parseCSVFile(filePath) {
+  const filename = path.basename(filePath);
+  const content = fs.readFileSync(filePath, 'utf8');
+  const lines = content.split(/\r?\n/).filter(l => l.trim().length > 0);
+  if (lines.length === 0) return [];
+
+  const header = lines[0];
+  const dateStr = extractDate(filename, filePath);
+
+  if (header.includes('School/College') || (header.startsWith('Name') && header.includes('Q1'))) {
+    return parseWideFormatCSV(filename, filePath, lines, dateStr);
+  }
+
+  const multiRecord = parseMultiRowCSV(filename, filePath, lines, dateStr);
+  return multiRecord ? [multiRecord] : [];
+}
+
 function runCompiler() {
   console.log('🚀 STEM Quest Test Data Compiler');
   console.log('Scanning directory:', testsDir);
@@ -235,8 +297,8 @@ function runCompiler() {
   files.forEach(file => {
     try {
       const parsed = parseCSVFile(path.join(testsDir, file));
-      if (parsed) {
-        records.push(parsed);
+      if (Array.isArray(parsed)) {
+        records.push(...parsed);
       }
     } catch (err) {
       console.warn(`Failed to parse file ${file}:`, err.message);
