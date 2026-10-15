@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pico W Air Mouse — Command & Diagnostics Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #070913;
+    --card-bg: rgba(18, 22, 44, 0.7);
+    --card-border: rgba(99, 102, 241, 0.25);
+    --accent-cyan: #00F2FE;
+    --accent-purple: #7C83FB;
+    --accent-green: #10B981;
+    --accent-red: #EF4444;
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: radial-gradient(circle at 15% 15%, rgba(124, 131, 251, 0.12), transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(0, 242, 254, 0.08), transparent 45%),
+                var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 24px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1160px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+    padding: 20px 28px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  .brand-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .brand-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #00F2FE, #7C83FB);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+  }
+
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(90deg, #FFFFFF, #CBD5E1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .tagline {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .tag-badge {
+    background: rgba(0, 242, 254, 0.12);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: var(--accent-cyan);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+
+  .header-actions {
+    display: flex;
+    gap: 12px;
+  }
+
+  button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #00F2FE, #4FACFE);
+    color: #030712;
+    box-shadow: 0 4px 14px rgba(0, 242, 254, 0.3);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.5);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
+
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #64748B;
+  }
+  .status-dot.active {
+    background: var(--accent-green);
+    box-shadow: 0 0 10px var(--accent-green);
+  }
+
+  /* Grid Layout */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  @media (max-width: 900px) {
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(16px);
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #F8FAFC;
+  }
+
+  /* 3D Visualization Area */
+  .visualizer-stage {
+    height: 240px;
+    background: radial-gradient(circle at center, rgba(30, 41, 79, 0.5), rgba(11, 14, 26, 0.8));
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 800px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .device-3d {
+    width: 140px;
+    height: 70px;
+    background: linear-gradient(135deg, #1E293B, #0F172A);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.05s ease-out;
+  }
+
+  .device-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    text-transform: uppercase;
+  }
+
+  .device-led {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-green);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent-green);
+  }
+
+  .device-buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+  }
+
+  .mock-btn {
+    width: 32px;
+    height: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .mock-btn.active {
+    background: var(--accent-cyan);
+    box-shadow: 0 0 10px var(--accent-cyan);
+  }
+
+  /* Virtual Canvas Screen */
+  .virtual-screen {
+    height: 240px;
+    background: #020617;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    cursor: crosshair;
+  }
+
+  .cursor-dot {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: var(--accent-cyan);
+    border: 2px solid #FFFFFF;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 16px var(--accent-cyan);
+    pointer-events: none;
+    transition: left 0.04s linear, top 0.04s linear;
+  }
+
+  .cursor-trail {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border: 1px dashed rgba(0, 242, 254, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .screen-overlay {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+  }
+
+  /* Telemetry Grid */
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .metric-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .metric-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .metric-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-cyan);
+  }
+
+  /* Button Visualizer */
+  .button-tester {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .btn-indicator {
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.1s ease;
+  }
+
+  .btn-indicator.pressed {
+    background: rgba(0, 242, 254, 0.15);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+    transform: scale(0.98);
+  }
+
+  .btn-indicator-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .btn-indicator-sub {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Tuning Controls */
+  .slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .slider-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    outline: none;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--accent-cyan);
+    cursor: pointer;
+    box-shadow: 0 0 10px var(--accent-cyan);
+  }
+
+  /* Log Console */
+  .log-console {
+    height: 120px;
+    background: #020617;
+    border-radius: 12px;
+    padding: 10px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #38BDF8;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <header>
+    <div class="brand-group">
+      <div class="brand-icon">🖱️</div>
+      <div>
+        <h1>Pico W Air Mouse</h1>
+        <div class="tagline">
+          <span>RP2040 + CYW43439</span>
+          <span class="tag-badge">BLE 5.2 HID</span>
+          <span class="tag-badge">MPU-6050 6-DOF</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <div class="status-pill">
+        <div class="status-dot" id="statusDot"></div>
+        <span id="statusText">DISCONNECTED</span>
+      </div>
+      <button class="btn-primary" id="btnConnectSerial">🔌 Connect Serial</button>
+      <button class="btn-secondary" id="btnConnectBle">📡 Web BLE</button>
+    </div>
+  </header>
+
+  <!-- Main Grid -->
+  <div class="dashboard-grid">
+    <!-- Card 1: 3D Handheld Orientation -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🎮 3D Spatial Attitude (Orientation)</div>
+        <button class="btn-secondary" id="btnCalibrate" style="padding: 6px 12px; font-size: 12px;">Zero Bias</button>
+      </div>
+
+      <div class="visualizer-stage">
+        <div class="device-3d" id="device3D">
+          <div class="device-led"></div>
+          <div class="device-label">PICO W</div>
+          <div class="device-buttons">
+            <div class="mock-btn" id="mockBtnL"></div>
+            <div class="mock-btn" id="mockBtnR"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="metric-label">Pitch (Gx)</span>
+          <span class="metric-val" id="valGx">0.0°/s</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">Roll (Gy)</span>
+          <span class="metric-val" id="valGy">0.0°/s</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">Yaw (Gz)</span>
+          <span class="metric-val" id="valGz">0.0°/s</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Virtual Cursor Testing Screen -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">🎯 Virtual Test Canvas</div>
+        <button class="btn-secondary" id="btnResetCursor" style="padding: 6px 12px; font-size: 12px;">Center Cursor</button>
+      </div>
+
+      <div class="virtual-screen" id="virtualScreen">
+        <div class="cursor-dot" id="cursorDot"></div>
+        <div class="cursor-trail" id="cursorTrail"></div>
+        <div class="screen-overlay" id="cursorCoords">X: 0, Y: 0</div>
+      </div>
+
+      <!-- Physical Button Visualizer -->
+      <div class="button-tester">
+        <div class="btn-indicator" id="indBtnLeft">
+          <span class="btn-indicator-name">LEFT CLICK</span>
+          <span class="btn-indicator-sub">GPIO 14 (Pin 19)</span>
+        </div>
+        <div class="btn-indicator" id="indBtnRight">
+          <span class="btn-indicator-name">RIGHT CLICK</span>
+          <span class="btn-indicator-sub">GPIO 15 (Pin 20)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Sensitivity & Tuning Controls -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">⚡ Dynamics & Sensitivity Tuning</div>
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-header">
+          <span>Horizontal Sensitivity (X)</span>
+          <strong id="lblSensX">1.25</strong>
+        </div>
+        <input type="range" id="rngSensX" min="0.5" max="3.0" step="0.05" value="1.25">
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-header">
+          <span>Vertical Sensitivity (Y)</span>
+          <strong id="lblSensY">1.25</strong>
+        </div>
+        <input type="range" id="rngSensY" min="0.5" max="3.0" step="0.05" value="1.25">
+      </div>
+
+      <div class="slider-group">
+        <div class="slider-header">
+          <span>Deadzone Suppression Threshold</span>
+          <strong id="lblDeadzone">0.045</strong>
+        </div>
+        <input type="range" id="rngDeadzone" min="0.01" max="0.15" step="0.005" value="0.045">
+      </div>
+
+      <div style="display: flex; gap: 12px; margin-top: 8px;">
+        <button class="btn-primary" id="btnSaveConfig" style="flex: 1;">💾 Export config.json</button>
+      </div>
+    </div>
+
+    <!-- Card 4: Console & Live Logs -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">📊 Raw Telemetry Feed</div>
+        <span style="font-size: 11px; color: var(--text-secondary); font-family: 'JetBrains Mono';">20 Hz Stream</span>
+      </div>
+
+      <div class="log-console" id="logConsole">
+[SYSTEM] Ready to connect to Raspberry Pi Pico W Air Mouse.
+[INFO] Plug in via USB and click 'Connect Serial' to stream live telemetry.
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-box">
+          <span class="metric-label">Accel X / Y / Z</span>
+          <span class="metric-val" id="valAccel" style="font-size: 13px;">0.0, 0.0, 1.0g</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">Internal Temp</span>
+          <span class="metric-val" id="valTemp">25.0°C</span>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">BLE Status</span>
+          <span class="metric-val" id="valBle" style="font-size: 13px; color: #10B981;">Ready</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Elements
+  const statusDot = document.getElementById('statusDot');
+  const statusText = document.getElementById('statusText');
+  const btnConnectSerial = document.getElementById('btnConnectSerial');
+  const btnConnectBle = document.getElementById('btnConnectBle');
+  const btnCalibrate = document.getElementById('btnCalibrate');
+  const btnResetCursor = document.getElementById('btnResetCursor');
+  const logConsole = document.getElementById('logConsole');
+
+  const device3D = document.getElementById('device3D');
+  const mockBtnL = document.getElementById('mockBtnL');
+  const mockBtnR = document.getElementById('mockBtnR');
+
+  const valGx = document.getElementById('valGx');
+  const valGy = document.getElementById('valGy');
+  const valGz = document.getElementById('valGz');
+  const valAccel = document.getElementById('valAccel');
+  const valTemp = document.getElementById('valTemp');
+  const valBle = document.getElementById('valBle');
+
+  const virtualScreen = document.getElementById('virtualScreen');
+  const cursorDot = document.getElementById('cursorDot');
+  const cursorTrail = document.getElementById('cursorTrail');
+  const cursorCoords = document.getElementById('cursorCoords');
+
+  const indBtnLeft = document.getElementById('indBtnLeft');
+  const indBtnRight = document.getElementById('indBtnRight');
+
+  const rngSensX = document.getElementById('rngSensX');
+  const rngSensY = document.getElementById('rngSensY');
+  const rngDeadzone = document.getElementById('rngDeadzone');
+  const lblSensX = document.getElementById('lblSensX');
+  const lblSensY = document.getElementById('lblSensY');
+  const lblDeadzone = document.getElementById('lblDeadzone');
+  const btnSaveConfig = document.getElementById('btnSaveConfig');
+
+  // State
+  let port = null;
+  let reader = null;
+  let writer = null;
+  let pitch = 0, roll = 0, yaw = 0;
+  let cursorX = 150, cursorY = 120;
+
+  function log(msg) {
+    const time = new Date().toLocaleTimeString();
+    logConsole.innerHTML += `\n[${time}] ${msg}`;
+    logConsole.scrollTop = logConsole.scrollHeight;
+  }
+
+  function resetCursor() {
+    cursorX = virtualScreen.clientWidth / 2;
+    cursorY = virtualScreen.clientHeight / 2;
+    updateCursorDisplay();
+  }
+
+  function updateCursorDisplay() {
+    cursorDot.style.left = `${cursorX}px`;
+    cursorDot.style.top = `${cursorY}px`;
+    cursorTrail.style.left = `${cursorX}px`;
+    cursorTrail.style.top = `${cursorY}px`;
+    cursorCoords.innerText = `X: ${Math.round(cursorX)}, Y: ${Math.round(cursorY)}`;
+  }
+
+  // Handle Serial Telemetry Frame
+  function handleTelemetry(data) {
+    // Rotation mapping for 3D model
+    pitch = data.gy * 0.5;
+    roll = data.gx * 0.5;
+    yaw = -data.gz * 0.5;
+
+    device3D.style.transform = `rotateX(${pitch}deg) rotateY(${yaw}deg) rotateZ(${roll}deg)`;
+
+    valGx.innerText = `${data.gx}°/s`;
+    valGy.innerText = `${data.gy}°/s`;
+    valGz.innerText = `${data.gz}°/s`;
+    valAccel.innerText = `${data.ax}, ${data.ay}, ${data.az}g`;
+    valTemp.innerText = `${data.temp}°C`;
+    valBle.innerText = data.ble ? 'CONNECTED' : 'ADVERTISING';
+
+    // Buttons
+    if (data.btnL) {
+      indBtnLeft.classList.add('pressed');
+      mockBtnL.classList.add('active');
+    } else {
+      indBtnLeft.classList.remove('pressed');
+      mockBtnL.classList.remove('active');
+    }
+
+    if (data.btnR) {
+      indBtnRight.classList.add('pressed');
+      mockBtnR.classList.add('active');
+    } else {
+      indBtnRight.classList.remove('pressed');
+      mockBtnR.classList.remove('active');
+    }
+
+    // Virtual cursor motion
+    cursorX += (data.dx || 0) * 1.5;
+    cursorY += (data.dy || 0) * 1.5;
+
+    cursorX = Math.max(8, Math.min(virtualScreen.clientWidth - 8, cursorX));
+    cursorY = Math.max(8, Math.min(virtualScreen.clientHeight - 8, cursorY));
+    updateCursorDisplay();
+  }
+
+  // Serial Connect
+  btnConnectSerial.addEventListener('click', async () => {
+    if (!navigator.serial) {
+      alert('Web Serial API is not supported in this browser. Please use Chrome, Edge, or Opera.');
+      return;
+    }
+
+    try {
+      port = await navigator.serial.requestPort();
+      await port.open({ baudRate: 115200 });
+
+      statusDot.classList.add('active');
+      statusText.innerText = 'SERIAL ACTIVE';
+      btnConnectSerial.innerText = 'Connected';
+      btnConnectSerial.style.background = '#10B981';
+      log('Connected to Raspberry Pi Pico W Serial Port.');
+
+      const textDecoder = new TextDecoderStream();
+      port.readable.pipeTo(textDecoder.writable);
+      reader = textDecoder.readable.getReader();
+
+      let buffer = '';
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        buffer += value;
+        const lines = buffer.split('\n');
+        buffer = lines.pop();
+
+        for (const line of lines) {
+          const trimmed = line.trim();
+          if (trimmed.startsWith('TELEM:')) {
+            try {
+              const jsonStr = trimmed.replace('TELEM:', '');
+              const telem = JSON.parse(jsonStr);
+              handleTelemetry(telem);
+            } catch (e) {}
+          } else if (trimmed.length > 0) {
+            log(trimmed);
+          }
+        }
+      }
+    } catch (err) {
+      log(`Serial Error: ${err.message}`);
+    }
+  });
+
+  // Zero Bias calibration command
+  btnCalibrate.addEventListener('click', async () => {
+    if (port && port.writable) {
+      const encoder = new TextEncoder();
+      const writer = port.writable.getWriter();
+      await writer.write(encoder.encode("CALIBRATE\n"));
+      writer.releaseLock();
+      log("Sent CALIBRATE command. Keep mouse still for 2s...");
+    } else {
+      log("Simulating gyro zero re-calibration.");
+      pitch = 0; roll = 0; yaw = 0;
+      device3D.style.transform = `rotateX(0deg) rotateY(0deg) rotateZ(0deg)`;
+    }
+  });
+
+  btnResetCursor.addEventListener('click', resetCursor);
+
+  // Sliders
+  rngSensX.addEventListener('input', (e) => {
+    lblSensX.innerText = e.target.value;
+  });
+  rngSensY.addEventListener('input', (e) => {
+    lblSensY.innerText = e.target.value;
+  });
+  rngDeadzone.addEventListener('input', (e) => {
+    lblDeadzone.innerText = e.target.value;
+  });
+
+  // Export config.json
+  btnSaveConfig.addEventListener('click', () => {
+    const configData = {
+      device_name: "Pico W Air Mouse",
+      i2c_id: 0,
+      sda_pin: 4,
+      scl_pin: 5,
+      i2c_freq: 400000,
+      btn_left_pin: 14,
+      btn_right_pin: 15,
+      led_pin: "LED",
+      sens_x: parseFloat(rngSensX.value),
+      sens_y: parseFloat(rngSensY.value),
+      deadzone: parseFloat(rngDeadzone.value),
+      invert_x: false,
+      invert_y: false,
+      smoothing_alpha: 0.75,
+      poll_interval_ms: 10,
+      auto_calibrate_on_boot: true
+    };
+
+    const blob = new Blob([JSON.stringify(configData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'config.json';
+    a.click();
+    URL.revokeObjectURL(url);
+    log("Exported config.json with current slider settings.");
+  });
+
+  // Initialize Center Cursor on load
+  window.addEventListener('load', () => {
+    resetCursor();
+  });
+</script>
+</body>
+</html>
