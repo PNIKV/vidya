@@ -1,0 +1,90 @@
+{
+  "id": "air-mouse-picow",
+  "title": "Pico W Air Mouse",
+  "subtitle": "Wireless BLE 5.2 Air Mouse using Raspberry Pi Pico W + MPU6050",
+  "level": "Advanced",
+  "color": "#00F2FE",
+  "desc": "Control your PC cursor with hand gestures using a Raspberry Pi Pico W and MPU6050 6-DOF IMU over Bluetooth Low Energy 5.2!",
+  "fullDesc": "The Raspberry Pi Pico W Air Mouse turns the RP2040 and CYW43439 into a wireless Bluetooth Low Energy 5.2 HID mouse. Using an MPU-6050 6-Axis IMU sensor, wrist pitch and yaw are translated into relative cursor coordinates with anti-jitter stillness filtering and dynamic non-linear acceleration. Includes 2 physical tactile buttons for left click (with drag-and-drop) and right click, plus a real-time Web Bluetooth and Web Serial diagnostics dashboard.",
+  "difficulty": 4,
+  "status": "Available",
+  "tags": [
+    "Pico W",
+    "Raspberry Pi",
+    "BLE",
+    "Bluetooth 5.2",
+    "MPU6050",
+    "HID",
+    "Gesture",
+    "MicroPython",
+    "Wireless"
+  ],
+  "date": "2026-10-06",
+  "author": "VidyaSTEM Team",
+  "team": [
+    {
+      "name": "VidyaSTEM Robotics Lab",
+      "role": "IoT & Embedded Systems"
+    }
+  ],
+  "innovation": "Harnesses the Raspberry Pi Pico W's CYW43439 Bluetooth 5.2 radio for low-latency, driverless HID mouse emulation with 6-DOF IMU motion filtering and interactive browser diagnostics.",
+  "problemStatement": "Standard mice require flat desktop surfaces and cause repetitive strain injury during long presentations or accessibility navigation. A wearable or handheld air mouse enables free-hand spatial cursor control from anywhere in the room.",
+  "solutionApproach": "Engineered a BLE 5.2 HID GATT server on the RP2040 paired with an MPU-6050 IMU. The firmware samples angular velocity over I2C at 400kHz, applies exponential moving average smoothing and stillness detection to eradicate gyro drift, and streams HID reports to any paired host.",
+  "hardwareSpecs": {
+    "microcontroller": "Raspberry Pi Pico W (RP2040 Dual ARM Cortex-M0+ @ 133MHz)",
+    "sensor": "MPU-6050 6-DOF IMU (I2C0, GP4/GP5)",
+    "connectivity": "Bluetooth Low Energy 5.2 (CYW43439)",
+    "buttons": "2x Tactile Push Buttons (Left: GP14, Right: GP15)",
+    "operatingVoltage": "3.3V DC (Pico 3V3_OUT)"
+  },
+  "components": [
+    "Raspberry Pi Pico W",
+    "MPU-6050 6-Axis IMU Sensor",
+    "2x Tactile Push Buttons",
+    "Breadboard",
+    "Jumper Wires",
+    "Micro-USB Cable"
+  ],
+  "componentRefs": [
+    "raspberry-pi-pico-w",
+    "mpu6050",
+    "breadboard",
+    "jumper-wires",
+    "usb-cable"
+  ],
+  "guide": [
+    "Mount the Raspberry Pi Pico W and MPU-6050 IMU onto the breadboard",
+    "Connect MPU-6050 to Pico W: VCC->Pin 36 (3V3_OUT), GND->Pin 38, SDA->Pin 6 (GP4), SCL->Pin 7 (GP5)",
+    "Connect Button 1 (Left Click) between Pin 19 (GP14) and GND",
+    "Connect Button 2 (Right Click) between Pin 20 (GP15) and GND",
+    "Flash official MicroPython UF2 firmware onto Raspberry Pi Pico W via BOOTSEL",
+    "Upload mpu6050.py, ble_hid_mouse.py, config.json, and main.py using Thonny IDE",
+    "Pair with your PC or phone via Bluetooth Settings as 'Pico W Air Mouse'",
+    "Open air_mouse_dashboard.html in Chrome/Edge to test 3D orientation and tune sensitivity",
+    "Hold both buttons for 2 seconds anytime to re-calibrate gyro zero bias"
+  ],
+  "estimatedTime": "75 minutes",
+  "prerequisites": [
+    "Raspberry Pi Pico W basics",
+    "Thonny IDE or Arduino IDE setup",
+    "Basic I2C wiring"
+  ],
+  "liveUrl": "projects/Air-mouse with picow/air_mouse_dashboard.html",
+  "youtubeVideos": [],
+  "githubUrl": "",
+  "achievements": [
+    "Wireless BLE 5.2 HID implementation on Pico W",
+    "Driverless cross-platform cursor control",
+    "Interactive Web Bluetooth & Serial diagnostics dashboard"
+  ],
+  "keywords": [
+    "pico w",
+    "raspberry pi",
+    "air mouse",
+    "ble 5.2",
+    "bluetooth mouse",
+    "mpu6050",
+    "gyroscope",
+    "gesture control"
+  ]
+}

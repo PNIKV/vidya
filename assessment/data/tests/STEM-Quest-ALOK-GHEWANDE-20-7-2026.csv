@@ -1,0 +1,44 @@
+Student Name,Grade,School,Q#,Type,Question,Correct?,Marks Earned,Max Marks
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",1,true_false,"Robotics combines mechanical electrical and software skills",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",2,mcq,"What is Ohms Law formula",No,0,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",3,mcq,"Which of these shows the Arduino IDE interface",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",4,mcq,"Which language uses colorful snaptogether blocks for coding",No,0,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",5,fill_bank,"A ___ board lets you build circuits quickly without ___",Yes,2,2
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",6,true_false,"GCode is the language used to control 3D printers",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",7,true_false,"A breadboard REQUIRES soldering to build circuits",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",8,fill_bank,"An ___ emits ___ when electricity flows through it",No,0,2
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",9,match," Match each component to its function",Yes,3,3
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",10,mcq,"Which sensor uses sound waves to detect distance",No,0,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",11,mcq,"What does STEM stand for",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",12,true_false,"A battery provides AC Alternating Current power",No,0,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",13,true_false,"Arduino programs are written in the Python language",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",14,true_false,"An ultrasonic sensor uses LIGHT to detect objects",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",15,true_false,"A sensor detects information from the environment",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",16,true_false,"3D printing is called Subtractive Manufacturing",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",17,arduino_ide," Complete the Arduino code Which function goes in the blank",No,0,3
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",18,true_false,"LED stands for Light Emitting Diode",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",19,mcq,"Which one is an Arduino Uno",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",20,match," Match the computer part to what it does",No,0,3
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",21,mcq,"Which of these is an INPUT device for a computer",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",22,true_false,"A resistor INCREASES the flow of electricity",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",23,match," Match each STEM letter to its field",Yes,3,3
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",24,picto," Arrange the PictoBlocks to make an LED blink",No,0,4
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",25,true_false,"PLA plastic used in 3D printing is biodegradable",No,0,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",26,mcq,"What is the unit of Voltage",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",27,calc,"You have 3 LEDs in SERIES Each LED needs 2V What is the TOTAL voltage needed",No,0,3
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",28,mcq,"Which component stores electrical energy",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",29,ai_question,"What happens when you connect an LED directly to a 9V battery WITHOUT a resistor",Yes,2,2
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",30,true_false,"A multimeter can measure voltage current AND resistance",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",31,calc,"If Voltage  9V and Resistance  100 what is the Current",No,0,3
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",32,match," Match the coding concept to its meaning",No,0,3
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",33,true_false,"In an open circuit electricity CAN flow freely",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",34,mcq,"What does an LED emit when powered",No,0,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",35,fill_bank,"In Arduino the ___ function runs once The ___ function loops forever",No,0,2
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",36,fill_bank,"V  I  R is called ___ Law V stands for ___",No,0,2
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",37,true_false,"Python is a textbased programming language",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",38,true_false,"A standard servo motor can rotate 360 continuously forever",Yes,1,1
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",39,calc,"Your supply gives 5V and 100mA total Each LED needs 20mA How many LEDs can you light up",Yes,3,3
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",40,fill_bank,"A ___ sensor uses ___ waves to measure distance to an object",No,0,2
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",41,match," Match the Arduino function to what it does",No,0,3
+"ALOK GHEWANDE","GRADE 11","SIDDHART COLLAGE",TOTAL,-,"Final Score",-,32,68
+,,,,,,"Score %","47%",

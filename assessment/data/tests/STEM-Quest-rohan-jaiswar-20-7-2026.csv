@@ -1,0 +1,44 @@
+Student Name,Grade,School,Q#,Type,Question,Correct?,Marks Earned,Max Marks
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",1,mcq,"Which one is an Arduino Uno",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",2,true_false,"PLA plastic used in 3D printing is biodegradable",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",3,calc,"If Voltage  9V and Resistance  100 what is the Current",Yes,3,3
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",4,arduino_ide," Complete the Arduino code Which function goes in the blank",No,0,3
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",5,fill_bank,"A ___ sensor uses ___ waves to measure distance to an object",No,0,2
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",6,mcq,"What does STEM stand for",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",7,true_false,"3D printing is called Subtractive Manufacturing",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",8,true_false,"A breadboard REQUIRES soldering to build circuits",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",9,match," Match each component to its function",Yes,3,3
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",10,picto," Arrange the PictoBlocks to make an LED blink",No,0,4
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",11,mcq,"Which sensor uses sound waves to detect distance",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",12,mcq,"Which language uses colorful snaptogether blocks for coding",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",13,true_false,"In an open circuit electricity CAN flow freely",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",14,mcq,"Which of these is an INPUT device for a computer",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",15,fill_bank,"V  I  R is called ___ Law V stands for ___",No,0,2
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",16,mcq,"What does an LED emit when powered",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",17,match," Match the computer part to what it does",Yes,3,3
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",18,true_false,"A battery provides AC Alternating Current power",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",19,true_false,"An ultrasonic sensor uses LIGHT to detect objects",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",20,true_false,"A sensor detects information from the environment",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",21,true_false,"A resistor INCREASES the flow of electricity",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",22,true_false,"Python is a textbased programming language",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",23,mcq,"What is Ohms Law formula",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",24,true_false,"LED stands for Light Emitting Diode",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",25,ai_question,"What happens when you connect an LED directly to a 9V battery WITHOUT a resistor",No,0,2
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",26,fill_bank,"A ___ board lets you build circuits quickly without ___",No,0,2
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",27,fill_bank,"An ___ emits ___ when electricity flows through it",No,0,2
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",28,true_false,"Robotics combines mechanical electrical and software skills",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",29,true_false,"GCode is the language used to control 3D printers",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",30,calc,"Your supply gives 5V and 100mA total Each LED needs 20mA How many LEDs can you light up",Yes,3,3
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",31,fill_bank,"In Arduino the ___ function runs once The ___ function loops forever",No,0,2
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",32,match," Match each STEM letter to its field",Yes,3,3
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",33,true_false,"A multimeter can measure voltage current AND resistance",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",34,mcq,"Which component stores electrical energy",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",35,mcq,"What is the unit of Voltage",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",36,true_false,"A standard servo motor can rotate 360 continuously forever",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",37,mcq,"Which of these shows the Arduino IDE interface",Yes,1,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",38,match," Match the coding concept to its meaning",No,0,3
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",39,match," Match the Arduino function to what it does",No,0,3
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",40,true_false,"Arduino programs are written in the Python language",No,0,1
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",41,calc,"You have 3 LEDs in SERIES Each LED needs 2V What is the TOTAL voltage needed",Yes,3,3
+"rohan jaiswar","GRADE 7","PM SHRI MPS VARSHANAGAR HIGH SCHOOL",TOTAL,-,"Final Score",-,30,68
+,,,,,,"Score %","44%",
