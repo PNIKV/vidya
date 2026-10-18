@@ -4,20 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VECTOR-1 // Flight Sim</title>
+    <title>VECTOR-1 // Next-Gen Flight Sim</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap');
 
         :root {
             --bg: #05070a;
-            --panel: #0d1b2a;
-            --panel2: #142536;
+            --panel: rgba(13, 27, 42, 0.85);
+            --panel2: rgba(20, 37, 54, 0.75);
             --line: #24405a;
             --cyan: #7fdbca;
+            --cyan-glow: rgba(127, 219, 202, 0.4);
             --cyan-dim: #3d6b63;
             --amber: #ff6b4a;
+            --gold: #ffbe3b;
+            --green: #2ecc71;
             --white: #e8eef2;
-            --dim: #5b7585;
+            --dim: #7e9bb0;
         }
 
         * {
@@ -51,79 +54,324 @@
             pointer-events: none;
         }
 
-        /* Data Readouts */
+        /* Top Bar Container */
+        #top-bar {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            pointer-events: auto;
+            z-index: 20;
+        }
+
+        /* Connection Status */
+        #conn-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            padding: 6px 14px;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+        }
+
+        #conn-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--dim);
+            transition: all 0.3s;
+        }
+
+        #conn-dot.live {
+            background: var(--cyan);
+            box-shadow: 0 0 12px var(--cyan);
+        }
+
+        #conn-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Mission / Challenge Header */
+        #mission-banner {
+            background: var(--panel);
+            border: 1px solid var(--cyan-dim);
+            box-shadow: 0 0 15px rgba(0, 216, 255, 0.15);
+            padding: 8px 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .mission-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .mission-stat-lbl {
+            font-size: 10px;
+            color: var(--dim);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .mission-stat-val {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+
+        .mission-stat-val.highlight {
+            color: var(--gold);
+        }
+
+        /* Day & Night Controls */
+        #tod-controls {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--panel);
+            border: 1px solid var(--line);
+            padding: 6px 12px;
+            border-radius: 8px;
+            backdrop-filter: blur(8px);
+        }
+
+        .tod-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--line);
+            color: var(--white);
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 0;
+            width: auto;
+        }
+
+        .tod-btn:hover {
+            background: var(--cyan);
+            color: var(--bg);
+            border-color: var(--cyan);
+        }
+
+        #time-slider-box {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: 6px;
+        }
+
+        #time-slider {
+            width: 75px;
+            accent-color: var(--cyan);
+            cursor: pointer;
+        }
+
+        #time-display {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--cyan);
+            min-width: 40px;
+        }
+
+        /* Top Action Buttons */
+        .hud-action-btn {
+            background: transparent;
+            border: 1px solid var(--line);
+            color: var(--white);
+            padding: 6px 12px;
+            font-size: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            transition: all 0.2s;
+            margin: 0;
+            width: auto;
+        }
+
+        .hud-action-btn:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        /* Data Readouts Panels */
         #left-panel {
             position: absolute;
-            left: 30px;
+            left: 25px;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 16px;
             pointer-events: none;
             z-index: 10;
         }
 
         #right-panel {
             position: absolute;
-            right: 30px;
+            right: 25px;
             top: 50%;
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 16px;
             pointer-events: none;
             z-index: 10;
             align-items: flex-end;
         }
 
         .readout-block {
-            background: rgba(13, 27, 42, 0.8);
+            background: var(--panel);
             border: 1px solid var(--line);
-            padding: 10px 15px;
-            border-radius: 6px;
-            backdrop-filter: blur(4px);
+            padding: 10px 18px;
+            border-radius: 8px;
+            backdrop-filter: blur(6px);
             pointer-events: auto;
             position: relative;
+            min-width: 110px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .readout-label {
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            color: var(--dim);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .readout-value {
+            font-family: 'Orbitron', 'JetBrains Mono', monospace;
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 1px;
+        }
+
+        .readout-unit {
+            font-size: 12px;
+            color: var(--cyan);
+            margin-left: 4px;
+            font-weight: 500;
+        }
+
+        .readout-block.warn .readout-value {
+            color: var(--amber);
         }
 
         /* Throttle Gauge */
         #throttle-container {
             position: absolute;
             bottom: 30px;
-            left: 30px;
-            width: 40px;
-            height: 200px;
-            background: rgba(13, 27, 42, 0.8);
+            left: 25px;
+            width: 48px;
+            height: 220px;
+            background: var(--panel);
             border: 1px solid var(--line);
-            border-radius: 4px;
+            border-radius: 8px;
             pointer-events: auto;
             display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 6px;
+            backdrop-filter: blur(6px);
+        }
+
+        #throttle-track {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 4px;
+            display: flex;
             align-items: flex-end;
-            padding: 4px;
+            position: relative;
+            overflow: hidden;
         }
 
         #throttle-fill {
             width: 100%;
-            background: linear-gradient(to top, var(--cyan-dim), var(--cyan));
-            border-radius: 2px;
-            transition: height 0.1s;
+            height: 0%;
+            background: linear-gradient(to top, var(--cyan-dim), var(--cyan), var(--gold));
+            border-radius: 4px;
+            transition: height 0.08s ease-out;
+            box-shadow: 0 0 10px var(--cyan);
+        }
+
+        #throttle-val {
+            position: absolute;
+            top: 8px;
+            width: 100%;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: bold;
+            color: var(--white);
+            z-index: 2;
+        }
+
+        #throttle-label {
+            font-size: 11px;
+            color: var(--dim);
+            text-align: center;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        /* Throttle Diagnostic Badge */
+        #thr-diag-container {
+            position: absolute;
+            bottom: 30px;
+            left: 85px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            pointer-events: auto;
+        }
+
+        #thr-diag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            color: var(--dim);
+            background: var(--panel);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--line);
         }
 
         /* Compass */
         #compass-container {
             position: absolute;
-            top: 30px;
+            top: 75px;
             left: 50%;
             transform: translateX(-50%);
-            width: 340px;
-            height: 40px;
-            background: rgba(13, 27, 42, 0.8);
+            width: 360px;
+            height: 42px;
+            background: var(--panel);
             border: 1px solid var(--line);
-            border-radius: 4px;
+            border-radius: 6px;
             overflow: hidden;
             pointer-events: auto;
-            clip-path: polygon(10% 0, 90% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(8% 0, 92% 0, 100% 100%, 0% 100%);
+            backdrop-filter: blur(6px);
         }
 
         #compass-strip {
@@ -137,12 +385,12 @@
             width: 34px;
             text-align: center;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--dim);
         }
 
         .compass-tick.major {
-            color: var(--white);
+            color: var(--cyan);
             font-weight: bold;
         }
 
@@ -152,8 +400,8 @@
             left: 50%;
             transform: translateX(-50%);
             width: 4px;
-            height: 10px;
-            background: var(--cyan);
+            height: 12px;
+            background: var(--amber);
         }
 
         /* Pitch / Roll Horizon */
@@ -162,31 +410,32 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
+            width: 320px;
+            height: 320px;
             border-radius: 50%;
-            border: 2px solid rgba(127, 219, 202, 0.3);
+            border: 2px solid rgba(127, 219, 202, 0.25);
             pointer-events: none;
             overflow: hidden;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.6);
         }
 
         #horizon-ball {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 600px;
-            height: 600px;
-            margin-left: -300px;
-            margin-top: -300px;
+            width: 640px;
+            height: 640px;
+            margin-left: -320px;
+            margin-top: -320px;
         }
 
         #pitch-lines {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 100px;
+            width: 110px;
             height: 0;
-            margin-left: -50px;
+            margin-left: -55px;
         }
 
         .pitch-line {
@@ -201,28 +450,28 @@
         }
 
         .pitch-line.minor {
-            width: 60%;
-            left: 20%;
+            width: 55%;
+            left: 22.5%;
             background: var(--cyan-dim);
         }
 
         .pitch-line span {
             position: absolute;
-            right: -25px;
+            right: -28px;
             color: var(--cyan);
-            font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-            font-size: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
         }
 
         #bank-pointer {
             position: absolute;
-            top: 20px;
+            top: 22px;
             left: 50%;
             width: 0;
             height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 15px solid var(--amber);
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-bottom: 14px solid var(--amber);
         }
 
         #hud-center {
@@ -230,7 +479,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 40px;
+            width: 44px;
             height: 2px;
             background: var(--amber);
         }
@@ -239,28 +488,190 @@
         #hud-center::after {
             content: '';
             position: absolute;
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-bottom: 2px solid var(--amber);
             top: 0;
         }
 
         #hud-center::before {
-            left: -10px;
+            left: -12px;
             border-left: 2px solid var(--amber);
         }
 
         #hud-center::after {
-            right: -10px;
+            right: -12px;
             border-right: 2px solid var(--amber);
         }
 
-        /* Setup Menu */
-        #setup {
+        /* Flight Waypoint Crosshair */
+        #flight-director {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 14px;
+            height: 14px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        /* Ring Hit Toast Banner */
+        #ring-toast {
+            position: absolute;
+            top: 135px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            background: rgba(0, 216, 255, 0.2);
+            border: 1px solid var(--cyan);
+            color: var(--cyan);
+            font-family: 'Orbitron', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            padding: 8px 24px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 25px rgba(0, 216, 255, 0.4);
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+            pointer-events: none;
+            z-index: 50;
+        }
+
+        #ring-toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Stall Warning */
+        #stall-warn {
+            position: absolute;
+            top: 68%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--amber);
+            font-size: 36px;
+            font-weight: 900;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 4px;
+            animation: blink 0.4s infinite;
+            display: none;
+            text-shadow: 0 0 20px rgba(255, 107, 74, 0.8);
+            z-index: 40;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Crash Status */
+        #status-msg {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+            display: none;
+            z-index: 60;
+        }
+
+        #status-title {
+            font-size: 72px;
+            color: var(--amber);
+            font-family: 'Orbitron', sans-serif;
+            margin-bottom: 10px;
+            letter-spacing: 4px;
+        }
+
+        #status-sub {
+            font-size: 26px;
+            color: var(--white);
+            font-family: 'Barlow Condensed', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* Victory Landing Card */
+        #victory-card {
             position: fixed;
             inset: 0;
             background: rgba(5, 7, 10, 0.85);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(12px);
+            z-index: 150;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            pointer-events: auto;
+        }
+
+        .victory-box {
+            background: var(--panel);
+            border: 2px solid var(--cyan);
+            box-shadow: 0 0 40px rgba(127, 219, 202, 0.3);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 560px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .vic-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 38px;
+            color: var(--cyan);
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+        }
+
+        .vic-sub {
+            color: var(--dim);
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+
+        .vic-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .vic-metric {
+            background: var(--panel2);
+            border: 1px solid var(--line);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .vic-metric-label {
+            font-size: 12px;
+            color: var(--dim);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .vic-metric-val {
+            font-family: 'Orbitron', monospace;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--white);
+            margin-top: 4px;
+        }
+
+        .vic-metric-val.gold {
+            color: var(--gold);
+        }
+
+        /* Setup Dialog */
+        #setup {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 7, 10, 0.88);
+            backdrop-filter: blur(12px);
             z-index: 100;
             display: flex;
             justify-content: center;
@@ -272,22 +683,24 @@
             background: var(--panel);
             border: 1px solid var(--line);
             padding: 40px;
-            border-radius: 12px;
-            max-width: 600px;
+            border-radius: 14px;
+            max-width: 620px;
+            width: 90%;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
         }
 
         #setup-card h1 {
-            font-size: 48px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 46px;
             color: var(--cyan);
-            margin-bottom: 10px;
-            letter-spacing: 2px;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
         }
 
         .sub {
             color: var(--dim);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             font-size: 18px;
         }
 
@@ -296,14 +709,14 @@
             border: 2px solid var(--cyan);
             color: var(--cyan);
             padding: 12px 24px;
-            font-size: 18px;
+            font-size: 16px;
             font-family: inherit;
             font-weight: 600;
             cursor: pointer;
             transition: 0.2s;
             border-radius: 6px;
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -325,120 +738,26 @@
 
         .note {
             color: var(--dim);
-            font-size: 15px;
+            font-size: 14px;
             text-align: left;
-            margin-top: 20px;
-            line-height: 1.5;
+            margin-top: 18px;
+            line-height: 1.6;
             background: var(--panel2);
-            padding: 15px;
-            border-radius: 6px;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
         }
 
         kbd {
             background: var(--line);
             padding: 2px 6px;
             border-radius: 4px;
-            font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-            font-size: 13px;
-            color: var(--white);
-        }
-
-        /* Top Status Bar */
-        #conn-status {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            pointer-events: auto;
-        }
-
-        #conn-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: var(--dim);
-        }
-
-        #conn-dot.live {
-            background: var(--cyan);
-            box-shadow: 0 0 10px var(--cyan);
-        }
-
-        #conn-text {
-            font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        #btn-connect {
-            margin: 0;
-            padding: 6px 12px;
+            font-family: 'JetBrains Mono', monospace;
             font-size: 12px;
-            width: auto;
-            border: 1px solid var(--line);
             color: var(--white);
         }
 
-        #btn-keyboard {
-            margin: 0;
-            padding: 6px 12px;
-            font-size: 12px;
-            width: auto;
-            border: 1px solid var(--line);
-            color: var(--white);
-        }
-
-        #stall-warn {
-            position: absolute;
-            top: 65%;
-            left: 50%;
-            transform: translateX(-50%);
-            color: var(--amber);
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            animation: blink 0.5s infinite;
-            display: none;
-            text-shadow: 0 2px 10px rgba(255, 107, 74, 0.5);
-        }
-
-        @keyframes blink {
-
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0;
-            }
-        }
-
-        #status-msg {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
-            display: none;
-        }
-
-        #status-title {
-            font-size: 64px;
-            color: var(--amber);
-            margin-bottom: 10px;
-            letter-spacing: 4px;
-        }
-
-        #status-sub {
-            font-size: 24px;
-            color: var(--white);
-        }
-
-        /* New Flash Progress Styling */
+        /* Firmware flash styles */
         #flash-zone {
             display: none;
             margin-top: 15px;
@@ -488,26 +807,69 @@
 <body>
 
     <div id="ui-layer">
-        <div id="conn-status">
-            <div id="conn-dot"></div>
-            <div id="conn-text">NO LINK</div>
-            <button id="btn-connect">Connect Arduino</button>
-            <button id="btn-keyboard">Keyboard Mode</button>
+        <!-- Top Navigation & Controls Bar -->
+        <div id="top-bar">
+            <!-- Connection Status -->
+            <div id="conn-status">
+                <div id="conn-dot"></div>
+                <div id="conn-text">NO LINK</div>
+                <button class="hud-action-btn" id="btn-connect">Connect Arduino</button>
+                <button class="hud-action-btn" id="btn-keyboard">Keyboard</button>
+            </div>
+
+            <!-- Mission Progress Banner -->
+            <div id="mission-banner">
+                <div class="mission-stat">
+                    <span class="mission-stat-lbl">Course Rings</span>
+                    <span class="mission-stat-val highlight" id="mission-rings">0 / 10</span>
+                </div>
+                <div class="mission-stat">
+                    <span class="mission-stat-lbl">Active Target</span>
+                    <span class="mission-stat-val" id="mission-target">CLIMBOUT</span>
+                </div>
+                <div class="mission-stat">
+                    <span class="mission-stat-lbl">Distance</span>
+                    <span class="mission-stat-val" id="mission-dist">350 M</span>
+                </div>
+                <div class="mission-stat">
+                    <span class="mission-stat-lbl">Flight Score</span>
+                    <span class="mission-stat-val highlight" id="mission-score">0</span>
+                </div>
+            </div>
+
+            <!-- Time of Day & Audio Controls -->
+            <div id="tod-controls">
+                <button class="tod-btn" id="btn-tod-day" title="Crisp Daylight (12:00)">☀️ Day</button>
+                <button class="tod-btn" id="btn-tod-sunset" title="Golden Sunset (18:45)">🌅 Sunset</button>
+                <button class="tod-btn" id="btn-tod-night" title="Starry Night & Aurora (00:00)">🌙 Night</button>
+                <button class="tod-btn" id="btn-tod-dawn" title="Early Dawn (06:00)">🌄 Dawn</button>
+
+                <div id="time-slider-box">
+                    <input type="range" id="time-slider" min="0" max="100" value="50" title="Scrub Time of Day">
+                    <span id="time-display">12:00</span>
+                </div>
+
+                <button class="hud-action-btn" id="btn-audio" style="border-color: var(--cyan); color: var(--cyan);">🔊 Audio On</button>
+            </div>
         </div>
 
+        <!-- Compass Tape -->
         <div id="compass-container">
             <div id="compass-marker"></div>
             <div id="compass-strip"></div>
         </div>
 
+        <!-- Artificial Horizon / Attitude Director Indicator -->
         <div id="horizon-container">
             <div id="horizon-ball">
                 <div id="pitch-lines"></div>
             </div>
             <div id="bank-pointer"></div>
             <div id="hud-center"></div>
+            <div id="flight-director"></div>
         </div>
 
+        <!-- Left Panel: Speed & G-Meter -->
         <div id="left-panel">
             <div id="speed-tape" class="readout-block">
                 <div class="readout-label">Airspeed</div>
@@ -519,9 +881,10 @@
             </div>
         </div>
 
+        <!-- Right Panel: Coords, Alt, Vertical Speed -->
         <div id="right-panel">
             <div id="pos-tape" class="readout-block">
-                <div class="readout-label">Coords</div>
+                <div class="readout-label">Coordinates</div>
                 <div class="readout-value" id="pos-readout">0, 0</div>
             </div>
             <div id="alt-tape" class="readout-block">
@@ -533,26 +896,69 @@
                 <div class="readout-value" id="vs-readout">+0000<span class="readout-unit">FPM</span></div>
             </div>
         </div>
+
+        <!-- Throttle Vertical Bar -->
         <div id="throttle-container">
-            <div id="throttle-fill"></div>
+            <div id="throttle-track">
+                <div id="throttle-fill"></div>
+                <div id="throttle-val">0%</div>
+            </div>
+            <div id="throttle-label">THR</div>
         </div>
 
-        <div id="stall-warn">STALL</div>
+        <!-- Throttle Mode Switcher & Diagnostics -->
+        <div id="thr-diag-container">
+            <button class="hud-action-btn" id="btn-thr-mode" style="font-size: 11px;">THR: DIRECT (100%)</button>
+            <div id="thr-diag">Raw: --- | Out: 0%</div>
+        </div>
+
+        <!-- Toast Notification for Ring Passes -->
+        <div id="ring-toast">+100 PTS • RING CLEARED!</div>
+
+        <!-- Flight Warnings & Alerts -->
+        <div id="stall-warn">STALL WARNING</div>
         <div id="status-msg">
             <h1 id="status-title">CRASHED</h1>
-            <p id="status-sub">Press R to reset</p>
+            <p id="status-sub">Press R to reset aircraft</p>
         </div>
     </div>
 
+    <!-- Mission Victory Modal -->
+    <div id="victory-card">
+        <div class="victory-box">
+            <h1 class="vic-title">MISSION COMPLETE</h1>
+            <p class="vic-sub">Touchdown confirmed on Destination Aerodrome!</p>
+            <div class="vic-grid">
+                <div class="vic-metric">
+                    <div class="vic-metric-label">Landing Grade</div>
+                    <div class="vic-metric-val gold" id="vic-grade">S+</div>
+                </div>
+                <div class="vic-metric">
+                    <div class="vic-metric-label">Touchdown VSI</div>
+                    <div class="vic-metric-val" id="vic-impact">-120 FPM</div>
+                </div>
+                <div class="vic-metric">
+                    <div class="vic-metric-label">Rings Cleared</div>
+                    <div class="vic-metric-val" id="vic-rings">10 / 10</div>
+                </div>
+                <div class="vic-metric">
+                    <div class="vic-metric-label">Total Score</div>
+                    <div class="vic-metric-val gold" id="vic-score">1500</div>
+                </div>
+            </div>
+            <button class="primary" id="btn-restart-challenge">Fly Again / Restart Mission</button>
+        </div>
+    </div>
+
+    <!-- Setup / Calibration Dialog -->
     <div id="setup">
         <div id="setup-card">
             <h1>VECTOR-1</h1>
-            <div class="sub">Web-based flight simulator · Hardware calibrated</div>
+            <div class="sub">Advanced Web Flight Simulator • Hardware Calibrated</div>
 
             <div id="step-1">
                 <button class="primary" id="btn-connect-2">Connect Arduino</button>
-                <button id="btn-upload-firmware" style="border-color: var(--amber); color: var(--amber);">⚡ Upload
-                    Firmware</button>
+                <button id="btn-upload-firmware" style="border-color: var(--amber); color: var(--amber);">⚡ Upload Firmware</button>
                 <button id="btn-keyboard-2">Skip — Fly with Keyboard</button>
 
                 <div id="flash-zone">
@@ -568,18 +974,17 @@
             </div>
 
             <div id="step-2" style="display: none;">
-                <h2 style="color:var(--cyan); margin-bottom:10px;">Joystick Calibration</h2>
-                <p style="color:var(--dim); margin-bottom:15px;">Please leave the joysticks untouched in their center
-                    positions. Then press Calibrate to eliminate stick drift.</p>
-                <button class="primary" id="btn-calibrate">Calibrate & Start</button>
+                <h2 style="color:var(--cyan); margin-bottom:10px;">Joystick Calibration & Throttle</h2>
+                <p style="color:var(--dim); margin-bottom:15px;">Leave joysticks centered, then click Calibrate. The simulator automatically maps full 0% to 100% speed.</p>
+                <button class="primary" id="btn-calibrate">Calibrate & Launch</button>
                 <button id="btn-skip-cal">Skip Calibration</button>
             </div>
 
             <div class="note">
-                <b>Arduino wiring:</b> Joystick 1 (Right): A0 (roll), A1 (pitch).<br>
-                <b>Joystick 2 (Left):</b> A2 (yaw), A3 (throttle).<br><br>
-                <b>Keyboard fallback:</b> <kbd>W/S</kbd> pitch · <kbd>A/D</kbd> roll · <kbd>Q/E</kbd> yaw ·
-                <kbd>Shift/Ctrl</kbd> throttle.
+                <b>Arduino Wiring:</b><br>
+                • <b>Joystick 1 (Right):</b> A0 (Roll), A1 (Pitch)<br>
+                • <b>Joystick 2 (Left):</b> A2 (Yaw), A3 (Throttle)<br><br>
+                <b>Keyboard Fallback:</b> <kbd>W/S</kbd> Pitch • <kbd>A/D</kbd> Roll • <kbd>Q/E</kbd> Yaw • <kbd>Shift/Ctrl</kbd> Throttle (0–100%) • <kbd>R</kbd> Reset.
             </div>
         </div>
     </div>
@@ -589,6 +994,7 @@
     <script src="scene.js"></script>
 
     <script>
+        // Firmware uploader handler
         document.getElementById('btn-upload-firmware').addEventListener('click', async () => {
             const flashZone = document.getElementById('flash-zone');
             const flashLog = document.getElementById('flash-log');
@@ -606,12 +1012,11 @@
             try {
                 flashLog.innerHTML += "Connecting to target MCU... Please select your Arduino Port.\n";
                 const port = await navigator.serial.requestPort();
-                await port.open({ baudRate: 115200 }); // Standard flashing baudrate for Optiboot/ESP
+                await port.open({ baudRate: 115200 });
 
                 flashLog.innerHTML += "🔌 Port opened successfully.\n";
                 flashLog.innerHTML += "📥 Fetching compiled binary artifact: 'firmware.bin'...\n";
 
-                // Fetching the pre-compiled binary hosted locally or on server
                 const response = await fetch('firmware.bin');
                 if (!response.ok) throw new Error("Could not find precompiled file at firmware.bin");
 
@@ -622,7 +1027,6 @@
                 flashLog.innerHTML += `📦 Binary file loaded (${view.length} bytes).\n`;
                 flashLog.innerHTML += "⚠️ Triggering reset into bootloader mode...\n";
 
-                // Pulse DTR line to trigger Arduino Hard Reset into Bootloader
                 await port.setSignals({ dataTerminalReady: false, readyToSend: false });
                 await new Promise(resolve => setTimeout(resolve, 250));
                 await port.setSignals({ dataTerminalReady: true, readyToSend: true });
@@ -631,7 +1035,7 @@
                 flashLog.innerHTML += "⚙️ Syncing flash block writes...\n";
 
                 const writer = port.writable.getWriter();
-                const chunkSize = 64; // Adjust according to microchip flash page profile architecture
+                const chunkSize = 64;
                 let bytesWritten = 0;
 
                 for (let i = 0; i < view.length; i += chunkSize) {
@@ -644,7 +1048,6 @@
                     flashPercent.innerText = `${progress}%`;
                     flashLog.innerHTML = `⚙️ Syncing flash block writes...\nWriting: ${bytesWritten}/${view.length} bytes`;
 
-                    // Tiny micro-delay to let MCU process page buffer writes securely
                     await new Promise(resolve => setTimeout(resolve, 15));
                 }
 

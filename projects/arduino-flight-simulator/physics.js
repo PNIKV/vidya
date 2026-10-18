@@ -15,8 +15,9 @@ const Physics = {
 
   crashed: false,
   grounded: true,
+  currentStation: null,
 
-  // Enhanced Aerodynamics Constants
+  // Aerodynamics Constants
   MAX_THRUST: 0.18,
   DRAG_COEF: 0.85,
   LIFT_COEF: 0.019,
@@ -28,13 +29,18 @@ const Physics = {
   MAX_SPEED: 450,
 
   reset(){
-    this.position = { x: 0, y: 52, z: 80 };
+    const startY = (typeof globalStations !== 'undefined' && globalStations.length > 0) ? (globalStations[0].y + 2) : 52;
+    const startZ = (typeof globalStations !== 'undefined' && globalStations.length > 0) ? (globalStations[0].z + 100) : 80;
+    const startX = (typeof globalStations !== 'undefined' && globalStations.length > 0) ? globalStations[0].x : 0;
+    
+    this.position = { x: startX, y: startY, z: startZ };
     this.velocity = { x: 0, y: 0, z: 0 };
     this.rotation = { pitch: 0, yaw: 0, roll: 0 };
     this.speed = 0;
     this.throttle = 0;
     this.crashed = false;
     this.grounded = true;
+    this.currentStation = (typeof globalStations !== 'undefined' && globalStations.length > 0) ? globalStations[0] : null;
   },
 
   update(dt, inputs){
@@ -63,58 +69,63 @@ const Physics = {
     const cy = Math.cos(this.rotation.yaw),   sy = Math.sin(this.rotation.yaw);
     const forward = { x: -sy * cp, y: sp, z: -cy * cp };
 
-    // Throttle Deadzone & Speeds & Drags
-    const activeThrottle = this.throttle < 0.05 ? 0 : this.throttle;
+    // Throttle & Aerodynamic Forces
+    const activeThrottle = this.throttle < 0.03 ? 0 : this.throttle;
     const thrust = activeThrottle * this.MAX_THRUST;
     const drag = this.DRAG_COEF * this.speed;
     const climbPenalty = forward.y * this.speed * 0.95;
     this.speed += (thrust * 2400 - drag - climbPenalty) * dt;
     this.speed = clamp(this.speed, 0, this.MAX_SPEED);
 
-    // Wheel Brakes: Completely stop the aircraft from drifting if throttle is 0 and on the ground
+    // Wheel Brakes: Smoothly stop if throttle is zero and wheels on deck
     if (this.grounded && activeThrottle === 0) {
-       this.speed *= (1 - 4.0 * dt);
-       if (this.speed < 1.0) this.speed = 0;
+       this.speed *= (1 - 3.5 * dt);
+       if (this.speed < 0.5) this.speed = 0;
        
-       this.velocity.x *= (1 - 6.0 * dt);
-       this.velocity.z *= (1 - 6.0 * dt);
-       if (Math.abs(this.velocity.x) < 0.05) this.velocity.x = 0;
-       if (Math.abs(this.velocity.z) < 0.05) this.velocity.z = 0;
+       this.velocity.x *= (1 - 5.0 * dt);
+       this.velocity.z *= (1 - 5.0 * dt);
+       if (Math.abs(this.velocity.x) < 0.02) this.velocity.x = 0;
+       if (Math.abs(this.velocity.z) < 0.02) this.velocity.z = 0;
     }
 
-    // Ground Effect & Pad Collision
+    // Ground Effect & Runway / Platform Collision
     let groundY = (typeof terrainHeight === 'function') ? terrainHeight(this.position.x, this.position.z) + 2 : 2;
     
     let onPad = false;
+    let detectedStation = null;
     if (typeof globalStations !== 'undefined') {
        for(const st of globalStations) {
+          const halfW = (st.width || 120) * 0.55;
+          const halfL = (st.length || 380) * 0.55;
           const dx = Math.abs(this.position.x - st.x);
           const dz = Math.abs(this.position.z - st.z);
-          if(dx < 50 && dz < 100){
-             groundY = Math.max(groundY, st.y + 2); // Pad height is st.y, +2 for gear
+          if(dx <= halfW && dz <= halfL){
+             groundY = Math.max(groundY, st.y + 2); // Pad height is st.y, +2 for landing gear
              onPad = true;
+             detectedStation = st;
              break;
           }
        }
     }
+    this.currentStation = detectedStation;
 
     const heightAgl = Math.max(0, this.position.y - groundY);
-    const groundEffect = heightAgl < 10 ? (10 - heightAgl) * 0.005 : 0;
+    const groundEffect = heightAgl < 12 ? (12 - heightAgl) * 0.006 : 0;
 
     let lift = (this.LIFT_COEF * this.speed * this.speed / 100) + groundEffect;
     
-    // Cap excessive lift from high speeds to prevent shooting into space
+    // Cap lift to prevent floating into deep space
     const maxLift = this.GRAVITY * 100 * 1.5; 
     lift = clamp(lift, 0, maxLift);
 
     const stalling = this.speed < this.STALL_SPEED;
     const effectiveLift = stalling ? lift * (this.speed / this.STALL_SPEED) * 0.4 : lift;
 
-    // Banking splits lift into Vertical (fights gravity) and Horizontal (causes turn)
+    // Banking splits lift into Vertical and Horizontal components
     const liftUp = effectiveLift * Math.cos(this.rotation.roll);
     const liftSide = effectiveLift * Math.sin(this.rotation.roll);
 
-    // Horizontal lift dynamically induces Yaw (Natural coordinated turning)
+    // Coordinated turning yaw
     if (!this.grounded && !stalling) {
        this.rotation.yaw += liftSide * 0.005 * dt; 
     }
@@ -143,19 +154,36 @@ const Physics = {
     const targetG = 1.0 + Math.abs(inputs.pitch) * 2.0 + Math.abs(this.rotation.roll) * 0.5;
     this.gForce += (targetG - this.gForce) * 5 * dt;
 
+    const wasGrounded = this.grounded;
+
     if(this.position.y <= groundY){
       const impactSpeed = Math.abs(this.velocity.y) * 60;
       this.position.y = groundY;
 
-      // Make the launch pad a complete safe-zone, and don't crash parked planes
-      if(!onPad && !this.grounded && (impactSpeed > 12 || Math.abs(this.rotation.roll) > 0.8 || this.speed < this.STALL_SPEED*0.7)){
+      // Safe landing criteria on pad vs rough terrain
+      const maxSafeImpact = onPad ? 18 : 12;
+      const maxSafeRoll = onPad ? 1.1 : 0.8;
+      const minSafeSpeed = this.STALL_SPEED * 0.5;
+
+      if(!this.grounded && (impactSpeed > maxSafeImpact || Math.abs(this.rotation.roll) > maxSafeRoll || (this.speed < minSafeSpeed && !onPad))){
         this.crashed = true;
       } else {
         this.velocity.y = 0;
         this.grounded = true;
-        // Auto-level roll and pitch when safely grounded so it doesn't tip over
-        this.rotation.roll *= 0.9;
-        this.rotation.pitch *= 0.9;
+        // Auto-level roll and pitch when grounded
+        this.rotation.roll *= 0.85;
+        this.rotation.pitch *= 0.85;
+
+        // Trigger touchdown event
+        if (!wasGrounded && typeof onTouchdownEvent === 'function') {
+          onTouchdownEvent({
+            impactSpeed: impactSpeed,
+            onPad: onPad,
+            station: detectedStation,
+            speed: this.speed,
+            vsi: this.vsi
+          });
+        }
       }
     } else {
       this.grounded = false;
